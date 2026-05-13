@@ -1,0 +1,14 @@
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Source documents at the project root — large, locally provisioned.
+# Anchored with leading slash so wiki/sources/ (source-summary pages) is NOT excluded.
+/sources/
+
+# Claude Code local settings (not project config)
+.claude/settings.local.json
+
+# Obsidian project-side state — actual vault lives in iCloud, not here
+.obsidian/
