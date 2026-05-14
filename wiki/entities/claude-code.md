@@ -1,0 +1,44 @@
+---
+title: Claude Code
+type: entity
+created: 2026-05-14
+updated: 2026-05-14
+sources:
+  - claude-code.md
+  - comparison.md
+family: agent-product
+parameters: "n/a (powered by Claude)"
+release_date: 2024-02-29
+status: complete
+importance: high
+tags:
+  - product
+---
+
+# Claude Code
+
+Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. Distributed as the `@anthropic/claude-code` npm package. Powered by [[claude|Claude]] models (Opus / Sonnet / Haiku). The CLI maintaining this very wiki is Claude Code.
+
+## Architecture (per the 2026 sourcemap-snapshot writeup)
+
+- **TypeScript / React-Ink TUI**.
+- **~5,000-line REPL orchestrator** (`main.tsx`), **~1,700-line turn state machine** (`query.ts`).
+- **~40 built-in tools** with a unified Zod-schema contract: Bash, Read, Edit, Write, Glob, Grep, Task (sub-agent dispatch), MCP, WebFetch, WebSearch, NotebookEdit, AskUserQuestion, ExitPlanMode, and more.
+- **Sub-agents are first-class** via the `Task` tool; built-in subagent types include Explore, Plan, code-reviewer, claude-code-guide, etc. Subagents can run in worktree-isolated or remote-isolated modes.
+- **Memory subsystem**: per-project file-based memory at `~/.claude/projects/{slug}/memory/`, with a background "auto-dream" consolidator that periodically distills memory into compact reusable forms.
+- **Permissions system**: layered. Rules + classifier + plan-mode + hooks. Separates *whether* a call is allowed from *what runtime capabilities* it has.
+- **Sandbox**: OS-level via `@anthropic-ai/sandbox-runtime` adapter (FS/network rules).
+- **MCP**: first-class. Tools can be deferred and loaded on demand via `ToolSearch`.
+- **Hooks**: pre-tool, post-tool, on-stop, on-error. Configurable in `settings.json`.
+- **CLAUDE.md**: nested in project tree, auto-loaded at startup, holds domain-specific schema (the wiki you are reading lives in such a CLAUDE.md ecosystem).
+
+## In the cross-agent landscape
+
+- Distinguished by **scale** (~40 tools, first-class sub-agents, layered permissions, OS-level sandbox) — most other documented agents are simpler.
+- **Compatible with the broader SKILL.md ecosystem**: pi-mono, opencode, Hermes, and OpenClaw all walk the same skill directories that Claude Code does, treating SKILL.md as a de-facto interop format.
+- Source code was leaked via npm sourcemap in March 2026 and has been mirrored at `<local>` for the writeup.
+
+## References
+
+- [[claude-code-agent-doc-2026]]
+- [[cross-agent-comparison-doc-2026]]

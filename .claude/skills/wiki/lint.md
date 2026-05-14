@@ -110,6 +110,33 @@ Tags should be a thin organizational layer per SKILL.md Tag Policy. Scan all wik
 4. For each `type: entity` page: check that exactly one tag is in the vocabulary.
 5. For each non-classification tag: check duplicates (vs slugs), check page count (vs promotion threshold), check per-page count (vs max=3).
 
+### 10. Typed Relation Hygiene (Error/Warning)
+
+Relation-bearing frontmatter fields (e.g., `authors`, `founders`, `affiliations`, `trained-on`, `builds-on`, `components`, `introduces`, `predecessor`, `successors`, `family`, plus any others declared in `CLAUDE.md`) must follow the conventions in SKILL.md → "Typed Relations".
+
+**Identifying relation fields.** A field is a relation field if either (a) its name appears in CLAUDE.md's relation vocabulary or in SKILL.md's default fallback list, **or** (b) the field's value contains one or more `[[...]]` wikilink strings. Scalar metadata fields (`title`, `type`, `created`, `updated`, `tags`, `status`, `importance`, `arxiv_id`, `venue`, `parameters`, `release_date`, `year`, `family` when string-valued like `gpt`) are NOT relation fields.
+
+**Error — relation value not wikilink-shaped.** A relation field has a value that should be a wikilink but isn't. Examples:
+- `authors: - Tom B. Brown` (bare string) → should be `[[tom-brown]]` if an entity page exists, or stay string only if no page has been created yet. Flag as Error when an entity page with the matching slug *does* exist (the page exists but the field doesn't link to it).
+- `predecessor: gpt-2` (bare string, no brackets) → must be `[[gpt-2]]`.
+
+**Error — relation wikilink target doesn't resolve.** Same diagnostic as §1 Broken Wikilinks, but applied to frontmatter values. Report once per (page, field, target) — do not double-count with §1.
+
+**Warning — dict-form relation missing `target:` (or equivalent).** When a relation uses the dict form, each item must have a key naming the related page:
+- Generic case: `target:` key.
+- Field-specific aliases recognized: `org:` (for `affiliations:`), `model:` (where unambiguous in context). The project's `CLAUDE.md` may declare additional aliases.
+
+Items missing both `target:` and a recognized alias are flagged.
+
+**Suggestion — relation field missing on a page where it would apply.** Heuristic: if an entity is classified as `person` (per §9) and has a body section titled "Affiliations" or "Notable publications", but the frontmatter lacks the corresponding `affiliations:` or `authored:` field, suggest promoting the prose to typed frontmatter. Similarly for `founders:` on org pages with body text like "founded by X and Y", and `authors:` on source pages without a frontmatter authors list. Report as a suggestion, not an error — the prose is still valid; the typed form just enables Dataview queries.
+
+**How to scan**:
+1. Glob `{WIKI}/**/*.md`, parse frontmatter.
+2. Read `CLAUDE.md` for the project's relation vocabulary (extends or overrides SKILL.md defaults).
+3. For each parsed frontmatter, identify relation fields per the rules above.
+4. Validate each relation field's values: wikilink shape, target resolution, dict-form keys.
+5. For each entity/source page, check the suggested fields against body section headings.
+
 ## Report Format
 
 Group findings by severity:

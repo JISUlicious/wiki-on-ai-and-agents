@@ -126,6 +126,18 @@ tags:
   - {{relevant tags}}
 status: complete
 importance: {{high if foundational/seminal/widely-cited, medium for typical sources, low for minor/supplementary}}
+
+# Typed relations (fill in when explicit in the source — see SKILL.md "Typed Relations"
+# and the project's CLAUDE.md vocabulary):
+authors:
+  - [[author-slug-1]]
+  - [[author-slug-2]]
+first_author: [[author-slug-1]]   # optional sugar
+introduces:                        # entities/concepts this source introduces or substantively defines
+  - [[entity-or-concept-slug]]
+year: {{publication year}}
+venue: {{venue if known}}
+arxiv_id: "{{id if applicable}}"
 ---
 
 # {{Source Title}}
@@ -183,6 +195,7 @@ When creating:
 - Set `status: draft` if created from limited info in a single source; `status: complete` if substantial
 - Set `importance: high` for major entities (key researchers, foundational models), `medium` default, `low` for minor mentions
 - Assign **exactly one classification tag** from the entity vocabulary defined in `CLAUDE.md` (e.g., `person`, `model`, `org`). This is mandatory — see Tag Policy "Entity classification tags" in SKILL.md.
+- **Fill in typed-relation frontmatter fields** when the relation is explicit in the source — e.g., `founders: [[...]]` on an org page, `affiliations: [{org: [[...]], start: ..., role: ...}]` on a person page, `trained-on: [[...]]` / `builds-on: [[...]]` on a model page. See SKILL.md → "Typed Relations" and the project's `CLAUDE.md` for the vocabulary. Use the simple wikilink-list form unless the relation carries per-edge metadata (date, role, source), in which case use the dict form with a `target:` key.
 - Write a description based on what this source says about the entity
 - Link to the source summary page and any related entity/concept pages
 
@@ -204,6 +217,8 @@ Concept pages should explain:
 - Why it matters
 - How it relates to other concepts in the wiki
 - What different sources say about it (synthesis, not just repetition)
+
+**Typed relations on concepts**: when applicable, fill in fields like `builds-on: [[parent-concept]]` or domain-specific predicates from `CLAUDE.md`. The relation pattern is the same as for entities — see SKILL.md → "Typed Relations".
 
 ## Step 5.5: Tag Selection
 

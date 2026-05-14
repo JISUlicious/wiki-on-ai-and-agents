@@ -130,6 +130,69 @@ Tags are a **thin organizational/Dataview layer**, NOT a substitute for pages. M
 
 Valid tags after this filter typically look like: `pdf`, `paper`, `2024`, `iclr-2023`, `survey`. The set is small.
 
+### Typed Relations
+
+Relations between pages (authorship, founding, training data, model composition, affiliation, etc.) are first-class in frontmatter rather than buried only in prose. The wiki already does this for model lineage — `family`, `predecessor`, `successors`. Generalize the pattern.
+
+**Rule 1: Relation field values are typed lists of `[[wikilinks]]`.** The field name names the predicate; values point at the related pages by their slug. Example:
+
+```yaml
+# In a source-summary page:
+authors:
+  - [[tom-brown]]
+  - [[ilya-sutskever]]
+introduces:
+  - [[gpt-3]]
+  - [[in-context-learning]]
+```
+
+**Rule 2: When a relation carries its own metadata** (a date, role, source citation, confidence), use the dict form. Each item becomes a small object with a `target:` key plus whatever extra fields make sense:
+
+```yaml
+affiliations:
+  - org: [[anthropic]]
+    start: 2021
+    role: CEO
+  - org: [[openai]]
+    start: 2016
+    end: 2020
+    role: VP of Research
+
+trained-on:
+  - target: [[common-crawl]]
+    source: [[gpt-3-brown-2020]]
+    detail: "filtered subset, ~410B tokens"
+```
+
+For relation-bearing fields with no natural per-entry metadata, the simple `[[wikilink]]` list (Rule 1) is preferred — don't reach for the dict form gratuitously.
+
+**Default fallback vocabulary.** A project's `CLAUDE.md` should declare its specific relation vocabulary, but in the absence of one, the following are reasonable defaults:
+
+| Field | Page types it applies to | Form |
+|---|---|---|
+| `authors` | source | list of wikilinks |
+| `first_author` | source (optional sugar) | single wikilink |
+| `introduces` | source | list of wikilinks (entities/concepts the source introduces or substantively defines) |
+| `founders` | org / product entity | list of wikilinks |
+| `affiliations` | person entity | list of dicts: `org`, `start`, optional `end`, optional `role` |
+| `trained-on` | model entity | list of wikilinks (or strings if no corpus page exists yet) |
+| `builds-on` | model / concept entity | list of wikilinks |
+| `components` | system-level model entity | list of wikilinks |
+| `family`, `predecessor`, `successors` | model entity | existing model-lineage fields (unchanged) |
+
+The project's `CLAUDE.md` may add fields (e.g., `recorded-at: [[venue]]` for a music wiki), remove ones that don't apply, or override the form. SKILL.md provides the *pattern*; CLAUDE.md provides the *specific vocabulary*.
+
+**Provenance per relation.** Two patterns, in order of preference:
+
+1. **Page-level (default):** the page's existing `sources:` frontmatter is the provenance for all relations on the page. No extra syntax needed in the common case.
+2. **Per-relation override:** add an explicit `source: [[source-page]]` key inside the dict form when a single page draws relations from multiple distinct sources (see the `trained-on:` example above).
+
+**Why this matters.** Typed relations turn the wiki into a queryable graph without changing the file system or breaking Obsidian:
+
+- Inverse queries become trivial via Dataview: "all sources first-authored by X", "all systems that build-on Y", "all people ever affiliated with Z".
+- Provenance is explicit when it matters and implicit when it doesn't.
+- The Obsidian graph view picks up the new wikilinks for free — relations show up as edges between nodes.
+
 ### Index Format (`wiki/index.md`)
 
 Organized by category with one-line summaries:
