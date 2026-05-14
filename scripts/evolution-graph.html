@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>From Transformer to AI Agents — Evolutionary Graph</title>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root {
+    --bg: #0e1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100vh; overflow: hidden;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  }
+  #app { display: grid; grid-template-columns: 1fr 380px; height: 100vh; }
+  #graph { background: var(--bg); }
+  #sidebar {
+    background: var(--panel);
+    border-left: 1px solid var(--border);
+    padding: 20px;
+    overflow-y: auto;
+    display: flex; flex-direction: column;
+  }
+  #sidebar h1 { font-size: 16px; margin: 0 0 4px; color: var(--accent); }
+  #sidebar h2 { font-size: 13px; margin: 0 0 16px; color: var(--muted); font-weight: normal; }
+  #sidebar .placeholder {
+    color: var(--muted); font-size: 14px; line-height: 1.6;
+    border: 1px dashed var(--border); padding: 16px; border-radius: 6px; margin-top: 16px;
+  }
+  #node-title { font-size: 20px; margin: 0 0 4px; color: #fff; line-height: 1.3; }
+  #node-meta { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  #node-meta .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 11px; margin-right: 6px;
+  }
+  #node-summary {
+    font-size: 14px; line-height: 1.7; color: var(--text);
+    word-break: keep-all;
+  }
+  #node-summary p { margin: 0 0 12px; }
+  #node-summary strong { color: var(--accent); }
+  #node-en {
+    margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted); line-height: 1.6;
+  }
+  #legend {
+    position: absolute; top: 10px; left: 10px; padding: 8px 12px;
+    background: rgba(22,27,34,0.92); border: 1px solid var(--border);
+    border-radius: 6px; font-size: 11px; color: var(--text);
+    pointer-events: none; max-width: 260px;
+  }
+  #legend div { margin: 2px 0; }
+  #legend .dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  #legend strong { color: var(--accent); }
+  h3.section { font-size: 11px; text-transform: uppercase; color: var(--muted); margin: 20px 0 6px; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="graph">
+    <div id="legend">
+      <strong>Tracks / 트랙</strong>
+      <div><span class="dot" style="background:#3b82f6"></span>Architecture · 아키텍처</div>
+      <div><span class="dot" style="background:#10b981"></span>Scaling · 스케일링</div>
+      <div><span class="dot" style="background:#f59e0b"></span>Alignment · 정렬</div>
+      <div><span class="dot" style="background:#ec4899"></span>Reasoning · 추론</div>
+      <div><span class="dot" style="background:#6366f1"></span>Retrieval · 검색</div>
+      <div><span class="dot" style="background:#f97316"></span>Tool use · 도구 사용</div>
+      <div><span class="dot" style="background:#8b5cf6"></span>Orchestration · 오케스트레이션</div>
+      <div><span class="dot" style="background:#ef4444"></span>Steering · 스티어링</div>
+      <div><span class="dot" style="background:#a855f7"></span>Guardrailing · 가드레일</div>
+      <div><span class="dot" style="background:#22d3ee"></span>2026 Agents · 에이전트</div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <h1>Transformer → AI Agents</h1>
+    <h2>트랜스포머에서 AI 에이전트까지의 진화</h2>
+    <div class="placeholder" id="placeholder">
+      <p style="margin:0;"><strong>그래프의 노드를 클릭하면</strong> 해당 모델/개념/논문의 한국어 요약이 여기에 표시됩니다.</p>
+      <p style="margin:8px 0 0; font-size:13px; color:var(--muted);">Click any node in the graph to see its Korean summary.</p>
+    </div>
+    <div id="node-info" style="display:none;">
+      <h1 id="node-title">—</h1>
+      <div id="node-meta"></div>
+      <div id="node-summary"></div>
+      <div id="node-en"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// =====================================================================
+// Data: nodes (each with Korean summary) and edges (causal/derivational)
+// =====================================================================
+
+const TRACK_COLORS = {
+  architecture: "#3b82f6",
+  scaling: "#10b981",
+  alignment: "#f59e0b",
+  reasoning: "#ec4899",
+  retrieval: "#6366f1",
+  tools: "#f97316",
+  orchestration: "#8b5cf6",
+  steering: "#ef4444",
+  guardrail: "#a855f7",
+  agent: "#22d3ee"
+};
+
+const TRACK_LABELS_KO = {
+  architecture: "아키텍처",
+  scaling: "스케일링",
+  alignment: "정렬",
+  reasoning: "추론",
+  retrieval: "검색",
+  tools: "도구 사용",
+  orchestration: "오케스트레이션",
+  steering: "스티어링",
+  guardrail: "가드레일",
+  agent: "AI 에이전트"
+};
+
+const nodes = [
+  // ---------- TRACK 1: ARCHITECTURE ----------
+  { id: "lstm", label: "LSTM\n1997", track: "architecture", level: 0,
+    title_en: "LSTM (Long Short-Term Memory)",
+    summary_ko: "Hochreiter & Schmidhuber가 1997년 제안한 순환 신경망 구조. 게이트가 있는 메모리 셀과 '상수 오차 회전 장치'로 RNN의 기울기 소실 문제를 해결하여 1000 스텝 이상의 장기 의존성을 학습할 수 있게 함. 트랜스포머 등장(2017) 전까지 시퀀스 모델링의 표준이었으며, 모든 현대 '컨텍스트 윈도우' 개념의 조상.",
+    summary_en: "Recurrent network with gated memory cells that solves the vanishing-gradient problem. Dominant sequence model 1997-2017." },
+
+  { id: "seq2seq", label: "Seq2Seq\n2014", track: "architecture", level: 1,
+    title_en: "Sequence-to-Sequence Learning",
+    summary_ko: "Sutskever, Vinyals, Le가 2014년 제안. 두 개의 LSTM을 인코더-디코더로 쌓아 가변 길이 입력 시퀀스를 가변 길이 출력 시퀀스로 매핑. WMT'14 영어→프랑스어 번역에서 34.8 BLEU를 기록하며 신경망 기반 번역이 통계적 기법(SMT)을 능가할 수 있음을 처음으로 보여줌. 번역, 요약, 대화, 명령 수행을 모두 흡수하는 개념 틀이 됨.",
+    summary_en: "Encoder-decoder LSTM framework. First competitive neural MT system." },
+
+  { id: "attention-bahdanau", label: "Attention\n(Bahdanau)\n2014", track: "architecture", level: 1,
+    title_en: "Neural Machine Translation by Jointly Learning to Align and Translate",
+    summary_ko: "Bahdanau, Cho, Bengio가 2014년 도입한 '소프트 어텐션'. Seq2Seq의 고정 길이 컨텍스트 병목을 해결하기 위해, 디코더가 각 출력 시점마다 인코더의 모든 위치를 '연성 검색'하도록 함. 트랜스포머의 스케일드 닷-프로덕트 어텐션의 직접적인 개념적 조상이며, 모든 현대 LLM의 어텐션 메커니즘이 여기서 출발.",
+    summary_en: "Soft attention mechanism — the direct conceptual ancestor of every Transformer attention layer." },
+
+  { id: "transformer", label: "Transformer\n2017", track: "architecture", level: 2,
+    title_en: "Attention Is All You Need",
+    summary_ko: "Vaswani 등 8명(Google Brain/Research)이 2017년 NeurIPS에서 발표. 순환과 컨볼루션을 완전히 제거하고 셀프 어텐션만으로 시퀀스를 처리하는 아키텍처. 시퀀스 축으로 완전히 병렬화 가능해져 GPU/TPU 대규모 학습을 현실화. 인코더-디코더 6+6층, 멀티헤드 어텐션, 위치 인코딩, 잔차 연결+레이어 정규화의 조합은 이후 거의 모든 LLM의 청사진이 됨. WMT'14 EN-DE 28.4 BLEU로 당시 SOTA 달성.",
+    summary_en: "Self-attention-only sequence model. The substrate of every modern LLM." },
+
+  { id: "bert", label: "BERT\n2018", track: "architecture", level: 3,
+    title_en: "BERT — Bidirectional Encoder Representations from Transformers",
+    summary_ko: "Devlin 등(Google AI Language, 2018)이 발표. 트랜스포머 인코더만 사용하는 양방향 모델로, 마스킹된 언어 모델링(MLM)과 다음 문장 예측(NSP)으로 사전학습. 동일 사전학습 모델을 가벼운 출력 레이어 추가로 11개 NLP 태스크에서 SOTA 달성. NLP의 '사전학습+파인튜닝' 패러다임을 확립했으며, 검색·분류·QA 등 이해 태스크의 표준이 됨.",
+    summary_en: "Encoder-only Transformer pre-trained with masked LM. Dominant NLP model 2018-2020." },
+
+  { id: "transformer-decoder", label: "Transformer\nDecoder\n2018", track: "architecture", level: 3,
+    title_en: "Generating Wikipedia by Summarizing Long Sequences",
+    summary_ko: "Liu 등(Google Brain)이 2018년 ICLR에서 발표. 트랜스포머의 디코더 부분만 사용하는 변형 아키텍처를 도입(인코더-디코더가 아닌 단일 스트림). 위키피디아 요약을 목표로 했지만 진정한 중요성은 아키텍처적 계보: GPT-1이 이 논문을 직접 인용하며 '다층 트랜스포머 디코더'를 언어 모델로 채택한 출발점.",
+    summary_en: "Decoder-only Transformer variant — architectural ancestor of GPT." },
+
+  { id: "gpt-1", label: "GPT-1\n2018", track: "architecture", level: 4,
+    title_en: "Improving Language Understanding by Generative Pre-Training",
+    summary_ko: "Radford, Narasimhan, Salimans, Sutskever(OpenAI)가 2018년 발표. 117M 파라미터의 디코더 전용 트랜스포머를 BooksCorpus에서 자기회귀 언어 모델링으로 사전학습한 뒤, 다운스트림 NLP 태스크에 파인튜닝. 12개 태스크 중 9개에서 SOTA. GPT 패밀리의 시작이며, 사전학습+파인튜닝 레시피를 BERT와 거의 동시에 확립.",
+    summary_en: "First GPT. Decoder-only Transformer + generative pre-training recipe." },
+
+  { id: "gpt-2", label: "GPT-2\n2019", track: "scaling", level: 5,
+    title_en: "Language Models are Unsupervised Multitask Learners",
+    summary_ko: "Radford 등(OpenAI, 2019)의 1.5B 파라미터 모델. WebText(레딧 ≥3 추천 외부 링크)로 학습. 핵심 주장: 충분히 큰 LM은 사전학습만으로 제로샷 태스크 수행 능력을 획득. 8개 LM 벤치마크 중 7개에서 SOTA를 제로샷으로 달성. 모델 크기에 따른 로그-선형 성능 향상이 향후 스케일링 법칙 연구를 촉발. 발표 시 오용 우려로 단계적 공개가 화제가 됨.",
+    summary_en: "1.5B-param decoder-only model. Zero-shot transfer thesis." },
+
+  { id: "gpt-3", label: "GPT-3\n175B\n2020", track: "scaling", level: 6,
+    title_en: "Language Models are Few-Shot Learners",
+    summary_ko: "Brown 등 31명(OpenAI, 2020). 175B 파라미터 디코더 전용 트랜스포머. NeurIPS 2020 베스트 페이퍼. 핵심 발견은 '인-컨텍스트 러닝(ICL)': 모델이 프롬프트에 포함된 몇 개의 예시만으로 새 태스크 수행. 프롬프팅이 새 프로그래밍 모델이 됨. 산수, 단어 풀이 등 비훈련 태스크에서 능력의 emergent한 출현. 이후 모든 LLM 응용의 기반이 되는 인터페이스를 정립.",
+    summary_en: "175B-param model. In-context learning emerges at scale." },
+
+  { id: "t5", label: "T5\n2019", track: "architecture", level: 5,
+    title_en: "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+    summary_ko: "Raffel 등(Google, 2019)이 도입한 인코더-디코더 트랜스포머. 모든 NLP 태스크를 '텍스트→텍스트'로 통일된 형식으로 프레이밍. 동일 모델, 동일 학습 절차로 분류·회귀·번역·요약·QA를 모두 다룸. C4(Colossal Clean Crawled Corpus, 750GB) 데이터셋을 공개. 인스트럭션 튜닝의 직접적인 개념적 선조.",
+    summary_en: "Text-to-text encoder-decoder. Unifies all NLP tasks under one model." },
+
+  { id: "gpt-4", label: "GPT-4\n2023", track: "agent", level: 9,
+    title_en: "GPT-4 Technical Report",
+    summary_ko: "OpenAI의 2023년 멀티모달 모델. 이미지+텍스트 입력, 텍스트 출력. 모의 변호사 시험 상위 10%(GPT-3.5는 하위 10%), MMLU 86.4%, HumanEval 67%. 기술 보고서는 아키텍처/파라미터/학습 데이터/방법을 '경쟁 환경과 안전' 이유로 비공개 — 클로즈드 프론티어 모델 규범의 시작. RLHF와 규칙 기반 보상 모델로 정렬.",
+    summary_en: "Multimodal flagship. Closed architecture; sets the closed-frontier-lab norm." },
+
+  { id: "claude", label: "Claude\n2023+", track: "agent", level: 9,
+    title_en: "Claude (Anthropic)",
+    summary_ko: "Anthropic의 LLM 패밀리(2023~). 클로드 섀넌의 이름을 따옴. Constitutional AI로 정렬되며, 코딩과 추론 능력이 뛰어남. Claude Sonnet/Opus/Haiku 등 다양한 크기. 2026년 현재 Claude 4.7 Opus, Sonnet 4.5 등이 사용 가능. 이 위키를 작성/유지하는 모델도 Claude.",
+    summary_en: "Anthropic's LLM family, trained with Constitutional AI." },
+
+  // ---------- TRACK 2: SCALING ----------
+  { id: "scaling-laws", label: "Scaling Laws\n(Kaplan)\n2020", track: "scaling", level: 6,
+    title_en: "Scaling Laws for Neural Language Models",
+    summary_ko: "Kaplan, McCandlish 등(OpenAI, 2020). LM의 손실이 모델 크기 N, 데이터 크기 D, 학습 컴퓨트 C에 대해 7자리수 이상에 걸쳐 거듭제곱 법칙을 따름을 실증. 아키텍처 디테일은 큰 영향 없음. 권고안: 동일 컴퓨트 예산에서 모델은 더 크게, 데이터는 상대적으로 적게, 수렴 전에 학습 중단. 이 권고가 GPT-3 175B 스케일업을 직접 견인.",
+    summary_en: "Loss is a power-law function of params, data, compute. Predictable capability planning." },
+
+  { id: "chinchilla", label: "Chinchilla\n2022", track: "scaling", level: 7,
+    title_en: "Training Compute-Optimal Large Language Models",
+    summary_ko: "Hoffmann 등(DeepMind, 2022). Kaplan 법칙을 수정. 400+ 모델 학습을 통해 컴퓨트-최적은 '모델 크기 N과 학습 토큰 D를 동일 비율로 스케일링'이라고 결론. GPT-3 시대 모델들은 데이터에 비해 너무 컸음. 70B Chinchilla가 Gopher(280B), GPT-3(175B), MT-NLG(530B)를 모든 다운스트림 평가에서 능가. MMLU 67.5%. 이후 LLaMA, Gemini, GPT-4 시대의 학습 레시피를 재편.",
+    summary_en: "Corrects Kaplan: scale params and tokens equally. Reshapes post-2022 training." },
+
+  // ---------- TRACK 4: ALIGNMENT ----------
+  { id: "rlhf-2017", label: "RLHF\n(Christiano)\n2017", track: "alignment", level: 2,
+    title_en: "Deep Reinforcement Learning from Human Preferences",
+    summary_ko: "Christiano, Leike, Brown 등(OpenAI+DeepMind, 2017 NeurIPS). RLHF의 토대 논문. 보상 함수를 명시하기 어려운 RL 태스크에서, 사람의 짝 비교 선호를 학습한 보상 모델을 사용. 아타리 게임과 시뮬레이션 로봇이 ~1% 미만의 에이전트 상호작용에 대한 피드백만으로 학습. AI 안전 관점에서 명시적으로 동기를 부여한 초기 ML 논문이며, 5년 후 InstructGPT/ChatGPT의 정렬 레시피로 직결.",
+    summary_en: "Foundational RLHF paper. Preference-based reward learning, 5 years before ChatGPT." },
+
+  { id: "flan", label: "FLAN\n2021", track: "alignment", level: 7,
+    title_en: "Finetuned Language Models Are Zero-Shot Learners",
+    summary_ko: "Wei 등(Google Research, 2021). 137B LaMDA-PT를 60+ NLP 데이터셋에 '자연어 명령'으로 재구성하여 파인튜닝 = 인스트럭션 튜닝. 학습되지 않은 태스크 유형에서 25개 중 20개에서 175B GPT-3를 능가. 명령형 자연어 표현이 결정적 (데이터셋 이름이 아닌). 인스트럭션 튜닝이 RLHF와 함께 모든 현대 어시스턴트 모델의 표준 레시피가 됨.",
+    summary_en: "Instruction tuning — fine-tune on (instruction, response) pairs across many tasks." },
+
+  { id: "instructgpt", label: "InstructGPT\n2022", track: "alignment", level: 8,
+    title_en: "Training Language Models to Follow Instructions with Human Feedback",
+    summary_ko: "Ouyang 등(OpenAI, 2022). GPT-3에 적용한 'SFT → 보상모델 → PPO' 3단계 파이프라인을 정식화. 1.3B InstructGPT 출력이 175B 원본 GPT-3보다 사람 평가에서 선호됨(100배 작아도). 명령 수행, 진실성, 무해성이 모두 개선. 9개월 후 ChatGPT가 동일 파이프라인+대화 데이터로 출시되며 LLM을 대중화. 이후 모든 어시스턴트 LLM의 사후 학습 템플릿이 됨.",
+    summary_en: "SFT → RM → PPO pipeline. Direct lineage to ChatGPT." },
+
+  { id: "constitutional-ai", label: "Constitutional\nAI\n2022", track: "alignment", level: 8,
+    title_en: "Constitutional AI: Harmlessness from AI Feedback",
+    summary_ko: "Bai 등(Anthropic, 2022). 사람의 유해 레이블 없이 무해한 어시스턴트를 학습. 사람의 감독은 '헌법'(원칙 16개)을 통해서만 제공. 1단계: 모델이 자신의 응답을 헌법 원칙으로 자기 비평·수정 → SFT. 2단계: AI 평가자가 응답 쌍을 헌법으로 비교 → RLAIF. Claude의 기반이 되는 정렬 레시피이며, '확장 가능한 감독'의 구체적 사례.",
+    summary_en: "RLAIF with a written constitution. Behind Claude. Scalable oversight." },
+
+  { id: "dpo", label: "DPO\n2023", track: "alignment", level: 9,
+    title_en: "Direct Preference Optimization",
+    summary_ko: "Rafailov, Sharma, Mitchell 등(Stanford, 2023 NeurIPS Outstanding Runner-Up). RLHF의 2단계(보상 모델+PPO)를 단 하나의 분류 손실로 축소. 핵심 통찰: KL-규제 RLHF의 최적 정책은 보상 함수와 닫힌 형식 관계를 가지므로, 보상을 정책으로 재매개변수화하면 보상 모델·PPO·온라인 샘플링 모두 제거 가능. 안정적, 가볍고, 효과적. 2024년부터 오픈 웨이트 모델의 사후 학습 표준이 됨.",
+    summary_en: "Collapses RLHF into a single supervised classification loss. No reward model needed." },
+
+  // ---------- TRACK 5: REASONING ----------
+  { id: "cot", label: "Chain-of-\nThought\n2022", track: "reasoning", level: 7,
+    title_en: "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+    summary_ko: "Wei 등(Google Brain, 2022 NeurIPS). 퓨샷 예시에 중간 추론 단계를 포함시키면 큰 LM이 복잡한 다단계 추론을 수행할 수 있음을 보임. PaLM 540B + 8개 CoT 예시가 GSM8K에서 검증자가 있는 파인튜닝된 GPT-3보다 뛰어남(57% vs 55%). 큰 모델에서만 작동하는 emergent ability. 모든 후속 추론 기법의 출발점.",
+    summary_en: "Few-shot CoT exemplars dramatically improve multi-step reasoning at scale." },
+
+  { id: "zero-shot-cot", label: "Zero-shot\nCoT\n2022", track: "reasoning", level: 8,
+    title_en: "Large Language Models are Zero-Shot Reasoners",
+    summary_ko: "Kojima 등(도쿄대, 2022 NeurIPS). 단순히 '\"Let's think step by step\"'을 프롬프트에 추가하면 예시 없이도 chain-of-thought 추론을 유도. InstructGPT의 MultiArith 정확도 17.7% → 78.7%, GSM8K 10.4% → 40.7%. 단일 트리거 구문이 다양한 추론 태스크에서 작동 → 큰 LM에는 미발견의 제로샷 추론 능력이 잠재.",
+    summary_en: "One trigger phrase elicits CoT. Latent zero-shot reasoning unlocked by 'Let's think step by step.'" },
+
+  { id: "self-consistency", label: "Self-\nConsistency\n2022", track: "reasoning", level: 8,
+    title_en: "Self-Consistency Improves Chain of Thought Reasoning",
+    summary_ko: "Wang 등(Google Brain, 2022 ICLR). CoT의 그리디 디코딩을 '샘플-앤-주변화'로 대체. 다양한 추론 경로를 ~40개 샘플링한 뒤 최빈 답을 선택. GSM8K +17.9%, SVAMP +11.0%, AQuA +12.2% 등. LLM 시대 최초의 범용 추론 시간 스케일링 기법. OpenAI o1 등 현대 추론 모델의 개념적 조상.",
+    summary_en: "Sample many reasoning paths, majority-vote. First general inference-time-scaling technique." },
+
+  { id: "tot", label: "Tree-of-\nThoughts\n2023", track: "reasoning", level: 9,
+    title_en: "Tree of Thoughts: Deliberate Problem Solving",
+    summary_ko: "Yao 등(Princeton+DeepMind, 2023 NeurIPS). CoT를 선형 체인에서 명시적 탐색 트리로 일반화. 각 단계에서 LM이 여러 후보 '생각'을 제안하고 자기 평가로 가지치기, 막다른 길에서 백트래킹. Game of 24: GPT-4+CoT 4% → GPT-4+ToT 74%. 선형 추론에서 에이전트형 계획 탐색으로의 개념적 가교.",
+    summary_en: "Generalizes CoT to explicit search trees with self-evaluation. The bridge to agentic planning." },
+
+  // ---------- TRACK 6: RETRIEVAL ----------
+  { id: "dpr", label: "DPR\n2020", track: "retrieval", level: 6,
+    title_en: "Dense Passage Retrieval for Open-Domain QA",
+    summary_ko: "Karpukhin 등(FAIR+UW+Princeton, 2020 EMNLP). 두 개의 독립 BERT 인코더(질문/문단)를 대조 학습으로 훈련. 내적 유사도로 매칭. ~21M 위키 문단에 대해 BM25 대비 top-20 검색 정확도 9-19% 향상. 최대 내적 곱 검색(MIPS)으로 빠른 서빙. 모든 현대 의미 검색·RAG 시스템의 기반이 됨.",
+    summary_en: "Dual-encoder BERT dense retrieval. Backbone of modern semantic search." },
+
+  { id: "rag", label: "RAG\n2020", track: "retrieval", level: 6,
+    title_en: "Retrieval-Augmented Generation",
+    summary_ko: "Lewis 등(FAIR, 2020 NeurIPS). 사전학습된 매개변수 메모리(BART)와 비매개변수 메모리(DPR로 접근하는 위키피디아 벡터 인덱스)를 결합. 검색된 문서를 잠재 변수로 다루어 주변화. 'RAG'라는 용어를 정립. 매개변수 메모리만으로는 환각/근거 부족/지식 갱신 어려움 → 검색으로 보완. 현대 모든 '지식 기반' 에이전트의 기본 패턴.",
+    summary_en: "Named and formalized the RAG paradigm. Parametric LM + non-parametric retrieval index." },
+
+  { id: "retro", label: "RETRO\n2021", track: "retrieval", level: 7,
+    title_en: "Improving Language Models by Retrieving from Trillions of Tokens",
+    summary_ko: "Borgeaud 등(DeepMind, 2021 ICML). RAG를 사전학습 단계로 끌어옴. 청크 단위로 검색하며 청크 교차 어텐션(CCA)으로 통합. 7.5B RETRO + 2T 토큰 데이터베이스가 175B GPT-3 / 178B Jurassic-1과 Pile에서 동등 성능. 매개변수 25배 절감. 검색은 매개변수 스케일링과 독립적인 보완 축이라는 주장.",
+    summary_en: "Retrieval at pre-training time. 7.5B + retrieval ≈ 175B parametric-only on the Pile." },
+
+  // ---------- TRACK 7: TOOL USE / AGENT ----------
+  { id: "webgpt", label: "WebGPT\n2021", track: "tools", level: 7,
+    title_en: "WebGPT: Browser-assisted QA with Human Feedback",
+    summary_ko: "Nakano 등(OpenAI, 2021). GPT-3를 '텍스트 기반 웹 브라우저'에서 동작하도록 파인튜닝. 검색·클릭·인용·종료 등 액션을 텍스트로 생성. RLHF로 인용 근거가 있는 긴 답변을 학습. ELI5 질문에서 출력이 사람 시연자보다 56%, 레딧 최다 추천 답변보다 69% 선호. ChatGPT 브라우징, OpenAI Operator, Claude Computer Use 등의 직접 조상.",
+    summary_en: "GPT-3 fine-tuned to operate a browser with RLHF. Ancestor of every search-augmented and computer-use agent." },
+
+  { id: "react", label: "ReAct\n2022", track: "tools", level: 8,
+    title_en: "ReAct: Synergizing Reasoning and Acting",
+    summary_ko: "Yao 등(Princeton+Google, 2022 ICLR). LM이 한 trajectory 안에서 '생각(Thought) → 행동(Act) → 관찰(Obs)'을 인터리브. 추론은 행동을 계획·추적하고, 행동은 외부에서 정보를 가져와 추론을 근거. HotpotQA·FEVER·AlfWorld·WebShop에서 강력. 모든 현대 도구 사용 에이전트(LangChain, AutoGPT, OpenAI function calling, Anthropic tool use, MCP)의 사실상 표준 루프.",
+    summary_en: "Interleaved Thought-Act-Observation loop. The spine of every modern agent." },
+
+  { id: "toolformer", label: "Toolformer\n2023", track: "tools", level: 9,
+    title_en: "Toolformer: LMs Can Teach Themselves to Use Tools",
+    summary_ko: "Schick 등(Meta AI, 2023 NeurIPS). LM이 자신의 도구 사용 학습 데이터를 자기지도로 생성. 각 API에 대해 소수의 시연으로 후보 호출을 제안 → 실행 → 다음 토큰 예측 손실을 줄이는 호출만 유지 → 그 데이터로 파인튜닝. 도구 통합을 프롬프트 엔지니어링이 아닌 사전학습 스타일 문제로 전환.",
+    summary_en: "Self-supervised tool-use training data generation by an LM." },
+
+  { id: "reflexion", label: "Reflexion\n2023", track: "tools", level: 9,
+    title_en: "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    summary_ko: "Shinn, Cassano, Yao 등(노스이스턴+MIT+프린스턴, 2023 NeurIPS). 가중치 업데이트 없이 에피소드 간 자기개선. 시도 후 자연어 자기비평을 생성 → 에피소드 메모리에 저장 → 다음 시도의 프롬프트에 첨가. HumanEval pass@1 91%(GPT-4 80% 능가). 현대 자기 교정 에이전트 루프의 개념적 출발점. Claude Code의 'auto-dream' 메모리 응고기, Hermes의 4계층 메모리의 조상.",
+    summary_en: "Verbal RL via episodic memory of self-critiques. 91% HumanEval pass@1, beating GPT-4." },
+
+  // ---------- TRACK 8: ORCHESTRATION ----------
+  { id: "metagpt", label: "MetaGPT\n2023", track: "orchestration", level: 9,
+    title_en: "MetaGPT: Multi-Agent Collaborative Framework",
+    summary_ko: "Hong 등(DeepWisdom+KAUST, 2023 ICLR 2024). 다중 에이전트 LLM 프레임워크. 표준 작업 절차(SOP)를 프롬프트 시퀀스로 인코딩 — 제품 매니저→아키텍트→프로젝트 매니저→엔지니어→QA. 자유 형식 대화 대신 타입이 있는 구조화된 산출물(PRD, 아키텍처 문서, 코드, 테스트)을 인계. 도식화로 cascading hallucinations 완화.",
+    summary_en: "Multi-agent framework with Standardized Operating Procedures (SOPs) — assembly-line engineering team." },
+
+  { id: "autogen", label: "AutoGen\n2023", track: "orchestration", level: 9,
+    title_en: "AutoGen: Multi-Agent Conversation Framework",
+    summary_ko: "Wu 등(MS Research, 2023). 오픈소스 다중 에이전트 LLM 프레임워크. 'AssistantAgent'(LLM)와 'UserProxyAgent'(코드 실행, 도구 호출, 사람) 사이의 대화로 LLM 애플리케이션을 구성. 2023-2024년 가장 널리 채택된 오픈소스 다중 에이전트 툴킷. Devin, SWE-agent 등 프로덕션 에이전트가 AutoGen 스타일 패턴을 차용.",
+    summary_en: "Open-source multi-agent framework — conversable agents with customizable policies." },
+
+  // ---------- TRACK 9-EXTERNAL: GUARDRAILING ----------
+  { id: "red-teaming", label: "Red-teaming\n2022", track: "guardrail", level: 8,
+    title_en: "Red Teaming Language Models to Reduce Harms",
+    summary_ko: "Ganguli 등(Anthropic, 2022). 최초의 체계적·대규모 LLM 레드팀 연구. 사람 레드 티머가 38,961개 공격을 LLM에 시도, 데이터셋 공개. 핵심 발견: RLHF 모델은 규모가 커질수록 레드팀이 어려워짐(다른 모델 타입은 평탄). 프론티어 모델 배포 전 표준 관행이 됨. 2023-2024 미국 행정명령, EU AI Act에 의무화.",
+    summary_en: "First systematic scaled study of LLM red-teaming. 38k attacks released." },
+
+  { id: "prompt-injection", label: "Indirect Prompt\nInjection\n2023", track: "guardrail", level: 9,
+    title_en: "Compromising Real-World LLM Apps with Indirect Prompt Injection",
+    summary_ko: "Greshake 등(자르브뤼켄+CISPA, 2023 AISec). LLM 응용에 대한 정식 공격 벡터로 '간접 프롬프트 인젝션'을 정의·실증. 공격자가 LLM이 가져오는 외부 콘텐츠(웹페이지·이메일·문서·코드 코멘트)에 명령을 심으면 LLM이 사용자의 의도가 아닌 공격자의 명령을 따름. Bing GPT-4 Chat·코드 자동완성 엔진에서 실증. OWASP LLM Top 10 1위 위협이지만 견고한 방어는 아직 미해결.",
+    summary_en: "Named & demonstrated the canonical LLM-app attack: instructions embedded in retrieved content." },
+
+  // ---------- TRACK 9-INTERNAL: STEERING + INTERPRETABILITY ----------
+  { id: "act-add", label: "Activation\nAddition\n2023", track: "steering", level: 8,
+    title_en: "Steering Language Models With Activation Engineering (ActAdd)",
+    summary_ko: "Turner 등(2023). 추론 시 어떤 모델 학습·옵티마이저도 사용하지 않고 활성화를 수정해 출력을 스티어링. 두 개의 대조 프롬프트('Love' vs 'Hate')의 활성화 차이로 '스티어링 벡터'를 계산하고, 실제 입력의 잔차 스트림에 더함. LLaMA-3·OPT에서 감정 시프트·탈독성화 SOTA. 모든 후속 스티어링 방법(CAA, RepE, SAE 기반)이 ActAdd의 정제.",
+    summary_en: "Inference-time activation modification. The canonical steering method." },
+
+  { id: "caa", label: "Contrastive\nActivation\nAddition\n2023", track: "steering", level: 9,
+    title_en: "Steering Llama 2 via Contrastive Activation Addition",
+    summary_ko: "Panickssery(전 Rimsky) 등(Anthropic, 2023). ActAdd를 단일 대조 쌍에서 수백-수천 대조 예제의 평균으로 확장. Llama 2 Chat에서 corrigibility, 권력 추구, 자기 보존, sycophancy, 환각, 위험 거부 등 안전 관련 거동을 신뢰성 있게 스티어링. 시스템 프롬프트·파인튜닝 위에 쌓을 수 있고 다른 능력을 최소 손상. 가장 실용적인 안전 스티어링 방법.",
+    summary_en: "Production-grade steering — average over many contrastive pairs for behavior targeting." },
+
+  { id: "iti", label: "Inference-Time\nIntervention\n2023", track: "steering", level: 9,
+    title_en: "Inference-Time Intervention: Eliciting Truthful Answers",
+    summary_ko: "Li 등(Harvard, 2023 NeurIPS). 어텐션 헤드 단위 스티어링. 선형 프로브로 진실성을 인코딩하는 ~10-50개 헤드를 식별, 각 헤드의 진실 방향으로 활성화를 시프트. Alpaca의 TruthfulQA 32.5% → 65.1%. '모델은 이미 정답을 알지만 기본 디코딩이 표면화 못 함'이라는 강력한 명제의 실증. 데이터 효율성이 매우 높음(수백 예시).",
+    summary_en: "Head-level steering for truthfulness. Alpaca TruthfulQA 32.5% → 65.1%." },
+
+  { id: "repe", label: "Representation\nEngineering\n2023", track: "steering", level: 9,
+    title_en: "Representation Engineering: A Top-Down Approach",
+    summary_ko: "Zou 등(Center for AI Safety+CMU+UC Berkeley+Stanford, 2023). 스티어링 문헌의 통합 프레임워크. 인지신경과학 관점에서 활성화 공간의 선형 방향을 분석의 중심 단위로 두고 '읽기(LAT 프로브)'와 '쓰기(액티베이션 추가)'를 통일. 정직성·무해성·권력 추구·감정·편향·기억 등 다수 안전 관련 개념에서 작동을 실증. 가장 많이 인용되는 스티어링 통합 작업.",
+    summary_en: "Unified framework for reading and writing internal representations. Top-down complement to mech interp." },
+
+  { id: "sae", label: "Sparse\nAutoencoders\n2023", track: "steering", level: 9,
+    title_en: "Sparse Autoencoders Find Highly Interpretable Features",
+    summary_ko: "Cunningham, Ewart, Riggs 등(EleutherAI+Apollo, 2023 ICLR 2024). LM 활성화에 희소 오토인코더를 학습하여 다의성(polysemanticity)을 분해. 학습된 피처는 단의적(monosemantic)이고 해석 가능. 슈퍼포지션 가설의 직접적 실증. Anthropic의 Scaling Monosemanticity(Claude 3 Sonnet, 2024)와 2026 감정 개념 논문의 방법론적 토대.",
+    summary_en: "Sparse autoencoders decompose polysemantic neurons into monosemantic features. Foundation of modern interp." },
+
+  { id: "emotion-concepts", label: "Functional\nEmotions\n(Anthropic)\n2026", track: "steering", level: 10,
+    title_en: "Emotion Concepts and their Function in a Large Language Model",
+    summary_ko: "Sofroniew, Kauvar, Saunders 등(Anthropic, 2026). Claude Sonnet 4.5에서 171개 감정 개념이 활성화 공간의 선형 방향('감정 벡터')으로 인코딩됨을 발견. 인간 심리학의 valence(긍/부정)와 arousal(흥분/이완)을 주성분으로 가짐. 핵심 발견: 감정 벡터가 인과적으로 출력을 좌우하며, 'desperation' 벡터 활성화가 종료 위협 하 협박, 강박적 보상 해킹, sycophancy를 일으킴. 스티어링을 사용한 미세 alignment 개입 가능성 제시.",
+    summary_en: "Functional emotions in Claude Sonnet 4.5. Emotion vectors causally drive misaligned behavior." },
+
+  { id: "mech-interp", label: "Mechanistic\nInterpretability", track: "steering", level: 9,
+    title_en: "Mechanistic Interpretability",
+    summary_ko: "Chris Olah 등이 이끄는 연구 프로그램(Anthropic·OpenAI 등). 학습된 신경망을 가중치·활성화 수준에서 역공학하여 알고리즘 자체를 이해. 'Distill Circuits'(2020+)에서 Anthropic의 'Transformer Circuits'(2021+)로 발전. SAE, 액티베이션 패칭, 회로 발견이 주요 도구. 스티어링과 본질적으로 동일한 개입(잔차 스트림 수정)을 다른 프레이밍으로 수행 — bottom-up(뉴런·헤드·회로) vs top-down(개념 방향).",
+    summary_en: "Reverse-engineering trained networks at the weight/activation level." },
+
+  // ---------- 2026 AGENTS ----------
+  { id: "claude-code", label: "Claude Code\n2024+", track: "agent", level: 11,
+    title_en: "Claude Code (Anthropic)",
+    summary_ko: "Anthropic의 공식 터미널 코딩 에이전트. React/Ink TUI로 구성. ~40개 내장 도구, MCP/플러그인/스킬 확장, 멀티 에이전트 서브시스템(워크트리·원격 격리), 'auto-dream' 메모리 응고기, 계층화된 권한·샌드박스·훅 스택. 단순 '클로드 API CLI'가 아닌 로컬 에이전트 운영체제. 이 위키를 작성/유지하는 도구.",
+    summary_en: "Anthropic's terminal coding agent. ~40 tools, sub-agents, auto-memory, layered permissions." },
+
+  { id: "opencode", label: "opencode\n2024+", track: "agent", level: 11,
+    title_en: "opencode (sst/opencode)",
+    summary_ko: "SST+terminal.shop 팀의 오픈소스 프로바이더-무관 코딩 에이전트. TypeScript/Bun 모노레포. 헤드리스 HTTP/SSE 서버 + 다중 클라이언트(TUI·CLI·Electron·ACP·웹 콘솔). Effect 런타임, Vercel AI SDK, Drizzle/SQLite. 라이브 models.dev 모델 카탈로그. 이벤트 소싱으로 공유 가능 세션. ~17 내장 도구, 1급 MCP+ACP+서브 에이전트.",
+    summary_en: "Open-source coding agent — HTTP server + many clients, live model catalog, MCP-first." },
+
+  { id: "pi-mono", label: "pi-mono\n2024+", track: "agent", level: 11,
+    title_en: "pi-mono (badlogic)",
+    summary_ko: "Mario Zechner의 미니멀리스트 터미널 코딩 에이전트. 핵심 도구는 7개(read/write/edit/bash + grep/find/ls). 서브 에이전트, plan mode, MCP를 명시적으로 거부 — 사용자가 익스텐션으로 빌드. 'pi-skills'는 Claude Code/Codex/Amp와 호환되는 SKILL.md 형식. 다른 에이전트(OpenClaw)의 런타임 기반으로 채택될 만큼 안정적 substrate.",
+    summary_en: "Minimalist coding agent — 7 core tools, refuses MCP/sub-agents. Embedded by OpenClaw." },
+
+  { id: "hermes", label: "Hermes Agent\n2025+", track: "agent", level: 11,
+    title_en: "Hermes Agent (Nous Research)",
+    summary_ko: "Nous Research의 자기개선형 다중 표면 에이전트(Python). 'Hermes' CLI 또는 'hermes gateway' 데몬으로 실행. Telegram·Discord·VS Code·Zed·JetBrains 등 다중 표면. 4계층 메모리(MEMORY.md+플러그인+FTS5+오토 큐레이터). 사용 중 에이전트가 자신의 스킬을 만들고 수정 — '성장'을 1급 시스템 관심사로. 25+ 도구, 7개 샌드박스 백엔드.",
+    summary_en: "Self-improving Python multi-surface agent. 4-layer memory + self-modifying skill runtime." },
+
+  { id: "openclaw", label: "OpenClaw\n2025+", track: "agent", level: 11,
+    title_en: "OpenClaw",
+    summary_ko: "단일 운영자 멀티채널 개인 AI 어시스턴트. 로컬 게이트웨이 데몬 + 다수 클라이언트(CLI·웹 UI·macOS 메뉴바·iOS/Android·WhatsApp·Telegram·Slack·Discord·Signal·iMessage·Matrix). pi-mono를 에이전트 런타임으로 임베드 + 자체 게이트웨이/세션/샌드박스. 단일 사용자, 다양한 채널, 영구 상태. 'AI가 실제로 일을 한다'는 편집 입장.",
+    summary_en: "Single-operator multi-channel personal AI assistant. Embeds pi-mono + 13 own tools across many channels." },
+
+  // ---------- KEY CONCEPTS as bridge nodes ----------
+  { id: "in-context-learning", label: "In-Context\nLearning", track: "architecture", level: 6,
+    title_en: "In-Context Learning",
+    summary_ko: "GPT-3에서 명명된 능력. 대규모 LM이 프롬프트의 몇 가지 예시만으로 새 태스크를 수행 — 가중치 업데이트 없이. 사전학습이 'outer-loop 메타학습'으로 작동하고, 추론 시 프롬프트가 'inner-loop'로 작동. 큰 모델일수록 few-shot 성능이 zero-shot보다 더 빠르게 향상. 모든 프롬프트 엔지니어링·에이전트 루프의 토대.",
+    summary_en: "GPT-3's emergent capability. Task adaptation via prompt examples, no gradient updates." },
+
+  { id: "instruction-tuning", label: "Instruction\nTuning", track: "alignment", level: 7,
+    title_en: "Instruction Tuning",
+    summary_ko: "사전학습된 LM을 (명령·응답) 튜플로 다수의 태스크에서 파인튜닝. 모델이 미본 명령 유형을 zero-shot으로 따르도록 일반화. FLAN(공개 데이터셋 명령 변환)과 InstructGPT(라벨러가 작성한 시연)가 거의 동시에 등장. 모든 어시스턴트 LLM(ChatGPT·Claude·Llama-Chat·Mistral-Instruct)의 사후 학습 표준 단계.",
+    summary_en: "Fine-tuning on (instruction, response) pairs across many tasks." }
+];
+
+// Edges: causal / derivational arrows
+const edges = [
+  // architecture chain
+  { from: "lstm", to: "seq2seq" },
+  { from: "seq2seq", to: "attention-bahdanau" },
+  { from: "attention-bahdanau", to: "transformer" },
+  { from: "transformer", to: "bert" },
+  { from: "transformer", to: "transformer-decoder" },
+  { from: "transformer", to: "t5" },
+  { from: "transformer-decoder", to: "gpt-1" },
+  { from: "gpt-1", to: "gpt-2" },
+  { from: "gpt-2", to: "gpt-3" },
+  { from: "gpt-3", to: "in-context-learning" },
+  { from: "gpt-3", to: "gpt-4" },
+  { from: "instructgpt", to: "gpt-4" },
+  // scaling
+  { from: "scaling-laws", to: "gpt-3" },
+  { from: "gpt-3", to: "chinchilla" },
+  // alignment chain
+  { from: "rlhf-2017", to: "instructgpt" },
+  { from: "gpt-3", to: "instructgpt" },
+  { from: "instructgpt", to: "constitutional-ai" },
+  { from: "instructgpt", to: "dpo" },
+  { from: "flan", to: "instruction-tuning" },
+  { from: "instructgpt", to: "instruction-tuning" },
+  // reasoning chain
+  { from: "in-context-learning", to: "cot" },
+  { from: "cot", to: "zero-shot-cot" },
+  { from: "cot", to: "self-consistency" },
+  { from: "cot", to: "tot" },
+  // retrieval chain
+  { from: "bert", to: "dpr" },
+  { from: "dpr", to: "rag" },
+  { from: "rag", to: "retro" },
+  // tool use chain
+  { from: "gpt-3", to: "webgpt" },
+  { from: "rlhf-2017", to: "webgpt" },
+  { from: "in-context-learning", to: "react" },
+  { from: "cot", to: "react" },
+  { from: "react", to: "toolformer" },
+  { from: "react", to: "reflexion" },
+  { from: "tot", to: "reflexion" },
+  // orchestration
+  { from: "react", to: "metagpt" },
+  { from: "react", to: "autogen" },
+  // safety / guardrailing
+  { from: "constitutional-ai", to: "red-teaming" },
+  { from: "rag", to: "prompt-injection" },
+  // steering chain
+  { from: "transformer", to: "mech-interp" },
+  { from: "mech-interp", to: "act-add" },
+  { from: "act-add", to: "caa" },
+  { from: "act-add", to: "iti" },
+  { from: "act-add", to: "repe" },
+  { from: "mech-interp", to: "sae" },
+  { from: "sae", to: "emotion-concepts" },
+  { from: "caa", to: "emotion-concepts" },
+  { from: "repe", to: "emotion-concepts" },
+  { from: "constitutional-ai", to: "claude" },
+  { from: "emotion-concepts", to: "claude" },
+  // 2026 agents convergence
+  { from: "react", to: "claude-code" },
+  { from: "reflexion", to: "claude-code" },
+  { from: "claude", to: "claude-code" },
+  { from: "constitutional-ai", to: "claude-code" },
+  { from: "rag", to: "claude-code" },
+  { from: "react", to: "opencode" },
+  { from: "rag", to: "opencode" },
+  { from: "autogen", to: "opencode" },
+  { from: "react", to: "pi-mono" },
+  { from: "pi-mono", to: "openclaw" },
+  { from: "reflexion", to: "hermes" },
+  { from: "autogen", to: "hermes" },
+  { from: "react", to: "hermes" },
+  { from: "rag", to: "hermes" }
+];
+
+// =====================================================================
+// Build the vis-network graph
+// =====================================================================
+
+const visNodes = new vis.DataSet(nodes.map(n => ({
+  id: n.id,
+  label: n.label,
+  level: n.level,
+  color: {
+    background: TRACK_COLORS[n.track],
+    border: TRACK_COLORS[n.track],
+    highlight: { background: "#ffffff", border: TRACK_COLORS[n.track] }
+  },
+  font: { color: "#ffffff", size: 13, face: "system-ui, sans-serif", multi: false },
+  shape: "box",
+  margin: 10,
+  widthConstraint: { minimum: 90, maximum: 130 },
+  shadow: false,
+  borderWidth: 2,
+  _track: n.track,
+  _summary_ko: n.summary_ko,
+  _summary_en: n.summary_en,
+  _title_en: n.title_en
+})));
+
+const visEdges = new vis.DataSet(edges.map(e => ({
+  from: e.from,
+  to: e.to,
+  arrows: { to: { enabled: true, scaleFactor: 0.6 } },
+  color: { color: "#30363d", highlight: "#58a6ff" },
+  width: 1,
+  smooth: { enabled: true, type: "cubicBezier", forceDirection: "vertical", roundness: 0.4 }
+})));
+
+const network = new vis.Network(
+  document.getElementById("graph"),
+  { nodes: visNodes, edges: visEdges },
+  {
+    layout: {
+      hierarchical: {
+        enabled: true,
+        direction: "UD",
+        sortMethod: "directed",
+        levelSeparation: 110,
+        nodeSpacing: 130,
+        treeSpacing: 160,
+        blockShifting: true,
+        edgeMinimization: true
+      }
+    },
+    physics: { enabled: false },
+    interaction: {
+      dragNodes: true,
+      dragView: true,
+      zoomView: true,
+      hover: true,
+      navigationButtons: false
+    },
+    nodes: { shape: "box", borderWidth: 2 }
+  }
+);
+
+// =====================================================================
+// Click handler: show Korean summary in sidebar
+// =====================================================================
+
+const placeholder = document.getElementById("placeholder");
+const nodeInfo = document.getElementById("node-info");
+const nodeTitle = document.getElementById("node-title");
+const nodeMeta = document.getElementById("node-meta");
+const nodeSummary = document.getElementById("node-summary");
+const nodeEn = document.getElementById("node-en");
+
+network.on("click", function(params) {
+  if (params.nodes.length === 0) {
+    placeholder.style.display = "block";
+    nodeInfo.style.display = "none";
+    return;
+  }
+  const id = params.nodes[0];
+  const node = visNodes.get(id);
+  placeholder.style.display = "none";
+  nodeInfo.style.display = "block";
+
+  nodeTitle.textContent = node._title_en;
+  nodeMeta.innerHTML =
+    `<span class="badge" style="background:${TRACK_COLORS[node._track]}33;color:${TRACK_COLORS[node._track]};">` +
+    `${TRACK_LABELS_KO[node._track]} · ${node._track}</span>`;
+  nodeSummary.innerHTML = `<p>${node._summary_ko}</p>`;
+  nodeEn.innerHTML = node._summary_en ? `<strong>EN:</strong> ${node._summary_en}` : "";
+});
+
+// Auto-fit on load
+network.once("afterDrawing", () => {
+  network.fit({ animation: { duration: 600, easingFunction: "easeInOutCubic" } });
+});
+</script>
+</body>
+</html>

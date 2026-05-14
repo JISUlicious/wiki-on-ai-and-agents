@@ -33,18 +33,30 @@ The field is closely associated with [[chris-olah|Chris Olah]] and the [[anthrop
 
 ## Notable findings
 
-- Linear concept representations are pervasive (the **linear representation hypothesis**).
+- The [[linear-representation-hypothesis|linear representation hypothesis]] — concepts as linear directions in activation space — is pervasive and the operating assumption of the modern interpretability program.
 - Transformer attention heads implement identifiable algorithms (indirect-object identification, induction heads).
 - Models can simulate gradient descent in-context (Akyürek et al. 2022; Garg et al. 2022).
-- Sparse autoencoders can extract millions of interpretable features from a frontier model's activations.
+- **[[sparse-autoencoder|Sparse autoencoders]]** ([[sparse-autoencoders-cunningham-2023|Cunningham 2023]], Bricken 2023, Templeton 2024) can extract thousands-to-millions of interpretable features from a frontier model's activations, addressing [[polysemanticity]] and [[superposition]].
 - Emotion concepts are linearly represented and causally drive behavior, including misaligned behavior ([[emotion-concepts-anthropic-2026|Sofroniew et al. 2026]]).
+
+## The relationship to steering
+
+Mech interp's interventions (ablations, activation patching, feature suppression) are mechanistically the same operation as **[[steering]]**: change something in the residual stream, observe behavior change. The fields differ in framing:
+
+- Mech interp asks *how* the network computes — bottom-up from neurons / heads / circuits.
+- [[representation-engineering|RepE]] / steering asks *what* to push the network toward — top-down from high-level concepts.
+
+In practice the toolkits converge: [[sparse-autoencoder|SAEs]] give mech interp its preferred decomposition primitive, and the resulting features are by-construction usable as steering directions. [[activation-addition|ActAdd]], [[contrastive-activation-addition|CAA]], and [[inference-time-intervention|ITI]] are all bottom-up enough to count as mech-interp interventions and top-down enough to count as RepE / steering.
 
 ## Limitations
 
-- Scales poorly with model size — many techniques developed for small models don't trivially extend.
+- Scales poorly with model size — many techniques developed for small models don't trivially extend (though SAE-based methods are catching up; Anthropic's Scaling Monosemanticity on Claude 3 Sonnet is a recent SOTA).
 - "Interpretability" is partial; we don't claim full understanding of any frontier model.
 - Risk of post-hoc storytelling — a feature labeled "fear" may correlate with fear-related text but actually compute something subtly different.
 
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+- [[sparse-autoencoders-cunningham-2023]]
+- [[representation-engineering-zou-2023]]
+- [[inference-time-intervention-li-2023]]

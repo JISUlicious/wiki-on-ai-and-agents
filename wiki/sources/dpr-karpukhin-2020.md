@@ -11,10 +11,10 @@ authors:
   - Vladimir Karpukhin
   - Barlas Oğuz
   - Sewon Min
-  - Patrick Lewis
+  - "[[patrick-lewis]]"
   - Ledell Wu
   - Sergey Edunov
-  - Danqi Chen
+  - "[[danqi-chen]]"
   - Wen-tau Yih
 year: 2020
 tags:

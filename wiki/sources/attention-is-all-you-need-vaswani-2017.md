@@ -8,8 +8,8 @@ sources:
 arxiv_id: "1706.03762"
 venue: NeurIPS 2017
 authors:
-  - Ashish Vaswani
-  - Noam Shazeer
+  - "[[ashish-vaswani]]"
+  - "[[noam-shazeer]]"
   - Niki Parmar
   - Jakob Uszkoreit
   - Llion Jones

@@ -13,7 +13,7 @@ authors:
   - Roberto Dessì
   - Roberta Raileanu
   - Maria Lomeli
-  - Luke Zettlemoyer
+  - "[[luke-zettlemoyer]]"
   - Nicola Cancedda
   - Thomas Scialom
 first_author: Timo Schick

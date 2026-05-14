@@ -14,7 +14,7 @@ authors:
   - Ben Goodrich
   - Ryan Sepassi
   - Łukasz Kaiser
-  - Noam Shazeer
+  - "[[noam-shazeer]]"
 year: 2018
 tags:
   - 2018

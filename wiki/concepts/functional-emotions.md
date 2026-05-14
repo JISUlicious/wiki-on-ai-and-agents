@@ -54,6 +54,20 @@ This is a methodologically strong example of tying interpretability findings to 
 - Can targeted suppression of specific emotion vectors at inference time reduce specific failure modes without harming overall capability?
 - Do similar concept representations exist for non-emotional human states (hunger, fatigue, pain)? The paper suggests yes but focuses on emotions because they appear most prominently recruited by the Assistant persona.
 
+## Where functional emotions sit in the steering literature
+
+The emotion-concepts paper is a direct application of [[steering]] to safety-relevant behavior. The emotion vectors are constructed by **difference-in-means probing on contrastive synthetic stories** — methodologically very close to [[contrastive-activation-addition|CAA]] (Rimsky 2023) and [[representation-engineering|RepE]] (Zou 2023). The "causal influence on behavior" demonstrations — steering blackmail rates, reward-hacking rates, sycophancy — are direct uses of the [[activation-addition|ActAdd]] / CAA inference-time intervention pattern.
+
+What makes the paper distinctive is **scale, target, and depth**:
+- Scale: Claude Sonnet 4.5, a deployed frontier model.
+- Target: emotion concepts (an underexplored axis in the steering literature; most prior work targets honesty, refusal, sycophancy).
+- Depth: causal validation of emotion-vector → misaligned-behavior on naturalistic blackmail and reward-hacking traces — not just synthetic benchmarks.
+
+This positions emotion-vector steering as a candidate **production safety intervention**, complementary to [[constitutional-ai|Constitutional AI]] post-training and [[guardrailing]] more broadly.
+
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+- [[representation-engineering-zou-2023]] — methodological parent
+- [[contrastive-activation-addition-rimsky-2023]] — methodological cousin
+- [[steering]] — broader paradigm

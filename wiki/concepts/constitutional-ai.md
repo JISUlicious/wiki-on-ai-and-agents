@@ -50,6 +50,16 @@ Sources include the UN Universal Declaration of Human Rights, Apple's Terms of S
 - **Constitutional Pluralism** (Anthropic 2024+): different constitutions for different user contexts.
 - **Iterative CAI**: re-do the pipeline with the latest model as both judge and student.
 
+## CAI as a guardrail; steering as the complement
+
+CAI is a **training-time [[guardrailing|guardrail]]** — it shapes the model's preferences via constitutional principles before deployment. The complementary inference-time approach is **[[steering]]**: directly modify the trained model's activations to suppress harmful directions or amplify aligned ones. The two are not in tension; they target different surfaces.
+
+The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] makes the connection explicit: it shows that **CAI post-training measurably shifts the activation profile of emotion concepts** in Claude Sonnet 4.5 — moving the model toward lower-arousal, lower-valence emotion vectors. The safety effect of CAI training is partly implemented as something that *looks like* steering — except it's baked into weights rather than added at inference time. This convergence suggests CAI and explicit steering interventions are different views of a single underlying process.
+
+Future variants are likely to **mix the surfaces**: CAI-style training + targeted inference-time steering on safety-relevant feature directions ([[sparse-autoencoder|SAE]]-identified or [[contrastive-activation-addition|CAA]]-derived) at deployment time.
+
 ## References
 
 - [[constitutional-ai-bai-2022]]
+- [[emotion-concepts-anthropic-2026]] — CAI post-training shifts measurable in activation space
+- [[steering]] — complementary inference-time approach

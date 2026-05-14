@@ -12,7 +12,7 @@ authors:
   - Benjamin Mann
   - Nick Ryder
   - Melanie Subbiah
-  - Jared Kaplan
+  - "[[jared-kaplan]]"
   - Prafulla Dhariwal
   - Arvind Neelakantan
   - Pranav Shyam
@@ -35,10 +35,10 @@ authors:
   - Benjamin Chess
   - Jack Clark
   - Christopher Berner
-  - Sam McCandlish
-  - Alec Radford
-  - Ilya Sutskever
-  - Dario Amodei
+  - "[[sam-mccandlish]]"
+  - "[[alec-radford]]"
+  - "[[ilya-sutskever]]"
+  - "[[dario-amodei]]"
 year: 2020
 tags:
   - 2020

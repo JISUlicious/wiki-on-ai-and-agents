@@ -8,7 +8,7 @@ sources:
 arxiv_id: "1810.04805"
 venue: NAACL 2019
 authors:
-  - Jacob Devlin
+  - "[[jacob-devlin]]"
   - Ming-Wei Chang
   - Kenton Lee
   - Kristina Toutanova

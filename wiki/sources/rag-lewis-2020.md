@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2005.11401"
 venue: NeurIPS 2020
 authors:
-  - Patrick Lewis
+  - "[[patrick-lewis]]"
   - Ethan Perez
   - Aleksandra Piktus
   - Fabio Petroni

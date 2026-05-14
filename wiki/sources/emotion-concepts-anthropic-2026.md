@@ -22,7 +22,7 @@ authors:
   - Sam Zimmerman
   - Kelley Rivoire
   - Kyle Fish
-  - Chris Olah
+  - "[[chris-olah]]"
   - Jack Lindsey
 year: 2026
 tags:

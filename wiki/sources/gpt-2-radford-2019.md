@@ -8,12 +8,12 @@ sources:
 arxiv_id: null
 venue: OpenAI technical report
 authors:
-  - Alec Radford
+  - "[[alec-radford]]"
   - Jeffrey Wu
   - Rewon Child
   - David Luan
-  - Dario Amodei
-  - Ilya Sutskever
+  - "[[dario-amodei]]"
+  - "[[ilya-sutskever]]"
 year: 2019
 tags:
   - 2019

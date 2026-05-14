@@ -2,12 +2,53 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-05-14
+updated: 2026-05-15
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+---
+
+## [2026-05-15] ingest + query + visualization | Steering papers, transformer→agents synthesis, interactive graph
+
+**Ingest — 5 steering / interpretability papers (Track 9 of the evolution)**:
+- [[activation-engineering-turner-2023]] (Turner) — ActAdd, the canonical steering method
+- [[representation-engineering-zou-2023]] (Zou) — RepE framework, consolidates the field
+- [[sparse-autoencoders-cunningham-2023]] (Cunningham) — SAE foundation; addresses polysemanticity/superposition
+- [[contrastive-activation-addition-rimsky-2023]] (Panickssery/Rimsky) — CAA, production-grade safety steering
+- [[inference-time-intervention-li-2023]] (Li) — ITI, head-level truthfulness steering
+
+**New concept pages**: [[steering]] (umbrella), [[guardrailing]] (paired umbrella), [[activation-engineering]], [[activation-addition]], [[steering-vectors]], [[contrastive-activation-addition]], [[representation-engineering]], [[inference-time-intervention]], [[sparse-autoencoder]], [[polysemanticity]], [[superposition]], [[monosemanticity]], [[linear-representation-hypothesis]].
+
+**New entity pages**: [[alexander-matt-turner]], [[andy-zou]], [[dan-hendrycks]], [[center-for-ai-safety]], [[eleutherai]], [[fernanda-viegas]], [[martin-wattenberg]].
+
+**Updated existing pages with steering cross-references**: [[functional-emotions]], [[mechanistic-interpretability]], [[agentic-misalignment]], [[constitutional-ai]] — each now reflects how steering complements its existing safety/interpretability content.
+
+**Key conceptual addition**: [[steering]] and [[guardrailing]] are now paired as the two safety surfaces of AI alignment. Guardrailing operates externally (RLHF, CAI training, refusal filters, sandboxing, permissions); steering operates internally (activation addition, contrastive vectors, SAE features, ITI on attention heads). The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] becomes a natural showcase of the convergence: CAI training implements something that *looks like* steering in activation space.
+
+**Query**: comprehensive research on transformer→modern-agents evolutionary paths, filed at [[from-transformer-to-modern-agents]]. Identifies 9 tracks (architecture, scaling, pre-training, alignment, reasoning, retrieval, tool use, orchestration, steering+guardrailing) and shows how they compose in the 2026 agent products.
+
+**Visualization**: built an interactive web page at `scripts/evolution-graph.html` (single-file HTML using vis-network). 48 nodes, 63 edges, hierarchical layout (top→bottom by year/dependency). Color-coded by track. Each node shows a Korean (한국어) summary in a side panel when clicked. Designed as a teaching artifact alongside [[from-transformer-to-modern-agents]].
+
+**Pages**: now ~225 total. All wikilinks resolve (12 "broken links" reported by the regex check are false positives from Markdown table-cell `\|` escaping and one literal `[[wikilink]]` example string in this log).
+
+---
+
+## [2026-05-14] lint | Wiki health check
+
+Ran all 10 checks. Found: **26 errors, 0 warnings, 264+ suggestions**. **Auto-fixed all 26 errors.**
+
+**Errors (all fixed)** — bare-string `authors:` values in 16 source pages where the corresponding entity page exists. These were from the first batch ingest (before the typed-relations convention) and were converted to `"[[wikilink]]"` form via auto-fix.
+
+**Notable suggestions (not auto-fixed)**:
+- 81 draft pages — intentional stubs from passing-mention ingests; will be enriched on future ingests.
+- 183 single-source pages — expected for a young wiki; will diminish as more sources cross-reference.
+- 254 bare-string co-author names without corresponding entity pages — per convention, these stay as strings; promote to stubs only if the author appears in 3+ papers.
+- 7 "year-tag" promotion candidates (`2014`, `2018`, `2020`, `2021`, `2022`, `2023`, `2026`) — false positives. Per CLAUDE.md's "Year tags on sources" convention, year tags are *organizational* and intentionally have no corresponding page. Lint rule could be refined to exclude pure-numeric tags from promotion-candidate detection.
+
+**Clean checks**: 0 broken wikilinks, 0 orphan pages, 0 missing frontmatter, 0 unresolved contradictions, 0 tag-slug collisions, 0 over-tagged pages, 0 type/status/importance schema violations, all 72 entity pages have exactly one valid classification tag.
 
 ---
 

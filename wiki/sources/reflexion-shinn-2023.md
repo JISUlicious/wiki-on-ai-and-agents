@@ -13,7 +13,7 @@ authors:
   - Edward Berman
   - Ashwin Gopinath
   - Karthik Narasimhan
-  - Shunyu Yao
+  - "[[shunyu-yao]]"
 year: 2023
 tags:
   - 2023

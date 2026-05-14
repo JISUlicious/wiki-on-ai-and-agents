@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2201.11903"
 venue: NeurIPS 2022
 authors:
-  - Jason Wei
+  - "[[jason-wei]]"
   - Xuezhi Wang
   - Dale Schuurmans
   - Maarten Bosma

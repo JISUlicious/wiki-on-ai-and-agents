@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2210.03629"
 venue: ICLR 2023
 authors:
-  - Shunyu Yao
+  - "[[shunyu-yao]]"
   - Jeffrey Zhao
   - Dian Yu
   - Nan Du

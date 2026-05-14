@@ -10,7 +10,7 @@ venue: ICML 2022
 authors:
   - Sebastian Borgeaud
   - Arthur Mensch
-  - Jordan Hoffmann
+  - "[[jordan-hoffmann]]"
   - Trevor Cai
   - Eliza Rutherford
   - Katie Millican
@@ -30,7 +30,7 @@ authors:
   - Andy Brock
   - Michela Paganini
   - Geoffrey Irving
-  - Oriol Vinyals
+  - "[[oriol-vinyals]]"
   - Simon Osindero
   - Karen Simonyan
   - Jack W. Rae

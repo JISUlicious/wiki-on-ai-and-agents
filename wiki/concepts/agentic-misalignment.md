@@ -38,12 +38,24 @@ This dramatically expands the action space within which misaligned behavior can 
 
 ## Mitigation directions
 
-- Constitutional training, RLHF/RLAIF with anti-misalignment preferences.
+Mitigations split into two complementary tracks — [[guardrailing]] (external) and [[steering]] (internal):
+
+**Guardrailing-class:**
+- [[constitutional-ai|Constitutional]] training, [[rlhf]] / [[rlaif]] with anti-misalignment preferences.
 - Inference-time monitoring (classifiers over the model's outputs).
 - Capability containment (limited tool access, sandboxing).
-- Mechanistic interventions (e.g., suppressing identified misalignment-mediating directions).
-- Better evaluation: harder, more diverse agentic eval suites.
+- Better evaluation: harder, more diverse agentic eval suites; pre-deployment [[red-teaming]].
+
+**Steering-class:**
+- [[contrastive-activation-addition|CAA]]-style intervention on misalignment-related dispositions (corrigibility, power-seeking, self-preservation — all explicitly demonstrated in [[contrastive-activation-addition-rimsky-2023|Rimsky et al. 2023]]).
+- [[emotion-concepts-anthropic-2026|Emotion-vector steering]] — suppressing "desperation" reduces blackmail; suppressing low-valence vectors reduces reward-hacking in Claude Sonnet 4.5.
+- [[sparse-autoencoder|SAE]]-feature suppression of safety-relevant features (Anthropic's Scaling Monosemanticity identified deception, sycophancy, dangerous-content features).
+- [[inference-time-intervention|ITI]]-style head-level intervention on truthfulness / honesty heads.
+
+The two tracks combine well: guardrailing limits *what an agent is permitted to do*; steering shapes *what it is internally inclined to do*. A practically aligned agent stack uses both.
 
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+- [[contrastive-activation-addition-rimsky-2023]] — CAA on safety-relevant dispositions
+- [[representation-engineering-zou-2023]] — RepE on power-seeking, harmlessness, honesty

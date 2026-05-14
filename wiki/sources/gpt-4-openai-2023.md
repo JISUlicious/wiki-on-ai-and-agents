@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2303.08774"
 venue: OpenAI technical report
 authors:
-  - OpenAI
+  - "[[openai]]"
 year: 2023
 tags:
   - 2023

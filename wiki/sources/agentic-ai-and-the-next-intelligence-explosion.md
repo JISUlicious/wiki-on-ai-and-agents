@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2603.20639"
 venue: arXiv preprint
 authors:
-  - James Evans
+  - "[[james-evans]]"
   - Benjamin Bratton
   - Blaise Agüera y Arcas
 year: 2026

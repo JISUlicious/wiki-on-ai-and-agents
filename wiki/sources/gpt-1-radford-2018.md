@@ -8,10 +8,10 @@ sources:
 arxiv_id: null
 venue: OpenAI preprint
 authors:
-  - Alec Radford
+  - "[[alec-radford]]"
   - Karthik Narasimhan
   - Tim Salimans
-  - Ilya Sutskever
+  - "[[ilya-sutskever]]"
 year: 2018
 tags:
   - 2018
