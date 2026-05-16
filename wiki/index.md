@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-05-14
+updated: 2026-05-16
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 45 sources, 72 entities, 79 concepts, 1 comparison.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 58 sources, 72 entities, 93 concepts, 1 comparison.
 
 ## Entities
 
@@ -43,6 +43,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[hermes-agent]] — Nous Research's self-improving multi-surface agent
 - [[openclaw]] — Single-operator multi-channel personal AI assistant
 - [[faiss]] — Facebook AI Similarity Search library
+- [[openai-api]] — OpenAI's API (Chat Completions / Responses / Assistants) — function-calling reference implementation
+- [[vllm]] — High-throughput LLM inference engine; ~25 tool-call parsers
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -87,6 +89,21 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[patrick-lewis]] — RAG first author; DPR co-author
 - [[danqi-chen]] — DPR co-author; Princeton NLP
 
+### People — Steering / interpretability
+- [[alexander-matt-turner]] — ActAdd first author; activation engineering
+- [[andy-zou]] — Representation Engineering (RepE) first author
+- [[dan-hendrycks]] — Center for AI Safety director; RepE co-author
+- [[fernanda-viegas]] — Visualization researcher; Google PAIR
+- [[martin-wattenberg]] — Visualization researcher; Google PAIR / Harvard
+
+### People — Agent memory systems
+- [[charles-packer]] — MemGPT / Sleep-time Compute first author; Letta co-founder
+- [[ion-stoica]] — UC Berkeley Sky Computing director; Letta / Anyscale / Databricks co-founder
+- [[joon-sung-park]] — Generative Agents first author (Stanford 2023)
+- [[anima-anandkumar]] — Voyager senior author; Caltech / formerly NVIDIA
+- [[percy-liang]] — Stanford NLP / CRFM; Generative Agents co-author
+- [[bernal-jimenez-gutierrez]] — HippoRAG / HippoRAG 2 first author; OSU NLP
+
 ### People — Other
 - [[blaise-aguera-y-arcas]] — Google research VP; Paradigms of Intelligence team
 - [[james-evans]] — Computational social scientist; UChicago + Santa Fe Institute
@@ -100,12 +117,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[google-research]] — Google's broader research org
 - [[fair]] — Facebook AI Research / Meta AI
 - [[nous-research]] — Decentralized AI research collective; Hermes models / agent
+- [[center-for-ai-safety]] — CAIS, AI safety org (Hendrycks); RepE co-authorship
+- [[eleutherai]] — Open-source AI research collective (Pythia, etc.)
+- [[letta]] — Berkeley spinout productizing MemGPT; agent runtime with stateful memory
+- [[zep]] — Long-term memory infrastructure for LLM agents (Zep Cloud, Graphiti)
+- [[zed]] — Zed Industries; Rust collaborative editor; creator of the [[acp|Agent Client Protocol]]
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
 - [[stanford-university]] — Stanford NLP; many papers in this wiki
 - [[princeton-university]] — Princeton NLP
 - [[university-of-washington]] — UW NLP
+- [[uc-berkeley]] — EECS / Sky Computing Lab; origin of MemGPT and Sleep-time Compute
+- [[ohio-state-university]] — OSU NLP under Yu Su; HippoRAG / HippoRAG 2
+- [[caltech]] — Computing & Math Sciences; Voyager co-author institution (Anandkumar)
 
 ## Concepts
 
@@ -145,6 +170,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[rlhf]] — Reinforcement learning from human feedback
 - [[rlaif]] — RL from AI feedback (Constitutional AI)
 - [[dpo]] — Direct Preference Optimization (simplifies RLHF)
+- [[ppo]] — Proximal Policy Optimization (Schulman 2017); workhorse for LLM RL
+- [[grpo]] — Group Relative Policy Optimization (DeepSeek); group-normalized advantages
 - [[preference-modeling]] — Bradley-Terry preference learning
 - [[reward-modeling]] — Learning reward signals from preferences
 - [[constitutional-ai]] — Anthropic's harmlessness training method
@@ -163,6 +190,17 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Agents, tools, and orchestration
 - [[llm-agent]] — LLM in a perception-action loop with tools
+- [[agent-three-layer-model]] — Three-layer model (L1 LLM capabilities / L2 agent architecture / L3 implementation)
+- [[mcp]] — Model Context Protocol (Anthropic 2024): agent ↔ tool/data standard
+- [[acp]] — Agent Client Protocol (Zed 2025): agent ↔ editor standard
+- [[agent-skills]] — Anthropic Agent Skills: composable, progressively-disclosed capability modules
+- [[function-calling]] — The mechanism: LLM emits JSON tool-call request; app executes
+- [[responses-api]] — OpenAI Responses API (March 2025): unified Chat Completions + Assistants
+- [[tool-call-parser]] — Converts model output (varying syntax per family) to structured tool calls
+- [[structured-outputs]] — Forcing model output to a JSON schema via constrained decoding
+- [[constrained-decoding]] — Logit-mask grammar enforcement (xgrammar, outlines, lm-format-enforcer)
+- [[json-schema]] — IETF spec for describing JSON data; the format every tool definition uses
+- [[json-rpc]] — Stateless RPC protocol over JSON; transport substrate for MCP and ACP
 - [[tool-use]] — LLMs invoking external tools / functions
 - [[react]] — Interleaving reasoning and acting (Yao 2022)
 - [[reflexion]] — Verbal-RL agent improvement via self-reflection
@@ -182,6 +220,48 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[maximum-inner-product-search]] — MIPS / vector index serving
 - [[chunked-cross-attention]] — RETRO's mechanism for retrieved-chunk integration
 - [[open-domain-qa]] — Retriever + reader QA from a corpus
+
+### Memory management (2023–2026)
+
+**Umbrella + memory-primitive concepts:**
+- [[memory-management]] — Umbrella: write/store/retrieve/compact/consolidate/evict/curate lifecycle
+- [[memory-stream]] — Append-only NL memory log (Generative Agents)
+- [[reflection-mechanism]] — Periodic synthesis of higher-level memories
+- [[procedural-memory]] — Memory of skills / how-to (vs declarative facts)
+- [[skill-library]] — Growing collection of executable code skills (Voyager)
+- [[virtual-context]] — MemGPT's OS-paging-over-prompt abstraction
+- [[tiered-memory]] — Hot / warm / cold memory tiers
+- [[ebbinghaus-forgetting]] — Exponential forgetting curve applied to LLM memory
+- [[episodic-memory-llm]] — Event-based memory in agent designs
+- [[memory-evolution]] — A-MEM's pattern: new memories rewrite neighbors
+- [[zettelkasten-memory]] — A-MEM's note-taking-derived memory pattern
+- [[graph-memory]] — Memory as a relational graph
+- [[knowledge-graph]] — Entity/relation/entity triples; semantic web heritage
+- [[kv-cache]] — Transformer-internal cache; substrate of EM-LLM's episodic memory
+- [[long-context-llm]] — Very long context as memory representation
+- [[locomo]] — Long-term Conversational Memory benchmark (Maharana 2024)
+- [[bayesian-surprise-segmentation]] — EM-LLM's event boundaries via prediction-violation detection
+- [[test-time-memory]] — Memory updated during inference (Titans)
+- [[neural-long-term-memory]] — Memory stored in parameters; surprise-driven test-time updates (Titans)
+- [[offline-consolidation]] — Memory processing in idle time between queries (Sleep-time Compute)
+- [[multi-agent-memory]] — Memory subsystems specialized per memory type (MIRIX)
+- [[memory-construction]] — Building structured memory from a stream (Mem-α)
+- [[rl-memory-policy]] — RL-learned memory operations (Memory-R1)
+
+**Memory systems (one page per system):**
+- [[generative-agents]] — Memory stream + reflection, recency × importance × relevance retrieval (Park 2023)
+- [[memorybank]] — First principled forgetting policy (Ebbinghaus curve) (Zhong 2023)
+- [[voyager]] — Skill library as procedural memory (Wang 2023)
+- [[memgpt]] — OS-style tiered virtual context with function-call paging (Packer 2023)
+- [[em-llm]] — Bayesian-surprise event segmentation inside the KV-cache (Fountas 2024)
+- [[titans]] — Test-time parametric memory updates via surprise gradient (Behrouz 2025)
+- [[a-mem]] — Zettelkasten memory evolution (Xu 2025)
+- [[hipporag-2]] — Hippocampus/neocortex graph memory with Personalized PageRank (Jiménez Gutiérrez 2025)
+- [[sleep-time-compute]] — Offline consolidation between queries (Lin/Snell 2025)
+- [[mem0]] — Production-grade cross-session memory (Chhikara 2025)
+- [[mirix]] — Six-type, multi-agent, multimodal memory (Wang & Chen 2025)
+- [[memory-r1]] — RL-learned policy over ADD/UPDATE/DELETE/NOOP (Yan 2025)
+- [[mem-alpha]] — RL-learned memory construction with 13× length extrapolation (Wang 2025)
 
 ### Multimodal
 - [[multimodal-llm]] — LLMs accepting / producing multiple modalities
@@ -203,6 +283,21 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[red-teaming]] — Adversarial probing of LLMs
 - [[prompt-injection]] — LLM applications hijacked by attacker text
 - [[indirect-prompt-injection]] — Prompt injection via third-party content
+
+### Steering and interpretability (internal-mechanism safety)
+- [[steering]] — Umbrella: inference-time activation interventions
+- [[guardrailing]] — Paired umbrella: external boundary enforcement
+- [[activation-engineering]] — Activation-level intervention framework
+- [[activation-addition]] — Adding steering vectors to residual stream
+- [[steering-vectors]] — Learned direction vectors used for activation addition
+- [[contrastive-activation-addition]] — CAA: steering via contrastive pair differences
+- [[representation-engineering]] — RepE: top-down reading/writing of representations
+- [[inference-time-intervention]] — ITI: per-head intervention on truthful directions
+- [[sparse-autoencoder]] — Decomposes activations into sparse monosemantic features
+- [[polysemanticity]] — Single neuron responding to multiple unrelated features
+- [[superposition]] — Encoding more features than dimensions via interference
+- [[monosemanticity]] — Single neuron / feature with one consistent meaning
+- [[linear-representation-hypothesis]] — Concepts are linear directions in activation space
 
 ### Datasets and corpora
 - [[c4]] — Colossal Clean Crawled Corpus (T5)
@@ -259,6 +354,28 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[metagpt-hong-2023]] — MetaGPT (Hong et al. 2023)
 - [[autogen-wu-2023]] — AutoGen (Wu et al. 2023)
 
+### Steering / interpretability (2023)
+- [[activation-engineering-turner-2023]] — Activation Engineering / ActAdd (Turner et al. 2023)
+- [[contrastive-activation-addition-rimsky-2023]] — CAA (Rimsky/Panickssery et al. 2023)
+- [[representation-engineering-zou-2023]] — RepE (Zou et al. 2023)
+- [[inference-time-intervention-li-2023]] — ITI (Li et al. 2023)
+- [[sparse-autoencoders-cunningham-2023]] — SAE foundations (Cunningham et al. 2023)
+
+### Memory systems (2023–2025)
+- [[generative-agents-park-2023]] — Generative Agents: memory stream + reflection (Park et al. 2023)
+- [[memorybank-zhong-2023]] — MemoryBank: Ebbinghaus forgetting curve (Zhong et al. 2023)
+- [[voyager-wang-2023]] — Voyager: skill library as procedural memory (Wang et al. 2023)
+- [[memgpt-packer-2023]] — MemGPT: LLM as OS, tiered virtual memory (Packer et al. 2023)
+- [[em-llm-fountas-2024]] — EM-LLM: episodic memory inside KV-cache (Fountas et al. 2024)
+- [[titans-behrouz-2025]] — Titans: test-time parametric memory (Behrouz et al. 2025)
+- [[a-mem-xu-2025]] — A-MEM: Zettelkasten memory evolution (Xu et al. 2025)
+- [[hipporag2-jimenez-gutierrez-2025]] — HippoRAG 2: graph memory + PPR (Jiménez Gutiérrez et al. 2025)
+- [[sleep-time-compute-lin-2025]] — Sleep-time compute: offline consolidation (Lin & Snell 2025)
+- [[mem0-chhikara-2025]] — Mem0: production cross-session memory (Chhikara et al. 2025)
+- [[mirix-wang-2025]] — MIRIX: six-typed multi-agent memory (Wang & Chen 2025)
+- [[memory-r1-yan-2025]] — Memory-R1: RL-trained memory operations (Yan et al. 2025)
+- [[mem-alpha-wang-2025]] — Mem-α: RL-trained memory construction (Wang et al. 2025)
+
 ### Frontier-era (2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
 - [[agentic-ai-and-the-next-intelligence-explosion]] — Evans, Bratton, Agüera y Arcas (2026)
@@ -269,10 +386,21 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[openclaw-agent-doc-2026]] — OpenClaw architecture writeup
 - [[cross-agent-comparison-doc-2026]] — Five-agent comparison source
 
+### Agent interoperability protocols
+- [[model-context-protocol-anthropic-2024]] — Introducing MCP (Anthropic 2024-11-25)
+- [[agent-client-protocol-zed-2025]] — Agent Client Protocol page (Zed, Aug 2025)
+
+### Tool calling, structured outputs, agent skills (2024–2025)
+- [[anthropic-agent-skills-2025]] — Anthropic Agent Skills announcement (Oct 2025)
+- [[openai-function-calling-2025]] — OpenAI function-calling + Responses API guide
+- [[function-calling-llms-promptingguide]] — Conceptual guide: LLM emits JSON, app executes
+- [[vllm-tool-calling-2025]] — vLLM tool parsers, constrained decoding backends
+
 ## Comparisons
 
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
 
 ## Queries
 
-_No filed queries yet._
+- [[from-transformer-to-modern-agents]] — Nine evolutionary tracks from Transformer to 2026 agents
+- [[common-features-of-modern-agents]] — The 8 universal features shared by Claude Code / opencode / pi / Hermes / OpenClaw

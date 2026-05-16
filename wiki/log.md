@@ -2,12 +2,143 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-05-15
+updated: 2026-05-16
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+---
+
+## [2026-05-16] lint | Wiki health check + auto-fix (Level 3)
+
+Second-pass lint after today's MCP/ACP + tool-calling ingests. Broken wikilinks dropped 101 → 78 (-23%). Wiki healthy on all other dimensions: 0 orphans, 0 index inconsistencies, 0 frontmatter issues, 0 tag-hygiene violations, 0 entity-classification problems.
+
+**Auto-fixed (Level 3 — slug drifts + high-leverage stubs)**:
+- Fixed 2 slug drifts: `[[dense-passage-retrieval]]` → `[[dpr]]` (3 refs), `[[hong-metagpt-2023]]` → `[[metagpt-hong-2023]]` (1 ref).
+- Created 8 **memory-canon stubs** honoring `introduces:` typed-relation promises from earlier source ingests: [[zettelkasten-memory]], [[test-time-memory]], [[rl-memory-policy]], [[offline-consolidation]], [[neural-long-term-memory]], [[multi-agent-memory]], [[memory-construction]], [[bayesian-surprise-segmentation]]. All `status: draft`.
+- Created 4 **protocol / RL / schema stubs**: [[json-schema]] (8 inbound refs — the highest-leverage stub), [[json-rpc]] (transport for MCP+ACP), [[ppo]] (Schulman 2017), [[grpo]] (DeepSeek's group-normalized PPO variant).
+
+**Result**: ~30 of 78 broken refs resolved (~38%). Remaining broken refs are 1-2-ref external library/vendor names (gpt-4o, gemini, chatgpt, llama, neo4j, etc.) and singleton author/affiliation stubs — left as natural-ingest backfill targets.
+
+---
+
+## [2026-05-16] ingest | Tool calling, structured outputs, agent skills
+
+Ingested four canonical web sources covering the tool-calling layer of modern LLM agents:
+
+**Sources** (fetched, saved to `sources/`, summarized in `wiki/sources/`):
+- [[anthropic-agent-skills-2025]] — Anthropic's Oct 2025 announcement of Agent Skills (progressive disclosure, SKILL.md, agentskills.io open standard)
+- [[openai-function-calling-2025]] — OpenAI function calling + Responses API guide (March 2025)
+- [[function-calling-llms-promptingguide]] — Conceptual guide on function-calling mechanism
+- [[vllm-tool-calling-2025]] — vLLM tool parsers, structured output backends
+
+**New concept pages** (6):
+- [[agent-skills]] — Anthropic Agent Skills: 3-level progressive disclosure (metadata / body / supporting files), 4 properties (composability / portability / efficiency / power), cross-platform across Claude apps / Code / API / SDK
+- [[function-calling]] — primary concept page: LLM emits JSON tool-call request, application executes; terminology disambiguation (function calling vs tool use vs tool calls); L3 mechanism under L2 action surface in [[agent-three-layer-model]]
+- [[responses-api]] — OpenAI's March 2025 unified API (Chat Completions + Assistants merged); event-based streaming
+- [[tool-call-parser]] — extracting structured tool calls from divergent model output formats (JSON, XML, pythonic, proprietary); ~25 parsers in vLLM (`llama3_json`, `hermes`, `mistral`, `pythonic`, `deepseek_v3`, etc.)
+- [[structured-outputs]] — forcing model output to a JSON schema; syntactic validity guarantee, NOT semantic correctness; OpenAI `strict: true`
+- [[constrained-decoding]] — logit-mask grammar enforcement; backends: xgrammar (default 2025, 100× speedup), outlines, lm-format-enforcer, llguidance
+
+**New entity pages** (2 products):
+- [[openai-api]] — distinct from [[openai|the company]]; Chat Completions / Responses / Assistants endpoints
+- [[vllm]] — UC Berkeley-originated inference engine; ~25 tool-call parsers; OpenAI-compatible API
+
+**Updated existing pages** with cross-references:
+- [[skill-md-format]] — now points to [[agent-skills]] as the canonical Anthropic concept
+- [[tool-use]] — now points to [[function-calling]] as the dominant 2024-2026 mechanism
+
+**Key conceptual additions**:
+1. **Function calling is one specific mechanism for tool use** — fine-tuning teaches the model to emit JSON in a format the application can parse and execute. The model does NOT execute the function.
+2. **The tool-call parser is a non-trivial component** because there is no industry standard at the model-output layer — Llama uses JSON, Hermes/Qwen use XML tags, DeepSeek uses XML-wrapped JSON, pythonic models use Python list syntax. vLLM ships ~25 parsers to cover this divergence.
+3. **Structured outputs / constrained decoding** is the alternative: enforce schema at the decode step itself via logit masking. xgrammar made this near-zero-overhead in 2025.
+4. **Agent Skills** is a different design pattern from function calling — composable progressively-disclosed capability modules (not just function definitions). All 5 documented 2026 agents in this wiki already ship SKILL.md support.
+
+Wiki now ~297 pages.
+
+---
+
+## [2026-05-16] ingest | MCP + ACP — agent interoperability protocols
+
+Ingested two foundational agent-interop protocols both referenced repeatedly in [[agent-three-layer-model]] and [[cross-agent-comparison-2026]] but lacking dedicated pages:
+
+**Sources** (fetched from canonical pages):
+- [[model-context-protocol-anthropic-2024]] — Anthropic's MCP announcement + 2025 ecosystem evolution
+- [[agent-client-protocol-zed-2025]] — Zed's ACP overview + ecosystem
+
+**New concept pages**:
+- [[mcp]] — Model Context Protocol (agent ↔ tool/data; Anthropic 2024). Donated to AAIF/Linux Foundation Dec 2025.
+- [[acp]] — Agent Client Protocol (agent ↔ editor; Zed Aug 2025). Apache 2.0.
+
+**New entity page**:
+- [[zed]] — Zed Industries; creator of [[acp|ACP]], early [[mcp|MCP]] launch partner.
+
+**Key conceptual addition**: MCP and ACP are **complementary** protocols solving symmetrical N×M integration problems on opposite sides of the agent — MCP standardizes the *model-side* (agent ↔ tools/data); ACP standardizes the *UI-side* (agent ↔ editor). Modern coding agents speak both. The two protocols slot cleanly into L2 action surface in the [[agent-three-layer-model]].
+
+Both pages backfill broken wikilinks flagged in the 2026-05-16 lint pass (MCP had 4 references; Zed had 3; ACP had several).
+
+---
+
+## [2026-05-16] lint | Wiki health check + auto-fix (Level 3)
+
+**Found**: 101 broken wikilinks, 25 missing index entries (legacy steering batch), 3 slug-drift bugs, 1 malformed Obsidian anchor in [[steering]]. 27 newly-ingested pages (agent-memory canon) passed all frontmatter and tag-hygiene checks. No orphans, no over-tagged pages.
+
+**Auto-fixed (Level 3 — quick wins + entity stubs + high-leverage concept stubs)**:
+- Fixed 2 slug drifts (`[[chain-of-thought]]` → `[[chain-of-thought-prompting]]`; `[[wu-autogen-2023]]` → `[[autogen-wu-2023]]`) and the [[steering]] anchor link bug.
+- Synced 25 pre-existing steering / interpretability pages into `wiki/index.md` under new sub-sections (People — Steering/interpretability, Steering and interpretability concepts, Steering / interpretability sources).
+- Created 10 entity stubs: 6 people ([[charles-packer]], [[ion-stoica]], [[joon-sung-park]], [[anima-anandkumar]], [[percy-liang]], [[bernal-jimenez-gutierrez]]), 2 orgs ([[letta]], [[zep]]), 3 universities ([[uc-berkeley]], [[ohio-state-university]], [[caltech]]).
+- Created 14 high-leverage concept stubs: memory-primitive ([[memory-stream]], [[reflection-mechanism]], [[procedural-memory]], [[skill-library]], [[virtual-context]], [[tiered-memory]], [[ebbinghaus-forgetting]], [[episodic-memory-llm]], [[memory-evolution]]); supporting infrastructure ([[graph-memory]], [[knowledge-graph]], [[kv-cache]], [[long-context-llm]], [[locomo]]).
+
+**Result**: ~70 of 101 broken-link references resolved. Remaining ~30 broken links are low-leverage (1-2 refs each) and split between (a) supporting concepts not yet warranting their own page (`grpo`, `ppo`, `mcp`, `online-learning`, `function-calling`, `active-retrieval`) and (b) 1-ref people/orgs/universities from the long author lists. Deferred to a future ingest. Wiki is now ~277 pages.
+
+---
+
+## [2026-05-16] query + concept | Agent three-layer model
+
+Iterative critique of [[common-features-of-modern-agents]] produced a sharper architectural framework: a three-layer model separating L1 LLM capabilities (instruction-following, alignment, ICL, reasoning, emergent), L2 agent architecture (control flow / action surface / context assembly / memory management / persistence / harness), and L3 implementations (ReAct, MCP, SKILL.md, CLAUDE.md auto-load, sandboxing, hooks, etc.). Key refinements: alignment moved L2→L1 (it's a model property); ReAct moved L2→L3 (it's one implementation of the abstract percept→decide→act loop); "guardrail" replaced by "harness" (bidirectional shaping — block harmful AND drive toward goals — terminology from AI evals literature). Filed as [[agent-three-layer-model]]. Notable cross-cutters identified: skills, hooks, MCP.
+
+---
+
+## [2026-05-16] query | Common features of modern agents
+
+Question: "what are most important features of modern agents shares in common?" Filed as [[common-features-of-modern-agents]]. Identifies 8 universal features across the five 2026 agents (Transformer LLM backbone, RLHF/CAI alignment, ReAct loop, SKILL.md interop, hierarchical file memory, session persistence, lexical-first retrieval, tool API + permissions) and contrasts with 2 features that are *not* yet baseline (MCP, sub-agents). Key pages consulted: [[cross-agent-comparison-2026]], [[claude-code-agent-doc-2026]], [[opencode-agent-doc-2026]], [[pi-mono-agent-doc-2026]], [[hermes-agent-doc-2026]], [[openclaw-agent-doc-2026]], [[memory-management]].
+
+---
+
+## [2026-05-16] ingest | Memory-management canon — 13 papers, 14 concepts
+
+**Motivation**: the existing retrieval/RAG content was dense-retrieval-heavy and treated memory as a synonym for retrieval. This ingest pivots the framing — *memory management* is the umbrella (write/store/retrieve/compact/consolidate/evict/curate); retrieval is one operation within it.
+
+**13 new source pages** (none of these existed before; Reflexion was already ingested separately):
+
+Foundation era (2023):
+- [[generative-agents-park-2023]] — memory stream + reflection + recency × importance × relevance retrieval
+- [[memorybank-zhong-2023]] — first principled forgetting policy (Ebbinghaus curve)
+- [[voyager-wang-2023]] — skill library as procedural memory
+- [[memgpt-packer-2023]] — OS-style tiered virtual memory; LLM emits function calls to page memory
+
+Recent era (2024–2025):
+- [[em-llm-fountas-2024]] — Bayesian-surprise event segmentation inside the KV-cache (ICLR 2025)
+- [[titans-behrouz-2025]] — test-time parametric memory updates via surprise gradient (Google Research)
+- [[a-mem-xu-2025]] — Zettelkasten-style memory evolution; neighbor rewrites
+- [[hipporag2-jimenez-gutierrez-2025]] — hippocampus/neocortex graph memory with Personalized PageRank
+- [[sleep-time-compute-lin-2025]] — offline consolidation between queries (5× test-time compute reduction; Letta/Berkeley)
+- [[mem0-chhikara-2025]] — production-grade cross-session memory; ECAI 2025
+- [[mirix-wang-2025]] — six memory types × dedicated agent each × multimodal (LOCOMO SOTA 85.4%)
+- [[memory-r1-yan-2025]] — RL-trained policy over `{ADD, UPDATE, DELETE, NOOP}`; learns *when to forget*
+- [[mem-alpha-wang-2025]] — RL-trained memory *construction* (vs editing); 30k → 400k+ extrapolation
+
+**1 new umbrella concept page**: [[memory-management]] — lifecycle vocabulary, design axes (external store vs parametric, flat vs structured, heuristic vs learned, single-agent vs multi-agent, memory typology), and the 2023→2026 arc.
+
+**13 new system concept pages** (one per system, ~50 lines each, system-as-node-in-the-graph): [[memgpt]], [[memorybank]], [[a-mem]], [[voyager]], [[generative-agents]], [[sleep-time-compute]], [[em-llm]], [[titans]], [[hipporag-2]], [[mem0]], [[mirix]], [[memory-r1]], [[mem-alpha]].
+
+**Key conceptual addition**: the **physical substrate axis** for memory — external store (MemGPT/Mem0/A-MEM/MIRIX), KV-cache-internal (EM-LLM), parametric/weights (Titans), graph-indexed (HippoRAG 2). And the **learned-vs-heuristic axis** — heuristic ops in Mem0/A-MEM vs RL-trained ops in Memory-R1 (editing) and Mem-α (construction).
+
+**Visualization**: `scripts/evolution-graph.html` retrieval node previously rewritten as a "Memory Management" node — the 13 papers are listed in its Key Papers section (split into Foundation 2023 / Recent 2024–2026).
+
+**Pages**: ~252 total (was ~225). Still all wikilinks should resolve modulo a small number of intentional forward links to entity pages (people, orgs) and minor concepts that lint can promote.
 
 ---
 

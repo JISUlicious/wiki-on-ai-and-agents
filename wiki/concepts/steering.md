@@ -18,7 +18,7 @@ importance: high
 
 Steering is the practice of **influencing a language model's behavior by intervening in its internal activations at inference time**, rather than via prompting, fine-tuning, or external output filters. Where [[rlhf|RLHF]] and [[constitutional-ai|Constitutional AI]] change *what the model is*, and prompt engineering changes *what the model is told*, steering changes *what the model is computing* — by reaching inside the forward pass and pushing the residual stream (or specific attention heads) along learned directions.
 
-Steering is the **internal-mechanism counterpart to [[#Guardrailing — the external counterpart|guardrailing]]**. Guardrails restrict from the outside (refuse harmful queries, sanitize outputs, sandbox tool calls). Steering shapes from the inside (push activations away from the "deceptive" direction, suppress the "desperation" emotion vector). The two are complementary, not competing.
+Steering is the **internal-mechanism counterpart to [[guardrailing]]**. Guardrails restrict from the outside (refuse harmful queries, sanitize outputs, sandbox tool calls). Steering shapes from the inside (push activations away from the "deceptive" direction, suppress the "desperation" emotion vector). The two are complementary, not competing.
 
 ## The core operation
 

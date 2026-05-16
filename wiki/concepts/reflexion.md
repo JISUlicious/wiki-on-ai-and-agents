@@ -59,6 +59,16 @@ Reflexion is part of a broader pattern of **self-critique / self-revision** prom
 - Constitutional AI (Anthropic 2022) — LLM critiques itself against principles during training.
 - Reasoning models (OpenAI o1, Claude reasoning, 2024–) — internal CoT/reflection learned via RL.
 
+## Relation to memory management
+
+Reflexion was the earliest of the canonical [[memory-management|memory-management]] works. It owns the *write* + *episodic memory across attempts* operations but does no compaction, eviction, consolidation, or curation — the reflection buffer just grows. Later systems address the gaps:
+
+- [[generative-agents]] adds reflection-as-consolidation (summarizing many observations into higher-level memories).
+- [[memorybank]] adds principled forgetting (Ebbinghaus decay).
+- [[memgpt]] adds tiered storage and eviction.
+- [[memory-r1]] turns the operations themselves into a learned RL policy, including a learned `DELETE`.
+
 ## References
 
 - [[reflexion-shinn-2023]]
+- [[memory-management]] — Reflexion's place in the broader lifecycle

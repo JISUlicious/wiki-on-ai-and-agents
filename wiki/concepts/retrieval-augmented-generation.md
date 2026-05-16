@@ -54,7 +54,9 @@ Common variations:
 - **In-context learning** ([[in-context-learning]]): user puts examples in the prompt manually. RAG is the automated, retrieval-driven version.
 - **Tool use** (e.g. [[react|ReAct]]): the model itself emits retrieval queries as part of reasoning. RAG is a special case where retrieval is unconditional and fixed.
 - **Fine-tuning on the corpus**: bakes knowledge into weights; complementary to retrieval, not a substitute.
+- **[[memory-management|Memory management]]**: RAG covers only the *retrieve* step of a fuller lifecycle (write/store/retrieve/compact/consolidate/evict/curate). Modern agent memory systems — [[memgpt]], [[mem0]], [[a-mem]], [[mirix]] — extend beyond RAG by managing how memories are written, edited, forgotten, and consolidated over time. RAG remains the underlying retrieval primitive, but it is not the whole problem.
 
 ## References
 
 - [[rag-lewis-2020]]
+- [[memory-management]] — RAG as one operation in a broader memory lifecycle

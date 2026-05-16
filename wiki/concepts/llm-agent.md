@@ -39,12 +39,17 @@ Many variants exist:
 
 ## Memory
 
-Beyond the immediate context window:
+Beyond the immediate context window, agents manage memory across an explicit lifecycle — see [[memory-management]] for the full vocabulary (write/store/retrieve/compact/consolidate/evict/curate) and canonical works. Common substrates:
 
 - **Scratchpad**: in-context working memory, lost between sessions.
 - **Vector store** (semantic memory): retrieve relevant past observations via embedding similarity.
-- **Structured memory** (key-value stores, databases): explicit reads/writes.
-- **Long-context**: 1M+ token windows reduce the need for external memory for short-to-medium tasks.
+- **Structured memory** (key-value stores, databases): explicit reads/writes — see [[memgpt]], [[mem0]].
+- **Graph memory**: relational stores with PPR-style retrieval — see [[hipporag-2]], [[a-mem]].
+- **Procedural memory**: skill libraries the agent grows over time — see [[voyager]].
+- **Multi-typed memory**: Core / Episodic / Semantic / Procedural / Resource / Vault — see [[mirix]].
+- **Parametric/online**: weights updated at test time as memory — see [[titans]].
+- **KV-cache-internal**: episodic structure inside the context cache — see [[em-llm]].
+- **Long-context**: 1M+ token windows reduce the need for external memory for short-to-medium tasks (but the lifecycle questions remain).
 
 ## Production state (as of 2026)
 

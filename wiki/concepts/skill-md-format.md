@@ -2,20 +2,24 @@
 title: SKILL.md Format (Agent Skills)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-05-16
 sources:
   - claude-code.md
   - opencode.md
   - pi-mono.md
   - hermes-agent.md
   - openclaw.md
+  - anthropic-agent-skills-2025.md
 status: complete
 importance: high
 ---
 
 # SKILL.md Format (Agent Skills)
 
-A simple markdown-with-frontmatter file format for **packaging reusable agent capabilities** ("skills") that any LLM-agent runtime can load. Originated as **Anthropic's Agent Skills v1** specification (deployed in [[claude-code|Claude Code]]) and has become the **de-facto cross-agent interop standard** as of 2026.
+> [!note] Canonical concept
+> This page covers the **file format** as a cross-agent interop artifact. For Anthropic's full architecture (three-level progressive disclosure, cross-platform availability, governance, open-standard at agentskills.io), see **[[agent-skills]]**.
+
+A simple markdown-with-frontmatter file format for **packaging reusable agent capabilities** ("skills") that any LLM-agent runtime can load. Originated as **Anthropic's Agent Skills v1** specification (announced 2025-10-16 — see [[anthropic-agent-skills-2025]] — and deployed in [[claude-code|Claude Code]]) and has become the **de-facto cross-agent interop standard** as of 2026.
 
 ## Format
 

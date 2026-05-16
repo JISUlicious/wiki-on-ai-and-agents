@@ -40,6 +40,11 @@ The dominant dense-retrieval recipe was crystallized by [[dpr-karpukhin-2020|DPR
 
 Dense retrieval is the retriever component of most modern [[rag|RAG]] systems.
 
+## Position in modern agent memory
+
+Dense retrieval is *one* implementation of the **retrieve** step in the broader [[memory-management]] lifecycle. In practice, 2026 coding agents lean more heavily on lexical/sparse retrieval ([[bm25]], grep, ripgrep, SQLite FTS5) because code is exact-match-heavy. Dense retrieval appears as one layer among several — e.g. as `memory-lancedb` in Hermes Agent's four-layer memory stack, or as the embedding similarity stage in [[generative-agents]]' recency × importance × relevance triad. Systems like [[hipporag-2]] replace flat-embedding dense retrieval with graph-indexed Personalized PageRank for better cross-document recall on associative tasks.
+
 ## References
 
 - [[dpr-karpukhin-2020]]
+- [[memory-management]] — dense retrieval as one operation in a broader lifecycle
