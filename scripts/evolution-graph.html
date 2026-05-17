@@ -6,16 +6,20 @@
 <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 <style>
   :root {
-    --bg: #0e1117;
-    --panel: #161b22;
-    --border: #30363d;
-    --text: #c9d1d9;
-    --muted: #8b949e;
-    --accent: #58a6ff;
-    --l0: #a855f7;
-    --l1: #3b82f6;
-    --l2: #f59e0b;
-    --l3: #10b981;
+    /* Warm LIGHT palette for UI chrome — user-supplied */
+    --bg: #EFDFCC;          /* cream — main bg + graph canvas */
+    --panel: #D4C2AD;       /* tan — sidebar / nav / toolbar */
+    --border: #BA8E7A;      /* rose-brown — borders */
+    --text: #2D1F15;        /* deep warm brown — body text (for AA on cream) */
+    --muted: #66796B;       /* sage — muted text */
+    --accent: #66796B;      /* sage — active / highlight (readable on cream) */
+    --peach: #D7A184;       /* peach — hover-bg tint */
+    /* Node-color defaults — applyTheme() in <script> overwrites these from THEME.nodes
+       at runtime. Kept in sync to avoid a wrong-palette flash on first paint. */
+    --l0: #C5A244;          /* gold   */
+    --l1: #789342;          /* olive  */
+    --l2: #EC7771;          /* coral  */
+    --l3: #F26513;          /* orange */
   }
   * { box-sizing: border-box; }
   html, body {
@@ -44,10 +48,10 @@
     transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
   #topnav .nav-btn:hover {
-    background: rgba(56,139,253,0.10); border-color: var(--accent); color: var(--accent);
+    background: rgba(215,161,132,0.30); border-color: var(--accent); color: var(--accent);
   }
   #topnav .nav-btn.active {
-    background: rgba(56,139,253,0.18); border-color: var(--accent); color: var(--accent);
+    background: rgba(215,161,132,0.55); border-color: var(--accent); color: var(--accent);
     font-weight: 600;
   }
   #app {
@@ -69,7 +73,7 @@
   }
   #sidebar-resizer:hover,
   #sidebar-resizer.dragging {
-    background: rgba(56,139,253,0.20);
+    background: rgba(215,161,132,0.50);
     border-color: var(--accent);
   }
   body.resizing-sidebar { cursor: col-resize; user-select: none; }
@@ -110,7 +114,7 @@
     margin-top: 10px;
     border: 1px solid var(--border);
     border-radius: 6px;
-    background: rgba(13, 17, 23, 0.4);
+    background: rgba(212,194,173,0.50);
     overflow: hidden;
   }
   #node-detail details summary {
@@ -127,7 +131,7 @@
     transition: transform 0.2s; color: var(--muted);
   }
   #node-detail details[open] summary::before { transform: rotate(90deg); }
-  #node-detail details summary:hover { background: rgba(56,139,253,0.08); color: var(--accent); }
+  #node-detail details summary:hover { background: rgba(215,161,132,0.25); color: var(--accent); }
   #node-detail details summary .count {
     color: var(--muted); font-weight: 400; font-size: 11px; margin-left: 4px;
   }
@@ -136,7 +140,7 @@
   }
   #node-detail details ul.items li {
     padding: 6px 8px; margin: 4px 0; font-size: 12px;
-    border-left: 2px solid var(--border); background: rgba(13,17,23,0.5);
+    border-left: 2px solid var(--border); background: rgba(212,194,173,0.60);
     border-radius: 0 4px 4px 0;
     line-height: 1.55;
     transition: background 0.15s, border-color 0.15s;
@@ -146,12 +150,12 @@
     cursor: pointer;
   }
   #node-detail details ul.items li[data-l3-id]:hover {
-    background: rgba(56,139,253,0.10);
+    background: rgba(215,161,132,0.30);
     border-left-color: var(--accent);
   }
   #node-detail details ul.items li.pinned {
     border-left-color: var(--l3);
-    background: rgba(16,185,129,0.10);
+    background: rgba(132,204,22,0.10);
   }
   #node-detail details ul.items li.pinned .pin-marker {
     color: var(--l3); margin-left: 4px; font-size: 10px;
@@ -177,7 +181,7 @@
   #node-detail details ul.items li.pinned .l3-body { display: block; }
   #node-detail .l3-body details {
     margin-top: 6px;
-    background: rgba(13, 17, 23, 0.5);
+    background: rgba(212,194,173,0.60);
   }
   #node-detail .l3-body details summary {
     padding: 5px 10px; font-size: 11px;
@@ -195,17 +199,17 @@
   #node-detail .crosscut-chip {
     display: inline-block; margin-left: 6px; padding: 1px 6px;
     border-radius: 8px; font-size: 10px; font-weight: 400;
-    background: rgba(168,85,247,0.15); color: #c4b5fd;
+    background: rgba(217,70,239,0.15); color: #f0abfc;
   }
 
   #pin-hint {
     font-size: 11px; color: var(--muted); margin-top: 10px;
-    padding: 8px 10px; background: rgba(16,185,129,0.05);
+    padding: 8px 10px; background: rgba(132,204,22,0.05);
     border-left: 2px solid var(--l3); border-radius: 0 4px 4px 0;
   }
   #legend {
     position: absolute; top: 10px; left: 10px; padding: 10px 14px;
-    background: rgba(22,27,34,0.92); border: 1px solid var(--border);
+    background: rgba(212,194,173,0.92); border: 1px solid var(--border);
     border-radius: 6px; font-size: 11px; color: var(--text);
     pointer-events: none; max-width: 280px;
   }
@@ -221,15 +225,15 @@
     z-index: 10;
   }
   #toolbar button {
-    background: rgba(22,27,34,0.92); border: 1px solid var(--border);
+    background: rgba(212,194,173,0.92); border: 1px solid var(--border);
     color: var(--text); font-family: inherit; font-size: 12px;
     padding: 6px 12px; border-radius: 6px; cursor: pointer;
     transition: background 0.15s, border-color 0.15s;
   }
-  #toolbar button:hover { background: rgba(56,139,253,0.15); border-color: var(--accent); color: var(--accent); }
+  #toolbar button:hover { background: rgba(215,161,132,0.40); border-color: var(--accent); color: var(--accent); }
   #hint {
     position: absolute; bottom: 10px; left: 10px; padding: 6px 12px;
-    background: rgba(22,27,34,0.85); border: 1px solid var(--border);
+    background: rgba(212,194,173,0.92); border: 1px solid var(--border);
     border-radius: 6px; font-size: 11px; color: var(--muted);
     pointer-events: none;
   }
@@ -291,24 +295,75 @@ console.log("[three-layer-graph] vis-network loaded");
 // L1 = LLM capabilities · L2 = agent-architecture abstractions · L3 = mechanisms
 // =====================================================================
 
-const LAYER_COLORS = {
-  // three-layer view
-  l0: "#a855f7",  // purple — Language Model (substrate)
-  l1: "#3b82f6",  // blue   — LLM capabilities
-  l2: "#f59e0b",  // amber  — Agent architecture
-  // react-loop view
-  input:  "#6b7280", // gray   — user-side input
-  loop:   "#f97316", // orange — agent loop body
-  output: "#14b8a6", // teal   — response back to user
-  // agent-runtime view
-  center:    "#f97316", // orange — the inner loop (re-uses loop color)
-  subsystem: "#6366f1", // indigo — feeds/uses the loop
-  intercept: "#ec4899", // pink   — hooks/permissions that gate transitions
-  // agent-ecosystem view
-  enduser:    "#14b8a6", // teal   — what end users see
-  agentproc:  "#f97316", // orange — the agent process itself (re-uses center)
-  infra:      "#6366f1"  // indigo — developer-side infrastructure
+// =====================================================================
+// THEME — single source of truth for all color customization
+// Edit values here and reload. applyTheme() below propagates ui.*
+// values into CSS variables so the page chrome updates automatically.
+// =====================================================================
+const THEME = {
+  ui: {
+    bg:     "#EFDFCC",   // main bg + graph canvas
+    panel:  "#D4C2AD",   // sidebar / nav / toolbar
+    border: "#BA8E7A",   // borders
+    text:   "#2D1F15",   // body text (dark warm brown for AA on cream)
+    muted:  "#66796B",   // muted text (sage)
+    accent: "#66796B",   // active / highlight (sage)
+    peach:  "#D7A184"    // hover-bg tint
+  },
+  nodes: {
+    // Three-Layer view
+    l0:        "#C5A244",  // gold   — Language Model substrate
+    l1:        "#789342",  // olive  — LLM capabilities
+    l2:        "#EC7771",  // coral  — Agent architecture
+    l3:        "#F26513",  // orange — Implementation pins
+    // ReAct Loop view
+    input:     "#BA8E7A",  // rose-brown — user-side input
+    loop:      "#EC7771",  // coral      — agent loop body
+    output:    "#548D95",  // teal       — final response
+    // Agent Subsystems view
+    center:    "#EC7771",  // coral — inner loop hub
+    subsystem: "#548D95",  // teal  — runtime subsystem
+    intercept: "#F26513",  // orange — hooks / interceptors
+    // Agent Ecosystem view
+    enduser:   "#789342",  // olive — end-user surface
+    agentproc: "#EC7771",  // coral — agent process
+    infra:     "#548D95"   // teal  — developer infrastructure
+  },
+  graph: {
+    selectionRing:   "#2D1F15",                    // dark brown ring on selected node
+    selectionGlow:   "rgba(45,31,21,0.45)",        // dark glow around selected node
+    nodeText:        "#ffffff",                    // white text inside colored boxes
+    edgeSolid:       "#3d3025",                    // dark brown edge
+    edgeDashed:      "#5a4a3a",                    // medium brown dashed
+    edgeHighlight:   "#2D1F15",                    // edge on incident-to-selection
+    edgeLabelText:   "#2D1F15",
+    edgeLabelBg:     "rgba(239,223,204,0.92)",     // cream label background
+    crossCutterEdge: "#C5A244"                     // gold dashed cross-cutters
+  },
+  bands: {
+    enduserTint:     "rgba(120,147,66,0.10)",      // olive 10%
+    devTint:         "rgba(84,141,149,0.08)",      // teal 8%
+    label:           "rgba(45,31,21,0.55)",
+    sublabel:        "rgba(45,31,21,0.40)",
+    dividerLine:     "rgba(45,31,21,0.6)",
+    dividerLabel:    "rgba(45,31,21,0.9)",
+    dividerBg:       "rgba(239,223,204,1)"
+  }
 };
+
+function applyTheme() {
+  const root = document.documentElement;
+  for (const [k, v] of Object.entries(THEME.ui)) {
+    root.style.setProperty("--" + k, v);
+  }
+  for (const layer of ["l0", "l1", "l2", "l3"]) {
+    root.style.setProperty("--" + layer, THEME.nodes[layer]);
+  }
+}
+applyTheme();
+
+// Alias for backward-compat with the rest of the file.
+const LAYER_COLORS = THEME.nodes;
 
 const LAYER_LABELS = {
   l0: "L0 · Language Model",
@@ -1562,9 +1617,9 @@ const VIEWS = {
     subtitle: "L0 LLM · L1 Capabilities · L2 Architecture (· L3 in sidebar)",
     legendHtml:
       '<div class="group-title">Agent Layered Model</div>' +
-      '<div><span class="dot" style="background:#a855f7"></span><strong>L0</strong> — Language Model</div>' +
-      '<div><span class="dot" style="background:#3b82f6"></span><strong>L1</strong> — LLM Capabilities</div>' +
-      '<div><span class="dot" style="background:#f59e0b"></span><strong>L2</strong> — Agent Architecture</div>' +
+      `<div><span class="dot" style="background:${THEME.nodes.l0}"></span><strong>L0</strong> — Language Model</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.l1}"></span><strong>L1</strong> — LLM Capabilities</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.l2}"></span><strong>L2</strong> — Agent Architecture</div>` +
       '<div class="hint">Click L0 / L1 / L2 nodes for collapsible details. L3 mechanisms live in L2 sidebars — click an L3 row to pin it on the graph.</div>',
     nodes: nodes,
     edges: threeLayerEdges
@@ -1574,9 +1629,9 @@ const VIEWS = {
     subtitle: "User request → Reason ⇄ Act ⇄ Observation → criteria met → Respond",
     legendHtml:
       '<div class="group-title">ReAct Loop (Yao 2022)</div>' +
-      '<div><span class="dot" style="background:#6b7280"></span><strong>Input</strong> — User request</div>' +
-      '<div><span class="dot" style="background:#f97316"></span><strong>Loop body</strong> — Reason / Act / Observation</div>' +
-      '<div><span class="dot" style="background:#14b8a6"></span><strong>Output</strong> — Response to user</div>' +
+      `<div><span class="dot" style="background:${THEME.nodes.input}"></span><strong>Input</strong> — User request</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.loop}"></span><strong>Loop body</strong> — Reason / Act / Observation</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.output}"></span><strong>Output</strong> — Response to user</div>` +
       '<div class="hint">Dashed edge = loop-back when criteria not yet met.</div>',
     nodes: reactLoopNodes,
     edges: reactLoopEdges
@@ -1586,11 +1641,11 @@ const VIEWS = {
     subtitle: "Hooks placed inline between leading and trailing nodes — LLM + Tool added as services",
     legendHtml:
       '<div class="group-title">Loop Hooks (inline)</div>' +
-      '<div><span class="dot" style="background:#6b7280"></span><strong>Input</strong> — user request</div>' +
-      '<div><span class="dot" style="background:#f97316"></span><strong>Loop body</strong> — Reason / Act / Observation</div>' +
-      '<div><span class="dot" style="background:#6366f1"></span><strong>External service</strong> — LLM / Tool</div>' +
-      '<div><span class="dot" style="background:#14b8a6"></span><strong>Output</strong> — final response</div>' +
-      '<div><span class="dot" style="background:#ec4899"></span><strong>Hook</strong> — inline interception (sits between leading and trailing)</div>' +
+      `<div><span class="dot" style="background:${THEME.nodes.input}"></span><strong>Input</strong> — user request</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.loop}"></span><strong>Loop body</strong> — Reason / Act / Observation</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.subsystem}"></span><strong>External service</strong> — LLM / Tool</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.output}"></span><strong>Output</strong> — final response</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.intercept}"></span><strong>Hook</strong> — inline interception (sits between leading and trailing)</div>` +
       '<div class="hint">7 hooks: SessionStart · UserPromptSubmit · PreLLMCall · PostLLMCall · PreToolUse · PostToolUse · Stop. Dashed = loop-back.</div>',
     nodes: loopHooksNodes,
     edges: loopHooksEdges
@@ -1600,9 +1655,9 @@ const VIEWS = {
     subtitle: "What surrounds the ReAct loop inside ONE agent process",
     legendHtml:
       '<div class="group-title">Agent Subsystems</div>' +
-      '<div><span class="dot" style="background:#f97316"></span><strong>Inner loop</strong> — the ReAct loop itself</div>' +
-      '<div><span class="dot" style="background:#6366f1"></span><strong>Subsystem</strong> — feeds or drains the loop</div>' +
-      '<div><span class="dot" style="background:#ec4899"></span><strong>Interceptor</strong> — gates loop transitions (cross-cutting)</div>' +
+      `<div><span class="dot" style="background:${THEME.nodes.center}"></span><strong>Inner loop</strong> — the ReAct loop itself</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.subsystem}"></span><strong>Subsystem</strong> — feeds or drains the loop</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.intercept}"></span><strong>Interceptor</strong> — gates loop transitions (cross-cutting)</div>` +
       '<div class="hint">Solid = synchronous data flow each turn. Dashed = async write / intercept / rehydrate.</div>',
     nodes: agentSubsystemsNodes,
     edges: agentSubsystemsEdges
@@ -1612,9 +1667,9 @@ const VIEWS = {
     subtitle: "What lives outside the agent process — end-user surface vs developer infrastructure",
     legendHtml:
       '<div class="group-title">Agent Ecosystem</div>' +
-      '<div><span class="dot" style="background:#14b8a6"></span><strong>End-user surface</strong> — what end users see</div>' +
-      '<div><span class="dot" style="background:#f97316"></span><strong>Agent process</strong> — see Subsystems view</div>' +
-      '<div><span class="dot" style="background:#6366f1"></span><strong>Infrastructure</strong> — what developers wire up</div>' +
+      `<div><span class="dot" style="background:${THEME.nodes.enduser}"></span><strong>End-user surface</strong> — what end users see</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.agentproc}"></span><strong>Agent process</strong> — see Subsystems view</div>` +
+      `<div><span class="dot" style="background:${THEME.nodes.infra}"></span><strong>Infrastructure</strong> — what developers wire up</div>` +
       '<div class="hint">The dashed horizontal divider is the "dev line" — end users do not operate anything below it.</div>',
     nodes: agentEcosystemNodes,
     edges: agentEcosystemEdges,
@@ -1622,7 +1677,7 @@ const VIEWS = {
     backgroundBands: [
       {
         y0: -60, y1: 230,
-        color: "rgba(20,184,166,0.05)",
+        color: THEME.bands.enduserTint,
         label: "END-USER SURFACE",
         sublabel: "(what end users see)",
         labelY: -20,
@@ -1630,7 +1685,7 @@ const VIEWS = {
       },
       {
         y0: 250, y1: 1280,
-        color: "rgba(99,102,241,0.04)",
+        color: THEME.bands.devTint,
         label: "DEVELOPER INFRASTRUCTURE",
         sublabel: "(what developers wire up)",
         labelY: 280,
@@ -1668,10 +1723,10 @@ function buildVisNode(n) {
     color: {
       background: nodeColor(n),
       border: nodeColor(n),
-      highlight: { background: nodeColor(n), border: "#ffffff" },
-      hover: { background: nodeColor(n), border: "#ffffff" }
+      highlight: { background: nodeColor(n), border: THEME.graph.selectionRing },
+      hover:     { background: nodeColor(n), border: THEME.graph.selectionRing }
     },
-    font: { color: "#ffffff", size: n.layer === "l0" ? 15 : 13, face: "system-ui, sans-serif", multi: false, strokeWidth: 0 },
+    font: { color: THEME.graph.nodeText, size: n.layer === "l0" ? 15 : 13, face: "system-ui, sans-serif", multi: false, strokeWidth: 0 },
     shape: "box",
     margin: n.layer === "l0" ? 14 : 10,
     widthConstraint: { minimum: 70, maximum: 150 },
@@ -1681,19 +1736,19 @@ function buildVisNode(n) {
     chosen: {
       node: function(values, id, selected, hovering) {
         if (selected) {
-          values.borderColor = "#ffffff";
+          values.borderColor = THEME.graph.selectionRing;
           values.borderWidth = 4;
           values.shadow = true;
           values.shadowSize = 18;
-          values.shadowColor = "rgba(255,255,255,0.35)";
+          values.shadowColor = THEME.graph.selectionGlow;
           values.shadowX = 0;
           values.shadowY = 0;
         } else if (hovering) {
-          values.borderColor = "#ffffff";
+          values.borderColor = THEME.graph.selectionRing;
           values.borderWidth = 3;
         }
       },
-      label: function(values) { values.color = "#ffffff"; }
+      label: function(values) { values.color = THEME.graph.nodeText; }
     },
     _layer: n.layer,
     _content: n.content,
@@ -1712,7 +1767,10 @@ function buildVisEdge(e) {
     from: e.from,
     to: e.to,
     arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-    color: { color: e.dashed ? "#4b5563" : "#30363d", highlight: "#58a6ff" },
+    color: {
+      color: e.dashed ? THEME.graph.edgeDashed : THEME.graph.edgeSolid,
+      highlight: THEME.graph.edgeHighlight
+    },
     dashes: e.dashed ? [5, 5] : false,
     width: 1,
     smooth: {
@@ -1724,7 +1782,10 @@ function buildVisEdge(e) {
   };
   if (e.label) {
     cfg.label = e.label;
-    cfg.font = { color: "#8b949e", size: 11, face: "system-ui", strokeWidth: 0, background: "rgba(14,17,23,0.85)" };
+    cfg.font = {
+      color: THEME.graph.edgeLabelText, size: 11, face: "system-ui",
+      strokeWidth: 0, background: THEME.graph.edgeLabelBg
+    };
   }
   return cfg;
 }
@@ -1765,12 +1826,12 @@ try {
         ctx.fillRect(-10000, band.y0, 20000, band.y1 - band.y0);
         if (band.label) {
           const lx = (typeof band.labelX === "number") ? band.labelX : 60;
-          ctx.fillStyle = "rgba(139,148,158,0.55)";
+          ctx.fillStyle = THEME.bands.label;
           ctx.font = "bold 13px system-ui, sans-serif";
           ctx.textBaseline = "top";
           ctx.fillText(band.label, lx, band.labelY);
           if (band.sublabel) {
-            ctx.fillStyle = "rgba(139,148,158,0.4)";
+            ctx.fillStyle = THEME.bands.sublabel;
             ctx.font = "11px system-ui, sans-serif";
             ctx.fillText(band.sublabel, lx, band.labelY + 18);
           }
@@ -1781,7 +1842,7 @@ try {
 
     if (view.divider) {
       ctx.save();
-      ctx.strokeStyle = "rgba(139,148,158,0.6)";
+      ctx.strokeStyle = THEME.bands.dividerLine;
       ctx.setLineDash([10, 6]);
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -1790,13 +1851,12 @@ try {
       ctx.stroke();
       ctx.setLineDash([]);
       if (view.divider.label) {
-        ctx.fillStyle = "rgba(139,148,158,0.7)";
         ctx.font = "bold 11px system-ui, sans-serif";
         ctx.textBaseline = "middle";
-        // Draw label with a small bg patch so it sits on top of the line
-        ctx.fillStyle = "rgba(14,17,23,1)";
+        // Draw label with a bg patch so it sits on top of the dashed line
+        ctx.fillStyle = THEME.bands.dividerBg;
         ctx.fillRect(-50, view.divider.y - 9, 100, 18);
-        ctx.fillStyle = "rgba(139,148,158,0.9)";
+        ctx.fillStyle = THEME.bands.dividerLabel;
         ctx.textAlign = "center";
         ctx.fillText(view.divider.label, 0, view.divider.y);
         ctx.textAlign = "start";
@@ -2006,12 +2066,12 @@ function pinL3Item(itemId) {
     x, y,
     fixed: { x: false, y: false },
     color: {
-      background: "#10b981",
-      border: "#10b981",
-      highlight: { background: "#10b981", border: "#ffffff" },
-      hover:     { background: "#10b981", border: "#ffffff" }
+      background: THEME.nodes.l3,
+      border:     THEME.nodes.l3,
+      highlight:  { background: THEME.nodes.l3, border: THEME.graph.selectionRing },
+      hover:      { background: THEME.nodes.l3, border: THEME.graph.selectionRing }
     },
-    font: { color: "#ffffff", size: 11, face: "system-ui, sans-serif", strokeWidth: 0 },
+    font: { color: THEME.graph.nodeText, size: 11, face: "system-ui, sans-serif", strokeWidth: 0 },
     shape: "box",
     margin: 6,
     widthConstraint: { minimum: 70, maximum: 150 },
@@ -2027,7 +2087,7 @@ function pinL3Item(itemId) {
   edgeIds.push(visEdges.add({
     from: nodeId, to: parentId,
     arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-    color: { color: "#10b981", highlight: "#58a6ff" },
+    color: { color: THEME.nodes.l3, highlight: THEME.graph.edgeHighlight },
     dashes: false,
     width: 1.2,
     smooth: { enabled: true, type: "cubicBezier", forceDirection: "vertical", roundness: 0.4 }
@@ -2040,7 +2100,7 @@ function pinL3Item(itemId) {
       edgeIds.push(visEdges.add({
         from: nodeId, to: ccTarget,
         arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-        color: { color: "#a855f7", highlight: "#58a6ff" },
+        color: { color: THEME.graph.crossCutterEdge, highlight: THEME.graph.edgeHighlight },
         dashes: [5, 5],
         width: 1.2,
         smooth: { enabled: true, type: "curvedCW", roundness: 0.25 }
