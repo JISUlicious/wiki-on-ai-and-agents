@@ -50,9 +50,30 @@
     background: rgba(56,139,253,0.18); border-color: var(--accent); color: var(--accent);
     font-weight: 600;
   }
-  #app { display: grid; grid-template-columns: 1fr 320px; flex: 1; width: 100vw; min-height: 0; }
+  #app {
+    display: grid;
+    /* Middle 6px column = draggable resize handle; right column = sidebar */
+    grid-template-columns: 1fr 6px var(--sidebar-w, 320px);
+    flex: 1; width: 100vw; min-height: 0;
+  }
   #graph-wrap { position: relative; width: 100%; height: 100%; min-width: 400px; overflow: hidden; }
   #graph { background: var(--bg); width: 100%; height: 100%; }
+  #sidebar-resizer {
+    cursor: col-resize;
+    background: transparent;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+    z-index: 30;
+  }
+  #sidebar-resizer:hover,
+  #sidebar-resizer.dragging {
+    background: rgba(56,139,253,0.20);
+    border-color: var(--accent);
+  }
+  body.resizing-sidebar { cursor: col-resize; user-select: none; }
+  body.resizing-sidebar #graph { pointer-events: none; }
   #error-banner {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     background: #ef4444; color: white; padding: 16px 24px; border-radius: 6px;
@@ -233,6 +254,7 @@
     <div id="hint">Drag any node to reposition. ↺ resets to the view's default layout.</div>
     <div id="legend"></div>
   </div>
+  <div id="sidebar-resizer" title="Drag to resize the sidebar"></div>
   <div id="sidebar">
     <h1 id="sidebar-title">Agent Three-Layer Model</h1>
     <h2 id="sidebar-subtitle">L0 LLM · L1 Capabilities · L2 Architecture (· L3 in sidebar)</h2>
@@ -319,6 +341,11 @@ const nodes = [
     id: "language-model", label: "Language Model", layer: "l0",
     x: 425, y: ROW_Y.l0,
     content: {
+      "About": [
+        "the substrate every modern agent sits on — a probabilistic next-token engine",
+        "in 2026: decoder-only Transformers at 100B+ params",
+        "pretrained on internet-scale text, post-trained for instruction following + alignment"
+      ],
       "Concepts": [
         "[[transformer-architecture]]", "[[decoder-only-transformer]]", "[[self-attention]]",
         "[[autoregressive-language-modeling]]", "[[pre-training]]", "[[fine-tuning]]",
@@ -345,6 +372,11 @@ const nodes = [
     id: "instruction-following", label: "Instruction\nfollowing", layer: "l1",
     x: 0, y: ROW_Y.l1,
     content: {
+      "About": [
+        "the model reliably obeys natural-language directives in its prompt",
+        "emits parseable JSON tool calls and structured outputs",
+        "the L1 surface every L2 abstraction implicitly assumes"
+      ],
       "Concepts": ["[[instruction-tuning]]", "[[fine-tuning]]", "[[rlhf]]"],
       "Entities": ["[[flan]]", "[[instructgpt]]"],
       "Sources":  ["[[flan-wei-2021]]", "[[instructgpt-ouyang-2022]]"],
@@ -355,6 +387,11 @@ const nodes = [
     id: "in-context-learning", label: "In-context\nlearning", layer: "l1",
     x: 283, y: ROW_Y.l1,
     content: {
+      "About": [
+        "behavior shaped by examples in the prompt — no gradient update",
+        "enables few-shot tool routing and dynamic prompt assembly",
+        "the load-bearing capability behind every context-assembly trick"
+      ],
       "Concepts": ["[[in-context-learning]]", "[[few-shot-learning]]", "[[zero-shot-learning]]"],
       "Entities": ["[[gpt-3]]"],
       "Sources":  ["[[gpt-3-brown-2020]]"],
@@ -365,6 +402,11 @@ const nodes = [
     id: "reasoning", label: "Reasoning", layer: "l1",
     x: 567, y: ROW_Y.l1,
     content: {
+      "About": [
+        "multi-step thinking in token space (chain-of-thought)",
+        "in 2024+ models, inner CoT is RL-trained and stronger",
+        "drives the Reason step of every ReAct-style loop"
+      ],
       "Concepts": ["[[chain-of-thought-prompting]]", "[[zero-shot-cot]]", "[[self-consistency]]", "[[tree-of-thoughts]]", "[[reflexion]]"],
       "Sources":  ["[[chain-of-thought-wei-2022]]", "[[zero-shot-cot-kojima-2022]]", "[[self-consistency-wang-2022]]", "[[tree-of-thoughts-yao-2023]]", "[[reflexion-shinn-2023]]"],
       "Keywords": ["CoT", "inner CoT", "o1-style", "multi-step planning", "self-critique"]
@@ -374,6 +416,11 @@ const nodes = [
     id: "alignment", label: "Alignment\n(RLHF/CAI)", layer: "l1",
     x: 850, y: ROW_Y.l1,
     content: {
+      "About": [
+        "post-training that shapes refusal, helpfulness, tone",
+        "RLHF / CAI / DPO baked into model weights — not at runtime",
+        "the L1 surface that L2 harness builds on at the agent layer"
+      ],
       "Concepts": ["[[rlhf]]", "[[rlaif]]", "[[dpo]]", "[[constitutional-ai]]", "[[preference-modeling]]"],
       "Entities": ["[[anthropic]]", "[[openai]]"],
       "Sources":  ["[[christiano-rlhf-2017]]", "[[instructgpt-ouyang-2022]]", "[[constitutional-ai-bai-2022]]", "[[dpo-rafailov-2023]]"],
@@ -385,6 +432,11 @@ const nodes = [
   {
     id: "control-flow", label: "Control flow", layer: "l2", x: 0, y: ROW_Y.l2,
     content: {
+      "About": [
+        "the agent's multi-step loop with a halt condition",
+        "Russell-Norvig's classical percept → decide → act, with the LLM as decider",
+        "ReAct is the dominant L3 implementation in 2026 agents"
+      ],
       "Concepts": ["[[llm-agent]]", "[[react]]", "[[reflexion]]", "[[tree-of-thoughts]]", "[[metagpt]]", "[[autogen]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[pi-mono]]"],
       "Sources":  ["[[react-yao-2022]]", "[[reflexion-shinn-2023]]", "[[metagpt-hong-2023]]", "[[autogen-wu-2023]]"],
@@ -428,6 +480,11 @@ const nodes = [
   {
     id: "action-surface", label: "Action surface", layer: "l2", x: 170, y: ROW_Y.l2,
     content: {
+      "About": [
+        "the agent's typed interaction surface with the outside world",
+        "JSON tool calls (function calling) is the universal mechanism",
+        "MCP and ACP are higher-level protocol layers above this"
+      ],
       "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[mcp]]", "[[acp]]", "[[responses-api]]", "[[tool-call-parser]]", "[[json-schema]]", "[[json-rpc]]"],
       "Entities": ["[[openai-api]]", "[[vllm]]", "[[zed]]", "[[anthropic]]"],
       "Sources":  ["[[openai-function-calling-2025]]", "[[model-context-protocol-anthropic-2024]]", "[[agent-client-protocol-zed-2025]]", "[[vllm-tool-calling-2025]]"],
@@ -474,7 +531,11 @@ const nodes = [
   {
     id: "context-assembly", label: "Context assembly", layer: "l2", x: 340, y: ROW_Y.l2,
     content: {
-      "Scope": ["what goes into THIS turn's prompt"],
+      "About": [
+        "what goes into THIS turn's prompt is the agent's decision",
+        "feeds: auto-loaded files, retrieved snippets, skills, dynamic templates, system prompt",
+        "L1 in-context learning is what makes this matter"
+      ],
       "Concepts": ["[[in-context-learning]]", "[[agent-skills]]", "[[skill-md-format]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]"],
       "Sources":  ["[[anthropic-agent-skills-2025]]"],
@@ -524,7 +585,11 @@ const nodes = [
   {
     id: "memory-mgmt", label: "Memory\nmanagement", layer: "l2", x: 510, y: ROW_Y.l2,
     content: {
-      "Scope": ["the LIFECYCLE of stored state across turns + sessions"],
+      "About": [
+        "the LIFECYCLE of stored state across turns + sessions",
+        "7 operations: write · store · retrieve · compact · consolidate · evict · curate",
+        "retrieval is ONE step, not the umbrella"
+      ],
       "Concepts (primitives)": ["[[memory-management]]", "[[memory-stream]]", "[[reflection-mechanism]]", "[[procedural-memory]]", "[[episodic-memory-llm]]", "[[graph-memory]]", "[[ebbinghaus-forgetting]]", "[[kv-cache]]", "[[long-context-llm]]"],
       "Concepts (retrieval mechanisms)": ["[[retrieval-augmented-generation]]", "[[dense-retrieval]]", "[[bm25]]"],
       "Concepts (systems)": ["[[memgpt]]", "[[generative-agents]]", "[[memorybank]]", "[[voyager]]", "[[em-llm]]", "[[titans]]", "[[a-mem]]", "[[hipporag-2]]", "[[sleep-time-compute]]", "[[mem0]]", "[[mirix]]", "[[memory-r1]]", "[[mem-alpha]]"],
@@ -588,7 +653,11 @@ const nodes = [
   {
     id: "persistence", label: "Persistence", layer: "l2", x: 680, y: ROW_Y.l2,
     content: {
-      "Scope": ["the STORAGE SUBSTRATE — files/DBs that survive the process"],
+      "About": [
+        "the STORAGE SUBSTRATE — files/DBs that survive the process",
+        "rehydrates at session start; receives event writes from the loop",
+        "distinct from memory management: persistence stores what curation keeps"
+      ],
       "Concepts": ["[[memory-management]]"],
       "Entities": ["[[pi-mono]]", "[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
       "Keywords": ["JSONL", "SQLite", "event sourcing", "session replay", "snapshot-git", "revertable edits"]
@@ -620,6 +689,11 @@ const nodes = [
   {
     id: "harness", label: "Harness", layer: "l2", x: 850, y: ROW_Y.l2,
     content: {
+      "About": [
+        "the agent's safety boundary — block harmful AND drive toward goals",
+        "BIDIRECTIONAL shaping (the 'harness' metaphor from horse-tack)",
+        "implements alignment at the agent layer; the model layer L1 alignment is its foundation"
+      ],
       "Concepts": ["[[guardrailing]]", "[[steering]]", "[[constitutional-ai]]", "[[red-teaming]]", "[[agentic-misalignment]]", "[[indirect-prompt-injection]]", "[[prompt-injection]]"],
       "Entities": ["[[anthropic]]"],
       "Sources":  ["[[constitutional-ai-bai-2022]]", "[[red-teaming-ganguli-2022]]", "[[indirect-prompt-injection-greshake-2023]]"],
@@ -736,7 +810,11 @@ const reactLoopNodes = [
     id: "user-request", label: "User\nrequest", layer: "input",
     x: 0, y: 200,
     content: {
-      "Scope": ["the agent's input: what the user is asking for, including done-criteria"],
+      "About": [
+        "the agent's input — user's task + success criteria",
+        "shape of this determines everything downstream; vague tasks produce drift",
+        "the agent assumes done = matching these criteria"
+      ],
       "Concepts": ["[[llm-agent]]"],
       "Keywords": ["prompt", "task", "goal", "success criteria"]
     }
@@ -745,7 +823,11 @@ const reactLoopNodes = [
     id: "reason", label: "Reason\n(Thought)", layer: "loop",
     x: 220, y: 200,
     content: {
-      "Scope": ["the model reasons over current context: is the task done? what next?"],
+      "About": [
+        "the agent's decision step — consults context + memory",
+        "decides: continue with another action, or exit with a final answer",
+        "the LLM call lives inside this — see Loop Hooks for the sub-loop"
+      ],
       "Concepts": ["[[chain-of-thought-prompting]]", "[[zero-shot-cot]]", "[[self-consistency]]", "[[tree-of-thoughts]]", "[[reflexion]]"],
       "Sources":  ["[[chain-of-thought-wei-2022]]", "[[zero-shot-cot-kojima-2022]]", "[[react-yao-2022]]"],
       "Keywords": ["Thought:", "planning", "decision", "criteria check", "self-critique"]
@@ -755,8 +837,12 @@ const reactLoopNodes = [
     id: "act", label: "Act\n(tool call)", layer: "loop",
     x: 440, y: 200,
     content: {
-      "Scope": ["the agent emits an action — typically a tool call in JSON"],
-      "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[mcp]]", "[[acp]]", "[[json-schema]]"],
+      "About": [
+        "the agent emits an action — typically a JSON tool call",
+        "function name + arguments + call_id, parsed downstream",
+        "the agent generates the request — it does not execute the tool itself"
+      ],
+      "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[tool-call-parser]]", "[[mcp]]", "[[acp]]", "[[json-schema]]"],
       "Sources":  ["[[react-yao-2022]]", "[[openai-function-calling-2025]]"],
       "Keywords": ["Act:", "tool_calls", "function name + arguments", "call_id"]
     }
@@ -765,8 +851,12 @@ const reactLoopNodes = [
     id: "observation", label: "Observation\n(tool result)", layer: "loop",
     x: 660, y: 200,
     content: {
-      "Scope": ["the environment / tool returns a result; the agent reads it"],
-      "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]"],
+      "About": [
+        "the environment / tool returns a result, fed back into context",
+        "result enters context for the next Reason step",
+        "loops back to Reason via the dashed edge until the loop exits"
+      ],
+      "Concepts": ["[[structured-outputs]]"],
       "Keywords": ["Obs:", "tool result", "environment state", "error message", "stdout"]
     }
   },
@@ -774,7 +864,11 @@ const reactLoopNodes = [
     id: "respond", label: "Respond\nto user", layer: "output",
     x: 220, y: 380,
     content: {
-      "Scope": ["loop exits when Reason concludes the criteria are met → final answer"],
+      "About": [
+        "loop exits with the final answer when Reason concludes criteria are met",
+        "model produces Finish[answer] — no more tool calls",
+        "Stop-hook fires before exit (see Loop Hooks view)"
+      ],
       "Concepts": ["[[llm-agent]]"],
       "Keywords": ["Finish[answer]", "final response", "exit loop", "criteria satisfied"]
     }
@@ -804,7 +898,11 @@ const loopHooksNodes = [
     id: "hook-session-start", label: "SessionStart\nhook", layer: "intercept",
     x: 240, y: 0,
     content: {
-      "Scope": ["fires ONCE when the agent session begins"],
+      "About": [
+        "fires ONCE when the agent session begins",
+        "before any user input — used to bootstrap context, register tools",
+        "the only hook fired exactly once per session (not per turn)"
+      ],
       "Concepts": ["[[agent-skills]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
       "Keywords": ["init", "load CLAUDE.md", "load AGENTS.md", "restore memory", "register tools", "set persona"]
@@ -814,7 +912,10 @@ const loopHooksNodes = [
     id: "user-request", label: "User\nrequest", layer: "input",
     x: 240, y: 90,
     content: {
-      "Scope": ["the user's input — task + success criteria"],
+      "About": [
+        "the user's input — task + success criteria",
+        "shape determines everything downstream; vague tasks produce drift"
+      ],
       "Concepts": ["[[llm-agent]]"],
       "Keywords": ["prompt", "task", "goal"]
     }
@@ -823,7 +924,11 @@ const loopHooksNodes = [
     id: "hook-user-prompt", label: "UserPrompt-\nSubmit hook", layer: "intercept",
     x: 240, y: 180,
     content: {
-      "Scope": ["fires when the user submits — rewrite, validate, inject context, or abort"],
+      "About": [
+        "fires when the user submits — rewrite, validate, inject context, or abort",
+        "intercepts BEFORE Reason starts — the agent has not seen the prompt yet",
+        "common use: auto-attach files, scrub PII, add system context"
+      ],
       "Concepts": ["[[in-context-learning]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]"],
       "Keywords": ["prompt rewriting", "auto-attach files", "PII scrub", "validation", "abort + reject"]
@@ -835,7 +940,11 @@ const loopHooksNodes = [
     id: "reason", label: "Reason\n(Thought)", layer: "loop",
     x: 240, y: 320,
     content: {
-      "Scope": ["the agent's decision step — wraps an LLM call via the sub-loop on the right"],
+      "About": [
+        "the agent's decision step — wraps an LLM call via the sub-loop on the right",
+        "decides: another tool call (→ Act) or final answer (→ Respond)",
+        "the criteria check happens here"
+      ],
       "Sub-loop": ["Reason → PreLLMCall → LLM → PostLLMCall → Reason"],
       "Concepts": ["[[chain-of-thought-prompting]]", "[[reflexion]]", "[[react]]"],
       "Sources":  ["[[react-yao-2022]]", "[[chain-of-thought-wei-2022]]"],
@@ -846,7 +955,11 @@ const loopHooksNodes = [
     id: "act", label: "Act\n(decide tool call)", layer: "loop",
     x: 240, y: 540,
     content: {
-      "Scope": ["the agent emits a tool call — wraps the tool execution via the sub-loop on the right"],
+      "About": [
+        "the agent emits a tool call — wraps the tool execution via the sub-loop on the right",
+        "JSON with function name + arguments + call_id",
+        "agent generates the request; tool sub-loop actually executes it"
+      ],
       "Sub-loop": ["Act → PreToolUse → Tool → PostToolUse → Act"],
       "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[json-schema]]"],
       "Sources":  ["[[openai-function-calling-2025]]"],
@@ -857,7 +970,11 @@ const loopHooksNodes = [
     id: "observation", label: "Observation\n(tool result)", layer: "loop",
     x: 240, y: 760,
     content: {
-      "Scope": ["the tool result enters the agent's context; loop back to Reason"],
+      "About": [
+        "the tool result enters the agent's context, loops back to Reason",
+        "next Reason step decides whether to continue or exit",
+        "this is the loop-back point of the entire ReAct cycle"
+      ],
       "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]"],
       "Keywords": ["Obs:", "tool result", "environment state", "error message", "stdout"]
     }
@@ -868,7 +985,11 @@ const loopHooksNodes = [
     id: "hook-pre-llm", label: "PreLLMCall\nhook", layer: "intercept",
     x: 480, y: 250,
     content: {
-      "Scope": ["fires before every LLM API call — last chance to modify the prompt or call params"],
+      "About": [
+        "fires before every LLM API call — last chance to modify prompt or params",
+        "fires multiple times per session (once per Reason step)",
+        "common use: swap model, override temperature, inject retry policy"
+      ],
       "Concepts": ["[[function-calling]]", "[[structured-outputs]]"],
       "Entities": ["[[hermes-agent]]", "[[openclaw]]"],
       "Keywords": ["prompt modification", "param override", "model swap", "rate-limit", "retry policy", "fallback chain", "prompt caching"]
@@ -878,7 +999,11 @@ const loopHooksNodes = [
     id: "llm", label: "LLM\nservice", layer: "subsystem",
     x: 620, y: 320,
     content: {
-      "Scope": ["the language model — invoked once per Reason step"],
+      "About": [
+        "the language model — invoked once per Reason step",
+        "external service: managed API or self-hosted inference",
+        "produces tool_calls or a final answer for Respond"
+      ],
       "Concepts": ["[[function-calling]]", "[[responses-api]]", "[[tool-call-parser]]", "[[structured-outputs]]"],
       "Entities": ["[[openai-api]]", "[[anthropic]]", "[[vllm]]"],
       "Sources":  ["[[openai-function-calling-2025]]", "[[vllm-tool-calling-2025]]"],
@@ -889,7 +1014,11 @@ const loopHooksNodes = [
     id: "hook-post-llm", label: "PostLLMCall\nhook", layer: "intercept",
     x: 480, y: 390,
     content: {
-      "Scope": ["fires after LLM returns — parse tool_calls, validate schema, retry on parse failure; control returns to Reason for the act/respond decision"],
+      "About": [
+        "fires after LLM returns — parse tool_calls, validate schema",
+        "can retry on bad JSON without involving the agent loop",
+        "control returns to Reason for the act/respond decision"
+      ],
       "Concepts": ["[[tool-call-parser]]", "[[function-calling]]"],
       "Entities": ["[[hermes-agent]]", "[[openclaw]]"],
       "Keywords": ["response validation", "parse tool_calls", "retry on bad JSON", "telemetry", "redact log"]
@@ -901,7 +1030,11 @@ const loopHooksNodes = [
     id: "hook-pre-tool", label: "PreToolUse\nhook", layer: "intercept",
     x: 480, y: 470,
     content: {
-      "Scope": ["fires before tool executes — gate, validate args, block, request approval"],
+      "About": [
+        "fires before tool executes — gate, validate args, block, request approval",
+        "the main safety choke point — most permission logic lives here",
+        "can demand human-approval before destructive actions"
+      ],
       "Concepts": ["[[guardrailing]]", "[[function-calling]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]"],
       "Keywords": ["permission check", "argument validation", "dry-run", "block", "human-approval gate", "audit log"]
@@ -911,7 +1044,11 @@ const loopHooksNodes = [
     id: "tool", label: "Tool\nservice", layer: "subsystem",
     x: 620, y: 540,
     content: {
-      "Scope": ["external function / API / MCP server / shell — what the agent calls OUT to"],
+      "About": [
+        "external function / API / MCP server / shell — what the agent calls OUT to",
+        "the side-effect surface; produces the observation",
+        "isolated by the sandbox where applicable"
+      ],
       "Concepts": ["[[tool-use]]", "[[mcp]]", "[[function-calling]]"],
       "Sources":  ["[[model-context-protocol-anthropic-2024]]"],
       "Keywords": ["shell command", "file edit", "HTTP API", "MCP server", "browser action"]
@@ -921,7 +1058,11 @@ const loopHooksNodes = [
     id: "hook-post-tool", label: "PostToolUse\nhook", layer: "intercept",
     x: 480, y: 610,
     content: {
-      "Scope": ["fires after tool returns — transform output, error-wrap, trigger memory write, redact; control returns to Act, which then proceeds to Observation"],
+      "About": [
+        "fires after tool returns — transform output, error-wrap, redact secrets",
+        "can trigger memory write for important results",
+        "control returns to Act, which then proceeds to Observation"
+      ],
       "Concepts": ["[[tool-call-parser]]", "[[memory-management]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]"],
       "Keywords": ["result transformation", "error handling", "memory write", "observability", "redact secrets"]
@@ -933,7 +1074,11 @@ const loopHooksNodes = [
     id: "respond", label: "Respond\nto user", layer: "output",
     x: 20, y: 320,
     content: {
-      "Scope": ["loop exits when Reason concludes criteria are met — final answer to user"],
+      "About": [
+        "loop exits when Reason concludes criteria are met — final answer to user",
+        "model produced Finish[answer]; no more tool calls",
+        "Stop-hook fires before exit for cleanup"
+      ],
       "Concepts": ["[[llm-agent]]"],
       "Keywords": ["Finish[answer]", "final response", "criteria satisfied"]
     }
@@ -942,7 +1087,11 @@ const loopHooksNodes = [
     id: "hook-stop", label: "Stop\nhook", layer: "intercept",
     x: 20, y: 420,
     content: {
-      "Scope": ["fires at session end — save memory, trigger consolidation, graceful shutdown"],
+      "About": [
+        "fires at session end — save memory, trigger consolidation, graceful shutdown",
+        "the only hook fired exactly once at session close",
+        "common trigger for auto-dream / sleep-time consolidation"
+      ],
       "Concepts": ["[[memory-management]]", "[[sleep-time-compute]]", "[[offline-consolidation]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]"],
       "Keywords": ["save memory", "auto-dream trigger", "cleanup", "final log", "shareable session export"]
@@ -992,7 +1141,11 @@ const agentSubsystemsNodes = [
     id: "agent-loop", label: "ReAct Loop\n(agent inner loop)", layer: "center",
     x: 400, y: 320,
     content: {
-      "Scope": ["the agent's inner loop — see ReAct Loop view for steps and Loop Hooks view for interception points"],
+      "About": [
+        "the agent's inner loop — see ReAct Loop view for steps",
+        "and Loop Hooks view for interception points",
+        "every subsystem on this page feeds or drains this hub"
+      ],
       "Concepts": ["[[react]]", "[[llm-agent]]", "[[reflexion]]"],
       "Sources":  ["[[react-yao-2022]]"],
       "Keywords": ["Reason → Act → Observation", "percept → decide → act", "halt condition"]
@@ -1004,7 +1157,11 @@ const agentSubsystemsNodes = [
     id: "model-connection", label: "Model\nconnection", layer: "subsystem",
     x: 100, y: 80,
     content: {
-      "Scope": ["how the agent calls the LLM each turn"],
+      "About": [
+        "how the agent calls the LLM each turn",
+        "handles streaming, retries, fallbacks, provider abstraction",
+        "isolates the loop from provider differences (OpenAI / Anthropic / self-host)"
+      ],
       "Concepts": ["[[function-calling]]", "[[responses-api]]", "[[structured-outputs]]", "[[tool-call-parser]]", "[[constrained-decoding]]"],
       "Entities": ["[[openai-api]]", "[[anthropic]]", "[[vllm]]"],
       "Sources":  ["[[openai-function-calling-2025]]", "[[vllm-tool-calling-2025]]"],
@@ -1015,7 +1172,11 @@ const agentSubsystemsNodes = [
     id: "context-pipeline", label: "Context-building\npipeline", layer: "subsystem",
     x: 400, y: 80,
     content: {
-      "Scope": ["assembles each turn's prompt from many input sources"],
+      "About": [
+        "assembles each turn's prompt from many input sources",
+        "auto-loaded files + skills + retrieved snippets + dynamic templates + system prompt",
+        "every agent owns this pipeline; few expose it as a hook"
+      ],
       "Concepts": ["[[in-context-learning]]", "[[agent-skills]]", "[[skill-md-format]]", "[[retrieval-augmented-generation]]", "[[dense-retrieval]]", "[[bm25]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]"],
       "Sources":  ["[[anthropic-agent-skills-2025]]"],
@@ -1026,7 +1187,11 @@ const agentSubsystemsNodes = [
     id: "memory-system", label: "Memory\nsystem", layer: "subsystem",
     x: 700, y: 80,
     content: {
-      "Scope": ["state across turns + sessions — read into context, written from the loop"],
+      "About": [
+        "state across turns + sessions — read into context, written from the loop",
+        "owns the 7-op lifecycle: write/store/retrieve/compact/consolidate/evict/curate",
+        "distinct from persistence: this is the policy; persistence is the substrate"
+      ],
       "Concepts (umbrella)": ["[[memory-management]]"],
       "Concepts (primitives)": ["[[memory-stream]]", "[[reflection-mechanism]]", "[[procedural-memory]]", "[[episodic-memory-llm]]", "[[graph-memory]]", "[[ebbinghaus-forgetting]]", "[[kv-cache]]"],
       "Concepts (systems)": ["[[memgpt]]", "[[mem0]]", "[[mirix]]", "[[a-mem]]", "[[sleep-time-compute]]", "[[memory-r1]]"],
@@ -1040,7 +1205,11 @@ const agentSubsystemsNodes = [
     id: "sub-agent", label: "Sub-agent\ndispatch", layer: "subsystem",
     x: 720, y: 320,
     content: {
-      "Scope": ["a long-running tool with an LLM attached — Act can dispatch a child agent that runs its own loop and returns a result"],
+      "About": [
+        "a long-running tool with an LLM attached",
+        "Act can dispatch a child agent that runs its own loop and returns a result",
+        "explore / plan / code-reviewer / general; pi-mono refuses this in core"
+      ],
       "Concepts": ["[[react]]", "[[reflexion]]", "[[metagpt]]", "[[autogen]]", "[[multi-agent-memory]]", "[[mirix]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
       "Sources":  ["[[metagpt-hong-2023]]", "[[autogen-wu-2023]]", "[[mirix-wang-2025]]"],
@@ -1053,7 +1222,11 @@ const agentSubsystemsNodes = [
     id: "permission-sandbox", label: "Permission &\nsandbox", layer: "intercept",
     x: 80, y: 320,
     content: {
-      "Scope": ["what actions are allowed and where they run — gates loop transitions (cross-cutting)"],
+      "About": [
+        "what actions are allowed and where they run",
+        "gates loop transitions (cross-cutting — touches Act, Tool, output)",
+        "rule engines, sandboxes, classifiers, human-approval prompts"
+      ],
       "Concepts": ["[[guardrailing]]", "[[constitutional-ai]]", "[[steering]]", "[[red-teaming]]", "[[agentic-misalignment]]", "[[indirect-prompt-injection]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[openclaw]]"],
       "Sources":  ["[[constitutional-ai-bai-2022]]", "[[red-teaming-ganguli-2022]]", "[[indirect-prompt-injection-greshake-2023]]"],
@@ -1066,7 +1239,11 @@ const agentSubsystemsNodes = [
     id: "persistence-layer", label: "Persistence\nlayer", layer: "subsystem",
     x: 250, y: 600,
     content: {
-      "Scope": ["durable state that survives the process"],
+      "About": [
+        "durable state that survives the process",
+        "JSONL session trees, SQLite + event logs, snapshot-git",
+        "feeds memory rehydration at session start"
+      ],
       "Concepts": ["[[memory-management]]"],
       "Entities": ["[[pi-mono]]", "[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
       "Keywords": ["JSONL session tree", "SQLite + event log", "event sourcing", "session replay", "snapshot-git", "revertable file edits", "shareable sessions"]
@@ -1076,7 +1253,11 @@ const agentSubsystemsNodes = [
     id: "io-surface", label: "I/O surface", layer: "subsystem",
     x: 550, y: 600,
     content: {
-      "Scope": ["how output reaches the user / system"],
+      "About": [
+        "how output reaches the user / system",
+        "streaming, terminal / TUI, web shells, chat platforms",
+        "ACP-hosted IDEs render the agent's output natively"
+      ],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[openclaw]]", "[[pi-mono]]", "[[zed]]"],
       "Concepts": ["[[acp]]"],
       "Keywords": ["streaming output", "markdown", "terminal / TUI", "web shell", "chat platforms", "menu-bar", "ACP-hosted IDE", "Telegram / Discord / Slack"]
@@ -1121,7 +1302,11 @@ const agentEcosystemNodes = [
     id: "mcp-marketplace", label: "MCP / skill\nmarketplace", layer: "enduser",
     x: 140, y: 80,
     content: {
-      "Scope": ["where end users browse and install agent extensions"],
+      "About": [
+        "where end users browse and install agent extensions",
+        "app-store model — discovery + 1-click install",
+        "MCP marketplaces (pulse.mcp.so) + skill marketplaces (agentskills.io)"
+      ],
       "Concepts": ["[[mcp]]", "[[agent-skills]]", "[[skill-md-format]]"],
       "Sources":  ["[[anthropic-agent-skills-2025]]", "[[model-context-protocol-anthropic-2024]]"],
       "Keywords": ["agentskills.io", "anthropics/skills", "pulse.mcp.so", "smithery", "MCP registry", "app store model"]
@@ -1131,7 +1316,11 @@ const agentEcosystemNodes = [
     id: "agent-app", label: "Agent app", layer: "enduser",
     x: 440, y: 80,
     content: {
-      "Scope": ["the product the end user actually opens — terminal binary, desktop app, web shell"],
+      "About": [
+        "the product the end user actually opens — terminal binary, desktop app, web shell",
+        "implemented by an agent process under the hood (see Subsystems view)",
+        "the only end-user-visible thing on this page"
+      ],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]", "[[openclaw]]"],
       "Keywords": ["Claude Code", "ChatGPT", "Cursor", "Devin", "no install / npx", "install once"]
     }
@@ -1140,7 +1329,11 @@ const agentEcosystemNodes = [
     id: "model-account", label: "Model\naccount", layer: "enduser",
     x: 740, y: 80,
     content: {
-      "Scope": ["the user's paid relationship with a model provider — auth + cost tier"],
+      "About": [
+        "the user's paid relationship with a model provider — auth + cost tier",
+        "API key, subscription plan, monthly cap, credit balance",
+        "BYOK lets users plug their own account into any compatible agent"
+      ],
       "Entities": ["[[openai]]", "[[anthropic]]", "[[openai-api]]"],
       "Keywords": ["API key", "subscription tier", "monthly cap", "credit balance", "BYOK", "OAuth login"]
     }
@@ -1151,7 +1344,11 @@ const agentEcosystemNodes = [
     id: "agent-process", label: "Agent process\n(see Subsystems view)", layer: "agentproc",
     x: 440, y: 380,
     content: {
-      "Scope": ["one running agent — see Agent Subsystems view for what's inside"],
+      "About": [
+        "one running instance of the agent — see Agent Subsystems view for what's inside",
+        "binary / server-with-clients / daemon, depending on the agent",
+        "fans out to every developer-side dependency below"
+      ],
       "Concepts": ["[[llm-agent]]", "[[react]]", "[[agent-three-layer-model]]"],
       "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]", "[[openclaw]]"],
       "Keywords": ["binary", "server + clients", "daemon", "Node / Bun / CPython", "single process or multi"]
@@ -1163,7 +1360,11 @@ const agentEcosystemNodes = [
     id: "mcp-servers", label: "MCP servers", layer: "infra",
     x: 140, y: 380,
     content: {
-      "Scope": ["the tool ecosystem — custom, community, and first-party servers"],
+      "About": [
+        "the tool ecosystem — custom, community, and first-party servers",
+        "MCP standardizes the agent↔tool surface across vendors",
+        "custom internal MCPs are how teams wire proprietary systems"
+      ],
       "Concepts": ["[[mcp]]", "[[tool-use]]", "[[json-rpc]]"],
       "Sources":  ["[[model-context-protocol-anthropic-2024]]"],
       "Entities": ["[[anthropic]]"],
@@ -1174,7 +1375,11 @@ const agentEcosystemNodes = [
     id: "acp-editors", label: "ACP-hosted\neditors", layer: "infra",
     x: 140, y: 540,
     content: {
-      "Scope": ["editors that host an agent over the Agent Client Protocol"],
+      "About": [
+        "editors that host an agent over the Agent Client Protocol",
+        "agent runs inside the editor's UI; editor provides file/codebase access",
+        "Apache 2.0; ecosystem includes Zed, JetBrains, Neovim, Emacs, marimo, Obsidian"
+      ],
       "Concepts": ["[[acp]]", "[[json-rpc]]"],
       "Entities": ["[[zed]]"],
       "Sources":  ["[[agent-client-protocol-zed-2025]]"],
@@ -1185,7 +1390,11 @@ const agentEcosystemNodes = [
     id: "self-host", label: "Self-hosted\ninference", layer: "infra",
     x: 140, y: 700,
     content: {
-      "Scope": ["run the model yourself — open-weight stack"],
+      "About": [
+        "run the model yourself — open-weight stack",
+        "vLLM / SGLang / TensorRT-LLM / llama.cpp / Ollama",
+        "trades infra cost for data-sovereignty + lower per-token cost"
+      ],
       "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]", "[[constrained-decoding]]"],
       "Entities": ["[[vllm]]"],
       "Sources":  ["[[vllm-tool-calling-2025]]"],
@@ -1198,7 +1407,11 @@ const agentEcosystemNodes = [
     id: "llm-api", label: "LLM API\nservice", layer: "infra",
     x: 740, y: 380,
     content: {
-      "Scope": ["managed LLM endpoints the agent calls each turn"],
+      "About": [
+        "managed LLM endpoints the agent calls each turn",
+        "pay-per-token; provider handles infra, scaling, model updates",
+        "Bedrock / Vertex AI / Azure OpenAI are reseller proxies"
+      ],
       "Concepts": ["[[function-calling]]", "[[responses-api]]"],
       "Entities": ["[[openai-api]]", "[[anthropic]]", "[[openai]]"],
       "Sources":  ["[[openai-function-calling-2025]]"],
@@ -1209,7 +1422,11 @@ const agentEcosystemNodes = [
     id: "object-storage", label: "Object\nstorage", layer: "infra",
     x: 740, y: 540,
     content: {
-      "Scope": ["large artifacts the agent reads/writes — files, images, datasets"],
+      "About": [
+        "large artifacts the agent reads/writes — files, images, datasets",
+        "S3 / GCS / R2 / Azure Blob; cheap, durable, slow",
+        "complementary to vector DB (which stores embeddings of these)"
+      ],
       "Keywords": ["S3", "GCS", "Azure Blob", "R2", "local FS", "uploaded files", "generated artifacts", "snapshot-git"]
     }
   },
@@ -1217,7 +1434,11 @@ const agentEcosystemNodes = [
     id: "vector-db", label: "Vector\ndatabase", layer: "infra",
     x: 740, y: 700,
     content: {
-      "Scope": ["embedding index for dense retrieval over memory / docs"],
+      "About": [
+        "embedding index for dense retrieval over memory / docs",
+        "stores vectors keyed by document chunks",
+        "FAISS / Pinecone / LanceDB / Qdrant / Weaviate / Neo4j (graph)"
+      ],
       "Concepts": ["[[dense-retrieval]]", "[[retrieval-augmented-generation]]", "[[graph-memory]]"],
       "Entities": ["[[zep]]"],
       "Keywords": ["FAISS", "Pinecone", "LanceDB", "Qdrant", "Weaviate", "Neo4j (graph)", "Chroma", "embedding-3-small"]
@@ -1227,7 +1448,11 @@ const agentEcosystemNodes = [
     id: "session-db", label: "Session\ndatabase", layer: "infra",
     x: 740, y: 860,
     content: {
-      "Scope": ["durable session/conversation state"],
+      "About": [
+        "durable session / conversation state",
+        "messages, tool calls, hook fires — replayable timeline",
+        "SQLite for local agents, Postgres for hosted services"
+      ],
       "Entities": ["[[opencode]]", "[[hermes-agent]]"],
       "Keywords": ["SQLite", "Postgres", "JSONL session tree", "FTS5 full-text", "Drizzle / Prisma", "event sourcing"]
     }
@@ -1236,7 +1461,11 @@ const agentEcosystemNodes = [
     id: "sandbox", label: "Sandbox\nruntime", layer: "infra",
     x: 740, y: 1020,
     content: {
-      "Scope": ["where the agent's tool calls actually execute — isolation boundary"],
+      "About": [
+        "where the agent's tool calls actually execute — isolation boundary",
+        "Docker / Firecracker microVM / macOS seatbelt / Linux namespaces",
+        "the hard part of agent-safety engineering"
+      ],
       "Concepts": ["[[guardrailing]]"],
       "Entities": ["[[claude-code]]", "[[hermes-agent]]", "[[openclaw]]"],
       "Keywords": ["Docker", "Firecracker", "microVM", "macOS seatbelt", "Linux namespaces", "OS-level adapter", "tiered containers"]
@@ -1248,7 +1477,11 @@ const agentEcosystemNodes = [
     id: "observability", label: "Observability", layer: "infra",
     x: 140, y: 1180,
     content: {
-      "Scope": ["logs, traces, metrics — see what the agent did"],
+      "About": [
+        "logs, traces, metrics — see what the agent did",
+        "trace per session, structured logs per hook fire",
+        "OTLP / Sentry / Helicone / Langfuse / Datadog"
+      ],
       "Keywords": ["OTEL / OTLP", "structured logs", "trace per session", "Sentry", "Helicone", "Langfuse", "Datadog", "telemetry redaction"]
     }
   },
@@ -1256,7 +1489,11 @@ const agentEcosystemNodes = [
     id: "auth", label: "Auth &\nAPI keys", layer: "infra",
     x: 340, y: 1180,
     content: {
-      "Scope": ["credentials the agent uses to authenticate to LLMs, MCP servers, tools"],
+      "About": [
+        "credentials the agent uses to authenticate to LLMs, MCP servers, tools",
+        "API keys + OAuth tokens, fetched from a key vault at runtime",
+        "rotation + scoping is critical at production scale"
+      ],
       "Keywords": ["API keys", "OAuth", "key vault (1Password, AWS Secrets)", "service accounts", "BYOK", "key rotation"]
     }
   },
@@ -1264,7 +1501,11 @@ const agentEcosystemNodes = [
     id: "billing", label: "Billing /\ncost tracking", layer: "infra",
     x: 540, y: 1180,
     content: {
-      "Scope": ["track LLM + tool usage cost; emit budget alerts"],
+      "About": [
+        "track LLM + tool usage cost; emit budget alerts",
+        "per-session + per-user + per-org dashboards",
+        "feeds back into rate limits + tier caps"
+      ],
       "Concepts": ["[[sleep-time-compute]]"],
       "Sources":  ["[[sleep-time-compute-lin-2025]]"],
       "Keywords": ["per-session cost", "monthly cap", "budget alerts", "cost dashboard", "Helicone / Langfuse cost", "FinOps"]
@@ -1274,7 +1515,11 @@ const agentEcosystemNodes = [
     id: "eval-harness", label: "Eval harness", layer: "infra",
     x: 740, y: 1180,
     content: {
-      "Scope": ["systematically test agent behavior — safety + capability"],
+      "About": [
+        "systematically test agent behavior — safety + capability",
+        "blocks AND drives: catches regressions, validates task completion",
+        "METR / AISI for safety, SWE-bench / LOCOMO for capability"
+      ],
       "Concepts": ["[[red-teaming]]", "[[agentic-misalignment]]"],
       "Sources":  ["[[red-teaming-ganguli-2022]]"],
       "Keywords": ["METR", "AISI", "SWE-bench", "HumanEval", "LOCOMO", "custom evals", "regression suite"]
@@ -1930,6 +2175,46 @@ window.addEventListener("resize", () => {
 });
 
 document.getElementById("reset-layout").addEventListener("click", resetLayout);
+
+// =====================================================================
+// Sidebar resizer — drag the 6px column between graph and sidebar
+// =====================================================================
+(function() {
+  const resizer = document.getElementById("sidebar-resizer");
+  if (!resizer) return;
+  const MIN_W = 220;
+  const MAX_W = 720;
+  let dragging = false;
+
+  function onDown(e) {
+    dragging = true;
+    resizer.classList.add("dragging");
+    document.body.classList.add("resizing-sidebar");
+    e.preventDefault();
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    // Sidebar width = viewport width - mouse X (distance from right edge)
+    const w = Math.min(MAX_W, Math.max(MIN_W, window.innerWidth - e.clientX));
+    document.documentElement.style.setProperty("--sidebar-w", w + "px");
+    if (typeof network !== "undefined") network.redraw();
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    resizer.classList.remove("dragging");
+    document.body.classList.remove("resizing-sidebar");
+    if (typeof network !== "undefined") {
+      network.redraw();
+      // Re-fit only if the graph might have been clipped by the resize
+      // (keep the user's pan/zoom otherwise — explicit reset is via the toolbar)
+    }
+  }
+
+  resizer.addEventListener("mousedown", onDown);
+  window.addEventListener("mousemove", onMove);
+  window.addEventListener("mouseup", onUp);
+})();
 </script>
 </body>
 </html>
