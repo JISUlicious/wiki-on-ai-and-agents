@@ -220,6 +220,8 @@
   <button class="nav-btn active" data-view="three-layer">Three-Layer Model</button>
   <button class="nav-btn" data-view="react-loop">ReAct Loop</button>
   <button class="nav-btn" data-view="loop-hooks">Loop Hooks</button>
+  <button class="nav-btn" data-view="agent-subsystems">Agent Subsystems</button>
+  <button class="nav-btn" data-view="agent-ecosystem">Agent Ecosystem</button>
 </nav>
 <div id="app">
   <div id="graph-wrap">
@@ -279,7 +281,11 @@ const LAYER_COLORS = {
   // agent-runtime view
   center:    "#f97316", // orange — the inner loop (re-uses loop color)
   subsystem: "#6366f1", // indigo — feeds/uses the loop
-  intercept: "#ec4899"  // pink   — hooks/permissions that gate transitions
+  intercept: "#ec4899", // pink   — hooks/permissions that gate transitions
+  // agent-ecosystem view
+  enduser:    "#14b8a6", // teal   — what end users see
+  agentproc:  "#f97316", // orange — the agent process itself (re-uses center)
+  infra:      "#6366f1"  // indigo — developer-side infrastructure
 };
 
 const LAYER_LABELS = {
@@ -291,7 +297,10 @@ const LAYER_LABELS = {
   output: "Output",
   center:    "Inner loop",
   subsystem: "Runtime subsystem",
-  intercept: "Cross-cutting interceptor"
+  intercept: "Cross-cutting interceptor",
+  enduser:   "End-user surface",
+  agentproc: "Agent process",
+  infra:     "Developer infrastructure"
 };
 
 // Three-row layout: L0 (1 node) → L1 (4 nodes) → L2 (6 nodes).
@@ -970,6 +979,335 @@ const loopHooksEdges = [
 ];
 
 // =====================================================================
+// View 4: Agent Subsystems — what wraps the ReAct loop inside ONE agent
+// process. Hub-and-spoke: the loop sits center. Around it: feeders
+// (model conn / context pipeline / memory), drains (persistence / I/O),
+// a sub-agent dispatcher (treated as a "tool with an LLM attached"),
+// and a cross-cutting permission/sandbox layer.
+// =====================================================================
+
+const agentSubsystemsNodes = [
+  // ─── Center: the loop (placeholder — full detail lives in views 2 & 3) ───
+  {
+    id: "agent-loop", label: "ReAct Loop\n(agent inner loop)", layer: "center",
+    x: 400, y: 320,
+    content: {
+      "Scope": ["the agent's inner loop — see ReAct Loop view for steps and Loop Hooks view for interception points"],
+      "Concepts": ["[[react]]", "[[llm-agent]]", "[[reflexion]]"],
+      "Sources":  ["[[react-yao-2022]]"],
+      "Keywords": ["Reason → Act → Observation", "percept → decide → act", "halt condition"]
+    }
+  },
+
+  // ─── Input feeders (top row) ───
+  {
+    id: "model-connection", label: "Model\nconnection", layer: "subsystem",
+    x: 100, y: 80,
+    content: {
+      "Scope": ["how the agent calls the LLM each turn"],
+      "Concepts": ["[[function-calling]]", "[[responses-api]]", "[[structured-outputs]]", "[[tool-call-parser]]", "[[constrained-decoding]]"],
+      "Entities": ["[[openai-api]]", "[[anthropic]]", "[[vllm]]"],
+      "Sources":  ["[[openai-function-calling-2025]]", "[[vllm-tool-calling-2025]]"],
+      "Keywords": ["API client", "streaming", "provider abstraction", "retries", "rate limits", "fallback chain", "prompt caching"]
+    }
+  },
+  {
+    id: "context-pipeline", label: "Context-building\npipeline", layer: "subsystem",
+    x: 400, y: 80,
+    content: {
+      "Scope": ["assembles each turn's prompt from many input sources"],
+      "Concepts": ["[[in-context-learning]]", "[[agent-skills]]", "[[skill-md-format]]", "[[retrieval-augmented-generation]]", "[[dense-retrieval]]", "[[bm25]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]"],
+      "Sources":  ["[[anthropic-agent-skills-2025]]"],
+      "Keywords": ["CLAUDE.md auto-load", "AGENTS.md", "SKILL.md packages", "system prompt", "dynamic templates", "progressive disclosure", "retrieved snippets"]
+    }
+  },
+  {
+    id: "memory-system", label: "Memory\nsystem", layer: "subsystem",
+    x: 700, y: 80,
+    content: {
+      "Scope": ["state across turns + sessions — read into context, written from the loop"],
+      "Concepts (umbrella)": ["[[memory-management]]"],
+      "Concepts (primitives)": ["[[memory-stream]]", "[[reflection-mechanism]]", "[[procedural-memory]]", "[[episodic-memory-llm]]", "[[graph-memory]]", "[[ebbinghaus-forgetting]]", "[[kv-cache]]"],
+      "Concepts (systems)": ["[[memgpt]]", "[[mem0]]", "[[mirix]]", "[[a-mem]]", "[[sleep-time-compute]]", "[[memory-r1]]"],
+      "Entities": ["[[letta]]", "[[zep]]"],
+      "Keywords": ["write", "store", "retrieve", "compact", "consolidate", "evict", "curate", "MEMORY.md", "USER.md"]
+    }
+  },
+
+  // ─── Right side: sub-agent (treated as "tool w/ LLM attached") ───
+  {
+    id: "sub-agent", label: "Sub-agent\ndispatch", layer: "subsystem",
+    x: 720, y: 320,
+    content: {
+      "Scope": ["a long-running tool with an LLM attached — Act can dispatch a child agent that runs its own loop and returns a result"],
+      "Concepts": ["[[react]]", "[[reflexion]]", "[[metagpt]]", "[[autogen]]", "[[multi-agent-memory]]", "[[mirix]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
+      "Sources":  ["[[metagpt-hong-2023]]", "[[autogen-wu-2023]]", "[[mirix-wang-2025]]"],
+      "Keywords": ["Task subagent", "delegate_task", "worktree isolation", "explore / plan / code-reviewer", "child loop", "result return", "pi refuses sub-agents"]
+    }
+  },
+
+  // ─── Left side: permission & sandbox (cross-cutter) ───
+  {
+    id: "permission-sandbox", label: "Permission &\nsandbox", layer: "intercept",
+    x: 80, y: 320,
+    content: {
+      "Scope": ["what actions are allowed and where they run — gates loop transitions (cross-cutting)"],
+      "Concepts": ["[[guardrailing]]", "[[constitutional-ai]]", "[[steering]]", "[[red-teaming]]", "[[agentic-misalignment]]", "[[indirect-prompt-injection]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[openclaw]]"],
+      "Sources":  ["[[constitutional-ai-bai-2022]]", "[[red-teaming-ganguli-2022]]", "[[indirect-prompt-injection-greshake-2023]]"],
+      "Keywords": ["allowlist", "denylist", "container", "seatbelt", "Docker tiers", "refusal classifier", "human-approval", "hooks-as-gates", "plan-mode"]
+    }
+  },
+
+  // ─── Output drains (bottom row) ───
+  {
+    id: "persistence-layer", label: "Persistence\nlayer", layer: "subsystem",
+    x: 250, y: 600,
+    content: {
+      "Scope": ["durable state that survives the process"],
+      "Concepts": ["[[memory-management]]"],
+      "Entities": ["[[pi-mono]]", "[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
+      "Keywords": ["JSONL session tree", "SQLite + event log", "event sourcing", "session replay", "snapshot-git", "revertable file edits", "shareable sessions"]
+    }
+  },
+  {
+    id: "io-surface", label: "I/O surface", layer: "subsystem",
+    x: 550, y: 600,
+    content: {
+      "Scope": ["how output reaches the user / system"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[openclaw]]", "[[pi-mono]]", "[[zed]]"],
+      "Concepts": ["[[acp]]"],
+      "Keywords": ["streaming output", "markdown", "terminal / TUI", "web shell", "chat platforms", "menu-bar", "ACP-hosted IDE", "Telegram / Discord / Slack"]
+    }
+  }
+];
+
+const agentSubsystemsEdges = [
+  // Input feeders → loop (synchronous each turn)
+  { from: "model-connection",  to: "agent-loop", label: "calls LLM" },
+  { from: "context-pipeline",  to: "agent-loop", label: "builds prompt" },
+  { from: "memory-system",     to: "agent-loop", label: "reads" },
+
+  // Memory write-back from loop (async)
+  { from: "agent-loop", to: "memory-system", dashed: true, label: "writes" },
+
+  // Sub-agent dispatch (spawn + async return)
+  { from: "agent-loop", to: "sub-agent", label: "spawn" },
+  { from: "sub-agent",  to: "agent-loop", dashed: true, label: "returns" },
+
+  // Permission/sandbox gates the loop (cross-cutter)
+  { from: "permission-sandbox", to: "agent-loop", dashed: true, label: "gates" },
+
+  // Output drains ← loop
+  { from: "agent-loop", to: "persistence-layer", label: "events" },
+  { from: "agent-loop", to: "io-surface",        label: "output" },
+
+  // Inter-subsystem flows (data movement between wrappers, async)
+  { from: "memory-system",     to: "context-pipeline", dashed: true, label: "loads memory" },
+  { from: "persistence-layer", to: "memory-system",    dashed: true, label: "rehydrate" }
+];
+
+// =====================================================================
+// View 5: Agent Ecosystem — what lives OUTSIDE the agent process.
+// External infrastructure the agent depends on, split by audience
+// visibility (end-user vs developer) via background bands.
+// =====================================================================
+
+const agentEcosystemNodes = [
+  // ─── End-user band (y ≈ 80) — ordered MCP / Agent app / Model account ───
+  {
+    id: "mcp-marketplace", label: "MCP / skill\nmarketplace", layer: "enduser",
+    x: 140, y: 80,
+    content: {
+      "Scope": ["where end users browse and install agent extensions"],
+      "Concepts": ["[[mcp]]", "[[agent-skills]]", "[[skill-md-format]]"],
+      "Sources":  ["[[anthropic-agent-skills-2025]]", "[[model-context-protocol-anthropic-2024]]"],
+      "Keywords": ["agentskills.io", "anthropics/skills", "pulse.mcp.so", "smithery", "MCP registry", "app store model"]
+    }
+  },
+  {
+    id: "agent-app", label: "Agent app", layer: "enduser",
+    x: 440, y: 80,
+    content: {
+      "Scope": ["the product the end user actually opens — terminal binary, desktop app, web shell"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]", "[[openclaw]]"],
+      "Keywords": ["Claude Code", "ChatGPT", "Cursor", "Devin", "no install / npx", "install once"]
+    }
+  },
+  {
+    id: "model-account", label: "Model\naccount", layer: "enduser",
+    x: 740, y: 80,
+    content: {
+      "Scope": ["the user's paid relationship with a model provider — auth + cost tier"],
+      "Entities": ["[[openai]]", "[[anthropic]]", "[[openai-api]]"],
+      "Keywords": ["API key", "subscription tier", "monthly cap", "credit balance", "BYOK", "OAuth login"]
+    }
+  },
+
+  // ─── Agent process (center) ───
+  {
+    id: "agent-process", label: "Agent process\n(see Subsystems view)", layer: "agentproc",
+    x: 440, y: 380,
+    content: {
+      "Scope": ["one running agent — see Agent Subsystems view for what's inside"],
+      "Concepts": ["[[llm-agent]]", "[[react]]", "[[agent-three-layer-model]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]", "[[openclaw]]"],
+      "Keywords": ["binary", "server + clients", "daemon", "Node / Bun / CPython", "single process or multi"]
+    }
+  },
+
+  // ─── LEFT column: interface-related (vertical at x=140) ───
+  {
+    id: "mcp-servers", label: "MCP servers", layer: "infra",
+    x: 140, y: 380,
+    content: {
+      "Scope": ["the tool ecosystem — custom, community, and first-party servers"],
+      "Concepts": ["[[mcp]]", "[[tool-use]]", "[[json-rpc]]"],
+      "Sources":  ["[[model-context-protocol-anthropic-2024]]"],
+      "Entities": ["[[anthropic]]"],
+      "Keywords": ["GitHub MCP", "Google Drive MCP", "Slack MCP", "Postgres MCP", "Puppeteer MCP", "custom internal MCP", "AAIF / Linux Foundation"]
+    }
+  },
+  {
+    id: "acp-editors", label: "ACP-hosted\neditors", layer: "infra",
+    x: 140, y: 540,
+    content: {
+      "Scope": ["editors that host an agent over the Agent Client Protocol"],
+      "Concepts": ["[[acp]]", "[[json-rpc]]"],
+      "Entities": ["[[zed]]"],
+      "Sources":  ["[[agent-client-protocol-zed-2025]]"],
+      "Keywords": ["Zed", "JetBrains", "Neovim", "Emacs", "marimo", "Obsidian", "AionUi", "Apache 2.0"]
+    }
+  },
+  {
+    id: "self-host", label: "Self-hosted\ninference", layer: "infra",
+    x: 140, y: 700,
+    content: {
+      "Scope": ["run the model yourself — open-weight stack"],
+      "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]", "[[constrained-decoding]]"],
+      "Entities": ["[[vllm]]"],
+      "Sources":  ["[[vllm-tool-calling-2025]]"],
+      "Keywords": ["vLLM", "SGLang", "TensorRT-LLM", "llama.cpp", "Ollama", "TGI", "xgrammar", "outlines"]
+    }
+  },
+
+  // ─── RIGHT column: infra-related (vertical at x=740) ───
+  {
+    id: "llm-api", label: "LLM API\nservice", layer: "infra",
+    x: 740, y: 380,
+    content: {
+      "Scope": ["managed LLM endpoints the agent calls each turn"],
+      "Concepts": ["[[function-calling]]", "[[responses-api]]"],
+      "Entities": ["[[openai-api]]", "[[anthropic]]", "[[openai]]"],
+      "Sources":  ["[[openai-function-calling-2025]]"],
+      "Keywords": ["OpenAI API", "Anthropic Messages API", "Google Gemini API", "AWS Bedrock", "Azure OpenAI", "GCP Vertex AI"]
+    }
+  },
+  {
+    id: "object-storage", label: "Object\nstorage", layer: "infra",
+    x: 740, y: 540,
+    content: {
+      "Scope": ["large artifacts the agent reads/writes — files, images, datasets"],
+      "Keywords": ["S3", "GCS", "Azure Blob", "R2", "local FS", "uploaded files", "generated artifacts", "snapshot-git"]
+    }
+  },
+  {
+    id: "vector-db", label: "Vector\ndatabase", layer: "infra",
+    x: 740, y: 700,
+    content: {
+      "Scope": ["embedding index for dense retrieval over memory / docs"],
+      "Concepts": ["[[dense-retrieval]]", "[[retrieval-augmented-generation]]", "[[graph-memory]]"],
+      "Entities": ["[[zep]]"],
+      "Keywords": ["FAISS", "Pinecone", "LanceDB", "Qdrant", "Weaviate", "Neo4j (graph)", "Chroma", "embedding-3-small"]
+    }
+  },
+  {
+    id: "session-db", label: "Session\ndatabase", layer: "infra",
+    x: 740, y: 860,
+    content: {
+      "Scope": ["durable session/conversation state"],
+      "Entities": ["[[opencode]]", "[[hermes-agent]]"],
+      "Keywords": ["SQLite", "Postgres", "JSONL session tree", "FTS5 full-text", "Drizzle / Prisma", "event sourcing"]
+    }
+  },
+  {
+    id: "sandbox", label: "Sandbox\nruntime", layer: "infra",
+    x: 740, y: 1020,
+    content: {
+      "Scope": ["where the agent's tool calls actually execute — isolation boundary"],
+      "Concepts": ["[[guardrailing]]"],
+      "Entities": ["[[claude-code]]", "[[hermes-agent]]", "[[openclaw]]"],
+      "Keywords": ["Docker", "Firecracker", "microVM", "macOS seatbelt", "Linux namespaces", "OS-level adapter", "tiered containers"]
+    }
+  },
+
+  // ─── BELOW: production-services extras (horizontal row at y=1180) ───
+  {
+    id: "observability", label: "Observability", layer: "infra",
+    x: 140, y: 1180,
+    content: {
+      "Scope": ["logs, traces, metrics — see what the agent did"],
+      "Keywords": ["OTEL / OTLP", "structured logs", "trace per session", "Sentry", "Helicone", "Langfuse", "Datadog", "telemetry redaction"]
+    }
+  },
+  {
+    id: "auth", label: "Auth &\nAPI keys", layer: "infra",
+    x: 340, y: 1180,
+    content: {
+      "Scope": ["credentials the agent uses to authenticate to LLMs, MCP servers, tools"],
+      "Keywords": ["API keys", "OAuth", "key vault (1Password, AWS Secrets)", "service accounts", "BYOK", "key rotation"]
+    }
+  },
+  {
+    id: "billing", label: "Billing /\ncost tracking", layer: "infra",
+    x: 540, y: 1180,
+    content: {
+      "Scope": ["track LLM + tool usage cost; emit budget alerts"],
+      "Concepts": ["[[sleep-time-compute]]"],
+      "Sources":  ["[[sleep-time-compute-lin-2025]]"],
+      "Keywords": ["per-session cost", "monthly cap", "budget alerts", "cost dashboard", "Helicone / Langfuse cost", "FinOps"]
+    }
+  },
+  {
+    id: "eval-harness", label: "Eval harness", layer: "infra",
+    x: 740, y: 1180,
+    content: {
+      "Scope": ["systematically test agent behavior — safety + capability"],
+      "Concepts": ["[[red-teaming]]", "[[agentic-misalignment]]"],
+      "Sources":  ["[[red-teaming-ganguli-2022]]"],
+      "Keywords": ["METR", "AISI", "SWE-bench", "HumanEval", "LOCOMO", "custom evals", "regression suite"]
+    }
+  }
+];
+
+const agentEcosystemEdges = [
+  // End-user → Dev (dashed but STRAIGHT — no arcs)
+  { from: "mcp-marketplace", to: "mcp-servers",   dashed: true, straight: true, label: "installs from" },
+  { from: "agent-app",       to: "agent-process", dashed: true, straight: true, label: "is implemented by" },
+  { from: "model-account",   to: "llm-api",       dashed: true, straight: true, label: "authenticates to" },
+
+  // Agent process → LEFT column (interface)
+  { from: "agent-process", to: "mcp-servers",  straight: true, label: "invokes tools" },
+  { from: "agent-process", to: "acp-editors",  dashed: true, straight: true, label: "may be hosted by" },
+  { from: "agent-process", to: "self-host",    dashed: true, straight: true, label: "or self-host" },
+
+  // Agent process → RIGHT column (infra)
+  { from: "agent-process", to: "llm-api",        straight: true, label: "calls each turn" },
+  { from: "agent-process", to: "object-storage", dashed: true, straight: true, label: "writes artifacts" },
+  { from: "agent-process", to: "vector-db",      straight: true, label: "queries embeddings" },
+  { from: "agent-process", to: "session-db",     straight: true, label: "writes events" },
+  { from: "agent-process", to: "sandbox",        straight: true, label: "executes in" },
+
+  // Agent process → BELOW (production-extras row)
+  { from: "agent-process", to: "observability",  dashed: true, straight: true, label: "emits telemetry" },
+  { from: "agent-process", to: "auth",           straight: true, label: "auths via" },
+  { from: "agent-process", to: "billing",        dashed: true, straight: true, label: "emits cost" },
+  { from: "agent-process", to: "eval-harness",   dashed: true, straight: true, label: "tested by" }
+];
+
+// =====================================================================
 // VIEWS — switchable graph datasets, selected via top nav
 // =====================================================================
 
@@ -1011,6 +1349,50 @@ const VIEWS = {
       '<div class="hint">7 hooks: SessionStart · UserPromptSubmit · PreLLMCall · PostLLMCall · PreToolUse · PostToolUse · Stop. Dashed = loop-back.</div>',
     nodes: loopHooksNodes,
     edges: loopHooksEdges
+  },
+  "agent-subsystems": {
+    title: "Agent Subsystems",
+    subtitle: "What surrounds the ReAct loop inside ONE agent process",
+    legendHtml:
+      '<div class="group-title">Agent Subsystems</div>' +
+      '<div><span class="dot" style="background:#f97316"></span><strong>Inner loop</strong> — the ReAct loop itself</div>' +
+      '<div><span class="dot" style="background:#6366f1"></span><strong>Subsystem</strong> — feeds or drains the loop</div>' +
+      '<div><span class="dot" style="background:#ec4899"></span><strong>Interceptor</strong> — gates loop transitions (cross-cutting)</div>' +
+      '<div class="hint">Solid = synchronous data flow each turn. Dashed = async write / intercept / rehydrate.</div>',
+    nodes: agentSubsystemsNodes,
+    edges: agentSubsystemsEdges
+  },
+  "agent-ecosystem": {
+    title: "Agent Ecosystem",
+    subtitle: "What lives outside the agent process — end-user surface vs developer infrastructure",
+    legendHtml:
+      '<div class="group-title">Agent Ecosystem</div>' +
+      '<div><span class="dot" style="background:#14b8a6"></span><strong>End-user surface</strong> — what end users see</div>' +
+      '<div><span class="dot" style="background:#f97316"></span><strong>Agent process</strong> — see Subsystems view</div>' +
+      '<div><span class="dot" style="background:#6366f1"></span><strong>Infrastructure</strong> — what developers wire up</div>' +
+      '<div class="hint">The dashed horizontal divider is the "dev line" — end users do not operate anything below it.</div>',
+    nodes: agentEcosystemNodes,
+    edges: agentEcosystemEdges,
+    // Background bands rendered by the beforeDrawing handler.
+    backgroundBands: [
+      {
+        y0: -60, y1: 230,
+        color: "rgba(20,184,166,0.05)",
+        label: "END-USER SURFACE",
+        sublabel: "(what end users see)",
+        labelY: -20,
+        labelX: -60
+      },
+      {
+        y0: 250, y1: 1280,
+        color: "rgba(99,102,241,0.04)",
+        label: "DEVELOPER INFRASTRUCTURE",
+        sublabel: "(what developers wire up)",
+        labelY: 280,
+        labelX: -60
+      }
+    ],
+    divider: { y: 240, label: "DEV LINE" }
   }
 };
 
@@ -1076,6 +1458,11 @@ function buildVisNode(n) {
 }
 
 function buildVisEdge(e) {
+  // Curve choice:
+  //   - e.straight  → straight bezier (no curl), regardless of dashed
+  //   - e.dashed    → curvedCW arc (used for loop-backs / cross-cutters)
+  //   - default     → vertical cubicBezier
+  const useCurve = e.dashed && !e.straight;
   const cfg = {
     from: e.from,
     to: e.to,
@@ -1083,7 +1470,12 @@ function buildVisEdge(e) {
     color: { color: e.dashed ? "#4b5563" : "#30363d", highlight: "#58a6ff" },
     dashes: e.dashed ? [5, 5] : false,
     width: 1,
-    smooth: { enabled: true, type: e.dashed ? "curvedCW" : "cubicBezier", roundness: e.dashed ? 0.5 : 0.4, forceDirection: e.dashed ? false : "vertical" }
+    smooth: {
+      enabled: true,
+      type: useCurve ? "curvedCW" : "cubicBezier",
+      roundness: useCurve ? 0.5 : 0.4,
+      forceDirection: useCurve ? false : "vertical"
+    }
   };
   if (e.label) {
     cfg.label = e.label;
@@ -1112,6 +1504,61 @@ try {
     }
   );
   console.log("[three-layer-graph] network created with manual positions");
+
+  // Background bands + divider line — for views that opt in via
+  // VIEWS[id].backgroundBands and VIEWS[id].divider (only Agent Ecosystem
+  // uses this so far). The beforeDrawing hook runs in network coordinate
+  // space, so we just draw at raw x/y.
+  network.on("beforeDrawing", function(ctx) {
+    const view = VIEWS[CURRENT_VIEW_ID];
+    if (!view) return;
+
+    if (view.backgroundBands) {
+      ctx.save();
+      for (const band of view.backgroundBands) {
+        ctx.fillStyle = band.color;
+        ctx.fillRect(-10000, band.y0, 20000, band.y1 - band.y0);
+        if (band.label) {
+          const lx = (typeof band.labelX === "number") ? band.labelX : 60;
+          ctx.fillStyle = "rgba(139,148,158,0.55)";
+          ctx.font = "bold 13px system-ui, sans-serif";
+          ctx.textBaseline = "top";
+          ctx.fillText(band.label, lx, band.labelY);
+          if (band.sublabel) {
+            ctx.fillStyle = "rgba(139,148,158,0.4)";
+            ctx.font = "11px system-ui, sans-serif";
+            ctx.fillText(band.sublabel, lx, band.labelY + 18);
+          }
+        }
+      }
+      ctx.restore();
+    }
+
+    if (view.divider) {
+      ctx.save();
+      ctx.strokeStyle = "rgba(139,148,158,0.6)";
+      ctx.setLineDash([10, 6]);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(-10000, view.divider.y);
+      ctx.lineTo(10000, view.divider.y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      if (view.divider.label) {
+        ctx.fillStyle = "rgba(139,148,158,0.7)";
+        ctx.font = "bold 11px system-ui, sans-serif";
+        ctx.textBaseline = "middle";
+        // Draw label with a small bg patch so it sits on top of the line
+        ctx.fillStyle = "rgba(14,17,23,1)";
+        ctx.fillRect(-50, view.divider.y - 9, 100, 18);
+        ctx.fillStyle = "rgba(139,148,158,0.9)";
+        ctx.textAlign = "center";
+        ctx.fillText(view.divider.label, 0, view.divider.y);
+        ctx.textAlign = "start";
+      }
+      ctx.restore();
+    }
+  });
 } catch (e) {
   showError("Failed to construct vis-network graph: " + e.message);
   console.error(e);
@@ -1192,10 +1639,60 @@ function renderL3List(children) {
     `</details>`;
 }
 
+// =====================================================================
+// Selection-based dimming
+//   When a node is selected, dim every non-neighbor node + non-incident
+//   edge to make the local subgraph stand out. The existing selection
+//   visual (white border + glow via `chosen` callbacks) is unaffected.
+// =====================================================================
+
+const DIM_NODE_OPACITY = 0.18;
+const DIM_EDGE_OPACITY = 0.08;
+
+function applyDimming() {
+  const selected = network.getSelectedNodes();
+  if (selected.length === 0) { clearDimming(); return; }
+  const sel = selected[0];
+  const neighbors = new Set(network.getConnectedNodes(sel));
+  neighbors.add(sel);
+  const incidentEdgeIds = new Set(network.getConnectedEdges(sel));
+
+  visNodes.update(
+    visNodes.get().map(n => ({
+      id: n.id,
+      opacity: neighbors.has(n.id) ? 1 : DIM_NODE_OPACITY
+    }))
+  );
+
+  visEdges.update(
+    visEdges.get().map(e => {
+      const c = (e.color && typeof e.color === "object") ? e.color : {};
+      return {
+        id: e.id,
+        color: { ...c, opacity: incidentEdgeIds.has(e.id) ? 1 : DIM_EDGE_OPACITY }
+      };
+    })
+  );
+}
+
+function clearDimming() {
+  visNodes.update(visNodes.get().map(n => ({ id: n.id, opacity: 1 })));
+  visEdges.update(
+    visEdges.get().map(e => {
+      const c = (e.color && typeof e.color === "object") ? e.color : {};
+      return { id: e.id, color: { ...c, opacity: 1 } };
+    })
+  );
+}
+
+network.on("selectNode",   applyDimming);
+network.on("deselectNode", clearDimming);
+
 network.on("click", function(params) {
   if (params.nodes.length === 0) {
     placeholder.style.display = "block";
     nodeInfo.style.display = "none";
+    clearDimming();
     return;
   }
   const id = params.nodes[0];
@@ -1308,6 +1805,8 @@ function pinL3Item(itemId) {
 
   tempL3State.set(itemId, { nodeId, edgeIds });
   pinnedItemIds.add(itemId);
+  // Refresh dimming so the new L3 node + edges reflect the active selection
+  applyDimming();
 }
 
 function unpinL3Item(itemId) {
@@ -1317,6 +1816,7 @@ function unpinL3Item(itemId) {
   state.edgeIds.forEach(id => visEdges.remove(id));
   tempL3State.delete(itemId);
   pinnedItemIds.delete(itemId);
+  applyDimming();
 }
 
 // Event delegation on the sidebar — clicks on any L3 list item toggle the pin
