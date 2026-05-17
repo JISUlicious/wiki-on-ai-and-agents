@@ -22,9 +22,37 @@
     margin: 0; padding: 0; height: 100vh; overflow: hidden;
     background: var(--bg); color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    display: flex; flex-direction: column;
   }
-  #app { display: grid; grid-template-columns: 1fr 320px; height: 100vh; width: 100vw; }
-  #graph { background: var(--bg); width: 100%; height: 100vh; position: relative; min-width: 400px; }
+  #topnav {
+    display: flex; align-items: center; gap: 6px;
+    padding: 0 16px;
+    height: 50px;
+    flex-shrink: 0;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    z-index: 20;
+  }
+  #topnav .nav-brand {
+    font-weight: 700; color: var(--accent); margin-right: 16px; font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  #topnav .nav-btn {
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text); font-family: inherit; font-size: 12px;
+    padding: 6px 14px; border-radius: 6px; cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  #topnav .nav-btn:hover {
+    background: rgba(56,139,253,0.10); border-color: var(--accent); color: var(--accent);
+  }
+  #topnav .nav-btn.active {
+    background: rgba(56,139,253,0.18); border-color: var(--accent); color: var(--accent);
+    font-weight: 600;
+  }
+  #app { display: grid; grid-template-columns: 1fr 320px; flex: 1; width: 100vw; min-height: 0; }
+  #graph-wrap { position: relative; width: 100%; height: 100%; min-width: 400px; overflow: hidden; }
+  #graph { background: var(--bg); width: 100%; height: 100%; }
   #error-banner {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     background: #ef4444; color: white; padding: 16px 24px; border-radius: 6px;
@@ -110,9 +138,45 @@
   #node-detail details ul.items li .name {
     color: var(--accent); font-weight: 600;
   }
+  /* Keywords (plain strings) render muted */
+  #node-detail details ul.items li.kw .name {
+    color: var(--text); font-weight: 400;
+  }
   #node-detail details ul.items li .note {
     display: block; color: var(--muted); margin-top: 3px; font-size: 11px;
   }
+
+  /* L3 inline body — hidden by default; shown when parent li.pinned */
+  #node-detail details ul.items li .l3-body {
+    display: none;
+    margin-top: 8px; padding: 6px 8px 2px;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+  }
+  #node-detail details ul.items li.pinned .l3-body { display: block; }
+  #node-detail .l3-body details {
+    margin-top: 6px;
+    background: rgba(13, 17, 23, 0.5);
+  }
+  #node-detail .l3-body details summary {
+    padding: 5px 10px; font-size: 11px;
+  }
+  #node-detail .l3-body details ul.items {
+    padding: 2px 10px 6px;
+  }
+  #node-detail .l3-body details ul.items li {
+    padding: 4px 6px; margin: 3px 0; font-size: 11px;
+  }
+  #node-detail .l3-body details ul.items li .name {
+    font-size: 11px;
+  }
+
+  #node-detail .crosscut-chip {
+    display: inline-block; margin-left: 6px; padding: 1px 6px;
+    border-radius: 8px; font-size: 10px; font-weight: 400;
+    background: rgba(168,85,247,0.15); color: #c4b5fd;
+  }
+
   #pin-hint {
     font-size: 11px; color: var(--muted); margin-top: 10px;
     padding: 8px 10px; background: rgba(16,185,129,0.05);
@@ -151,27 +215,28 @@
 </style>
 </head>
 <body>
+<nav id="topnav">
+  <div class="nav-brand">AI-LLM Agent Graphs</div>
+  <button class="nav-btn active" data-view="three-layer">Three-Layer Model</button>
+  <button class="nav-btn" data-view="react-loop">ReAct Loop</button>
+  <button class="nav-btn" data-view="loop-hooks">Loop Hooks</button>
+</nav>
 <div id="app">
-  <div id="graph">
+  <div id="graph-wrap">
+    <div id="graph"></div>
     <div id="error-banner"></div>
     <div id="toolbar">
-      <button id="reset-layout" title="Restore the original three-row layout">↺ Reset layout</button>
+      <button id="reset-layout" title="Restore the original layout">↺ Reset layout</button>
     </div>
-    <div id="hint">노드를 끌어서 위치를 자유롭게 옮길 수 있습니다 · Drag any node to reposition</div>
-    <div id="legend">
-      <div class="group-title">Agent Layered Model</div>
-      <div><span class="dot" style="background:#a855f7"></span><strong>L0</strong> — Language Model</div>
-      <div><span class="dot" style="background:#3b82f6"></span><strong>L1</strong> — LLM Capabilities</div>
-      <div><span class="dot" style="background:#f59e0b"></span><strong>L2</strong> — Agent Architecture</div>
-      <div class="hint">Click L0 / L2 nodes for collapsible details (L3 lives in L2 sidebars)</div>
-    </div>
+    <div id="hint">Drag any node to reposition. ↺ resets to the view's default layout.</div>
+    <div id="legend"></div>
   </div>
   <div id="sidebar">
-    <h1>Agent Three-Layer Model</h1>
-    <h2>L1 (LLM 능력) · L2 (에이전트 아키텍처) · L3 (구현)</h2>
+    <h1 id="sidebar-title">Agent Three-Layer Model</h1>
+    <h2 id="sidebar-subtitle">L0 LLM · L1 Capabilities · L2 Architecture (· L3 in sidebar)</h2>
     <div class="placeholder" id="placeholder">
-      <p style="margin:0;"><strong>그래프의 노드를 클릭</strong>하면 여기에 정보가 표시됩니다.</p>
-      <p style="margin:8px 0 0; font-size:12px; color:var(--muted);">Click any node to see its layer and parent abstraction.</p>
+      <p style="margin:0;"><strong>Click any node</strong> in the graph to see its concepts, entities, sources, and keywords.</p>
+      <p style="margin:8px 0 0; font-size:12px; color:var(--muted);">Switch views from the top nav. Drag nodes to rearrange; ↺ Reset layout restores the default positions for the current view.</p>
     </div>
     <div id="node-info" style="display:none;">
       <h1 id="node-title">—</h1>
@@ -203,150 +268,448 @@ console.log("[three-layer-graph] vis-network loaded");
 // =====================================================================
 
 const LAYER_COLORS = {
+  // three-layer view
   l0: "#a855f7",  // purple — Language Model (substrate)
   l1: "#3b82f6",  // blue   — LLM capabilities
-  l2: "#f59e0b"   // amber  — Agent architecture
+  l2: "#f59e0b",  // amber  — Agent architecture
+  // react-loop view
+  input:  "#6b7280", // gray   — user-side input
+  loop:   "#f97316", // orange — agent loop body
+  output: "#14b8a6", // teal   — response back to user
+  // agent-runtime view
+  center:    "#f97316", // orange — the inner loop (re-uses loop color)
+  subsystem: "#6366f1", // indigo — feeds/uses the loop
+  intercept: "#ec4899"  // pink   — hooks/permissions that gate transitions
 };
 
 const LAYER_LABELS = {
   l0: "L0 · Language Model",
   l1: "L1 · LLM Capabilities",
-  l2: "L2 · Agent Architecture"
+  l2: "L2 · Agent Architecture",
+  input:  "Input",
+  loop:   "Loop body",
+  output: "Output",
+  center:    "Inner loop",
+  subsystem: "Runtime subsystem",
+  intercept: "Cross-cutting interceptor"
 };
 
-// Three-row layout: L0 (1 node) → L1 (5 nodes) → L2 (6 nodes).
+// Three-row layout: L0 (1 node) → L1 (4 nodes) → L2 (6 nodes).
 // L3 implementations are no longer graph nodes — they live in each L2 node's
-// sidebar as a collapsible list (see node.children below).
+// sidebar as a collapsible list with their own content map (see node.children).
 
 const ROW_Y = { l0: 0, l1: 180, l2: 360 };
 
-// Nodes: {id, label, layer, x, y, sections? (L0), children? (L2)}
+// Nodes: {id, label, layer, x, y, content, children? (L2)}
+// `content` is a uniform 4-bucket map: Concepts / Entities / Sources / Keywords.
+// Entries are either [[wikilink]] strings (rendered as accent-blue) or plain
+// keyword strings (rendered as muted text). Empty buckets are omitted.
 const nodes = [
   // ─── L0: Language Model (1) — top row ───
   {
     id: "language-model", label: "Language Model", layer: "l0",
     x: 425, y: ROW_Y.l0,
-    sections: {
-      "Architecture": [
-        { name: "Transformer", note: "Self-attention · multi-head · residual + LayerNorm · positional encoding" },
-        { name: "Decoder-only variant", note: "Dominant in 2026 LLM agents; single autoregressive stream" }
+    content: {
+      "Concepts": [
+        "[[transformer-architecture]]", "[[decoder-only-transformer]]", "[[self-attention]]",
+        "[[autoregressive-language-modeling]]", "[[pre-training]]", "[[fine-tuning]]",
+        "[[scaling-laws]]", "[[emergent-abilities]]"
       ],
-      "Task / Objective": [
-        { name: "Autoregressive language modeling", note: "argmax P(x_t | x_<t) over training data" },
-        { name: "Pretrain + post-train + (optional) reasoning RL", note: "Next-token pretraining → RLHF/CAI/DPO post-training → o1-style inner CoT" }
+      "Entities": [
+        "[[gpt-3]]", "[[gpt-4]]", "[[claude]]", "[[bert]]", "[[t5]]", "[[palm]]"
       ],
-      "Lineage": [
-        { name: "Vaswani 2017", note: "Attention Is All You Need" },
-        { name: "GPT family", note: "Decoder-only path: GPT-1 → GPT-4/5" },
-        { name: "Modern frontier", note: "Claude, GPT-5, Gemini — all decoder-only Transformers" }
+      "Sources": [
+        "[[attention-is-all-you-need-vaswani-2017]]",
+        "[[gpt-3-brown-2020]]",
+        "[[bert-devlin-2018]]"
       ],
-      "Emergent at scale (Wei 2022)": [
-        { name: "What \"emergent\" means", note: "Capabilities that appear sharply at ~100B+ params and are not reliably present in smaller base models" },
-        { name: "The four L1 capabilities ARE emergent", note: "Instruction following, in-context learning, reasoning, alignment — all surfaced at scale (ICL: Brown 2020 / GPT-3; CoT: Wei 2022). Not a peer category to them — the supercategory of them." },
-        { name: "Tool-call format adherence", note: "Subsumed under L1 instruction following — reliably parseable JSON/function-call output emerges with scale + tool-use SFT. Enables L2 action surface." },
-        { name: "Multi-step planning", note: "Subsumed under L1 reasoning — coherent multi-step action chains. Enables L2 control flow." },
-        { name: "Self-critique / reflection", note: "Subsumed under L1 reasoning — basis for Reflexion, self-consistency, ToT." },
-        { name: "Code generation", note: "Subsumed under L1 instruction following + reasoning combined." }
+      "Keywords": [
+        "decoder-only", "pretrain + post-train", "tokenization", "context window",
+        "100B+ scale", "emergence at scale (Wei 2022)"
       ]
     }
   },
 
   // ─── L1: LLM Capabilities (4) — middle-top row ───
-  // (Removed "Emergent capabilities" — it's the supercategory of the others,
-  //  not a peer. See L0's "Emergent at scale" sidebar section for the
-  //  Wei-2022 framing and the specific emergent items it covered.)
-  { id: "instruction-following", label: "Instruction\nfollowing", layer: "l1", x: 50,  y: ROW_Y.l1 },
-  { id: "in-context-learning",   label: "In-context\nlearning",   layer: "l1", x: 340, y: ROW_Y.l1 },
-  { id: "reasoning",             label: "Reasoning",              layer: "l1", x: 520, y: ROW_Y.l1 },
-  { id: "alignment",             label: "Alignment\n(RLHF/CAI)",  layer: "l1", x: 850, y: ROW_Y.l1 },
+  // x positions evenly spaced across the L2 span (x=0 to x=850, gap ≈ 283).
+  {
+    id: "instruction-following", label: "Instruction\nfollowing", layer: "l1",
+    x: 0, y: ROW_Y.l1,
+    content: {
+      "Concepts": ["[[instruction-tuning]]", "[[fine-tuning]]", "[[rlhf]]"],
+      "Entities": ["[[flan]]", "[[instructgpt]]"],
+      "Sources":  ["[[flan-wei-2021]]", "[[instructgpt-ouyang-2022]]"],
+      "Keywords": ["SFT", "instruction-response pairs", "tool-call format adherence"]
+    }
+  },
+  {
+    id: "in-context-learning", label: "In-context\nlearning", layer: "l1",
+    x: 283, y: ROW_Y.l1,
+    content: {
+      "Concepts": ["[[in-context-learning]]", "[[few-shot-learning]]", "[[zero-shot-learning]]"],
+      "Entities": ["[[gpt-3]]"],
+      "Sources":  ["[[gpt-3-brown-2020]]"],
+      "Keywords": ["few-shot", "no gradient update", "prompt examples"]
+    }
+  },
+  {
+    id: "reasoning", label: "Reasoning", layer: "l1",
+    x: 567, y: ROW_Y.l1,
+    content: {
+      "Concepts": ["[[chain-of-thought-prompting]]", "[[zero-shot-cot]]", "[[self-consistency]]", "[[tree-of-thoughts]]", "[[reflexion]]"],
+      "Sources":  ["[[chain-of-thought-wei-2022]]", "[[zero-shot-cot-kojima-2022]]", "[[self-consistency-wang-2022]]", "[[tree-of-thoughts-yao-2023]]", "[[reflexion-shinn-2023]]"],
+      "Keywords": ["CoT", "inner CoT", "o1-style", "multi-step planning", "self-critique"]
+    }
+  },
+  {
+    id: "alignment", label: "Alignment\n(RLHF/CAI)", layer: "l1",
+    x: 850, y: ROW_Y.l1,
+    content: {
+      "Concepts": ["[[rlhf]]", "[[rlaif]]", "[[dpo]]", "[[constitutional-ai]]", "[[preference-modeling]]"],
+      "Entities": ["[[anthropic]]", "[[openai]]"],
+      "Sources":  ["[[christiano-rlhf-2017]]", "[[instructgpt-ouyang-2022]]", "[[constitutional-ai-bai-2022]]", "[[dpo-rafailov-2023]]"],
+      "Keywords": ["post-training", "refusal", "human/AI feedback"]
+    }
+  },
 
   // ─── L2: Agent Architecture (6) — bottom row ───
-  // Each L2 carries its L3 children inline as `children` for the sidebar.
   {
     id: "control-flow", label: "Control flow", layer: "l2", x: 0, y: ROW_Y.l2,
+    content: {
+      "Concepts": ["[[llm-agent]]", "[[react]]", "[[reflexion]]", "[[tree-of-thoughts]]", "[[metagpt]]", "[[autogen]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]", "[[pi-mono]]"],
+      "Sources":  ["[[react-yao-2022]]", "[[reflexion-shinn-2023]]", "[[metagpt-hong-2023]]", "[[autogen-wu-2023]]"],
+      "Keywords": ["percept → decide → act", "halt condition", "sub-agent"]
+    },
     children: [
-      { id: "react-impl",           name: "ReAct (T→A→O)",          note: "Dominant 2026 pattern — single agent emits Thought / Act / Obs" },
-      { id: "planner-executor",     name: "Planner-executor",        note: "Explicit plan generation then execution (BabyAGI, AutoGPT)" },
-      { id: "multi-agent-dispatch", name: "Multi-agent dispatch",    note: "MetaGPT, AutoGen, Hermes orchestrator — N agents in conversation" },
-      { id: "tree-search",          name: "Tree-search over actions",note: "ToT-controlled execution, LATS" }
+      {
+        id: "react-impl", name: "ReAct (T→A→O)",
+        content: {
+          "Concepts": ["[[react]]", "[[llm-agent]]"],
+          "Sources":  ["[[react-yao-2022]]"],
+          "Keywords": ["Thought", "Act", "Observation", "Wikipedia search example"]
+        }
+      },
+      {
+        id: "planner-executor", name: "Planner-executor",
+        content: {
+          "Concepts": ["[[llm-agent]]"],
+          "Keywords": ["BabyAGI", "AutoGPT", "plan-then-execute", "explicit plan generation"]
+        }
+      },
+      {
+        id: "multi-agent-dispatch", name: "Multi-agent dispatch",
+        content: {
+          "Concepts": ["[[metagpt]]", "[[autogen]]", "[[multi-agent-memory]]"],
+          "Entities": ["[[hermes-agent]]", "[[claude-code]]"],
+          "Sources":  ["[[metagpt-hong-2023]]", "[[autogen-wu-2023]]"],
+          "Keywords": ["sub-agent dispatch", "orchestrator", "delegate_task"]
+        }
+      },
+      {
+        id: "tree-search", name: "Tree-search over actions",
+        content: {
+          "Concepts": ["[[tree-of-thoughts]]"],
+          "Sources":  ["[[tree-of-thoughts-yao-2023]]"],
+          "Keywords": ["LATS", "explicit search over action space"]
+        }
+      }
     ]
   },
   {
     id: "action-surface", label: "Action surface", layer: "l2", x: 170, y: ROW_Y.l2,
+    content: {
+      "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[mcp]]", "[[acp]]", "[[responses-api]]", "[[tool-call-parser]]", "[[json-schema]]", "[[json-rpc]]"],
+      "Entities": ["[[openai-api]]", "[[vllm]]", "[[zed]]", "[[anthropic]]"],
+      "Sources":  ["[[openai-function-calling-2025]]", "[[model-context-protocol-anthropic-2024]]", "[[agent-client-protocol-zed-2025]]", "[[vllm-tool-calling-2025]]"],
+      "Keywords": ["JSON-RPC", "structured output", "strict mode", "parallel tool calls"]
+    },
     children: [
-      { id: "typed-tool-api",   name: "Typed tool API",            note: "Function-calling JSON schemas (OpenAI / Anthropic native)" },
-      { id: "function-calling", name: "Function calling",          note: "Tool invocation via parsed model output" },
-      { id: "mcp",              name: "MCP (Model Context Protocol)", note: "Cross-cutter — also touches harness (auth) & context-assembly (resource injection)", crossCuts: ["harness", "context-assembly"] },
-      { id: "acp",              name: "ACP (Agent Client Protocol)", note: "Zed editor's agent-IDE interop protocol" }
+      {
+        id: "typed-tool-api", name: "Typed tool API",
+        content: {
+          "Concepts": ["[[function-calling]]", "[[json-schema]]"],
+          "Entities": ["[[openai-api]]", "[[anthropic]]"],
+          "Keywords": ["JSON-schema parameters", "strict mode"]
+        }
+      },
+      {
+        id: "function-calling", name: "Function calling",
+        content: {
+          "Concepts": ["[[function-calling]]", "[[tool-use]]", "[[json-schema]]"],
+          "Sources":  ["[[openai-function-calling-2025]]", "[[function-calling-llms-promptingguide]]", "[[vllm-tool-calling-2025]]"],
+          "Keywords": ["tool_calls array", "arguments string", "call_id round-trip"]
+        }
+      },
+      {
+        id: "mcp", name: "MCP (Model Context Protocol)",
+        crossCuts: ["harness", "context-assembly"],
+        content: {
+          "Concepts": ["[[mcp]]", "[[json-rpc]]"],
+          "Entities": ["[[anthropic]]", "[[zed]]", "[[openai]]"],
+          "Sources":  ["[[model-context-protocol-anthropic-2024]]"],
+          "Keywords": ["client-server", "AAIF", "Linux Foundation", "2024-11-25"]
+        }
+      },
+      {
+        id: "acp", name: "ACP (Agent Client Protocol)",
+        content: {
+          "Concepts": ["[[acp]]", "[[json-rpc]]"],
+          "Entities": ["[[zed]]"],
+          "Sources":  ["[[agent-client-protocol-zed-2025]]"],
+          "Keywords": ["agent ↔ editor", "Apache 2.0", "2025-08"]
+        }
+      }
     ]
   },
   {
     id: "context-assembly", label: "Context assembly", layer: "l2", x: 340, y: ROW_Y.l2,
+    content: {
+      "Scope": ["what goes into THIS turn's prompt"],
+      "Concepts": ["[[in-context-learning]]", "[[agent-skills]]", "[[skill-md-format]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]"],
+      "Sources":  ["[[anthropic-agent-skills-2025]]"],
+      "Keywords": ["CLAUDE.md auto-load", "AGENTS.md", "system prompt", "dynamic templates", "progressive disclosure"]
+    },
     children: [
-      { id: "auto-load",          name: "CLAUDE.md / AGENTS.md auto-load", note: "Hierarchical files loaded at session start" },
-      { id: "skill-packages",     name: "SKILL.md packages",               note: "Cross-cutter — also touches action-surface (declares tools) & harness (allowed-paths)", crossCuts: ["action-surface", "harness"] },
-      { id: "retrieved-snippets", name: "Retrieved snippets",              note: "Lexical (grep/FTS5/BM25), dense, tool-based" },
-      { id: "prompt-templates",   name: "Dynamic prompt templates",        note: "Slot-fills based on task, user prefs, model" },
-      { id: "system-prompt",      name: "System prompt / persona",         note: "Always-prepended preamble; sets goals + refusal style" }
+      {
+        id: "auto-load", name: "CLAUDE.md / AGENTS.md auto-load",
+        content: {
+          "Entities": ["[[claude-code]]", "[[opencode]]", "[[pi-mono]]", "[[hermes-agent]]", "[[openclaw]]"],
+          "Keywords": ["hierarchical", "session-start load", "nested overrides"]
+        }
+      },
+      {
+        id: "skill-packages", name: "SKILL.md packages",
+        crossCuts: ["action-surface", "harness"],
+        content: {
+          "Concepts": ["[[agent-skills]]", "[[skill-md-format]]"],
+          "Entities": ["[[anthropic]]"],
+          "Sources":  ["[[anthropic-agent-skills-2025]]"],
+          "Keywords": ["agentskills.io", "3-level progressive disclosure", "YAML name + description"]
+        }
+      },
+      {
+        id: "retrieved-snippets", name: "Retrieved snippets",
+        content: {
+          "Concepts": ["[[retrieval-augmented-generation]]", "[[dense-retrieval]]", "[[bm25]]"],
+          "Keywords": ["grep", "ripgrep", "FTS5", "embeddings"]
+        }
+      },
+      {
+        id: "prompt-templates", name: "Dynamic prompt templates",
+        content: {
+          "Concepts": ["[[in-context-learning]]"],
+          "Keywords": ["slot-fill", "per-task", "per-user"]
+        }
+      },
+      {
+        id: "system-prompt", name: "System prompt / persona",
+        content: {
+          "Concepts": ["[[constitutional-ai]]", "[[in-context-learning]]"],
+          "Keywords": ["always-prepended", "refusal style", "goal-setting"]
+        }
+      }
     ]
   },
   {
     id: "memory-mgmt", label: "Memory\nmanagement", layer: "l2", x: 510, y: ROW_Y.l2,
+    content: {
+      "Scope": ["the LIFECYCLE of stored state across turns + sessions"],
+      "Concepts (primitives)": ["[[memory-management]]", "[[memory-stream]]", "[[reflection-mechanism]]", "[[procedural-memory]]", "[[episodic-memory-llm]]", "[[graph-memory]]", "[[ebbinghaus-forgetting]]", "[[kv-cache]]", "[[long-context-llm]]"],
+      "Concepts (retrieval mechanisms)": ["[[retrieval-augmented-generation]]", "[[dense-retrieval]]", "[[bm25]]"],
+      "Concepts (systems)": ["[[memgpt]]", "[[generative-agents]]", "[[memorybank]]", "[[voyager]]", "[[em-llm]]", "[[titans]]", "[[a-mem]]", "[[hipporag-2]]", "[[sleep-time-compute]]", "[[mem0]]", "[[mirix]]", "[[memory-r1]]", "[[mem-alpha]]"],
+      "Entities": ["[[letta]]", "[[zep]]"],
+      "Benchmarks": ["[[locomo]]"],
+      "Keywords": ["write", "store", "retrieve", "compact", "consolidate", "evict", "curate", "MEMORY.md", "USER.md"]
+    },
     children: [
-      { id: "hierarchical-files",  name: "Hierarchical files (hot/warm/cold)", note: "MemGPT-style tiered storage" },
-      { id: "auto-consolidate",    name: "Auto-consolidate (sleep-time)",      note: "Letta sleep-time-compute; Claude Code auto-dream" },
-      { id: "forgetting-policies", name: "Forgetting policies",                note: "Ebbinghaus decay (MemoryBank)" },
-      { id: "graph-index",         name: "Graph index (PPR)",                  note: "HippoRAG 2; Mem0 graph variant" },
-      { id: "per-type-stores",     name: "Per-type stores",                    note: "MIRIX six memory types (Core/Episodic/Semantic/Procedural/Resource/Vault)" },
-      { id: "learned-mem-ops",     name: "RL-learned mem ops",                 note: "Memory-R1 {ADD,UPDATE,DELETE,NOOP}; Mem-α construction" }
+      {
+        id: "hierarchical-files", name: "Hierarchical files (hot/warm/cold)",
+        content: {
+          "Concepts": ["[[tiered-memory]]", "[[virtual-context]]", "[[memgpt]]"],
+          "Entities": ["[[letta]]"],
+          "Sources":  ["[[memgpt-packer-2023]]"],
+          "Keywords": ["main", "recall", "archival"]
+        }
+      },
+      {
+        id: "auto-consolidate", name: "Auto-consolidate (sleep-time)",
+        content: {
+          "Concepts": ["[[sleep-time-compute]]", "[[offline-consolidation]]", "[[reflection-mechanism]]", "[[memory-evolution]]"],
+          "Entities": ["[[letta]]", "[[claude-code]]"],
+          "Sources":  ["[[sleep-time-compute-lin-2025]]"],
+          "Keywords": ["auto-dream", "idle-time compute"]
+        }
+      },
+      {
+        id: "forgetting-policies", name: "Forgetting policies",
+        content: {
+          "Concepts": ["[[ebbinghaus-forgetting]]", "[[memorybank]]"],
+          "Sources":  ["[[memorybank-zhong-2023]]"],
+          "Keywords": ["decay × strength", "reinforce on access"]
+        }
+      },
+      {
+        id: "graph-index", name: "Graph index (PPR)",
+        content: {
+          "Concepts": ["[[hipporag-2]]", "[[graph-memory]]", "[[knowledge-graph]]", "[[mem0]]"],
+          "Sources":  ["[[hipporag2-jimenez-gutierrez-2025]]", "[[mem0-chhikara-2025]]"],
+          "Keywords": ["Personalized PageRank", "neocortex / hippocampus"]
+        }
+      },
+      {
+        id: "per-type-stores", name: "Per-type stores",
+        content: {
+          "Concepts": ["[[mirix]]", "[[procedural-memory]]", "[[episodic-memory-llm]]", "[[multi-agent-memory]]"],
+          "Sources":  ["[[mirix-wang-2025]]"],
+          "Keywords": ["Core", "Episodic", "Semantic", "Procedural", "Resource", "Vault"]
+        }
+      },
+      {
+        id: "learned-mem-ops", name: "RL-learned mem ops",
+        content: {
+          "Concepts": ["[[memory-r1]]", "[[mem-alpha]]", "[[rl-memory-policy]]", "[[memory-construction]]", "[[ppo]]", "[[grpo]]"],
+          "Sources":  ["[[memory-r1-yan-2025]]", "[[mem-alpha-wang-2025]]"],
+          "Keywords": ["ADD", "UPDATE", "DELETE", "NOOP"]
+        }
+      }
     ]
   },
   {
     id: "persistence", label: "Persistence", layer: "l2", x: 680, y: ROW_Y.l2,
+    content: {
+      "Scope": ["the STORAGE SUBSTRATE — files/DBs that survive the process"],
+      "Concepts": ["[[memory-management]]"],
+      "Entities": ["[[pi-mono]]", "[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
+      "Keywords": ["JSONL", "SQLite", "event sourcing", "session replay", "snapshot-git", "revertable edits"]
+    },
     children: [
-      { id: "jsonl-session",    name: "JSONL session tree",   note: "pi-mono, Claude Code" },
-      { id: "sqlite-event-log", name: "SQLite + event log",   note: "opencode, Hermes Agent" },
-      { id: "snapshot-git",     name: "Snapshot git",         note: "opencode side-git for revertable file edits" }
+      {
+        id: "jsonl-session", name: "JSONL session tree",
+        content: {
+          "Entities": ["[[pi-mono]]", "[[claude-code]]"],
+          "Keywords": ["per-session file", "grep-friendly", "tree-of-conversations"]
+        }
+      },
+      {
+        id: "sqlite-event-log", name: "SQLite + event log",
+        content: {
+          "Entities": ["[[opencode]]", "[[hermes-agent]]"],
+          "Keywords": ["event sourcing", "session replay", "shareable sessions"]
+        }
+      },
+      {
+        id: "snapshot-git", name: "Snapshot git",
+        content: {
+          "Entities": ["[[opencode]]"],
+          "Keywords": ["side-git repo", "revertable file edits"]
+        }
+      }
     ]
   },
   {
     id: "harness", label: "Harness", layer: "l2", x: 850, y: ROW_Y.l2,
+    content: {
+      "Concepts": ["[[guardrailing]]", "[[steering]]", "[[constitutional-ai]]", "[[red-teaming]]", "[[agentic-misalignment]]", "[[indirect-prompt-injection]]", "[[prompt-injection]]"],
+      "Entities": ["[[anthropic]]"],
+      "Sources":  ["[[constitutional-ai-bai-2022]]", "[[red-teaming-ganguli-2022]]", "[[indirect-prompt-injection-greshake-2023]]"],
+      "Keywords": ["block", "drive", "bidirectional shaping", "METR", "AISI"]
+    },
     children: [
-      { id: "sandbox",            name: "Sandbox",                note: "Block — OS-level adapter, Docker, tier'd containers" },
-      { id: "permission-rules",   name: "Permission rules",       note: "Block — rule engine, allowlists, classifiers" },
-      { id: "refusal-classifier", name: "Refusal classifier",     note: "Block — filter harmful outputs" },
-      { id: "hooks",              name: "Hooks",                  note: "Cross-cutter — also touches control-flow (intercept loop); both block (gate) and drive (rewrite prompts)", crossCuts: ["control-flow"] },
-      { id: "human-approval",     name: "Human-approval prompt",  note: "Block + drive — user OK before risky action; corrects plan" },
-      { id: "plan-mode",          name: "Plan-mode",              note: "Drive — commit to user-shaped plan before execution" },
-      { id: "constitutional",     name: "Constitutional principles", note: "Block + drive — refusal style + positive principles" },
-      { id: "eval-harness",       name: "Eval harness",           note: "Block + drive — test for unsafe behavior AND task completion" }
+      {
+        id: "sandbox", name: "Sandbox",
+        content: {
+          "Concepts": ["[[guardrailing]]"],
+          "Entities": ["[[claude-code]]", "[[hermes-agent]]", "[[openclaw]]"],
+          "Keywords": ["container", "seatbelt", "resource limits"]
+        }
+      },
+      {
+        id: "permission-rules", name: "Permission rules",
+        content: {
+          "Concepts": ["[[guardrailing]]"],
+          "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
+          "Keywords": ["rule engine", "allowlist", "per-tool", "per-session"]
+        }
+      },
+      {
+        id: "refusal-classifier", name: "Refusal classifier",
+        content: {
+          "Concepts": ["[[constitutional-ai]]", "[[guardrailing]]", "[[steering]]"],
+          "Entities": ["[[anthropic]]"],
+          "Sources":  ["[[constitutional-ai-bai-2022]]"],
+          "Keywords": ["post-output filter", "refusal"]
+        }
+      },
+      {
+        id: "hooks", name: "Hooks",
+        crossCuts: ["control-flow"],
+        content: {
+          "Entities": ["[[claude-code]]", "[[opencode]]"],
+          "Keywords": ["pre-tool", "post-tool", "user-prompt-submit", "intercept loop"]
+        }
+      },
+      {
+        id: "human-approval", name: "Human-approval prompt",
+        content: {
+          "Entities": ["[[claude-code]]", "[[hermes-agent]]"],
+          "Keywords": ["confirmation", "plan-review", "risky-action gate"]
+        }
+      },
+      {
+        id: "plan-mode", name: "Plan-mode",
+        content: {
+          "Entities": ["[[claude-code]]", "[[opencode]]"],
+          "Keywords": ["explicit plan", "user-shaped goals", "pre-execution review"]
+        }
+      },
+      {
+        id: "constitutional", name: "Constitutional principles",
+        content: {
+          "Concepts": ["[[constitutional-ai]]"],
+          "Entities": ["[[anthropic]]"],
+          "Sources":  ["[[constitutional-ai-bai-2022]]"],
+          "Keywords": ["written principles", "~16 rules", "UN Declaration heritage"]
+        }
+      },
+      {
+        id: "eval-harness", name: "Eval harness",
+        content: {
+          "Concepts": ["[[red-teaming]]", "[[agentic-misalignment]]"],
+          "Sources":  ["[[red-teaming-ganguli-2022]]"],
+          "Keywords": ["METR", "AISI", "pre-deployment testing"]
+        }
+      }
     ]
   }
 ];
 
 // Lookup table: L3 item id → {item, parentId, rowIdx}
 // Used for pin-on-click to spawn temporary L3 nodes on the graph.
+// Rebuilt every time a view loads (only the three-layer view has L3 children).
 const L3_LOOKUP = new Map();
-for (const node of nodes) {
-  if (node.layer === "l2" && node.children) {
-    node.children.forEach((item, idx) => {
-      if (item.id) L3_LOOKUP.set(item.id, { item, parentId: node.id, rowIdx: idx });
-    });
+function rebuildL3Lookup(nodeList) {
+  L3_LOOKUP.clear();
+  for (const node of nodeList) {
+    if (node.layer === "l2" && node.children) {
+      node.children.forEach((item, idx) => {
+        if (item.id) L3_LOOKUP.set(item.id, { item, parentId: node.id, rowIdx: idx });
+      });
+    }
   }
 }
+rebuildL3Lookup(nodes);  // initial — three-layer view default
 
 // Edges: L0 → L1 (substrate provides capabilities), L1 → L2 (capability feeds abstraction).
-// The two edges previously coming from `emergent` (→ control-flow, → action-surface)
-// are subsumed: tool-call format adherence is part of instruction-following → action-surface;
-// multi-step planning is part of reasoning → control-flow.
-const l0ToL1 = [
+const threeLayerEdges = [
+  // L0 → L1
   { from: "language-model", to: "instruction-following" },
   { from: "language-model", to: "in-context-learning" },
   { from: "language-model", to: "reasoning" },
-  { from: "language-model", to: "alignment" }
-];
-
-const l1ToL2 = [
+  { from: "language-model", to: "alignment" },
+  // L1 → L2 (tool-call format adherence subsumed in instruction-following → action-surface;
+  // multi-step planning subsumed in reasoning → control-flow)
   { from: "instruction-following", to: "control-flow" },
   { from: "instruction-following", to: "action-surface" },
   { from: "alignment", to: "harness" },
@@ -354,9 +717,307 @@ const l1ToL2 = [
   { from: "reasoning", to: "control-flow" }
 ];
 
-const edges = [...l0ToL1, ...l1ToL2];
+// =====================================================================
+// View 2: ReAct loop
+// User request → Reason ⇄ Act ⇄ Observation (loop) → criteria met → Respond
+// =====================================================================
 
-console.log("[three-layer-graph] preparing", nodes.length, "nodes and", edges.length, "edges");
+const reactLoopNodes = [
+  {
+    id: "user-request", label: "User\nrequest", layer: "input",
+    x: 0, y: 200,
+    content: {
+      "Scope": ["the agent's input: what the user is asking for, including done-criteria"],
+      "Concepts": ["[[llm-agent]]"],
+      "Keywords": ["prompt", "task", "goal", "success criteria"]
+    }
+  },
+  {
+    id: "reason", label: "Reason\n(Thought)", layer: "loop",
+    x: 220, y: 200,
+    content: {
+      "Scope": ["the model reasons over current context: is the task done? what next?"],
+      "Concepts": ["[[chain-of-thought-prompting]]", "[[zero-shot-cot]]", "[[self-consistency]]", "[[tree-of-thoughts]]", "[[reflexion]]"],
+      "Sources":  ["[[chain-of-thought-wei-2022]]", "[[zero-shot-cot-kojima-2022]]", "[[react-yao-2022]]"],
+      "Keywords": ["Thought:", "planning", "decision", "criteria check", "self-critique"]
+    }
+  },
+  {
+    id: "act", label: "Act\n(tool call)", layer: "loop",
+    x: 440, y: 200,
+    content: {
+      "Scope": ["the agent emits an action — typically a tool call in JSON"],
+      "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[mcp]]", "[[acp]]", "[[json-schema]]"],
+      "Sources":  ["[[react-yao-2022]]", "[[openai-function-calling-2025]]"],
+      "Keywords": ["Act:", "tool_calls", "function name + arguments", "call_id"]
+    }
+  },
+  {
+    id: "observation", label: "Observation\n(tool result)", layer: "loop",
+    x: 660, y: 200,
+    content: {
+      "Scope": ["the environment / tool returns a result; the agent reads it"],
+      "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]"],
+      "Keywords": ["Obs:", "tool result", "environment state", "error message", "stdout"]
+    }
+  },
+  {
+    id: "respond", label: "Respond\nto user", layer: "output",
+    x: 220, y: 380,
+    content: {
+      "Scope": ["loop exits when Reason concludes the criteria are met → final answer"],
+      "Concepts": ["[[llm-agent]]"],
+      "Keywords": ["Finish[answer]", "final response", "exit loop", "criteria satisfied"]
+    }
+  }
+];
+
+const reactLoopEdges = [
+  { from: "user-request", to: "reason" },
+  { from: "reason",       to: "act" },
+  { from: "act",          to: "observation" },
+  { from: "observation",  to: "reason", dashed: true, label: "loop" },
+  { from: "reason",       to: "respond", label: "criteria met" }
+];
+
+// =====================================================================
+// View 3: Loop Hooks — main spine + sub-loops for LLM and Tool
+// Main spine:  Reason → Act → Observation → (loop back to Reason)
+// LLM sub-loop:  Reason → PreLLMCall → LLM → PostLLMCall → Reason
+// Tool sub-loop: Act    → PreToolUse  → Tool → PostToolUse → Act
+// Entry:  SessionStart → User request → UserPromptSubmit → Reason
+// Exit:   Reason → Respond → Stop → (session exit) — "criteria met"
+// =====================================================================
+
+const loopHooksNodes = [
+  // ─── Entry pre-loop (vertical, left column x=240) ───
+  {
+    id: "hook-session-start", label: "SessionStart\nhook", layer: "intercept",
+    x: 240, y: 0,
+    content: {
+      "Scope": ["fires ONCE when the agent session begins"],
+      "Concepts": ["[[agent-skills]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]", "[[hermes-agent]]"],
+      "Keywords": ["init", "load CLAUDE.md", "load AGENTS.md", "restore memory", "register tools", "set persona"]
+    }
+  },
+  {
+    id: "user-request", label: "User\nrequest", layer: "input",
+    x: 240, y: 90,
+    content: {
+      "Scope": ["the user's input — task + success criteria"],
+      "Concepts": ["[[llm-agent]]"],
+      "Keywords": ["prompt", "task", "goal"]
+    }
+  },
+  {
+    id: "hook-user-prompt", label: "UserPrompt-\nSubmit hook", layer: "intercept",
+    x: 240, y: 180,
+    content: {
+      "Scope": ["fires when the user submits — rewrite, validate, inject context, or abort"],
+      "Concepts": ["[[in-context-learning]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]"],
+      "Keywords": ["prompt rewriting", "auto-attach files", "PII scrub", "validation", "abort + reject"]
+    }
+  },
+
+  // ─── Main loop spine (Reason / Act / Observation at x=240, vertical) ───
+  {
+    id: "reason", label: "Reason\n(Thought)", layer: "loop",
+    x: 240, y: 320,
+    content: {
+      "Scope": ["the agent's decision step — wraps an LLM call via the sub-loop on the right"],
+      "Sub-loop": ["Reason → PreLLMCall → LLM → PostLLMCall → Reason"],
+      "Concepts": ["[[chain-of-thought-prompting]]", "[[reflexion]]", "[[react]]"],
+      "Sources":  ["[[react-yao-2022]]", "[[chain-of-thought-wei-2022]]"],
+      "Keywords": ["Thought:", "planning", "decision", "criteria check"]
+    }
+  },
+  {
+    id: "act", label: "Act\n(decide tool call)", layer: "loop",
+    x: 240, y: 540,
+    content: {
+      "Scope": ["the agent emits a tool call — wraps the tool execution via the sub-loop on the right"],
+      "Sub-loop": ["Act → PreToolUse → Tool → PostToolUse → Act"],
+      "Concepts": ["[[tool-use]]", "[[function-calling]]", "[[json-schema]]"],
+      "Sources":  ["[[openai-function-calling-2025]]"],
+      "Keywords": ["Act:", "tool_calls", "function name + arguments", "call_id"]
+    }
+  },
+  {
+    id: "observation", label: "Observation\n(tool result)", layer: "loop",
+    x: 240, y: 760,
+    content: {
+      "Scope": ["the tool result enters the agent's context; loop back to Reason"],
+      "Concepts": ["[[tool-call-parser]]", "[[structured-outputs]]"],
+      "Keywords": ["Obs:", "tool result", "environment state", "error message", "stdout"]
+    }
+  },
+
+  // ─── LLM sub-loop (right of Reason, x=480 / x=620) ───
+  {
+    id: "hook-pre-llm", label: "PreLLMCall\nhook", layer: "intercept",
+    x: 480, y: 250,
+    content: {
+      "Scope": ["fires before every LLM API call — last chance to modify the prompt or call params"],
+      "Concepts": ["[[function-calling]]", "[[structured-outputs]]"],
+      "Entities": ["[[hermes-agent]]", "[[openclaw]]"],
+      "Keywords": ["prompt modification", "param override", "model swap", "rate-limit", "retry policy", "fallback chain", "prompt caching"]
+    }
+  },
+  {
+    id: "llm", label: "LLM\nservice", layer: "subsystem",
+    x: 620, y: 320,
+    content: {
+      "Scope": ["the language model — invoked once per Reason step"],
+      "Concepts": ["[[function-calling]]", "[[responses-api]]", "[[tool-call-parser]]", "[[structured-outputs]]"],
+      "Entities": ["[[openai-api]]", "[[anthropic]]", "[[vllm]]"],
+      "Sources":  ["[[openai-function-calling-2025]]", "[[vllm-tool-calling-2025]]"],
+      "Keywords": ["streaming", "tool_calls", "JSON output", "arguments string", "decoder-only", "context window"]
+    }
+  },
+  {
+    id: "hook-post-llm", label: "PostLLMCall\nhook", layer: "intercept",
+    x: 480, y: 390,
+    content: {
+      "Scope": ["fires after LLM returns — parse tool_calls, validate schema, retry on parse failure; control returns to Reason for the act/respond decision"],
+      "Concepts": ["[[tool-call-parser]]", "[[function-calling]]"],
+      "Entities": ["[[hermes-agent]]", "[[openclaw]]"],
+      "Keywords": ["response validation", "parse tool_calls", "retry on bad JSON", "telemetry", "redact log"]
+    }
+  },
+
+  // ─── Tool sub-loop (right of Act, x=480 / x=620) ───
+  {
+    id: "hook-pre-tool", label: "PreToolUse\nhook", layer: "intercept",
+    x: 480, y: 470,
+    content: {
+      "Scope": ["fires before tool executes — gate, validate args, block, request approval"],
+      "Concepts": ["[[guardrailing]]", "[[function-calling]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]"],
+      "Keywords": ["permission check", "argument validation", "dry-run", "block", "human-approval gate", "audit log"]
+    }
+  },
+  {
+    id: "tool", label: "Tool\nservice", layer: "subsystem",
+    x: 620, y: 540,
+    content: {
+      "Scope": ["external function / API / MCP server / shell — what the agent calls OUT to"],
+      "Concepts": ["[[tool-use]]", "[[mcp]]", "[[function-calling]]"],
+      "Sources":  ["[[model-context-protocol-anthropic-2024]]"],
+      "Keywords": ["shell command", "file edit", "HTTP API", "MCP server", "browser action"]
+    }
+  },
+  {
+    id: "hook-post-tool", label: "PostToolUse\nhook", layer: "intercept",
+    x: 480, y: 610,
+    content: {
+      "Scope": ["fires after tool returns — transform output, error-wrap, trigger memory write, redact; control returns to Act, which then proceeds to Observation"],
+      "Concepts": ["[[tool-call-parser]]", "[[memory-management]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]"],
+      "Keywords": ["result transformation", "error handling", "memory write", "observability", "redact secrets"]
+    }
+  },
+
+  // ─── Exit branch (left of Reason, x=20) ───
+  {
+    id: "respond", label: "Respond\nto user", layer: "output",
+    x: 20, y: 320,
+    content: {
+      "Scope": ["loop exits when Reason concludes criteria are met — final answer to user"],
+      "Concepts": ["[[llm-agent]]"],
+      "Keywords": ["Finish[answer]", "final response", "criteria satisfied"]
+    }
+  },
+  {
+    id: "hook-stop", label: "Stop\nhook", layer: "intercept",
+    x: 20, y: 420,
+    content: {
+      "Scope": ["fires at session end — save memory, trigger consolidation, graceful shutdown"],
+      "Concepts": ["[[memory-management]]", "[[sleep-time-compute]]", "[[offline-consolidation]]"],
+      "Entities": ["[[claude-code]]", "[[opencode]]"],
+      "Keywords": ["save memory", "auto-dream trigger", "cleanup", "final log", "shareable session export"]
+    }
+  }
+];
+
+const loopHooksEdges = [
+  // Entry pre-loop
+  { from: "hook-session-start", to: "user-request" },
+  { from: "user-request",       to: "hook-user-prompt" },
+  { from: "hook-user-prompt",   to: "reason" },
+
+  // Main loop spine (the user-mandated direct connections)
+  { from: "reason",      to: "act" },
+  { from: "act",         to: "observation" },
+  { from: "observation", to: "reason", dashed: true, label: "loop" },
+
+  // LLM sub-loop (Reason ↻)
+  { from: "reason",       to: "hook-pre-llm" },
+  { from: "hook-pre-llm", to: "llm" },
+  { from: "llm",          to: "hook-post-llm" },
+  { from: "hook-post-llm",to: "reason" },
+
+  // Tool sub-loop (Act ↻)
+  { from: "act",           to: "hook-pre-tool" },
+  { from: "hook-pre-tool", to: "tool" },
+  { from: "tool",          to: "hook-post-tool" },
+  { from: "hook-post-tool",to: "act" },
+
+  // Exit branch
+  { from: "reason",  to: "respond", label: "criteria met" },
+  { from: "respond", to: "hook-stop" }
+];
+
+// =====================================================================
+// VIEWS — switchable graph datasets, selected via top nav
+// =====================================================================
+
+const VIEWS = {
+  "three-layer": {
+    title: "Agent Three-Layer Model",
+    subtitle: "L0 LLM · L1 Capabilities · L2 Architecture (· L3 in sidebar)",
+    legendHtml:
+      '<div class="group-title">Agent Layered Model</div>' +
+      '<div><span class="dot" style="background:#a855f7"></span><strong>L0</strong> — Language Model</div>' +
+      '<div><span class="dot" style="background:#3b82f6"></span><strong>L1</strong> — LLM Capabilities</div>' +
+      '<div><span class="dot" style="background:#f59e0b"></span><strong>L2</strong> — Agent Architecture</div>' +
+      '<div class="hint">Click L0 / L1 / L2 nodes for collapsible details. L3 mechanisms live in L2 sidebars — click an L3 row to pin it on the graph.</div>',
+    nodes: nodes,
+    edges: threeLayerEdges
+  },
+  "react-loop": {
+    title: "ReAct Loop",
+    subtitle: "User request → Reason ⇄ Act ⇄ Observation → criteria met → Respond",
+    legendHtml:
+      '<div class="group-title">ReAct Loop (Yao 2022)</div>' +
+      '<div><span class="dot" style="background:#6b7280"></span><strong>Input</strong> — User request</div>' +
+      '<div><span class="dot" style="background:#f97316"></span><strong>Loop body</strong> — Reason / Act / Observation</div>' +
+      '<div><span class="dot" style="background:#14b8a6"></span><strong>Output</strong> — Response to user</div>' +
+      '<div class="hint">Dashed edge = loop-back when criteria not yet met.</div>',
+    nodes: reactLoopNodes,
+    edges: reactLoopEdges
+  },
+  "loop-hooks": {
+    title: "Loop Hooks (inline)",
+    subtitle: "Hooks placed inline between leading and trailing nodes — LLM + Tool added as services",
+    legendHtml:
+      '<div class="group-title">Loop Hooks (inline)</div>' +
+      '<div><span class="dot" style="background:#6b7280"></span><strong>Input</strong> — user request</div>' +
+      '<div><span class="dot" style="background:#f97316"></span><strong>Loop body</strong> — Reason / Act / Observation</div>' +
+      '<div><span class="dot" style="background:#6366f1"></span><strong>External service</strong> — LLM / Tool</div>' +
+      '<div><span class="dot" style="background:#14b8a6"></span><strong>Output</strong> — final response</div>' +
+      '<div><span class="dot" style="background:#ec4899"></span><strong>Hook</strong> — inline interception (sits between leading and trailing)</div>' +
+      '<div class="hint">7 hooks: SessionStart · UserPromptSubmit · PreLLMCall · PostLLMCall · PreToolUse · PostToolUse · Stop. Dashed = loop-back.</div>',
+    nodes: loopHooksNodes,
+    edges: loopHooksEdges
+  }
+};
+
+// Active view state — set when loadView() runs.
+let CURRENT_VIEW_ID = "three-layer";
+
+console.log("[graph] views available:", Object.keys(VIEWS));
 
 // =====================================================================
 // Build vis-network
@@ -366,56 +1027,70 @@ function nodeColor(n) {
   return LAYER_COLORS[n.layer];
 }
 
-const visNodes = new vis.DataSet(nodes.map(n => ({
-  id: n.id,
-  label: n.label,
-  x: n.x,
-  y: n.y,
-  color: {
-    background: nodeColor(n),
-    border: nodeColor(n),
-    highlight: { background: nodeColor(n), border: "#ffffff" },
-    hover: { background: nodeColor(n), border: "#ffffff" }
-  },
-  font: { color: "#ffffff", size: n.layer === "l0" ? 15 : 13, face: "system-ui, sans-serif", multi: false, strokeWidth: 0 },
-  shape: "box",
-  margin: n.layer === "l0" ? 14 : 10,
-  widthConstraint: { minimum: 70, maximum: 150 },
-  shadow: false,
-  borderWidth: 2,
-  borderWidthSelected: 4,
-  chosen: {
-    node: function(values, id, selected, hovering) {
-      if (selected) {
-        values.borderColor = "#ffffff";
-        values.borderWidth = 4;
-        values.shadow = true;
-        values.shadowSize = 18;
-        values.shadowColor = "rgba(255,255,255,0.35)";
-        values.shadowX = 0;
-        values.shadowY = 0;
-      } else if (hovering) {
-        values.borderColor = "#ffffff";
-        values.borderWidth = 3;
-      }
-    },
-    label: function(values) { values.color = "#ffffff"; }
-  },
-  _layer: n.layer,
-  _sections: n.sections,
-  _children: n.children,
-  _rawLabel: n.label.replace(/\n/g, " ")
-})));
+// Vis-network DataSets are created empty and populated per-view by loadView().
+const visNodes = new vis.DataSet();
+const visEdges = new vis.DataSet();
 
-const visEdges = new vis.DataSet(edges.map(e => ({
-  from: e.from,
-  to: e.to,
-  arrows: { to: { enabled: true, scaleFactor: 0.5 } },
-  color: { color: e.dashed ? "#4b5563" : "#30363d", highlight: "#58a6ff" },
-  dashes: e.dashed ? [5, 5] : false,
-  width: 1,
-  smooth: { enabled: true, type: "cubicBezier", forceDirection: "vertical", roundness: 0.4 }
-})));
+// Build a vis-network node config from a raw node spec.
+function buildVisNode(n) {
+  return {
+    id: n.id,
+    label: n.label,
+    x: n.x,
+    y: n.y,
+    color: {
+      background: nodeColor(n),
+      border: nodeColor(n),
+      highlight: { background: nodeColor(n), border: "#ffffff" },
+      hover: { background: nodeColor(n), border: "#ffffff" }
+    },
+    font: { color: "#ffffff", size: n.layer === "l0" ? 15 : 13, face: "system-ui, sans-serif", multi: false, strokeWidth: 0 },
+    shape: "box",
+    margin: n.layer === "l0" ? 14 : 10,
+    widthConstraint: { minimum: 70, maximum: 150 },
+    shadow: false,
+    borderWidth: 2,
+    borderWidthSelected: 4,
+    chosen: {
+      node: function(values, id, selected, hovering) {
+        if (selected) {
+          values.borderColor = "#ffffff";
+          values.borderWidth = 4;
+          values.shadow = true;
+          values.shadowSize = 18;
+          values.shadowColor = "rgba(255,255,255,0.35)";
+          values.shadowX = 0;
+          values.shadowY = 0;
+        } else if (hovering) {
+          values.borderColor = "#ffffff";
+          values.borderWidth = 3;
+        }
+      },
+      label: function(values) { values.color = "#ffffff"; }
+    },
+    _layer: n.layer,
+    _content: n.content,
+    _children: n.children,
+    _rawLabel: n.label.replace(/\n/g, " ")
+  };
+}
+
+function buildVisEdge(e) {
+  const cfg = {
+    from: e.from,
+    to: e.to,
+    arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+    color: { color: e.dashed ? "#4b5563" : "#30363d", highlight: "#58a6ff" },
+    dashes: e.dashed ? [5, 5] : false,
+    width: 1,
+    smooth: { enabled: true, type: e.dashed ? "curvedCW" : "cubicBezier", roundness: e.dashed ? 0.5 : 0.4, forceDirection: e.dashed ? false : "vertical" }
+  };
+  if (e.label) {
+    cfg.label = e.label;
+    cfg.font = { color: "#8b949e", size: 11, face: "system-ui", strokeWidth: 0, background: "rgba(14,17,23,0.85)" };
+  }
+  return cfg;
+}
 
 let network;
 try {
@@ -463,21 +1138,56 @@ function escapeHtml(s) {
 // Track pinned L3 items shown as temp nodes on the graph.
 const pinnedItemIds = new Set();
 
-// Render a list of {id?, name, note, crossCuts?} items inside a <details> block.
-// Items with `id` get data-l3-id and become clickable to pin/unpin.
-function renderCollapsible(heading, items, openByDefault) {
-  const itemsHtml = items.map(item => {
-    const isPinned = item.id && pinnedItemIds.has(item.id);
-    const dataAttr = item.id ? ` data-l3-id="${escapeHtml(item.id)}"` : "";
-    const pinnedClass = isPinned ? " pinned" : "";
-    const pinMarker = isPinned ? `<span class="pin-marker">● on graph</span>` : "";
-    return `<li${dataAttr} class="${pinnedClass.trim()}">` +
-      `<span class="name">${escapeHtml(item.name)}${pinMarker}</span>` +
-      (item.note ? `<span class="note">${escapeHtml(item.note)}</span>` : "") +
-      `</li>`;
+// Match the wikilink form [[slug]] or [[slug|display]].
+const WIKILINK_RE = /^\[\[([^\]|]+)(?:\|[^\]]+)?\]\]$/;
+
+// Render a string list (mix of [[wikilinks]] and plain keywords) as <li> items.
+// Wikilinks → accent-blue .name span; keywords → muted .kw class.
+function renderLinkList(heading, items, openByDefault) {
+  if (!items || items.length === 0) return "";
+  const itemsHtml = items.map(s => {
+    const m = WIKILINK_RE.exec(s);
+    if (m) {
+      // Wikilink: show the slug (or display text if aliased).
+      const display = s.includes("|") ? s.replace(/^\[\[[^|]+\|([^\]]+)\]\]$/, "$1") : m[1];
+      return `<li><span class="name">${escapeHtml(display)}</span></li>`;
+    }
+    return `<li class="kw"><span class="name">${escapeHtml(s)}</span></li>`;
   }).join("");
   return `<details${openByDefault ? " open" : ""}>` +
     `<summary>${escapeHtml(heading)}<span class="count">(${items.length})</span></summary>` +
+    `<ul class="items">${itemsHtml}</ul>` +
+    `</details>`;
+}
+
+// Render the 4-bucket content map (Concepts / Entities / Sources / Keywords)
+// for any node or L3 item. Optional 5th bucket "Concepts (systems)" supported.
+function renderContentMap(content, openByDefault) {
+  if (!content) return "";
+  return Object.entries(content)
+    .map(([heading, items]) => renderLinkList(heading, items, openByDefault))
+    .join("");
+}
+
+// Render the L3 list (used inside L2 sidebars). Each <li> is clickable to pin.
+// Pinned items show their own inline content map.
+function renderL3List(children) {
+  if (!children || children.length === 0) return "";
+  const itemsHtml = children.map(item => {
+    const isPinned = pinnedItemIds.has(item.id);
+    const pinnedClass = isPinned ? " pinned" : "";
+    const pinMarker = isPinned ? `<span class="pin-marker">● on graph</span>` : "";
+    const ccChip = item.crossCuts && item.crossCuts.length
+      ? `<span class="crosscut-chip">↗ ${escapeHtml(item.crossCuts.join(", "))}</span>` : "";
+    const innerBody = item.content
+      ? `<div class="l3-body">${renderContentMap(item.content, true)}</div>` : "";
+    return `<li data-l3-id="${escapeHtml(item.id)}" class="${pinnedClass.trim()}">` +
+      `<span class="name">${escapeHtml(item.name)}${pinMarker}${ccChip}</span>` +
+      innerBody +
+      `</li>`;
+  }).join("");
+  return `<details open>` +
+    `<summary>L3 implementations<span class="count">(${children.length})</span></summary>` +
     `<ul class="items">${itemsHtml}</ul>` +
     `</details>`;
 }
@@ -490,6 +1200,7 @@ network.on("click", function(params) {
   }
   const id = params.nodes[0];
   const node = visNodes.get(id);
+  if (!node) return;
   placeholder.style.display = "none";
   nodeInfo.style.display = "block";
 
@@ -500,27 +1211,28 @@ network.on("click", function(params) {
 
   let detailHtml = "";
 
-  if (node._layer === "l0" && node._sections) {
-    // L0 (Language Model): show each section (Architecture / Task / Lineage) as collapsible
-    for (const [sectionName, items] of Object.entries(node._sections)) {
-      detailHtml += renderCollapsible(sectionName, items, true);
-    }
-  } else if (node._layer === "l1") {
-    // L1: show which L2 abstractions this capability feeds
-    const targets = edges
+  // All nodes (L0/L1/L2) render their 4-bucket content map.
+  detailHtml += renderContentMap(node._content, true);
+
+  // L1 nodes additionally show which L2 abstractions they feed (auto-derived).
+  if (node._layer === "l1") {
+    const currentEdges = VIEWS[CURRENT_VIEW_ID].edges;
+    const targets = currentEdges
       .filter(e => e.from === id)
       .map(e => {
         const t = visNodes.get(e.to);
-        return t ? { name: t._rawLabel, note: "" } : null;
+        return t ? `[[${t.id}]]` : null;   // render as wikilink for consistent styling
       })
       .filter(Boolean);
     if (targets.length > 0) {
-      detailHtml += renderCollapsible("Feeds L2", targets, true);
+      detailHtml += renderLinkList("Feeds L2", targets, true);
     }
-  } else if (node._layer === "l2" && node._children) {
-    // L2: show its L3 implementations as a collapsible list (click to pin)
-    detailHtml += renderCollapsible("L3 implementations", node._children, true);
-    detailHtml += `<div id="pin-hint">Click any L3 item to pin it on the graph with arrows back to L2. Cross-cutter items also draw dashed arrows to the other L2 abstractions they touch.</div>`;
+  }
+
+  // L2 nodes additionally show the L3 implementations list (click to pin + expand).
+  if (node._layer === "l2" && node._children) {
+    detailHtml += renderL3List(node._children);
+    detailHtml += `<div id="pin-hint">Click an L3 item to pin it on the graph AND expand its content here. Cross-cutter items also draw dashed arrows to the other L2 abstractions they touch.</div>`;
   }
 
   nodeDetail.innerHTML = detailHtml;
@@ -607,10 +1319,15 @@ function unpinL3Item(itemId) {
   pinnedItemIds.delete(itemId);
 }
 
-// Event delegation on the sidebar — clicks on any L3 list item toggle the pin.
+// Event delegation on the sidebar — clicks on any L3 list item toggle the pin
+// AND the inline body expansion. Clicks inside an already-expanded inline body
+// (e.g., to toggle a nested <details>) must not bubble up and re-toggle the pin.
 nodeDetail.addEventListener("click", (e) => {
   const li = e.target.closest("li[data-l3-id]");
   if (!li) return;
+  // Guard: clicks inside the L3 inline body (or on nested summaries) are
+  // for sub-section expansion, not for pin toggling.
+  if (e.target.closest(".l3-body")) return;
   const itemId = li.dataset.l3Id;
   if (pinnedItemIds.has(itemId)) {
     unpinL3Item(itemId);
@@ -628,24 +1345,75 @@ nodeDetail.addEventListener("click", (e) => {
 });
 
 // =====================================================================
-// Layout lifecycle: manual positions only. Reset button restores the
-// original x/y for every node (drags are non-destructive).
+// View loading + layout lifecycle
+// Manual positions per view. View switch clears state and repopulates.
 // =====================================================================
 
-// Snapshot original x/y so reset can restore exactly.
-const ORIGINAL_POSITIONS = {};
-nodes.forEach(n => { ORIGINAL_POSITIONS[n.id] = { x: n.x, y: n.y }; });
+let ORIGINAL_POSITIONS = {};
+
+function loadView(viewId) {
+  const view = VIEWS[viewId];
+  if (!view) { console.warn("[graph] unknown view:", viewId); return; }
+  CURRENT_VIEW_ID = viewId;
+
+  // 1. Clear pin state (temp L3 nodes belong to the previous view)
+  pinnedItemIds.clear();
+  tempL3State.clear();
+
+  // 2. Clear current vis-network DataSets
+  visNodes.clear();
+  visEdges.clear();
+
+  // 3. Rebuild L3 lookup for this view
+  rebuildL3Lookup(view.nodes);
+
+  // 4. Snapshot original positions for the reset button
+  ORIGINAL_POSITIONS = {};
+  view.nodes.forEach(n => { ORIGINAL_POSITIONS[n.id] = { x: n.x, y: n.y }; });
+
+  // 5. Populate vis-network
+  visNodes.add(view.nodes.map(buildVisNode));
+  visEdges.add(view.edges.map(buildVisEdge));
+
+  // 6. Update sidebar header, legend, placeholder
+  document.getElementById("sidebar-title").textContent = view.title;
+  document.getElementById("sidebar-subtitle").textContent = view.subtitle;
+  document.getElementById("legend").innerHTML = view.legendHtml;
+  placeholder.style.display = "block";
+  nodeInfo.style.display = "none";
+  nodeDetail.innerHTML = "";
+
+  // 7. Update nav active state
+  document.querySelectorAll("#topnav .nav-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.view === viewId);
+  });
+
+  // 8. Fit graph
+  setTimeout(() => {
+    network.fit({ animation: { duration: 400, easingFunction: "easeInOutCubic" } });
+  }, 50);
+
+  console.log("[graph] loaded view:", viewId, "—", view.nodes.length, "nodes,", view.edges.length, "edges");
+}
 
 function resetLayout() {
   visNodes.update(Object.entries(ORIGINAL_POSITIONS).map(
     ([id, pos]) => ({ id, x: pos.x, y: pos.y })
   ));
   network.fit({ animation: { duration: 400, easingFunction: "easeInOutCubic" } });
-  console.log("[three-layer-graph] reset to original swimlane positions");
+  console.log("[graph] reset to view's original positions");
 }
 
+// Wire up nav buttons
+document.querySelectorAll("#topnav .nav-btn").forEach(btn => {
+  btn.addEventListener("click", () => loadView(btn.dataset.view));
+});
+
+// Initial load — default view
+loadView("three-layer");
+
 network.once("afterDrawing", () => {
-  console.log("[three-layer-graph] first draw complete");
+  console.log("[graph] first draw complete");
   network.fit({ animation: { duration: 600, easingFunction: "easeInOutCubic" } });
 });
 
@@ -653,7 +1421,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     network.redraw();
     network.fit();
-    console.log("[three-layer-graph] post-load redraw");
+    console.log("[graph] post-load redraw");
   }, 150);
 });
 

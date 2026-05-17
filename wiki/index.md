@@ -404,3 +404,4 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 - [[from-transformer-to-modern-agents]] — Nine evolutionary tracks from Transformer to 2026 agents
 - [[common-features-of-modern-agents]] — The 8 universal features shared by Claude Code / opencode / pi / Hermes / OpenClaw
+- [[hooks-in-modern-agents]] — ~30 named hooks across the 5 documented 2026 agents (PreToolUse, SessionStart, Stop, PreCompact, …)

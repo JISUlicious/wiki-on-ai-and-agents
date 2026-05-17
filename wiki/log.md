@@ -11,6 +11,12 @@ Chronological record of wiki operations. Newest entries first.
 
 ---
 
+## [2026-05-17] query | Hooks and callbacks in modern agent architecture
+
+Question: "what are some important hooks/callbacks exist in modern agent architecture". Filed as [[hooks-in-modern-agents]]. Cross-cuts the 5 agent doc sources to catalog ~30 named hooks organized by lifecycle phase (tool · session · message · LLM-call · stop · compaction · sub-agent · permission · environment). Surfaces two architectural axes: (1) first-class harness hook ([[claude-code]]) vs plugin-system hook ([[opencode]], [[openclaw]], [[hermes-agent]]) vs no-hooks-in-core ([[pi-mono]]); (2) observational → modifying → blocking → compositional behavior. Notes interesting omissions across the field (`on-error`, `pre-respond`, streaming-output hooks all absent or loosely covered). Pages consulted: [[claude-code-agent-doc-2026]], [[opencode-agent-doc-2026]], [[hermes-agent-doc-2026]], [[openclaw-agent-doc-2026]], [[pi-mono-agent-doc-2026]], [[cross-agent-comparison-2026]].
+
+---
+
 ## [2026-05-16] lint | Wiki health check + auto-fix (Level 3)
 
 Second-pass lint after today's MCP/ACP + tool-calling ingests. Broken wikilinks dropped 101 → 78 (-23%). Wiki healthy on all other dimensions: 0 orphans, 0 index inconsistencies, 0 frontmatter issues, 0 tag-hygiene violations, 0 entity-classification problems.
