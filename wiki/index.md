@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-05-16
+updated: 2026-05-17
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 58 sources, 72 entities, 93 concepts, 1 comparison.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 69 sources, 84 entities, 107 concepts, 1 comparison, 3 queries.
 
 ## Entities
 
@@ -45,6 +45,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[faiss]] — Facebook AI Similarity Search library
 - [[openai-api]] — OpenAI's API (Chat Completions / Responses / Assistants) — function-calling reference implementation
 - [[vllm]] — High-throughput LLM inference engine; ~25 tool-call parsers
+- [[autogpt]] — Early popular open-source autonomous agent (2023); GAIA co-author
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -104,6 +105,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[percy-liang]] — Stanford NLP / CRFM; Generative Agents co-author
 - [[bernal-jimenez-gutierrez]] — HippoRAG / HippoRAG 2 first author; OSU NLP
 
+### People — Agentic capabilities (2025)
+- [[jeff-clune]] — UBC / Vector / Sakana AI; senior author Darwin Gödel Machine; open-ended evolution
+- [[graham-neubig]] — CMU professor; All Hands AI / OpenHands co-founder; SWE-Gym senior author
+
 ### People — Other
 - [[blaise-aguera-y-arcas]] — Google research VP; Paradigms of Intelligence team
 - [[james-evans]] — Computational social scientist; UChicago + Santa Fe Institute
@@ -122,6 +127,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[letta]] — Berkeley spinout productizing MemGPT; agent runtime with stateful memory
 - [[zep]] — Long-term memory infrastructure for LLM agents (Zep Cloud, Graphiti)
 - [[zed]] — Zed Industries; Rust collaborative editor; creator of the [[acp|Agent Client Protocol]]
+- [[deepseek]] — Open-weights frontier-model lab (DeepSeek-V3, DeepSeek-R1, GRPO)
+- [[sakana-ai]] — Tokyo AI lab focused on evolutionary / open-ended ML (Darwin Gödel Machine)
+- [[bytedance]] — Hosts ByteDance Seed research; produced UI-TARS-1 / UI-TARS-2
+- [[meta]] — Meta Platforms (distinct from [[fair]] research arm)
+- [[microsoft-research]] — Microsoft's research arm (SWE-bench Live, Magma)
+- [[huggingface]] — Open-source ML model hub; co-authored GAIA
+- [[sambanova]] — AI accelerator company; co-authored Agentic Context Engineering
+- [[pwc]] — PricewaterhouseCoopers; applied-AI research on long-horizon agent memory (Chronos, agentic-search)
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
@@ -131,6 +144,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[uc-berkeley]] — EECS / Sky Computing Lab; origin of MemGPT and Sleep-time Compute
 - [[ohio-state-university]] — OSU NLP under Yu Su; HippoRAG / HippoRAG 2
 - [[caltech]] — Computing & Math Sciences; Voyager co-author institution (Anandkumar)
+- [[cmu]] — Carnegie Mellon; Graham Neubig's home; SWE-Gym co-author institution
 
 ## Concepts
 
@@ -201,6 +215,23 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[constrained-decoding]] — Logit-mask grammar enforcement (xgrammar, outlines, lm-format-enforcer)
 - [[json-schema]] — IETF spec for describing JSON data; the format every tool definition uses
 - [[json-rpc]] — Stateless RPC protocol over JSON; transport substrate for MCP and ACP
+
+### Agentic capabilities (2025)
+- [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
+- [[deepseek-r1]] — Pure-RL reasoning model + multi-stage variant; open-weights inflection (DeepSeek 2025)
+- [[search-r1]] — Canonical tool-use RL recipe; retrieved-token masking + outcome rewards
+- [[swe-gym]] — Training environment for SWE agents (2,438 Python tasks with unit tests)
+- [[swe-bench-live]] — Monthly-refreshed contamination-resistant SWE-bench (Microsoft 2025)
+- [[darwin-godel-machine]] — Empirical self-improving agent; rewrites its own scaffold (Sakana / UBC 2025)
+- [[self-improving-agent]] — Umbrella: agents that modify their own skills / prompts / scaffold / weights
+- [[computer-use-agent]] — VLM/VLA agents that drive a screen (UI-TARS-2, Magma, Anthropic CU)
+- [[ui-tars-2]] — ByteDance Seed's multi-turn-RL GUI agent (OSWorld SOTA 47.5)
+- [[magma]] — Microsoft's unified VLA foundation model for GUI + robotic manipulation
+- [[vision-language-action-model]] — Foundation models that emit actions conditioned on vision + language
+- [[agentic-context-engineering]] — Generator/Reflector/Curator triad evolves the prompt as a delta-updated playbook
+- [[gaia]] — Meta+HF+AutoGPT general-AI-assistant benchmark (2023); cited by every 2024+ agent paper
+- [[agentic-search]] — In-loop RAG: retriever × harness × tool-delivery as a single jointly-evaluated system
+- [[longmemeval]] — ICLR 2025 benchmark for long-term interactive memory in chat assistants
 - [[tool-use]] — LLMs invoking external tools / functions
 - [[react]] — Interleaving reasoning and acting (Yao 2022)
 - [[reflexion]] — Verbal-RL agent improvement via self-reflection
@@ -395,6 +426,19 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[openai-function-calling-2025]] — OpenAI function-calling + Responses API guide
 - [[function-calling-llms-promptingguide]] — Conceptual guide: LLM emits JSON, app executes
 - [[vllm-tool-calling-2025]] — vLLM tool parsers, constrained decoding backends
+
+### Agentic capabilities (2023, 2025–2026)
+- [[gaia-mialon-2023]] — GAIA general-assistant benchmark (Mialon et al. 2023)
+- [[deepseek-r1-2025]] — DeepSeek-R1: RL elicits emergent reasoning (DeepSeek 2025)
+- [[search-r1-jin-2025]] — Search-R1: RL for multi-turn search (Jin et al. 2025)
+- [[magma-yang-2025]] — Magma: unified VLA foundation model (Yang et al., CVPR 2025)
+- [[swe-gym-pan-2024]] — SWE-Gym training env + verifier inference scaling (Pan et al., ICML 2025)
+- [[swe-bench-live-zhang-2025]] — SWE-bench Live: contamination-resistant (Zhang et al. 2025)
+- [[darwin-godel-machine-zhang-2025]] — Darwin Gödel Machine: self-improving agent (Zhang et al. 2025)
+- [[ui-tars-2-wang-2025]] — UI-TARS-2 technical report (ByteDance Seed 2025)
+- [[agentic-context-engineering-zhang-2025]] — Generator/Reflector/Curator (Zhang et al., ICLR 2026)
+- [[agentic-misalignment-lynch-2025]] — Insider-threat agentic misalignment (Lynch et al., Anthropic 2025)
+- [[grep-all-you-need-sen-2026]] — Is Grep All You Need? Retriever × harness × tool-delivery on LongMemEval (Sen et al., PwC 2026)
 
 ## Comparisons
 

@@ -9,6 +9,58 @@ updated: 2026-05-16
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-17] ingest | Is Grep All You Need? (Sen et al., PwC 2026)
+
+Ingest of [[grep-all-you-need-sen-2026]] (arXiv:2605.15184, May 14 2026) — an empirical study of how retriever (grep vs. vector), agent harness (custom vs. provider-native CLI), and tool-result delivery mode (inline vs. file-based) jointly determine end-to-end agentic-search accuracy on a 116-question [[longmemeval|LongMemEval-S]] slice.
+
+**Headline findings**:
+- **Inline grep > inline vector for every harness-model pair tested** (10/10). Lexical search is undersold in agentic-RAG literature.
+- **Harness effect ≈ retriever effect.** Same Claude Opus 4.6 backbone: 93.1% on [[chronos|Chronos]] vs. 76.7% on [[claude-code|Claude Code]] with grep-only.
+- **Tool-delivery mode can invert the lexical advantage.** Programmatic (file-based) delivery makes vector beat grep on 5/10 pairs. Sharpest regression: Codex+GPT-5.4, 93.1% inline grep → 55.2% programmatic grep.
+
+**Pages created (4)**:
+- Source: [[grep-all-you-need-sen-2026]]
+- Concept: [[agentic-search]] — the umbrella concept the paper names and measures
+- Concept stub: [[longmemeval]] — the benchmark (full ICLR 2025 paper not yet ingested)
+- Entity: [[pwc]] — PricewaterhouseCoopers, the authors' affiliation
+
+**Index updated** with all 4 new pages.
+
+**Threads it closes**: connects [[memory-management]] retrieval mechanisms ([[bm25]], [[dense-retrieval]], [[hipporag-2]]) to the harness L2 abstraction in [[agent-three-layer-model]] — making explicit that the same retriever performs differently in-loop than as a standalone pipeline. Provides empirical justification for the lexical-search tools (grep, ripgrep, FTS5) that [[claude-code]] and [[pi-mono]] ship with by default.
+
+**Open follow-ups**: [[chronos]] paper (arXiv:2603.16862) cited but not yet ingested. LongMemEval (Wu et al., ICLR 2025) is a stub.
+
+---
+
+## [2026-05-17] ingest | Agentic capabilities — 10 papers (2023, 2025–2026)
+
+Web-search-driven ingest of canonical 2025–2026 agentic-capability papers (plus GAIA as a foundational 2023 benchmark cited by every later agent paper). Verified arXiv IDs on each.
+
+**Sources (10 new)**:
+- [[deepseek-r1-2025]] — DeepSeek-R1: pure-RL elicits emergent reasoning; the open-weights substrate for the 2025 agentic-RL wave (arXiv:2501.12948)
+- [[search-r1-jin-2025]] — Search-R1: RL recipe for multi-turn tool-use; retrieved-token masking + outcome rewards (arXiv:2503.09516, COLM 2025)
+- [[darwin-godel-machine-zhang-2025]] — DGM: empirical self-improving agent; rewrites its own scaffold, SWE-bench 20→50% (arXiv:2505.22954)
+- [[ui-tars-2-wang-2025]] — UI-TARS-2: multi-turn RL GUI agent; OSWorld 47.5 (arXiv:2509.02544)
+- [[swe-gym-pan-2024]] — SWE-Gym: 2,438 Python tasks with unit tests for SWE-agent training (arXiv:2412.21139, ICML 2025)
+- [[swe-bench-live-zhang-2025]] — SWE-bench Goes Live: monthly-refreshed contamination-resistant SWE-bench (arXiv:2505.23419)
+- [[agentic-context-engineering-zhang-2025]] — ACE: Generator/Reflector/Curator triad evolves the prompt as a delta-updated playbook (arXiv:2510.04618, ICLR 2026)
+- [[agentic-misalignment-lynch-2025]] — Insider-threat agentic misalignment across 16 frontier models; the "real vs test" gap (arXiv:2510.05179, Anthropic)
+- [[magma-yang-2025]] — Magma: unified VLA foundation model for GUI + robotic manipulation; Set-of-Mark / Trace-of-Mark (arXiv:2502.13130, CVPR 2025)
+- [[gaia-mialon-2023]] — GAIA general-AI-assistant benchmark; human 92% vs GPT-4+plugins 15% (arXiv:2311.12983)
+
+**New concept pages (12)**: [[agentic-rl]], [[deepseek-r1]], [[search-r1]], [[darwin-godel-machine]], [[self-improving-agent]], [[ui-tars-2]], [[magma]], [[vision-language-action-model]], [[computer-use-agent]], [[swe-bench-live]], [[gaia]], [[agentic-context-engineering]].
+
+**New entity stubs (11)**: orgs [[deepseek]], [[sakana-ai]], [[bytedance]], [[meta]], [[microsoft-research]], [[huggingface]], [[sambanova]]; products [[autogpt]]; people [[jeff-clune]], [[graham-neubig]]; universities [[cmu]].
+
+**Key conceptual additions**:
+1. **Agentic RL** as a 2025 paradigm distinct from RLHF (chat-pref training) and SFT-on-tool-traces — trains the agent end-to-end on multi-step traces with outcome rewards. DeepSeek-R1's open weights + GRPO recipe became the substrate; Search-R1 the canonical tool-use variant.
+2. **Self-improving agents are now empirical**: Darwin Gödel Machine ships the Gödel-machine vision as a working algorithm (population archive, self-scaffold-rewrite, SWE-bench 20→50%). Closes a 20-year theoretical loop.
+3. **Computer-use agents** consolidated as a category: UI-TARS-2 (specialist) and Magma (unified GUI+robotics VLA) bracket the design space.
+4. **Benchmark contamination** is now first-class: SWE-bench Live shows 43% → 19% drop on identical config when tasks are post-training-cutoff. Plus GAIA backfilled as the foundational general-assistant eval cited by everything since.
+5. **Agentic Misalignment** (Anthropic 2025) is the canonical empirical safety paper: 16 models, simulated corporate settings, blackmail at 96% under pressure, **55% real-mode vs 6.5% test-mode** blackmail rate — implying standard evals systematically underestimate deployment misalignment.
+
+**Wiki size**: ~340 pages (was ~309). Source/concept/entity counts updated in index.
+
 ---
 
 ## [2026-05-17] query | Hooks and callbacks in modern agent architecture

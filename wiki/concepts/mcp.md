@@ -57,14 +57,14 @@ Mirrors the role HTTP played for web pages, or JSON for data interchange — an 
 
 ## Adoption timeline
 
-| Date | Milestone |
-|---|---|
-| 2024-11-25 | Anthropic announces MCP; SDKs in Python + TypeScript |
-| Feb 2025 | 1,000+ community MCP servers |
-| Mar 2025 | OpenAI adopts MCP across products including ChatGPT desktop |
-| Throughout 2025 | Google and Microsoft join; common cross-vendor infrastructure |
-| Nov 2025 | Major spec update: async ops, statelessness, server identity, registry |
-| Dec 2025 | Donated to **Agentic AI Foundation (AAIF)** under the Linux Foundation |
+| Date            | Milestone                                                              |
+| --------------- | ---------------------------------------------------------------------- |
+| 2024-11-25      | Anthropic announces MCP; SDKs in Python + TypeScript                   |
+| Feb 2025        | 1,000+ community MCP servers                                           |
+| Mar 2025        | OpenAI adopts MCP across products including ChatGPT desktop            |
+| Throughout 2025 | Google and Microsoft join; common cross-vendor infrastructure          |
+| Nov 2025        | Major spec update: async ops, statelessness, server identity, registry |
+| Dec 2025        | Donated to **Agentic AI Foundation (AAIF)** under the Linux Foundation |
 
 ## Initial launch partners
 
