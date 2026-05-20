@@ -2,12 +2,48 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-05-16
+updated: 2026-05-20
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-05-20] ingest | Looped Transformers — 10 papers (2018, 2023–2026)
+
+Seeded from [kyegomez/OpenMythos](https://github.com/kyegomez/OpenMythos)'s curated bibliography for the recurrent-depth / looped-transformer thread, supplemented with the canonical theory + empirical papers identified independently.
+
+**Sources (10 new)**:
+- [[universal-transformer-dehghani-2018]] — Universal Transformers: recurrent block + ACT; the spiritual ancestor (Dehghani et al., Google Brain/DeepMind, ICLR 2019)
+- [[looped-transformers-programmable-computers-giannou-2023]] — Hand-constructed 13-layer looped transformer simulates a programmable computer via FLEQ (Giannou et al., UW-Madison + Princeton, ICML 2023)
+- [[looped-transformers-learning-algorithms-yang-2023]] — Looped transformer matches standard on in-context regression at ~1/12 params (Yang, Lee, Nowak, Papailiopoulos, ICLR 2024)
+- [[looped-transformers-length-generalization-fan-2024]] — Input-adaptive halting → length generalization on RASP-L-expressible tasks (Fan, Du, Ramchandran, Lee, ICLR 2025)
+- [[expressive-power-looped-transformers-xu-2024]] — Approximation-rate bound + timestep encoding fix (Xu & Sato, ICML 2025)
+- [[looped-transformers-multi-step-gd-gatmiry-2024]] — Optimal population-loss solution = multi-step preconditioned GD; gradient-dominance convergence (Gatmiry, Saunshi, Reddi, Jegelka, Kumar 2024)
+- [[latent-thoughts-looped-transformers-saunshi-2025]] — k×L looping ≈ kL depth; "latent thoughts" implicitly simulate CoT (Saunshi, Dikkala, Li, Kumar, Reddi, ICLR 2025)
+- [[cot-or-loop-xu-2025]] — Formal CoT-vs-loop separation; depth-recursion wins on DAG-parallel deterministic tasks, CoT wins on self-reducible/approx-inference (Xu & Sato 2025)
+- [[parcae-scaling-laws-looped-2026]] — LTI-system framing + negative-diagonal A → ρ(A)<1 stability; clean scaling laws (Prairie, Novack, Berg-Kirkpatrick, Fu, UCSD/Together AI, 2026)
+- [[loop-think-generalize-2026]] — Recurrent-Depth Transformer with implicit reasoning + grokking dynamics (Kohli, Parthasarathy, Sun, Yao, OSU-NLP 2026)
+
+**New concept pages (4)**:
+- [[looped-transformer]] — umbrella concept anchoring the thread
+- [[universal-transformer]] — the 2018 predecessor as its own concept
+- [[recurrent-depth-transformer]] — the modern 2026 rebranding (RDT)
+- [[latent-reasoning]] — silent-CoT via depth-recursion; the depth-recursion counterpart to [[chain-of-thought-prompting|token-recursion]]
+
+**New entity (1)**: [[openmythos]] — open-source reference implementation by kyegomez (⭐13k+).
+
+**Key conceptual additions**:
+1. **Depth-recursion vs token-recursion** as the central design axis. Looped transformers (depth) and CoT (tokens) are *complementary* — Xu-Sato 2025 formalizes which tasks favor which.
+2. **Latent reasoning** as a distinct mechanism from explicit CoT. The same compute happens but no tokens are emitted; o1/DeepSeek-R1-style internal thinking has a depth-recursion analogue.
+3. **Looping at pretraining scale is now stable.** Parcae's LTI / ρ(A)<1 recipe + Kohli's tail-only supervision unlock looped LMs at GPT-2/3 scale, matched-PPL beating non-looped at lower params.
+4. The thread connects directly to [[deepseek-r1]] / [[agentic-rl]] — both are about scaling test-time compute, just via different recursion axes.
+
+**Wiki size**: 347 → 362 pages.
+
+---
+
+
 
 ## [2026-05-17] ingest | Is Grep All You Need? (Sen et al., PwC 2026)
 

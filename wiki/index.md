@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 69 sources, 84 entities, 107 concepts, 1 comparison, 3 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 79 sources, 85 entities, 111 concepts, 1 comparison, 3 queries.
 
 ## Entities
 
@@ -135,6 +135,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[huggingface]] — Open-source ML model hub; co-authored GAIA
 - [[sambanova]] — AI accelerator company; co-authored Agentic Context Engineering
 - [[pwc]] — PricewaterhouseCoopers; applied-AI research on long-horizon agent memory (Chronos, agentic-search)
+- [[openmythos]] — Open-source reference implementation of recurrent-depth / looped transformers (kyegomez)
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
@@ -233,6 +234,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentic-search]] — In-loop RAG: retriever × harness × tool-delivery as a single jointly-evaluated system
 - [[longmemeval]] — ICLR 2025 benchmark for long-term interactive memory in chat assistants
 - [[tool-use]] — LLMs invoking external tools / functions
+
+### Looped Transformers (depth-recursion)
+- [[looped-transformer]] — Umbrella: transformer whose forward pass is re-applied over the same layers; k×L loops ≈ kL depth at ~1/L parameters
+- [[universal-transformer]] — Dehghani 2018: recurrent-in-depth transformer with Adaptive Computation Time; spiritual ancestor
+- [[recurrent-depth-transformer]] — Modern 2026 rebranding for pretraining-scale looped LMs (OpenMythos / Parcae)
+- [[latent-reasoning]] — Silent CoT via loop iteration; "latent thoughts" — depth-recursion counterpart to token-recursion
 - [[react]] — Interleaving reasoning and acting (Yao 2022)
 - [[reflexion]] — Verbal-RL agent improvement via self-reflection
 - [[toolformer]] — Self-supervised tool use training (Schick 2023)
@@ -439,6 +446,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentic-context-engineering-zhang-2025]] — Generator/Reflector/Curator (Zhang et al., ICLR 2026)
 - [[agentic-misalignment-lynch-2025]] — Insider-threat agentic misalignment (Lynch et al., Anthropic 2025)
 - [[grep-all-you-need-sen-2026]] — Is Grep All You Need? Retriever × harness × tool-delivery on LongMemEval (Sen et al., PwC 2026)
+
+### Looped Transformers (2018, 2023–2026)
+- [[universal-transformer-dehghani-2018]] — Universal Transformers: recurrent transformer + ACT (Dehghani et al., ICLR 2019)
+- [[looped-transformers-programmable-computers-giannou-2023]] — Hand-constructed 13-layer transformer simulates a programmable computer (Giannou et al., ICML 2023)
+- [[looped-transformers-learning-algorithms-yang-2023]] — Looped transformer matches standard on in-context regression at ~1/12 params (Yang et al., ICLR 2024)
+- [[looped-transformers-length-generalization-fan-2024]] — Variable-step looping for length generalization on RASP-L tasks (Fan et al., ICLR 2025)
+- [[expressive-power-looped-transformers-xu-2024]] — Approximation rate + timestep encoding fix (Xu & Sato, ICML 2025)
+- [[looped-transformers-multi-step-gd-gatmiry-2024]] — Optimal looped solution = multi-step preconditioned GD (Gatmiry et al. 2024)
+- [[latent-thoughts-looped-transformers-saunshi-2025]] — k×L looping ≈ kL depth; "latent thoughts" simulate CoT (Saunshi et al., ICLR 2025)
+- [[cot-or-loop-xu-2025]] — Formal depth-recursion vs token-recursion separation (Xu & Sato 2025)
+- [[parcae-scaling-laws-looped-2026]] — Parcae: LTI stability + scaling laws for looped LMs (Prairie et al. 2026)
+- [[loop-think-generalize-2026]] — Recurrent-Depth Transformer with implicit reasoning + grokking (Kohli et al., OSU 2026)
 
 ## Comparisons
 
