@@ -9,6 +9,27 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-21] ingest | Backfill — 5 sources + 19 concept stubs for top-cited dangling refs
+
+Wiki audit found 144 draft pages and 163 dangling wikilinks. Top dangling refs (15× `swe-gym`, 12× `chronos`, 10× `set-of-mark`/`adaptive-computation-time`, etc.) were back-filled in one pass.
+
+**New sources (5)** — papers cited from many existing pages but never ingested:
+- [[chronos-sen-2026]] — Sen et al., PwC 2026 (arXiv:2603.16862) — temporal-event memory agent; companion to [[grep-all-you-need-sen-2026]]; Chronos-High hits **95.6% on LongMemEval-S**
+- [[swe-bench-jimenez-2023]] — Jimenez et al., Princeton, ICLR 2024 (arXiv:2310.06770) — the foundational coding-agent benchmark; 2,294 issue→PR pairs across 12 Python repos
+- [[godel-machine-schmidhuber-2003]] — Schmidhuber (arXiv:cs/0309048) — the theoretical ancestor of [[darwin-godel-machine]]; proof-driven self-rewriting with no local maxima
+- [[ui-tars-1-qin-2025]] — Qin et al., ByteDance Seed (arXiv:2501.12326) — predecessor of [[ui-tars-2]]; the original native GUI agent (Qwen-2-VL backbone, OSWorld 24.6)
+- [[adaptive-computation-time-graves-2016]] — Graves, DeepMind (arXiv:1603.08983) — ACT mechanism; the foundation reused by every looped/recurrent-depth transformer since
+
+**New concept pages (18)**:
+- LT thread: [[chronos]], [[adaptive-computation-time]], [[godel-machine]], [[ui-tars-1]], [[swe-gym]], [[swe-bench]], [[parcae]], [[inference-time-compute]], [[reinforcement-learning]], [[set-of-mark]], [[trace-of-mark]], [[timestep-encoding]], [[length-generalization]], [[grokking]], [[parameter-sharing]]
+- Agent thread: [[gui-agent]], [[embodied-agent]], [[osworld]]
+
+**New entity (1)**: [[microsoft]] — parent of [[microsoft-research]].
+
+**Impact**: top-dangling-ref count for the highest-traffic ref dropped from **15 → 6** (`chain-of-thought` is now the leader, easily fixed by a soft alias to existing [[chain-of-thought-prompting]] in a future pass). Wiki size: 362 → 387 pages.
+
+---
+
 ## [2026-05-21] query | Downsides of Looped Transformer families
 
 Filed [[downsides-of-looped-transformers]] — a cross-source synthesis answering "what are downsides of looped transformer families?"

@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 79 sources, 85 entities, 111 concepts, 1 comparison, 4 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 84 sources, 86 entities, 129 concepts, 1 comparison, 4 queries.
 
 ## Entities
 
