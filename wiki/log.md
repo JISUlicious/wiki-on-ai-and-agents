@@ -9,6 +9,26 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-21] query | Downsides of Looped Transformer families
+
+Filed [[downsides-of-looped-transformers]] — a cross-source synthesis answering "what are downsides of looped transformer families?"
+
+**8 downside categories identified** (each with ≥1 source citation):
+1. Training instability at scale (residual explosion, ρ(A)≥1) — [[parcae-scaling-laws-looped-2026]]
+2. Expressivity gap from weight-tying (Lemma 4.1) — [[expressive-power-looped-transformers-xu-2024]]
+3. Halting / step-count + overthinking — [[loop-think-generalize-2026]], [[looped-transformers-length-generalization-fan-2024]]
+4. Perplexity / memorization loss vs iso-FLOP non-looped — [[latent-thoughts-looped-transformers-saunshi-2025]]
+5. OOD simplicity-bias brittleness — [[looped-transformers-learning-algorithms-yang-2023]]
+6. Loses to CoT on stochastic / approximate-inference (FPRAS ≠ FPTAS separation) — [[cot-or-loop-xu-2025]]
+7. Compute, memory, and recipe complexity — all sources
+8. Hand-construction vs. SGD-learnability gap — [[looped-transformers-programmable-computers-giannou-2023]]
+
+**Bottom line**: looped TFs win structurally on deterministic depth-bounded computation and empirically on reasoning, but lose structurally on stochastic inference and need a delicate, still-evolving recipe to train at scale.
+
+**Pages updated**: `wiki/index.md` (Queries section + total count).
+
+---
+
 ## [2026-05-20] ingest | Looped Transformers — 10 papers (2018, 2023–2026)
 
 Seeded from [kyegomez/OpenMythos](https://github.com/kyegomez/OpenMythos)'s curated bibliography for the recurrent-depth / looped-transformer thread, supplemented with the canonical theory + empirical papers identified independently.

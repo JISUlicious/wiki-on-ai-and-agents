@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 79 sources, 85 entities, 111 concepts, 1 comparison, 3 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 79 sources, 85 entities, 111 concepts, 1 comparison, 4 queries.
 
 ## Entities
 
@@ -468,3 +468,4 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[from-transformer-to-modern-agents]] — Nine evolutionary tracks from Transformer to 2026 agents
 - [[common-features-of-modern-agents]] — The 8 universal features shared by Claude Code / opencode / pi / Hermes / OpenClaw
 - [[hooks-in-modern-agents]] — ~30 named hooks across the 5 documented 2026 agents (PreToolUse, SessionStart, Stop, PreCompact, …)
+- [[downsides-of-looped-transformers]] — Synthesis of training instability, expressivity gaps, overthinking, perplexity loss, and CoT-stochastic separation across the 10 LT papers
