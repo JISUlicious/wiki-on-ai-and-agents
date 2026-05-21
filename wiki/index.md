@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 84 sources, 86 entities, 129 concepts, 1 comparison, 4 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 89 sources, 90 entities, 134 concepts, 1 comparison, 4 queries.
 
 ## Entities
 
@@ -109,6 +109,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[jeff-clune]] — UBC / Vector / Sakana AI; senior author Darwin Gödel Machine; open-ended evolution
 - [[graham-neubig]] — CMU professor; All Hands AI / OpenHands co-founder; SWE-Gym senior author
 
+### People — Looped Transformers
+- [[kangwook-lee]] — UW-Madison; senior author on multiple LT papers (Giannou 2023, Yang 2023, Fan 2024)
+- [[dimitris-papailiopoulos]] — UW-Madison; senior co-author on LT papers (Giannou 2023, Yang 2023)
+- [[nikunj-saunshi]] — Google Research; "latent thoughts" framing (Saunshi 2025, Gatmiry 2024)
+
 ### People — Other
 - [[blaise-aguera-y-arcas]] — Google research VP; Paradigms of Intelligence team
 - [[james-evans]] — Computational social scientist; UChicago + Santa Fe Institute
@@ -136,6 +141,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sambanova]] — AI accelerator company; co-authored Agentic Context Engineering
 - [[pwc]] — PricewaterhouseCoopers; applied-AI research on long-horizon agent memory (Chronos, agentic-search)
 - [[openmythos]] — Open-source reference implementation of recurrent-depth / looped transformers (kyegomez)
+- [[microsoft]] — Tech giant; parent of [[microsoft-research]]
+- [[bytedance-seed]] — ByteDance's foundation-model research division (UI-TARS-1/2)
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
@@ -233,6 +240,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gaia]] — Meta+HF+AutoGPT general-AI-assistant benchmark (2023); cited by every 2024+ agent paper
 - [[agentic-search]] — In-loop RAG: retriever × harness × tool-delivery as a single jointly-evaluated system
 - [[longmemeval]] — ICLR 2025 benchmark for long-term interactive memory in chat assistants
+- [[chronos]] — PwC's temporal-event memory agent (Sen 2026); LongMemEval-S 95.6%
+- [[swe-bench]] — Jimenez 2023 foundational coding-agent benchmark (2,294 issue→PR pairs)
+- [[swe-gym]] — Pan 2024 SWE-agent training environment (2,438 Python tasks with unit tests)
+- [[osworld]] — Computer-use agent benchmark; OSWorld
+- [[gui-agent]] — VLM agents driving a screen; subset of [[computer-use-agent]]
+- [[embodied-agent]] — Robot/physical-world counterpart to GUI agents
+- [[set-of-mark]] — Magma's clickable element grounding via marked overlays
+- [[trace-of-mark]] — Magma's motion-planning via marked trajectories
+- [[ui-tars-1]] — ByteDance Seed's first-gen native GUI agent (Qin 2025)
+- [[agent-benchmark]] — Umbrella concept for agent evaluation benchmarks
+- [[inference-time-compute]] — Allocating more compute at inference (CoT, looping, search)
+- [[reinforcement-learning]] — Umbrella RL concept
+- [[chain-of-thought]] — Soft alias for [[chain-of-thought-prompting]]
+- [[online-learning]] — Incremental training as new data arrives
 - [[tool-use]] — LLMs invoking external tools / functions
 
 ### Looped Transformers (depth-recursion)
@@ -240,6 +261,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[universal-transformer]] — Dehghani 2018: recurrent-in-depth transformer with Adaptive Computation Time; spiritual ancestor
 - [[recurrent-depth-transformer]] — Modern 2026 rebranding for pretraining-scale looped LMs (OpenMythos / Parcae)
 - [[latent-reasoning]] — Silent CoT via loop iteration; "latent thoughts" — depth-recursion counterpart to token-recursion
+- [[adaptive-computation-time]] — Graves 2016 mechanism for input-adaptive depth; foundation for the entire LT thread
+- [[timestep-encoding]] — Xu & Sato 2024's fix for weight-tying expressivity gap
+- [[parameter-sharing]] — Reusing the same weights across iterations/layers
+- [[length-generalization]] — Generalizing to longer inputs than training; LT is one approach
+- [[grokking]] — Sudden generalization after extended training; observed in RDTs
+- [[rasp-l]] — Length-restricted RASP complexity class (Fan 2024)
+- [[parcae]] — LTI-stable looped LM training recipe (Prairie 2026)
+- [[godel-machine]] — Schmidhuber's 2003 theoretical ancestor of self-improving agents
+- [[adas]] — Hu, Lu, Clune 2024 — automated design of agentic systems; precursor to DGM
 - [[react]] — Interleaving reasoning and acting (Yao 2022)
 - [[reflexion]] — Verbal-RL agent improvement via self-reflection
 - [[toolformer]] — Self-supervised tool use training (Schick 2023)
@@ -446,6 +476,13 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentic-context-engineering-zhang-2025]] — Generator/Reflector/Curator (Zhang et al., ICLR 2026)
 - [[agentic-misalignment-lynch-2025]] — Insider-threat agentic misalignment (Lynch et al., Anthropic 2025)
 - [[grep-all-you-need-sen-2026]] — Is Grep All You Need? Retriever × harness × tool-delivery on LongMemEval (Sen et al., PwC 2026)
+- [[chronos-sen-2026]] — Chronos: temporal-event memory agent (Sen et al., PwC 2026)
+- [[swe-bench-jimenez-2023]] — SWE-bench foundational benchmark (Jimenez et al., Princeton, ICLR 2024)
+- [[ui-tars-1-qin-2025]] — UI-TARS-1: native GUI agent (Qin et al., ByteDance Seed 2025)
+
+### Foundations (2003, 2016)
+- [[godel-machine-schmidhuber-2003]] — Gödel Machines: self-referential universal problem solvers (Schmidhuber 2003)
+- [[adaptive-computation-time-graves-2016]] — Adaptive Computation Time for RNNs (Graves, DeepMind 2016)
 
 ### Looped Transformers (2018, 2023–2026)
 - [[universal-transformer-dehghani-2018]] — Universal Transformers: recurrent transformer + ACT (Dehghani et al., ICLR 2019)

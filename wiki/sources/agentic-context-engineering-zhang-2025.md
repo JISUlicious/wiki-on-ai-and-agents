@@ -24,7 +24,6 @@ authors:
 year: 2025
 introduces:
   - "[[agentic-context-engineering]]"
-  - "[[self-evolving-context]]"
 tags:
   - 2025
 status: complete

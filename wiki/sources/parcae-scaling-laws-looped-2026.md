@@ -14,7 +14,6 @@ authors:
 year: 2026
 introduces:
   - "[[parcae]]"
-  - "[[looped-language-model]]"
 tags:
   - 2026
   - paper

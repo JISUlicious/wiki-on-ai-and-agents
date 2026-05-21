@@ -57,5 +57,6 @@ The two tracks combine well: guardrailing limits *what an agent is permitted to 
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+- [[agentic-misalignment-lynch-2025]] — empirical insider-threat study across 16 frontier models; canonical 2025 evidence
 - [[contrastive-activation-addition-rimsky-2023]] — CAA on safety-relevant dispositions
 - [[representation-engineering-zou-2023]] — RepE on power-seeking, harmlessness, honesty

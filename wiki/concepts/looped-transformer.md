@@ -38,6 +38,10 @@ Looped transformers are the architectural answer to a recurring question: must d
 
 The 2018 [[universal-transformer]] is the direct ancestor — same idea, [[adaptive-computation-time|ACT-based halting]], framed as "transformer-as-RNN-over-depth". [[recurrent-depth-transformer]] is the modern (2025–2026) rebranding for pretraining-scale LMs. [[latent-reasoning]] is the cognitive framing — each loop iteration is a "latent thought". [[chain-of-thought-prompting]] is the orthogonal token-recursion alternative; Xu & Sato 2025 give the formal comparison (depth-recursion wins on parallel-deterministic tasks, token-recursion wins on stochastic-compositional ones). [[parameter-sharing]] is the underlying mechanism. Connections also run to [[in-context-learning]] (looped models learn iterative ICL algorithms), to [[deepseek-r1]] as the RL-reasoning sibling thread, and to [[gradient-descent-as-icl]] as the mechanistic hypothesis the architecture validates.
 
+## Related
+
+- [[downsides-of-looped-transformers]] — synthesis of training instability, expressivity gaps, overthinking, and the CoT-vs-loop separation across the LT thread.
+
 ## References
 
 - [[universal-transformer-dehghani-2018]] — the ancestor.

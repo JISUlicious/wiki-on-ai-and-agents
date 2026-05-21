@@ -9,6 +9,40 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-21] lint | Level-2 auto-fix (errors + warnings)
+
+Lint audit found 3 error classes, 4 warnings, 10 suggestions across 387 pages. Level-2 auto-fix executed.
+
+**Errors resolved**:
+- **23 backfilled pages added to `wiki/index.md`** under Sources/Concepts/Entities/Looped-Transformers/Foundations sections.
+- **9 stubs created** for top broken-link targets:
+  - Concepts: [[chain-of-thought]] (soft alias to [[chain-of-thought-prompting]]), [[online-learning]], [[adas]], [[agent-benchmark]], [[rasp-l]]
+  - Persons: [[kangwook-lee]] (UW-Madison; LT thread senior author), [[nikunj-saunshi]] (Google Research; latent-thoughts framing), [[dimitris-papailiopoulos]] (UW-Madison; LT thread)
+  - Org: [[bytedance-seed]] (ByteDance's foundation-model research division)
+- **2 frontmatter wikilink targets cleaned**: removed unresolvable `[[self-evolving-context]]` and `[[looped-language-model]]` from `introduces:` fields where the existing concept pages already cover the territory.
+
+**Warnings resolved**:
+- **4 orphan pages back-linked from peer pages**:
+  - [[jeff-dean]] ← [[google-brain]] (notable-affiliations bullet)
+  - [[downsides-of-looped-transformers]] ← [[looped-transformer]] (Related section)
+  - [[hooks-in-modern-agents]] ← [[agent-three-layer-model]] (References section)
+  - [[agentic-misalignment-lynch-2025]] ← [[agentic-misalignment]] (References section)
+
+**Tag hygiene + frontmatter + contradictions**: all clean (no fixes needed).
+
+**Impact**:
+- Top dangling-ref count: **6 → 4** (`chain-of-thought` resolved by alias stub; person/org refs resolved by entity stubs)
+- Orphan pages: **4 → 0**
+- Total broken wikilink references: **266 → ~240** (still many specific person/concept names referenced once or twice — left for future passes)
+- Wiki size: **387 → 396 pages**.
+
+**False alarm noted**: the lint agent initially claimed all 107 entity pages lacked classification tags. Verified directly — 107/107 have a valid tag from `{model, person, org, university, product, event}`. The agent's regex was wrong.
+
+**Top draft pages by inbound link count** (not auto-fixed; future ingest material):
+[[google-research]] (31), [[tool-use]] (30), [[google-brain]] (24), [[grpo]] (22), [[dario-amodei]] (20), [[ilya-sutskever]] (19), [[swe-gym]] (18), [[bm25]] (18), [[fair]] (18), [[ppo]] (16).
+
+---
+
 ## [2026-05-21] ingest | Backfill — 5 sources + 19 concept stubs for top-cited dangling refs
 
 Wiki audit found 144 draft pages and 163 dangling wikilinks. Top dangling refs (15× `swe-gym`, 12× `chronos`, 10× `set-of-mark`/`adaptive-computation-time`, etc.) were back-filled in one pass.

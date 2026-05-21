@@ -223,3 +223,4 @@ Refined across [a critique chain in 2026-05-16 conversations](#) — the 8-featu
 - [[from-transformer-to-modern-agents]] — the 9 evolutionary tracks orthogonal to this cross-section
 - [[llm-agent]] — the classical agent definition this model maps onto
 - [[react]] — the dominant L3 control-flow implementation
+- [[hooks-in-modern-agents]] — query synthesis of ~30 hooks across the 5 documented 2026 agents (L2 harness cross-cutter)

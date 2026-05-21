@@ -18,6 +18,7 @@ Google's deep learning research division, founded in 2011. Many of the foundatio
 ## Notable affiliations / publications in this wiki
 
 - [[ashish-vaswani]], [[noam-shazeer]], Łukasz Kaiser — co-authors of [[attention-is-all-you-need-vaswani-2017]]
+- [[jeff-dean]] — long-time Google research lead, GFS/MapReduce/TensorFlow lineage
 
 ## References
 
