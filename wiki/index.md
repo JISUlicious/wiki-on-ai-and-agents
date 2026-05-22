@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 89 sources, 90 entities, 134 concepts, 1 comparison, 4 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 89 sources, 90 entities, 134 concepts, 1 comparison, 5 queries.
 
 ## Entities
 
@@ -506,3 +506,4 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[common-features-of-modern-agents]] — The 8 universal features shared by Claude Code / opencode / pi / Hermes / OpenClaw
 - [[hooks-in-modern-agents]] — ~30 named hooks across the 5 documented 2026 agents (PreToolUse, SessionStart, Stop, PreCompact, …)
 - [[downsides-of-looped-transformers]] — Synthesis of training instability, expressivity gaps, overthinking, perplexity loss, and CoT-stochastic separation across the 10 LT papers
+- [[policy-optimization-methods]] — Cross-cutting synthesis of PPO / GRPO / DPO / RLHF / RLAIF / agentic-RL — what they are, what entities and concepts belong, how they differ

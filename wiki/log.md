@@ -9,6 +9,26 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-22] query | Policy optimization methods
+
+Filed [[policy-optimization-methods]] — a cross-cutting synthesis answering "what is policy optimization, what entities/concepts belong, how do they differ?"
+
+**Coverage** (drawn from 9 concept pages + 7 source pages already in the wiki):
+- **RL family**: [[ppo]] (Schulman 2017), [[grpo]] (DeepSeek 2024), TRPO, REINFORCE, RLOO
+- **Direct-preference family**: [[dpo]] (Rafailov 2023), IPO, KTO, ORPO, SimPO
+- **Pipelines**: [[rlhf]] (Christiano/Ouyang), [[rlaif]] / [[constitutional-ai]] (Bai 2022), [[agentic-rl]] (DeepSeek-R1, Search-R1, SWE-Gym)
+- **Underlying machinery**: [[preference-modeling]] (Bradley-Terry), [[reward-modeling]]
+
+**Key conceptual takeaways**:
+1. All methods optimize the same KL-regularized objective `E[r(x,y)] − β·KL(π_θ ‖ π_ref)` — they differ in *how reward is sourced* and *how the loop is structured*.
+2. PPO vs GRPO: GRPO drops the value network for a per-prompt group baseline. Cheaper, more stable, now the default for reasoning/agent RL.
+3. DPO vs PPO/GRPO: DPO is one supervised loss on preference pairs (no on-policy sampling). Cost ≈ plain SFT.
+4. **2023–2026 trajectory = eliminating moving parts**: drop the critic (GRPO), drop the reward model (DPO), drop the human entirely (outcome-RL like DeepSeek-R1).
+
+**Pages updated**: `wiki/index.md` (Queries section + count).
+
+---
+
 ## [2026-05-21] lint | Level-2 auto-fix (errors + warnings)
 
 Lint audit found 3 error classes, 4 warnings, 10 suggestions across 387 pages. Level-2 auto-fix executed.
