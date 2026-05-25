@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 89 sources, 90 entities, 134 concepts, 1 comparison, 5 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 98 sources, 90 entities, 142 concepts, 1 comparison, 5 queries.
 
 ## Entities
 
@@ -256,6 +256,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[online-learning]] — Incremental training as new data arrives
 - [[tool-use]] — LLMs invoking external tools / functions
 
+### Code as Harness (executable agents)
+- [[code-as-harness]] — Code as the operational substrate of the agent harness (Ning 2026 survey)
+- [[codeact]] — Executable Python as agent action space (Wang 2024)
+- [[pal]] / [[program-aided-reasoning]] — Code-for-reasoning origin (Gao 2023)
+- [[code-as-policies]] — Code-for-acting in embodied settings (Liang 2022)
+- [[swe-agent]] — Agent-Computer Interface for SE (Yang 2024)
+- [[agent-computer-interface]] — ACI abstraction: purpose-built tool surface for LLM agents
+- [[openhands]] — Open-source generalist software-agent platform (formerly OpenDevin)
+- [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
+- [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
+- [[agentic-harness-engineering]] — Telemetry-driven self-evolution of coding harnesses (Lin 2026)
+
 ### Looped Transformers (depth-recursion)
 - [[looped-transformer]] — Umbrella: transformer whose forward pass is re-applied over the same layers; k×L loops ≈ kL depth at ~1/L parameters
 - [[universal-transformer]] — Dehghani 2018: recurrent-in-depth transformer with Adaptive Computation Time; spiritual ancestor
@@ -479,6 +491,17 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chronos-sen-2026]] — Chronos: temporal-event memory agent (Sen et al., PwC 2026)
 - [[swe-bench-jimenez-2023]] — SWE-bench foundational benchmark (Jimenez et al., Princeton, ICLR 2024)
 - [[ui-tars-1-qin-2025]] — UI-TARS-1: native GUI agent (Qin et al., ByteDance Seed 2025)
+
+### Code as Harness (2022–2026)
+- [[code-as-agent-harness-ning-2026]] — Code as Agent Harness survey (Ning et al., UIUC/Meta/Stanford, 2026, 66 pages)
+- [[pal-gao-2023]] — PAL: Program-aided Language Models (Gao et al., ICML 2023)
+- [[code-as-policies-liang-2022]] — Code as Policies for embodied control (Liang et al., ICRA 2023)
+- [[codeact-wang-2024]] — Executable Code Actions Elicit Better LLM Agents (Wang et al., ICML 2024)
+- [[swe-agent-yang-2024]] — SWE-agent: Agent-Computer Interfaces (Yang et al., NeurIPS 2024)
+- [[openhands-wang-2024]] — OpenHands platform (Wang et al., ICLR 2025)
+- [[agentcoder-huang-2023]] — Multi-agent code generation with iterative testing (Huang et al. 2023)
+- [[chatdev-qian-2023]] — Communicative agents for SW dev (Qian et al., ACL 2024)
+- [[agentic-harness-engineering-lin-2026]] — Observability-driven harness evolution (Lin et al., Fudan, 2026)
 
 ### Foundations (2003, 2016)
 - [[godel-machine-schmidhuber-2003]] — Gödel Machines: self-referential universal problem solvers (Schmidhuber 2003)

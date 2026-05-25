@@ -9,6 +9,37 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-25] ingest | Code-as-Harness — survey + 8 cited papers (2022–2026)
+
+Ingest of the major 2026 survey [[code-as-agent-harness-ning-2026]] (Ning et al., UIUC/Meta/Stanford, arXiv:2605.18747, 66 pages, 500+ references) plus its **8 most-citable / load-bearing references** that were not yet in the wiki.
+
+**Survey thesis**: code is the *operational substrate* of the agent harness, not merely an output the LLM produces. Programs are executable (verifiable), inspectable (structured traces), and stateful (persistent across steps) — unifying reasoning, action, environment modeling, and verification under one abstraction. The bottleneck of autonomy is not the base model but harness reliability.
+
+**Sources (9 new)**:
+- [[code-as-agent-harness-ning-2026]] — the survey itself
+- [[pal-gao-2023]] — PAL: Program-aided Language Models (ICML 2023) — origin of code-for-reasoning
+- [[code-as-policies-liang-2022]] — Code as Policies (Liang et al., Google Robotics, ICRA 2023) — origin of code-for-acting in embodied settings
+- [[codeact-wang-2024]] — Executable Code Actions Elicit Better LLM Agents (Wang et al., UIUC, ICML 2024) — Python as action space, +20% absolute over JSON tool calls
+- [[swe-agent-yang-2024]] — SWE-agent (Yang et al., Princeton, NeurIPS 2024) — Agent-Computer Interface abstraction; SWE-bench 12.5%
+- [[openhands-wang-2024]] — OpenHands open-source platform (Wang et al., UIUC/CMU, ICLR 2025); SWE-bench Lite 26.7%
+- [[agentcoder-huang-2023]] — Programmer + Test-Designer + Test-Executor triad (Huang et al., HKU 2023); most-cited paper in the survey body (19 citations)
+- [[chatdev-qian-2023]] — Communicative agents for SW dev (Qian et al., Tsinghua/Modelbest, ACL 2024)
+- [[agentic-harness-engineering-lin-2026]] — Telemetry-driven harness evolution (Lin et al., Fudan/Peking, 2026); 69.7% → 77.0% on Terminal-Bench 2 over 10 iterations
+
+**New concept (1)**: [[code-as-harness]] — the umbrella concept the survey names; cross-links all 9 sources.
+
+**Key conceptual additions**:
+1. **Code as the L2 substrate**. Every L2 abstraction in [[agent-three-layer-model]] (control flow, action surface, context, memory, persistence, harness) can be reinstantiated with code as the medium — this is an *axis* across L2, not a layer.
+2. **Three-element decomposition**: model-internal capabilities (L1) vs. system-provided harness infrastructure vs. **agent-initiated code artifacts** (the novel third category — tests, temporary tools, DSL programs, intermediate program states).
+3. **Verifiable-by-running collapses the reward-model pipeline**. Where correctness is mechanically checkable, the reward model disappears entirely — pairs with [[deepseek-r1]] / [[search-r1]] / [[swe-gym]] outcome-RL recipes.
+4. **Agentic Harness Engineering** (Lin 2026) is the 2026 frontier: the harness itself becomes the object of optimization. Empirical descendant of [[godel-machine]] / [[darwin-godel-machine]] applied at the *harness* level rather than the agent level. Pairs with [[agentic-context-engineering]] (prompt-level evolution).
+
+**Wiki size**: 397 → 406 pages.
+
+**Open dangling refs** (left for future passes): [[evolution-agent]], [[plan-execute-verify-loop]], [[code-world-model]], [[program-of-thoughts]], [[agent-skills]] (already exists; checked) — surfaced by the survey but not the prime target.
+
+---
+
 ## [2026-05-22] query | Policy optimization methods
 
 Filed [[policy-optimization-methods]] — a cross-cutting synthesis answering "what is policy optimization, what entities/concepts belong, how do they differ?"
