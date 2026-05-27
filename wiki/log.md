@@ -9,6 +9,27 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-27] query | Fundamental components of harness
+
+Filed [[fundamental-components-of-harness]] — a structured synthesis answering "describe fundamental components of harness."
+
+Three coordinated views:
+1. **6 operational artifacts** (Lin 2026): system prompt, tools, middleware, skills, sub-agents, long-term memory.
+2. **5 mechanism categories** (Ning 2026 survey §3): planning, memory & context, tool use, plan-execute-verify loop, adaptive optimization (AHE).
+3. **L2 architectural cut** ([[agent-three-layer-model]]): control flow, action surface, context assembly, memory mgmt, persistence, harness (narrow sense — bidirectional shaping).
+
+Unified inventory: 8 universal components (loop, tools, sandbox, system prompt+context, memory, permission layer, hooks, persistence) + 2 near-universal (sub-agents, telemetry).
+
+Cross-cutters: Skills, Hooks, MCP each touch 3 categories.
+
+Includes a side-by-side instantiation table across the 5 documented 2026 agents ([[claude-code]] / [[opencode]] / [[pi-mono]] / [[hermes-agent]] / [[openclaw]]).
+
+Pages updated: `wiki/index.md` (Queries section + count).
+
+Pipe-character note in markdown tables: avoided `[[slug\|Display]]` aliases inside table cells (the literal `|` breaks the cell delimiter). Used plain `[[slug]]` and linked the displayed aliases as separate sentences below the table.
+
+---
+
 ## [2026-05-25] ingest | Code-as-Harness — survey + 8 cited papers (2022–2026)
 
 Ingest of the major 2026 survey [[code-as-agent-harness-ning-2026]] (Ning et al., UIUC/Meta/Stanford, arXiv:2605.18747, 66 pages, 500+ references) plus its **8 most-citable / load-bearing references** that were not yet in the wiki.
