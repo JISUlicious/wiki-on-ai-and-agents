@@ -9,6 +9,20 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-28] query | Memory systems anatomy 2026 (three-part synthesis)
+
+Filed [[memory-systems-anatomy-2026]] — a three-part synthesis answering an evolving conversation across three follow-up questions:
+
+1. **What are latest agent memory systems composed of?** — universal pattern (6 functional layers + 7-op lifecycle), compositional building blocks (storage / representation / retrieval / update / eviction / coordination), and a per-system inventory of the 12 ingested memory papers (2023–2026).
+2. **How long-term, user-specific and domain-specific memory is managed.** — scope axes (user × domain), storage patterns (Core + Semantic + Procedural + Resource + Vault + Episodic), update mechanics (heuristic LLM / RL-learned / delta-update), scope-aware retrieval, forgetting policies, production patterns across the 5 documented 2026 agents, and infra offerings (Letta / Zep / Anthropic / OpenAI).
+3. **Kinds of memory beyond user and domain.** — five other axes: cognitive role (CoALA), function in the agent loop, substrate (text / vector / graph / file / neural / KV-cache), generation / provenance, temporal binding. Plus six emerging 2025–2026 kinds: harness-history, code-artifact, multimodal-distilled, sub-agent fork, self-evolution archive, prompt-as-evolving-artifact.
+
+Filed as one unified page because the three answers build on each other and share vocabulary. 15 sources cited; cross-links all 18+ memory-related concept/source pages.
+
+**Pages updated**: `wiki/index.md` (Queries section + count, now 7 queries).
+
+---
+
 ## [2026-05-27] query | Fundamental components of harness
 
 Filed [[fundamental-components-of-harness]] — a structured synthesis answering "describe fundamental components of harness."

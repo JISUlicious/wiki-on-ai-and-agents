@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 98 sources, 90 entities, 142 concepts, 1 comparison, 6 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 98 sources, 90 entities, 142 concepts, 1 comparison, 7 queries.
 
 ## Entities
 
@@ -531,3 +531,4 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[downsides-of-looped-transformers]] — Synthesis of training instability, expressivity gaps, overthinking, perplexity loss, and CoT-stochastic separation across the 10 LT papers
 - [[policy-optimization-methods]] — Cross-cutting synthesis of PPO / GRPO / DPO / RLHF / RLAIF / agentic-RL — what they are, what entities and concepts belong, how they differ
 - [[fundamental-components-of-harness]] — Three coordinated views of harness anatomy: 6 operational artifacts (Lin 2026), 5 mechanism categories (Ning 2026), and L2 architectural cut (3-layer model). Unified 8-component universal inventory.
+- [[memory-systems-anatomy-2026]] — Three-part synthesis on modern agent memory: composition (6 layers + 7-op lifecycle + system inventory), long-term scoping (user-specific + domain-specific management), and the 10+ kinds beyond user/domain (cognitive role, function, substrate, generation, temporal binding).
