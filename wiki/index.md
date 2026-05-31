@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 98 sources, 90 entities, 142 concepts, 1 comparison, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 106 sources, 101 entities, 148 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -153,6 +153,19 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[ohio-state-university]] — OSU NLP under Yu Su; HippoRAG / HippoRAG 2
 - [[caltech]] — Computing & Math Sciences; Voyager co-author institution (Anandkumar)
 - [[cmu]] — Carnegie Mellon; Graham Neubig's home; SWE-Gym co-author institution
+- [[mit]] — Massachusetts Institute of Technology; LILO / DreamCoder lineage (Tenenbaum, Andreas)
+- [[uiuc]] — UI Urbana-Champaign; Heng Ji's group (CodeAct, OpenHands, CRAFT)
+- [[zhejiang-university]] — Home of the agent-skills survey (Xu & Yan 2026)
+- [[tsinghua-university]] — ExpeL (Gao Huang's group); ChatDev
+
+### People — Agent skills / tool creation
+- [[josh-tenenbaum]] — MIT; computational cognitive science, program synthesis (DreamCoder/LILO)
+- [[jacob-andreas]] — MIT CSAIL; language + program synthesis (LILO)
+- [[heng-ji]] — UIUC; leads the CodeAct / OpenHands / CRAFT group
+- [[xingyao-wang]] — UIUC; first author CodeAct + OpenHands
+- [[hao-peng]] — UIUC; CodeAct / CRAFT co-author
+- [[gao-huang]] — Tsinghua; corresponding author of ExpeL
+- [[tianle-cai]] — LATM first author; Princeton / Google DeepMind
 
 ## Concepts
 
@@ -216,6 +229,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[mcp]] — Model Context Protocol (Anthropic 2024): agent ↔ tool/data standard
 - [[acp]] — Agent Client Protocol (Zed 2025): agent ↔ editor standard
 - [[agent-skills]] — Anthropic Agent Skills: composable, progressively-disclosed capability modules
+- [[skill-acquisition]] — How agents acquire skills: RL-trained / autonomous discovery / compositional synthesis / human-authored
+- [[tool-creation]] — Agents authoring + caching their own reusable tools (LATM, CRAFT)
+- [[library-learning]] — Program-synthesis lineage: growing reusable code abstractions (DreamCoder → LILO)
+- [[experiential-learning]] — Distilling reusable NL insights from trajectories (ExpeL); the non-code skill thread
+- [[dreamcoder]] — Wake-sleep Bayesian library learning (Ellis 2020); pre-LLM ancestor
+- [[context-assembly]] — L2 abstraction: how each turn's prompt is constructed
 - [[function-calling]] — The mechanism: LLM emits JSON tool-call request; app executes
 - [[responses-api]] — OpenAI Responses API (March 2025): unified Chat Completions + Assistants
 - [[tool-call-parser]] — Converts model output (varying syntax per family) to structured tool calls
@@ -476,6 +495,16 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[function-calling-llms-promptingguide]] — Conceptual guide: LLM emits JSON, app executes
 - [[vllm-tool-calling-2025]] — vLLM tool parsers, constrained decoding backends
 
+### Agent Skills — authoritative docs, specs & academic (2023–2026)
+- [[anthropic-engineering-skills-2025]] — Anthropic engineering deep-dive: filesystem mechanics + code-execution model
+- [[agentskills-io-spec-2025]] — agentskills.io formal open standard: six-field frontmatter schema (Dec 2025)
+- [[openai-codex-skills-2025]] — OpenAI Codex's convergent SKILL.md adoption
+- [[agent-skills-survey-xu-2026]] — Agent Skills for LLMs: the dedicated academic survey (Xu & Yan, Zhejiang U 2026)
+- [[llm-as-tool-makers-cai-2023]] — LATM: agents author + cache reusable tools (Cai et al., ICLR 2024)
+- [[craft-yuan-2023]] — CRAFT: create-then-retrieve specialized toolsets (Yuan et al., ICLR 2024)
+- [[lilo-grand-2023]] — LILO: learning interpretable code libraries (Grand et al., MIT, ICLR 2024)
+- [[expel-zhao-2023]] — ExpeL: experiential learning via distilled NL insights (Zhao et al., AAAI 2024)
+
 ### Agentic capabilities (2023, 2025–2026)
 - [[gaia-mialon-2023]] — GAIA general-assistant benchmark (Mialon et al. 2023)
 - [[deepseek-r1-2025]] — DeepSeek-R1: RL elicits emergent reasoning (DeepSeek 2025)
@@ -522,6 +551,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ## Comparisons
 
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
+- [[agent-skills-cross-vendor]] — Capability-packaging compared across Anthropic / OpenAI / Google / Microsoft / AWS (SKILL.md vs GPTs vs Gems vs Declarative Agents vs Action Groups)
 
 ## Queries
 

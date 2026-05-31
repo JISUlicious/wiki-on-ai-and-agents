@@ -9,6 +9,31 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-05-31] ingest | Agent Skills — authoritative deep research (8 sources + comparison + 17 stubs)
+
+Comprehensive research on Agent Skills from **authoritative sources only** (vendor docs/specs + academic publications; no blogs/community threads). 4 parallel research agents swept Anthropic / OpenAI / Google-Microsoft-AWS / academic; then 8 sources ingested + a cross-vendor comparison + concept corrections.
+
+**New source pages (8)**:
+- **Anthropic (authoritative beyond the announcement)**:
+  - [[anthropic-engineering-skills-2025]] — "Equipping agents for the real world with Agent Skills" engineering deep-dive: L3+ as unbounded filesystem navigation; bundled code runs via bash **without entering context** (only output costs tokens); code as tool + documentation
+  - [[agentskills-io-spec-2025]] — the formal open standard (2025-12-18): **six** frontmatter fields, not two
+- **OpenAI**: [[openai-codex-skills-2025]] — Codex independently shipped `SKILL.md` (convergent design; `.agents/skills`, `agents/openai.yaml`)
+- **Academic**: [[agent-skills-survey-xu-2026]] (the only dedicated agent-skills survey, Zhejiang U), [[llm-as-tool-makers-cai-2023|LATM]], [[craft-yuan-2023|CRAFT]], [[lilo-grand-2023|LILO]], [[expel-zhao-2023|ExpeL]]
+
+**New comparison**: [[agent-skills-cross-vendor]] — Anthropic SKILL.md vs OpenAI (Codex/GPTs/AgentKit/Apps SDK) vs Google (Gems/Gemini CLI/A2A/ADK) vs Microsoft (Declarative Agents / Semantic Kernel) vs AWS (Bedrock Action Groups / AgentCore). Includes the academic-vs-industry definition split and the Microsoft "skills"→"plugins" rename history.
+
+**New concept stubs (6)**: [[skill-acquisition]], [[tool-creation]], [[library-learning]], [[experiential-learning]], [[dreamcoder]], [[context-assembly]].
+**New entity stubs (11)**: universities [[mit]], [[uiuc]], [[zhejiang-university]], [[tsinghua-university]]; people [[josh-tenenbaum]], [[jacob-andreas]], [[heng-ji]], [[xingyao-wang]], [[hao-peng]], [[gao-huang]], [[tianle-cai]].
+
+**Concept corrections (2 pages enriched)**:
+- [[skill-md-format]] + [[agent-skills]] — **CORRECTION**: frontmatter is **six fields** (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`), not just name+description. `name` must match the parent directory (1–64 chars, no `--`); `description` ≤1024 chars. Open-standard date pinned to **2025-12-18**. Added API specifics (≤8 skills/request, <30MB, beta headers, code-execution requirement), the engineering deep-dive's filesystem/code-execution mechanics, academic grounding (Xu & Yan), and cross-vendor convergence (Codex, Gemini CLI, 40+ adopters).
+
+**Key finding**: the SKILL.md format is genuinely converging into a cross-vendor standard (OpenAI Codex adopted it; agentskills.io lists 40+ adopters), while the hyperscaler enterprise stacks keep proprietary manifest/config equivalents. Microsoft used "skills" first (Semantic Kernel) then renamed to "plugins" in Oct 2023 — abandoning the term Anthropic later popularized.
+
+**Wiki size**: ~407 → ~434 pages (8 sources + 1 comparison + 6 concepts + 11 entities + 2 enriched).
+
+---
+
 ## [2026-05-28] query | Memory systems anatomy 2026 (three-part synthesis)
 
 Filed [[memory-systems-anatomy-2026]] — a three-part synthesis answering an evolving conversation across three follow-up questions:
