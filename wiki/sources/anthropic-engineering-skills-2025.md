@@ -18,7 +18,7 @@ importance: high
 
 # Equipping Agents for the Real World with Agent Skills
 
-**Source**: `sources/anthropic-engineering-skills-2025.md` (captured from static HTML — some original formatting, diagrams, and code listings are lost in the capture)
+**Source**: `sources/anthropic-engineering-skills-2025.md` (full article text; nav boilerplate trimmed)
 **URL**: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 **Publisher**: [[anthropic|Anthropic]] (Engineering blog)
 **Date**: 2025-10-16
@@ -73,7 +73,9 @@ The second mechanic is the **code-execution model**, which goes materially deepe
 
 > "Building a skill for an agent is like putting together an onboarding guide for a new hire."
 
-_The quotes above are reconstructed from a static-HTML capture; wording is verified against the captured text but punctuation/formatting may differ slightly from the rendered original._
+> "Progressive disclosure is the core design principle that makes Agent Skills flexible and scalable. Like a well-organized manual that starts with a table of contents, then specific chapters…"
+
+(Quotes verified verbatim against the captured article text.)
 
 ## References
 

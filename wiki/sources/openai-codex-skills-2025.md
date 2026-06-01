@@ -18,7 +18,7 @@ importance: high
 
 # OpenAI Codex Agent Skills
 
-**Source**: `sources/openai-codex-skills-2025.md` (captured from static HTML)
+**Source**: `sources/openai-codex-skills-2025.md` (clean capture via the doc's `.md` variant)
 **URL**: https://developers.openai.com/codex/skills
 **Publisher**: [[openai|OpenAI]]
 **Date**: late 2025 (experimental rollout)

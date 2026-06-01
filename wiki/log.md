@@ -9,6 +9,20 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-01] ingest | Resolve static-HTML capture caveat (3 vendor-doc sources)
+
+Resolved the caveat flagged in the prior agent-skills ingest: the 3 vendor-doc raw captures were taken from JS-rendered SPA static HTML and were noisy. Re-captured all three from clean canonical sources:
+
+- **[[agentskills-io-spec-2025]]** — replaced with the doc's machine-readable `agentskills.io/specification.md` (clean 272-line markdown). Re-verified the six-field frontmatter schema verbatim against it — **all wiki facts confirmed accurate** (name ≤64 lowercase-alnum-hyphen / must match parent dir / no `--`; description ≤1024; compatibility ≤500; metadata; allowed-tools Experimental; ~100-token metadata / <5000-token body / <500-line SKILL.md; `skills-ref validate`).
+- **[[openai-codex-skills-2025]]** — replaced with `developers.openai.com/codex/skills.md` (clean 178-line markdown). Facts confirmed (4 discovery scopes; 2%/8000-char cap; skill=authoring-format vs plugin=distribution-unit; CLI/IDE/app availability).
+- **[[anthropic-engineering-skills-2025]]** — the existing capture was already clean article prose; trimmed only the leading nav boilerplate. No `.md` variant exists (Next.js SPA), but WebFetch/curl prose was complete and verbatim-quotable.
+
+Removed the "captured from static HTML / formatting lost / reconstructed" caveat notes from all three wiki source pages; quotes are now verified verbatim. No factual corrections were needed — the original research extractions (via WebFetch) had been accurate; only the raw `sources/` captures were noisy, and those are now clean.
+
+**Net**: 0 new pages; 2 wiki source pages updated (caveats removed); 3 local raw captures cleaned. The caveat is closed.
+
+---
+
 ## [2026-05-31] ingest | Agent Skills — authoritative deep research (8 sources + comparison + 17 stubs)
 
 Comprehensive research on Agent Skills from **authoritative sources only** (vendor docs/specs + academic publications; no blogs/community threads). 4 parallel research agents swept Anthropic / OpenAI / Google-Microsoft-AWS / academic; then 8 sources ingested + a cross-vendor comparison + concept corrections.
