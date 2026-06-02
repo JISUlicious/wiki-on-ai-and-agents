@@ -22,9 +22,14 @@ tags:
 
 These routes are not mutually exclusive; a [[self-improving-agent]] may bootstrap from human-authored seeds and then discover and compose new skills autonomously.
 
+## Acquisition vs. optimization
+
+Acquisition asks *how the agent gets a skill at all*; [[skill-optimization]] asks *given a skill, how to make it measurably better*. The two compose: a human-authored or autonomously-discovered skill can then be optimized (text-space edits in [[skillopt-yang-2026|SkillOpt]] / [[skillmoo-gong-2026|SkillMOO]], or RL in [[skill1-shi-2026|Skill1]] / [[sage-skill-library-wang-2025|SAGE]]). RL-based methods blur the line — they acquire *and* improve in one loop.
+
 ## Related
 
 - [[agent-skills]] — what is being acquired.
+- [[skill-optimization]] — improving a skill once acquired.
 - [[voyager]] — canonical autonomous-discovery example.
 - [[self-improving-agent]] — agents that acquire skills over their lifetime.
 

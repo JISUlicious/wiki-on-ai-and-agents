@@ -132,6 +132,8 @@ The convergence happened organically rather than via formal standardization, bec
 - [[agent-skills-cross-vendor]] — cross-vendor capability-packaging comparison
 - [[skill-md-format]] — file-format details and cross-agent adoption notes
 - [[skill-acquisition]] — how agents acquire skills
+- [[skill-optimization]] — automatically improving a skill artifact (SkillOpt, SkillMOO, SkillReducer, Skill1, SAGE)
+- [[skill-evaluation]] — measuring skill usefulness in realistic settings
 - [[mcp]] — complementary tool-integration protocol
 - [[function-calling]] — the prior pattern Skills extend
 - [[tool-use]] — broader category

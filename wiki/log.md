@@ -9,6 +9,28 @@ updated: 2026-05-20
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-02] ingest | Skill Optimization — extended research (6 sources + concept cluster)
+
+Extended agent-skills research centered on **SkillOpt** (user-requested). Established a new **skill-optimization** sub-area: treating a skill artifact as something to *automatically improve*, distinct from [[skill-acquisition|acquiring]] it.
+
+**New source pages (6)**:
+- [[skillopt-yang-2026]] — **SkillOpt** (Yang et al., [[microsoft|Microsoft]]/[[shanghai-jiao-tong-university|SJTU]], arXiv:2605.23904) — the centerpiece. First systematic **controllable text-space optimizer** for agent skills: bounded LLM add/delete/replace edits on one SKILL.md, gated on strict held-out validation, with a textual learning-rate budget, rejected-edit buffer, epoch meta-updates; ships a compact `best_skill.md` (300–2000 tokens) with zero inference-time calls; **best-or-tied in 52/52** (model × benchmark × harness) cells (+23.5 direct chat / +24.8 Codex / +19.1 Claude Code on GPT-5.5).
+- [[skillmoo-gong-2026]] — **SkillMOO** (Gong et al., KCL) — multi-objective (pass-rate × cost) via NSGA-II; 11/12 top pass-rate, −31.7% cost, +21pp on SkillsBench.
+- [[skillreducer-gao-2026]] — **SkillReducer** (Gao et al., HKUST) — token-efficiency: −48% routing desc / −39% body with +2.8% quality; audit of 55k wild skills (26.4% lack routing desc, >60% body non-actionable).
+- [[skill1-shi-2026]] — **Skill1** (Shi et al., USTC) — unified RL over skill selection/utilization/distillation; ALFWorld 97.5%.
+- [[sage-skill-library-wang-2025]] — **SAGE** (Wang et al., AWS Agentic AI) — RL skill-library accumulation across sequential tasks; AppWorld +8.9% SGC, −59% tokens.
+- [[agentic-skills-in-the-wild-liu-2026]] — realistic skill-usage **benchmark** (Liu et al., [[uc-santa-barbara|UCSB]]/[[mit|MIT]]) — retrieve from ~34k real skills; idealized gains degrade, query-specific refinement recovers (Terminal-Bench 2.0 57.7→65.5).
+
+**New concept pages (2)**: [[skill-optimization]] (the hub — two families: text-space [no weight updates] vs RL [weight updates]) and [[skill-evaluation]] (realistic-setting measurement).
+**New entity stubs (2)**: [[shanghai-jiao-tong-university]], [[uc-santa-barbara]].
+**Enriched**: [[skill-acquisition]] (acquisition-vs-optimization section), [[agent-skills]] (skill-optimization cross-links), [[microsoft]] (SkillOpt backlink).
+
+**Key framing**: skill optimization is the skill-level analogue of [[agentic-context-engineering]] (prompt-playbook evolution) and [[agentic-harness-engineering]] (whole-harness evolution). The defining methodological move across the text-space family is **accepting edits only on held-out validation improvement** — ML training discipline applied to a prose artifact.
+
+**Housekeeping**: reconciled the index count line, which had drifted badly (claimed 106/101/148; actual file counts are **118 sources / 124 entities / 191 concepts / 2 comparisons / 7 queries**). Many prior stub-creation batches were never reflected in the count.
+
+---
+
 ## [2026-06-01] ingest | Resolve static-HTML capture caveat (3 vendor-doc sources)
 
 Resolved the caveat flagged in the prior agent-skills ingest: the 3 vendor-doc raw captures were taken from JS-rendered SPA static HTML and were noisy. Re-captured all three from clean canonical sources:

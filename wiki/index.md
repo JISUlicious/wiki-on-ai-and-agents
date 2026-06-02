@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 106 sources, 101 entities, 148 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 118 sources, 124 entities, 191 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -157,6 +157,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[uiuc]] — UI Urbana-Champaign; Heng Ji's group (CodeAct, OpenHands, CRAFT)
 - [[zhejiang-university]] — Home of the agent-skills survey (Xu & Yan 2026)
 - [[tsinghua-university]] — ExpeL (Gao Huang's group); ChatDev
+- [[shanghai-jiao-tong-university]] — SJTU; co-corresponding institution on SkillOpt (skill optimization)
+- [[uc-santa-barbara]] — UCSB; led the realistic agent-skills benchmark (with MIT)
 
 ### People — Agent skills / tool creation
 - [[josh-tenenbaum]] — MIT; computational cognitive science, program synthesis (DreamCoder/LILO)
@@ -230,6 +232,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[acp]] — Agent Client Protocol (Zed 2025): agent ↔ editor standard
 - [[agent-skills]] — Anthropic Agent Skills: composable, progressively-disclosed capability modules
 - [[skill-acquisition]] — How agents acquire skills: RL-trained / autonomous discovery / compositional synthesis / human-authored
+- [[skill-optimization]] — 2026 thread: automatically improving a skill artifact (text-space edits / RL); SkillOpt, SkillMOO, SkillReducer, Skill1, SAGE
+- [[skill-evaluation]] — Measuring skill usefulness in realistic settings (retrieve from ~34k real skills)
 - [[tool-creation]] — Agents authoring + caching their own reusable tools (LATM, CRAFT)
 - [[library-learning]] — Program-synthesis lineage: growing reusable code abstractions (DreamCoder → LILO)
 - [[experiential-learning]] — Distilling reusable NL insights from trajectories (ExpeL); the non-code skill thread
@@ -504,6 +508,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[craft-yuan-2023]] — CRAFT: create-then-retrieve specialized toolsets (Yuan et al., ICLR 2024)
 - [[lilo-grand-2023]] — LILO: learning interpretable code libraries (Grand et al., MIT, ICLR 2024)
 - [[expel-zhao-2023]] — ExpeL: experiential learning via distilled NL insights (Zhao et al., AAAI 2024)
+
+### Skill optimization (2025–2026)
+- [[skillopt-yang-2026]] — SkillOpt: controllable text-space optimizer for agent skills; 52/52 best-or-tied (Yang et al., Microsoft/SJTU 2026)
+- [[skillmoo-gong-2026]] — SkillMOO: multi-objective (pass-rate × cost) skill optimization via NSGA-II (Gong et al., KCL 2026)
+- [[skillreducer-gao-2026]] — SkillReducer: token-efficiency compression of skills (Gao et al., HKUST 2026)
+- [[skill1-shi-2026]] — Skill1: unified RL over skill selection/utilization/distillation (Shi et al., USTC 2026)
+- [[sage-skill-library-wang-2025]] — SAGE: RL skill-library accumulation across sequential tasks (Wang et al., AWS 2025)
+- [[agentic-skills-in-the-wild-liu-2026]] — realistic skill-usage benchmark over ~34k real skills (Liu et al., UCSB/MIT 2026)
 
 ### Agentic capabilities (2023, 2025–2026)
 - [[gaia-mialon-2023]] — GAIA general-assistant benchmark (Mialon et al. 2023)

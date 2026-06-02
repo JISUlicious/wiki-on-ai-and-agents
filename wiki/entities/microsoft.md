@@ -3,7 +3,8 @@ title: Microsoft
 type: entity
 created: 2026-05-21
 updated: 2026-05-21
-sources: []
+sources:
+  - skillopt-yang-2026.md
 status: draft
 importance: medium
 tags:
@@ -15,10 +16,12 @@ tags:
 - Parent of [[microsoft-research]]
 - Major equity / cloud partner of [[openai]]
 - Ships GitHub Copilot, Microsoft 365 Copilot, Azure OpenAI Service
-- Research output spans [[llm-agent]], [[vision-language-action-model]], and benchmark design
+- Research output spans [[llm-agent]], [[vision-language-action-model]], [[skill-optimization]], and benchmark design
+- Lead-author institution on [[skillopt-yang-2026|SkillOpt]] (the [[skill-optimization]] paper; corresponding author Yifan Yang)
 
 Related: [[microsoft-research]], [[swe-bench-live]], [[magma]], [[openai]]
 
 ## References
 - [[swe-bench-live-zhang-2025]]
 - [[magma-yang-2025]]
+- [[skillopt-yang-2026]]
