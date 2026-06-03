@@ -643,7 +643,7 @@ Batch-ingested the initial source corpus in chronological order. 16 sources proc
 Wiki created for: Large Language Models and the surrounding ML/AI landscape (broader scope — papers, models, people, orgs, products, infrastructure).
 
 Configuration:
-- Mode: **local** (wiki under project root). Intended future location is the iCloud Obsidian vault `a local iCloud Obsidian vault`, but iCloud Drive is currently blocked by macOS TCC for this terminal — pending Full Disk Access grant.
+- Mode: **local** (wiki under project root). Intended future location is a local iCloud Obsidian vault, but iCloud Drive is currently blocked by macOS TCC for this terminal — pending Full Disk Access grant.
 - Conventions enabled in `CLAUDE.md`: arXiv IDs on source pages, model-lineage tracking (`family` / `predecessor` / `successors`), publication-year tags on sources.
 
 Directories created: `sources/assets/`, `wiki/entities/`, `wiki/concepts/`, `wiki/sources/`, `wiki/comparisons/`, `wiki/queries/`.

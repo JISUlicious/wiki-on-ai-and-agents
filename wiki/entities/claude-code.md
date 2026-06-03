@@ -43,7 +43,7 @@ As of May–June 2026, Claude Code can **write and orchestrate its own multi-age
 
 - Distinguished by **scale** (~40 tools, first-class sub-agents, layered permissions, OS-level sandbox) — most other documented agents are simpler.
 - **Compatible with the broader SKILL.md ecosystem**: pi-mono, opencode, Hermes, and OpenClaw all walk the same skill directories that Claude Code does, treating SKILL.md as a de-facto interop format.
-- Source code was leaked via npm sourcemap in March 2026 and has been mirrored at `<local>` for the writeup.
+- Source code was leaked via npm sourcemap in March 2026 and was mirrored locally for the writeup.
 
 ## References
 

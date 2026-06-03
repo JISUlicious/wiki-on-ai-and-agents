@@ -12,3 +12,9 @@
 
 # Obsidian project-side state — actual vault lives in iCloud, not here
 .obsidian/
+
+# Machine-specific: local wiki config + vault-sync scripts (hardcode absolute local paths)
+/.wiki-config.json
+/scripts/sync-to-vault.sh
+/scripts/sync-from-vault.sh
+/scripts/audit-vault-cruft.sh
