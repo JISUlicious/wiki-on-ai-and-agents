@@ -1,0 +1,33 @@
+{
+  "description": "Tracks newsletter emails processed by the /wiki newsletter-ingest pipeline. The weekly loop reads emails from the listed senders newer than last_processed_date, ingests on-domain academic papers, then advances last_processed_date and appends thread IDs here. Gmail MCP is READ-ONLY (no label writes), so state lives in this file, not in Gmail labels.",
+  "senders": [
+    "contact@alphaxiv.org",
+    "nlpnews@substack.com"
+  ],
+  "last_processed_date": "2026-06-03",
+  "backfill_window": "2026-03-03 to 2026-06-03",
+  "notes": [
+    "alphaXiv digests expose arXiv IDs directly (reliable).",
+    "nlpnews 'Top AI Papers' mask IDs behind substack redirects — resolve+verify before ingest.",
+    "nlpnews 'AI Agents Weekly' are paywalled previews — papers section not in email body; low yield.",
+    "Every candidate arXiv ID is verified against arxiv.org/abs/{id} before download."
+  ],
+  "processed_thread_ids": [
+    "19e84bf5c0b200de","19e71148f3501911","19e28f50bf48692c","19e040cbe7beac27","19dd5899b8713743","19db6fb6aa46093b","19d74b78f0c63c2c","19d276cb26476554","19cfd34be02a735d","19cd9692dd7f66d7",
+    "19e7e8f3a9a15a8d","19e5a85cf24dc182","19e367a7c2a473b9","19e12690f194e6b0","19dee609fa6bd823","19dca55025967640","19da649701f06645","19d823ac049afb53","19d5e2de6881863b","19d3a200a345adaf","19cf208aa6feb72d","19ccdf99f1e32125",
+    "19e796b822287f39","19e555fe5c0e9f4a","19e315135dba25f9","19e0d469704e221b","19de938b779d3688","19dc52beb298a8be","19da11f55d90434a","19d7d1280a5a6f77","19d59036c5d879a5","19d34f84d786eb18","19ceccf90d80d12c","19cc8d6f716b63a8"
+  ],
+  "runs": [
+    {
+      "date": "2026-06-03",
+      "type": "backfill",
+      "window": "2026-03-03 to 2026-06-03",
+      "threads_read": 34,
+      "candidate_ids_verified": 109,
+      "on_domain_ingested": 84,
+      "new_source_pages": 84,
+      "new_concept_pages": ["speculative-decoding", "multi-agent"],
+      "notes": "Initial 3-month backfill. All 109 candidate arXiv IDs verified real (none fabricated). Ingested in 2 waves x 6 parallel agents (batches 1-12)."
+    }
+  ]
+}

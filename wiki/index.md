@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 118 sources, 124 entities, 191 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 202 sources, 124 entities, 193 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -274,6 +274,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[ui-tars-1]] — ByteDance Seed's first-gen native GUI agent (Qin 2025)
 - [[agent-benchmark]] — Umbrella concept for agent evaluation benchmarks
 - [[inference-time-compute]] — Allocating more compute at inference (CoT, looping, search)
+- [[speculative-decoding]] — Lossless inference acceleration: fast draft model + parallel target verification
 - [[reinforcement-learning]] — Umbrella RL concept
 - [[chain-of-thought]] — Soft alias for [[chain-of-thought-prompting]]
 - [[online-learning]] — Incremental training as new data arrives
@@ -348,6 +349,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[neural-long-term-memory]] — Memory stored in parameters; surprise-driven test-time updates (Titans)
 - [[offline-consolidation]] — Memory processing in idle time between queries (Sleep-time Compute)
 - [[multi-agent-memory]] — Memory subsystems specialized per memory type (MIRIX)
+- [[multi-agent]] — Coordinating multiple LLM agents (debate, roles, recursion); 2026 equal-compute skepticism on whether MAS beats a single agent
 - [[memory-construction]] — Building structured memory from a stream (Mem-α)
 - [[rl-memory-policy]] — RL-learned memory operations (Memory-R1)
 
@@ -478,6 +480,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[mirix-wang-2025]] — MIRIX: six-typed multi-agent memory (Wang & Chen 2025)
 - [[memory-r1-yan-2025]] — Memory-R1: RL-trained memory operations (Yan et al. 2025)
 - [[mem-alpha-wang-2025]] — Mem-α: RL-trained memory construction (Wang et al. 2025)
+- [[diagnosing-retrieval-vs-utilization-bottlenecks-su-2026]] — Retrieval dominates write-strategy in agent memory; raw chunks beat lossy extraction on LoCoMo (Su et al., ICLR 2026)
+- [[memex-rl-wang-2026]] — Memex(RL): indexed experience memory, compress-without-discard + RL read/write (Wang et al., Accenture 2026)
 
 ### Frontier-era (2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
@@ -488,6 +492,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[hermes-agent-doc-2026]] — Hermes Agent architecture writeup
 - [[openclaw-agent-doc-2026]] — OpenClaw architecture writeup
 - [[cross-agent-comparison-doc-2026]] — Five-agent comparison source
+- [[speculative-speculative-decoding-kumar-2026]] — SSD: parallelize drafting + verification; Saguaro ~30% over SD baselines (Kumar et al., Stanford/Princeton/Together 2026)
+- [[autoharness-lou-2026]] — AutoHarness: LLM synthesizes its own code harness via Thompson-sampling tree search (Lou et al., Google DeepMind 2026)
+- [[agentir-reasoning-aware-retrieval-chen-2026]] — AgentIR: jointly embed reasoning trace + query for Deep Research retrieval (Chen et al., Waterloo 2026)
+- [[skillnet-liang-2026]] — SkillNet: open infra to create/evaluate/connect 200k+ AI skills (Liang et al., ZJU consortium 2026)
+- [[karl-knowledge-agents-databricks-2026]] — KARL: enterprise search agents via off-policy multi-task RL + KARLBench (Databricks AI Research 2026)
 
 ### Agent interoperability protocols
 - [[model-context-protocol-anthropic-2024]] — Introducing MCP (Anthropic 2024-11-25)
@@ -559,6 +568,109 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cot-or-loop-xu-2025]] — Formal depth-recursion vs token-recursion separation (Xu & Sato 2025)
 - [[parcae-scaling-laws-looped-2026]] — Parcae: LTI stability + scaling laws for looped LMs (Prairie et al. 2026)
 - [[loop-think-generalize-2026]] — Recurrent-Depth Transformer with implicit reasoning + grokking (Kohli et al., OSU 2026)
+
+### Newsletter backfill — alphaXiv / NLP digests (2026 Q2)
+
+Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026-06-03). Grouped by theme.
+
+**Agent skills & skill learning**
+- [[skill-zero-lu-2026]] — SKILL0: in-context agentic RL for skill internalization (Lu et al. 2026)
+- [[scaling-coding-agents-via-atomic-skills-ma-2026]] — composing coding-agent behavior from atomic, reusable skills (Ma et al. 2026)
+- [[webxskill-skill-learning-web-agents-wang-2026]] — WebXSkill: skill learning for autonomous web agents (Wang, UNC/Microsoft 2026)
+- [[skill-rag-failure-state-aware-retrieval-wei-2026]] — Skill-RAG: hidden-state probing + skill routing for failure-aware retrieval (Wei et al. 2026)
+- [[from-skill-text-to-skill-structure-liang-2026]] — scheduling-structural-logical representation for agent skills (Liang et al. 2026)
+- [[skillos-learning-skill-curation-self-evolving-agents-ouyang-2026]] — SkillOS: learned skill curation for self-evolving agents (Ouyang et al. 2026)
+- [[co-evolving-decision-and-skill-bank-agents-wu-2026]] — COS-PLAY: co-evolving decision policy + skill bank (Wu et al. 2026)
+- [[memento-skills-let-agents-design-agents-memento-team-2026]] — Memento: skills let agents design other agents (Memento team 2026)
+
+**Multi-agent systems**
+- [[single-agent-vs-multi-agent-tran-2026]] — single agent beats MAS on multi-hop reasoning under equal token budgets (Tran et al. 2026)
+- [[diversity-collapse-in-multi-agent-llm-systems-chen-2026]] — same-base agents converge, eroding ensembling/debate diversity (Chen et al. 2026)
+- [[drop-the-hierarchy-and-roles-dochkina-2026]] — self-organizing agents outperform designed role hierarchies (Dochkina et al. 2026)
+- [[reliability-limits-llm-multi-agent-planning-ao-2026]] — error-compounding limits of multi-agent planning chains (Ao et al. 2026)
+- [[reaching-agreement-among-reasoning-llm-agents-ruan-2025]] — consensus/agreement protocols among reasoning agents (Ruan et al. 2025)
+- [[theory-of-mind-internal-beliefs-multi-agent-kostka-2026]] — evaluating ToM + internal beliefs in MAS (Kostka et al. 2026)
+- [[latent-agents-internalized-multi-agent-debate-yi-2026]] — post-training that internalizes multi-agent debate into one model (Yi et al. 2026)
+- [[recursive-multi-agent-systems-yang-2026]] — agents that recursively spawn sub-agents (Yang et al. 2026)
+- [[brain-inspired-graph-multi-agent-systems-hao-2026]] — graph-topology message passing for MAS reasoning (Hao et al. 2026)
+- [[hyperagents-zhang-2026]] — HyperAgents: scalable multi-agent coordination (Zhang et al. 2026)
+- [[multi-user-llm-agents-yang-2026]] — agents serving multiple concurrent users (Yang et al. 2026)
+- [[mass-rag-multi-agent-synthesis-rag-xiao-2026]] — MASS-RAG: multi-agent synthesis RAG (Xiao et al. 2026)
+- [[autonomous-evolution-eda-tools-multi-agent-abc-yu-2026]] — multi-agent self-evolved ABC for EDA tools (Yu & Ren, DAC 2026)
+- [[from-skills-to-talent-organising-heterogeneous-agents-yu-2026]] — organising heterogeneous agents as a real-world company (Yu et al. 2026)
+
+**Self-evolving / self-improving agents**
+- [[auton-agentic-ai-framework-cao-2026]] — Auton: declarative architecture for spec/governance/runtime of autonomous agents (Cao et al. 2026)
+- [[autogenesis-self-evolving-agent-protocol-zhang-2026]] — Autogenesis: a self-evolving agent protocol (Zhang et al. 2026)
+- [[reward-free-self-evolution-via-world-knowledge-exploration-zhang-2026]] — reward-free self-evolution via world-knowledge exploration (Zhang et al. 2026)
+- [[agent-world-real-world-environment-synthesis-dong-2026]] — Agent-World: self-evolving environment+task synthesis arena (Dong et al., RUC/ByteDance 2026)
+- [[metaclaw-just-talk-agent-meta-learns-xia-2026]] — MetaClaw: an agent that meta-learns and evolves from conversation (Xia et al. 2026)
+- [[openclaw-rl-train-agent-by-talking-wang-2026]] — OpenClaw-RL: train any agent simply by talking (Wang et al. 2026)
+
+**Agent memory**
+- [[parammem-parametric-reflective-memory-yao-2026]] — ParamMem: parametric reflective memory for language agents (Yao et al. 2026)
+- [[memory-intelligence-agent-qiao-2026]] — Memory Intelligence Agent (Qiao et al. 2026)
+- [[lightthinker-plus-plus-zhu-2026]] — LightThinker++: from reasoning compression to memory management (Zhu et al. 2026)
+- [[memcollab-chang-2026]] — MemCollab: cross-model memory collaboration via contrastive trajectory distillation (Chang et al. 2026)
+- [[memfactory-guo-2026]] — MemFactory: unified inference+training framework for agent memory (Guo et al. 2026)
+- [[memory-transfer-learning-coding-agents-kim-2026]] — how memories transfer across domains in coding agents (Kim et al. 2026)
+- [[ocr-memory-optical-context-retrieval-li-2026]] — OCR-Memory: optical context retrieval for long-horizon agent memory (Li et al. 2026)
+- [[stateless-decision-memory-for-enterprise-ai-agents-srinivasan-2026]] — stateless decision memory for enterprise agents (Srinivasan et al. 2026)
+- [[understanding-lora-as-knowledge-memory-back-2026]] — empirical analysis of LoRA as knowledge memory (Back et al. 2026)
+- [[do-language-models-need-sleep-lee-2026]] — offline recurrence ("sleep") for improved online inference (Lee et al. 2026)
+
+**Coding agents & harnesses**
+- [[opendev-terminal-coding-agent-bui-2026]] — OpenDev: scaffolding/harness/context engineering for terminal coding agents (Bui et al. 2026)
+- [[coding-agents-effective-long-context-processors-cao-2026]] — coding agents as effective long-context processors (Cao et al. 2026)
+- [[effective-strategies-asynchronous-swe-agents-geng-2026]] — strategies for asynchronous software-engineering agents (Geng et al. 2026)
+- [[dive-into-claude-code-design-space-liu-2026]] — design space of today's and future AI agent systems, anchored on Claude Code (Liu, MBZUAI 2026)
+- [[meta-harness-lee-2026]] — Meta-Harness: end-to-end optimization of model harnesses (Lee et al. 2026)
+- [[natural-language-agent-harnesses-pan-2026]] — natural-language agent harnesses (Pan et al. 2026)
+- [[composer-2-technical-report-cursor-2026]] — Composer 2 technical report (Cursor 2026)
+- [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent: AND/OR-tree planning for long-horizon web tasks (Lobo et al. 2026)
+- [[autonomous-long-horizon-ml-research-engineering-chen-2026]] — AiScientist: autonomous long-horizon ML research engineering (Chen et al., RUC 2026)
+- [[embarrassingly-simple-self-distillation-zhang-2026]] — simple self-distillation improves code generation (Zhang et al. 2026)
+
+**Agentic RL, post-training & distillation**
+- [[pivotrl-high-accuracy-agentic-post-training-yi-2026]] — PivotRL: high-accuracy agentic post-training at low compute (Yi et al. 2026)
+- [[self-distilled-rlvr-yang-2026]] — RLSD: RLVR with self-distillation (Yang et al. 2026)
+- [[rethinking-on-policy-distillation-li-2026]] — phenomenology/mechanism/recipe of on-policy distillation (Li et al. 2026)
+- [[agenticqwen-small-agentic-lms-with-dual-data-flywheels-lyu-2026]] — AgenticQwen: small agentic LMs via dual data flywheels (Lyu et al. 2026)
+- [[vector-policy-optimization-bahlous-boldi-2026]] — VPO: training for diversity improves test-time search (Bahlous-Boldi et al. 2026)
+
+**Reasoning & latent reasoning**
+- [[the-latent-space-yu-2026]] — the latent space: foundation, evolution, mechanism, ability, outlook (Yu et al. 2026)
+- [[generative-recursive-reasoning-baek-2026]] — generative recursive reasoning (Baek et al. 2026)
+- [[adaptive-loops-and-memory-in-transformers-frey-2026]] — looped depth vs memory storage trade-off (Frey et al. 2026)
+- [[numina-lean-agent-liu-2026]] — Numina-Lean-Agent: agentic reasoning for formal mathematics (Liu et al. 2026)
+- [[when-to-retrieve-during-reasoning-guo-2026]] — adaptive retrieval timing for large reasoning models (Guo et al. 2026)
+- [[bayesian-teaching-probabilistic-reasoning-qiu-2025]] — Bayesian teaching enables probabilistic reasoning in LLMs (Qiu et al. 2025)
+- [[price-reversal-phenomenon-chen-2026]] — when cheaper reasoning models end up costing more (Chen et al. 2026)
+
+**Architecture, model internals & tech reports**
+- [[massive-activations-attention-sinks-sun-2026]] — anatomy of massive activations and attention sinks (Sun et al. 2026)
+- [[attention-residuals-kimi-team-2026]] — attention residuals (Kimi team technical report 2026)
+- [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
+- [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)
+- [[nemotron-3-super-nvidia-2026]] — Nemotron 3 Super: MoE hybrid Mamba-Transformer for agentic reasoning (NVIDIA 2026)
+- [[minimax-m2-series-minimax-2026]] — MiniMax-M2 series: mini-activations LLM tech report (MiniMax 2026)
+- [[cola-continuous-latent-diffusion-language-model-guo-2026]] — Cola: continuous latent diffusion language model (Guo et al. 2026)
+- [[elf-embedded-language-flows-hu-2026]] — ELF: embedded language flows (Hu et al. 2026)
+
+**World modeling & surveys**
+- [[agentic-world-modeling-foundations-capabilities-laws-chu-2026]] — agentic world modeling: foundations, capabilities, laws (Chu et al. 2026)
+- [[survey-workflow-optimization-llm-agents-yue-2026]] — survey: static templates → dynamic runtime graphs for agent workflows (Yue et al. 2026)
+
+**Evaluation, benchmarks & verification**
+- [[arc-agi-3-arc-prize-foundation-2026]] — ARC-AGI-3: new challenge for frontier agentic intelligence (ARC Prize Foundation 2026)
+- [[alphaeval-evaluating-agents-in-production-lu-2026]] — AlphaEval: evaluating agents in production (Lu et al. 2026)
+- [[building-verifiers-for-computer-use-agents-rosset-2026]] — the art of building verifiers for computer-use agents (Rosset et al. 2026)
+- [[llm-diagnosis-of-integration-test-failures-ziftci-2026]] — LLM-based automated diagnosis of integration-test failures at Google (Ziftci et al., Google 2026)
+- [[screening-is-enough-nakanishi-2026]] — Screening Is Enough (Nakanishi et al. 2026)
+
+**Safety, adversarial & commentary**
+- [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
+- [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
 
 ## Comparisons
 

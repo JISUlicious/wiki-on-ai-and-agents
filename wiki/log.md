@@ -2,12 +2,29 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-05-20
+updated: 2026-06-03
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-03] ingest | Newsletter backfill — 84 sources from alphaXiv / NLP digests (3-month sweep)
+
+Backfilled three months of academic papers surfaced in **alphaXiv** (`contact@alphaxiv.org`) and **NLP newsletter** (`nlpnews@substack.com`) digests. Read all unprocessed threads from both senders (last 3 months), extracted candidate arXiv IDs, verified every ID resolves (≈109 unique candidates, **none fabricated**), domain-triaged to ~84 on-domain, and ingested all of them as concise (~40–60 line) source-summary pages across two waves of 6 parallel agents each (batches 1–12).
+
+**Data-quality tiers observed**: alphaXiv digests expose clean arXiv IDs; NLP-newsletter "Top AI Papers" mask IDs behind Substack redirects; "AI Agents Weekly" entries are truncated paywalled previews. alphaXiv was the only clean ID-bearing source.
+
+**New source pages (84)** — grouped by theme in [[index]] under "Newsletter backfill — alphaXiv / NLP digests (2026 Q2)". Dominant clusters: agent skills & skill learning (incl. [[skill-zero-lu-2026]], [[skillos-learning-skill-curation-self-evolving-agents-ouyang-2026]], [[scaling-coding-agents-via-atomic-skills-ma-2026]]); multi-agent systems (incl. [[single-agent-vs-multi-agent-tran-2026]], [[diversity-collapse-in-multi-agent-llm-systems-chen-2026]], [[drop-the-hierarchy-and-roles-dochkina-2026]]); agent memory (incl. [[parammem-parametric-reflective-memory-yao-2026]], [[memcollab-chang-2026]], [[ocr-memory-optical-context-retrieval-li-2026]]); coding agents & harnesses (incl. [[opendev-terminal-coding-agent-bui-2026]], [[meta-harness-lee-2026]], [[dive-into-claude-code-design-space-liu-2026]]); architecture/tech reports (incl. [[nemotron-3-super-nvidia-2026]], [[minimax-m2-series-minimax-2026]], [[massive-activations-attention-sinks-sun-2026]]).
+
+**New concept pages (2)**: [[speculative-decoding]] (foundational, the corpus lacked it) and [[multi-agent]] (15 pages referenced it with no page — promoted past threshold).
+
+**Notes / follow-ups**:
+- [[agentic-ai-next-intelligence-explosion-evans-2026]] is the arXiv version of the pre-existing essay [[agentic-ai-and-the-next-intelligence-explosion]] — cross-linked, not collided; candidate for a future merge.
+- Several pages forward-link concepts that don't yet have pages (e.g. `mixture-of-experts`, `state-space-model`, `code-generation`) — lint will surface these as promotion candidates.
+- Pipeline state tracked in `newsletter-ingest-state.json` (Gmail MCP is read-only, so processed-thread tracking is local). Recurrence runs via `/loop` reading unprocessed mail past `last_processed_date`.
+
+Wiki totals: **202 sources, 124 entities, 193 concepts, 2 comparisons, 7 queries**.
 
 ## [2026-06-02] ingest | Skill Optimization — extended research (6 sources + concept cluster)
 
