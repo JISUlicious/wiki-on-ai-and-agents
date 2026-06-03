@@ -2,10 +2,12 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-06-03
 sources:
   - claude-code.md
   - comparison.md
+  - claude-code-dynamic-workflows-2026.md
+  - claude-code-dynamic-workflows-harness-2026.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2024-02-29
@@ -32,6 +34,10 @@ Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. D
 - **Hooks**: pre-tool, post-tool, on-stop, on-error. Configurable in `settings.json`.
 - **CLAUDE.md**: nested in project tree, auto-loaded at startup, holds domain-specific schema (the wiki you are reading lives in such a CLAUDE.md ecosystem).
 
+## Dynamic workflows (2026)
+
+As of May–June 2026, Claude Code can **write and orchestrate its own multi-agent harness on the fly** via [[dynamic-workflows]]: Claude authors a JavaScript orchestration script that spawns tens-to-hundreds of parallel subagents (reusing the `Task`-tool subagent + worktree machinery above), executed by a background runtime while the session stays responsive. Enabled by [[claude-opus-4-8|Claude Opus 4.8]]; surfaced via the `ultracode` effort setting and composable with `/loop` and `/goal`. See the [[claude-code-dynamic-workflows-2026|announcement]] and [[claude-code-dynamic-workflows-harness-2026|engineering deep-dive]]. This makes the self-authored harness a first-class Claude Code capability — the [[code-as-harness]] thesis applied to Claude Code itself.
+
 ## In the cross-agent landscape
 
 - Distinguished by **scale** (~40 tools, first-class sub-agents, layered permissions, OS-level sandbox) — most other documented agents are simpler.
@@ -42,3 +48,5 @@ Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. D
 
 - [[claude-code-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+- [[claude-code-dynamic-workflows-2026]] — dynamic workflows announcement
+- [[claude-code-dynamic-workflows-harness-2026]] — dynamic workflows engineering deep-dive

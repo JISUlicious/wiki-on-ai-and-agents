@@ -9,6 +9,18 @@ updated: 2026-06-03
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-03] ingest | Claude Code Dynamic Workflows (official blog ×2)
+
+Ingested the two official Anthropic blog posts on **dynamic workflows in Claude Code** (`claude.com/blog`): the [[claude-code-dynamic-workflows-2026|May 28 announcement]] and the [[claude-code-dynamic-workflows-harness-2026|June 2 engineering deep-dive]] (Thariq Shihipar & Sid Bidasaria). Raw HTML saved to `sources/` and converted to markdown (no pandoc → Python extraction).
+
+**New concept**: [[dynamic-workflows]] (high) — Claude writes a JavaScript orchestration script that spawns/coordinates tens-to-hundreds of parallel subagents per task; covers the *why* (single-context failure modes: agentic laziness, self-preferential bias, goal drift), the patterns (classify-and-act, fan-out-and-synthesize, adversarial verification, generate-and-filter, tournament, loop-until-done), use cases, `ultracode`, `/loop` + `/goal`, token budgets, and saving/sharing as Agent Skills.
+
+**New entities (3)**: [[claude-opus-4-8]] (model — the enabling model, also added to the [[claude]] family table), [[thariq-shihipar]] + [[sid-bidasaria]] (person drafts — the deep-dive's authors).
+
+**Updated**: [[claude-code]] (new "Dynamic workflows" section + sources), [[code-as-harness]] (new "self-authored harness" frontier section — the disposable-per-task counterpart to harness *evolution*), [[multi-agent]] (added deterministic-code-orchestration as a coordination structure), [[claude]] (Opus 4.8 row + current-model note).
+
+Key takeaway: dynamic workflows are the **self-authored** endpoint of the [[code-as-harness]] axis — the harness is code Claude generates per task — and the deterministic-orchestration counterpoint to free-form [[multi-agent]] debate.
+
 ## [2026-06-03] ingest | Newsletter backfill — 84 sources from alphaXiv / NLP digests (3-month sweep)
 
 Backfilled three months of academic papers surfaced in **alphaXiv** (`contact@alphaxiv.org`) and **NLP newsletter** (`nlpnews@substack.com`) digests. Read all unprocessed threads from both senders (last 3 months), extracted candidate arXiv IDs, verified every ID resolves (≈109 unique candidates, **none fabricated**), domain-triaged to ~84 on-domain, and ingested all of them as concise (~40–60 line) source-summary pages across two waves of 6 parallel agents each (batches 1–12).

@@ -9,6 +9,7 @@ sources:
   - diversity-collapse-in-multi-agent-llm-systems-chen-2026.md
   - drop-the-hierarchy-and-roles-dochkina-2026.md
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
+  - claude-code-dynamic-workflows-harness-2026.md
 status: draft
 importance: high
 tags:
@@ -25,6 +26,7 @@ tags:
 - **Self-organizing** — [[drop-the-hierarchy-and-roles-dochkina-2026|Dochkina et al. 2026]] report that *self-organizing* agents can outperform hand-designed structures, questioning the value of rigid role assignment.
 - **Debate / consensus** — agents argue toward agreement ([[reaching-agreement-among-reasoning-llm-agents-ruan-2025]]); [[latent-agents-internalized-multi-agent-debate-yi-2026|Latent Agents]] internalizes the debate into a single model's forward pass via post-training.
 - **Recursive / graph** — agents spawn sub-agents recursively ([[recursive-multi-agent-systems-yang-2026]]) or pass messages over a graph topology ([[brain-inspired-graph-multi-agent-systems-hao-2026]], [[hyperagents-zhang-2026]]).
+- **Deterministic code orchestration** — instead of agents conversing, a *program* spawns and coordinates them. [[dynamic-workflows|Dynamic workflows]] in [[claude-code|Claude Code]] ([[claude-code-dynamic-workflows-harness-2026|Shihipar & Bidasaria 2026]]) have Claude write a JavaScript script that fans out to parallel subagents with patterns like fan-out-and-synthesize, tournament, and adversarial verification. Control flow is deterministic JS; only the leaf steps are LLM calls — the opposite end of the spectrum from free-form agent debate, and a direct response to the diversity-collapse / reliability concerns below.
 
 ## When does MAS actually help?
 

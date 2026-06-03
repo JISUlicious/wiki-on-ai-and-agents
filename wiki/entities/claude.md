@@ -2,9 +2,10 @@
 title: Claude
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-06-03
 sources:
   - emotion-concepts-anthropic-2026.md
+  - claude-code-dynamic-workflows-harness-2026.md
 family: claude
 predecessor: null
 successors: []
@@ -31,6 +32,7 @@ Claude is the family of [[decoder-only-transformer|decoder-only Transformer]] LL
 | Claude 4 (Sonnet / Opus) | mid-2025 |
 | Claude Sonnet 4.5 | early 2026 (studied in [[emotion-concepts-anthropic-2026]]) |
 | Claude 4.6 Sonnet, Claude 4.7 Opus, Haiku 4.5 | 2025–2026 |
+| [[claude-opus-4-8\|Claude Opus 4.8]] | 2026 — enables [[dynamic-workflows]] in [[claude-code]] |
 
 Architectural details are not officially disclosed. Like [[gpt-4]], Claude is a closed-weights model accessed via the [[anthropic|Anthropic]] API or the **Claude.ai** product.
 
@@ -48,7 +50,7 @@ Claude appears as:
 
 - The subject of [[emotion-concepts-anthropic-2026|the Emotion Concepts paper]] (Claude Sonnet 4.5).
 - The LLM family of [[anthropic]] more generally.
-- The model maintaining this very wiki (Claude Opus 4.7, via [[anthropic|Anthropic]]'s Claude Code CLI).
+- The model maintaining this very wiki ([[claude-opus-4-8|Claude Opus 4.8]], via [[anthropic|Anthropic]]'s Claude Code CLI).
 
 ## References
 

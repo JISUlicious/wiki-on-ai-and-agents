@@ -13,6 +13,7 @@ sources:
   - agentcoder-huang-2023.md
   - chatdev-qian-2023.md
   - agentic-harness-engineering-lin-2026.md
+  - claude-code-dynamic-workflows-harness-2026.md
 status: complete
 importance: high
 tags:
@@ -55,8 +56,13 @@ The survey distinguishes three coupled elements:
 
 The survey's §3.5 introduces a 2026 frontier: the harness itself becomes the object of optimization. [[agentic-harness-engineering-lin-2026]] (Lin et al., Fudan, 2026) instantiates this — telemetry-driven harness mutation, an "Evolution Agent" that proposes harness changes, and governed mutation with sandboxed evaluation. This is the empirical descendant of the [[godel-machine|Gödel-machine]] vision applied at the *harness* level rather than the agent level — pair with [[darwin-godel-machine]] (agent-scaffold evolution) and [[agentic-context-engineering]] (prompt-level evolution).
 
+## Frontier — self-authored harness ([[dynamic-workflows]])
+
+A second 2026 instantiation, complementary to harness *mutation*: in [[claude-code|Claude Code]], Claude **writes a fresh harness per task as executable code**. [[dynamic-workflows|Dynamic workflows]] (Shihipar & Bidasaria, [[claude-code-dynamic-workflows-harness-2026|2026]]) have Claude author a JavaScript orchestration script that spawns and coordinates parallel subagents — the harness *is* code the agent generates on the fly, specialized to the task, rather than a fixed scaffold. Where [[agentic-harness-engineering]] *evolves* a standing harness via telemetry, dynamic workflows *generate* a disposable one per task. Both are the [[code-as-harness]] thesis turned on the harness itself; the explicit motivation is that a single context window suffers agentic laziness, self-preferential bias, and goal drift — failures that code-orchestrated, independently-verified subagents avoid.
+
 ## Relation to other concepts
 
+- [[dynamic-workflows]] — Claude writing its own multi-agent harness as code per task (the self-authored endpoint of this axis).
 - [[agent-three-layer-model]] — Code-as-harness is an orthogonal axis across L2: every L2 abstraction can be reinstantiated in code.
 - [[function-calling]] / [[tool-use]] — Code-as-harness *generalizes* function calling: instead of one JSON call, the agent emits arbitrary Python.
 - [[mcp]] — MCP standardizes tool exposure but is agnostic about what the agent emits. Code-as-harness says the agent should emit code, not JSON, for arbitrary actions.

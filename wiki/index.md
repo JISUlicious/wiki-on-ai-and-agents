@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 202 sources, 124 entities, 193 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 204 sources, 127 entities, 194 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -27,6 +27,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Models — Other LLMs
 - [[claude]] — Anthropic's model family
+- [[claude-opus-4-8]] — Anthropic's mid-2026 flagship Opus; enables dynamic workflows in Claude Code
 - [[palm]] — Google's 540B model (Chowdhery 2022)
 - [[chinchilla]] — DeepMind's 70B compute-optimal model (Hoffmann 2022)
 - [[flan]] — 137B instruction-tuned LM and family (Wei 2021)
@@ -118,6 +119,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[blaise-aguera-y-arcas]] — Google research VP; Paradigms of Intelligence team
 - [[james-evans]] — Computational social scientist; UChicago + Santa Fe Institute
 - [[mario-zechner]] — pi-mono creator; "badlogic"
+- [[thariq-shihipar]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
+- [[sid-bidasaria]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
 
 ### Organizations
 - [[anthropic]] — Founded 2021 by Amodei et al.; Claude family
@@ -291,6 +294,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — Telemetry-driven self-evolution of coding harnesses (Lin 2026)
+- [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
 
 ### Looped Transformers (depth-recursion)
 - [[looped-transformer]] — Umbrella: transformer whose forward pass is re-applied over the same layers; k×L loops ≈ kL depth at ~1/L parameters
@@ -552,6 +556,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentcoder-huang-2023]] — Multi-agent code generation with iterative testing (Huang et al. 2023)
 - [[chatdev-qian-2023]] — Communicative agents for SW dev (Qian et al., ACL 2024)
 - [[agentic-harness-engineering-lin-2026]] — Observability-driven harness evolution (Lin et al., Fudan, 2026)
+- [[claude-code-dynamic-workflows-2026]] — Introducing dynamic workflows in Claude Code (Anthropic blog, 2026-05-28)
+- [[claude-code-dynamic-workflows-harness-2026]] — "A harness for every task": dynamic-workflow patterns + failure modes (Shihipar & Bidasaria, Anthropic, 2026-06-02)
 
 ### Foundations (2003, 2016)
 - [[godel-machine-schmidhuber-2003]] — Gödel Machines: self-referential universal problem solvers (Schmidhuber 2003)
