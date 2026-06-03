@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 204 sources, 127 entities, 194 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 206 sources, 128 entities, 197 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -43,6 +43,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[pi-mono]] — badlogic's minimalist coding agent (7 tools)
 - [[hermes-agent]] — Nous Research's self-improving multi-surface agent
 - [[openclaw]] — Single-operator multi-channel personal AI assistant
+- [[oh-my-claude]] — Third-party Claude Code plugin (TechDufus); reference implementation of the ultrawork keyword
 - [[faiss]] — Facebook AI Similarity Search library
 - [[openai-api]] — OpenAI's API (Chat Completions / Responses / Assistants) — function-calling reference implementation
 - [[vllm]] — High-throughput LLM inference engine; ~25 tool-call parsers
@@ -295,6 +296,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — Telemetry-driven self-evolution of coding harnesses (Lin 2026)
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
+- [[reasoning-effort]] — the `effort` parameter (low/medium/high/xhigh/max); behavioral signal over all token spend
+- [[ultracode]] — official Claude Code `/effort` mode: `xhigh` + standing permission to auto-launch workflows
+- [[ultrawork]] — unofficial community trend/keyword (e.g. oh-my-claude) for max parallel autonomous execution
 
 ### Looped Transformers (depth-recursion)
 - [[looped-transformer]] — Umbrella: transformer whose forward pass is re-applied over the same layers; k×L loops ≈ kL depth at ~1/L parameters
@@ -558,6 +562,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentic-harness-engineering-lin-2026]] — Observability-driven harness evolution (Lin et al., Fudan, 2026)
 - [[claude-code-dynamic-workflows-2026]] — Introducing dynamic workflows in Claude Code (Anthropic blog, 2026-05-28)
 - [[claude-code-dynamic-workflows-harness-2026]] — "A harness for every task": dynamic-workflow patterns + failure modes (Shihipar & Bidasaria, Anthropic, 2026-06-02)
+- [[claude-effort-and-ultracode-docs-2026]] — Anthropic effort-parameter docs; defines effort levels + ultracode (2026)
+- [[oh-my-claude-ultrawork-2026]] — oh-my-claude plugin README; the unofficial ultrawork mechanic (TechDufus, 2026)
 
 ### Foundations (2003, 2016)
 - [[godel-machine-schmidhuber-2003]] — Gödel Machines: self-referential universal problem solvers (Schmidhuber 2003)

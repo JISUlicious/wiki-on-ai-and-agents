@@ -72,7 +72,7 @@ The engineering post catalogs reusable patterns the script encodes:
 
 ## Operating it
 
-- **`ultracode`** — an effort-menu setting that sets effort to `xhigh` and lets Claude decide *when* to deploy a workflow automatically (otherwise the user asks for one explicitly).
+- **[[ultracode]]** — a `/effort`-menu setting that pairs the `xhigh` [[reasoning-effort|effort]] level with standing permission for Claude to decide *when* to deploy a workflow automatically (otherwise the user asks for one explicitly). Session-scoped; reset with `/effort high`.
 - **Combine with `/loop` and `/goal`** — `/loop` for repeatable runs at intervals (triage, research, verification); `/goal` for hard completion requirements.
 - **Token budgets** — workflows consume substantially more tokens than normal sessions; prompt "use 10k tokens" to cap, and start with scoped tasks. The posts are explicit that most ordinary coding tasks *don't* need a panel of five reviewers.
 - **Saving & sharing** — press "s" in the workflow menu to save to `~/.claude/workflows`, or distribute as an [[agent-skills|Agent Skill]] by putting the `.js` file in the skill folder and referencing it from `SKILL.md` (optionally as a template rather than a verbatim script).

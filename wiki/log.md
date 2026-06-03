@@ -9,6 +9,19 @@ updated: 2026-06-03
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-03] ingest | Claude Code ultracode + ultrawork (effort docs + community plugin)
+
+Ingested the two terms the user paired — disambiguating an **official** feature from a **community** trend.
+
+- **[[ultracode]]** (official) — from Anthropic's [[claude-effort-and-ultracode-docs-2026|effort docs]]: a Claude Code `/effort` mode pairing `xhigh` effort with standing permission to auto-launch [[dynamic-workflows]] (not an API effort level). Session-scoped; `/effort high` to exit.
+- **[[ultrawork]]** (unofficial) — from the [[oh-my-claude-ultrawork-2026|oh-my-claude README]]: a community prompt-keyword (`ultrawork`/`ulw`) that injects parallel-execution directives; *"no official /ultrawork slash command from Anthropic."* The Medium overview article is paywalled, so the plugin README is the primary source.
+
+**New concepts (3)**: [[reasoning-effort]] (the `effort` parameter taxonomy — low/medium/high/xhigh/max; behavioral signal over all token spend; replaces `budget_tokens`), [[ultracode]], [[ultrawork]]. **New entity (1)**: [[oh-my-claude]] (product, draft). **New sources (2)**: the effort docs + the oh-my-claude README.
+
+**Updated**: [[dynamic-workflows]] (linked ultracode/effort), [[claude-code]] (ultracode in /effort menu + ultrawork disambiguation), [[claude-opus-4-8]] (effort range xhigh/max + adaptive thinking).
+
+Key takeaway: ultracode (official) and ultrawork (community) converge on the same primitives — parallel subagents, independent verification, model routing, refuse-partial-work — by different means; both are answers to single-context "agentic laziness."
+
 ## [2026-06-03] ingest | Claude Code Dynamic Workflows (official blog ×2)
 
 Ingested the two official Anthropic blog posts on **dynamic workflows in Claude Code** (`claude.com/blog`): the [[claude-code-dynamic-workflows-2026|May 28 announcement]] and the [[claude-code-dynamic-workflows-harness-2026|June 2 engineering deep-dive]] (Thariq Shihipar & Sid Bidasaria). Raw HTML saved to `sources/` and converted to markdown (no pandoc → Python extraction).

@@ -8,6 +8,7 @@ sources:
   - comparison.md
   - claude-code-dynamic-workflows-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
+  - claude-effort-and-ultracode-docs-2026.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2024-02-29
@@ -36,7 +37,7 @@ Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. D
 
 ## Dynamic workflows (2026)
 
-As of May–June 2026, Claude Code can **write and orchestrate its own multi-agent harness on the fly** via [[dynamic-workflows]]: Claude authors a JavaScript orchestration script that spawns tens-to-hundreds of parallel subagents (reusing the `Task`-tool subagent + worktree machinery above), executed by a background runtime while the session stays responsive. Enabled by [[claude-opus-4-8|Claude Opus 4.8]]; surfaced via the `ultracode` effort setting and composable with `/loop` and `/goal`. See the [[claude-code-dynamic-workflows-2026|announcement]] and [[claude-code-dynamic-workflows-harness-2026|engineering deep-dive]]. This makes the self-authored harness a first-class Claude Code capability — the [[code-as-harness]] thesis applied to Claude Code itself.
+As of May–June 2026, Claude Code can **write and orchestrate its own multi-agent harness on the fly** via [[dynamic-workflows]]: Claude authors a JavaScript orchestration script that spawns tens-to-hundreds of parallel subagents (reusing the `Task`-tool subagent + worktree machinery above), executed by a background runtime while the session stays responsive. Enabled by [[claude-opus-4-8|Claude Opus 4.8]]; surfaced via the [[ultracode]] setting in the `/effort` menu (which pairs `xhigh` [[reasoning-effort|effort]] with standing workflow-launch permission) and composable with `/loop` and `/goal`. (Distinct from the unofficial community [[ultrawork]] trend.) See the [[claude-code-dynamic-workflows-2026|announcement]] and [[claude-code-dynamic-workflows-harness-2026|engineering deep-dive]]. This makes the self-authored harness a first-class Claude Code capability — the [[code-as-harness]] thesis applied to Claude Code itself.
 
 ## In the cross-agent landscape
 
