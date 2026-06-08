@@ -2,12 +2,22 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-03
+updated: 2026-06-08
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-08] ingest | NLP newsletter weekly — 10 papers (Top AI Papers, May 31–Jun 7)
+
+Manual on-demand run of the newsletter-ingest pipeline, scoped to the NLP newsletter (`nlpnews@substack.com`). Read the "🥇 Top AI Papers of the Week" digest (thread `19ea29ad6762d384`), resolved all 10 Substack-masked arXiv links to real IDs, verified, deduped (all new), and ingested as concise source pages via 2 paced subagents. The companion "AI Agents Weekly" thread (`19e9d777bd7c862d`) was product news (Microsoft MAI, Gemma 4, Nemotron 3 Ultra, Devin Desktop) with no arXiv papers — marked processed, nothing ingested.
+
+**New source pages (10)** — registered in [[index]] under "Newsletter — NLP weekly (2026-06-07)". A strong **agent-harness** cluster: [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] (Effective Feedback Compute), [[harness-1-state-externalizing-search-agents-jiang-2026]], [[harness-updating-is-not-harness-benefit-lin-2026]], [[leap-formal-mathematics-agentic-kung-2026]] (Lean, all 12 Putnam-2025); plus [[self-revising-discovery-systems-wang-2026]] (MIT, categorical AI-scientist), [[autolab-long-horizon-auto-research-xu-2026]] (benchmark), [[learning-agent-compatible-context-management-yi-2026]] (AdaCoM), [[learn-from-your-own-latents-korchinski-2026]] (JEPA sample-complexity theory), [[primer-in-post-training-reasoning-data-li-2026]] (survey), [[scaling-behavior-single-llm-multi-agent-systems-li-2026]] (SIMAS).
+
+**Updated**: [[code-as-harness]] (added the 4-paper harness-scaling cluster), [[multi-agent]] (added SIMAS to "when does MAS help?").
+
+Wiki totals: **216 sources, 128 entities, 197 concepts, 2 comparisons, 7 queries**.
 
 ## [2026-06-03] ingest | Claude Code ultracode + ultrawork (effort docs + community plugin)
 

@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 206 sources, 128 entities, 197 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 216 sources, 128 entities, 197 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -683,6 +683,21 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Safety, adversarial & commentary**
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
+
+### Newsletter — NLP weekly (2026-06-07 "Top AI Papers")
+
+Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (May 31 – Jun 7 2026; ingested 2026-06-08).
+
+- [[self-revising-discovery-systems-wang-2026]] — categorical framework: an AI scientist that revises its own representational regime (Wang et al., MIT 2026)
+- [[harness-updating-is-not-harness-benefit-lin-2026]] — self-evolution splits into harness-updating (flat across tiers) vs harness-benefit (peaks mid-tier) (Lin et al. 2026)
+- [[leap-formal-mathematics-agentic-kung-2026]] — LEAP: agentic Lean scaffold solves all 12 Putnam-2025; Lean-IMO-Bench 10%→70% (Kung et al., Google 2026)
+- [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] — Effective Feedback Compute: feedback quality (not raw budget) predicts agent success (R²≈0.99) (Zhang et al. 2026)
+- [[autolab-long-horizon-auto-research-xu-2026]] — AutoLab: 36-task ultra-long-horizon optimization benchmark; persistence beats a strong start (Xu et al. 2026)
+- [[learning-agent-compatible-context-management-yi-2026]] — AdaCoM: an external RL-trained context manager for a frozen agent (Yi et al. 2026)
+- [[learn-from-your-own-latents-korchinski-2026]] — sample-complexity theory for JEPA/data2vec latent prediction: exponential data-efficiency gap (Korchinski et al. 2026)
+- [[primer-in-post-training-reasoning-data-li-2026]] — first survey of 150+ post-training reasoning-data studies (Li et al. 2026)
+- [[harness-1-state-externalizing-search-agents-jiang-2026]] — Harness-1: a 20B RL search agent with environment-side working memory; 0.730 curated recall (Jiang et al. 2026)
+- [[scaling-behavior-single-llm-multi-agent-systems-li-2026]] — SIMAS: agent count gives diminishing returns then coordination-overhead degradation (Li et al. 2026)
 
 ## Comparisons
 

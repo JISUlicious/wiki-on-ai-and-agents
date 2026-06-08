@@ -14,6 +14,8 @@ sources:
   - chatdev-qian-2023.md
   - agentic-harness-engineering-lin-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
+  - scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026.md
+  - harness-1-state-externalizing-search-agents-jiang-2026.md
 status: complete
 importance: high
 tags:
@@ -81,3 +83,7 @@ A second 2026 instantiation, complementary to harness *mutation*: in [[claude-co
 - [[agentcoder-huang-2023]] — most-cited paper in the survey body (19 citations); deterministic test-executor as harness component.
 - [[chatdev-qian-2023]] — multi-agent code collaboration.
 - [[agentic-harness-engineering-lin-2026]] — 2026 frontier: harness as object of optimization.
+- [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] — Effective Feedback Compute: harness scaling is governed by feedback *quality*, not raw token/tool budget.
+- [[harness-1-state-externalizing-search-agents-jiang-2026]] — Harness-1: offloads recoverable state to an environment-side working memory so RL optimizes only genuine search decisions.
+- [[harness-updating-is-not-harness-benefit-lin-2026]] — self-evolving harnesses: updating quality is flat across model tiers; the benefit of a better harness is non-monotonic.
+- [[leap-formal-mathematics-agentic-kung-2026]] — a well-built Lean-verifier harness lets a general LLM match dedicated frontier math models (all 12 Putnam-2025).

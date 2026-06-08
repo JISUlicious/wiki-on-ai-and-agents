@@ -10,6 +10,7 @@ sources:
   - drop-the-hierarchy-and-roles-dochkina-2026.md
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
+  - scaling-behavior-single-llm-multi-agent-systems-li-2026.md
 status: draft
 importance: high
 tags:
@@ -35,6 +36,7 @@ A recurring 2026 theme is skepticism — measuring whether multi-agent coordinat
 - [[single-agent-vs-multi-agent-tran-2026|Tran et al. 2026]] find a **single agent outperforms multi-agent systems** on multi-hop reasoning *under equal thinking-token budgets* — the apparent MAS advantage is often just more total compute.
 - [[diversity-collapse-in-multi-agent-llm-systems-chen-2026|Diversity Collapse]] shows agents drawn from the same base model converge to near-identical outputs, eroding the diversity that debate/ensembling assumes.
 - [[reliability-limits-llm-multi-agent-planning-ao-2026|Reliability Limits]] characterizes error-compounding in multi-agent planning chains.
+- [[scaling-behavior-single-llm-multi-agent-systems-li-2026|SIMAS]] (Li et al. 2026) shows performance is **non-monotonic** in agent count — diminishing returns then degradation from coordination overhead; the optimal count is task-dependent, so "design the interaction, don't just stack agents."
 - [[theory-of-mind-internal-beliefs-multi-agent-kostka-2026|ToM evaluation]] probes whether agents maintain accurate internal beliefs about each other — a prerequisite for genuine coordination.
 
 These results push the field toward *equal-compute* baselines and away from uncritical "more agents = better" framing.
