@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 216 sources, 128 entities, 198 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 221 sources, 128 entities, 198 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -564,6 +564,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[claude-code-dynamic-workflows-harness-2026]] — "A harness for every task": dynamic-workflow patterns + failure modes (Shihipar & Bidasaria, Anthropic, 2026-06-02)
 - [[claude-effort-and-ultracode-docs-2026]] — Anthropic effort-parameter docs; defines effort levels + ultracode (2026)
 - [[oh-my-claude-ultrawork-2026]] — oh-my-claude plugin README; the unofficial ultrawork mechanic (TechDufus, 2026)
+- [[agent-harness-survey-meng-2026]] — "Agent Harness for LLM Agents: A Survey" (Meng et al. 2026; abstract-only — preprints.org CDN-blocked)
+- [[externalization-in-llm-agents-zhou-2026]] — review of externalization: memory/skills/protocols/harness engineering (Zhou et al. 2026)
+- [[adapting-the-interface-not-the-model-xu-2026]] — LIFE-HARNESS: runtime harness adaptation for deterministic agents (Xu et al., PKU 2026)
+- [[retrospective-harness-optimization-pan-2026]] — RHO: harness optimization via self-preference over rollouts (Pan et al. 2026)
+- [[evolving-excellence-automated-optimization-brookes-2025]] — Artemis: no-code evolutionary optimization of LLM agents (Brookes et al., TurinTech 2025)
 
 ### Foundations (2003, 2016)
 - [[godel-machine-schmidhuber-2003]] — Gödel Machines: self-referential universal problem solvers (Schmidhuber 2003)

@@ -9,6 +9,16 @@ updated: 2026-06-09
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-09] ingest | Agentic Harness Engineering — 5 backing sources
+
+Ingested the 5 external sources flagged as future candidates on [[agentic-harness-engineering]] (research-driven, not a newsletter sweep). 4 arXiv PDFs fetched cleanly; the preprints.org survey was CDN-blocked (Akamai 403) so it's **abstract-only** with an explicit callout.
+
+**New source pages (5)**: [[agent-harness-survey-meng-2026]] (dedicated survey, abstract-only), [[externalization-in-llm-agents-zhou-2026]] (review), [[adapting-the-interface-not-the-model-xu-2026]] (LIFE-HARNESS, runtime adaptation), [[retrospective-harness-optimization-pan-2026]] (RHO), [[evolving-excellence-automated-optimization-brookes-2025]] (Artemis, evolutionary, 2025).
+
+**Updated** [[agentic-harness-engineering]]: expanded the taxonomy with **runtime adaptation** (LIFE-HARNESS), **retrospective optimization** (RHO), and **evolutionary** optimization (Artemis); promoted the former "external / not-yet-ingested" reference list into ingested wikilinks (surveys + methods). The concept now rests on a 13-source cluster. Sources: 216 → 221.
+
+> [!note] Sandbox limit: preprints.org PDFs are blocked by the site's Akamai CDN (HTTP 403) — abstract-only ingest is the fallback for that host.
+
 ## [2026-06-09] ingest | Promoted concept: Agentic Harness Engineering
 
 Promoted the long-recurring dangling link [[agentic-harness-engineering]] to a full `status: complete` / `importance: high` concept page after a feasibility check: 18 inbound links across 8 content pages (well past the ≥3 threshold), a ready-made 8-source internal cluster, and verified external corroboration (a dedicated survey, the Externalization review, plus Runtime Harness Adaptation / Retrospective Harness Optimization / Evolving Excellence papers and an awesome-list — none yet ingested; noted as future candidates).

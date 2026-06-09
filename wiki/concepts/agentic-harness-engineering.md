@@ -12,6 +12,11 @@ sources:
   - harness-1-state-externalizing-search-agents-jiang-2026.md
   - harness-updating-is-not-harness-benefit-lin-2026.md
   - natural-language-agent-harnesses-pan-2026.md
+  - agent-harness-survey-meng-2026.md
+  - externalization-in-llm-agents-zhou-2026.md
+  - adapting-the-interface-not-the-model-xu-2026.md
+  - retrospective-harness-optimization-pan-2026.md
+  - evolving-excellence-automated-optimization-brookes-2025.md
 builds-on:
   - [[code-as-harness]]
   - [[self-improving-agent]]
@@ -42,8 +47,10 @@ The harness decomposes into editable components — in the [[agentic-harness-eng
 ## Approaches (a 2026 taxonomy)
 
 - **Telemetry-driven evolution** — an "Evolution Agent" reads distilled rollout telemetry and edits harness files in a closed loop, each edit a falsifiable, git-reverted contract. Canonical: [[agentic-harness-engineering-lin-2026]] (observability is the bottleneck, not agent capability; +7.3pp on Terminal-Bench 2 from a bash-only seed, transfers frozen to SWE-bench).
-- **Program search / end-to-end optimization** — search over *complete* harness programs using prior candidates, scores, and execution traces: [[meta-harness-lee-2026|Meta-Harness]].
+- **Program search / evolutionary optimization** — search over *complete* harness programs using prior candidates, scores, and traces ([[meta-harness-lee-2026|Meta-Harness]]); or evolve agent configurations with genetic operators ([[evolving-excellence-automated-optimization-brookes-2025|Artemis]], TurinTech — no-code, discovers configurable components automatically).
 - **Self-synthesis** — the agent writes its own harness from scratch: [[autoharness-lou-2026|AutoHarness]] (Thompson-sampling tree search over harness code).
+- **Runtime adaptation** — adapt the *interface*, not the model, at run time: [[adapting-the-interface-not-the-model-xu-2026|LIFE-HARNESS]] adjusts the harness on the fly for deterministic agents with the base model frozen.
+- **Retrospective optimization** — improve the harness from the agent's *own* past rollouts: [[retrospective-harness-optimization-pan-2026|RHO]] uses self-preference over trajectory rollouts as the optimization signal.
 - **Scaling laws** — characterizing what converts compute into success: [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026|Effective Feedback Compute]] (feedback *quality*, not raw token/tool budget, predicts success at R²≈0.99).
 - **State externalization** — moving recoverable bookkeeping out of the policy into an environment-side working memory so RL optimizes only genuine decisions: [[harness-1-state-externalizing-search-agents-jiang-2026|Harness-1]].
 - **Decomposing the ability** — [[harness-updating-is-not-harness-benefit-lin-2026]] shows "self-evolution" is two abilities: *updating* the harness (flat across model tiers) vs. *benefiting* from it (non-monotonic, peaking mid-tier) — so put a cheap model on the evolver and spend capability budget on the solver.
@@ -65,15 +72,14 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 
 ## References
 
-**Ingested (this wiki):**
-- [[agentic-harness-engineering-lin-2026]] — names + operationalizes AHE (the namesake).
-- [[code-as-agent-harness-ning-2026]] — survey; §3.5 is the harness-evolution chapter.
-- [[meta-harness-lee-2026]] · [[autoharness-lou-2026]] · [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] · [[harness-1-state-externalizing-search-agents-jiang-2026]] · [[harness-updating-is-not-harness-benefit-lin-2026]] · [[natural-language-agent-harnesses-pan-2026]]
+**Surveys & reviews:**
+- [[code-as-agent-harness-ning-2026]] — the code-as-harness survey; §3.5 is the harness-evolution chapter.
+- [[agent-harness-survey-meng-2026]] — dedicated *Agent Harness* survey (Meng et al.; ingested abstract-only — the preprints.org PDF is CDN-blocked in this sandbox).
+- [[externalization-in-llm-agents-zhou-2026]] — unified review of memory / skills / protocols / harness engineering (Zhou et al.).
 
-**External landscape (not yet ingested — future candidates):**
-- *Agent Harness for LLM Agents: A Survey* — https://www.preprints.org/manuscript/202604.0428
-- *Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering* — https://arxiv.org/abs/2604.08224
-- *Runtime Harness Adaptation for Deterministic LLM Agents* — https://arxiv.org/abs/2605.22166
-- *Retrospective Harness Optimization* — https://arxiv.org/abs/2606.05922
-- *Evolving Excellence: Automated Optimization of LLM-based Agents* — https://arxiv.org/abs/2512.09108
+**Methods:**
+- [[agentic-harness-engineering-lin-2026]] — names + operationalizes AHE (the namesake; telemetry-driven evolution).
+- [[meta-harness-lee-2026]] (program search) · [[evolving-excellence-automated-optimization-brookes-2025]] (Artemis, evolutionary) · [[autoharness-lou-2026]] (self-synthesis) · [[adapting-the-interface-not-the-model-xu-2026]] (LIFE-HARNESS, runtime adaptation) · [[retrospective-harness-optimization-pan-2026]] (RHO, retrospective) · [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] (EFC scaling) · [[harness-1-state-externalizing-search-agents-jiang-2026]] (state externalization) · [[harness-updating-is-not-harness-benefit-lin-2026]] (updating vs. benefit) · [[natural-language-agent-harnesses-pan-2026]] (NL harnesses)
+
+**External (not yet ingested):**
 - `awesome-harness-engineering` — https://github.com/ai-boost/awesome-harness-engineering
