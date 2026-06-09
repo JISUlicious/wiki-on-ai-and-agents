@@ -2,12 +2,18 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-08
+updated: 2026-06-09
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-09] ingest | Promoted concept: Agentic Harness Engineering
+
+Promoted the long-recurring dangling link [[agentic-harness-engineering]] to a full `status: complete` / `importance: high` concept page after a feasibility check: 18 inbound links across 8 content pages (well past the ≥3 threshold), a ready-made 8-source internal cluster, and verified external corroboration (a dedicated survey, the Externalization review, plus Runtime Harness Adaptation / Retrospective Harness Optimization / Evolving Excellence papers and an awesome-list — none yet ingested; noted as future candidates).
+
+The page synthesizes the cluster ([[agentic-harness-engineering-lin-2026]], [[code-as-agent-harness-ning-2026]], [[meta-harness-lee-2026]], [[autoharness-lou-2026]], [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]], [[harness-1-state-externalizing-search-agents-jiang-2026]], [[harness-updating-is-not-harness-benefit-lin-2026]], [[natural-language-agent-harnesses-pan-2026]]) into a taxonomy (telemetry-driven evolution / program search / self-synthesis / scaling laws / state externalization / updating-vs-benefit / NL harnesses) and disambiguates it from [[code-as-harness]] (substrate thesis vs. meta-process). Trimmed the overflowing §3.5 of [[code-as-harness]] into a pointer. Concepts: 197 → 198.
 
 ## [2026-06-08] ingest | NLP newsletter weekly — 10 papers (Top AI Papers, May 31–Jun 7)
 

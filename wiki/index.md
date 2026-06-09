@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 216 sources, 128 entities, 197 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 216 sources, 128 entities, 198 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -294,7 +294,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[openhands]] — Open-source generalist software-agent platform (formerly OpenDevin)
 - [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
-- [[agentic-harness-engineering]] — Telemetry-driven self-evolution of coding harnesses (Lin 2026)
+- [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
 - [[reasoning-effort]] — the `effort` parameter (low/medium/high/xhigh/max); behavioral signal over all token spend
 - [[ultracode]] — official Claude Code `/effort` mode: `xhigh` + standing permission to auto-launch workflows

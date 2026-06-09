@@ -56,7 +56,7 @@ The survey distinguishes three coupled elements:
 
 ## Frontier — Agentic Harness Engineering
 
-The survey's §3.5 introduces a 2026 frontier: the harness itself becomes the object of optimization. [[agentic-harness-engineering-lin-2026]] (Lin et al., Fudan, 2026) instantiates this — telemetry-driven harness mutation, an "Evolution Agent" that proposes harness changes, and governed mutation with sandboxed evaluation. This is the empirical descendant of the [[godel-machine|Gödel-machine]] vision applied at the *harness* level rather than the agent level — pair with [[darwin-godel-machine]] (agent-scaffold evolution) and [[agentic-context-engineering]] (prompt-level evolution).
+The survey's §3.5 introduces a 2026 frontier: the harness itself becomes the object of optimization — telemetry-driven mutation, program search, self-synthesis, and scaling laws over the scaffold, with the base model held fixed. This has grown into its own concept; see **[[agentic-harness-engineering]]** for the full treatment and source cluster. The intellectual line runs from the [[godel-machine|Gödel-machine]] / [[darwin-godel-machine]] (which evolve the *agent*) to AHE (which evolves only the *harness*), adjacent to [[agentic-context-engineering]] (prompt-level evolution).
 
 ## Frontier — self-authored harness ([[dynamic-workflows]])
 
