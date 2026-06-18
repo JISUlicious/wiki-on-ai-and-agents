@@ -2,12 +2,24 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-09
+updated: 2026-06-18
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-18] ingest | alphaXiv weekly — 5 trending papers (2026-06-17 digest)
+
+Manual on-demand run scoped to this week's alphaXiv digest (thread `19ed79432ff6ba74`). 4 papers had clean arXiv IDs; GLM-5.2 used an alphaXiv-native ID (`2026.glm-5-2`) with no formal report.
+
+**New source pages (5)**: [[from-agi-to-asi-genewein-2026]] (DeepMind; AGI→ASI framework — 4 pathways), [[self-harness-harnesses-that-improve-themselves-zhang-2026]] (Shanghai AI Lab; fixed LLM self-improves its harness on Terminal-Bench-2.0), [[minimax-sparse-attention-lai-2026]] (MSA; powers MiniMax-M3), [[latent-spatial-memory-for-video-world-models-wang-2026]] (Mirage video world model), [[glm-5-2-zai-2026]] (GLM-5.2 announcement).
+
+**New entities (2)**: [[glm-5-2]] (model, draft — 744B/40B-active MoE, 1M context, IndexShare) and [[z-ai]] (org, draft — Zhipu AI). **Updated** [[agentic-harness-engineering]]: added Self-Harness as a self-directed-evolution sibling of AHE.
+
+> [!note] GLM-5.2 has no technical report (Z.ai shipped it without benchmarks); the alphaXiv page is CDN-blocked (HTTP 403) here, so its source page is reconstructed from the digest blurb + public coverage and flagged accordingly.
+
+**Manifest:** recorded the Jun 17 thread but **did NOT advance `last_processed_date`** past 2026-06-08 — the **Jun 10 alphaXiv digest (`19eb357a10111d1d`) remains unprocessed** (this run was scoped to "this week"), so a future sweep still catches it. Sources 221 → 226, entities 128 → 130.
 
 ## [2026-06-09] ingest | Agentic Harness Engineering — 5 backing sources
 

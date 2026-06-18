@@ -48,7 +48,8 @@
     "19ceccf90d80d12c",
     "19cc8d6f716b63a8",
     "19ea29ad6762d384",
-    "19e9d777bd7c862d"
+    "19e9d777bd7c862d",
+    "19ed79432ff6ba74"
   ],
   "runs": [
     {
@@ -74,6 +75,27 @@
       "new_source_pages": 10,
       "new_concept_pages": [],
       "notes": "Manual on-demand run scoped to nlpnews. 'Top AI Papers' digest (10 papers, Substack-masked IDs resolved + verified, all new). 'AI Agents Weekly' was product news, no arXiv papers."
+    },
+    {
+      "date": "2026-06-18",
+      "type": "weekly (manual, alphaXiv-only, this-week-scoped)",
+      "threads_read": 1,
+      "candidate_ids_verified": 5,
+      "on_domain_ingested": 5,
+      "new_source_pages": 5,
+      "new_entity_pages": [
+        "glm-5-2",
+        "z-ai"
+      ],
+      "notes": "alphaXiv 2026-06-17 digest. 4 clean arXiv IDs + GLM-5.2 (alphaXiv-native 2026.glm-5-2, no report). last_processed_date intentionally left at 2026-06-08 so the unprocessed Jun-10 alphaXiv digest (19eb357a10111d1d) is not skipped."
+    }
+  ],
+  "pending_threads": [
+    {
+      "id": "19eb357a10111d1d",
+      "sender": "contact@alphaxiv.org",
+      "date": "2026-06-10",
+      "reason": "alphaXiv digest skipped — 2026-06-18 run was scoped to 'this week' (Jun 17) only; catch on next full sweep."
     }
   ]
 }

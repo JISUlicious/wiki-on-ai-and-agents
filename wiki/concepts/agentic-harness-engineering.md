@@ -14,6 +14,7 @@ sources:
   - natural-language-agent-harnesses-pan-2026.md
   - agent-harness-survey-meng-2026.md
   - externalization-in-llm-agents-zhou-2026.md
+  - self-harness-harnesses-that-improve-themselves-zhang-2026.md
   - adapting-the-interface-not-the-model-xu-2026.md
   - retrospective-harness-optimization-pan-2026.md
   - evolving-excellence-automated-optimization-brookes-2025.md
@@ -46,7 +47,7 @@ The harness decomposes into editable components — in the [[agentic-harness-eng
 
 ## Approaches (a 2026 taxonomy)
 
-- **Telemetry-driven evolution** — an "Evolution Agent" reads distilled rollout telemetry and edits harness files in a closed loop, each edit a falsifiable, git-reverted contract. Canonical: [[agentic-harness-engineering-lin-2026]] (observability is the bottleneck, not agent capability; +7.3pp on Terminal-Bench 2 from a bash-only seed, transfers frozen to SWE-bench).
+- **Telemetry-driven / self-directed evolution** — an evolver loop reads rollout evidence and edits harness files, each edit a falsifiable, revertable change. Canonical: [[agentic-harness-engineering-lin-2026]] (observability is the bottleneck, not agent capability; +7.3pp on Terminal-Bench 2 from a bash-only seed, transfers frozen to SWE-bench). Close sibling: [[self-harness-harnesses-that-improve-themselves-zhang-2026|Self-Harness]] (Shanghai AI Lab) has a *fixed* LLM autonomously improve its own harness via a three-stage loop — Weakness Mining → Harness Proposal → Proposal Validation — yielding model-specific configs (e.g. 40.5→61.9% held-out on Terminal-Bench-2.0 across MiniMax-M2.5 / Qwen3.5 / GLM-5).
 - **Program search / evolutionary optimization** — search over *complete* harness programs using prior candidates, scores, and traces ([[meta-harness-lee-2026|Meta-Harness]]); or evolve agent configurations with genetic operators ([[evolving-excellence-automated-optimization-brookes-2025|Artemis]], TurinTech — no-code, discovers configurable components automatically).
 - **Self-synthesis** — the agent writes its own harness from scratch: [[autoharness-lou-2026|AutoHarness]] (Thompson-sampling tree search over harness code).
 - **Runtime adaptation** — adapt the *interface*, not the model, at run time: [[adapting-the-interface-not-the-model-xu-2026|LIFE-HARNESS]] adjusts the harness on the fly for deterministic agents with the base model frozen.
@@ -79,6 +80,7 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 
 **Methods:**
 - [[agentic-harness-engineering-lin-2026]] — names + operationalizes AHE (the namesake; telemetry-driven evolution).
+- [[self-harness-harnesses-that-improve-themselves-zhang-2026]] — Self-Harness: a fixed LLM self-improves its harness (Weakness Mining → Proposal → Validation).
 - [[meta-harness-lee-2026]] (program search) · [[evolving-excellence-automated-optimization-brookes-2025]] (Artemis, evolutionary) · [[autoharness-lou-2026]] (self-synthesis) · [[adapting-the-interface-not-the-model-xu-2026]] (LIFE-HARNESS, runtime adaptation) · [[retrospective-harness-optimization-pan-2026]] (RHO, retrospective) · [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] (EFC scaling) · [[harness-1-state-externalizing-search-agents-jiang-2026]] (state externalization) · [[harness-updating-is-not-harness-benefit-lin-2026]] (updating vs. benefit) · [[natural-language-agent-harnesses-pan-2026]] (NL harnesses)
 
 **External (not yet ingested):**

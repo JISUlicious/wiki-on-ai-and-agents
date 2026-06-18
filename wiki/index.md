@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 221 sources, 128 entities, 198 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 226 sources, 130 entities, 198 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -28,6 +28,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Models — Other LLMs
 - [[claude]] — Anthropic's model family
 - [[claude-opus-4-8]] — Anthropic's mid-2026 flagship Opus; enables dynamic workflows in Claude Code
+- [[glm-5-2]] — Z.ai's coding-first 1M-context MoE (744B/40B-active) with IndexShare sparse attention (2026)
 - [[palm]] — Google's 540B model (Chowdhery 2022)
 - [[chinchilla]] — DeepMind's 70B compute-optimal model (Hoffmann 2022)
 - [[flan]] — 137B instruction-tuned LM and family (Wei 2021)
@@ -131,6 +132,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[google-research]] — Google's broader research org
 - [[fair]] — Facebook AI Research / Meta AI
 - [[nous-research]] — Decentralized AI research collective; Hermes models / agent
+- [[z-ai]] — Zhipu AI; maker of the GLM model family (GLM-5.2)
 - [[center-for-ai-safety]] — CAIS, AI safety org (Hendrycks); RepE co-authorship
 - [[eleutherai]] — Open-source AI research collective (Pythia, etc.)
 - [[letta]] — Berkeley spinout productizing MemGPT; agent runtime with stateful memory
@@ -703,6 +705,16 @@ Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (May 31 – 
 - [[primer-in-post-training-reasoning-data-li-2026]] — first survey of 150+ post-training reasoning-data studies (Li et al. 2026)
 - [[harness-1-state-externalizing-search-agents-jiang-2026]] — Harness-1: a 20B RL search agent with environment-side working memory; 0.730 curated recall (Jiang et al. 2026)
 - [[scaling-behavior-single-llm-multi-agent-systems-li-2026]] — SIMAS: agent count gives diminishing returns then coordination-overhead degradation (Li et al. 2026)
+
+### Newsletter — alphaXiv weekly (2026-06-17 Trending Papers)
+
+Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
+
+- [[from-agi-to-asi-genewein-2026]] — analytical framework mapping AGI→ASI: four pathways, frictions/bottlenecks (Genewein et al., Google DeepMind 2026)
+- [[self-harness-harnesses-that-improve-themselves-zhang-2026]] — Self-Harness: a fixed LLM autonomously improves its own harness on Terminal-Bench-2.0 (Zhang et al., Shanghai AI Lab 2026)
+- [[minimax-sparse-attention-lai-2026]] — MSA: blockwise sparse attention; 14.2× prefill / 7.6× decode at 1M context; powers MiniMax-M3 (Lai et al., MiniMax 2026)
+- [[latent-spatial-memory-for-video-world-models-wang-2026]] — Mirage: video world model with latent spatial memory; 10.57× faster, 55× less GPU memory (Wang et al., ZJU 2026)
+- [[glm-5-2-zai-2026]] — GLM-5.2 announcement: 744B/40B-active MoE, 1M context, IndexShare sparse attention (Z.ai 2026; no formal report)
 
 ## Comparisons
 
