@@ -107,3 +107,5 @@ The headline finding is that **the benefits of skills are fragile**: performance
 - Skill sources: [skillhub.club](https://www.skillhub.club/), [skills.sh](https://skills.sh/)
 - Related benchmarks discussed: **SkillsBench** (Li et al., 2026) — the idealized-setting predecessor; **Terminal-Bench 2.0** (Merrill et al., 2026) — the general-purpose agent benchmark used to show generalization.
 - Companion wiki source: [[agent-skills-survey-xu-2026]] — the academic survey of the agent-skills paradigm.
+
+Led by [[uc-santa-barbara]] (Shiyu Chang's lab).

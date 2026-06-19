@@ -22,3 +22,14 @@ Related: [[rlhf]], [[ppo]], [[grpo]], [[agentic-rl]], [[deepseek-r1]], [[search-
 
 ## References
 - [[deepseek-r1-2025]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[embarrassingly-simple-self-distillation-zhang-2026]] — Embarrassingly Simple Self Distillation Improves Code Generation
+- [[pivotrl-high-accuracy-agentic-post-training-yi-2026]] — PivotRL High Accuracy Agentic Post Training at Low
+- [[primer-in-post-training-reasoning-data-li-2026]] — A Primer in Post Training Reasoning Data What
+- [[self-distilled-rlvr-yang-2026]] — Self Distilled RLVR
+- [[vector-policy-optimization-bahlous-boldi-2026]] — Vector Policy Optimization Training for Diversity Improves Test
+- [[policy-optimization-methods]] — Policy Optimization Methods in LLM Post Training

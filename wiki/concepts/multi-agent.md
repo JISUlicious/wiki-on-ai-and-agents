@@ -56,3 +56,10 @@ These results push the field toward *equal-compute* baselines and away from uncr
 - [[drop-the-hierarchy-and-roles-dochkina-2026]]
 - [[reaching-agreement-among-reasoning-llm-agents-ruan-2025]]
 - [[reliability-limits-llm-multi-agent-planning-ao-2026]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[multi-user-llm-agents-yang-2026]] — Multi User Large Language Model Agents
+- [[survey-workflow-optimization-llm-agents-yue-2026]] — From Static Templates to Dynamic Runtime Graphs A

@@ -35,3 +35,16 @@ Canonical instance is [[darwin-godel-machine]]; precursors are [[voyager]] (skil
 - [[darwin-godel-machine-zhang-2025]] — open-ended scaffold evolution; SWE-bench 20% → 50%.
 - [[voyager-wang-2023]] — open-ended skill discovery in Minecraft; skill library as procedural memory.
 - Precursors: [[reflexion]] (verbal self-correction), Schmidhuber 2007 ([[godel-machine]]).
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[agent-world-real-world-environment-synthesis-dong-2026]] — Agent World Real World Environment Synthesis
+- [[agenticqwen-small-agentic-lms-with-dual-data-flywheels-lyu-2026]] — AgenticQwen Small Agentic LMs with Dual Data Flywheels
+- [[autogenesis-self-evolving-agent-protocol-zhang-2026]] — Autogenesis A Self Evolving Agent Protocol
+- [[auton-agentic-ai-framework-cao-2026]] — The Auton Agentic AI Framework A Declarative Architecture
+- [[metaclaw-just-talk-agent-meta-learns-xia-2026]] — MetaClaw Just Talk An Agent That Meta Learns
+- [[openclaw-rl-train-agent-by-talking-wang-2026]] — OpenClaw RL Train Any Agent Simply by Talking
+- [[reward-free-self-evolution-via-world-knowledge-exploration-zhang-2026]] — Reward Free Self Evolution via World Knowledge Exploration
+- [[self-revising-discovery-systems-wang-2026]] — Self Revising Discovery Systems for Science A Categorical

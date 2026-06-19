@@ -32,7 +32,7 @@ Magma is the empirical proof that a single foundation model can act competently 
 - Instance of the [[vision-language-action-model]] paradigm; extends VLM with an action output head.
 - Targets [[computer-use-agent]] / [[gui-agent]] tasks (ScreenSpot, Mind2Web, AITW) alongside embodied-agent benchmarks (SimplerEnv, LIBERO).
 - Introduces the [[set-of-mark]] and [[trace-of-mark]] grounding tricks that other 2025 VLA work has begun adopting.
-- Produced by [[microsoft]] Research; positioned against OpenVLA (Stanford) and RT-2 ([[google-deepmind]]).
+- Produced by [[microsoft]] Research; positioned against OpenVLA (Stanford) and RT-2 ([[deepmind]]).
 - Complements [[ui-tars-2]] in the GUI-agent space, though UI-TARS-2 is GUI-specialist and RL-trained while Magma is cross-domain and pretrained.
 
 ## References

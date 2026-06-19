@@ -30,3 +30,13 @@ Agent benchmarks are evaluation suites designed to measure LLM-based **agents** 
 
 - [[gaia]]
 - [[swe-bench]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[alphaeval-evaluating-agents-in-production-lu-2026]] — AlphaEval Evaluating Agents in Production
+- [[arc-agi-3-arc-prize-foundation-2026]] — ARC AGI 3 A New Challenge for Frontier
+- [[autolab-long-horizon-auto-research-xu-2026]] — AutoLab Can Frontier Models Solve Long Horizon Auto
+- [[building-verifiers-for-computer-use-agents-rosset-2026]] — The Art of Building Verifiers for Computer Use
+- [[screening-is-enough-nakanishi-2026]] — Screening Is Enough

@@ -5,8 +5,10 @@ created: 2026-06-03
 updated: 2026-06-03
 sources:
   - speculative-speculative-decoding-kumar-2026.md
+status: complete
+importance: medium
 tags:
-  - inference
+  - 2026
 ---
 
 # Speculative Decoding

@@ -114,3 +114,20 @@ Dense vector retrieval ([[dense-retrieval]]) appears as one option among many, n
 - [[mirix-wang-2025]]
 - [[memory-r1-yan-2025]]
 - [[mem-alpha-wang-2025]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[adaptive-loops-and-memory-in-transformers-frey-2026]] — Adaptive Loops and Memory in Transformers Think Harder
+- [[do-language-models-need-sleep-lee-2026]] — Do Language Models Need Sleep? Offline Recurrence for
+- [[lightthinker-plus-plus-zhu-2026]] — LightThinker++ From Reasoning Compression to Memory Management
+- [[memcollab-chang-2026]] — MemCollab Cross Model Memory Collaboration via Contrastive Trajectory
+- [[memex-rl-wang-2026]] — Memex(RL) Scaling Long Horizon LLM Agents via Indexed
+- [[memfactory-guo-2026]] — MemFactory Unified Inference & Training Framework for Agent
+- [[memory-intelligence-agent-qiao-2026]] — Memory Intelligence Agent
+- [[memory-transfer-learning-coding-agents-kim-2026]] — Memory Transfer Learning How Memories are Transferred Across
+- [[ocr-memory-optical-context-retrieval-li-2026]] — OCR Memory Optical Context Retrieval for Long Horizon
+- [[parammem-parametric-reflective-memory-yao-2026]] — ParamMem Augmenting Language Agents with Parametric Reflective Memory
+- [[stateless-decision-memory-for-enterprise-ai-agents-srinivasan-2026]] — Stateless Decision Memory for Enterprise AI Agents
+- [[memory-systems-anatomy-2026]] — Memory Systems Anatomy (2026)

@@ -48,3 +48,11 @@ MoE breaks the dense scaling law's tie between capability and serving cost. The 
 ## References
 
 - [[scalable-moe-training-megatron-core-yan-2026]] · [[glm-5-2-zai-2026]] · [[nemotron-3-super-nvidia-2026]] · [[minimax-m2-series-minimax-2026]] · [[mai-thinking-1-microsoft-2026]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — Attention to Mamba A Recipe for Cross Architecture
+- [[massive-activations-attention-sinks-sun-2026]] — The Spike, the Sparse and the Sink Anatomy
+- [[minimax-sparse-attention-lai-2026]] — MiniMax Sparse Attention

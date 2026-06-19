@@ -38,3 +38,14 @@ Latent reasoning legitimizes reasoning in continuous space as a first-class alte
 - [[loop-think-generalize-2026]] — implicit-reasoning + grokking case study.
 - [[looped-transformer]] — the architectural family.
 - [[chain-of-thought-prompting]] — the externalized-token alternative.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[bayesian-teaching-probabilistic-reasoning-qiu-2025]] — Bayesian Teaching Enables Probabilistic Reasoning in Large Language
+- [[cola-continuous-latent-diffusion-language-model-guo-2026]] — Cola Continuous Latent Diffusion Language Model
+- [[elf-embedded-language-flows-hu-2026]] — ELF Embedded Language Flows
+- [[generative-recursive-reasoning-baek-2026]] — Generative Recursive Reasoning
+- [[latent-reasoning-with-normalizing-flows-tu-2026]] — Latent Reasoning with Normalizing Flows (NF CoT)
+- [[the-latent-space-yu-2026]] — The Latent Space Foundation, Evolution, Mechanism, Ability, and

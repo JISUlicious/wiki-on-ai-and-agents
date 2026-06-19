@@ -60,3 +60,12 @@ Common variations:
 
 - [[rag-lewis-2020]]
 - [[memory-management]] — RAG as one operation in a broader memory lifecycle
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[agentir-reasoning-aware-retrieval-chen-2026]] — AgentIR Reasoning Aware Retrieval for Deep Research Agents
+- [[diagnosing-retrieval-vs-utilization-bottlenecks-su-2026]] — Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent
+- [[karl-knowledge-agents-databricks-2026]] — KARL Knowledge Agents via Reinforcement Learning
+- [[when-to-retrieve-during-reasoning-guo-2026]] — When to Retrieve During Reasoning Adaptive Retrieval for

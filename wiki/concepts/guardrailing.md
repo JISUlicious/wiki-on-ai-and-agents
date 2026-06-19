@@ -76,3 +76,9 @@ Modern alignment stacks **layer both surfaces**. [[claude|Claude]]'s training is
 - [[constitutional-ai-bai-2022]]
 - [[red-teaming-ganguli-2022]]
 - [[indirect-prompt-injection-greshake-2023]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini Autoresearch Discovers State of the Art Adversarial

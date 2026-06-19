@@ -141,3 +141,17 @@ The convergence happened organically rather than via formal standardization, bec
 - Announcement: https://claude.com/blog/skills
 - Engineering: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - Open standard: https://agentskills.io
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[co-evolving-decision-and-skill-bank-agents-wu-2026]] — Co Evolving Decision and Skill Bank Agents (COS
+- [[from-skill-text-to-skill-structure-liang-2026]] — From Skill Text to Skill Structure The Scheduling
+- [[memento-skills-let-agents-design-agents-memento-team-2026]] — Memento Skills Let Agents Design Agents
+- [[scaling-coding-agents-via-atomic-skills-ma-2026]] — Scaling Coding Agents via Atomic Skills
+- [[skill-rag-failure-state-aware-retrieval-wei-2026]] — Skill RAG Failure State Aware Retrieval Augmentation via
+- [[skill-zero-lu-2026]] — SKILL0 In Context Agentic Reinforcement Learning for Skill
+- [[skillnet-liang-2026]] — SkillNet Create, Evaluate, and Connect AI Skills
+- [[skillos-learning-skill-curation-self-evolving-agents-ouyang-2026]] — SkillOS Learning Skill Curation for Self Evolving Agents
+- [[webxskill-skill-learning-web-agents-wang-2026]] — WebXSkill Skill Learning for Autonomous Web Agents

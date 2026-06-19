@@ -87,3 +87,17 @@ A second 2026 instantiation, complementary to harness *mutation*: in [[claude-co
 - [[harness-1-state-externalizing-search-agents-jiang-2026]] — Harness-1: offloads recoverable state to an environment-side working memory so RL optimizes only genuine search decisions.
 - [[harness-updating-is-not-harness-benefit-lin-2026]] — self-evolving harnesses: updating quality is flat across model tiers; the benefit of a better harness is non-monotonic.
 - [[leap-formal-mathematics-agentic-kung-2026]] — a well-built Lean-verifier harness lets a general LLM match dedicated frontier math models (all 12 Putnam-2025).
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]] for full grouping.
+
+- [[autonomous-long-horizon-ml-research-engineering-chen-2026]] — Toward Autonomous Long Horizon Engineering for ML Research
+- [[coding-agents-effective-long-context-processors-cao-2026]] — Coding Agents are Effective Long Context Processors
+- [[dive-into-claude-code-design-space-liu-2026]] — Dive into Claude Code The Design Space of
+- [[effective-strategies-asynchronous-swe-agents-geng-2026]] — Effective Strategies for Asynchronous Software Engineering Agents
+- [[learning-agent-compatible-context-management-yi-2026]] — Learning Agent Compatible Context Management for Long Horizon
+- [[llm-diagnosis-of-integration-test-failures-ziftci-2026]] — LLM Based Automated Diagnosis Of Integration Test Failures
+- [[opendev-terminal-coding-agent-bui-2026]] — Building Effective AI Coding Agents for the Terminal
+- [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent Planning with AND/OR Trees for Long Horizon
+- [[fundamental-components-of-harness]] — Fundamental Components of an LLM Agent Harness

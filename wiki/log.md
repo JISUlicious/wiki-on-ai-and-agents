@@ -9,6 +9,17 @@ updated: 2026-06-19
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-19] lint | Wiki health check
+
+Found: 10 errors, 69 warnings, 243 suggestions. Auto-fixed errors + warnings + top suggestions (option 3).
+
+- **Errors (10→0)**: created 8 system stubs ([[swe-agent]], [[openhands]], [[codeact]], [[chatdev]], [[agentcoder]], [[pal]], [[code-as-policies]], [[agent-computer-interface]]) resolving the broken index links; repointed [[pal|program-aided-reasoning]]; fixed [[speculative-decoding]] frontmatter (status/importance).
+- **Warnings (69→0 orphans)**: backlinked every orphan source into its theme hub via a "Related 2026 sources" section ([[memory-management]], [[agent-skills]], [[self-improving-agent]], [[agent-benchmark]], [[latent-reasoning]], [[retrieval-augmented-generation]], [[code-as-harness]], [[reinforcement-learning]], [[mixture-of-experts]], [[multi-agent]], [[reasoning]], [[guardrailing]]); linked [[uc-santa-barbara]] from its source.
+- **Suggestions (top)**: created 9 recurring concept stubs ([[reasoning]], [[code-generation]], [[long-term-memory]], [[meta-learning]], [[memory-consolidation]], [[knowledge-distillation]], [[test-time-compute]], [[state-space-model]], [[lora]]) and 4 institutions ([[google]], [[fudan-university]], [[peking-university]], [[hku]]); repointed aliases ([[deepmind|google-deepmind]], [[stanford-university|stanford]], [[shanghai-jiao-tong-university|sjtu]]).
+
+Result: broken index links 9→0, orphan pages 69→0, pages-not-in-index 0, frontmatter issues 1→0, tag hygiene clean. ~218 long-tail missing pages (author/model names, e.g. [[reasoning]] dependents) remain as future suggestions. Totals: 231 sources, 137 entities, 218 concepts.
+
+
 ## [2026-06-19] ingest | alphaXiv weekly (Jun 10) — 5 papers + 3 concept promotions
 
 Ingested the previously-pending Jun-10 alphaXiv digest (thread `19eb357a10111d1d`). 4 clean arXiv papers + MAI-Thinking-1 (alphaXiv-native, no report). Then promoted three over-threshold dangling concepts (user request).

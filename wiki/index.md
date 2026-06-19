@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 231 sources, 133 entities, 201 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 231 sources, 137 entities, 218 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -128,6 +128,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Organizations
 - [[anthropic]] — Founded 2021 by Amodei et al.; Claude family
 - [[openai]] — Source of GPT family, ChatGPT, the OpenAI API
+- [[google]] — Parent of Google Research / DeepMind / Brain
 - [[deepmind]] — UK AI lab; merged with Google Brain in 2023
 - [[google-brain]] — Google's deep-learning research org until merger
 - [[google-research]] — Google's broader research org
@@ -155,6 +156,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
+- [[fudan-university]] — Shanghai research university; LLM-agent / harness research
+- [[peking-university]] — Beijing research university; LLM + agent research
+- [[hku]] — University of Hong Kong; LLM code-generation / agent research
 - [[stanford-university]] — Stanford NLP; many papers in this wiki
 - [[princeton-university]] — Princeton NLP
 - [[university-of-washington]] — UW NLP
@@ -185,6 +189,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[decoder-only-transformer]] — The dominant variant for modern LLMs
 - [[mixture-of-experts]] — Sparse expert routing; decouples total capacity from per-token compute (active vs total params)
 - [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA)
+- [[state-space-model]] — Linear-time recurrent sequence models (Mamba); often hybridized with attention/MoE
 - [[encoder-decoder]] — Two-stack architecture for seq2seq tasks
 - [[attention-mechanism]] — Query/key/value weighted aggregation
 - [[self-attention]] — Intra-sequence attention; defining op of Transformers
@@ -210,6 +215,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Training paradigms
 - [[pre-training]] — Self-supervised training on large corpora
+- [[lora]] — Low-rank adaptation; parameter-efficient fine-tuning
 - [[fine-tuning]] — Task-specific adaptation
 - [[autoregressive-language-modeling]] — Next-token prediction
 - [[masked-language-modeling]] — BERT's bidirectional cloze objective
@@ -227,6 +233,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Capabilities and prompting
 - [[in-context-learning]] — Learning from prompt examples (GPT-3)
+- [[reasoning]] — Umbrella: multi-step inference, from CoT to RL-trained reasoning models
+- [[code-generation]] — Producing source code from specs; HumanEval/SWE-bench
+- [[meta-learning]] — Learning to learn; underlies self-improving agents
+- [[knowledge-distillation]] — Transferring capability from a teacher to a smaller student
+- [[test-time-compute]] — Spending more inference compute (longer reasoning/search) for accuracy
 - [[zero-shot-learning]] — Task from instruction only
 - [[few-shot-learning]] — Task from instruction + a handful of examples
 - [[chain-of-thought-prompting]] — Prompting with intermediate reasoning steps
@@ -294,7 +305,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Code as Harness (executable agents)
 - [[code-as-harness]] — Code as the operational substrate of the agent harness (Ning 2026 survey)
 - [[codeact]] — Executable Python as agent action space (Wang 2024)
-- [[pal]] / [[program-aided-reasoning]] — Code-for-reasoning origin (Gao 2023)
+- [[pal]] / [[pal]] — Code-for-reasoning origin (Gao 2023)
 - [[code-as-policies]] — Code-for-acting in embodied settings (Liang 2022)
 - [[swe-agent]] — Agent-Computer Interface for SE (Yang 2024)
 - [[agent-computer-interface]] — ACI abstraction: purpose-built tool surface for LLM agents
@@ -344,6 +355,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 **Umbrella + memory-primitive concepts:**
 - [[memory-management]] — Umbrella: write/store/retrieve/compact/consolidate/evict/curate lifecycle
+- [[long-term-memory]] — Persistent cross-session agent memory (vs short-term context)
+- [[memory-consolidation]] — Reprocessing/compacting memories during idle time
 - [[memory-stream]] — Append-only NL memory log (Generative Agents)
 - [[reflection-mechanism]] — Periodic synthesis of higher-level memories
 - [[procedural-memory]] — Memory of skills / how-to (vs declarative facts)

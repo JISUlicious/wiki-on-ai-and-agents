@@ -48,7 +48,7 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 
 - [[dong-huang]] — first author, HKU.
 - [[hku]] — University of Hong Kong, three of six authors.
-- [[sjtu]] — Shanghai Jiao Tong University (Qingwen Bu).
+- [[shanghai-jiao-tong-university]] — Shanghai Jiao Tong University (Qingwen Bu).
 - [[kings-college-london]] — Jie M. Zhang.
 - [[university-of-sussex]] — Michael Luck.
 - [[gpt-4]] — primary backbone for headline results.

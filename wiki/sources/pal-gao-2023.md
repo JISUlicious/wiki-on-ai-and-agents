@@ -19,7 +19,7 @@ first_author: Luyu Gao
 year: 2023
 introduces:
   - "[[pal]]"
-  - "[[program-aided-reasoning]]"
+  - "[[pal]]"
 tags:
   - 2023
 status: complete
@@ -57,7 +57,7 @@ PAL is the canonical origin of "code as the reasoning substrate" — the [[code-
 ## Related Concepts
 
 - [[pal]] — the method this paper introduces
-- [[program-aided-reasoning]] — the broader pattern (LM emits program → interpreter executes → result is the answer) of which PAL is the canonical instance
+- [[pal]] — the broader pattern (LM emits program → interpreter executes → result is the answer) of which PAL is the canonical instance
 - [[chain-of-thought-prompting]] — the baseline PAL improves upon and the failure mode it diagnoses
 - [[tool-use]] — PAL is one of the earliest "the LM uses a tool (Python) as part of its reasoning" instantiations
 - [[code-as-harness]] — modern framing of code as the substrate in which agents reason and act; PAL is its program-delegated-reasoning ancestor

@@ -46,7 +46,7 @@ Empirically the discovered harnesses are strong across three regimes: on online 
 - [[code-as-harness]] — harness treated as searchable, optimizable code
 - [[llm-agent]], [[reasoning]], [[code-generation]]
 - [[terminal-bench]], retrieval-augmented generation, context management
-- [[stanford]], [[mit]] (Omar Khattab), KRAFTON (Kangwook Lee)
+- [[stanford-university]], [[mit]] (Omar Khattab), KRAFTON (Kangwook Lee)
 - [[chelsea-finn]], [[omar-khattab]]
 
 ## References
