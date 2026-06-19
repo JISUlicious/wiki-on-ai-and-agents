@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 226 sources, 130 entities, 198 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 231 sources, 133 entities, 201 concepts, 2 comparisons, 7 queries.
 
 ## Entities
 
@@ -29,6 +29,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[claude]] — Anthropic's model family
 - [[claude-opus-4-8]] — Anthropic's mid-2026 flagship Opus; enables dynamic workflows in Claude Code
 - [[glm-5-2]] — Z.ai's coding-first 1M-context MoE (744B/40B-active) with IndexShare sparse attention (2026)
+- [[mai-thinking-1]] — Microsoft AI's 1T/35B-active MoE "hill-climbing machine"; trained only on human data (2026)
 - [[palm]] — Google's 540B model (Chowdhery 2022)
 - [[chinchilla]] — DeepMind's 70B compute-optimal model (Hoffmann 2022)
 - [[flan]] — 137B instruction-tuned LM and family (Wei 2021)
@@ -133,6 +134,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[fair]] — Facebook AI Research / Meta AI
 - [[nous-research]] — Decentralized AI research collective; Hermes models / agent
 - [[z-ai]] — Zhipu AI; maker of the GLM model family (GLM-5.2)
+- [[nvidia]] — GPU/accelerated-computing company; Nemotron, Cosmos, Megatron
+- [[ant-group]] — Chinese fintech/tech company; AI research (OPRD with Zhejiang U.)
 - [[center-for-ai-safety]] — CAIS, AI safety org (Hendrycks); RepE co-authorship
 - [[eleutherai]] — Open-source AI research collective (Pythia, etc.)
 - [[letta]] — Berkeley spinout productizing MemGPT; agent runtime with stateful memory
@@ -180,6 +183,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Core architectures and components
 - [[transformer-architecture]] — The architectural pattern: attention-only sequence model
 - [[decoder-only-transformer]] — The dominant variant for modern LLMs
+- [[mixture-of-experts]] — Sparse expert routing; decouples total capacity from per-token compute (active vs total params)
+- [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA)
 - [[encoder-decoder]] — Two-stack architecture for seq2seq tasks
 - [[attention-mechanism]] — Query/key/value weighted aggregation
 - [[self-attention]] — Intra-sequence attention; defining op of Transformers
@@ -386,6 +391,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[squad]] — Reading-comprehension QA
 - [[mmlu]] — Multi-subject multiple-choice
 - [[humaneval]] — Python function-completion code benchmark
+- [[terminal-bench]] — Terminal/shell agent benchmark; the de-facto yardstick for harness engineering
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
@@ -705,6 +711,16 @@ Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (May 31 – 
 - [[primer-in-post-training-reasoning-data-li-2026]] — first survey of 150+ post-training reasoning-data studies (Li et al. 2026)
 - [[harness-1-state-externalizing-search-agents-jiang-2026]] — Harness-1: a 20B RL search agent with environment-side working memory; 0.730 curated recall (Jiang et al. 2026)
 - [[scaling-behavior-single-llm-multi-agent-systems-li-2026]] — SIMAS: agent count gives diminishing returns then coordination-overhead degradation (Li et al. 2026)
+
+### Newsletter — alphaXiv weekly (2026-06-10 Trending Papers)
+
+Surfaced from the alphaXiv weekly digest (ingested 2026-06-19).
+
+- [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026]] — Cosmos 3: omnimodal world model (mixture-of-transformers) for Physical AI; SOTA T2I/I2V + robot policy (NVIDIA 2026)
+- [[oprd-on-policy-representation-distillation-yang-2026]] — OPRD: distill by aligning intermediate hidden states on student trajectories; +2.7pt, −54% peak memory (Yang et al., ZJU/Ant 2026)
+- [[agents-last-exam-sun-2026]] — ALE: long-horizon professional-task agent benchmark with verifiable outputs; frontier agents <1% full-pass (Sun et al., UC Berkeley 2026)
+- [[latent-reasoning-with-normalizing-flows-tu-2026]] — NF-CoT: autoregressive normalizing flows for continuous latent reasoning; +13% pass@1, 1.92× faster than diffusion (Tu et al. 2026)
+- [[mai-thinking-1-microsoft-2026]] — MAI-Thinking-1: Microsoft AI's 1T/35B-active MoE "hill-climbing machine," human-data-only (2026; no formal report)
 
 ### Newsletter — alphaXiv weekly (2026-06-17 Trending Papers)
 

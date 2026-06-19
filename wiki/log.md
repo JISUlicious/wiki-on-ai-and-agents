@@ -2,12 +2,26 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-18
+updated: 2026-06-19
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-19] ingest | alphaXiv weekly (Jun 10) — 5 papers + 3 concept promotions
+
+Ingested the previously-pending Jun-10 alphaXiv digest (thread `19eb357a10111d1d`). 4 clean arXiv papers + MAI-Thinking-1 (alphaXiv-native, no report). Then promoted three over-threshold dangling concepts (user request).
+
+**New source pages (5)**: [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026]] (NVIDIA Physical-AI world model), [[oprd-on-policy-representation-distillation-yang-2026]] (ZJU/Ant; hidden-state distillation), [[agents-last-exam-sun-2026]] (UC Berkeley; long-horizon agent benchmark — frontier agents <1% full-pass), [[latent-reasoning-with-normalizing-flows-tu-2026]] (NF-CoT), [[mai-thinking-1-microsoft-2026]] (Microsoft MoE).
+
+**New entities (3)**: [[mai-thinking-1]] (model), [[nvidia]] + [[ant-group]] (orgs, drafts).
+
+**Promoted concepts (3)**: [[mixture-of-experts]] (was dangling on 7 pages → full page), [[terminal-bench]] (4 pages; the harness-engineering yardstick), [[world-model]] (Cosmos 3 + Mirage + JEPA + agentic-world-modeling cluster). 
+
+> [!note] ALE numbers: the alphaXiv blurb (26.2% top config) did not match the v2 PDF — the page uses the verified figures (strongest config ~23.3% on ALE-CLI, <1% average full-pass). Cosmos 3 is a *mixture-of-transformers*, not MoE (kept as plain text). MAI-Thinking-1 specs are vendor-stated (no report; alphaXiv CDN-blocked).
+
+**Manifest:** both Jun-10 and Jun-17 alphaXiv digests now processed → advanced `last_processed_date` to 2026-06-18 and cleared the `pending_threads` entry. Totals: 231 sources, 133 entities, 201 concepts.
 
 ## [2026-06-18] ingest | alphaXiv weekly — 5 trending papers (2026-06-17 digest)
 

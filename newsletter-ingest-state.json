@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-06-08",
+  "last_processed_date": "2026-06-18",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -49,7 +49,8 @@
     "19cc8d6f716b63a8",
     "19ea29ad6762d384",
     "19e9d777bd7c862d",
-    "19ed79432ff6ba74"
+    "19ed79432ff6ba74",
+    "19eb357a10111d1d"
   ],
   "runs": [
     {
@@ -88,14 +89,26 @@
         "z-ai"
       ],
       "notes": "alphaXiv 2026-06-17 digest. 4 clean arXiv IDs + GLM-5.2 (alphaXiv-native 2026.glm-5-2, no report). last_processed_date intentionally left at 2026-06-08 so the unprocessed Jun-10 alphaXiv digest (19eb357a10111d1d) is not skipped."
+    },
+    {
+      "date": "2026-06-19",
+      "type": "weekly (manual, alphaXiv Jun-10 catch-up) + concept promotions",
+      "threads_read": 1,
+      "candidate_ids_verified": 5,
+      "on_domain_ingested": 5,
+      "new_source_pages": 5,
+      "new_entity_pages": [
+        "mai-thinking-1",
+        "nvidia",
+        "ant-group"
+      ],
+      "new_concept_pages": [
+        "mixture-of-experts",
+        "terminal-bench",
+        "world-model"
+      ],
+      "notes": "Ingested the pending Jun-10 alphaXiv digest. 4 arXiv + MAI-Thinking-1 (alphaXiv-native). Promoted 3 over-threshold dangling concepts. last_processed_date advanced to 2026-06-18 (both Jun-10 + Jun-17 done); pending_threads cleared."
     }
   ],
-  "pending_threads": [
-    {
-      "id": "19eb357a10111d1d",
-      "sender": "contact@alphaxiv.org",
-      "date": "2026-06-10",
-      "reason": "alphaXiv digest skipped — 2026-06-18 run was scoped to 'this week' (Jun 17) only; catch on next full sweep."
-    }
-  ]
+  "pending_threads": []
 }
