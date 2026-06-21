@@ -2,13 +2,14 @@
 title: Terminal-Bench
 type: concept
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-22
 sources:
+  - terminal-bench-benchmarking-agents-cli-merrill-2026.md
   - agentic-harness-engineering-lin-2026.md
   - self-harness-harnesses-that-improve-themselves-zhang-2026.md
   - meta-harness-lee-2026.md
   - natural-language-agent-harnesses-pan-2026.md
-status: draft
+status: complete
 importance: medium
 tags:
   - 2026
@@ -16,7 +17,7 @@ tags:
 
 # Terminal-Bench
 
-**Terminal-Bench** is an agentic benchmark that evaluates [[llm-agent|LLM agents]] on **terminal/shell tasks** — driving a real command line to accomplish software and systems goals, scored by verifiable outcomes. By 2026 it (and its v2, **Terminal-Bench-2.0**) had become the de-facto proving ground for **[[agentic-harness-engineering|harness engineering]]**: because the base model is held fixed and only the scaffold changes, Terminal-Bench deltas isolate the contribution of the harness.
+**Terminal-Bench** ([[terminal-bench-benchmarking-agents-cli-merrill-2026|Merrill et al. 2026]], Stanford / Laude Institute / Anthropic) is an agentic benchmark that evaluates [[llm-agent|LLM agents]] on **terminal/shell tasks** — driving a real command line to accomplish software and systems goals, scored by verifiable outcomes. **Terminal-Bench-2.0** has **89 hard CLI tasks** that no model fully resolves (frontier <65%, small models ~15%). Critically, the leaderboard is a **(harness × model) grid** — each entry pairs a scaffold with a model — with **Terminus 2** as the neutral reference scaffold and **Harbor** as the execution harness. This design makes it the de-facto proving ground for **[[agentic-harness-engineering|harness engineering]]**: with the base model held fixed and only the scaffold changing, Terminal-Bench deltas isolate the contribution of the harness (see [[harness-vs-model-attribution]]).
 
 ## Why it recurs in harness research
 
@@ -36,4 +37,6 @@ Because gains transfer (frozen evolved harnesses also help on [[swe-bench|SWE-be
 
 ## References
 
+- [[terminal-bench-benchmarking-agents-cli-merrill-2026]] — the benchmark's defining paper.
 - [[agentic-harness-engineering-lin-2026]] · [[self-harness-harnesses-that-improve-themselves-zhang-2026]] · [[meta-harness-lee-2026]] · [[natural-language-agent-harnesses-pan-2026]]
+- [[harness-vs-model-attribution]] — using Terminal-Bench's grid to separate scaffold from model.

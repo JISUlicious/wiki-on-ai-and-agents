@@ -2,12 +2,22 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-19
+updated: 2026-06-22
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-22] query+ingest | Harness vs. model performance attribution
+
+Question: "Are there studies comparing harness × model performance — agent A with model B, agent B with model A?" Answer: **yes** — agentic benchmark leaderboards (Terminal-Bench, SWE-bench) *are* that grid, and a paper argues the point directly. Researched externally, verified, ingested 2 sources, and filed a comparison page.
+
+**New comparison**: [[harness-vs-model-attribution]] — same-model/different-harness gaps (~2–6 pts good-vs-good, up to ~13–48 pts good-vs-bad), same-harness/different-model via provider-agnostic [[opencode]]/[[pi-mono]], reconciled with the research-harness factorials ([[agentic-harness-engineering]]). Notes the frontier caveat + the moving-target on absolute scores.
+
+**New sources (2)**: [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]] (Zhang, Tulane — disclosure thesis; 11/15 pt scaffold variance on SWE-bench Verified, up to ~48 on HAL) and [[terminal-bench-benchmarking-agents-cli-merrill-2026]] (Merrill, Stanford/Laude/Anthropic — the benchmark; 89 tasks, top at publication = Codex CLI + GPT-5.2 @ 63%).
+
+**Updated**: [[terminal-bench]] (promoted draft→complete with its canonical source + (harness×model) framing), [[agentic-harness-engineering]] (added an evaluation/attribution reference block). Totals: 233 sources, 3 comparisons.
 
 ## [2026-06-19] lint | Wiki health check
 

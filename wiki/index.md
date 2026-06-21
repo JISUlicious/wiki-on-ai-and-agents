@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 231 sources, 137 entities, 218 concepts, 2 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 233 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
 
 ## Entities
 
@@ -581,6 +581,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentcoder-huang-2023]] — Multi-agent code generation with iterative testing (Huang et al. 2023)
 - [[chatdev-qian-2023]] — Communicative agents for SW dev (Qian et al., ACL 2024)
 - [[agentic-harness-engineering-lin-2026]] — Observability-driven harness evolution (Lin et al., Fudan, 2026)
+- [[terminal-bench-benchmarking-agents-cli-merrill-2026]] — Terminal-Bench: 89 hard CLI tasks; (harness × model) leaderboard (Merrill et al., Stanford/Laude/Anthropic, 2026)
+- [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]] — agent scores are meaningless without the harness; quantifies scaffold-only variance (Zhang et al., Tulane, 2026)
 - [[claude-code-dynamic-workflows-2026]] — Introducing dynamic workflows in Claude Code (Anthropic blog, 2026-05-28)
 - [[claude-code-dynamic-workflows-harness-2026]] — "A harness for every task": dynamic-workflow patterns + failure modes (Shihipar & Bidasaria, Anthropic, 2026-06-02)
 - [[claude-effort-and-ultracode-docs-2026]] — Anthropic effort-parameter docs; defines effort levels + ultracode (2026)
@@ -749,6 +751,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
 - [[agent-skills-cross-vendor]] — Capability-packaging compared across Anthropic / OpenAI / Google / Microsoft / AWS (SKILL.md vs GPTs vs Gems vs Declarative Agents vs Action Groups)
+- [[harness-vs-model-attribution]] — Factorial (harness × model) studies: how much of an agent's score is the scaffold vs the model (Terminal-Bench/SWE-bench leaderboards + the "disclose the harness" thesis)
 
 ## Queries
 

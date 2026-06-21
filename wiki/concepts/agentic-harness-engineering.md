@@ -83,5 +83,9 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 - [[self-harness-harnesses-that-improve-themselves-zhang-2026]] — Self-Harness: a fixed LLM self-improves its harness (Weakness Mining → Proposal → Validation).
 - [[meta-harness-lee-2026]] (program search) · [[evolving-excellence-automated-optimization-brookes-2025]] (Artemis, evolutionary) · [[autoharness-lou-2026]] (self-synthesis) · [[adapting-the-interface-not-the-model-xu-2026]] (LIFE-HARNESS, runtime adaptation) · [[retrospective-harness-optimization-pan-2026]] (RHO, retrospective) · [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]] (EFC scaling) · [[harness-1-state-externalizing-search-agents-jiang-2026]] (state externalization) · [[harness-updating-is-not-harness-benefit-lin-2026]] (updating vs. benefit) · [[natural-language-agent-harnesses-pan-2026]] (NL harnesses)
 
+**Evaluation & attribution:**
+- [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]] — why agent scores are meaningless without the harness; quantifies scaffold-only variance.
+- [[terminal-bench-benchmarking-agents-cli-merrill-2026]] — the (harness × model) benchmark this field is measured on. See [[harness-vs-model-attribution]].
+
 **External (not yet ingested):**
 - `awesome-harness-engineering` — https://github.com/ai-boost/awesome-harness-engineering
