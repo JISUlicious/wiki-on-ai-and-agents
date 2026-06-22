@@ -33,3 +33,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[self-distilled-rlvr-yang-2026]] — Self Distilled RLVR
 - [[vector-policy-optimization-bahlous-boldi-2026]] — Vector Policy Optimization Training for Diversity Improves Test
 - [[policy-optimization-methods]] — Policy Optimization Methods in LLM Post Training
+- [[back-on-track-aligning-rewards-and-states-shao-2026]] — PAPO: stable RL for reasoning in diffusion LLMs

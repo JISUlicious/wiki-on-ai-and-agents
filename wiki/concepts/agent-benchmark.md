@@ -40,3 +40,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[autolab-long-horizon-auto-research-xu-2026]] — AutoLab Can Frontier Models Solve Long Horizon Auto
 - [[building-verifiers-for-computer-use-agents-rosset-2026]] — The Art of Building Verifiers for Computer Use
 - [[screening-is-enough-nakanishi-2026]] — Screening Is Enough
+- [[stanford-edgar-filings-dataset-bettencourt-2026]] — SEFD-v1 SEC-filings dataset + EDGAR-Forecast/OCR benchmarks

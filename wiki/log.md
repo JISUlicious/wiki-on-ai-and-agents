@@ -9,6 +9,16 @@ updated: 2026-06-22
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-06-22] ingest | NLP newsletter weekly — 10 papers (Top AI Papers, Jun 14–21)
+
+Ingested the latest NLP-newsletter "Top AI Papers" digest (thread `19eeabb8e5463119`). Resolved 10 Substack-masked arXiv links, verified, deduped (all new), ingested via 2 paced subagents, and backlinked each into a theme hub.
+
+**New source pages (10)**: [[spatialclaw-cho-2026]] (NVIDIA; code-as-action spatial reasoning), [[compositional-skill-routing-gao-2026]] (SkillWeaver / CompSkillBench), [[preact-computer-using-agents-li-2026]] (compile CUA runs → replayable state machines), [[can-llm-agents-infer-world-models-menaged-2026]] (world-model = DFA learning), [[from-trainee-to-trainer-chen-2026]] (LLM-as-Environment-Engineer), [[openclaw-skill-collective-skill-tree-search-lin-2026]] (Collective Skill Tree Search), [[back-on-track-aligning-rewards-and-states-shao-2026]] (PAPO; RL for diffusion LLMs), [[atommem-memory-system-via-atomic-facts-yao-2026]] (atomic-fact memory, SOTA LoCoMo), [[beyond-domains-reusing-web-skills-he-2026]] (SkillMigrator), [[stanford-edgar-filings-dataset-bettencourt-2026]] (SEFD-v1 dataset).
+
+> [!note] Blurb corrections caught against PDFs: "Back on Track"'s 42.2% is on Countdown (planning), not GSM8K/MATH500 (which are +4.5%/+4.8%); OpenClaw-Skill uses QwenClawBench/PinchBench, not GAIA. Newsletter gave only project nicknames — first-author surnames taken from the PDFs.
+
+**Manifest**: advanced `last_processed_date` → 2026-06-21; recorded still-unprocessed pending threads — the **Jun 7–14 "Top AI Papers"** digest (`19ec6aa7a8ea6084`) plus three "AI Agents Weekly" product-news threads (`19ee5b63d6938554`, `19ec1b36e8d769db`, `19ecd09cbe2eed3c`). Sources 233 → 243.
+
 ## [2026-06-22] query+ingest | Harness vs. model performance attribution
 
 Question: "Are there studies comparing harness × model performance — agent A with model B, agent B with model A?" Answer: **yes** — agentic benchmark leaderboards (Terminal-Bench, SWE-bench) *are* that grid, and a paper argues the point directly. Researched externally, verified, ingested 2 sources, and filed a comparison page.

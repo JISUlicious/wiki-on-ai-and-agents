@@ -155,3 +155,6 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[skillnet-liang-2026]] — SkillNet Create, Evaluate, and Connect AI Skills
 - [[skillos-learning-skill-curation-self-evolving-agents-ouyang-2026]] — SkillOS Learning Skill Curation for Self Evolving Agents
 - [[webxskill-skill-learning-web-agents-wang-2026]] — WebXSkill Skill Learning for Autonomous Web Agents
+- [[compositional-skill-routing-gao-2026]] — SkillWeaver: compositional multi-skill routing (decompose/retrieve/compose)
+- [[openclaw-skill-collective-skill-tree-search-lin-2026]] — Collective Skill Tree Search — build + use a diverse skill tree
+- [[beyond-domains-reusing-web-skills-he-2026]] — SkillMigrator: cross-site web skills via layout-keyed patterns

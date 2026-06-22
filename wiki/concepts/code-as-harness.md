@@ -101,3 +101,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[opendev-terminal-coding-agent-bui-2026]] — Building Effective AI Coding Agents for the Terminal
 - [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent Planning with AND/OR Trees for Long Horizon
 - [[fundamental-components-of-harness]] — Fundamental Components of an LLM Agent Harness
+- [[spatialclaw-cho-2026]] — SpatialClaw: code-as-action spatial reasoning over a persistent kernel (NVIDIA)

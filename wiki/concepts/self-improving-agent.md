@@ -48,3 +48,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[openclaw-rl-train-agent-by-talking-wang-2026]] — OpenClaw RL Train Any Agent Simply by Talking
 - [[reward-free-self-evolution-via-world-knowledge-exploration-zhang-2026]] — Reward Free Self Evolution via World Knowledge Exploration
 - [[self-revising-discovery-systems-wang-2026]] — Self Revising Discovery Systems for Science A Categorical
+- [[from-trainee-to-trainer-chen-2026]] — LLM-as-Environment-Engineer: policy designs its own curriculum

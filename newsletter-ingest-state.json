@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-06-18",
+  "last_processed_date": "2026-06-21",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -50,7 +50,8 @@
     "19ea29ad6762d384",
     "19e9d777bd7c862d",
     "19ed79432ff6ba74",
-    "19eb357a10111d1d"
+    "19eb357a10111d1d",
+    "19eeabb8e5463119"
   ],
   "runs": [
     {
@@ -108,7 +109,41 @@
         "world-model"
       ],
       "notes": "Ingested the pending Jun-10 alphaXiv digest. 4 arXiv + MAI-Thinking-1 (alphaXiv-native). Promoted 3 over-threshold dangling concepts. last_processed_date advanced to 2026-06-18 (both Jun-10 + Jun-17 done); pending_threads cleared."
+    },
+    {
+      "date": "2026-06-22",
+      "type": "weekly (manual, NLP-only, latest-scoped)",
+      "threads_read": 1,
+      "candidate_ids_verified": 10,
+      "on_domain_ingested": 10,
+      "new_source_pages": 10,
+      "notes": "NLP 'Top AI Papers' Jun 14-21 digest. All 10 Substack-masked IDs resolved + verified, all new. Advanced cursor to 2026-06-21; 4 older NLP threads (1 paper digest + 3 product/article) left pending."
     }
   ],
-  "pending_threads": []
+  "pending_threads": [
+    {
+      "id": "19ec6aa7a8ea6084",
+      "sender": "nlpnews@substack.com",
+      "date": "2026-06-14",
+      "reason": "NLP 'Top AI Papers' (Jun 7-14) — paper-bearing; not yet ingested (this run scoped to 'latest' = Jun 21)."
+    },
+    {
+      "id": "19ee5b63d6938554",
+      "sender": "nlpnews@substack.com",
+      "date": "2026-06-20",
+      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts, Qwen-Robot…) — product news; check for arXiv papers on a full sweep."
+    },
+    {
+      "id": "19ec1b36e8d769db",
+      "sender": "nlpnews@substack.com",
+      "date": "2026-06-13",
+      "reason": "AI Agents Weekly (Claude Fable 5, Kimi K2.7-Code…) — product news."
+    },
+    {
+      "id": "19ecd09cbe2eed3c",
+      "sender": "nlpnews@substack.com",
+      "date": "2026-06-15",
+      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article — may cite papers; review on a full sweep."
+    }
+  ]
 }

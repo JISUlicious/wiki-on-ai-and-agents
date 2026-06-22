@@ -38,3 +38,9 @@ World models are the bridge between language agents and **embodied / physical AI
 ## References
 
 - [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026]] · [[latent-spatial-memory-for-video-world-models-wang-2026]] · [[learn-from-your-own-latents-korchinski-2026]] · [[agentic-world-modeling-foundations-capabilities-laws-chu-2026]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[can-llm-agents-infer-world-models-menaged-2026]] — world-model inference as agentic DFA learning

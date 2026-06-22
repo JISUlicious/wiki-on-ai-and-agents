@@ -35,3 +35,9 @@ Narrower subtype: [[gui-agent]] (screen-only, no physical action). Broader unifi
 - [[ui-tars-2-wang-2025]] — native GUI agent with stabilized multi-turn RL; OSWorld 47.5, Online-Mind2Web 88.2.
 - [[magma-yang-2025]] — unified VLA covering GUI and robotics from one backbone; CVPR 2025.
 - Related: Anthropic Claude Computer Use, OpenAI CUA, [[ui-tars-1]] (arXiv:2501.12326).
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[preact-computer-using-agents-li-2026]] — PreAct: compile CUA runs into replayable state machines

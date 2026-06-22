@@ -131,3 +131,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[parammem-parametric-reflective-memory-yao-2026]] — ParamMem Augmenting Language Agents with Parametric Reflective Memory
 - [[stateless-decision-memory-for-enterprise-ai-agents-srinivasan-2026]] — Stateless Decision Memory for Enterprise AI Agents
 - [[memory-systems-anatomy-2026]] — Memory Systems Anatomy (2026)
+- [[atommem-memory-system-via-atomic-facts-yao-2026]] — AtomMem: atomic-fact long-term memory; SOTA on LoCoMo

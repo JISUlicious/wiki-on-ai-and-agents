@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 233 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 243 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
 
 ## Entities
 
@@ -711,6 +711,21 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Safety, adversarial & commentary**
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
+
+### Newsletter — NLP weekly (2026-06-21 "Top AI Papers")
+
+Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (June 14–21 2026; ingested 2026-06-22).
+
+- [[spatialclaw-cho-2026]] — SpatialClaw: code-as-action spatial reasoning; VLM agent writes Python into a persistent kernel; 59.9% across 20 benchmarks (Cho et al., NVIDIA 2026)
+- [[compositional-skill-routing-gao-2026]] — SkillWeaver: select+sequence multiple skills (decompose→retrieve→compose); CompSkillBench over 2,209 MCP skills (Gao, Alibaba 2026)
+- [[preact-computer-using-agents-li-2026]] — PreAct: compile a CUA's first run into a state machine, replay 8.5–13× faster with no per-step LLM calls (Li, Pine AI 2026)
+- [[can-llm-agents-infer-world-models-menaged-2026]] — world-model inference as agentic DFA learning; agents lag classic algorithms (Menaged et al., HUJI 2026)
+- [[from-trainee-to-trainer-chen-2026]] — LLM-as-Environment-Engineer: the RL policy designs its own next-stage training environment (Chen et al., HKUST-GZ 2026)
+- [[openclaw-skill-collective-skill-tree-search-lin-2026]] — Collective Skill Tree Search: build a diverse skill *tree* + train agents to use it (Lin et al. 2026)
+- [[back-on-track-aligning-rewards-and-states-shao-2026]] — PAPO: stable RL for reasoning in *diffusion* LLMs (step-aware process rewards + entropy-guided re-enactment) (Shao et al. 2026)
+- [[atommem-memory-system-via-atomic-facts-yao-2026]] — AtomMem: atomic-fact long-term memory + associative graph; SOTA on LoCoMo (Yao et al. 2026)
+- [[beyond-domains-reusing-web-skills-he-2026]] — SkillMigrator: reuse web skills across sites via layout-keyed interaction patterns; −8–10% LLM actions (He et al. 2026)
+- [[stanford-edgar-filings-dataset-bettencourt-2026]] — SEFD-v1: 152B-token layout-faithful SEC-filings pretraining dataset + EDGAR-Forecast/OCR benchmarks (Bettencourt et al. 2026)
 
 ### Newsletter — NLP weekly (2026-06-07 "Top AI Papers")
 
