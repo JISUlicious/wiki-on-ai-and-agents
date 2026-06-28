@@ -29,3 +29,9 @@ LLMs with very large context windows — 200K, 1M, or 10M+ tokens — that can f
 
 - [[em-llm-fountas-2024]]
 - [[titans-behrouz-2025]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[flashmemory-lookahead-sparse-attention-wang-2026]] — FlashMemory/LSA: lookahead sparse attention for ultra-long context

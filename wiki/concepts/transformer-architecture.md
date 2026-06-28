@@ -41,3 +41,9 @@ Subsequent models differ on which parts of the architecture they keep:
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[variable-width-transformers-wu-2026]] — Variable-Width Transformers: x-shaped per-layer width

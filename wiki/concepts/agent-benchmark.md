@@ -41,3 +41,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[building-verifiers-for-computer-use-agents-rosset-2026]] — The Art of Building Verifiers for Computer Use
 - [[screening-is-enough-nakanishi-2026]] — Screening Is Enough
 - [[stanford-edgar-filings-dataset-bettencourt-2026]] — SEFD-v1 SEC-filings dataset + EDGAR-Forecast/OCR benchmarks
+- [[reliability-without-validity-llm-as-a-judge-norman-2026]] — largest LLM-as-a-Judge audit; exact-match overstates quality
+- [[naturebench-coding-agents-nature-family-papers-wang-2026]] — NatureBench: Nature-family discovery tasks for coding agents

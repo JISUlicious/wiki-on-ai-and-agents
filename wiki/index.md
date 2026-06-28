@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 243 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 263 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
 
 ## Entities
 
@@ -712,6 +712,21 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
 
+### Newsletter — NLP weekly (2026-06-28 "Top AI Papers")
+
+Surfaced from the NLP-newsletter "Top AI Papers" digest (June 21–28 2026; ingested 2026-06-29).
+
+- [[sakana-fugu-sakana-ai-2026]] — Sakana Fugu: orchestrator LMs that read a query and dynamically devise the agentic scaffold (Sakana AI 2026)
+- [[are-we-ready-for-an-agent-native-memory-system-zhou-2026]] — agent memory as a full data system (storage/retrieval/update/consolidation/governance) vs black-box F1/BLEU (Zhou et al., SJTU 2026)
+- [[autodata-agentic-data-scientist-kulikov-2026]] — Autodata: an AI agent as a data scientist, meta-optimized to build ever-stronger training data (Kulikov et al., FAIR 2026)
+- [[critique-of-agent-model-xing-2026]] — position paper: what 'agent'/agency actually means, across five dimensions (Xing et al., MBZUAI/CMU 2026)
+- [[agent-as-a-router-zhou-2026]] — agentic model routing for coding as a dynamic (not static) problem; info-deficit bottleneck (Zhou et al., NUS/DAMO 2026)
+- [[technical-taxonomy-llm-agent-communication-protocols-sander-2026]] — five-dimensional taxonomy of LLM-agent communication protocols (Sander et al., TUM 2026)
+- [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]] — self-play driving + a pinch of human data as regularizer (~2500× less human data) (Cornelisse et al., NYU 2026)
+- [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]] — Skill-MAS: orchestration as an evolvable Meta-Skill (third path beyond frozen/fine-tuned) (Lin et al., Ant/HKUST-GZ 2026)
+- [[reliability-without-validity-llm-as-a-judge-norman-2026]] — largest LLM-as-a-Judge audit (21 judges, ~541k judgments); exact-match overstates quality by 33–41pp kappa (Norman et al., UC Berkeley 2026)
+- [[naturebench-coding-agents-nature-family-papers-wang-2026]] — NatureBench: 90 Nature-family discovery tasks in NatureGym; best agent beats SOTA on only 17.8% (Wang et al. 2026)
+
 ### Newsletter — NLP weekly (2026-06-21 "Top AI Papers")
 
 Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (June 14–21 2026; ingested 2026-06-22).
@@ -726,6 +741,17 @@ Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (June 14–2
 - [[atommem-memory-system-via-atomic-facts-yao-2026]] — AtomMem: atomic-fact long-term memory + associative graph; SOTA on LoCoMo (Yao et al. 2026)
 - [[beyond-domains-reusing-web-skills-he-2026]] — SkillMigrator: reuse web skills across sites via layout-keyed interaction patterns; −8–10% LLM actions (He et al. 2026)
 - [[stanford-edgar-filings-dataset-bettencourt-2026]] — SEFD-v1: 152B-token layout-faithful SEC-filings pretraining dataset + EDGAR-Forecast/OCR benchmarks (Bettencourt et al. 2026)
+
+### Newsletter — NLP weekly (2026-06-14 "Top AI Papers")
+
+Surfaced from the NLP-newsletter "Top AI Papers" digest (June 7–14 2026; ingested 2026-06-29). (Other papers in that digest — MiniMax Sparse Attention, Self-Harness, Agents' Last Exam, Latent Spatial Memory — were already ingested from alphaXiv.)
+
+- [[how-ai-agents-reshape-knowledge-work-yang-2026]] — economics of agents vs assistants from Perplexity production data (Yang et al., Harvard/Perplexity 2026)
+- [[agentopia-long-term-life-simulation-wang-2026]] — 100 LLM agents living 10 simulated years; simulation as training signal (Wang et al., Fudan 2026)
+- [[on-the-geometry-of-on-policy-distillation-shen-2026]] — OPD characterized at parameter-geometry level; a distinct update, not SFT↔RLVR midpoint (Shen et al., HKUST 2026)
+- [[flashmemory-lookahead-sparse-attention-wang-2026]] — FlashMemory-DeepSeek-V4: Lookahead Sparse Attention for ultra-long context (Wang, Tencent 2026; arXiv report suspended)
+- [[consensus-is-strategically-insufficient-wawer-2026]] — multi-agent "consensus illusion": output agreement hides reasoning-trace disagreement (Wawer et al., WUT 2026)
+- [[beyond-scalar-rewards-z-reward-jin-2026]] — Z-Reward: text-to-image reward modeling via score distributions, not scalars (Jin et al., Alibaba/Nankai 2026)
 
 ### Newsletter — NLP weekly (2026-06-07 "Top AI Papers")
 
@@ -751,6 +777,15 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-19).
 - [[agents-last-exam-sun-2026]] — ALE: long-horizon professional-task agent benchmark with verifiable outputs; frontier agents <1% full-pass (Sun et al., UC Berkeley 2026)
 - [[latent-reasoning-with-normalizing-flows-tu-2026]] — NF-CoT: autoregressive normalizing flows for continuous latent reasoning; +13% pass@1, 1.92× faster than diffusion (Tu et al. 2026)
 - [[mai-thinking-1-microsoft-2026]] — MAI-Thinking-1: Microsoft AI's 1T/35B-active MoE "hill-climbing machine," human-data-only (2026; no formal report)
+
+### Newsletter — alphaXiv weekly (2026-06-24 Trending Papers)
+
+Surfaced from the alphaXiv weekly digest (ingested 2026-06-29). (GLM-5.2, also listed, was already ingested.)
+
+- [[looped-world-models-facemind-2026]] — LoopWM: first looped-transformer world model; iterative latent depth beats models up to 100× larger (FaceMind 2026)
+- [[s-agent-spatial-tool-use-dai-2026]] — S-Agent: VLM planner + hierarchical spatial tools + dual memory for evolving 3D-scene reasoning (Dai et al. 2026)
+- [[variable-width-transformers-wu-2026]] — x-shaped (wide-ends/narrow-middle) variable-width transformer; ~22% FLOP reduction, ~15% less KV-cache (Wu et al., MIT 2026)
+- [[vibethinker-3b-verifiable-reasoning-xu-2026]] — VibeThinker-3B: a 3B model matching far larger ones on verifiable reasoning; 94.3→97.1 AIME26 (Xu et al., Sina Weibo 2026)
 
 ### Newsletter — alphaXiv weekly (2026-06-17 Trending Papers)
 

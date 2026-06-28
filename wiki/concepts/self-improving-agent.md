@@ -49,3 +49,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[reward-free-self-evolution-via-world-knowledge-exploration-zhang-2026]] — Reward Free Self Evolution via World Knowledge Exploration
 - [[self-revising-discovery-systems-wang-2026]] — Self Revising Discovery Systems for Science A Categorical
 - [[from-trainee-to-trainer-chen-2026]] — LLM-as-Environment-Engineer: policy designs its own curriculum
+- [[autodata-agentic-data-scientist-kulikov-2026]] — Autodata: meta-optimized agent-as-data-scientist
+- [[agentopia-long-term-life-simulation-wang-2026]] — Agentopia: 100 agents over 10 simulated years; sim as training signal

@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-06-21",
+  "last_processed_date": "2026-06-28",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -51,7 +51,10 @@
     "19e9d777bd7c862d",
     "19ed79432ff6ba74",
     "19eb357a10111d1d",
-    "19eeabb8e5463119"
+    "19eeabb8e5463119",
+    "19efb4eb49a65217",
+    "19f0ee8a771f7154",
+    "19ec6aa7a8ea6084"
   ],
   "runs": [
     {
@@ -118,32 +121,42 @@
       "on_domain_ingested": 10,
       "new_source_pages": 10,
       "notes": "NLP 'Top AI Papers' Jun 14-21 digest. All 10 Substack-masked IDs resolved + verified, all new. Advanced cursor to 2026-06-21; 4 older NLP threads (1 paper digest + 3 product/article) left pending."
+    },
+    {
+      "date": "2026-06-29",
+      "type": "catch-up sweep (manual, alphaXiv + NLP)",
+      "threads_read": 3,
+      "candidate_ids_verified": 24,
+      "on_domain_ingested": 20,
+      "new_source_pages": 20,
+      "dups_skipped": [
+        "2606.13392",
+        "2606.09498",
+        "2606.05405",
+        "2606.09828",
+        "2026.glm-5-2"
+      ],
+      "notes": "Swept 3 unprocessed paper digests (alphaXiv Jun-24, NLP Jun21-28, NLP Jun7-14). 4 dups + GLM-5.2 skipped. Pushed prior 8 commits before this run. Cursor -> 2026-06-28; 3 product-news threads pending."
     }
   ],
   "pending_threads": [
     {
-      "id": "19ec6aa7a8ea6084",
+      "id": "19f099ef34f7de9d",
       "sender": "nlpnews@substack.com",
-      "date": "2026-06-14",
-      "reason": "NLP 'Top AI Papers' (Jun 7-14) — paper-bearing; not yet ingested (this run scoped to 'latest' = Jun 21)."
+      "date": "2026-06-27",
+      "reason": "AI Agents Weekly (GPT-5.6, Ornith-1.0, Codex Inside OpenAI…) — product news."
     },
     {
       "id": "19ee5b63d6938554",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-20",
-      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts, Qwen-Robot…) — product news; check for arXiv papers on a full sweep."
-    },
-    {
-      "id": "19ec1b36e8d769db",
-      "sender": "nlpnews@substack.com",
-      "date": "2026-06-13",
-      "reason": "AI Agents Weekly (Claude Fable 5, Kimi K2.7-Code…) — product news."
+      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts…) — product news."
     },
     {
       "id": "19ecd09cbe2eed3c",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-15",
-      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article — may cite papers; review on a full sweep."
+      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article — may cite papers."
     }
   ]
 }

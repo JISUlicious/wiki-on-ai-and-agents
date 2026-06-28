@@ -2,12 +2,24 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-22
+updated: 2026-06-29
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-29] ingest | Newsletter catch-up — 20 papers across 3 digests
+
+Pushed the prior 8 commits to GitHub, then swept all unprocessed paper-bearing digests: **alphaXiv Jun-24** (`19efb4eb49a65217`), **NLP Top Papers Jun 21–28** (`19f0ee8a771f7154`), **NLP Top Papers Jun 7–14** (`19ec6aa7a8ea6084`). Resolved/verified 24 candidate IDs; **4 dups** (MiniMax Sparse Attention, Self-Harness, Agents' Last Exam, Latent Spatial Memory — already ingested from alphaXiv) + GLM-5.2 already a page; **20 new** ingested via 4 paced subagents and backlinked into hubs.
+
+**alphaXiv Jun-24 (4)**: [[looped-world-models-facemind-2026]], [[s-agent-spatial-tool-use-dai-2026]], [[variable-width-transformers-wu-2026]], [[vibethinker-3b-verifiable-reasoning-xu-2026]].
+**NLP Jun 21–28 (10)**: [[sakana-fugu-sakana-ai-2026]], [[are-we-ready-for-an-agent-native-memory-system-zhou-2026]], [[autodata-agentic-data-scientist-kulikov-2026]], [[critique-of-agent-model-xing-2026]], [[agent-as-a-router-zhou-2026]], [[technical-taxonomy-llm-agent-communication-protocols-sander-2026]], [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]], [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]], [[reliability-without-validity-llm-as-a-judge-norman-2026]], [[naturebench-coding-agents-nature-family-papers-wang-2026]].
+**NLP Jun 7–14 (6 new)**: [[how-ai-agents-reshape-knowledge-work-yang-2026]], [[agentopia-long-term-life-simulation-wang-2026]], [[on-the-geometry-of-on-policy-distillation-shen-2026]], [[flashmemory-lookahead-sparse-attention-wang-2026]], [[consensus-is-strategically-insufficient-wawer-2026]], [[beyond-scalar-rewards-z-reward-jin-2026]].
+
+> [!note] PDF corrections vs. blurbs: Variable-Width is x-shaped (~22% FLOP / ~15% KV-cache reduction, not the blurb's 4.6%/11%); VibeThinker's 99.2 is BrUMO25 not LiveCodeBench; "Lookahead Sparse Attention" real title is FlashMemory-DeepSeek-V4 (arXiv report **suspended**); "The Consistency Illusion" real title is "Consensus is Strategically Insufficient"; Z-Reward is text-to-image, not text-LLM.
+
+**Manifest**: advanced `last_processed_date` → 2026-06-28; cleared the Jun-14 pending paper digest; recorded the 3 "AI Agents Weekly"/deep-dive product-news threads (`19f099ef…`, `19ee5b63…`, `19ecd09c…`) as pending. Sources 243 → 263.
 
 ## [2026-06-22] ingest | NLP newsletter weekly — 10 papers (Top AI Papers, Jun 14–21)
 

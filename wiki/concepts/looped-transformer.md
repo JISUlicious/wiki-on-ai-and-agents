@@ -54,3 +54,9 @@ The 2018 [[universal-transformer]] is the direct ancestor — same idea, [[adapt
 - [[loop-think-generalize-2026]] — implicit-reasoning RDT case study.
 - [[parcae-scaling-laws-looped-2026]] — the stable pretraining recipe + scaling laws.
 - [[looped-transformers-length-generalization-fan-2024]] — looping for length generalization.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[looped-world-models-facemind-2026]] — LoopWM: looped transformer applied to world modeling

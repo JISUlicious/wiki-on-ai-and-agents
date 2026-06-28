@@ -18,3 +18,9 @@ Knowledge distillation transfers capability from a large teacher model into a sm
 ## References
 
 - [[deepseek-r1-2025]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[on-the-geometry-of-on-policy-distillation-shen-2026]] — geometry of on-policy distillation: a distinct weight update

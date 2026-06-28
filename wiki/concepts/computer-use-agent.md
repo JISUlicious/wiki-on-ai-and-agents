@@ -41,3 +41,4 @@ Narrower subtype: [[gui-agent]] (screen-only, no physical action). Broader unifi
 Surfaced via newsletter ingests; see [[index]].
 
 - [[preact-computer-using-agents-li-2026]] — PreAct: compile CUA runs into replayable state machines
+- [[s-agent-spatial-tool-use-dai-2026]] — S-Agent: VLM spatial tool-use over evolving 3D scenes

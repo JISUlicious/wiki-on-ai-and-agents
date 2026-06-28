@@ -44,3 +44,4 @@ World models are the bridge between language agents and **embodied / physical AI
 Surfaced via newsletter ingests; see [[index]].
 
 - [[can-llm-agents-infer-world-models-menaged-2026]] — world-model inference as agentic DFA learning
+- [[looped-world-models-facemind-2026]] — LoopWM: first looped-transformer world model

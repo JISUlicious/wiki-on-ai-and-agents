@@ -74,3 +74,9 @@ See [[agentic-ai-and-the-next-intelligence-explosion]] for a recent essay-length
 ## References
 
 - [[react-yao-2022]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[how-ai-agents-reshape-knowledge-work-yang-2026]] — economics of agents vs assistants (Perplexity data)

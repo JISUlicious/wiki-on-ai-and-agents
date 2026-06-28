@@ -132,3 +132,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[stateless-decision-memory-for-enterprise-ai-agents-srinivasan-2026]] — Stateless Decision Memory for Enterprise AI Agents
 - [[memory-systems-anatomy-2026]] — Memory Systems Anatomy (2026)
 - [[atommem-memory-system-via-atomic-facts-yao-2026]] — AtomMem: atomic-fact long-term memory; SOTA on LoCoMo
+- [[are-we-ready-for-an-agent-native-memory-system-zhou-2026]] — agent-native memory as a full data system

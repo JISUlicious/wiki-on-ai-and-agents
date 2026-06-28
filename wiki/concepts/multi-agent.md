@@ -63,3 +63,9 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[multi-user-llm-agents-yang-2026]] — Multi User Large Language Model Agents
 - [[survey-workflow-optimization-llm-agents-yue-2026]] — From Static Templates to Dynamic Runtime Graphs A
+- [[sakana-fugu-sakana-ai-2026]] — Sakana Fugu: orchestrator LMs that devise the agentic scaffold
+- [[critique-of-agent-model-xing-2026]] — Critique of the Agent Model: what 'agent'/agency means
+- [[agent-as-a-router-zhou-2026]] — Agent-as-a-Router: agentic model routing for coding
+- [[technical-taxonomy-llm-agent-communication-protocols-sander-2026]] — taxonomy of LLM-agent communication protocols
+- [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]] — Skill-MAS: orchestration as an evolvable Meta-Skill
+- [[consensus-is-strategically-insufficient-wawer-2026]] — consensus illusion: output agreement hides reasoning disagreement

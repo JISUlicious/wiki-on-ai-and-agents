@@ -34,3 +34,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[vector-policy-optimization-bahlous-boldi-2026]] — Vector Policy Optimization Training for Diversity Improves Test
 - [[policy-optimization-methods]] — Policy Optimization Methods in LLM Post Training
 - [[back-on-track-aligning-rewards-and-states-shao-2026]] — PAPO: stable RL for reasoning in diffusion LLMs
+- [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]] — self-play driving + a pinch of human data as regularizer
+- [[beyond-scalar-rewards-z-reward-jin-2026]] — Z-Reward: reward modeling via score distributions
