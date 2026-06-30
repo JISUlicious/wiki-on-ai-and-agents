@@ -46,6 +46,8 @@ Users increasingly have access to many LLMs from different providers, each stron
 
 ## Concepts & entities
 
+- [[learned-orchestration]] — Agent-as-a-Router is a routing instance of this pattern (cf. [[sakana-fugu-sakana-ai-2026|Fugu]]).
+
 - [[multi-agent]] — orchestrates a pool of frontier LLMs via learned, feedback-driven model routing for coding tasks
 
 ## References

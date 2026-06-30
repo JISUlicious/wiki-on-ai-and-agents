@@ -41,10 +41,15 @@ Fugu is a family of **orchestrator models** from [[sakana-ai|Sakana AI]] — lan
 
 ## Concepts & entities
 
+- [[learned-orchestration]] — Fugu is the canonical instance of this concept.
 - [[sakana-ai]] — author/organization; releases Fugu and Fugu-Ultra
 - [[multi-agent]] — Fugu orchestrates a team of frontier worker agents into a collectively intelligent system
+- [[agent-as-a-router-zhou-2026]] — sibling routing work (also rejects static routing)
+- [[grpo]] — Fugu-Ultra's RL objective; [[agentic-harness-engineering]] — orchestration as a harness component
 
 ## References
 
+- [[learned-orchestration]] — the concept Fugu instantiates.
+- [[sakana-fugu-review]] — comprehensive review of this report.
 _Original source: `sources/sakana-fugu-sakana-ai-2026.md`_
 _arXiv: [arXiv:2606.21228](https://arxiv.org/abs/2606.21228)_

@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 263 sources, 137 entities, 218 concepts, 3 comparisons, 7 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 263 sources, 137 entities, 219 concepts, 3 comparisons, 8 queries.
 
 ## Entities
 
@@ -378,6 +378,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[offline-consolidation]] — Memory processing in idle time between queries (Sleep-time Compute)
 - [[multi-agent-memory]] — Memory subsystems specialized per memory type (MIRIX)
 - [[multi-agent]] — Coordinating multiple LLM agents (debate, roles, recursion); 2026 equal-compute skepticism on whether MAS beats a single agent
+- [[learned-orchestration]] — A trained model coordinates a team of heterogeneous frontier workers via query-adaptive scaffolds (Sakana Fugu; orchestration as a scaling axis)
 - [[memory-construction]] — Building structured memory from a stream (Mem-α)
 - [[rl-memory-policy]] — RL-learned memory operations (Memory-R1)
 
@@ -812,3 +813,4 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[policy-optimization-methods]] — Cross-cutting synthesis of PPO / GRPO / DPO / RLHF / RLAIF / agentic-RL — what they are, what entities and concepts belong, how they differ
 - [[fundamental-components-of-harness]] — Three coordinated views of harness anatomy: 6 operational artifacts (Lin 2026), 5 mechanism categories (Ning 2026), and L2 architectural cut (3-layer model). Unified 8-component universal inventory.
 - [[memory-systems-anatomy-2026]] — Three-part synthesis on modern agent memory: composition (6 layers + 7-op lifecycle + system inventory), long-term scoping (user-specific + domain-specific management), and the 10+ kinds beyond user/domain (cognitive role, function, substrate, generation, temporal binding).
+- [[sakana-fugu-review]] — Comprehensive review of Sakana Fugu: the two-variant (Trinity/Conductor) learned-orchestrator, its training paradigm, domain-adaptivity results, and where it sits vs MoE / dynamic-workflows / MAS.

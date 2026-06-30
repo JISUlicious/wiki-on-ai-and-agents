@@ -2,12 +2,22 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-29
+updated: 2026-06-30
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-06-30] query | Sakana Fugu comprehensive review + concept promotion
+
+Deep review of [[sakana-fugu-sakana-ai-2026|Sakana Fugu]], read against the raw technical report (architecture, training, results). Filed as a query and promoted the underlying pattern to a concept.
+
+**New query**: [[sakana-fugu-review]] — the two architecturally-distinct variants (Fugu = Trinity-lineage selection head over hidden states, latency-aware; Fugu-Ultra = Conductor-lineage GRPO workflow generator, quality-first), the SFT→sep-CMA-ES→RL training paradigm, domain-adaptivity evidence (routing recovers known specializations), and positioning vs MoE / dynamic-workflows / MAS-skepticism.
+
+**New concept**: [[learned-orchestration]] — a trained model coordinating a team of heterogeneous frontier workers via query-adaptive scaffolds; "orchestration as a scaling axis." Synthesizes [[sakana-fugu-sakana-ai-2026]] + [[agent-as-a-router-zhou-2026]]; contrasts with [[mixture-of-experts]] (within-model routing) and [[dynamic-workflows]] (within-vendor, self-authored).
+
+**Updated**: [[sakana-ai]] (draft→complete, added Fugu + the evolutionary-house-style framing), [[multi-agent]] (added learned-orchestration as a coordination structure), the Fugu source page + [[agent-as-a-router-zhou-2026]] (cross-links). Concepts 218→219, queries 7→8.
 
 ## [2026-06-29] ingest | Newsletter catch-up — 20 papers across 3 digests
 
