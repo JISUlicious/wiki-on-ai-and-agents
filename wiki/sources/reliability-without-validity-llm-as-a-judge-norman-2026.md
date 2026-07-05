@@ -36,6 +36,8 @@ LLM-as-a-Judge is now the dominant evaluation paradigm for language models, but 
 
 ## Concepts & entities
 
+- [[hallucination-detection]] — LLM-as-a-judge is the single-step framing PROBE ([[probe-process-benchmark-hallucination-detection-2026]]) critiques.
+
 - [[agent-benchmark]] — meta-evaluation of LLM-as-a-Judge benchmarks (MT-Bench, JudgeBench, RewardBench) and judge reliability.
 
 ## References

@@ -27,6 +27,11 @@ Pre-trained LLMs are trained to maximize next-token likelihood, not to be truthf
 
 Hallucination is not fully solved by any current method and remains one of the central reliability problems for production LLM systems.
 
+## Detection (vs. mitigation)
+
+Separate from *reducing* hallucination is *detecting* it — the measurement layer. See [[hallucination-detection]]: single-step "LLM-as-a-judge" self-assessment is opaque and coarse ([[reliability-without-validity-llm-as-a-judge-norman-2026]]), while process-based benchmarks like [[probe-process-benchmark-hallucination-detection-2026|PROBE]] decompose detection into claim-decomposition → evidence-finding → evidence-evaluation → localization and score each step.
+
 ## References
 
 - [[rag-lewis-2020]]
+- [[hallucination-detection]] — the detection/measurement sub-area

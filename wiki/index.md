@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 263 sources, 137 entities, 219 concepts, 3 comparisons, 8 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 264 sources, 137 entities, 220 concepts, 3 comparisons, 8 queries.
 
 ## Entities
 
@@ -409,6 +409,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
+- [[hallucination-detection]] — Detecting/localizing hallucinated content; single-step LLM-judge vs process-based (PROBE) framings
 - [[mechanistic-interpretability]] — Reverse-engineering trained networks
 - [[functional-emotions]] — Behaviorally-effective emotion representations
 - [[sycophancy]] — LLM agreeing-with-user failure mode
@@ -726,6 +727,7 @@ Surfaced from the NLP-newsletter "Top AI Papers" digest (June 21–28 2026; inge
 - [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]] — self-play driving + a pinch of human data as regularizer (~2500× less human data) (Cornelisse et al., NYU 2026)
 - [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]] — Skill-MAS: orchestration as an evolvable Meta-Skill (third path beyond frozen/fine-tuned) (Lin et al., Ant/HKUST-GZ 2026)
 - [[reliability-without-validity-llm-as-a-judge-norman-2026]] — largest LLM-as-a-Judge audit (21 judges, ~541k judgments); exact-match overstates quality by 33–41pp kappa (Norman et al., UC Berkeley 2026)
+- [[probe-process-benchmark-hallucination-detection-2026]] — PROBE: process-based hallucination-detection benchmark, 4 steps × 12k cases (OpenReview 2026; user-requested, abstract-only)
 - [[naturebench-coding-agents-nature-family-papers-wang-2026]] — NatureBench: 90 Nature-family discovery tasks in NatureGym; best agent beats SOTA on only 17.8% (Wang et al. 2026)
 
 ### Newsletter — NLP weekly (2026-06-21 "Top AI Papers")

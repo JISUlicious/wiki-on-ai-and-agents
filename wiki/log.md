@@ -2,12 +2,20 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-06-30
+updated: 2026-07-05
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-07-05] ingest | PROBE — process-based hallucination-detection benchmark (user-requested search+ingest)
+
+Searched for and ingested **PROBE: PROcess-Based BEnchmark for Hallucination Detection** ([OpenReview NuSq4FmzFb](https://openreview.net/forum?id=NuSq4FmzFb), ~2026-03). It decomposes hallucination detection into **four individually-scored steps** — claim decomposition → evidence finding → evidence evaluation → hallucination localization — over **12,000 cases** across summarization/QA/style-transfer, as a diagnostic alternative to opaque single-step "LLM-as-a-judge" factuality self-assessment.
+
+**New source**: [[probe-process-benchmark-hallucination-detection-2026]]. **New concept**: [[hallucination-detection]] (the detection/measurement sub-area, distinct from the [[hallucination]] phenomenon; single-step LLM-judge vs process-based framings). **Updated**: [[hallucination]] (added a Detection section) and [[reliability-without-validity-llm-as-a-judge-norman-2026]] (cross-linked — the companion LLM-judge critique).
+
+> [!note] Abstract-only: OpenReview is challenge/CDN-protected (HTTP 403 on the forum, PDF, and api2 endpoints) in this sandbox — same class as the preprints.org block. Authors/venue not recovered; page reconstructed from title + public abstract summaries and flagged. Totals: 264 sources, 220 concepts.
 
 ## [2026-06-30] query | Sakana Fugu comprehensive review + concept promotion
 
