@@ -9,6 +9,12 @@ updated: 2026-07-05
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-06] ingest | PROBE — upgraded abstract-only → full (user-supplied ACL Anthology PDF)
+
+The user supplied the published PDF ([aclanthology.org/2026.findings-acl.2099](https://aclanthology.org/2026.findings-acl.2099.pdf), Findings of ACL 2026), lifting the [[probe-process-benchmark-hallucination-detection-2026|PROBE]] page from the prior abstract-only stub (OpenReview was CDN-blocked) to a **full summary**. Now has authors (Yu Zhang & Bei Yu, **[[chinese-university-of-hong-kong|CUHK]]**; Belcak/Diao/Fu/Ghosh/Mardani/Long/Molchanov, **[[nvidia|NVIDIA]]**), venue, and verified results: 12k cases / **118,628 annotated claims**; the headline finding that **multi-step decomposition lifts all models** over one-shot LLM-as-a-judge, with **evidence finding as the primary bottleneck** (fixable by fine-tuning on the released step-wise training data). Models evaluated: Llama-3.1-70B, GPT-4o-mini, Mixtral-8×22B, Claude-Sonnet-4.5.
+
+**New entity**: [[chinese-university-of-hong-kong]] (university, draft). **Updated**: [[hallucination-detection]] (added the confirmed findings), index source line + counts. Entities 137→138. Confirms the abstract-only reconstruction was accurate; removed the abstract-only caveat.
+
 ## [2026-07-05] ingest | PROBE — process-based hallucination-detection benchmark (user-requested search+ingest)
 
 Searched for and ingested **PROBE: PROcess-Based BEnchmark for Hallucination Detection** ([OpenReview NuSq4FmzFb](https://openreview.net/forum?id=NuSq4FmzFb), ~2026-03). It decomposes hallucination detection into **four individually-scored steps** — claim decomposition → evidence finding → evidence evaluation → hallucination localization — over **12,000 cases** across summarization/QA/style-transfer, as a diagnostic alternative to opaque single-step "LLM-as-a-judge" factuality self-assessment.

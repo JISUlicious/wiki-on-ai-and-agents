@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 264 sources, 137 entities, 220 concepts, 3 comparisons, 8 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 264 sources, 138 entities, 220 concepts, 3 comparisons, 8 queries.
 
 ## Entities
 
@@ -159,6 +159,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[fudan-university]] — Shanghai research university; LLM-agent / harness research
 - [[peking-university]] — Beijing research university; LLM + agent research
 - [[hku]] — University of Hong Kong; LLM code-generation / agent research
+- [[chinese-university-of-hong-kong]] — CUHK; NLP/ML (PROBE hallucination-detection benchmark, w/ NVIDIA)
 - [[stanford-university]] — Stanford NLP; many papers in this wiki
 - [[princeton-university]] — Princeton NLP
 - [[university-of-washington]] — UW NLP
@@ -727,7 +728,7 @@ Surfaced from the NLP-newsletter "Top AI Papers" digest (June 21–28 2026; inge
 - [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]] — self-play driving + a pinch of human data as regularizer (~2500× less human data) (Cornelisse et al., NYU 2026)
 - [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]] — Skill-MAS: orchestration as an evolvable Meta-Skill (third path beyond frozen/fine-tuned) (Lin et al., Ant/HKUST-GZ 2026)
 - [[reliability-without-validity-llm-as-a-judge-norman-2026]] — largest LLM-as-a-Judge audit (21 judges, ~541k judgments); exact-match overstates quality by 33–41pp kappa (Norman et al., UC Berkeley 2026)
-- [[probe-process-benchmark-hallucination-detection-2026]] — PROBE: process-based hallucination-detection benchmark, 4 steps × 12k cases (OpenReview 2026; user-requested, abstract-only)
+- [[probe-process-benchmark-hallucination-detection-2026]] — PROBE: process-based hallucination-detection benchmark (4 steps × 12k cases / 118k claims); evidence-finding is the bottleneck (Zhang et al., CUHK/NVIDIA, Findings of ACL 2026)
 - [[naturebench-coding-agents-nature-family-papers-wang-2026]] — NatureBench: 90 Nature-family discovery tasks in NatureGym; best agent beats SOTA on only 17.8% (Wang et al. 2026)
 
 ### Newsletter — NLP weekly (2026-06-21 "Top AI Papers")
