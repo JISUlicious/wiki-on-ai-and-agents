@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 277 sources, 138 entities, 220 concepts, 3 comparisons, 8 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 277 sources, 138 entities, 220 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -840,3 +840,5 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[fundamental-components-of-harness]] — Three coordinated views of harness anatomy: 6 operational artifacts (Lin 2026), 5 mechanism categories (Ning 2026), and L2 architectural cut (3-layer model). Unified 8-component universal inventory.
 - [[memory-systems-anatomy-2026]] — Three-part synthesis on modern agent memory: composition (6 layers + 7-op lifecycle + system inventory), long-term scoping (user-specific + domain-specific management), and the 10+ kinds beyond user/domain (cognitive role, function, substrate, generation, temporal binding).
 - [[sakana-fugu-review]] — Comprehensive review of Sakana Fugu: the two-variant (Trinity/Conductor) learned-orchestrator, its training paradigm, domain-adaptivity results, and where it sits vs MoE / dynamic-workflows / MAS.
+- [[describe-probe-in-depth]] — In-depth account of PROBE: the four-step process-based hallucination-detection benchmark, dataset, per-step results (evidence-finding bottleneck), and positioning.
+- [[mcp-server-architecture-patterns]] — The five MCP server design patterns (Resource Gateway / Tool Orchestrator / Stateful Session / Proxy Aggregator / Domain Adapter) + the tool-count limit and transport-overhead findings.

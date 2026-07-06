@@ -49,6 +49,19 @@ Its target is the dominant single-step **"[[reliability-without-validity-llm-as-
 - **Models evaluated**: Llama-3.1-70B, GPT-4o-mini, Mixtral-8×22B, Claude-Sonnet-4.5 (Llama-3.1-70B also used as the annotation/evidence engine).
 - **Transparency as the goal**: attribution of *which* stage failed, not just a binary verdict — a step toward diagnosable, robust detection.
 
+## Step-wise results
+
+Evaluation set = 100 instances per task type held out; the rest is released as fine-tuning data. Models: Llama-3.1-70B, GPT-4o-mini, Mixtral-8×22B, Claude-Sonnet-4.5, plus a fine-tuned **SFT Llama-3.1-8B**.
+
+| Step | Metric | Result |
+|---|---|---|
+| **1. Claim decomposition** | claim-match recall | **>95%** across all frontier LLMs — an "easy" step; a reliable foundation so downstream failures aren't decomposition artifacts. |
+| **2. Evidence finding (EF)** | Partial (≥1 evidence) vs Complete (all) | Partial ~**80%**; **Complete drops to ~63–70%** (e.g. summarization: Llama-3.1-70B 69.2, GPT-4o-mini 64.2). **The bottleneck** — models find *some* evidence, not *all*. |
+| **3. Evidence evaluation (EE)** | binary support vote (evidence reused from EF to isolate judgment) | **Sub-optimal even when handed evidence** — even Claude-Sonnet-4.5 only **69.8%**. |
+| **4. Localization** | character-level P / R / F1, claim-wise | fine-grained claim-level scoring for long responses (vs prior response/word-level). |
+
+**The punchline**: a small **fine-tuned Llama-3.1-8B (SFT) beats the far larger frontier models** on EF/EE — e.g. Partial-EF 83.2 / 87.4 / 84.1 (sum/QA/style) vs Claude-Sonnet-4.5's 81.6 / 86.4 / 81.6. Targeted step-wise supervision on the bottleneck step outperforms scale.
+
 ## Concepts & entities
 
 - [[hallucination-detection]] — the task PROBE benchmarks (a process, decomposed into four steps).

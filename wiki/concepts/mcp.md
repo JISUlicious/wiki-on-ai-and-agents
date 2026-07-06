@@ -104,4 +104,4 @@ This split makes MCP one of the **non-universal** features in the cross-agent co
 
 Surfaced via newsletter ingests; see [[index]].
 
-- [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns
+- [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (synthesis: [[mcp-server-architecture-patterns]])

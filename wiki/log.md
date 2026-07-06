@@ -9,6 +9,10 @@ updated: 2026-07-05
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-06] query | PROBE in depth + MCP server patterns (2 queries filed)
+
+Filed two synthesis queries and enriched a source. **[[describe-probe-in-depth]]** — full account of [[probe-process-benchmark-hallucination-detection-2026|PROBE]] with the per-step numbers (claim-decomposition recall >95%; evidence-finding Partial ~80% → Complete ~63–70% = the bottleneck; evidence-evaluation ~69.8% even for Claude-Sonnet-4.5; SFT Llama-3.1-8B beats frontier). Also added a **"Step-wise results"** section to the PROBE source page (which previously lacked the numbers). **[[mcp-server-architecture-patterns]]** — synthesis of the five [[mcp|MCP]] server patterns (Resource Gateway / Tool Orchestrator / Stateful Session / Proxy Aggregator / Domain Adapter) + anti-patterns, transport overhead (stdio 0.01ms vs streamable-http 0.39ms), and the tool-count accuracy cliff (<90% at 10–15 tools for Haiku 4.5, 20–30 for Sonnet 4). Cross-linked from [[mcp]]. Queries 8 → 10.
+
 ## [2026-07-06] ingest | Newsletter sweep — 13 papers (alphaXiv Jul-1 + NLP Jun28–Jul5)
 
 Swept the two unprocessed paper-bearing digests. **alphaXiv Jul-1** (`19f1f6cc08b36991`): 2 dups (Autodata, Agent-Native Memory) + 3 new. **NLP Top Papers Jun28–Jul5** (`19f33346c578ce6d`): 10 new. Ingested 12 arXiv papers via 3 paced subagents + DSpark (alphaXiv-native, coverage-based) by hand; backlinked all into hubs.
