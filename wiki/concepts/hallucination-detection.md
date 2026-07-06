@@ -41,3 +41,9 @@ tags:
 
 - [[probe-process-benchmark-hallucination-detection-2026]]
 - [[reliability-without-validity-llm-as-a-judge-norman-2026]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[reinforcement-learning-with-metacognitive-feedback-liu-2026]] — RLMF: metacognition-based RL for calibrated/faithful uncertainty

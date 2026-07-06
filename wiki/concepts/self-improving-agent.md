@@ -51,3 +51,6 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[from-trainee-to-trainer-chen-2026]] — LLM-as-Environment-Engineer: policy designs its own curriculum
 - [[autodata-agentic-data-scientist-kulikov-2026]] — Autodata: meta-optimized agent-as-data-scientist
 - [[agentopia-long-term-life-simulation-wang-2026]] — Agentopia: 100 agents over 10 simulated years; sim as training signal
+- [[red-queen-godel-machine-iacob-2026]] — Red Queen Gödel Machine: co-evolve agents and their evaluators
+- [[aspire-agentic-skill-programming-robotics-lu-2026]] — ASPIRE: continual code-as-policy robot skill learning
+- [[agentic-hardware-design-repository-level-code-evolution-yu-2026]] — HORIZON: hardware design as repo-level code evolution

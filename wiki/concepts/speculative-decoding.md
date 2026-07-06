@@ -17,6 +17,8 @@ Speculative decoding is a lossless technique for accelerating autoregressive LLM
 
 The technique was introduced by Leviathan et al. (2023) and Chen et al. (2023). Its main remaining bottleneck is the **sequential dependence** between speculation and verification: verification must finish before the next draft round begins. [[speculative-speculative-decoding-kumar-2026|Speculative speculative decoding (SSD)]] attacks exactly this dependence by pre-speculating against predicted verification outcomes in parallel.
 
+Two frontier drafting directions push on the *drafter* and the *verification schedule*: **parallel / semi-autoregressive drafters** (propose a whole block in one pass) and **adaptive verification** (decide how much of the block to check). [[dspark-confidence-scheduled-speculative-decoding-deepseek-2026|DSpark]] ([[deepseek|DeepSeek]] + [[peking-university|PKU]], 2026) combines both — a semi-autoregressive drafter (parallel backbone + lightweight sequential module) to fight *suffix/acceptance decay*, plus **confidence-scheduled verification** that tailors verification length per request to protect serving throughput under load (reported 60–85% faster per-user generation).
+
 ## Key points
 
 - Lossless: accepted tokens match the target distribution exactly.
@@ -33,4 +35,5 @@ The technique was introduced by Leviathan et al. (2023) and Chen et al. (2023). 
 ## References
 
 - [[speculative-speculative-decoding-kumar-2026]] — generalizes speculative decoding by parallelizing drafting and verification.
+- [[dspark-confidence-scheduled-speculative-decoding-deepseek-2026]] — semi-autoregressive drafting + confidence-scheduled verification (DeepSeek/PKU 2026).
 - Leviathan et al. 2023; Chen et al. 2023 — original speculative decoding papers.

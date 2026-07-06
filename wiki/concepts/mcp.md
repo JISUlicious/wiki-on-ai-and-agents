@@ -99,3 +99,9 @@ This split makes MCP one of the **non-universal** features in the cross-agent co
 - [[agent-three-layer-model]] — MCP's place in the L2 action surface
 - [[cross-agent-comparison-2026]] — where the 2026 agents differ on MCP adoption
 - Canonical spec: https://modelcontextprotocol.io
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns

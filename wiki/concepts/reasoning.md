@@ -25,3 +25,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[price-reversal-phenomenon-chen-2026]] — The Price Reversal Phenomenon When Cheaper Reasoning Models
 - [[vibethinker-3b-verifiable-reasoning-xu-2026]] — VibeThinker-3B: verifiable reasoning in a 3B model
+- [[reasoning-quality-emerges-early-jin-2026]] — trace quality decided in opening tokens; prefix-based data curation

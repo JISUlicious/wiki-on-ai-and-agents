@@ -80,3 +80,4 @@ See [[agentic-ai-and-the-next-intelligence-explosion]] for a recent essay-length
 Surfaced via newsletter ingests; see [[index]].
 
 - [[how-ai-agents-reshape-knowledge-work-yang-2026]] — economics of agents vs assistants (Perplexity data)
+- [[hitchhikers-guide-to-agentic-ai-roitman-2026]] — survey/guide: foundations → systems of agentic AI

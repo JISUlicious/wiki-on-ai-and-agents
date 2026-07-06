@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 264 sources, 138 entities, 220 concepts, 3 comparisons, 8 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 277 sources, 138 entities, 220 concepts, 3 comparisons, 8 queries.
 
 ## Entities
 
@@ -715,6 +715,21 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
 
+### Newsletter — NLP weekly (2026-07-05 "Top AI Papers")
+
+Surfaced from the NLP-newsletter "Top AI Papers" digest (June 28 – July 5 2026; ingested 2026-07-06).
+
+- [[red-queen-godel-machine-iacob-2026]] — Red Queen Gödel Machine: co-evolve agents *and* their evaluators so self-improvement doesn't stall on a frozen judge (Iacob et al. 2026)
+- [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (Resource Gateway, Tool Orchestrator, Stateful Session, Proxy Aggregator, Domain Adapter) (Rodrigues et al. 2026)
+- [[verification-horizon-qwen-2026]] — "no fixed reward survives a stronger policy"; verification must co-evolve with the coding-agent generator (Qwen Team 2026)
+- [[paper-assistant-tool-jayaram-2026]] — Google's Paper Assistant Tool: agentic deep scientific review/verification at conference scale (Jayaram et al., Google 2026)
+- [[generative-skill-composition-zhao-2026]] — skill *composition* as one joint plan, not embedding-retrieval ranking (Zhao et al., UNC 2026)
+- [[automem-wu-2026]] — AutoMem: memory management as a trainable cognitive skill ("metamemory"); memory ops in the action space (Wu et al., Stanford 2026)
+- [[reinforcement-learning-with-metacognitive-feedback-liu-2026]] — RLMF: the model's own metacognition as the RL reward → faithful uncertainty (Liu et al., Yale/Google 2026)
+- [[aspire-agentic-skill-programming-robotics-lu-2026]] — ASPIRE: robot programming as continual code-as-policy learning with a distilling skill library (Lu et al., NVIDIA 2026)
+- [[agentic-hardware-design-repository-level-code-evolution-yu-2026]] — HORIZON: hardware design as repo-level code evolution in an isolated git worktree (Yu et al., NVIDIA 2026)
+- [[reasoning-quality-emerges-early-jin-2026]] — a reasoning trace's quality is decided in its opening tokens; a short prefix predicts whole-trace quality for data curation (Jin et al., UCLA 2026)
+
 ### Newsletter — NLP weekly (2026-06-28 "Top AI Papers")
 
 Surfaced from the NLP-newsletter "Top AI Papers" digest (June 21–28 2026; ingested 2026-06-29).
@@ -781,6 +796,14 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-19).
 - [[agents-last-exam-sun-2026]] — ALE: long-horizon professional-task agent benchmark with verifiable outputs; frontier agents <1% full-pass (Sun et al., UC Berkeley 2026)
 - [[latent-reasoning-with-normalizing-flows-tu-2026]] — NF-CoT: autoregressive normalizing flows for continuous latent reasoning; +13% pass@1, 1.92× faster than diffusion (Tu et al. 2026)
 - [[mai-thinking-1-microsoft-2026]] — MAI-Thinking-1: Microsoft AI's 1T/35B-active MoE "hill-climbing machine," human-data-only (2026; no formal report)
+
+### Newsletter — alphaXiv weekly (2026-07-01 Trending Papers)
+
+Surfaced from the alphaXiv weekly digest (ingested 2026-07-06). (Autodata + Agent-Native Memory, also listed, were already ingested.)
+
+- [[qwen-agentworld-language-world-models-for-general-agents-qwen-2026]] — Qwen-AgentWorld: language world models simulating agentic environments; beats frontier LLMs on AgentWorldBench (Qwen Team 2026)
+- [[hitchhikers-guide-to-agentic-ai-roitman-2026]] — a foundations-to-systems guide/survey of agentic AI (Roitman 2026)
+- [[dspark-confidence-scheduled-speculative-decoding-deepseek-2026]] — DSpark: semi-autoregressive drafting + confidence-scheduled verification; 60–85% faster serving (DeepSeek + PKU 2026; alphaXiv-native, coverage-based)
 
 ### Newsletter — alphaXiv weekly (2026-06-24 Trending Papers)
 

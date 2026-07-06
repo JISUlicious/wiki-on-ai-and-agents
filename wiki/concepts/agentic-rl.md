@@ -36,3 +36,10 @@ Sits adjacent to [[rlhf]] (preference-fitting on short chats) and [[constitution
 - [[search-r1-jin-2025]] — canonical tool-use-RL formulation with retrieved-token masking.
 - [[ui-tars-2-wang-2025]] — multi-turn agentic RL for computer-use at scale.
 - [[memory-r1-yan-2025]], [[mem-alpha-wang-2025]] — agentic RL applied to memory management.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[verification-horizon-qwen-2026]] — no fixed reward survives a stronger policy; verification co-evolves
+- [[reinforcement-learning-with-metacognitive-feedback-liu-2026]] — RLMF: metacognition as the RL reward for faithful uncertainty

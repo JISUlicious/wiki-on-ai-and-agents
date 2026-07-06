@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-06-28",
+  "last_processed_date": "2026-07-05",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -54,7 +54,9 @@
     "19eeabb8e5463119",
     "19efb4eb49a65217",
     "19f0ee8a771f7154",
-    "19ec6aa7a8ea6084"
+    "19ec6aa7a8ea6084",
+    "19f1f6cc08b36991",
+    "19f33346c578ce6d"
   ],
   "runs": [
     {
@@ -137,9 +139,28 @@
         "2026.glm-5-2"
       ],
       "notes": "Swept 3 unprocessed paper digests (alphaXiv Jun-24, NLP Jun21-28, NLP Jun7-14). 4 dups + GLM-5.2 skipped. Pushed prior 8 commits before this run. Cursor -> 2026-06-28; 3 product-news threads pending."
+    },
+    {
+      "date": "2026-07-06",
+      "type": "catch-up sweep (manual, alphaXiv + NLP)",
+      "threads_read": 2,
+      "candidate_ids_verified": 15,
+      "on_domain_ingested": 13,
+      "new_source_pages": 13,
+      "dups_skipped": [
+        "2606.25996",
+        "2606.24775"
+      ],
+      "notes": "alphaXiv Jul-1 (3 new + 2 dup) + NLP Jun28-Jul5 (10 new). 12 arXiv via subagents + DSpark (alphaXiv-native, coverage-based). Cursor -> 2026-07-05; 4 product-news/deep-dive threads pending."
     }
   ],
   "pending_threads": [
+    {
+      "id": "19f2d6bdc796b0fc",
+      "sender": "nlpnews@substack.com",
+      "date": "2026-07-04",
+      "reason": "AI Agents Weekly (Claude Sonnet 5, LongCat-2.0, Grok Voice…) — product news."
+    },
     {
       "id": "19f099ef34f7de9d",
       "sender": "nlpnews@substack.com",

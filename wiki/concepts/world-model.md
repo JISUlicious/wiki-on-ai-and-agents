@@ -45,3 +45,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[can-llm-agents-infer-world-models-menaged-2026]] — world-model inference as agentic DFA learning
 - [[looped-world-models-facemind-2026]] — LoopWM: first looped-transformer world model
+- [[qwen-agentworld-language-world-models-for-general-agents-qwen-2026]] — Qwen-AgentWorld: language world models for agentic environments

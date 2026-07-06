@@ -158,3 +158,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[compositional-skill-routing-gao-2026]] — SkillWeaver: compositional multi-skill routing (decompose/retrieve/compose)
 - [[openclaw-skill-collective-skill-tree-search-lin-2026]] — Collective Skill Tree Search — build + use a diverse skill tree
 - [[beyond-domains-reusing-web-skills-he-2026]] — SkillMigrator: cross-site web skills via layout-keyed patterns
+- [[generative-skill-composition-zhao-2026]] — skill composition as one joint plan, not retrieval ranking

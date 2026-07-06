@@ -9,6 +9,17 @@ updated: 2026-07-05
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-06] ingest | Newsletter sweep — 13 papers (alphaXiv Jul-1 + NLP Jun28–Jul5)
+
+Swept the two unprocessed paper-bearing digests. **alphaXiv Jul-1** (`19f1f6cc08b36991`): 2 dups (Autodata, Agent-Native Memory) + 3 new. **NLP Top Papers Jun28–Jul5** (`19f33346c578ce6d`): 10 new. Ingested 12 arXiv papers via 3 paced subagents + DSpark (alphaXiv-native, coverage-based) by hand; backlinked all into hubs.
+
+**alphaXiv (3)**: [[qwen-agentworld-language-world-models-for-general-agents-qwen-2026]], [[hitchhikers-guide-to-agentic-ai-roitman-2026]], [[dspark-confidence-scheduled-speculative-decoding-deepseek-2026]] (DeepSeek+PKU; wired into [[speculative-decoding]]).
+**NLP (10)**: [[red-queen-godel-machine-iacob-2026]], [[mcp-server-architecture-patterns-rodrigues-2026]], [[verification-horizon-qwen-2026]], [[paper-assistant-tool-jayaram-2026]], [[generative-skill-composition-zhao-2026]], [[automem-wu-2026]], [[reinforcement-learning-with-metacognitive-feedback-liu-2026]], [[aspire-agentic-skill-programming-robotics-lu-2026]], [[agentic-hardware-design-repository-level-code-evolution-yu-2026]], [[reasoning-quality-emerges-early-jin-2026]].
+
+Notable cluster — **evaluator/verifier co-evolution**: Red Queen Gödel Machine (co-evolve agents + evaluators), Verification Horizon ("no fixed reward survives a stronger policy"), RLMF (metacognition as reward) — all reinforce the [[agentic-harness-engineering]] / [[harness-vs-model-attribution]] themes.
+
+> [!note] DSpark is alphaXiv-native (`2026.dspark`, no arXiv) and alphaXiv is CDN-blocked here → reconstructed from release coverage, flagged. Manifest: cursor → 2026-07-05; the 3 "AI Agents Weekly"/deep-dive product-news threads remain pending. Sources 264 → 277.
+
 ## [2026-07-06] ingest | PROBE — upgraded abstract-only → full (user-supplied ACL Anthology PDF)
 
 The user supplied the published PDF ([aclanthology.org/2026.findings-acl.2099](https://aclanthology.org/2026.findings-acl.2099.pdf), Findings of ACL 2026), lifting the [[probe-process-benchmark-hallucination-detection-2026|PROBE]] page from the prior abstract-only stub (OpenReview was CDN-blocked) to a **full summary**. Now has authors (Yu Zhang & Bei Yu, **[[chinese-university-of-hong-kong|CUHK]]**; Belcak/Diao/Fu/Ghosh/Mardani/Long/Molchanov, **[[nvidia|NVIDIA]]**), venue, and verified results: 12k cases / **118,628 annotated claims**; the headline finding that **multi-step decomposition lifts all models** over one-shot LLM-as-a-judge, with **evidence finding as the primary bottleneck** (fixable by fine-tuning on the released step-wise training data). Models evaluated: Llama-3.1-70B, GPT-4o-mini, Mixtral-8×22B, Claude-Sonnet-4.5.
