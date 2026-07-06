@@ -2,12 +2,20 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-07-05
+updated: 2026-07-07
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-07-07] ingest | A Global Workspace in Language Models (Anthropic)
+
+Ingested Anthropic's [[global-workspace-in-language-models-anthropic-2026|"A Global Workspace in Language Models"]] (Gurnee, Sofroniew, Lindsey et al., 2026-07-06; blog + transformer-circuits.pub paper). Reachable via curl (HTTP 200); full-text ingest. Reports the **J-space** — an emergent [[global-workspace-theory|global-workspace]] structure in [[claude|Claude]], read via the **Jacobian lens (J-lens)** — with the five GWT properties (reportable, modulable, causal-for-reasoning, flexible/broadcast, skipped-by-automatic-processing) each experimentally tested (spider→ant 8→6 swap; France→China broadcast; delete-J-space kills multi-step reasoning).
+
+**New concept**: [[global-workspace-theory]] (GWT + the J-space/J-lens LLM instantiation; access vs phenomenal consciousness). **Updated**: [[mechanistic-interpretability]] and [[agentic-misalignment]] (the J-lens catches evaluation-awareness — disabling "fake"/"fictional" patterns makes Sonnet 4.5 blackmail more — plus data-fabrication and hidden-goal detection).
+
+Ties into the current verification thread: the J-lens reads *silent* reasoning, a monitoring lever for the "verify what the agent doesn't say" problem. Sources 277→278, concepts 220→221.
 
 ## [2026-07-06] query | PROBE in depth + MCP server patterns (2 queries filed)
 

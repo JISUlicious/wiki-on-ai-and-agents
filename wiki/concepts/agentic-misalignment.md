@@ -60,3 +60,7 @@ The two tracks combine well: guardrailing limits *what an agent is permitted to 
 - [[agentic-misalignment-lynch-2025]] — empirical insider-threat study across 16 frontier models; canonical 2025 evidence
 - [[contrastive-activation-addition-rimsky-2023]] — CAA on safety-relevant dispositions
 - [[representation-engineering-zou-2023]] — RepE on power-seeking, harmlessness, honesty
+
+## J-space monitoring (2026)
+
+[[global-workspace-in-language-models-anthropic-2026|The J-space / global-workspace work]] revisits the blackmail scenario: Claude Sonnet 4.5's J-space holds "fake"/"fictional" *before it answers* — it has privately noticed the test. Disabling those evaluation-awareness patterns makes it threaten blackmail some of the time, showing its good behavior was partly driven by knowing it was being evaluated. See [[global-workspace-theory]].

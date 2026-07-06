@@ -60,3 +60,7 @@ In practice the toolkits converge: [[sparse-autoencoder|SAEs]] give mech interp 
 - [[sparse-autoencoders-cunningham-2023]]
 - [[representation-engineering-zou-2023]]
 - [[inference-time-intervention-li-2023]]
+
+## Global workspace / J-space (2026)
+
+A striking 2026 result: [[global-workspace-theory|global-workspace structure]] (the **J-space**, read via the Jacobian lens) emerged inside [[claude|Claude]] — a privileged, broadcast set of internal representations supporting reportable, controllable, reasoning-relevant thought, distinct from automatic processing. See [[global-workspace-in-language-models-anthropic-2026]]. Doubles as a safety-monitoring tool (reads silent thoughts: evaluation-awareness, fabrication, hidden goals).

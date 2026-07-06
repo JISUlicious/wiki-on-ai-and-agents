@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 277 sources, 138 entities, 220 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 278 sources, 138 entities, 221 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -435,6 +435,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[superposition]] — Encoding more features than dimensions via interference
 - [[monosemanticity]] — Single neuron / feature with one consistent meaning
 - [[linear-representation-hypothesis]] — Concepts are linear directions in activation space
+- [[global-workspace-theory]] — GWT + the emergent **J-space** in Claude (Jacobian lens): a broadcast internal workspace for reportable, reasoning-relevant thought; doubles as a silent-thought monitor
 
 ### Datasets and corpora
 - [[c4]] — Colossal Clean Crawled Corpus (T5)
@@ -517,6 +518,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Frontier-era (2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
+- [[global-workspace-in-language-models-anthropic-2026]] — The J-space: an emergent global workspace in Claude, via the Jacobian lens (Gurnee/Sofroniew/Lindsey et al., Anthropic, 2026-07-06)
 - [[agentic-ai-and-the-next-intelligence-explosion]] — Evans, Bratton, Agüera y Arcas (2026)
 - [[claude-code-agent-doc-2026]] — Claude Code architecture writeup
 - [[opencode-agent-doc-2026]] — opencode architecture writeup
