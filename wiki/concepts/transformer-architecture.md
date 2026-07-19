@@ -47,3 +47,7 @@ Subsequent models differ on which parts of the architecture they keep:
 Surfaced via newsletter ingests; see [[index]].
 
 - [[variable-width-transformers-wu-2026]] — Variable-Width Transformers: x-shaped per-layer width
+
+## Residual stream (and 2017 vs modern)
+
+The per-position vector that every sub-layer reads from and adds into is the [[residual-stream]]. Two differences separate the original 2017 decoder from modern decoder-only LLMs: modern models drop **cross-attention** (no encoder to attend to) and move normalization **inside** the sub-layer input (**pre-norm**, `h + Sublayer(LN(h))`) rather than after the add (**post-norm**, `LN(h + Sublayer(h))`). The pre-norm change is what keeps the residual stream a clean additive sum — the property most interpretability tooling relies on.

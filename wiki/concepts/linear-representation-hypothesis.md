@@ -66,3 +66,6 @@ If concepts weren't linearly encoded, **the entire [[steering]] paradigm wouldn'
 - [[contrastive-activation-addition-rimsky-2023]]
 - [[inference-time-intervention-li-2023]]
 - [[emotion-concepts-anthropic-2026]]
+
+> [!note] Substrate
+> The space in which these linear directions live is the [[residual-stream]], which is **basis-free** — meaning lives in directions, not coordinate axes.

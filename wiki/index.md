@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 278 sources, 138 entities, 221 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 278 sources, 138 entities, 223 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -436,6 +436,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[monosemanticity]] — Single neuron / feature with one consistent meaning
 - [[linear-representation-hypothesis]] — Concepts are linear directions in activation space
 - [[global-workspace-theory]] — GWT + the emergent **J-space** in Claude (Jacobian lens): a broadcast internal workspace for reportable, reasoning-relevant thought; doubles as a silent-thought monitor
+- [[residual-stream]] — The per-position additive channel every layer reads/writes; substrate for all lens/steering/SAE techniques (incl. pre-norm vs post-norm)
+- [[logit-lens]] — Decoding the residual stream mid-computation via the unembedding; the J-lens's predecessor
 
 ### Datasets and corpora
 - [[c4]] — Colossal Clean Crawled Corpus (T5)

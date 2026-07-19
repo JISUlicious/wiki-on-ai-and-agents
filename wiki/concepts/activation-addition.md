@@ -38,3 +38,6 @@ That's it. No training, no optimization, no learning rate. One pair of demonstra
 ## References
 
 - [[activation-engineering-turner-2023]]
+
+> [!note] Substrate
+> The activations being added to are the [[residual-stream]] — see that page for the additive-bus property this technique depends on.

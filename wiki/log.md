@@ -9,6 +9,16 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-07] query | Why "J-space"? Which part of the transformer is the Jacobian over?
+
+Answered in-conversation, then filed the mechanism into the wiki. **J-space** is named after the Jacobian matrix `J_l`; J-lens vectors are the rows of `W_U J_l`. The Jacobian is taken over the **[[residual-stream]]**: `d h_final,t' / d h_l,t` — final-layer stream w.r.t. intermediate-layer stream, with `t' >= t` (cross-position effects via [[attention-mechanism|attention]]) being what makes it measure *verbalizability* rather than current output. Averaged over ~1,000 prompts to separate disposition-to-verbalize from context-specific use.
+
+**New concepts**: [[residual-stream]] (the additive shared channel — plain-language + mechanical treatment, `resid_pre`/`mid`/`post`, the four interpretability-load-bearing properties, and a **2017 post-norm vs modern pre-norm** contrast explaining why the additive-bus framing depends on pre-norm) and [[logit-lens]] (stub; the J-lens's predecessor and the identity-map assumption it fails on).
+
+**Updated**: [[global-workspace-theory]] gains a *How the J-lens actually works* section (formula, `t' >= t`, logit-lens contrast, L38-92 workspace band) and an *Instrument vs. structure* section recording how the paper rules out the lens-artifact hypothesis. Backlinks added from [[mechanistic-interpretability]], [[steering-vectors]], [[activation-addition]], [[linear-representation-hypothesis]], [[transformer-architecture]].
+
+Also dropped the `interpretability` tag from the two global-workspace pages — research-direction tags are a tag-policy anti-pattern (a page should carry the concept instead). Concepts 221 -> 223.
+
 ## [2026-07-07] ingest | A Global Workspace in Language Models (Anthropic)
 
 Ingested Anthropic's [[global-workspace-in-language-models-anthropic-2026|"A Global Workspace in Language Models"]] (Gurnee, Sofroniew, Lindsey et al., 2026-07-06; blog + transformer-circuits.pub paper). Reachable via curl (HTTP 200); full-text ingest. Reports the **J-space** — an emergent [[global-workspace-theory|global-workspace]] structure in [[claude|Claude]], read via the **Jacobian lens (J-lens)** — with the five GWT properties (reportable, modulable, causal-for-reasoning, flexible/broadcast, skipped-by-automatic-processing) each experimentally tested (spider→ant 8→6 swap; France→China broadcast; delete-J-space kills multi-step reasoning).

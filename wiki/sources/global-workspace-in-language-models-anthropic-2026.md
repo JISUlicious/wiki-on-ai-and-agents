@@ -15,7 +15,6 @@ year: 2026
 venue: "Anthropic (research blog + transformer-circuits.pub)"
 tags:
   - 2026
-  - interpretability
 status: complete
 importance: high
 ---

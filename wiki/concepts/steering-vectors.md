@@ -33,3 +33,6 @@ Where the vector comes from varies by method:
 - [[activation-engineering-turner-2023]]
 - [[contrastive-activation-addition-rimsky-2023]]
 - See [[steering]] for the unified treatment.
+
+> [!note] Substrate
+> Steering vectors are directions in the [[residual-stream]]; adding them works because that stream is a purely **additive** channel under pre-norm architectures. See [[residual-stream]] for why norm placement matters.
