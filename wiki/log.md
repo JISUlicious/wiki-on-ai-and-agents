@@ -9,6 +9,16 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-07] ingest | Diffusing Blame (Sakana AI, ALIFE 2026)
+
+Ingested [[diffusing-blame-yamada-2026|*Diffusing Blame: Task-Dependent Credit Assignment in Biologically Plausible Dual-Stream Networks*]] (Yamada, Grillotti, Charakorn, Risi, Ha, Lange — [[sakana-ai|Sakana AI]], arXiv:2606.31700 v1 2026-06-30, ALIFE 2026). Full text from arXiv HTML.
+
+Revives **Error Diffusion** (Kaneko 2000) under **[[dales-principle|Dale's principle]]**, extending it past binary classification with *modulo error routing*: 96.7% MNIST / 61.7% CIFAR-10 (first ED application to CNNs) with no [[backpropagation]], no weight transport, and no random feedback matrices; plus **ED-PPO**, which beats BP-PPO on HalfCheetah. Headline conceptual result is the **ablation reversal** — the mechanism that is decisive on MNIST is negligible on CIFAR-10 and vice versa, so single-benchmark evaluation hides credit-assignment bottlenecks. Same pattern cross-domain: [[direct-feedback-alignment|DFA]] is strongest on classification but weakest on Craftax.
+
+**New concepts**: [[dales-principle]], [[backprop-free-learning]], [[backpropagation]] (draft — a real gap for this wiki, surfaced by this ingest), [[direct-feedback-alignment]] (draft). **Updated**: [[sakana-ai]], [[ppo]], [[reinforcement-learning]].
+
+Dropped a link to `alife` — only these new pages mention it, below the page-creation bar; left as plain text. Sources 278 -> 279, concepts 223 -> 227.
+
 ## [2026-07-07] query | Why "J-space"? Which part of the transformer is the Jacobian over?
 
 Answered in-conversation, then filed the mechanism into the wiki. **J-space** is named after the Jacobian matrix `J_l`; J-lens vectors are the rows of `W_U J_l`. The Jacobian is taken over the **[[residual-stream]]**: `d h_final,t' / d h_l,t` — final-layer stream w.r.t. intermediate-layer stream, with `t' >= t` (cross-position effects via [[attention-mechanism|attention]]) being what makes it measure *verbalizability* rather than current output. Averaged over ~1,000 prompts to separate disposition-to-verbalize from context-specific use.

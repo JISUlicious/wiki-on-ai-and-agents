@@ -29,3 +29,7 @@ Fugu and the Darwin Gödel Machine share the lab's signature bet: **evolutionary
 
 - [[sakana-fugu-sakana-ai-2026]]
 - [[darwin-godel-machine-zhang-2025]]
+
+## Biologically plausible learning (2026)
+
+[[diffusing-blame-yamada-2026|*Diffusing Blame*]] (ALIFE 2026) trains **Dale-compliant dual-stream networks** without [[backpropagation]] — 96.7% MNIST / 61.7% CIFAR-10 via Error Diffusion, plus an ED-PPO reinforcement-learning extension. Continues Sakana's nature-inspired, emergence-oriented line alongside [[darwin-godel-machine]]. See [[dales-principle]], [[backprop-free-learning]].

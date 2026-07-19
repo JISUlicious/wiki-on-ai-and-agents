@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 278 sources, 138 entities, 223 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 279 sources, 138 entities, 227 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -216,6 +216,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Training paradigms
 - [[pre-training]] — Self-supervised training on large corpora
+- [[backpropagation]] — The exact-gradient credit-assignment algorithm behind all modern deep learning
+- [[backprop-free-learning]] — Training without backprop (Error Diffusion, feedback alignment) — the weight-transport problem
+- [[direct-feedback-alignment]] — DFA: output error broadcast to all layers via random matrices
+- [[dales-principle]] — Biological constraint: neurons are uniformly excitatory or inhibitory
 - [[lora]] — Low-rank adaptation; parameter-efficient fine-tuning
 - [[fine-tuning]] — Task-specific adaptation
 - [[autoregressive-language-modeling]] — Next-token prediction
@@ -521,6 +525,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Frontier-era (2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
 - [[global-workspace-in-language-models-anthropic-2026]] — The J-space: an emergent global workspace in Claude, via the Jacobian lens (Gurnee/Sofroniew/Lindsey et al., Anthropic, 2026-07-06)
+- [[diffusing-blame-yamada-2026]] — Dale-compliant dual-stream networks trained without backprop via Error Diffusion; task-dependent credit-assignment bottlenecks (Sakana AI, ALIFE 2026)
 - [[agentic-ai-and-the-next-intelligence-explosion]] — Evans, Bratton, Agüera y Arcas (2026)
 - [[claude-code-agent-doc-2026]] — Claude Code architecture writeup
 - [[opencode-agent-doc-2026]] — opencode architecture writeup

@@ -23,3 +23,6 @@ Proximal Policy Optimization (PPO) is a policy-gradient reinforcement learning a
 ## References
 
 - `memory-r1-yan-2025.md`
+
+> [!note] Backprop-free variant
+> [[diffusing-blame-yamada-2026|ED-PPO]] replaces PPO's backpropagated gradients with **Error Diffusion** ([[backprop-free-learning]]), reaching competitive continuous-control performance — and beating BP-PPO on HalfCheetah — while obeying [[dales-principle|Dale's principle]].
