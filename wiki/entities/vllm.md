@@ -54,3 +54,7 @@ Selected via `--guided-decoding-backend`.
 - API surface mirrors [[openai-api]] (chat completions, tools, tool_choice).
 - Closely tied to [[function-calling]] and [[structured-outputs]] as runtime concepts.
 - Origin: [[uc-berkeley]].
+
+## Quantization support
+
+vLLM is the reference serving engine in most published [[quantization]] evaluations. [[give-me-bf16-or-give-me-death-kurtic-2024|Kurtic et al.]] ran ~500,000 evaluations on it to establish the deployment rule: **W4A16 for single-stream latency, W8A8/FP8 for batched throughput** ([[quantization-performance]]). [[marlin-frantar-2024|Marlin]] kernels are integrated for W4A16.

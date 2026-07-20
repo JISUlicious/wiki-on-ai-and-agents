@@ -9,6 +9,18 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-07] ingest | Quantization — methods and effects (multi-source research sweep)
+
+A research-and-ingest sweep on **[[quantization]]**, which had **zero coverage** in the wiki despite being one of the most practically important LLM deployment topics. Four parallel research agents covered methods, quality, speed/memory, and safety; **every arXiv ID was verified to resolve** before being written down, and several circulating figures were explicitly rejected as unattributable.
+
+**New concepts (7)**: [[quantization]] (hub — the four axes, and the outlier through-line from LLM.int8()'s phase-shift discovery to the rotation family), [[quantization-performance]] (memory + the **pp/tg asymmetry**), [[quantization-quality]], [[quantization-safety]], [[quantization-conditioned-backdoor]], [[gguf]], [[llama-cpp]].
+
+**New sources (20)**: method papers ([[gptq-frantar-2022]], [[awq-lin-2023]], [[smoothquant-xiao-2022]], [[llm-int8-dettmers-2022]], [[qlora-dettmers-2023]], [[quarot-ashkboos-2024]], [[bitnet-b158-ma-2024]]); performance ([[llm-inference-roofline-yuan-2024]], [[marlin-frantar-2024]], [[give-me-bf16-or-give-me-death-kurtic-2024]], [[which-quantization-kurt-2026]]); quality ([[accuracy-is-not-all-you-need-dutta-2024]], [[scaling-laws-for-precision-kumar-2024]], [[low-bit-favors-undertrained-ouyang-2024]], [[multilingual-quantization-marchisio-2024]], [[long-context-quantization-mekala-2025]], [[quantization-hurts-reasoning-liu-2025]]); safety ([[q-resafe-chen-2025]], [[exploiting-llm-quantization-egashira-2024]], [[mind-the-gap-egashira-2025]]).
+
+Headline findings recorded: **prefill gets ~12% slower while decode gets 2.3-2.9x faster** at Q4_0 (same chip, same model); effective bits-per-weight always exceeds nominal (Q2_K measures 3.17 not 2.56); automatic metrics understate human-visible damage by **10-55x**; long-context damage goes from ~0% at 8K to **-23 points at 128K**; **overtrained models quantize worse** (q2_K costs +10.8% ppl on Llama-2-7B but +56.5% on Llama-3-8B); and calibration data drives safety ASR from **0.3 to 77.4** at the same bit width.
+
+Three `[!warning] Contradiction` callouts filed rather than resolved: is 4-bit safe (ICML'24 vs ICML'25), is code disproportionately damaged, and are larger models more robust (resolved by splitting weights/KV from activations). **Updated**: [[vllm]], [[kv-cache]], [[scaling-laws]], [[speculative-decoding]], [[massive-activations-attention-sinks-sun-2026]].
+
 ## [2026-07-07] lint | Wiki health check
 
 Scanned 660 pages. **Index consistency perfect** (0 missing, 0 ghost entries); frontmatter, entity classification tags, tag hygiene, and contradictions all clean. Initial tooling reported 334 broken links, but most were parser artifacts (escaped `\|` pipes in table cells, mermaid node labels, and point-in-time links in this log) — the real count is **212 unique missing targets, of which only 4 were genuine wrong-slug errors**.

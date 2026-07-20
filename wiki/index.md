@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 279 sources, 139 entities, 228 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 299 sources, 139 entities, 235 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -404,6 +404,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[memory-r1]] — RL-learned policy over ADD/UPDATE/DELETE/NOOP (Yan 2025)
 - [[mem-alpha]] — RL-learned memory construction with 13× length extrapolation (Wang 2025)
 
+### Efficiency and inference (quantization, serving)
+- [[quantization]] — Hub: methods (GPTQ/AWQ/SmoothQuant/QuIP#/rotation), the four axes, and why outliers are the central obstacle
+- [[quantization-performance]] — Memory, and the prefill(`pp`)/decode(`tg`) asymmetry: quantization speeds up decode ~3×, can slow prefill
+- [[quantization-quality]] — Perplexity vs capability; flips, long-context collapse, and precision scaling laws
+- [[quantization-safety]] — Alignment degradation under quantization; calibration data dominates
+- [[quantization-conditioned-backdoor]] — Quantization as an attack trigger: benign in FP16, malicious once quantized
+- [[gguf]] — llama.cpp's k-quants/i-quants; super-block scaling and the `_S`/`_M`/`_L` tensor policies
+- [[llama-cpp]] — The local-inference engine; origin of the `pp`/`tg` vocabulary
+
 ### Multimodal
 - [[multimodal-llm]] — LLMs accepting / producing multiple modalities
 
@@ -540,6 +549,28 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentir-reasoning-aware-retrieval-chen-2026]] — AgentIR: jointly embed reasoning trace + query for Deep Research retrieval (Chen et al., Waterloo 2026)
 - [[skillnet-liang-2026]] — SkillNet: open infra to create/evaluate/connect 200k+ AI skills (Liang et al., ZJU consortium 2026)
 - [[karl-knowledge-agents-databricks-2026]] — KARL: enterprise search agents via off-policy multi-task RL + KARLBench (Databricks AI Research 2026)
+
+### Quantization (2022–2026)
+- [[llm-int8-dettmers-2022]] — LLM.int8(); the emergent-outlier discovery (phase shift at ~6.7B)
+- [[gptq-frantar-2022]] — Second-order layer-wise weight PTQ; 175B in ~4 GPU-hours
+- [[smoothquant-xiao-2022]] — Migrates activation outliers into weights to unlock W8A8
+- [[awq-lin-2023]] — Activation-aware salient-channel protection; robust to calibration shift
+- [[qlora-dettmers-2023]] — NF4 + Double Quantization; 65B finetuning on one 48GB GPU
+- [[quarot-ashkboos-2024]] — Hadamard rotations give end-to-end W4A4KV4
+- [[bitnet-b158-ma-2024]] — Ternary {−1,0,+1} weights trained from scratch
+- [[llm-inference-roofline-yuan-2024]] — Roofline analysis; ~1000× arithmetic-intensity gap prefill vs decode
+- [[marlin-frantar-2024]] — W4A16 kernel; quantifies the batch-size crossover (3.9× → 1.5×)
+- [[give-me-bf16-or-give-me-death-kurtic-2024]] — ~500k evaluations; format choice by deployment scenario
+- [[accuracy-is-not-all-you-need-dutta-2024]] — The flips metric; accuracy hides behavioral divergence
+- [[scaling-laws-for-precision-kumar-2024]] — Overtrained models degrade more under PTQ
+- [[low-bit-favors-undertrained-ouyang-2024]] — Corroboration across 1,500+ Pythia checkpoints
+- [[multilingual-quantization-marchisio-2024]] — Automatic metrics understate human-visible damage 10–55×
+- [[long-context-quantization-mekala-2025]] — ~0% damage at 8K, up to −23 points at 128K
+- [[quantization-hurts-reasoning-liu-2025]] — Harder tasks degrade up to 4× more
+- [[q-resafe-chen-2025]] — Calibration data drives ASR from 0.3 → 77.4; safety patching
+- [[exploiting-llm-quantization-egashira-2024]] — Quantization as a backdoor trigger (NeurIPS 2024)
+- [[mind-the-gap-egashira-2025]] — The same attack against GGUF (ICML 2025)
+- [[which-quantization-kurt-2026]] — Unified llama.cpp sweep: 13 GGUF formats, size/ppl/pp/tg
 
 ### Agent interoperability protocols
 - [[model-context-protocol-anthropic-2024]] — Introducing MCP (Anthropic 2024-11-25)

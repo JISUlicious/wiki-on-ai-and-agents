@@ -51,3 +51,7 @@ The core finding is that the co-occurrence is not intrinsic to Transformers but 
 ## References
 
 - [arXiv:2603.05498](https://arxiv.org/abs/2603.05498)
+
+## Relevance to quantization
+
+Massive activations are the central obstacle to activation [[quantization]]: they sit on the channel axis, which is the GEMM's reduction axis and therefore cannot be cheaply rescaled. This drove the field's four response families — keep in high precision, move ([[smoothquant-xiao-2022]]), rotate ([[quarot-ashkboos-2024]]), or never create them.

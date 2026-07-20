@@ -26,3 +26,7 @@ The **key/value cache** in [[transformer-architecture|Transformer]] attention: w
 ## References
 
 - [[em-llm-fountas-2024]]
+
+## KV-cache quantization
+
+The cache is a memory consumer independent of parameter count, scaling with context length — for Llama-2-7B at 32k context it **exceeds the FP16 weights**. Quantizing it (`q8_0`/`q4_0` in [[llama-cpp]], or KVQuant/KIVI in research) is a distinct lever from weight quantization, with its own quality and safety profile. See [[quantization-performance]].

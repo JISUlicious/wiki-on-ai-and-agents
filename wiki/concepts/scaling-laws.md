@@ -49,3 +49,7 @@ Scaling laws have also been derived for:
 ## References
 
 - [[gpt-3-brown-2020]]
+
+## Precision as a scaling dimension
+
+[[scaling-laws-for-precision-kumar-2024|Kumar et al.]] extend scaling laws to numeric precision, finding post-training-quantization damage grows with training tokens and shrinks with parameters — so **overtrained models quantize worse**. Compute-optimal pretraining precision comes out at ~7–8 bits. Corroborated by [[low-bit-favors-undertrained-ouyang-2024]]. See [[quantization-quality]].

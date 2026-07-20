@@ -37,3 +37,6 @@ Two frontier drafting directions push on the *drafter* and the *verification sch
 - [[speculative-speculative-decoding-kumar-2026]] — generalizes speculative decoding by parallelizing drafting and verification.
 - [[dspark-confidence-scheduled-speculative-decoding-deepseek-2026]] — semi-autoregressive drafting + confidence-scheduled verification (DeepSeek/PKU 2026).
 - Leviathan et al. 2023; Chen et al. 2023 — original speculative decoding papers.
+
+> [!note] Quantization connection
+> QSpec ([arXiv:2410.11305](https://arxiv.org/abs/2410.11305)) applies speculative decoding *across precisions* — a fast lossy W4A4 drafter verified by an accurate W4A16 model, for 1.18–1.64× over W4A16 alone. See [[quantization-performance]].
