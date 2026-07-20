@@ -9,6 +9,17 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-07] ingest | Agent evaluation — 12 URLs (Anthropic, tooling docs, benchmark papers)
+
+Ingested a user-supplied reading list on [[agent-evaluation]]: Anthropic's guide + webinar, MLflow, LangSmith, LangChain's checklist, Langfuse, DeepEval, NVIDIA NeMo, IBM, and three papers. **11 of 12 URLs resolved**; the NVIDIA NeMo agentic-metrics URL 404s and its content was located in the relocated NeMo Platform/microservices docs. The Anthropic webinar is a **registration page with no recording available**, so it is cited with its stated agenda rather than summarized.
+
+**New concepts (3)**: [[agent-evaluation]] (hub), [[llm-as-a-judge]], [[agent-as-a-judge]].
+**New sources (11)**: [[demystifying-evals-for-ai-agents-anthropic-2026]], [[agent-evaluation-readiness-checklist-langchain-2026]], [[langsmith-evaluation-docs]], [[mlflow-genai-evaluation-docs]], [[langfuse-agent-evaluation-guide]], [[deepeval-agent-evaluation-docs]], [[nvidia-nemo-agentic-metrics]], [[ibm-ai-agent-evaluation-tutorial]], [[agentbench-liu-2023]], [[mlagentbench-huang-2023]], [[agent-as-a-judge-zhuge-2024]].
+
+Synthesis recorded: all sources converge on a **three-level split** (final response / trajectory / single step), and the field's live disagreement is over trajectory grading — Anthropic and LangChain say *"grade the outcome, not the path"* while [[agent-as-a-judge-zhuge-2024]] argues final-outcome-only evaluation is inadequate. The resolution captured on the hub page has three moves: order-insensitivity by default, requirement-level rather than step-level judging, and treating trajectory as an **efficiency** signal rather than a correctness one. Also recorded: **state-change verification** is named by Anthropic and LangChain but shipped by neither LangSmith nor MLflow — the most consequential tooling gap; DeepEval's Plan Adherence/Plan Quality **pass by default when no plan is extractable**; and terminology collisions on "run" (MLflow vs LangSmith) and "online" (NVIDIA means live generation, not live traffic).
+
+Connects the session's earlier [[verifier]] work to production practice. Sources 303 -> 314, concepts 235 -> 238.
+
 ## [2026-07-07] ingest | Quantization — methods and effects (multi-source research sweep)
 
 A research-and-ingest sweep on **[[quantization]]**, which had **zero coverage** in the wiki despite being one of the most practically important LLM deployment topics. Four parallel research agents covered methods, quality, speed/memory, and safety; **every arXiv ID was verified to resolve** before being written down, and several circulating figures were explicitly rejected as unattributable.

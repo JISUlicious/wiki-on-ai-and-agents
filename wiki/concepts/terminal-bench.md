@@ -40,3 +40,6 @@ Because gains transfer (frozen evolved harnesses also help on [[swe-bench|SWE-be
 - [[terminal-bench-benchmarking-agents-cli-merrill-2026]] — the benchmark's defining paper.
 - [[agentic-harness-engineering-lin-2026]] · [[self-harness-harnesses-that-improve-themselves-zhang-2026]] · [[meta-harness-lee-2026]] · [[natural-language-agent-harnesses-pan-2026]]
 - [[harness-vs-model-attribution]] — using Terminal-Bench's grid to separate scaffold from model.
+
+> [!note] As an eval substrate
+> [[agent-evaluation-readiness-checklist-langchain-2026|LangChain's checklist]] recommends cherry-picking and adapting individual Terminal-Bench tasks rather than running the benchmark in aggregate — *"Don't run full benchmarks in aggregate."* See [[agent-evaluation]].

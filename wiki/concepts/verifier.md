@@ -66,3 +66,7 @@ Different targets demand different machinery — using one LLM judge for everyth
 - [[swe-gym-pan-2024]] — outcome-supervised verifier, test-time best-of-N.
 - [[verification-horizon-qwen-2026]] — the proxy–intent gap.
 - [[probe-process-benchmark-hallucination-detection-2026]] — process-based factual verification.
+
+## In practice
+
+[[agent-evaluation]] is where these targets get operationalized by production tooling. Notable mappings: **state-change verification** (does the calendar event actually exist?) is the industry's name for outcome verification and is the dimension current tools most conspicuously lack; **DeepEval's Plan Quality vs Plan Adherence** is the only shipped instance of the plan-validity vs plan-conformance split above; and [[agent-as-a-judge]] supplies the requirement-level intermediate judgments that flat pass/fail cannot.

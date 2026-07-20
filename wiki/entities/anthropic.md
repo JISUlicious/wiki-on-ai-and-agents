@@ -35,3 +35,7 @@ In this wiki, Anthropic is the source of the [[emotion-concepts-anthropic-2026|E
 ## References
 
 - [[gpt-3-brown-2020]]
+
+## Agent evaluation guidance
+
+[[demystifying-evals-for-ai-agents-anthropic-2026|"Demystifying evals for AI agents"]] (2026-01-09) is among the most-shared practitioner guides on [[agent-evaluation]], supplying the task/trial/grader/transcript/outcome vocabulary now used across the tooling ecosystem.

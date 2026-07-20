@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 299 sources, 139 entities, 235 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 310 sources, 139 entities, 238 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -404,6 +404,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[memory-r1]] — RL-learned policy over ADD/UPDATE/DELETE/NOOP (Yan 2025)
 - [[mem-alpha]] — RL-learned memory construction with 13× length extrapolation (Wang 2025)
 
+### Agent evaluation
+- [[agent-evaluation]] — Hub: the three-level split (final response / trajectory / single step), grader types, capability vs regression, pass@k vs pass^k
+- [[llm-as-a-judge]] — Model-based grading; judge alignment against human labels, and where it breaks
+- [[agent-as-a-judge]] — Agentic judges issuing requirement-level intermediate feedback
+
 ### Efficiency and inference (quantization, serving)
 - [[quantization]] — Hub: methods (GPTQ/AWQ/SmoothQuant/QuIP#/rotation), the four axes, and why outliers are the central obstacle
 - [[quantization-performance]] — Memory, and the prefill(`pp`)/decode(`tg`) asymmetry: quantization speeds up decode ~3×, can slow prefill
@@ -549,6 +554,19 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentir-reasoning-aware-retrieval-chen-2026]] — AgentIR: jointly embed reasoning trace + query for Deep Research retrieval (Chen et al., Waterloo 2026)
 - [[skillnet-liang-2026]] — SkillNet: open infra to create/evaluate/connect 200k+ AI skills (Liang et al., ZJU consortium 2026)
 - [[karl-knowledge-agents-databricks-2026]] — KARL: enterprise search agents via off-policy multi-task RL + KARLBench (Databricks AI Research 2026)
+
+### Agent evaluation (2023–2026)
+- [[demystifying-evals-for-ai-agents-anthropic-2026]] — Anthropic's practitioner guide; the shared vocabulary (task/trial/grader/transcript/outcome)
+- [[agent-evaluation-readiness-checklist-langchain-2026]] — 31-item checklist; state-change evaluation, guardrails vs evaluators, N-1 testing
+- [[langsmith-evaluation-docs]] — LangSmith concepts; the trajectory match-mode algebra in `agentevals`
+- [[mlflow-genai-evaluation-docs]] — MLflow scorers/judges; automated judge alignment via MemAlign/SIMBA/GEPA
+- [[langfuse-agent-evaluation-guide]] — Black-box / glass-box / white-box framing; worked Pydantic AI + MCP example
+- [[deepeval-agent-evaluation-docs]] — The six agentic metrics incl. Plan Adherence vs Plan Quality; G-Eval
+- [[nvidia-nemo-agentic-metrics]] — RAGAS-powered agentic metrics; order-ignored tool calls vs order-checked trajectory
+- [[ibm-ai-agent-evaluation-tutorial]] — Accuracy/response-time/cost taxonomy (educational)
+- [[agentbench-liu-2023]] — 8 environments, 29 models; the Invalid Format / Invalid Action / Task Limit failure taxonomy
+- [[mlagentbench-huang-2023]] — Agents doing ML experimentation; cost-per-success reporting
+- [[agent-as-a-judge-zhuge-2024]] — Agentic judges + the DevAI benchmark; 97% cost saving vs human evaluation
 
 ### Quantization (2022–2026)
 - [[llm-int8-dettmers-2022]] — LLM.int8(); the emergent-outlier discovery (phase shift at ~6.7B)
