@@ -43,7 +43,7 @@ It uses two mechanisms. First, it runs **local, on-policy rollouts and filters f
 
 ## Concepts & entities
 
-[[reinforcement-learning]] · [[supervised-fine-tuning]] · [[post-training]] · [[llm-agent]] · [[rlhf]] · [[policy-optimization]] · [[agentic-coding]] · [[long-context-llm]] · [[nvidia]] · [[nemotron]]
+[[reinforcement-learning]] · [[supervised-fine-tuning]] · [[post-training]] · [[llm-agent]] · [[rlhf]] · [[policy-optimization-methods]] · [[agentic-coding]] · [[long-context-llm]] · [[nvidia]] · [[nemotron]]
 
 ## References
 

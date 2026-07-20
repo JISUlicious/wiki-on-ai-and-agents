@@ -53,7 +53,7 @@ The central result is a two-sided separation that resolves what looks at first l
 - [[chain-of-thought-prompting]] — token-recursion baseline; analyzed in both deterministic and probabilistic regimes.
 - [[inference-time-compute]] — both CoT and looped TF are inference-compute scaling axes; the paper is essentially about *which axis to scale*.
 - [[latent-reasoning]] — looped transformers reason in embedding space rather than emitting tokens; this paper formalizes when that mode wins.
-- [[expressive-power-looped-transformers]] — complexity-class characterization (`LOOP[T, d, p]` ↔ circuits of depth `T`) extends prior expressivity results.
+- [[expressive-power-looped-transformers-xu-2024]] — complexity-class characterization (`LOOP[T, d, p]` ↔ circuits of depth `T`) extends prior expressivity results.
 - [[self-consistency]] — leveraged to amplify weak token-wise learners into approximate samplers.
 
 ## Notable Quotes

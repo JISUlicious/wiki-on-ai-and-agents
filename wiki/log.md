@@ -9,6 +9,18 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-07] lint | Wiki health check
+
+Scanned 660 pages. **Index consistency perfect** (0 missing, 0 ghost entries); frontmatter, entity classification tags, tag hygiene, and contradictions all clean. Initial tooling reported 334 broken links, but most were parser artifacts (escaped `\|` pipes in table cells, mermaid node labels, and point-in-time links in this log) — the real count is **212 unique missing targets, of which only 4 were genuine wrong-slug errors**.
+
+**Fixed (4 errors)**: `[[Adaptive Computation Time]]` -> [[adaptive-computation-time]] (capitalization bug in [[universal-transformer]]), `[[expressive-power-looped-transformers]]` -> [[expressive-power-looped-transformers-xu-2024]], `[[long-context]]` -> [[long-context-llm]], `[[policy-optimization]]` -> [[policy-optimization-methods]]. Rejected several fuzzy matches as false positives (`gpt-4o`/`gpt-4`, `swe-bench-lite`/`swe-bench-live`, and prefix collisions where a *source* page shadowed a *model* or *concept* slug).
+
+**Fixed (1 warning)**: sole orphan [[describe-probe-in-depth]] now linked from [[probe-process-benchmark-hallucination-detection-2026]].
+
+**New pages**: [[llama]] (entity; the most-referenced missing page in the wiki -- 4 inbound links despite 279 sources) and [[verifier]] (concept; recurring dangling link, consolidating the session's verification-target-by-reference-type analysis).
+
+Remaining 208 dangling links are **aspirational by design** (SKILL.md sanctions linking pages that should exist). Top clusters: concepts (110, led by `adaptive-thinking` x5), people (30), institutions (23), models (21), benchmarks (20). Tag promotion candidates `paper`/`benchmark`/`survey` deliberately **kept as tags** — all three are organizational markers, not concepts. Entities 138 -> 139, concepts 227 -> 228.
+
 ## [2026-07-07] ingest | Diffusing Blame (Sakana AI, ALIFE 2026)
 
 Ingested [[diffusing-blame-yamada-2026|*Diffusing Blame: Task-Dependent Credit Assignment in Biologically Plausible Dual-Stream Networks*]] (Yamada, Grillotti, Charakorn, Risi, Ha, Lange — [[sakana-ai|Sakana AI]], arXiv:2606.31700 v1 2026-06-30, ALIFE 2026). Full text from arXiv HTML.

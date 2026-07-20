@@ -39,7 +39,7 @@ Empirically, Multiscreen reaches comparable validation loss with roughly 30% few
 
 - [[transformer-architecture]] — Multiscreen is an attention-mechanism alternative/successor
 - [[attention-mechanism]] / [[self-attention]] — screening replaces softmax competition
-- [[long-context]], [[mechanistic-interpretability]] (absolute, interpretable relevance)
+- [[long-context-llm]], [[mechanistic-interpretability]] (absolute, interpretable relevance)
 - [[reasoning]]
 - RIKEN (Center for Emergent Matter Science), [[university-of-tokyo]]
 

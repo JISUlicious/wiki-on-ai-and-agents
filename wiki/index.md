@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 279 sources, 138 entities, 227 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 279 sources, 139 entities, 228 concepts, 3 comparisons, 10 queries.
 
 ## Entities
 
@@ -22,6 +22,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gpt-2]] — 1.5B params, zero-shot transfer thesis (Radford 2019)
 - [[gpt-3]] — 175B params, in-context learning emerges (Brown 2020)
 - [[gpt-4]] — Multimodal, RLHF-aligned, undisclosed architecture (OpenAI 2023)
+- [[llama]] — Meta's open-weights model family; the default base model across the research corpus
 - [[instructgpt]] — GPT-3 + SFT/RLHF; direct predecessor of ChatGPT (Ouyang 2022)
 - [[webgpt]] — GPT-3 fine-tuned to operate a web browser (Nakano 2021)
 
@@ -220,6 +221,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[backprop-free-learning]] — Training without backprop (Error Diffusion, feedback alignment) — the weight-transport problem
 - [[direct-feedback-alignment]] — DFA: output error broadcast to all layers via random matrices
 - [[dales-principle]] — Biological constraint: neurons are uniformly excitatory or inhibitory
+- [[verifier]] — Generator/verifier split; verification targets by reference type, mechanisms, and the proxy-intent ceiling
 - [[lora]] — Low-rank adaptation; parameter-efficient fine-tuning
 - [[fine-tuning]] — Task-specific adaptation
 - [[autoregressive-language-modeling]] — Next-token prediction

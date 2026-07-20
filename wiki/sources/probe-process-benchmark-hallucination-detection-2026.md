@@ -74,3 +74,7 @@ Evaluation set = 100 instances per task type held out; the rest is released as f
 
 - ACL Anthology: https://aclanthology.org/2026.findings-acl.2099.pdf
 - _Original source: `sources/probe-process-benchmark-hallucination-detection-2026.md` (extracted full text)_
+
+## Filed analyses
+
+- [[describe-probe-in-depth]] — step-by-step walkthrough of PROBE's four-stage pipeline, the evidence-finding bottleneck, and the SFT-beats-frontier result.
