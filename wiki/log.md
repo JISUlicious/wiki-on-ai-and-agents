@@ -9,6 +9,10 @@ updated: 2026-07-07
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-21] query | Evaluation test set for an in-house data search & analysis agent
+
+Question: "from collected docs, suggest a reasonable and suitable llm driven evaluation test set sample of in-house data search and analysis agent." **Filed as [[in-house-data-agent-eval-test-set]].** A worked 35-task design synthesized from the [[agent-evaluation]] sources: five graded dimensions (adding **access-compliance** and **analytical-correctness** to Anthropic's research-agent triad), a Langfuse-derived dataset schema extended with ACL identity + staleness traps, a negative-heavy category mix (abstain / acl_negative / stale_trap), an 8-grader decomposed stack (deterministic checks gate; LLM judges score; efficiency reported-not-gating), pass^k scoring, and a code-graders-first build order. First wiki page to operationalize [[agent-evaluation]] + [[verifier]] into a concrete suite. Key pages consulted: [[agent-evaluation]], [[verifier]], [[demystifying-evals-for-ai-agents-anthropic-2026]], [[agent-evaluation-readiness-checklist-langchain-2026]], [[langfuse-agent-evaluation-guide]], [[deepeval-agent-evaluation-docs]]. Queries 10 -> 11.
+
 ## [2026-07-07] ingest | Agent evaluation — 12 URLs (Anthropic, tooling docs, benchmark papers)
 
 Ingested a user-supplied reading list on [[agent-evaluation]]: Anthropic's guide + webinar, MLflow, LangSmith, LangChain's checklist, Langfuse, DeepEval, NVIDIA NeMo, IBM, and three papers. **11 of 12 URLs resolved**; the NVIDIA NeMo agentic-metrics URL 404s and its content was located in the relocated NeMo Platform/microservices docs. The Anthropic webinar is a **registration page with no recording available**, so it is cited with its stated agenda rather than summarized.

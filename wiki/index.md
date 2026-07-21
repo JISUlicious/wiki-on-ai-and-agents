@@ -7,7 +7,7 @@ updated: 2026-05-17
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 310 sources, 139 entities, 238 concepts, 3 comparisons, 10 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 310 sources, 139 entities, 238 concepts, 3 comparisons, 11 queries.
 
 ## Entities
 
@@ -902,3 +902,4 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[sakana-fugu-review]] — Comprehensive review of Sakana Fugu: the two-variant (Trinity/Conductor) learned-orchestrator, its training paradigm, domain-adaptivity results, and where it sits vs MoE / dynamic-workflows / MAS.
 - [[describe-probe-in-depth]] — In-depth account of PROBE: the four-step process-based hallucination-detection benchmark, dataset, per-step results (evidence-finding bottleneck), and positioning.
 - [[mcp-server-architecture-patterns]] — The five MCP server design patterns (Resource Gateway / Tool Orchestrator / Stateful Session / Proxy Aggregator / Domain Adapter) + the tool-count limit and transport-overhead findings.
+- [[in-house-data-agent-eval-test-set]] — A worked 35-task evaluation suite for an internal data-search-and-analysis agent: five graded dimensions, dataset schema, an 8-grader stack, and a build order — operationalizing agent-evaluation + verifier.

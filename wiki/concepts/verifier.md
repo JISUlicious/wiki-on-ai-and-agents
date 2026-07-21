@@ -70,3 +70,7 @@ Different targets demand different machinery — using one LLM judge for everyth
 ## In practice
 
 [[agent-evaluation]] is where these targets get operationalized by production tooling. Notable mappings: **state-change verification** (does the calendar event actually exist?) is the industry's name for outcome verification and is the dimension current tools most conspicuously lack; **DeepEval's Plan Quality vs Plan Adherence** is the only shipped instance of the plan-validity vs plan-conformance split above; and [[agent-as-a-judge]] supplies the requirement-level intermediate judgments that flat pass/fail cannot.
+
+## Worked example
+
+- [[in-house-data-agent-eval-test-set]] — a test suite whose grader choices are driven directly by the reference-type axis above (exact reference -> code; retrieved corpus -> consistency judge; no-valid-reference -> abstention check).

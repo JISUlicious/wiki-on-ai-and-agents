@@ -142,6 +142,10 @@ Agent behavior varies between runs, so single-run scores mislead. Two metrics, f
 - **[[mlagentbench-huang-2023|MLAgentBench]]** — agents doing ML experimentation, judged by whether their code actually improves a metric ≥10%. Introduces **cost-per-success** reporting ($231 expected cost per completed task).
 - **[[agent-as-a-judge-zhuge-2024|Agent-as-a-Judge]]** — agentic systems judging agentic systems. Its most useful empirical result: giving the trajectory to a **plain LLM judge made it worse** (84.15% → 68.86% alignment) while the agentic judge **improved** (88.52% → 92.07%). More evidence only helps a judge equipped to navigate it. It also calibrates against **human-vs-human disagreement (~10–30%)** rather than assuming humans are an oracle.
 
+## Worked example
+
+- [[in-house-data-agent-eval-test-set]] — a 35-task suite instantiating this methodology for an internal data-search-and-analysis agent (dataset schema, decomposed grader stack, build order).
+
 ## Related
 
 - [[verifier]] — verification targets by reference type; the conceptual layer beneath these practices.
