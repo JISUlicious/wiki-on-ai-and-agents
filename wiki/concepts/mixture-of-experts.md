@@ -56,3 +56,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — Attention to Mamba A Recipe for Cross Architecture
 - [[massive-activations-attention-sinks-sun-2026]] — The Spike, the Sparse and the Sink Anatomy
 - [[minimax-sparse-attention-lai-2026]] — MiniMax Sparse Attention
+- [[nemotron-3-puzzle-75b-a9b-nvidia-2026]] — heterogeneous expert pruning + per-layer top-k (22 → 4–18) compressing Nemotron-3-Super 120.7B → 75.3B

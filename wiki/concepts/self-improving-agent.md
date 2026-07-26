@@ -30,6 +30,10 @@ The self-improving agent pattern is the bridge from one-shot task agents to syst
 
 Canonical instance is [[darwin-godel-machine]]; precursors are [[voyager]] (skill library / procedural memory) and [[reflexion]] (verbal self-correction). Adjacent runtime-adaptation patterns: [[agentic-context-engineering]] (self-evolving context playbook), [[hermes-agent]] (self-editing memory curator), [[a-mem]] (Zettelkasten-style memory evolution). Compare to [[agentic-rl]], which improves agents via weight updates rather than scaffold/skill edits — the two paradigms are complementary, not competing. The theoretical parent is Schmidhuber's [[godel-machine]].
 
+
+> [!warning] Contradiction — self-improving scaffolds vs. plain test-time search
+> [[rethinking-evaluation-harness-evolution-wang-2026]] argues that scaffold self-improvement is a *search procedure*, and that when compared against simple search at matched budgets it does not win: evolved harnesses **67.4** vs **72.3** for plain parallel sampling on Terminal-Bench 2.1, with held-out gains of only +0.6. This does not refute self-improvement generally (it tests scaffold evolution, not [[darwin-godel-machine|weight- or code-level]] variants, on one benchmark the authors admit may not be harness-sensitive), but it does mean **reported scaffold-improvement gains need a matched-compute search baseline** before they can be attributed to the improvement mechanism itself.
+
 ## References
 
 - [[darwin-godel-machine-zhang-2025]] — open-ended scaffold evolution; SWE-bench 20% → 50%.
@@ -54,3 +58,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[red-queen-godel-machine-iacob-2026]] — Red Queen Gödel Machine: co-evolve agents and their evaluators
 - [[aspire-agentic-skill-programming-robotics-lu-2026]] — ASPIRE: continual code-as-policy robot skill learning
 - [[agentic-hardware-design-repository-level-code-evolution-yu-2026]] — HORIZON: hardware design as repo-level code evolution
+- [[self-improvements-in-modern-agentic-systems-ren-2026]] — 97-page survey formalizing agent = `(θ, Σ)`; splits FM-weight updates from scaffolding updates, and treats *skill* as a reusable update operator

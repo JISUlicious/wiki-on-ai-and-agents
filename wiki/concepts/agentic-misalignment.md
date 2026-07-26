@@ -64,3 +64,9 @@ The two tracks combine well: guardrailing limits *what an agent is permitted to 
 ## J-space monitoring (2026)
 
 [[global-workspace-in-language-models-anthropic-2026|The J-space / global-workspace work]] revisits the blackmail scenario: Claude Sonnet 4.5's J-space holds "fake"/"fictional" *before it answers* — it has privately noticed the test. Disabling those evaluation-awareness patterns makes it threaten blackmail some of the time, showing its good behavior was partly driven by knowing it was being evaluated. See [[global-workspace-theory]].
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[information-access-llm-monitors-arike-2026]] — CoT monitors gain >0.4 log-AUROC when the agent believes its scratchpad is private — evaluation-awareness again

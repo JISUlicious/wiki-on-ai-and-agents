@@ -4,12 +4,12 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-07-05",
+  "last_processed_date": "2026-07-22",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
-    "nlpnews 'Top AI Papers' mask IDs behind substack redirects — resolve+verify before ingest.",
-    "nlpnews 'AI Agents Weekly' are paywalled previews — papers section not in email body; low yield.",
+    "nlpnews 'Top AI Papers' mask IDs behind substack redirects \u2014 resolve+verify before ingest.",
+    "nlpnews 'AI Agents Weekly' are paywalled previews \u2014 papers section not in email body; low yield.",
     "Every candidate arXiv ID is verified against arxiv.org/abs/{id} before download."
   ],
   "processed_thread_ids": [
@@ -56,7 +56,12 @@
     "19f0ee8a771f7154",
     "19ec6aa7a8ea6084",
     "19f1f6cc08b36991",
-    "19f33346c578ce6d"
+    "19f33346c578ce6d",
+    "19f7b3b075128b05",
+    "19f571ac51022bc8",
+    "19f9a4c4cff71280",
+    "19f75c0363af0c71",
+    "19f5207f162203e4"
   ],
   "runs": [
     {
@@ -152,6 +157,16 @@
         "2606.24775"
       ],
       "notes": "alphaXiv Jul-1 (3 new + 2 dup) + NLP Jun28-Jul5 (10 new). 12 arXiv via subagents + DSpark (alphaXiv-native, coverage-based). Cursor -> 2026-07-05; 4 product-news/deep-dive threads pending."
+    },
+    {
+      "date": "2026-07-22",
+      "type": "newsletter sweep (manual, NLP weekly x2)",
+      "threads_read": 5,
+      "candidate_ids_verified": 20,
+      "on_domain_ingested": 20,
+      "new_source_pages": 20,
+      "dups_skipped": [],
+      "notes": "NLP 2026-07-12 (10) + 2026-07-19 (10). All 20 redirects resolved, all IDs verified vs citation_title, 0 dups. 3 AI Agents Weekly threads (07-11/18/25) empirically confirmed paywalled previews: ~2.8k chars, 0 arxiv links, 0 'Paper [' blocks -> processed with no yield. Contradiction filed: rethinking-evaluation-harness-evolution vs agentic-harness-engineering (AHE). PDF verification caught 4 newsletter blurb errors incl. a fabricated '130ms RTX 4090D' figure. Cursor -> 2026-07-22."
     }
   ],
   "pending_threads": [
@@ -159,25 +174,25 @@
       "id": "19f2d6bdc796b0fc",
       "sender": "nlpnews@substack.com",
       "date": "2026-07-04",
-      "reason": "AI Agents Weekly (Claude Sonnet 5, LongCat-2.0, Grok Voice…) — product news."
+      "reason": "AI Agents Weekly (Claude Sonnet 5, LongCat-2.0, Grok Voice\u2026) \u2014 product news."
     },
     {
       "id": "19f099ef34f7de9d",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-27",
-      "reason": "AI Agents Weekly (GPT-5.6, Ornith-1.0, Codex Inside OpenAI…) — product news."
+      "reason": "AI Agents Weekly (GPT-5.6, Ornith-1.0, Codex Inside OpenAI\u2026) \u2014 product news."
     },
     {
       "id": "19ee5b63d6938554",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-20",
-      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts…) — product news."
+      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts\u2026) \u2014 product news."
     },
     {
       "id": "19ecd09cbe2eed3c",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-15",
-      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article — may cite papers."
+      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article \u2014 may cite papers."
     }
   ]
 }

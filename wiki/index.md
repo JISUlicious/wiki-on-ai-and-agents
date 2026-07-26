@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-05-17
+updated: 2026-07-22
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 310 sources, 139 entities, 238 concepts, 3 comparisons, 11 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 330 sources, 139 entities, 238 concepts, 3 comparisons, 11 queries.
 
 ## Entities
 
@@ -774,6 +774,36 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Safety, adversarial & commentary**
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
+
+### Newsletter — NLP weekly (2026-07-19 "Top AI Papers")
+
+Ten papers from the July 13–19 issue, ingested 2026-07-22.
+
+- [[self-improvements-in-modern-agentic-systems-ren-2026]] — 97-page survey (Ren, Zhuge, **Schmidhuber** et al.) formalizing an agent as `(θ, Σ)` = foundation model + scaffold; self-improvement splits into FM weight updates (organized by signal form) vs scaffolding updates (by component)
+- [[metacognition-in-llms-liu-2026]] — Yale/UC-Irvine survey of LLM metacognition as a **monitor-and-control loop**; verdict *not yet robust*, and better reasoning does **not** buy better metacognition
+- [[when-is-routing-meaningful-huot-2026]] — Google DeepMind: routing is meaningful only if the model society is behaviourally differentiated *and* stable under paraphrase; Hierarchic Social Entropy (real pools 1.62 vs purpose-built 3.91)
+- [[rethinking-evaluation-harness-evolution-wang-2026]] — **Negative result**: evolved harnesses score 67.4 vs 68.2 for the static baseline on Terminal-Bench 2.1, while plain parallel sampling reaches 72.3 — harness evolution must be benchmarked against test-time-scaling at matched budgets
+- [[tracing-agentic-failure-flow-of-success-yeh-2026]] — OAT: one-class neural-CDE model trained only on ~100 *successful* trajectories, scoring failure steps as anomalies — 7 ms and 0 output tokens per trajectory vs 4.2 s (GPT-4o)
+- [[failure-as-a-process-cli-agent-trajectories-zhao-2026]] — 63,000+ annotated steps over 1,794 trajectories; three failure timestamps (error / lock-in / observability), 57.9% epistemic, and 71% of *successful* runs also err — response to error signals is what differs (92% vs 37%)
+- [[information-access-llm-monitors-arike-2026]] — Extract-and-evaluate sabotage monitoring: +16.8 pp catch rate at 1% FPR; CoT monitors gain >0.4 log-AUROC when the agent believes its scratchpad is private
+- [[gflowrl-scaling-distribution-matching-rl-liu-2026]] — Microsoft Research: replaces FlowRL's learned partition function with an in-batch Monte-Carlo estimate; 2048 Codeforces Elo at 14B, and the ablation shows the learned normalizer was never doing useful work
+- [[infinite-worlds-versatile-interactions-gao-2026]] — LingBot-World 2.0 (Robbyant): 720p/60fps sustained for a 60-minute session; causal backbone + distilled real-time student, open 14B release
+- [[from-foundation-to-application-vla-wu-2026]] — LingBot-VLA 2.0 (Robbyant): generalist embodied model over 20 robot configurations, 60,000 h of data (50k robot + 10k egocentric human video)
+
+### Newsletter — NLP weekly (2026-07-12 "Top AI Papers")
+
+Ten papers from the July 5–12 issue, ingested 2026-07-22.
+
+- [[llm-as-a-verifier-kwok-2026]] — Training-free general-purpose verifier reading a **continuous** expectation over scoring-token logits instead of an argmax; Terminal-Bench V2 86.5%, and +16.6 pts over a discrete LLM-judge on the identical base VLM
+- [[the-harness-effect-token-economics-writer-2026]] — 22 tasks × 6 models, swapping **only** the orchestration layer: cost −41%, latency −44%, tokens −38%; efficiency gains are model-invariant but quality gain correlates with base-model strength at r=0.99
+- [[beyond-the-leaderboard-albayaydh-2026]] — Oxford synthesis of 27 papers / 19 benchmarks into six agent-failure clusters; argues part of the apparent year-over-year gain is **correction of earlier measurement error**, not capability
+- [[always-on-agents-survey-ding-2026]] — 136-page survey of persistent agent state: four memory types + **seven control-relevant state types** (ledgers, permissions, provenance, credentials, commitments…); corpus is lopsided — rollback appears in just 27 of 435 works
+- [[a-hippocampus-for-linear-attention-cui-2026]] — HOLA: a bounded exact KV cache (w=64/layer) beside a Gated-DeltaNet recurrent state; Wikitext ppl −16.1%, and 0.58 vs 0.14 on RULER S-NIAH-1 at 16× training length
+- [[can-lms-actually-retrieve-in-context-gollapudi-2026]] — BlockSearch: a 0.6B in-context retriever; diagnoses million-token retrieval failure as a **readout** problem, not ranking — gold attention share collapses 0.91 → 0.01 while the attention ceiling stays ~100%
+- [[nemotron-3-puzzle-75b-a9b-nvidia-2026]] — NVIDIA compresses Nemotron-3-Super 120.7B→75.3B via Iterative Puzzle; ~2× throughput **only in the decode-heavy regime** (1.60–1.79× prefill-heavy) — the pp/tg asymmetry again
+- [[recontext-recursive-evidence-replay-zhao-2026]] — Training-free long-context harness using model-internal attention as the relevance signal; +24.6% relative accuracy, motivated by the top 0.1% of context tokens carrying 50–80% of relevance mass
+- [[right-in-the-right-way-damani-2026]] — MIT VARL: multiplies verifiable reward by a continuously-retrained human-likeness discriminator; **reward-hacking rate 1.00% vs 96.9–99.3%** for SFT+RLVR baselines
+- [[coding-agents-replicate-sciml-papers-hans-2026]] — A paper-replication **skill** that gates completion on workspace evidence rather than the agent's final message; 158/158 targets matched across 12 runs
 
 ### Newsletter — NLP weekly (2026-07-05 "Top AI Papers")
 

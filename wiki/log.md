@@ -2,12 +2,28 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-07-07
+updated: 2026-07-22
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-07-22] ingest | Newsletter sweep — NLP weekly 2026-07-12 + 2026-07-19 (20 papers)
+
+Ran the [newsletter-ingest runbook]. Cadence gate passed (17 days since cursor `2026-07-05`). Found **5 new threads**; 2 were "Top AI Papers" digests and 3 were "AI Agents Weekly". All 20 Substack redirects resolved, **all 20 arXiv IDs verified against `citation_title`**, **0 duplicates** against the wiki's 270 existing IDs. Ingested via 5 thematic subagents from full PDF text — no abstract-only fallbacks.
+
+**2026-07-19 issue (Jul 13–19)**: [[self-improvements-in-modern-agentic-systems-ren-2026]], [[metacognition-in-llms-liu-2026]], [[when-is-routing-meaningful-huot-2026]], [[rethinking-evaluation-harness-evolution-wang-2026]], [[tracing-agentic-failure-flow-of-success-yeh-2026]], [[failure-as-a-process-cli-agent-trajectories-zhao-2026]], [[information-access-llm-monitors-arike-2026]], [[gflowrl-scaling-distribution-matching-rl-liu-2026]], [[infinite-worlds-versatile-interactions-gao-2026]], [[from-foundation-to-application-vla-wu-2026]].
+
+**2026-07-12 issue (Jul 5–12)**: [[llm-as-a-verifier-kwok-2026]], [[the-harness-effect-token-economics-writer-2026]], [[beyond-the-leaderboard-albayaydh-2026]], [[always-on-agents-survey-ding-2026]], [[a-hippocampus-for-linear-attention-cui-2026]], [[can-lms-actually-retrieve-in-context-gollapudi-2026]], [[nemotron-3-puzzle-75b-a9b-nvidia-2026]], [[recontext-recursive-evidence-replay-zhao-2026]], [[right-in-the-right-way-damani-2026]], [[coding-agents-replicate-sciml-papers-hans-2026]].
+
+**Contradiction filed**: [[rethinking-evaluation-harness-evolution-wang-2026]] instantiates harness evolution as **AHE with its explore agent disabled** and finds evolved harnesses score **67.4 vs 68.2** for the static baseline (parallel sampling 72.3) — a direct, named challenge to [[agentic-harness-engineering-lin-2026]], already recorded here as a positive result. `> [!warning] Contradiction` callouts added to [[agentic-harness-engineering]] and [[self-improving-agent]], presenting both claims plus the authors' own caveat that Terminal-Bench may not be harness-sensitive.
+
+**Blurb errors caught by verifying against the PDFs** (the reason the runbook mandates it): the LingBot-VLA "~130 ms on RTX 4090D" figure **does not exist in the paper** (strings "4090"/"RTX" appear zero times); the sabotage-monitoring "less access is better" framing is **overstated** — action-only monitoring is the *worst* strategy in 5 of 8 pairs and never the best, the real effect being *filtering* rather than withholding; Puzzle-75B's "~2× throughput" is **regime-specific** (2.03–2.14× decode-heavy vs 1.60–1.79× prefill-heavy — the [[quantization-performance|pp/tg asymmetry]] appearing independently); and the metacognition survey's "facets of one capability" is the survey's *lens*, not its thesis (it explicitly declines to legislate a definition).
+
+**3 "AI Agents Weekly" threads** (2026-07-11/18/25) verified as **paywalled previews** — 2,835 chars, zero arXiv links, zero `Paper [` blocks — so 0 papers, no ingest work. Recorded as processed-with-no-yield rather than left pending.
+
+Sources 310 → 330.
 
 ## [2026-07-21] query | Evaluation test set for an in-house data search & analysis agent
 
@@ -156,7 +172,6 @@ Found: 10 errors, 69 warnings, 243 suggestions. Auto-fixed errors + warnings + t
 - **Suggestions (top)**: created 9 recurring concept stubs ([[reasoning]], [[code-generation]], [[long-term-memory]], [[meta-learning]], [[memory-consolidation]], [[knowledge-distillation]], [[test-time-compute]], [[state-space-model]], [[lora]]) and 4 institutions ([[google]], [[fudan-university]], [[peking-university]], [[hku]]); repointed aliases ([[deepmind|google-deepmind]], [[stanford-university|stanford]], [[shanghai-jiao-tong-university|sjtu]]).
 
 Result: broken index links 9→0, orphan pages 69→0, pages-not-in-index 0, frontmatter issues 1→0, tag hygiene clean. ~218 long-tail missing pages (author/model names, e.g. [[reasoning]] dependents) remain as future suggestions. Totals: 231 sources, 137 entities, 218 concepts.
-
 
 ## [2026-06-19] ingest | alphaXiv weekly (Jun 10) — 5 papers + 3 concept promotions
 
@@ -507,8 +522,6 @@ Seeded from [kyegomez/OpenMythos](https://github.com/kyegomez/OpenMythos)'s cura
 **Wiki size**: 347 → 362 pages.
 
 ---
-
-
 
 ## [2026-05-17] ingest | Is Grep All You Need? (Sen et al., PwC 2026)
 

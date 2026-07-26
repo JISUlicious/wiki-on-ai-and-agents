@@ -74,3 +74,12 @@ Different targets demand different machinery — using one LLM judge for everyth
 ## Worked example
 
 - [[in-house-data-agent-eval-test-set]] — a test suite whose grader choices are driven directly by the reference-type axis above (exact reference -> code; retrieved corpus -> consistency judge; no-valid-reference -> abstention check).
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[llm-as-a-verifier-kwok-2026]] — training-free general-purpose verifier reading a *continuous* score off scoring-token logits; +16.6 pts over a discrete judge on the same base model
+- [[right-in-the-right-way-damani-2026]] — multiplying verifiable reward by a human-likeness discriminator cuts reward hacking to 1.0% from 96.9–99.3% — a direct attack on the proxy-reward problem
+- [[coding-agents-replicate-sciml-papers-hans-2026]] — gates task completion on *workspace evidence* rather than the agent's final message — outcome verification in practice
+- [[information-access-llm-monitors-arike-2026]] — extract-then-evaluate monitoring: filtering the trajectory beats dumping it into the monitor's context (+16.8 pp)

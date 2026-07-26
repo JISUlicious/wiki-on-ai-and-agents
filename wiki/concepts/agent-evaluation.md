@@ -157,3 +157,11 @@ Agent behavior varies between runs, so single-run scores mislead. Two metrics, f
 
 - [[demystifying-evals-for-ai-agents-anthropic-2026]] · [[agent-evaluation-readiness-checklist-langchain-2026]] · [[langsmith-evaluation-docs]] · [[mlflow-genai-evaluation-docs]] · [[langfuse-agent-evaluation-guide]] · [[deepeval-agent-evaluation-docs]] · [[nvidia-nemo-agentic-metrics]] · [[ibm-ai-agent-evaluation-tutorial]] · [[agentbench-liu-2023]] · [[mlagentbench-huang-2023]] · [[agent-as-a-judge-zhuge-2024]]
 - Anthropic webinar *"Evals for AI Agents: How Product Builders Get the Most Out of Every New Model"* — [registration page](https://www.anthropic.com/webinars/evals-for-ai-agents-how-product-builders-get-the-most-out-of-every-new-model); **no recording available as of 2026-07-07**, so not ingested. Stated agenda: why single-turn evals miss most agent failures, building a first eval set from production failures, and deciding whether a new model release is worth adopting.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[beyond-the-leaderboard-albayaydh-2026]] — Oxford synthesis of 27 papers / 19 benchmarks; argues part of year-over-year gains is *correction of measurement error*, not capability
+- [[failure-as-a-process-cli-agent-trajectories-zhao-2026]] — 63k annotated steps; failure has three timestamps (error / lock-in / observability), and 71% of *successful* runs also err
+- [[tracing-agentic-failure-flow-of-success-yeh-2026]] — failure attribution as anomaly detection against successful-trajectory flow — 7 ms and 0 output tokens per trajectory

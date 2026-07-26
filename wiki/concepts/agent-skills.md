@@ -159,3 +159,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[openclaw-skill-collective-skill-tree-search-lin-2026]] — Collective Skill Tree Search — build + use a diverse skill tree
 - [[beyond-domains-reusing-web-skills-he-2026]] — SkillMigrator: cross-site web skills via layout-keyed patterns
 - [[generative-skill-composition-zhao-2026]] — skill composition as one joint plan, not retrieval ranking
+- [[coding-agents-replicate-sciml-papers-hans-2026]] — a paper-replication *skill* whose completion criterion is workspace evidence, not the agent's self-report — 158/158 targets matched

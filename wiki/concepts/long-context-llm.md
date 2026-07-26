@@ -35,3 +35,5 @@ LLMs with very large context windows — 200K, 1M, or 10M+ tokens — that can f
 Surfaced via newsletter ingests; see [[index]].
 
 - [[flashmemory-lookahead-sparse-attention-wang-2026]] — FlashMemory/LSA: lookahead sparse attention for ultra-long context
+- [[can-lms-actually-retrieve-in-context-gollapudi-2026]] — million-token in-context retrieval fails at *readout*, not ranking — gold attention share collapses 0.91 → 0.01
+- [[recontext-recursive-evidence-replay-zhao-2026]] — training-free long-context harness using model-internal attention as the relevance signal (+24.6% relative)

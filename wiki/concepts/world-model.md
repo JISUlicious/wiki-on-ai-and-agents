@@ -46,3 +46,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[can-llm-agents-infer-world-models-menaged-2026]] — world-model inference as agentic DFA learning
 - [[looped-world-models-facemind-2026]] — LoopWM: first looped-transformer world model
 - [[qwen-agentworld-language-world-models-for-general-agents-qwen-2026]] — Qwen-AgentWorld: language world models for agentic environments
+- [[infinite-worlds-versatile-interactions-gao-2026]] — LingBot-World 2.0: 720p/60fps sustained for a 60-minute interactive session via a causal backbone
+- [[from-foundation-to-application-vla-wu-2026]] — LingBot-VLA 2.0: the embodied-policy sibling; predicts future depth and semantic features before acting

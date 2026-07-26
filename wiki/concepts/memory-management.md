@@ -134,3 +134,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[atommem-memory-system-via-atomic-facts-yao-2026]] — AtomMem: atomic-fact long-term memory; SOTA on LoCoMo
 - [[are-we-ready-for-an-agent-native-memory-system-zhou-2026]] — agent-native memory as a full data system
 - [[automem-wu-2026]] — AutoMem: memory management as a trainable cognitive skill (metamemory)
+- [[always-on-agents-survey-ding-2026]] — 136-page survey: durable agent state is far more than memory — seven control-relevant state types, and rollback appears in only 27 of 435 works

@@ -43,3 +43,5 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[verification-horizon-qwen-2026]] — no fixed reward survives a stronger policy; verification co-evolves
 - [[reinforcement-learning-with-metacognitive-feedback-liu-2026]] — RLMF: metacognition as the RL reward for faithful uncertainty
+- [[gflowrl-scaling-distribution-matching-rl-liu-2026]] — distribution-matching RL that drops the learned partition function for an in-batch Monte-Carlo estimate; 2048 Codeforces Elo at 14B
+- [[right-in-the-right-way-damani-2026]] — adds a human-demonstration discriminator alongside verifiable reward to stop style/diversity collapse

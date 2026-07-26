@@ -86,3 +86,10 @@ Both say the same thing from opposite directions: **you cannot attribute an agen
 - [[agentic-harness-engineering-lin-2026]] · [[harness-updating-is-not-harness-benefit-lin-2026]] · [[scaling-laws-agent-harnesses-effective-feedback-compute-zhang-2026]]
 - [[cross-agent-comparison-2026]] · [[fundamental-components-of-harness]]
 - Leaderboards: benchmarkingagents.com/terminal-bench · morphllm.com/terminal-bench-2 · digitalapplied.com (SWE-bench Verified scaffolding analysis)
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[the-harness-effect-token-economics-writer-2026]] — 22 tasks × 6 models with only the orchestration layer swapped: efficiency gains are model-invariant, but quality gain tracks base-model strength at r=0.99
+- [[rethinking-evaluation-harness-evolution-wang-2026]] — harness *evolution* fails to beat plain test-time scaling at matched budgets (67.4 vs 72.3)

@@ -67,3 +67,10 @@ Worth keeping in view: human judges are not an oracle either. Inter-evaluator di
 ## References
 
 - [[demystifying-evals-for-ai-agents-anthropic-2026]] · [[langsmith-evaluation-docs]] · [[mlflow-genai-evaluation-docs]] · [[deepeval-agent-evaluation-docs]] · [[agent-as-a-judge-zhuge-2024]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[metacognition-in-llms-liu-2026]] — survey of LLM self-monitoring: verdict *not yet robust*, and better reasoning does not buy better metacognition
+- [[llm-as-a-verifier-kwok-2026]] — a continuous scoring-token expectation beats discrete judging by 16.6 pts on the identical base model

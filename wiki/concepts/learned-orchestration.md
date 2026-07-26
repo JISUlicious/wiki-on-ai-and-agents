@@ -63,3 +63,9 @@ A hallmark result is **domain adaptivity**: the learned routing distribution *re
 - [[sakana-fugu-sakana-ai-2026]] — Sakana Fugu (the canonical learned-orchestrator; Trinity + Conductor lineage).
 - [[agent-as-a-router-zhou-2026]] — agentic model routing as a dynamic problem.
 - [[sakana-fugu-review]] — comprehensive review of Fugu.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[when-is-routing-meaningful-huot-2026]] — routing is vacuous unless the model society is behaviourally differentiated *and* stable under paraphrase

@@ -152,3 +152,9 @@ Production servers complicate this further: continuous batching runs compute-bou
 ## References
 
 - [[llm-inference-roofline-yuan-2024]] · [[marlin-frantar-2024]] · [[give-me-bf16-or-give-me-death-kurtic-2024]] · [[which-quantization-kurt-2026]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[nemotron-3-puzzle-75b-a9b-nvidia-2026]] — compressing a hybrid MoE yields ~2× throughput **only decode-heavy** (1.60–1.79× prefill-heavy) — the pp/tg asymmetry confirmed independently

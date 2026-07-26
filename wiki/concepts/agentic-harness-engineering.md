@@ -71,6 +71,12 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 
 - [[code-as-harness]] · [[self-improving-agent]] · [[skill-optimization]] · [[dynamic-workflows]] · [[darwin-godel-machine]] · [[agentic-context-engineering]] · [[agent-three-layer-model]]
 
+
+> [!warning] Contradiction — does harness evolution actually help?
+> **This page's claim** (Lin et al., [[agentic-harness-engineering-lin-2026]]): automatic harness evolution improves agent performance.
+> **Counter-claim** ([[rethinking-evaluation-harness-evolution-wang-2026]], AI2/UW 2026): harness evolution *is itself a search procedure* and must be compared against test-time-scaling baselines at **matched feedback and inference budgets**. Instantiating it as **AHE with the explore agent disabled** on Terminal-Bench 2.1, evolved harnesses score **67.4** — *below* the static initial harness at **68.2** — while plain parallel sampling reaches **72.3**. Damage is worst on the strongest model (GPT-5.4: 75.3 → 69.7), and gains transfer to held-out tasks at only +0.6. Diagnosis: edits "memorize fixes rather than distilling strategies".
+> **Unresolved.** The authors themselves caveat (§5.2) that the negative result may be Terminal-Bench-specific — scores are already high and the benchmark may simply not be harness-sensitive. Both results stand; the open question is whether reported harness-evolution gains survive a matched-budget search baseline.
+
 ## References
 
 **Surveys & reviews:**
