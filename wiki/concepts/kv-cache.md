@@ -30,3 +30,9 @@ The **key/value cache** in [[transformer-architecture|Transformer]] attention: w
 ## KV-cache quantization
 
 The cache is a memory consumer independent of parameter count, scaling with context length — for Llama-2-7B at 32k context it **exceeds the FP16 weights**. Quantizing it (`q8_0`/`q4_0` in [[llama-cpp]], or KVQuant/KIVI in research) is a distinct lever from weight quantization, with its own quality and safety profile. See [[quantization-performance]].
+
+## Inference efficiency
+
+- [[prefix-caching]] — reusing cached KV so repeated prompt content is never prefilled twice — the highest-leverage prompt-processing optimization
+- [[paged-attention]] — OS-style paging of the cache; lifts effective utilization from 20–38% to 96.3% and enables ref-counted prefix sharing
+- [[grouped-query-attention]] — the architectural lever that shrinks the cache itself

@@ -9,6 +9,28 @@ updated: 2026-07-22
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-27] query | Methods to speed up prompt processing (prefill)
+
+Question: "methods to boost up prompt processing speed". **Filed as [[methods-to-speed-up-prompt-processing]]**, after first collecting and ingesting the 12 missing inference-systems sources (see the ingest entry above) so the answer rests on sources rather than assertions. Organizes prefill levers into skip ([[prefix-caching]]) / shrink ([[prompt-compression]], sparse attention) / cheapen (FP8, W4A4) / schedule (disaggregation), and records the three common traps that help decode but **not** prefill: weight-only quantization, [[grouped-query-attention|GQA]], and [[chunked-prefill]]. Two of those three were errors in my own first-pass answer, corrected by reading the papers.
+
+
+## [2026-07-27] ingest | Inference efficiency — 12 sources, 6 concepts (prefill/prompt-processing)
+
+Triggered by a query on speeding up prompt processing, which surfaced a large hole: the wiki explained the prefill/decode asymmetry ([[quantization-performance]]) but had **zero coverage of the systems work that exploits it** — no FlashAttention, no PagedAttention, no prefix caching, no prompt compression. Collected and ingested before filing the answer. All 12 arXiv IDs verified against `citation_title` before dispatch; all 12 ingested from full PDF text via 3 thematic subagents, 0 duplicates.
+
+**New concepts (6)**: [[flash-attention]], [[grouped-query-attention]], [[paged-attention]], [[prefix-caching]], [[prompt-compression]], [[chunked-prefill]].
+
+**New sources (12)**: [[flash-attention-dao-2022]], [[flash-attention-2-dao-2023]], [[flash-attention-3-shah-2024]], [[grouped-query-attention-ainslie-2023]], [[paged-attention-kwon-2023]], [[sarathi-chunked-prefill-agrawal-2023]], [[distserve-zhong-2024]], [[splitwise-patel-2023]], [[sglang-radixattention-zheng-2023]], [[prompt-cache-gim-2023]], [[llmlingua-jiang-2023]], [[llmlingua-2-pan-2024]].
+
+**Two corrections to the in-conversation answer, caught by reading the papers**: (1) **chunked prefill is not a prefill speedup** — SARATHI *spends* prefill (~5× slower at chunk 64, ~20% loss at chunk 256) to buy up-to-10× decode throughput, stating "even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more"; (2) **GQA is not a prefill lever** — the paper deliberately excludes encoder self-attention because "encoder representations are computed in parallel, and memory bandwidth is therefore generally not the primary bottleneck", which is precisely the prefill regime.
+
+**Contradiction filed** on [[chunked-prefill]]: [[distserve-zhong-2024|DistServe]] (OSDI 2024) argues chunking "trades TTFT for TPOT" irreducibly and incurs O(N²) KV-cache loads for N chunks vs O(N), and disaggregates prefill/decode onto separate GPUs instead (2.1× rps/GPU, 7.4× more requests, KV transfer <0.1% of latency). Unresolved and workload-dependent; [[splitwise-patel-2023|Splitwise]] reaches the same conclusion from a provisioning angle.
+
+**Refinement recorded on [[flash-attention]]**: prefill is compute-bound at the roofline level, but the *attention kernel* is memory-bound because standard attention materializes an N×N matrix — FlashAttention does **more** FLOPs (66.6 → 75.2 GFLOPs) and is 5.7× faster on ~9× less HBM traffic. Both statements hold at different levels of the stack.
+
+Also noted: Selective-Context's compression pass costs 15.5 s — more than the entire uncompressed inference, i.e. a **net slowdown** — a caution now recorded on [[prompt-compression]]. Sources 330 → 342, concepts 238 → 244.
+
+
 ## [2026-07-22] ingest | Newsletter sweep — NLP weekly 2026-07-12 + 2026-07-19 (20 papers)
 
 Ran the [newsletter-ingest runbook]. Cadence gate passed (17 days since cursor `2026-07-05`). Found **5 new threads**; 2 were "Top AI Papers" digests and 3 were "AI Agents Weekly". All 20 Substack redirects resolved, **all 20 arXiv IDs verified against `citation_title`**, **0 duplicates** against the wiki's 270 existing IDs. Ingested via 5 thematic subagents from full PDF text — no abstract-only fallbacks.

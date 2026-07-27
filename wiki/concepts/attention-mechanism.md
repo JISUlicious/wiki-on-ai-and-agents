@@ -33,3 +33,8 @@ The [[transformer]] showed that attention alone — without recurrence or convol
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Inference efficiency
+
+- [[flash-attention]] — IO-aware **exact** attention: same result, ~9× less HBM traffic, memory quadratic → linear in sequence length
+- [[grouped-query-attention]] — interpolates between MHA and MQA; 5% uptraining recovers near-MHA quality at near-MQA speed

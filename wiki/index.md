@@ -7,7 +7,7 @@ updated: 2026-07-22
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 330 sources, 139 entities, 238 concepts, 3 comparisons, 11 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 342 sources, 139 entities, 244 concepts, 3 comparisons, 12 queries.
 
 ## Entities
 
@@ -409,6 +409,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[llm-as-a-judge]] — Model-based grading; judge alignment against human labels, and where it breaks
 - [[agent-as-a-judge]] — Agentic judges issuing requirement-level intermediate feedback
 
+### Inference efficiency (attention kernels, caching, serving)
+- [[flash-attention]] — IO-aware **exact** attention; more FLOPs, ~9× less HBM traffic, memory quadratic → linear
+- [[grouped-query-attention]] — MHA↔MQA interpolation via 5% uptraining; a KV-cache/decode win, explicitly *not* a prefill one
+- [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
+- [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
+- [[prompt-compression]] — fewer tokens into prefill; LLMLingua 20× on GSM8K but −13 pts on BBH
+- [[chunked-prefill]] — piggyback decodes onto prefill chunks; *spends* prefill for decode throughput, and DistServe disputes the trade
+
 ### Efficiency and inference (quantization, serving)
 - [[quantization]] — Hub: methods (GPTQ/AWQ/SmoothQuant/QuIP#/rotation), the four axes, and why outliers are the central obstacle
 - [[quantization-performance]] — Memory, and the prefill(`pp`)/decode(`tg`) asymmetry: quantization speeds up decode ~3×, can slow prefill
@@ -567,6 +575,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentbench-liu-2023]] — 8 environments, 29 models; the Invalid Format / Invalid Action / Task Limit failure taxonomy
 - [[mlagentbench-huang-2023]] — Agents doing ML experimentation; cost-per-success reporting
 - [[agent-as-a-judge-zhuge-2024]] — Agentic judges + the DevAI benchmark; 97% cost saving vs human evaluation
+
+### Inference systems & efficiency (2022–2024)
+- [[flash-attention-dao-2022]] — tiling + recomputation; 40.3 GB → 4.4 GB HBM traffic while doing *more* FLOPs
+- [[flash-attention-2-dao-2023]] — work partitioning; 1.7–3.0× over v1, 73% of A100 peak
+- [[flash-attention-3-shah-2024]] — Hopper asynchrony + FP8; up to 740 TFLOPs/s, ~1.2 PFLOPs/s FP8
+- [[grouped-query-attention-ainslie-2023]] — GQA (EMNLP 2023); 5% uptraining, T5-XXL 47.1 vs MHA 47.2 at 0.28 vs 1.51 infer time
+- [[paged-attention-kwon-2023]] — vLLM (SOSP 2023); 2–4× throughput, 3.58× with a 5-shot shared prefix
+- [[sarathi-chunked-prefill-agrawal-2023]] — chunked prefill; decode up to 10×, at ~5× prefill cost at chunk 64
+- [[distserve-zhong-2024]] — DistServe (OSDI 2024); disaggregates prefill/decode, 7.4× more requests, and disputes chunking
+- [[splitwise-patel-2023]] — phase splitting across machine pools; 1.4× throughput at 20% lower cost
+- [[sglang-radixattention-zheng-2023]] — RadixAttention; automatic exact prefix reuse, 6.4× throughput, 50–99% hit rates
+- [[prompt-cache-gim-2023]] — modular attention reuse (MLSys 2024); 900 ms → 90 ms TTFT, with a Passage-Retrieval accuracy cost
+- [[llmlingua-jiang-2023]] — prompt compression (EMNLP 2023); 20× on GSM8K for ~1.5 pts, −13.2 pts on BBH at 7×
+- [[llmlingua-2-pan-2024]] — task-agnostic token-classification compression (Findings ACL 2024); 0.4 s compressor overhead
 
 ### Quantization (2022–2026)
 - [[llm-int8-dettmers-2022]] — LLM.int8(); the emergent-outlier discovery (phase shift at ~6.7B)
@@ -933,3 +955,4 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[describe-probe-in-depth]] — In-depth account of PROBE: the four-step process-based hallucination-detection benchmark, dataset, per-step results (evidence-finding bottleneck), and positioning.
 - [[mcp-server-architecture-patterns]] — The five MCP server design patterns (Resource Gateway / Tool Orchestrator / Stateful Session / Proxy Aggregator / Domain Adapter) + the tool-count limit and transport-overhead findings.
 - [[in-house-data-agent-eval-test-set]] — A worked 35-task evaluation suite for an internal data-search-and-analysis agent: five graded dimensions, dataset schema, an 8-grader stack, and a build order — operationalizing agent-evaluation + verifier.
+- [[methods-to-speed-up-prompt-processing]] — Prefill levers ranked (skip / shrink / cheapen), plus the three things that help decode but *not* prompt processing: weight-only quantization, GQA, and chunked prefill

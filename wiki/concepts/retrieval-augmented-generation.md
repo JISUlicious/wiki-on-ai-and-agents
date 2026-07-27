@@ -69,3 +69,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[diagnosing-retrieval-vs-utilization-bottlenecks-su-2026]] — Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent
 - [[karl-knowledge-agents-databricks-2026]] — KARL Knowledge Agents via Reinforcement Learning
 - [[when-to-retrieve-during-reasoning-guo-2026]] — When to Retrieve During Reasoning Adaptive Retrieval for
+- [[prompt-compression]] — task-agnostic compression is query-independent, so a compressed document needn't be recompressed per query

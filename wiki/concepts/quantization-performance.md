@@ -158,3 +158,8 @@ Production servers complicate this further: continuous batching runs compute-bou
 Surfaced via newsletter ingests; see [[index]].
 
 - [[nemotron-3-puzzle-75b-a9b-nvidia-2026]] — compressing a hybrid MoE yields ~2× throughput **only decode-heavy** (1.60–1.79× prefill-heavy) — the pp/tg asymmetry confirmed independently
+- [[flash-attention]] — the attention kernel is memory-bound even though prefill is compute-bound overall — FlashAttention fixes that layer
+- [[chunked-prefill]] — raises arithmetic intensity by piggybacking decodes onto prefill chunks — and *spends* prefill to do it
+- [[prefix-caching]] — the cheapest prefill win of all: skip it entirely for repeated content
+- [[paged-attention]] — throughput via batching, not lower per-request latency (its kernel is 20–26% slower)
+- [[methods-to-speed-up-prompt-processing]] — the practical synthesis: every prefill lever ranked, and the three techniques that help decode but not `pp`

@@ -58,3 +58,8 @@ Selected via `--guided-decoding-backend`.
 ## Quantization support
 
 vLLM is the reference serving engine in most published [[quantization]] evaluations. [[give-me-bf16-or-give-me-death-kurtic-2024|Kurtic et al.]] ran ~500,000 evaluations on it to establish the deployment rule: **W4A16 for single-stream latency, W8A8/FP8 for batched throughput** ([[quantization-performance]]). [[marlin-frantar-2024|Marlin]] kernels are integrated for W4A16.
+
+## Inference efficiency
+
+- [[paged-attention]] — the memory-management technique vLLM is built on
+- [[prefix-caching]] — automatic KV reuse across requests

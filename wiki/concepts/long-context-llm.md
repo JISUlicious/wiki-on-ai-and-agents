@@ -37,3 +37,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[flashmemory-lookahead-sparse-attention-wang-2026]] — FlashMemory/LSA: lookahead sparse attention for ultra-long context
 - [[can-lms-actually-retrieve-in-context-gollapudi-2026]] — million-token in-context retrieval fails at *readout*, not ranking — gold attention share collapses 0.91 → 0.01
 - [[recontext-recursive-evidence-replay-zhao-2026]] — training-free long-context harness using model-internal attention as the relevance signal (+24.6% relative)
+- [[flash-attention]] — makes long context feasible: attention memory goes quadratic → linear
+- [[prompt-compression]] — fewer tokens entering prefill at all; task-agnostic compression stays cacheable
+- [[chunked-prefill]] — how long prompts get scheduled against concurrent decodes
