@@ -48,3 +48,8 @@ To control the memory and communication cost of attending over all prior layers 
 
 - [arXiv:2603.15031](https://arxiv.org/abs/2603.15031)
 - Code: https://github.com/MoonshotAI/Attention-Residuals
+
+## Related
+
+- [[moonshot-ai]] — the publishing lab; AttnRes and KDA converge in Kimi K3
+- [[linear-attention]] — the sibling Kimi Team line

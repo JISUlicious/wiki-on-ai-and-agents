@@ -64,3 +64,7 @@ At 340M parameters trained on 15B SlimPajama tokens (2k context), HOLA cuts Wiki
 ## References
 
 - [arXiv:2607.02303](https://arxiv.org/abs/2607.02303)
+
+## Related
+
+- [[linear-attention]] — the family this belongs to; HOLA's exact cache addresses its central finite-state limitation.

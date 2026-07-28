@@ -7,7 +7,7 @@ updated: 2026-07-22
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 342 sources, 139 entities, 244 concepts, 3 comparisons, 12 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 344 sources, 140 entities, 245 concepts, 3 comparisons, 12 queries.
 
 ## Entities
 
@@ -145,6 +145,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[zed]] — Zed Industries; Rust collaborative editor; creator of the [[acp|Agent Client Protocol]]
 - [[deepseek]] — Open-weights frontier-model lab (DeepSeek-V3, DeepSeek-R1, GRPO)
 - [[sakana-ai]] — Tokyo AI lab focused on evolutionary / open-ended ML (Darwin Gödel Machine)
+- [[moonshot-ai]] — Chinese lab (Kimi Team); attention-architecture efficiency — KDA, FlashKDA, AttnRes, Kimi K3
 - [[bytedance]] — Hosts ByteDance Seed research; produced UI-TARS-1 / UI-TARS-2
 - [[meta]] — Meta Platforms (distinct from [[fair]] research arm)
 - [[microsoft-research]] — Microsoft's research arm (SWE-bench Live, Magma)
@@ -410,6 +411,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agent-as-a-judge]] — Agentic judges issuing requirement-level intermediate feedback
 
 ### Inference efficiency (attention kernels, caching, serving)
+- [[linear-attention]] — Fixed-size recurrent state vs growing KV cache; KDA, the 3:1 hybrid, and why nobody ships pure linear attention
 - [[flash-attention]] — IO-aware **exact** attention; more FLOPs, ~9× less HBM traffic, memory quadratic → linear
 - [[grouped-query-attention]] — MHA↔MQA interpolation via 5% uptraining; a KV-cache/decode win, explicitly *not* a prefill one
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
@@ -577,6 +579,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agent-as-a-judge-zhuge-2024]] — Agentic judges + the DevAI benchmark; 97% cost saving vs human evaluation
 
 ### Inference systems & efficiency (2022–2024)
+- [[kimi-linear-kimi-team-2025]] — Kimi Linear / KDA: channel-wise gated delta rule, 3:1 hybrid, −75% KV cache, 2.9× prefill @1M, beats full attention on MMLU
+- [[flash-kda-moonshot-2026]] — FlashKDA: CUTLASS kernels for KDA; 1.85–2.31× over the FLA baseline on H20, MIT licensed
 - [[flash-attention-dao-2022]] — tiling + recomputation; 40.3 GB → 4.4 GB HBM traffic while doing *more* FLOPs
 - [[flash-attention-2-dao-2023]] — work partitioning; 1.7–3.0× over v1, 73% of A100 peak
 - [[flash-attention-3-shah-2024]] — Hopper asynchrony + FP8; up to 740 TFLOPs/s, ~1.2 PFLOPs/s FP8

@@ -38,3 +38,7 @@ The [[transformer]] showed that attention alone — without recurrence or convol
 
 - [[flash-attention]] — IO-aware **exact** attention: same result, ~9× less HBM traffic, memory quadratic → linear in sequence length
 - [[grouped-query-attention]] — interpolates between MHA and MQA; 5% uptraining recovers near-MHA quality at near-MQA speed
+
+## Related
+
+- [[linear-attention]] — fixed-size recurrent state instead of a growing KV cache: O(N) compute, O(1) memory — and the finite-state limit that forces hybrids

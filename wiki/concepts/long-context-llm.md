@@ -40,3 +40,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[flash-attention]] — makes long context feasible: attention memory goes quadratic → linear
 - [[prompt-compression]] — fewer tokens entering prefill at all; task-agnostic compression stays cacheable
 - [[chunked-prefill]] — how long prompts get scheduled against concurrent decodes
+- [[linear-attention]] — subquadratic prefill; the advantage only appears past ~128k (2.9× at 1M)

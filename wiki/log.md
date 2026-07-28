@@ -9,6 +9,17 @@ updated: 2026-07-22
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-28] ingest | FlashKDA / Kimi Linear — 2 sources, 1 concept, 1 entity
+
+Followed up on a FlashKDA lookup by ingesting the whole line. **New concept**: [[linear-attention]] — a page several existing pages had been written *around* (both [[flash-attention]] and [[a-hippocampus-for-linear-attention-cui-2026]] previously had to say "linear attention" as plain text). **New entity**: [[moonshot-ai]]. **New sources**: [[kimi-linear-kimi-team-2025]] (arXiv:2510.26692, verified) and [[flash-kda-moonshot-2026]] (GitHub repo + benchmark + design deep-dive; a non-arXiv software source).
+
+Findings recorded: KDA extends Gated DeltaNet with **channel-wise** gating (`S_t = (I − β_t k_t k_tᵀ)·Diag(α_t)·S_{t−1} + β_t k_t v_tᵀ`), a *constrained* DPLR transition that runs ~2× general DPLR. Kimi Linear is a **3:1 hybrid**, not pure linear — and the ablation is non-monotonic: 15:1 (9.34/5.82 PPL) is worse than pure full attention (9.45/5.77), because finite-state capacity caps exact recall. Efficiency: −75% KV cache, 2.3× prefill @512k / 2.9× @1M, quality *above* full attention (MMLU 73.8 vs 71.6). NoPE on all full-attention layers makes KDA the sole position-aware operator.
+
+Two numbers were qualified against their headline framing: the **6.3× decode TPOT at 1M is batch-scaled** (2.2× at batch 1), and Moonshot's announced **"1.72×–2.22× prefill speedup" for FlashKDA disagrees with the repo's own `BENCHMARK_H20.md`, which shows 1.85×–2.31×** — the benchmark file is cited as primary, and both are recorded. FlashKDA's numbers are also **forward-kernel**, not end-to-end.
+
+Kimi K3 architecture details (16-of-896 experts, Stable LatentMoE, 1M context) verified against vLLM's engineering blog and marked as a secondary source on [[moonshot-ai]]. Sources 342 → 344, concepts 244 → 245, entities 139 → 140.
+
+
 ## [2026-07-27] query | Methods to speed up prompt processing (prefill)
 
 Question: "methods to boost up prompt processing speed". **Filed as [[methods-to-speed-up-prompt-processing]]**, after first collecting and ingesting the 12 missing inference-systems sources (see the ingest entry above) so the answer rests on sources rather than assertions. Organizes prefill levers into skip ([[prefix-caching]]) / shrink ([[prompt-compression]], sparse attention) / cheapen (FP8, W4A4) / schedule (disaggregation), and records the three common traps that help decode but **not** prefill: weight-only quantization, [[grouped-query-attention|GQA]], and [[chunked-prefill]]. Two of those three were errors in my own first-pass answer, corrected by reading the papers.

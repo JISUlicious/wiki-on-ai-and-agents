@@ -163,3 +163,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[prefix-caching]] — the cheapest prefill win of all: skip it entirely for repeated content
 - [[paged-attention]] — throughput via batching, not lower per-request latency (its kernel is 20–26% slower)
 - [[methods-to-speed-up-prompt-processing]] — the practical synthesis: every prefill lever ranked, and the three techniques that help decode but not `pp`
+- [[linear-attention]] — the structural prefill lever: 2.3× @512k / 2.9× @1M, no quadratic term to optimize

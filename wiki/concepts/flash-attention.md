@@ -53,6 +53,7 @@ Memory also goes **quadratic → linear** in sequence length (up to 20× more me
 
 - [[attention-mechanism]] — the operation being optimized.
 - [[grouped-query-attention]] — complementary: GQA shrinks the KV cache (a decode win), FlashAttention cuts attention memory traffic. FA2 implements GQA by index manipulation rather than materializing duplicated KV heads.
+- [[linear-attention]] — the *structural* alternative: never incur the quadratic cost at all.
 - [[minimax-sparse-attention-lai-2026]] — the *approximate* alternative: skip blocks entirely rather than compute all of them efficiently.
 - [[quantization-performance]] — where attention cost sits in the prefill/decode picture.
 
