@@ -53,3 +53,7 @@ Scaling laws have also been derived for:
 ## Precision as a scaling dimension
 
 [[scaling-laws-for-precision-kumar-2024|Kumar et al.]] extend scaling laws to numeric precision, finding post-training-quantization damage grows with training tokens and shrinks with parameters — so **overtrained models quantize worse**. Compute-optimal pretraining precision comes out at ~7–8 bits. Corroborated by [[low-bit-favors-undertrained-ouyang-2024]]. See [[quantization-quality]].
+
+## Training systems
+
+- [[distributed-training]] — the systems side: PTD gives training FLOPs as F = 96Bslh²(1 + s/6h + V/16lh)

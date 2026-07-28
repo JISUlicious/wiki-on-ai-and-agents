@@ -18,3 +18,7 @@ LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning method that free
 ## References
 
 - [[understanding-lora-as-knowledge-memory-back-2026]]
+
+## Training systems
+
+- [[training-memory-anatomy]] — why PEFT wins: a frozen base has no gradients and no optimizer states — it deletes the 12Ψ term

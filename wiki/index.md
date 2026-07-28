@@ -7,7 +7,7 @@ updated: 2026-07-22
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 344 sources, 140 entities, 248 concepts, 3 comparisons, 12 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 354 sources, 140 entities, 253 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -413,6 +413,13 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[llm-as-a-judge]] — Model-based grading; judge alignment against human labels, and where it breaks
 - [[agent-as-a-judge]] — Agentic judges issuing requirement-level intermediate feedback
 
+### Training systems and memory
+- [[training-memory-anatomy]] — Where training memory goes: optimizer states are 12 of 16 bytes/param; activations scale as `sbh(34 + 5as/h)`
+- [[distributed-training]] — DP/TP/PP taxonomy by *which memory consumer each shards*; the TP-within-node / PP-across-nodes placement rule
+- [[zero-redundancy-optimizer]] — ZeRO's three stages (4×/8×/N_d×), ZeRO-Offload, and PyTorch FSDP
+- [[activation-recomputation]] — Gradient checkpointing and selective recomputation (70% of activation memory for 2.7% FLOPs)
+- [[mixed-precision-training]] — fp32 master weights, loss scaling, fp32 accumulation — and why the master copy *raises* weight memory 50%
+
 ### Inference efficiency (attention kernels, caching, serving)
 - [[linear-attention]] — Fixed-size recurrent state vs growing KV cache; KDA, the 3:1 hybrid, and why nobody ships pure linear attention
 - [[flash-attention]] — IO-aware **exact** attention; more FLOPs, ~9× less HBM traffic, memory quadratic → linear
@@ -596,6 +603,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[prompt-cache-gim-2023]] — modular attention reuse (MLSys 2024); 900 ms → 90 ms TTFT, with a Passage-Retrieval accuracy cost
 - [[llmlingua-jiang-2023]] — prompt compression (EMNLP 2023); 20× on GSM8K for ~1.5 pts, −13.2 pts on BBH at 7×
 - [[llmlingua-2-pan-2024]] — task-agnostic token-classification compression (Findings ACL 2024); 0.4 s compressor overhead
+
+### Training systems & memory (2016–2023)
+- [[megatron-lm-shoeybi-2019]] — Tensor parallelism: column-then-row GEMM split avoids a sync before GeLU; 15.1 PFLOP/s at 76% efficiency on 512 GPUs
+- [[gpipe-huang-2018]] — Pipeline parallelism + re-materialization; bubble O((K−1)/(M+K−1)), negligible when M ≥ 4K
+- [[zero-memory-optimization-rajbhandari-2019]] — ZeRO: the 16Ψ per-parameter accounting (optimizer states = 12 of 16 bytes); 4×/8×/N_d× stages
+- [[zero-offload-ren-2021]] — CPU offload of gradients + optimizer states; 13B on a single 32 GB V100
+- [[megatron-ptd-parallelism-narayanan-2021]] — Combined TP+PP+DP (SC 2021); 1T params on 3072 A100s at 52% of peak; pipeline-bubble formulas
+- [[8-bit-optimizers-dettmers-2021]] — Block-wise quantized optimizer states (ICLR 2022 spotlight); 4× on optimizer memory, quality-neutral
+- [[pytorch-fsdp-zhao-2023]] — FlatParameter sharding vs ZeRO-3's per-parameter approach; GPT-175B at ~55–60% MFU
+- [[sublinear-memory-cost-chen-2016]] — Gradient checkpointing; O(√n) activation memory for one extra forward pass (~30% runtime), 1000-layer ResNet 48 GB → 7 GB
+- [[mixed-precision-training-micikevicius-2017]] — FP32 master weights + loss scaling + FP32 accumulation (ICLR 2018); master copy *raises* weight memory 50%
+- [[reducing-activation-recomputation-korthikanti-2022]] — Selective recomputation + sequence parallelism; `sbh(34 + 5as/h)` per layer, ~5× activation memory, 36% → 2% overhead at 530B/1T
 
 ### Quantization (2022–2026)
 - [[llm-int8-dettmers-2022]] — LLM.int8(); the emergent-outlier discovery (phase shift at ~6.7B)
@@ -963,3 +982,4 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[mcp-server-architecture-patterns]] — The five MCP server design patterns (Resource Gateway / Tool Orchestrator / Stateful Session / Proxy Aggregator / Domain Adapter) + the tool-count limit and transport-overhead findings.
 - [[in-house-data-agent-eval-test-set]] — A worked 35-task evaluation suite for an internal data-search-and-analysis agent: five graded dimensions, dataset schema, an 8-grader stack, and a build order — operationalizing agent-evaluation + verifier.
 - [[methods-to-speed-up-prompt-processing]] — Prefill levers ranked (skip / shrink / cheapen), plus the three things that help decode but *not* prompt processing: weight-only quantization, GQA, and chunked prefill
+- [[llm-memory-and-compute-bottlenecks]] — Four-quadrant sub-step breakdown (training/inference × memory/compute); the 16Ψ accounting, `sbh(34+5as/h)`, and the roofline table

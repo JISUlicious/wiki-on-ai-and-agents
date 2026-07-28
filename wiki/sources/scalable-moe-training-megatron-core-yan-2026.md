@@ -50,3 +50,8 @@ Concretely it integrates fine-grained recomputation and CPU offloading (memory),
 ## References
 
 - [arXiv:2603.07685](https://arxiv.org/abs/2603.07685)
+
+## Training systems
+
+- [[training-memory-anatomy]] — its 199.5 GB → <80 GB/GPU result is exactly this playbook: recompute + BF16 moments + CPU offload
+- [[distributed-training]] — Parallel Folding decouples attention and MoE parallelism

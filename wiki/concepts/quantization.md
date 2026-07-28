@@ -121,3 +121,7 @@ Dettmers & Zettlemoyer's **k-bit inference scaling laws** ([arXiv:2212.09720](ht
 ## References
 
 - [[gptq-frantar-2022]] · [[awq-lin-2023]] · [[smoothquant-xiao-2022]] · [[llm-int8-dettmers-2022]] · [[qlora-dettmers-2023]] · [[quarot-ashkboos-2024]] · [[bitnet-b158-ma-2024]]
+
+## Training systems
+
+- [[mixed-precision-training]] — the training-time ancestor: fp32 master weights, loss scaling, fp32 accumulation

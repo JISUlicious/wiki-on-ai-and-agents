@@ -9,6 +9,22 @@ updated: 2026-07-22
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-29] ingest | Training systems and memory — 10 sources, 5 concepts + query
+
+Closed the training-side gap surfaced by a four-quadrant query: the wiki had [[chinchilla]] and [[scaling-laws]] for compute-*optimal* scaling but nothing on training *systems*. All 10 arXiv IDs verified against `citation_title` before dispatch; ingested from full PDF text via 3 thematic subagents; 0 duplicates.
+
+**New concepts (5)**: [[training-memory-anatomy]], [[distributed-training]], [[zero-redundancy-optimizer]], [[activation-recomputation]], [[mixed-precision-training]].
+**New sources (10)**: [[megatron-lm-shoeybi-2019]], [[gpipe-huang-2018]], [[zero-memory-optimization-rajbhandari-2019]], [[zero-offload-ren-2021]], [[megatron-ptd-parallelism-narayanan-2021]], [[8-bit-optimizers-dettmers-2021]], [[pytorch-fsdp-zhao-2023]], [[mixed-precision-training-micikevicius-2017]], [[sublinear-memory-cost-chen-2016]], [[reducing-activation-recomputation-korthikanti-2022]].
+
+Two formulas now anchor the training quadrants: **model states = 16Ψ bytes/param, of which optimizer states are 12** (75%), and **activations per layer = `sbh(34 + 5as/h)`** — where the `5as²b` term is quadratic in sequence length and reaches ~70% of activation memory for GPT-3. Training compute has a closed form too: `F = 96Bslh²(1 + s/6h + V/16lh)`.
+
+**Reconciliations recorded rather than smoothed over**: (1) [[8-bit-optimizers-dettmers-2021|Dettmers]] counts Adam at 8 bytes/param (moments only) while [[zero-memory-optimization-rajbhandari-2019|ZeRO]] counts 12 (adding the fp32 master copy) — both consistent, different boundaries, flagged on both pages; (2) ZeRO's "10× over Megatron-LM" and PTD-P's "70% over ZeRO-3" are a year apart and compare different configurations (sharding-only vs 2019 TP-only; then TP+PP+DP vs ZeRO-3) — a `[!note]` on [[distributed-training]] explains the chronology so neither claim reads as refuting the other.
+
+A subagent's "36% → 4%" recomputation figure was corrected against the paper: the real pairs are **39% → 4% (22B)** and **36% → 2% (530B/1T)**.
+
+Query filed as [[llm-memory-and-compute-bottlenecks]]. Sources 344 -> 354, concepts 248 -> 253.
+
+
 ## [2026-07-28] lint | Wiki health check — 2 errors fixed, 3 pages created
 
 Full 10-check lint over **747 files**. Structurally clean: **index consistency perfect** (0 missing, 0 ghost), **0 orphans**, **0 frontmatter violations**, **0 entity-classification-tag violations**, **0 tag-hygiene violations**, and **0 typed relations pointing nowhere**. All 206 reported errors were broken wikilinks, of which only 2 were genuine.

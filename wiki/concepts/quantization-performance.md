@@ -164,3 +164,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[paged-attention]] — throughput via batching, not lower per-request latency (its kernel is 20–26% slower)
 - [[methods-to-speed-up-prompt-processing]] — the practical synthesis: every prefill lever ranked, and the three techniques that help decode but not `pp`
 - [[linear-attention]] — the structural prefill lever: 2.3× @512k / 2.9× @1M, no quadratic term to optimize
+- [[training-memory-anatomy]] — the training-side counterpart: optimizer states and activations dominate, not weights
+- [[mixed-precision-training]] — fp16/bf16 training and why the fp32 master copy *raises* weight memory 50%
+- [[llm-memory-and-compute-bottlenecks]] — how the inference roofline sits against the training-side picture

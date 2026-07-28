@@ -43,3 +43,8 @@ Backprop requires each synapse to know the weight of a *different, forward* syna
 ## References
 
 - [[diffusing-blame-yamada-2026]] — the weight-transport framing used here.
+
+## Training systems
+
+- [[training-memory-anatomy]] — where training memory actually goes — activations stored for the backward pass are one of the two dominant consumers
+- [[activation-recomputation]] — the standard fix: store a subset, recompute the rest (O(√n) memory for ~30% compute)

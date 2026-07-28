@@ -60,3 +60,7 @@ Memory also goes **quadratic → linear** in sequence length (up to 20× more me
 ## References
 
 - [[flash-attention-dao-2022]] · [[flash-attention-2-dao-2023]] · [[flash-attention-3-shah-2024]]
+
+## Training systems
+
+- [[activation-recomputation]] — attacks the same quadratic activation term from the kernel side rather than by recomputing

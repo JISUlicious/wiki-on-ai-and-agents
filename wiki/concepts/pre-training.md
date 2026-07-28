@@ -33,3 +33,8 @@ A large, diverse, unlabeled corpus offers far more supervisory signal than any a
 ## References
 
 - [[bert-devlin-2018]]
+
+## Training systems
+
+- [[distributed-training]] — how large-model pre-training is parallelized: DP/TP/PP and which memory consumer each shards
+- [[training-memory-anatomy]] — the 16Ψ model-state accounting and the per-layer activation formula
