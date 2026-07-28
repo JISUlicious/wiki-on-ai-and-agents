@@ -38,7 +38,7 @@ They observe sociality at two levels. Within ostensibly singular reasoning model
 
 ## Concepts & entities
 
-[[multi-agent]] · [[llm-agent]] · [[reasoning]] · [[chain-of-thought]] · [[reinforcement-learning]] · [[large-reasoning-model]] · [[deepseek-r1]] · [[singularity]] · [[centaur]] · [[google]]
+[[multi-agent]] · [[llm-agent]] · [[reasoning]] · [[chain-of-thought]] · [[reinforcement-learning]] · [[large-reasoning-model]] · [[deepseek-r1]] · [[singularity]] · [[centaur-actor|centaur]] · [[google]]
 
 ## References
 

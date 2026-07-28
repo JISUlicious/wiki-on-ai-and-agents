@@ -9,6 +9,17 @@ updated: 2026-07-22
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-07-28] lint | Wiki health check — 2 errors fixed, 3 pages created
+
+Full 10-check lint over **747 files**. Structurally clean: **index consistency perfect** (0 missing, 0 ghost), **0 orphans**, **0 frontmatter violations**, **0 entity-classification-tag violations**, **0 tag-hygiene violations**, and **0 typed relations pointing nowhere**. All 206 reported errors were broken wikilinks, of which only 2 were genuine.
+
+**Fixed**: `[[centaur]]` -> [[centaur-actor]] (the page is literally "Centaur Actor (Human-AI Hybrid)"), and `[[memory-systems]]` (2x) -> [[memory-management]]. **Rejected** a prefix match of `[[qwen]]` onto a *source* page about AgentWorld — it is a missing model entity, not a wrong link.
+
+**Created 3 recurring missing pages** (each referenced from 3 distinct pages): [[outcome-based-reward]] (dangling at the centre of [[verifier]]), [[adaptive-thinking]] (recurring across [[reasoning-effort]] and the effort docs), and [[gradient-descent-as-icl]] (the hypothesis motivating [[looped-transformer]]). All three marked `status: draft` with explicit notes on which primary sources are still missing.
+
+Remaining ~200 dangling links are **aspirational by design** per SKILL.md. Tag-promotion candidates `paper` (58), `survey` (8), `benchmark` (4) deliberately **kept as tags** — organizational source-format markers, not concepts. The 6 contradiction callouts are intentional and were left in place. Concepts 245 -> 248.
+
+
 ## [2026-07-28] ingest | FlashKDA / Kimi Linear — 2 sources, 1 concept, 1 entity
 
 Followed up on a FlashKDA lookup by ingesting the whole line. **New concept**: [[linear-attention]] — a page several existing pages had been written *around* (both [[flash-attention]] and [[a-hippocampus-for-linear-attention-cui-2026]] previously had to say "linear attention" as plain text). **New entity**: [[moonshot-ai]]. **New sources**: [[kimi-linear-kimi-team-2025]] (arXiv:2510.26692, verified) and [[flash-kda-moonshot-2026]] (GitHub repo + benchmark + design deep-dive; a non-arXiv software source).

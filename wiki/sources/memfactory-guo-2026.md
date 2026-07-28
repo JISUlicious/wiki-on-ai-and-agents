@@ -41,7 +41,7 @@ The framework natively integrates Group Relative Policy Optimization (GRPO) to f
 
 ## Concepts & entities
 
-- [[memory-systems]] / [[long-term-memory]] — the framework's central focus (agent memory lifecycle)
+- [[memory-management|memory systems]] / [[long-term-memory]] — the framework's central focus (agent memory lifecycle)
 - [[reinforcement-learning]], [[grpo]] (GRPO for memory-policy optimization)
 - [[llm-agent]], [[retrieval-augmented-generation]], [[fine-tuning]]
 - [[reasoning]]

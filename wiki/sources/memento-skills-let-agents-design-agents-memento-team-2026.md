@@ -36,7 +36,7 @@ Starting from simple elementary skills (web search, terminal operations), the ag
 
 ## Concepts & entities
 
-[[skill-acquisition]] · [[self-improving-agent]] · [[agent-skills]] · [[llm-agent]] · [[multi-agent]] · [[memory-systems]] · [[reinforcement-learning]] · [[gaia-benchmark]] · [[humanitys-last-exam]] · [[code-as-harness]]
+[[skill-acquisition]] · [[self-improving-agent]] · [[agent-skills]] · [[llm-agent]] · [[multi-agent]] · [[memory-management|memory systems]] · [[reinforcement-learning]] · [[gaia-benchmark]] · [[humanitys-last-exam]] · [[code-as-harness]]
 
 ## References
 

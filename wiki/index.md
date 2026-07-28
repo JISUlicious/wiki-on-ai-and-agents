@@ -7,7 +7,7 @@ updated: 2026-07-22
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 344 sources, 140 entities, 245 concepts, 3 comparisons, 12 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 344 sources, 140 entities, 248 concepts, 3 comparisons, 12 queries.
 
 ## Entities
 
@@ -221,6 +221,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[backpropagation]] — The exact-gradient credit-assignment algorithm behind all modern deep learning
 - [[backprop-free-learning]] — Training without backprop (Error Diffusion, feedback alignment) — the weight-transport problem
 - [[direct-feedback-alignment]] — DFA: output error broadcast to all layers via random matrices
+- [[outcome-based-reward]] — Terminal success/failure supervision; cheap and grounded, but coarse vs process supervision
 - [[dales-principle]] — Biological constraint: neurons are uniformly excitatory or inhibitory
 - [[verifier]] — Generator/verifier split; verification targets by reference type, mechanisms, and the proxy-intent ceiling
 - [[lora]] — Low-rank adaptation; parameter-efficient fine-tuning
@@ -322,11 +323,13 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
+- [[adaptive-thinking]] — Spending thinking budget per-request rather than uniformly; what `effort` controls
 - [[reasoning-effort]] — the `effort` parameter (low/medium/high/xhigh/max); behavioral signal over all token spend
 - [[ultracode]] — official Claude Code `/effort` mode: `xhigh` + standing permission to auto-launch workflows
 - [[ultrawork]] — unofficial community trend/keyword (e.g. oh-my-claude) for max parallel autonomous execution
 
 ### Looped Transformers (depth-recursion)
+- [[gradient-descent-as-icl]] — The hypothesis that a forward pass approximates gradient descent on in-context examples — the motivation for depth-recursion
 - [[looped-transformer]] — Umbrella: transformer whose forward pass is re-applied over the same layers; k×L loops ≈ kL depth at ~1/L parameters
 - [[universal-transformer]] — Dehghani 2018: recurrent-in-depth transformer with Adaptive Computation Time; spiritual ancestor
 - [[recurrent-depth-transformer]] — Modern 2026 rebranding for pretraining-scale looped LMs (OpenMythos / Parcae)
