@@ -61,4 +61,4 @@ Roughly **N×** the inference compute of greedy CoT. For N=40, that's 40× more 
 
 Surfaced via newsletter ingests; see [[index]].
 
-- [[structured-output-collapses-diversity-parikh-2026]] — JSON mode costs **0.22 bits of answer surprisal** field-wide (p=.0002) — a silent tax on any method that depends on sampling diversity
+- [[structured-output-collapses-diversity-parikh-2026]] — JSON mode costs **0.22 bits of answer surprisal** field-wide (p=.0002), but the collapse is *positional*: within-model self-distinctness is nearly flat (0.42 → 0.39), so mass relocates onto the field's shared mode rather than each model sampling less around its own answer. The threat is therefore to **cross-model/cross-run pooling**, and weaker for single-model repeated sampling than the headline implies
