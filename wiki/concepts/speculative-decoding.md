@@ -40,3 +40,9 @@ Two frontier drafting directions push on the *drafter* and the *verification sch
 
 > [!note] Quantization connection
 > QSpec ([arXiv:2410.11305](https://arxiv.org/abs/2410.11305)) applies speculative decoding *across precisions* — a fast lossy W4A4 drafter verified by an accurate W4A16 model, for 1.18–1.64× over W4A16 alone. See [[quantization-performance]].
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[speculate-while-you-reason-ji-2026]] — self-speculation of the agent's own next tool call beats external drafters *and* is cheaper by reusing the prefix KV cache

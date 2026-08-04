@@ -56,3 +56,9 @@ Roughly **N×** the inference compute of greedy CoT. For N=40, that's 40× more 
 ## References
 
 - [[self-consistency-wang-2022]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[structured-output-collapses-diversity-parikh-2026]] — JSON mode costs **0.22 bits of answer surprisal** field-wide (p=.0002) — a silent tax on any method that depends on sampling diversity

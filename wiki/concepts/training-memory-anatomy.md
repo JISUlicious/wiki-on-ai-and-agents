@@ -101,3 +101,9 @@ The LoRA row is worth dwelling on: parameter-efficient finetuning is powerful le
 
 - [[zero-memory-optimization-rajbhandari-2019]] · [[reducing-activation-recomputation-korthikanti-2022]] · [[8-bit-optimizers-dettmers-2021]] · [[mixed-precision-training-micikevicius-2017]]
 - [[llm-memory-and-compute-bottlenecks]] — the four-quadrant synthesis this page anchors
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[soap-muon-and-beyond-khona-2026]] — Muon eliminates the second moment (1 state vs AdamW's 2) while SOAP *adds* 2·in²+2·out² — state-elimination vs state-inflation against the 12-of-16-bytes baseline

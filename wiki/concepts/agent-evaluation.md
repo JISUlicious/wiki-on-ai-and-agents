@@ -165,3 +165,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[beyond-the-leaderboard-albayaydh-2026]] — Oxford synthesis of 27 papers / 19 benchmarks; argues part of year-over-year gains is *correction of measurement error*, not capability
 - [[failure-as-a-process-cli-agent-trajectories-zhao-2026]] — 63k annotated steps; failure has three timestamps (error / lock-in / observability), and 71% of *successful* runs also err
 - [[tracing-agentic-failure-flow-of-success-yeh-2026]] — failure attribution as anomaly detection against successful-trajectory flow — 7 ms and 0 output tokens per trajectory
+- [[role-drift-in-compound-llm-systems-cao-2026]] — end-to-end RL improves the end task while modules silently abandon their nominal roles — the failure outcome-only evaluation cannot see
+- [[gamut-two-level-meta-rubrics-chen-2026]] — two-level meta-rubrics for open-ended generation
+- [[jaxbench-tpu-kernel-optimization-tschand-2026]] — TPU kernel-optimization benchmark; **the correctness bottleneck is information, not reasoning** — injecting docs beats upgrading the model

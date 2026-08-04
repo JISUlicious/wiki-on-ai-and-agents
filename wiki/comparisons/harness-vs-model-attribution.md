@@ -93,3 +93,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[the-harness-effect-token-economics-writer-2026]] — 22 tasks × 6 models with only the orchestration layer swapped: efficiency gains are model-invariant, but quality gain tracks base-model strength at r=0.99
 - [[rethinking-evaluation-harness-evolution-wang-2026]] — harness *evolution* fails to beat plain test-time scaling at matched budgets (67.4 vs 72.3)
+- [[nvidia-oo-agents-furgale-2026]] — RHAE 85.1% vs 13.3% for the raw model on ARC-AGI-3 — a 6.4× harness effect on one backbone

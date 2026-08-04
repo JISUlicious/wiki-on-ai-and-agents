@@ -83,3 +83,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[right-in-the-right-way-damani-2026]] — multiplying verifiable reward by a human-likeness discriminator cuts reward hacking to 1.0% from 96.9–99.3% — a direct attack on the proxy-reward problem
 - [[coding-agents-replicate-sciml-papers-hans-2026]] — gates task completion on *workspace evidence* rather than the agent's final message — outcome verification in practice
 - [[information-access-llm-monitors-arike-2026]] — extract-then-evaluate monitoring: filtering the trajectory beats dumping it into the monitor's context (+16.8 pp)
+- [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — **invisible reasoning**: filler tokens lift accuracy up to +30 pp, and Opus 4.5 satisfies a hidden constraint 33.5%→44.5% with no visible trace — behavioural corroboration that output-only verification has a blind spot
+- [[gamut-two-level-meta-rubrics-chen-2026]] — factual *completeness* as a verification target, not just precision
+- [[arex-recursive-self-improving-research-baai-2026]] — verification gating the transition *between* research rounds (Accept/Refine/Restart), exploiting the discover-vs-verify asymmetry

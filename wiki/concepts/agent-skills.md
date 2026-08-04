@@ -142,6 +142,15 @@ The convergence happened organically rather than via formal standardization, bec
 - Engineering: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - Open standard: https://agentskills.io
 
+> [!warning] Contradiction — progressive disclosure is conditional, and adding levels can hurt
+> This page presents three-level progressive disclosure as what "makes the format scale to organization-wide skill catalogs," and lists Efficiency as an unqualified property. [[is-progressive-disclosure-all-you-need-he-2026|He et al. 2026]] is the first *controlled* study of the pattern, and qualifies both claims:
+> - **Not a universal accuracy lever.** Under a strong harness on a single document, disclosure adds nothing measurable (Codex/gpt-5.4-mini: raw 0.8943 vs flat 0.8977 on En.MC — a tie within noise). The benefit is *conditional on the agent navigating badly on its own*; Codex's bare agent reconstructs locate-then-read by grepping. Their summary: **"progressive disclosure buys context, not intelligence."**
+> - **Always-loaded descriptions do not scale by adding levels.** A `hierarchical` pack — many sibling skills each with a resident description, behind a meta-router — is structurally the same shape as a large L1 catalog, and it **collapsed En.MC 0.9126 → 0.6398** and **Zh.QA 0.7479 → 0.3890**, "as the always-loaded child descriptions saturate the router's context before it commits to a chunk."
+>
+> Their prescription is explicitly **one level**: *"package a book as one skill layered progressive disclosure, not as multiple parallel packages of child skills with always-loaded descriptions."*
+>
+> **Scope limits before over-reading it**: the study measures disclosure over **document chunks**, not over heterogeneous capability skills (the actual Agent Skills use case), and the authors flag a pre-training confound on the English multiple-choice subset. At **library scale the picture flips** — bundling twenty books sinks even Codex, and the flat pack becomes decisive. So the format's scaling claim survives; the *unconditional accuracy* claim and the *more-levels-is-better* intuition do not.
+
 ## Related 2026 sources
 
 Surfaced via newsletter ingests; see [[index]] for full grouping.
@@ -161,3 +170,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[generative-skill-composition-zhao-2026]] — skill composition as one joint plan, not retrieval ranking
 - [[coding-agents-replicate-sciml-papers-hans-2026]] — a paper-replication *skill* whose completion criterion is workspace evidence, not the agent's self-report — 158/158 targets matched
 - [[prefix-caching]] — progressive disclosure and stable skill preambles are prefill optimizations — invariant content placed first stays cacheable across turns
+- [[is-progressive-disclosure-all-you-need-he-2026]] — the first controlled study of progressive disclosure — see the Contradiction callout above

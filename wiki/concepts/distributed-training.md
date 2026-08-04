@@ -81,3 +81,10 @@ The `96Bslh²` base is the dense matmuls; `s/6h` is the **attention-score quadra
 ## References
 
 - [[megatron-lm-shoeybi-2019]] · [[megatron-ptd-parallelism-narayanan-2021]] · [[gpipe-huang-2018]]
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[molt-pytorch-native-agentic-rl-framework-hu-2026]] — PyTorch-native agentic-RL stack: FSDP2 + vLLM behind a router, ~8.6K LOC vs verl's ~62K
+- [[soap-muon-and-beyond-khona-2026]] — ZeRO-1-style even sharding is *not directly appropriate* for matrix optimizers; needs layer-wise distribution

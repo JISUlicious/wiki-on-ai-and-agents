@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-07-22
+updated: 2026-08-04
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 354 sources, 140 entities, 253 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 380 sources, 140 entities, 253 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -822,6 +822,47 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Safety, adversarial & commentary**
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini autoresearch discovers SOTA adversarial attacks on LLMs (Panfilov et al. 2026)
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — arXiv version of the intelligence-explosion essay (Evans et al. 2026); cf. [[agentic-ai-and-the-next-intelligence-explosion]]
+
+### Newsletter — NLP weekly (2026-08-02 "Top AI Papers")
+
+Nine of ten from the July 27–Aug 2 issue, ingested 2026-08-05.
+
+- [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — **Invisible reasoning**: semantically empty filler tokens lift accuracy up to +30 pp; Opus 4.5 satisfies a hidden constraint 33.5% → 44.5% with no visible trace
+- [[nvidia-oo-agents-furgale-2026]] — An agent *is* a Python object; ARC-AGI-3 6-agent system → 1 agent + 50-line skill, RHAE 85.1% vs 13.3% raw (6.4× harness effect)
+- [[multi-turn-on-policy-distillation-prefix-replay-liao-2026]] — Reuses pre-collected prefixes to avoid fresh rollouts + teacher queries at every visited history
+- [[jaxbench-tpu-kernel-optimization-tschand-2026]] — TPU/Pallas kernel benchmark; **the correctness bottleneck is information, not reasoning** — docs raise correctness 5.8% → 37.3%
+- [[acm-agentic-context-management-li-2026]] — Agent-initiated *lossless* compression (offload + query by ID); GPT-5.5 makes near-zero tool calls without training
+- [[filesystem-based-memory-for-llm-agents-zhou-2026]] — 136-page audit: sustainability holds, but **no agent converts organization into better answers** — curated stores can lose to a verbatim dump
+- [[soap-muon-and-beyond-khona-2026]] — Muon drops second moments (1 state vs AdamW's 2); SOAP adds 2·in²+2·out²; SOAP's slingshot instability diverges at 8B
+- [[role-drift-in-compound-llm-systems-cao-2026]] — End-to-end RL improves the end task while modules silently stop doing their nominal jobs
+- [[speculate-while-you-reason-ji-2026]] — Self-speculation beats external drafters *and* is cheaper (reuses prefix KV); Hit@1 44.1 → 61.2
+- [[molt-pytorch-native-agentic-rl-framework-hu-2026]] — PyTorch-native agentic-RL training framework; ~8.6K LOC vs verl's ~62K
+
+### Newsletter — NLP weekly (2026-07-26 "Top AI Papers")
+
+Eight of ten from the July 20–26 issue, ingested 2026-08-05 (one was already in the wiki; see the log).
+
+- [[harness-handbook-wang-2026]] — Behavior localization as the harness bottleneck; L1–L3 handbook, +10–19 pp judge wins at 8–13% fewer planner tokens
+- [[from-memory-to-skills-tang-2026]] — MSCE: skills promoted from a governed 3-level memory rather than distilled from raw traces; +15.4 pp on SWE
+- [[pro-long-programmatic-memory-fox-2026]] — Zero intelligence in the write path — append verbatim, grep to read; +18.0 pp on ARC-AGI-3 at 4.2–5.8× fewer tokens
+- [[gamut-two-level-meta-rubrics-chen-2026]] — Targets factual **completeness** rather than precision — the under-measured half of factuality
+- [[is-progressive-disclosure-all-you-need-he-2026]] — First controlled study: *buys context, not intelligence*; hierarchical always-loaded descriptions can collapse accuracy 0.91 → 0.64
+- [[bad-memory-prompt-injection-agentic-gadgil-2026]] — Prompt injection planted in agent memory files, evaluated in Claude Code and Codex
+- [[structured-output-collapses-diversity-parikh-2026]] — JSON mode costs 0.22 bits of answer surprisal across 44 models; not a decoding artefact
+- [[frontier-lms-struggle-to-copy-wen-2026]] — Frontier models fail to copy text well within context; traced to 1D positional encodings, 2D view proposed
+- [[robottt-context-scaling-robot-policies-jiang-2026]] — Test-time training for long-horizon robot policy context (peripheral)
+
+### Newsletter — alphaXiv weekly (2026-07-22 + 2026-07-30)
+
+Seven arXiv-backed trending papers across two digests, ingested 2026-08-05. Three alphaXiv-native posts had no arXiv mirror and were not ingested.
+
+- [[kimi-k3-moonshot-2026]] — Kimi K3: 2.78T total / 104.2B active MoE, 69 KDA + 24 MLA layers, 1M context; ~2.5× scaling efficiency over K2
+- [[arex-recursive-self-improving-research-baai-2026]] — Verification gates the transition *between* research rounds (Accept/Refine/Restart); +22.9 pp on BrowseComp
+- [[seed-self-evolving-on-policy-distillation-wu-2026]] — Dense token-level supervision layered on GRPO; +14.9 to +45.9 pp on ALFWorld
+- [[understanding-reasoning-pretraining-posttraining-shen-2026]] — Explicit **joint pretraining–RL scaling law**; optimal RL compute share rises 20% → 28% with scale
+- [[on-policy-delta-distillation-heo-2026]] — Distills only the *delta* — capabilities the teacher newly acquired
+- [[hope-hilbert-operator-progressive-encoding-mobahi-2026]] — Neurons as rank-1 Hilbert–Schmidt operators; data-free deconstruction of representations
+- [[masked-visual-actions-alzayer-2026]] — Pixel-space control interface unifying forward and inverse dynamics (peripheral)
 
 ### Newsletter — NLP weekly (2026-07-19 "Top AI Papers")
 

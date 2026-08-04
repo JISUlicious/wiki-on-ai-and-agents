@@ -48,3 +48,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[qwen-agentworld-language-world-models-for-general-agents-qwen-2026]] — Qwen-AgentWorld: language world models for agentic environments
 - [[infinite-worlds-versatile-interactions-gao-2026]] — LingBot-World 2.0: 720p/60fps sustained for a 60-minute interactive session via a causal backbone
 - [[from-foundation-to-application-vla-wu-2026]] — LingBot-VLA 2.0: the embodied-policy sibling; predicts future depth and semantic features before acting
+- [[masked-visual-actions-alzayer-2026]] — one video model as both forward and inverse dynamics via a pixel-space control interface
+- [[robottt-context-scaling-robot-policies-jiang-2026]] — test-time training as the recurrent state; context scaling to 8K timesteps at flat latency

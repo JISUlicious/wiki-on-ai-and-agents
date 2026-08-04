@@ -68,3 +68,9 @@ A striking 2026 result: [[global-workspace-theory|global-workspace structure]] (
 ## Substrate
 
 Nearly every technique here operates on the [[residual-stream]] — the per-position additive channel every layer reads from and writes to. Its linearity is what makes projection, addition, and early decoding ([[logit-lens]], J-lens) possible at all.
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[hope-hilbert-operator-progressive-encoding-mobahi-2026]] — neurons as rank-1 Hilbert–Schmidt operators; data-free deconstruction from BatchNorm statistics

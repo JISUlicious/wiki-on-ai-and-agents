@@ -70,3 +70,5 @@ The two tracks combine well: guardrailing limits *what an agent is permitted to 
 Surfaced via newsletter ingests; see [[index]].
 
 - [[information-access-llm-monitors-arike-2026]] — CoT monitors gain >0.4 log-AUROC when the agent believes its scratchpad is private — evaluation-awareness again
+- [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — a model computing a hidden-constraint property of an answer it has not yet emitted, invisibly
+- [[bad-memory-prompt-injection-agentic-gadgil-2026]] — prompt injection planted in agent memory files, evaluated in Claude Code and Codex

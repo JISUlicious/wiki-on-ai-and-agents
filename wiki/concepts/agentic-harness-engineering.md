@@ -95,3 +95,10 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 
 **External (not yet ingested):**
 - `awesome-harness-engineering` — https://github.com/ai-boost/awesome-harness-engineering
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[harness-handbook-wang-2026]] — behavior localization as the harness bottleneck; L1–L3 behavior-centric handbook
+- [[nvidia-oo-agents-furgale-2026]] — an agent *is* a Python object; a 6-agent ARC-AGI-3 system compressed to one agent + a 50-line skill (6.4× harness effect)

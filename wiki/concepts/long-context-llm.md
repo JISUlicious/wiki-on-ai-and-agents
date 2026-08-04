@@ -41,3 +41,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[prompt-compression]] — fewer tokens entering prefill at all; task-agnostic compression stays cacheable
 - [[chunked-prefill]] — how long prompts get scheduled against concurrent decodes
 - [[linear-attention]] — subquadratic prefill; the advantage only appears past ~128k (2.9× at 1M)
+- [[frontier-lms-struggle-to-copy-wen-2026]] — frontier models fail to copy text well inside their window; traced to 1D positional encodings, fixed by a 2D view
+- [[pro-long-programmatic-memory-fox-2026]] — programmatic memory over a verbatim log as an alternative to summarization

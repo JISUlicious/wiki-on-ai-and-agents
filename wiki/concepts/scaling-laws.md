@@ -57,3 +57,9 @@ Scaling laws have also been derived for:
 ## Training systems
 
 - [[distributed-training]] — the systems side: PTD gives training FLOPs as F = 96Bslh²(1 + s/6h + V/16lh)
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[understanding-reasoning-pretraining-posttraining-shen-2026]] — explicit **joint pretraining–RL scaling law**; adds the outer split (pretraining vs RL) while leaving Chinchilla's inner split unchanged

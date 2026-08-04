@@ -59,3 +59,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[aspire-agentic-skill-programming-robotics-lu-2026]] — ASPIRE: continual code-as-policy robot skill learning
 - [[agentic-hardware-design-repository-level-code-evolution-yu-2026]] — HORIZON: hardware design as repo-level code evolution
 - [[self-improvements-in-modern-agentic-systems-ren-2026]] — 97-page survey formalizing agent = `(θ, Σ)`; splits FM-weight updates from scaffolding updates, and treats *skill* as a reusable update operator
+- [[seed-self-evolving-on-policy-distillation-wu-2026]] — dense token-level self-distillation layered on GRPO; +14.9 to +45.9 pp on ALFWorld
+- [[arex-recursive-self-improving-research-baai-2026]] — *within-episode* answer refinement — note this is **not** lifelong weight or code self-modification

@@ -2,12 +2,31 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-07-22
+updated: 2026-08-04
 ---
 
 # Activity Log
 
 Chronological record of wiki operations. Newest entries first.
+
+## [2026-08-05] ingest | Newsletter sweep — NLP 07-26 + 08-02, alphaXiv 07-22 + 07-30 (24 sources)
+
+Ran the newsletter runbook. Cadence gate passed (13 days since `2026-07-22`). **5 new threads** across both senders. 27 candidate IDs resolved and **all verified against `citation_title`**; **24 ingested from full PDF text**, 1 was a duplicate, 2 remain outstanding (see below).
+
+**Duplicate caught by author comparison, not ID**: `arXiv:2607.15495` "Verbalizable Representations Form a Global Workspace in Language Models" is the **arXiv posting of work already in the wiki** — [[global-workspace-in-language-models-anthropic-2026]], ingested from Anthropic's blog and therefore carrying no `arxiv_id` to match on. Same authors (Gurnee, Sofroniew, Pearce, Piotrowski, Kauvar, Chen). Merged the ID into the existing page with a note rather than duplicating; the arXiv title is the more precise one.
+
+**Three contradictions filed:**
+1. [[is-progressive-disclosure-all-you-need-he-2026]] vs [[agent-skills]] — first controlled study of progressive disclosure finds it *"buys context, not intelligence"*: under a strong harness on a single document it ties with raw text (0.8943 vs 0.8977), and a **hierarchical pack with always-loaded child descriptions — structurally the same shape as a large L1 skill catalog — collapses En.MC 0.9126 → 0.6398 and Zh.QA 0.7479 → 0.3890**. Prescription is explicitly *one* level. Scope limit recorded: measured over document chunks, not heterogeneous capability skills, and the format's *scaling* claim survives (at 20 books the flat pack becomes decisive). Reciprocal callout added to [[agent-skills]].
+2. [[harness-handbook-wang-2026]] vs [[rethinking-evaluation-harness-evolution-wang-2026]] — a *different* Wang, posted the same day, not in the reference list; cites AHE approvingly. Its metrics are LLM-judged **plan quality**, never end-to-end task success after an edit lands, so it neither tests nor refutes the "edits memorize fixes rather than distil strategies" critique.
+3. [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] vs CoT-monitoring assumptions — see below.
+
+**Primary source corrected a secondary-source page.** [[kimi-k3-moonshot-2026]] confirms all six vLLM-blog claims on [[moonshot-ai]] but corrects two: "16 of 896 experts" counts **routed** experts only (2 shared experts are always active), and the blog attributed the hybrid to the wrong object — **KDA is the linear-attention component; the K3 *backbone* is the hybrid** (69 KDA + 24 Gated MLA across 93 layers, trailing global-attention layer). Also recorded: the ~2.5× scaling-efficiency figure is fitted val-loss-vs-FLOPs on held-out OOD data and is credited to architecture **plus data plus recipe jointly** — the paper never decomposes it, so it cannot be attributed to KDA or AttnRes alone.
+
+**Headline finding of the sweep**: [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] demonstrates **invisible reasoning** — semantically empty filler tokens (counting 1–100, NATO alphabet), identical across all questions, lift accuracy up to **+30.0 pp**, so the computation happens inside the forward pass with no informative tokens. The safety-relevant result: **Claude Opus 4.5 goes 33.5% → 44.5% on satisfying a hidden system-prompt constraint while its visible-task accuracy is unchanged**. This is independent *behavioural* corroboration of the *interpretability* finding in [[global-workspace-in-language-models-anthropic-2026]] — together they undercut the premise of [[information-access-llm-monitors-arike-2026|CoT monitoring]] more sharply than either alone.
+
+**Blurb/framing corrections made against the PDFs**: AREX's "recursively self-improving" is **within-episode** answer refinement, not lifelong self-modification (do not file beside [[darwin-godel-machine]]), and it does *not* top BrowseComp; SEED's headline +45.9 pp is one weak backbone (typical ~15–17 pp) and its loss is `L_rl + λ·L_opd` — dense supervision *on top of* GRPO, not a replacement for outcome reward; [[soap-muon-and-beyond-khona-2026]] gives **no** explicit bytes-per-parameter figures, only qualitative memory claims; [[speculate-while-you-reason-ji-2026]] reports **no end-to-end latency saving** for its trained agent (timings are from the off-the-shelf pilot).
+
+Sources 354 → 378, of which 24 are from this sweep.
 
 ## [2026-07-29] ingest | Training systems and memory — 10 sources, 5 concepts + query
 
@@ -24,7 +43,6 @@ A subagent's "36% → 4%" recomputation figure was corrected against the paper: 
 
 Query filed as [[llm-memory-and-compute-bottlenecks]]. Sources 344 -> 354, concepts 248 -> 253.
 
-
 ## [2026-07-28] lint | Wiki health check — 2 errors fixed, 3 pages created
 
 Full 10-check lint over **747 files**. Structurally clean: **index consistency perfect** (0 missing, 0 ghost), **0 orphans**, **0 frontmatter violations**, **0 entity-classification-tag violations**, **0 tag-hygiene violations**, and **0 typed relations pointing nowhere**. All 206 reported errors were broken wikilinks, of which only 2 were genuine.
@@ -34,7 +52,6 @@ Full 10-check lint over **747 files**. Structurally clean: **index consistency p
 **Created 3 recurring missing pages** (each referenced from 3 distinct pages): [[outcome-based-reward]] (dangling at the centre of [[verifier]]), [[adaptive-thinking]] (recurring across [[reasoning-effort]] and the effort docs), and [[gradient-descent-as-icl]] (the hypothesis motivating [[looped-transformer]]). All three marked `status: draft` with explicit notes on which primary sources are still missing.
 
 Remaining ~200 dangling links are **aspirational by design** per SKILL.md. Tag-promotion candidates `paper` (58), `survey` (8), `benchmark` (4) deliberately **kept as tags** — organizational source-format markers, not concepts. The 6 contradiction callouts are intentional and were left in place. Concepts 245 -> 248.
-
 
 ## [2026-07-28] ingest | FlashKDA / Kimi Linear — 2 sources, 1 concept, 1 entity
 
@@ -46,11 +63,9 @@ Two numbers were qualified against their headline framing: the **6.3× decode TP
 
 Kimi K3 architecture details (16-of-896 experts, Stable LatentMoE, 1M context) verified against vLLM's engineering blog and marked as a secondary source on [[moonshot-ai]]. Sources 342 → 344, concepts 244 → 245, entities 139 → 140.
 
-
 ## [2026-07-27] query | Methods to speed up prompt processing (prefill)
 
 Question: "methods to boost up prompt processing speed". **Filed as [[methods-to-speed-up-prompt-processing]]**, after first collecting and ingesting the 12 missing inference-systems sources (see the ingest entry above) so the answer rests on sources rather than assertions. Organizes prefill levers into skip ([[prefix-caching]]) / shrink ([[prompt-compression]], sparse attention) / cheapen (FP8, W4A4) / schedule (disaggregation), and records the three common traps that help decode but **not** prefill: weight-only quantization, [[grouped-query-attention|GQA]], and [[chunked-prefill]]. Two of those three were errors in my own first-pass answer, corrected by reading the papers.
-
 
 ## [2026-07-27] ingest | Inference efficiency — 12 sources, 6 concepts (prefill/prompt-processing)
 
@@ -67,7 +82,6 @@ Triggered by a query on speeding up prompt processing, which surfaced a large ho
 **Refinement recorded on [[flash-attention]]**: prefill is compute-bound at the roofline level, but the *attention kernel* is memory-bound because standard attention materializes an N×N matrix — FlashAttention does **more** FLOPs (66.6 → 75.2 GFLOPs) and is 5.7× faster on ~9× less HBM traffic. Both statements hold at different levels of the stack.
 
 Also noted: Selective-Context's compression pass costs 15.5 s — more than the entire uncompressed inference, i.e. a **net slowdown** — a caution now recorded on [[prompt-compression]]. Sources 330 → 342, concepts 238 → 244.
-
 
 ## [2026-07-22] ingest | Newsletter sweep — NLP weekly 2026-07-12 + 2026-07-19 (20 papers)
 

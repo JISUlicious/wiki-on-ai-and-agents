@@ -62,3 +62,9 @@ The model's *preferences* among legal tokens are preserved (their relative logit
 - Schema language: [[json-schema]].
 - Consumer: [[function-calling]], [[tool-call-parser]].
 - Default backend in 2025: xgrammar — integrated by [[vllm]].
+
+## Related 2026 sources
+
+Surfaced via newsletter ingests; see [[index]].
+
+- [[structured-output-collapses-diversity-parikh-2026]] — the collapse is **not** decoding — strict `response_format` adds only 0.03 bits beyond a plain request; the gradient points at tool-use post-training

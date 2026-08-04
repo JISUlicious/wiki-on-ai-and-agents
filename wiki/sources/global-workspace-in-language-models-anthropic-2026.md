@@ -2,7 +2,7 @@
 title: "A Global Workspace in Language Models"
 type: source
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-08-04
 sources:
   - global-workspace-in-language-models-anthropic-2026.html
 authors:
@@ -11,8 +11,9 @@ authors:
   - Jack Lindsey
 introduces:
   - [[global-workspace-theory]]
+arxiv_id: "2607.15495"
 year: 2026
-venue: "Anthropic (research blog + transformer-circuits.pub)"
+venue: "Anthropic (research blog + transformer-circuits.pub + arXiv)"
 tags:
   - 2026
 status: complete
@@ -23,6 +24,9 @@ importance: high
 
 **Publisher**: [[anthropic|Anthropic]] (Interpretability), 2026-07-06 — [blog](https://www.anthropic.com/research/global-workspace) · [full paper](http://transformer-circuits.pub/2026/workspace/index.html)
 **Authors**: Wes Gurnee\*, Nicholas Sofroniew\*, Adam Pearce, Mateusz Piotrowski, Isaac Kauvar, Runjin Chen, Anna Soligo, Paul Bogdan, Euan Ong, Rowan Wang, Ben Thompson, David Abrahams, Subhash Kantamneni, Emmanuel Ameisen, Joshua Batson, Jack Lindsey\*† (Anthropic)
+
+> [!note] Also on arXiv (added 2026-08-04)
+> Posted as **[arXiv:2607.15495](https://arxiv.org/abs/2607.15495)** on 2026-07-16 under the title *"Verbalizable Representations Form a Global Workspace in Language Models"* — same authors (Gurnee, Sofroniew, Pearce, Piotrowski, Kauvar, Chen et al.), same work. Surfaced again via the NLP newsletter (2026-07-26 digest). One work, three venues: the Anthropic blog, transformer-circuits.pub, and arXiv. **Not a separate source page** — the arXiv title is more precise about the finding ("verbalizable representations"), which is worth knowing when searching for it.
 
 ## Summary
 

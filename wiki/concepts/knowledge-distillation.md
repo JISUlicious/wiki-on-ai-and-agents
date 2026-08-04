@@ -24,3 +24,5 @@ Knowledge distillation transfers capability from a large teacher model into a sm
 Surfaced via newsletter ingests; see [[index]].
 
 - [[on-the-geometry-of-on-policy-distillation-shen-2026]] — geometry of on-policy distillation: a distinct weight update
+- [[multi-turn-on-policy-distillation-prefix-replay-liao-2026]] — ReOPD: replay pre-collected prefixes so the student never touches the environment — 4.2–9.1× faster rollouts
+- [[on-policy-delta-distillation-heo-2026]] — OPD²: distil the *delta* (teacher minus the teacher's own base) rather than teacher minus student; +19.8 pp at 1.7B

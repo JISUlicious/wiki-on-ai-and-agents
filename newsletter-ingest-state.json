@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-07-22",
+  "last_processed_date": "2026-08-05",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -61,7 +61,12 @@
     "19f571ac51022bc8",
     "19f9a4c4cff71280",
     "19f75c0363af0c71",
-    "19f5207f162203e4"
+    "19f5207f162203e4",
+    "19fc3020e5339d8e",
+    "19f9f8bc284af5b1",
+    "19fb3a35d11c0b68",
+    "19f8b7a2f8aa41f2",
+    "19fbde0be02dc008"
   ],
   "runs": [
     {
@@ -167,6 +172,18 @@
       "new_source_pages": 20,
       "dups_skipped": [],
       "notes": "NLP 2026-07-12 (10) + 2026-07-19 (10). All 20 redirects resolved, all IDs verified vs citation_title, 0 dups. 3 AI Agents Weekly threads (07-11/18/25) empirically confirmed paywalled previews: ~2.8k chars, 0 arxiv links, 0 'Paper [' blocks -> processed with no yield. Contradiction filed: rethinking-evaluation-harness-evolution vs agentic-harness-engineering (AHE). PDF verification caught 4 newsletter blurb errors incl. a fabricated '130ms RTX 4090D' figure. Cursor -> 2026-07-22."
+    },
+    {
+      "date": "2026-08-05",
+      "type": "newsletter sweep (manual, NLP x2 + alphaXiv x2)",
+      "threads_read": 5,
+      "candidate_ids_verified": 27,
+      "on_domain_ingested": 26,
+      "new_source_pages": 26,
+      "dups_skipped": [
+        "2607.15495"
+      ],
+      "notes": "NLP 07-26 (10) + 08-02 (10) + alphaXiv 07-22/07-30 (7 arXiv-backed; 3 alphaXiv-native skipped, no mirror). All 27 IDs verified vs citation_title. 2607.15495 = arXiv posting of the existing Anthropic global-workspace page (no arxiv_id there to match on; caught by author comparison) -> merged, not duplicated. 3 Contradiction callouts filed (progressive disclosure vs agent-skills; harness-handbook vs rethinking-harness-evolution; CoT-monitoring). Kimi K3 primary source corrected 2 vLLM-blog claims on moonshot-ai. Infra note: 4 subagents died mid-run (3 connection-closed, 1 600s stall); relaunched as smaller units with write-before-continue instructions. Cursor -> 2026-08-05."
     }
   ],
   "pending_threads": [
