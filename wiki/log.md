@@ -9,6 +9,21 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-08-11] ingest | Cross-model KV cache transfer — 2 sources, 1 concept
+
+Targeted search for an NVIDIA paper on cross-model KV cache transfer. Found and verified **[[cross-model-kv-cache-transfer-heo-2026|arXiv:2608.03893]]** (Heo et al., NVIDIA, 2026-08-04) — the requested title was exact. Also ingested the closest prior work, **[[droidspeak-kv-cache-sharing-liu-2024]]** (2024), so the new concept rests on two sources with genuinely opposite designs. Both IDs verified against `citation_title`; both ingested from full PDF text.
+
+**New concept**: [[cross-model-kv-cache-transfer]] — distinct from [[prefix-caching]] in that it reuses KV across *different models* (cost–quality cascade, mid-conversation upgrade, router swap) rather than across repeated text.
+
+The two approaches trade off cleanly: DroidSpeak recomputes the ~11% of layers that are reuse-sensitive and needs **identical architecture** (which disqualifies it from 14B→32B cascading, as the NVIDIA paper notes); Heo et al. fit a per-head ridge map between **matched-KV** pairs (same KV head count and per-head dim, layer/param count free) and skip prefill entirely, at the cost of 4–12 GB of mapper storage **per directed pair**.
+
+**The transferable finding**: *error placement determines retention, not error magnitude*. Calibration R² is **anti-correlated** with downstream retention (r = −0.20) while attention-output cosine predicts it (r = +0.57) — Llama 3.1 8B→70B fits at R²=0.84 yet retains 94% small-to-large and only 37% large-to-small. The nonlinear MLP wins by *redistributing* error into attention-irrelevant directions, not shrinking it. That generalizes: a well-fitting proxy can still destroy the target, depending which subspace the residual lands in (cf. [[quantization-quality]] on perplexity understating capability damage).
+
+**Framing corrections made against the PDF**: the MLP variant has **no reported latency** (quality-only evaluation; the timing table is ridge-only), multi-turn stability is likewise ridge-only, and the abstract's 2.7× low end comes from an appendix sweep while the main text reports 4–25× / 3–7×. Both failure cases are Ministral 3 → 14B, and GSM8K is fragile across all pairs (18.2% even on a Tier-1 pair).
+
+Sources 380 → 382, concepts 253 → 254.
+
+
 ## [2026-08-05] ingest | Newsletter sweep — NLP 07-26 + 08-02, alphaXiv 07-22 + 07-30 (24 sources)
 
 Ran the newsletter runbook. Cadence gate passed (13 days since `2026-07-22`). **5 new threads** across both senders. 27 candidate IDs resolved and **all verified against `citation_title`**; **24 ingested from full PDF text**, 1 was a duplicate, 2 remain outstanding (see below).

@@ -34,6 +34,8 @@ MQA shrinks the [[kv-cache|KV cache]] aggressively but degrades quality and can 
 
 Its prefill-adjacent benefit is indirect but real: a smaller KV cache frees HBM, raising the batch size and context length you can serve at all.
 
+- [[cross-model-kv-cache-transfer]] — 'matched-KV' pairs are defined by shared KV head count and per-head dim — GQA's parameters become the compatibility contract
+
 ## Related
 
 - [[kv-cache]] — what GQA shrinks; the memory consumer that scales with context length.

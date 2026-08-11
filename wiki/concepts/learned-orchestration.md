@@ -69,3 +69,4 @@ A hallmark result is **domain adaptivity**: the learned routing distribution *re
 Surfaced via newsletter ingests; see [[index]].
 
 - [[when-is-routing-meaningful-huot-2026]] — routing is vacuous unless the model society is behaviourally differentiated *and* stable under paraphrase
+- [[cross-model-kv-cache-transfer]] — makes model-swap routing cheaper by removing the receiver's prefill cost

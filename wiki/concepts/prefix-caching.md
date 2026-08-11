@@ -58,6 +58,8 @@ The mechanism descends from [[paged-attention|PagedAttention]]'s ref-counted, co
 - **Cache hit rate is the metric.** Structure prompts so invariant content comes *first* — anything before the first varying byte is cacheable, anything after is not. A timestamp at the top of a system prompt destroys the whole cache.
 - Exact-prefix reuse has no accuracy risk, so prefer it unless you specifically need out-of-order module reuse.
 
+- [[cross-model-kv-cache-transfer]] — the cross-model case: same text, different model (cost–quality cascade, mid-conversation upgrade, router swap)
+
 ## Related
 
 - [[kv-cache]] · [[paged-attention]] · [[vllm]] · [[agent-skills]] (progressive disclosure keeps tokens out of prefill entirely)

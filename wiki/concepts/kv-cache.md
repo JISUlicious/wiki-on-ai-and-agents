@@ -37,6 +37,8 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 - [[paged-attention]] — OS-style paging of the cache; lifts effective utilization from 20–38% to 96.3% and enables ref-counted prefix sharing
 - [[grouped-query-attention]] — the architectural lever that shrinks the cache itself
 
+- [[cross-model-kv-cache-transfer]] — reusing one model's KV in a *different* model so the receiver skips prefill — the cross-model counterpart to prefix caching
+
 ## Related
 
 - [[linear-attention]] — the architectural way to not have one — Kimi Linear cuts KV cache 75% via a 3:1 hybrid

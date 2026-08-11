@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 380 sources, 140 entities, 253 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 382 sources, 140 entities, 254 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -426,6 +426,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[grouped-query-attention]] — MHA↔MQA interpolation via 5% uptraining; a KV-cache/decode win, explicitly *not* a prefill one
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
 - [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
+- [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
 - [[prompt-compression]] — fewer tokens into prefill; LLMLingua 20× on GSM8K but −13 pts on BBH
 - [[chunked-prefill]] — piggyback decodes onto prefill chunks; *spends* prefill for decode throughput, and DistServe disputes the trade
 
@@ -615,6 +616,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sublinear-memory-cost-chen-2016]] — Gradient checkpointing; O(√n) activation memory for one extra forward pass (~30% runtime), 1000-layer ResNet 48 GB → 7 GB
 - [[mixed-precision-training-micikevicius-2017]] — FP32 master weights + loss scaling + FP32 accumulation (ICLR 2018); master copy *raises* weight memory 50%
 - [[reducing-activation-recomputation-korthikanti-2022]] — Selective recomputation + sequence parallelism; `sbh(34 + 5as/h)` per layer, ~5× activation memory, 36% → 2% overhead at 530B/1T
+
+### Cross-model KV reuse (2024–2026)
+- [[cross-model-kv-cache-transfer-heo-2026]] — NVIDIA: closed-form ridge map between matched-KV models; 4–25× vs re-prefill, and error *placement* beats error magnitude (R² anti-correlated with retention)
+- [[droidspeak-kv-cache-sharing-liu-2024]] — DroidSpeak: reuse most layers verbatim, recompute the ~11% critical ones; 1.7–3.1× but requires identical architecture
 
 ### Quantization (2022–2026)
 - [[llm-int8-dettmers-2022]] — LLM.int8(); the emergent-outlier discovery (phase shift at ~6.7B)

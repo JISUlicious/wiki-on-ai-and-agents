@@ -107,3 +107,7 @@ Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill
 ## References
 
 - [[llm-inference-roofline-yuan-2024]] · [[flash-attention]] · [[prefix-caching]] · [[prompt-compression]] · [[chunked-prefill]] · [[paged-attention]] · [[grouped-query-attention]] · [[quantization-performance]] · [[minimax-sparse-attention-lai-2026]]
+
+## Related 2026 sources
+
+- [[cross-model-kv-cache-transfer]] — a fifth 'skip it' route — reuse the *previous model's* KV when routing swaps models mid-conversation; 4–25× vs re-prefill on matched-KV pairs
