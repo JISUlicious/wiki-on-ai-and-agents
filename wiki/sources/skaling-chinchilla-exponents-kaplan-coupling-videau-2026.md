@@ -139,3 +139,7 @@ There is no explicit limitations section; these are stated in-line.
 ## References
 
 - [arXiv:2608.07222](https://arxiv.org/abs/2608.07222)
+
+## Related 2026 sources
+
+- [[kaplan-vs-chinchilla-vs-skaling]] — the three-way comparison with Kaplan and Chinchilla

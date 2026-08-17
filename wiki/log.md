@@ -9,6 +9,27 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-08-17] ingest | Re-verification pass + scaling-law comparison
+
+Re-read the five papers flagged as internally inconsistent during the 08-17 sweep, checking each claim against the paper's own HTML full text rather than the agent reports. **All five confirmed**, and the count in the sweep summary was understated — it was five, not three.
+
+| Paper | Verified inconsistency |
+|---|---|
+| [[reason-wide-not-deep-singh-2026]] | the same token-reduction figure is **2.7–6×** (abstract), **2.7–5×** (contributions), **2.9–4.5×** (§5) |
+| [[the-bitter-lesson-of-tool-calling-patel-2026]] | 10.6% (abstract, §4) vs 10.7% (conclusion); and the **18.8% gap at chain lengths ≥12 has no supporting analysis** — Table 3 is aggregate over lengths 2–20, and nothing stratifies by length |
+| [[dataspace-benchmarking-data-agents-li-2026]] | "410 cross-language tasks" in abstract, intro *and* contributions; §5.1 reports **265 cross-language / 145 single-language** |
+| [[lost-in-compaction-side-constraint-loss-wang-2026]] | "Session Constraints" (abstract) vs "Side Constraints" (title, §3) — same construct, both abbreviated SC |
+| [[cedar-agent-orchestrated-tree-search-complex-systems-tian-2026]] | related work claims "scales to 60 variables and 4000 steps"; systems carry **20–69** variables and every run is **3,500** steps |
+
+Only the CEDAR mismatch was unrecorded; added as a callout. The bitter-lesson case is the most substantive — an unsupported figure in a contributions list, where the paper's own methods note only ~10 entries sit at the longest chains against 95% Wilson CIs of ±10–13 points.
+
+**New comparison**: [[kaplan-vs-chinchilla-vs-skaling]]. Re-reading [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026|Skaling]] against the paper corrected the framing in the sweep's [[scaling-laws]] callout — the title is *literal*, not rhetorical. The three laws are **one nested family**: Kaplan had coupling but tied the inner exponents; Chinchilla freed them but went purely additive; Skaling keeps Chinchilla's independent exponents and its free irreducible term while restoring Kaplan's outer-exponent coupling, recovering Chinchilla exactly at k=1.
+
+Three things the first pass missed. **Chinchilla's worst regime is the compute-optimal band** (3.47% MAPE, weakest of every law tested) — its pooled number hides where it fails, and it fails where it is most used. **On Chinchilla's own measurements (Appendix D), fitted k ≈ 0.77–0.90** and Skaling performs at Chinchilla-level accuracy — so the paper does not show Hoffmann et al. mis-fit their own data. And the **near-zero fitted E is explicitly not a loss-floor claim**: k and E trade off, and no run reaches saturation scale.
+
+Sources 411 → 411, concepts 262 → 262, comparisons 3 → 4.
+
+
 ## [2026-08-17] ingest | Newsletter sweep 2026-08-17 — 29 sources, 8 concepts
 
 Swept six unprocessed threads: NLP "Top AI Papers" 08-09 and 08-16 (10 papers each), alphaXiv digests 08-06 and 08-13 (7 arXiv-backed; 2 alphaXiv-native skipped — no mirror), and both AI Agents Weekly issues, again confirmed as paywalled previews. The two teased papers those previews name but do not link (Evo-Bench, the 138K-SKILL.md study) were recovered by search and ingested. **All 29 arXiv IDs verified against `citation_title`; zero duplicates.**

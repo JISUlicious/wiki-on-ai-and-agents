@@ -660,6 +660,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cedar-agent-orchestrated-tree-search-complex-systems-tian-2026]] — Sakana AI: MCTS over feedback *structures* rather than parameters
 
 ### Pretraining and distillation (2026)
+- [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 - [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]] — one coupling exponent restores the N–D interaction Chinchilla's additive form discards; 1.5–3× lower error
 - [[cracks-in-the-foundation-long-context-extension-bertsch-2026]] — four minor architectural choices compound to −47% relative long-context performance, invisible in loss
 - [[physics-of-multimodal-pretraining-han-2026]] — knowledge flows language→vision and understanding→generation, but not back

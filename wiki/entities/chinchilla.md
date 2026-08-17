@@ -48,3 +48,7 @@ The Chinchilla recipe also has economic consequences: **smaller compute-optimal 
 ## References
 
 - [[chinchilla-hoffmann-2022]]
+
+## Related 2026 sources
+
+- [[kaplan-vs-chinchilla-vs-skaling]] — where the Chinchilla form sits in the nested family — and why its empirical result survives the 2026 correction

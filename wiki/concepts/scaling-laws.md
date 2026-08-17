@@ -71,3 +71,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[understanding-reasoning-pretraining-posttraining-shen-2026]] — explicit **joint pretraining–RL scaling law**; adds the outer split (pretraining vs RL) while leaving Chinchilla's inner split unchanged
 - [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]] — one coupling exponent restores the N–D interaction the additive form discards; 1.5–3× lower error and a 5–10× cheaper profiling grid
+- [[kaplan-vs-chinchilla-vs-skaling]] — side-by-side of all three functional forms, the accuracy tables, and the 10× allocation disagreement at 2×10²⁵ FLOPs
