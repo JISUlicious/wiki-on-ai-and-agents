@@ -102,3 +102,8 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[harness-handbook-wang-2026]] — behavior localization as the harness bottleneck; L1–L3 behavior-centric handbook
 - [[nvidia-oo-agents-furgale-2026]] — an agent *is* a Python object; a 6-agent ARC-AGI-3 system compressed to one agent + a 50-line skill (6.4× harness effect)
+- [[harness-r1-learning-to-edit-runtime-harnesses-shao-2026]] — a 9B *harness engineer* trained with GRPO edits a frozen target's runtime; 44.3 → 53.6, and +8.9 pp transfer from 10 failures to 1,270 held-out tasks where a 397B prompted editor scores **−4.3**. Its lifecycle ablation independently reproduces AHE's shape: the value is in pre-action (−3.9) and post-feedback (−3.3) hooks, not context construction (−0.9)
+- [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — the missing vocabulary: every failure written as an edge between two components plus a fault side, so the same symptom maps to different repairs. 41 role-specific modes, judge κ = 0.76
+- [[evo-bench-can-language-models-improve-agent-harness-huang-2026]] — can a model improve its own harness? Up to +16.6 — but overwhelmingly a Search effect (+32.8), with Office flat and every configuration run once against a 2.2-point revision spread
+- [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — instruction following across the five configurable surfaces, with an Against-Prior metric that strips out compliance-by-coincidence
+- [[same-task-different-work-weinberger-2026]] — harness choice costs **5–30× per success** at equal success rate, driven by a 12–15× static prefix; prompt effects do **not** transfer across harnesses

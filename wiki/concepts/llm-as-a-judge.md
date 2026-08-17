@@ -57,6 +57,15 @@ MLflow's `make_judge()` takes natural-language instructions with reserved variab
 
 A plain LLM judge degrades when given too much context. [[agent-as-a-judge-zhuge-2024|Agent-as-a-Judge]] measured it directly: adding the agent's trajectory **dropped** LLM-as-a-Judge alignment from 84.15% to 68.86%, while an agentic judge *improved* on the same input. Judging long multi-step trajectories is where the single-pass form runs out.
 
+**A second, independent degradation axis: trajectory depth.** [[rehearse-confidence-cliff-autoresearch-ji-2026|Rehearse 2026]] holds per-call input fixed and varies only how deep into an optimization loop the judge sits. Selective accuracy falls from **82.8% to 56.9%** once successful modifications accumulate — the "confidence cliff." This is not the context-length effect above; every configuration receives the same candidate rationale.
+
+Two operational consequences this page did not previously carry:
+
+- **The judge gives no signal that it has degraded.** Coverage moves *up* from 76% to 85% as accuracy collapses — it commits more readily as it gets worse. Plain accuracy averages hide this entirely (77.6% overall versus 56.9% in the deep bucket). Seeing it at all requires **selective accuracy conditioned on an abstention protocol**.
+- **"Give the judge an out" is validated but insufficient.** Abstention alone does not explain the recovery: on deep calls that *both* judges commit to, accuracy still rises 63.4% → 82.5% once the judge is given a focused memory of similar past attempts and their outcomes. What fixes the cliff is relevant history, not permission to decline.
+
+Caveat on that result: the depth variable is **observational**, so deep decisions may genuinely differ in headroom and difficulty. The authors call it a controlled proxy, not a randomized causal estimate.
+
 Worth keeping in view: human judges are not an oracle either. Inter-evaluator disagreement in the same study ran **~10-30%**, with one expert at 23.77% error dropping to 6.01% under majority vote.
 
 ## Related
@@ -74,3 +83,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[metacognition-in-llms-liu-2026]] — survey of LLM self-monitoring: verdict *not yet robust*, and better reasoning does not buy better metacognition
 - [[llm-as-a-verifier-kwok-2026]] — a continuous scoring-token expectation beats discrete judging by 16.6 pts on the identical base model
+- [[rehearse-confidence-cliff-autoresearch-ji-2026]] — the confidence cliff: 82.8% → 56.9% selective accuracy as a self-improvement trajectory deepens, while coverage *rises*

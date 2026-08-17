@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-08-05",
+  "last_processed_date": "2026-08-17",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -66,7 +66,13 @@
     "19f9f8bc284af5b1",
     "19fb3a35d11c0b68",
     "19f8b7a2f8aa41f2",
-    "19fbde0be02dc008"
+    "19fbde0be02dc008",
+    "1a00b63e97b768d3",
+    "1a0064eca032ae24",
+    "19ffcab64831d0a5",
+    "19fe77880590e709",
+    "19fe1e0defee127a",
+    "19fd8798075ad6c9"
   ],
   "runs": [
     {
@@ -184,6 +190,17 @@
         "2607.15495"
       ],
       "notes": "NLP 07-26 (10) + 08-02 (10) + alphaXiv 07-22/07-30 (7 arXiv-backed; 3 alphaXiv-native skipped, no mirror). All 27 IDs verified vs citation_title. 2607.15495 = arXiv posting of the existing Anthropic global-workspace page (no arxiv_id there to match on; caught by author comparison) -> merged, not duplicated. 3 Contradiction callouts filed (progressive disclosure vs agent-skills; harness-handbook vs rethinking-harness-evolution; CoT-monitoring). Kimi K3 primary source corrected 2 vLLM-blog claims on moonshot-ai. Infra note: 4 subagents died mid-run (3 connection-closed, 1 600s stall); relaunched as smaller units with write-before-continue instructions. Cursor -> 2026-08-05."
+    },
+    {
+      "date": "2026-08-17",
+      "type": "newsletter sweep (manual, NLP x2 + alphaXiv x2 + AI Agents Weekly x2)",
+      "threads_read": 6,
+      "candidate_ids_verified": 29,
+      "on_domain_ingested": 29,
+      "new_source_pages": 29,
+      "new_concept_pages": 8,
+      "dups_skipped": [],
+      "notes": "NLP 08-09 (10) + 08-16 (10) + alphaXiv 08-06/08-13 (7 arXiv-backed; 2 alphaXiv-native skipped: 2608.blog Qwen3.8-Max, 2608.leanstral). Both AI Agents Weekly (08-08, 08-15) re-confirmed paywalled previews, but their TOCs named 2 papers not in the digests -> recovered via search and ingested (2608.09096 Evo-Bench, 2608.08453 138K SKILL.md). All 29 IDs verified vs citation_title; 0 dups. New concept: catastrophic-remembering, anchoring a 6-paper convergence that accumulation != compounding. 7 Contradiction/qualification callouts filed (self-improving-agent x2, agentic-context-engineering, self-reflection, reflexion, scaling-laws, grouped-query-attention, llm-as-a-judge). PDF verification caught the worst fabrication rate yet: 3 figures in the Prompt-Induced-Waste blurb appear nowhere in the paper. Product news (DeepSeek Harness v0.1, V4-Pro) recorded on the deepseek entity, flagged vendor-reported. Cursor -> 2026-08-17. 8 agents, 0 infra failures."
     }
   ],
   "pending_threads": [

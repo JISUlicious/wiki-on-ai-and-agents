@@ -46,6 +46,7 @@ In standard RL, gradients update model weights based on a reward signal. In Refl
 **Cons:**
 - Depends on LLM self-evaluation quality — confabulated reflections can mislead future episodes.
 - No convergence guarantee.
+- **Silent no-op.** A self-triggered control flow can stop firing entirely with no outward sign. [[sample-more-reflect-less-mirzaei-2026|Mirzaei 2026]] found Reflexion as published **stopped immediately on 100% of questions on Qwen2.5-1.5B in both benchmarks** (mean rounds 0.00) — it never reflected once, and scored respectably *because it was cheap*. Final-accuracy benchmarks cannot detect this; you have to instrument the retry rate.
 - Memory can grow unwieldy without summarization / pruning.
 
 ## Lineage

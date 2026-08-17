@@ -9,6 +9,23 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-08-17] ingest | Newsletter sweep 2026-08-17 — 29 sources, 8 concepts
+
+Swept six unprocessed threads: NLP "Top AI Papers" 08-09 and 08-16 (10 papers each), alphaXiv digests 08-06 and 08-13 (7 arXiv-backed; 2 alphaXiv-native skipped — no mirror), and both AI Agents Weekly issues, again confirmed as paywalled previews. The two teased papers those previews name but do not link (Evo-Bench, the 138K-SKILL.md study) were recovered by search and ingested. **All 29 arXiv IDs verified against `citation_title`; zero duplicates.**
+
+**The finding of the sweep is a convergence, not a paper.** Six results across five independent groups say the same thing about accumulated agent context: [[continualskillbench-guan-2026|skill libraries]] score 0.602 against 0.605 for just keeping the transcript; [[why-does-claude-md-keep-growing-chakrabarti-2026|instruction files]] grow +226% because deletion costs `O(2^|D|)`; [[what-keeps-agent-skills-from-being-reusable-zhang-2026|91.8%]] of 138,133 published skills carry a defect; [[rehearse-confidence-cliff-autoresearch-ji-2026|dumping a full archive]] scores 70.8% where focused retrieval from the same store scores 83.5%; [[memharness-memory-is-reconstructed-not-replayed-wu-2026|verbatim memory replay]] lands 22–24 points *below* plain GRPO; and [[lost-in-compaction-side-constraint-loss-wang-2026|compactors]] retain 17% of session constraints. Filed as the new concept [[catastrophic-remembering]], with [[continual-learning]] as its classical dual.
+
+**New concepts** (8): [[catastrophic-remembering]], [[continual-learning]], [[programmatic-tool-calling]], [[on-policy-distillation]], [[alfworld]], [[webshop]], [[attention-sink]], [[mle-bench]]. ALFWorld and WebShop were referenced by 22 and 10 existing pages respectively with no page to link to — three separate ingest agents flagged the gap independently.
+
+**Contradictions and qualifications filed** (7): [[self-improving-agent]]'s "monotonic compounding" bullet (two papers) plus its unexamined selection gate; [[agentic-context-engineering]]'s append-mostly playbook (measured in 1,867 real repos); [[self-reflection]] and [[reflexion]] (at equal token cost, 0 of 36 comparisons better, all 18 self-inspection comparisons negative — plus the silent-no-op failure mode, where Reflexion never fired once on Qwen2.5-1.5B); [[scaling-laws]] (Skaling as a generalization, not a refutation — and the correction's *sign flips between grids*, so it is filed as an open frontier); [[grouped-query-attention]] (a long-context-extension cost invisible in loss); [[llm-as-a-judge]] (a second, independent degradation axis).
+
+**Verification caught fabrications again, and more than usual.** [[same-task-different-work-weinberger-2026|Prompt-Induced Waste]] was the worst: the newsletter's "18× the clean-run median, 2.5× more tool calls, 3× longer" is **absent from the paper entirely**, as are "~3 elaborated branches" and the claimed paraphrase test; run count and model count were both wrong. Also corrected: MemHarness's 75.6% is WebShop *success rate*, not task score; Frontis-MA1's "+30 pp" silently bundles a harness upgrade (clean figure +21.22 pp, ±8.57); DataSpace's "410 cross-language tasks" is 265; Reason-Wide's token range is internally inconsistent in the paper itself; TokTier's three headline numbers are three different measurements the summary conflates; and Mind Viruses' "viral persona" is a generator prior, not a selected trait — evolution actually *strips* it.
+
+Also recorded, from the paywalled product-news issues: DeepSeek Harness v0.1 (MIT, plugin kernel, append-only session log) and DeepSeek-V4-Pro on [[deepseek]], flagged as vendor-reported.
+
+Sources 382 → 411, concepts 254 → 262.
+
+
 ## [2026-08-11] ingest | Cross-model KV cache transfer — 2 sources, 1 concept
 
 Targeted search for an NVIDIA paper on cross-model KV cache transfer. Found and verified **[[cross-model-kv-cache-transfer-heo-2026|arXiv:2608.03893]]** (Heo et al., NVIDIA, 2026-08-04) — the requested title was exact. Also ingested the closest prior work, **[[droidspeak-kv-cache-sharing-liu-2024]]** (2024), so the new concept rests on two sources with genuinely opposite designs. Both IDs verified against `citation_title`; both ingested from full PDF text.

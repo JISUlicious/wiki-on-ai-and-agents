@@ -42,6 +42,21 @@ The highest-leverage lever, because reused prefill is *free*, not merely faster.
 
 **Practical rule:** cache hit rate is the metric. Put invariant content *first* — everything before the first varying byte is cacheable; a timestamp at the top of a system prompt destroys the entire cache.
 
+### Tier 1b — Once caching works, the bottleneck moves *upstream of the model*
+
+Every tier on this page acts on model work. [[toktier-exact-stateful-tokenization-zhang-2026|TokTier]] makes the point that Tier 1 succeeding relocates the problem: **prefix caching can only begin once token IDs exist**, and the front end still re-tokenizes the entire request text on every call. Coding agents pay most, because each turn resubmits a long transcript after a small append that can shift token boundaries near the tail.
+
+At high cache hit rates, tokenization grows to a reported **10% → 64% of TTFT**. The fix is stateful *exact* repair — re-tokenize a small window around the append and splice only when a stable-boundary check passes, otherwise widen or fall back — under a hard contract that emitted IDs always match full reference tokenization (**1.5 × 10¹⁰ split checks across 17 tokenizer families, zero divergence**). Repair costs **0.5–1.1 ms from 100K to 3M characters**, flat in context, versus 1548 ms for a serial HuggingFace re-tokenize at the largest shape.
+
+End to end with vLLM: **median TTFT −16% to −34%, P99 −23%** under load.
+
+> [!warning] Three bounds on this lever
+> **It is exactly zero in unloaded single-stream benchmarks** — which is why it has been invisible. It **stops applying past the engine's KV capacity**: at four concurrent 95K-token sessions prefix reuse collapses and both channels degrade identically. And content-caching tokenizers win below a ~100K–500K crossover, so this is a crossover, not a blanket win.
+>
+> One caveat on the headline: the 10%→64% band corresponds to hit rates approaching **0.99**, not to the separately-reported 94.1% fleet aggregate — three different measurements the summary literature tends to conflate.
+
+Useful corollary for the cache-hygiene rule above: token state costs **~16 bytes/token** against gigabytes for KV, and **55% of Claude Code / 42% of Codex inter-turn gaps exceed the 5-minute cache TTL** — so token state can profitably outlive KV state.
+
 ## Tier 2 — Shrink it
 
 **[[prompt-compression]]** removes tokens before they reach prefill. [[llmlingua-jiang-2023|LLMLingua]] hits **20× on GSM8K for ~1.5 points**, but **−13.2 points on BBH at 7×** — ratios do not transfer across task types. [[llmlingua-2-pan-2024|LLMLingua-2]] makes the compressor cheap (**0.4 s** overhead) and task-agnostic, so compressed documents stay cacheable.

@@ -42,3 +42,7 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 ## Related
 
 - [[linear-attention]] — the architectural way to not have one — Kimi Linear cuts KV cache 75% via a 3:1 hybrid
+
+## Related 2026 sources
+
+- [[toktier-exact-stateful-tokenization-zhang-2026]] — once prefix caching works the bottleneck moves upstream: tokenization grows to 64% of TTFT, because caching cannot start until token IDs exist

@@ -27,6 +27,13 @@ tags:
 
 ACE is the first framework to give a rigorous, ablation-backed account of *why* iterative LLM-driven context rewriting fails (brevity bias + context collapse) and to provide a clean alternative: treat context as a structured, append-mostly playbook and use a deterministic merge. The headline finding — that better context can substitute for a stronger base model — reframes the prompt-engineering / fine-tuning / memory debate.
 
+> [!warning] Contradiction — append-mostly playbooks measured in the wild
+> ACE prescribes "comprehensive playbooks, not concise summaries" and an append-mostly discipline. [[why-does-claude-md-keep-growing-chakrabarti-2026|Chakrabarti 2026]] measures that discipline across **1,867 real repositories and 247,694 instruction lifetimes** and reaches the opposite verdict: agentic prompts grow **+226%** over their lifetime at +4.9 net instructions per commit, and the excess diverges *even with a completely fixed constraint set*, because deletion requires provenance that append-only editing never records.
+>
+> The two also disagree about what is wrong with a rewrite. ACE says rewriting is **harmful** — context collapse, 18,282 → 122 tokens, 66.7% → 57.1%. Chakrabarti says it is merely **ineffective**: a wholesale rewrite resets size (59.5% → 91.5% within 10 commits) but leaves the growth rate intact, in fact accelerating (4.9%/commit vs 4.1%).
+>
+> A useful way to hold both: ACE's "brevity bias" and Chakrabarti's ratchet are **opposite deviations from the same minimum cover**. ACE is right that naive LLM rewriting undershoots; Chakrabarti is right that append-mostly overshoots without bound. ACE's helpful/harmful counters and grow-and-refine step are precisely the consolidation machinery the un-instrumented instruction files in Chakrabarti's corpus lack — which makes ACE a partial answer to the ratchet rather than an instance of it. See [[catastrophic-remembering]].
+
 ## Relation to other concepts
 
 - Industry-side counterpart to [[agent-skills]] (Anthropic) and the [[skill-md-format]]; ACE provides the academic formalization.

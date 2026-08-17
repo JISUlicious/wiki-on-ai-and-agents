@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 382 sources, 140 entities, 254 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 411 sources, 140 entities, 262 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -616,6 +616,56 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sublinear-memory-cost-chen-2016]] — Gradient checkpointing; O(√n) activation memory for one extra forward pass (~30% runtime), 1000-layer ResNet 48 GB → 7 GB
 - [[mixed-precision-training-micikevicius-2017]] — FP32 master weights + loss scaling + FP32 accumulation (ICLR 2018); master copy *raises* weight memory 50%
 - [[reducing-activation-recomputation-korthikanti-2022]] — Selective recomputation + sequence parallelism; `sbh(34 + 5as/h)` per layer, ~5× activation memory, 36% → 2% overhead at 530B/1T
+
+### Agent harness engineering (2026)
+- [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — every agent failure as an edge between two components plus a fault side, so a symptom maps to a repair; 41 role-specific modes, judge κ=0.76
+- [[harness-r1-learning-to-edit-runtime-harnesses-shao-2026]] — a 9B harness engineer trained with GRPO edits a *frozen* agent's runtime; +8.9 pp held-out transfer where a 397B prompted editor scores −4.3
+- [[evo-bench-can-language-models-improve-agent-harness-huang-2026]] — can a model improve its own harness? +16.6 headline, but almost entirely a Search effect; Office flat
+- [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — Against-Prior Accuracy strips out compliance-by-coincidence; skill and tool descriptions rank *last* in precedence
+- [[same-task-different-work-weinberger-2026]] — preregistered: prompt wording inflates reasoning 2.4–7.4× with no success gain, and harness choice costs 5–30× per success
+
+### Agent skills, measured (2026)
+- [[continualskillbench-guan-2026]] — an explicit skill library scores 0.602 against 0.605 for just keeping the transcript
+- [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] — 138,133 public skills: 89.3% violate the spec, 91.8% carry a defect
+- [[reason-wide-not-deep-singh-2026]] — a 40–130 line distilled skill recovers 55–100%+ of the reasoning gap at zero reasoning tokens
+- [[catastrophic-remembering]] — the cross-cutting concept: accumulation is not compounding
+- [[continual-learning]] — the classical dual, and why the inversion is the point
+
+### Agent memory and compaction (2026)
+- [[zero-mem-zero-token-memory-operations-xiao-2026]] — zero LLM tokens outside the final answer; 57.6% less memory-operation time while scoring highest
+- [[metis-memory-foundation-model-zhang-2026]] — memory states moved *into* the architecture as fast weights; explicitly not a replacement for external memory
+- [[memharness-memory-is-reconstructed-not-replayed-wu-2026]] — reconstruct-or-reject; verbatim replay lands 22–24 points *below* plain GRPO
+- [[lost-in-compaction-side-constraint-loss-wang-2026]] — compactors retain 17% of session constraints; a side extractor pushes it past 90%
+
+### Agent cost and serving (2026)
+- [[the-bitter-lesson-of-tool-calling-patel-2026]] — code stubs vs JSON schemas; wins on capable models and under fan-out, loses on the 14-model mean
+- [[programmatic-tool-calling]] — the concept, and where the aggregate goes the other way
+- [[sample-more-reflect-less-mirzaei-2026]] — at equal token cost, all 18 self-inspection comparisons are negative
+- [[toktier-exact-stateful-tokenization-zhang-2026]] — once prefix caching works, tokenization becomes 64% of TTFT; exact stateful repair cuts median TTFT 16–34%
+
+### Agent benchmarks (2026)
+- [[dataspace-benchmarking-data-agents-li-2026]] — 15 GB heterogeneous workspaces, deterministic scoring; swapping the harness alone moves accuracy 15.36 points
+- [[merchantbench-long-term-coherence-shi-2026]] — 365 simulated days; best agent reaches 27.3% of human net assets, and a rule-based baseline beats 6 of 16 configs
+- [[why-does-claude-md-keep-growing-chakrabarti-2026]] — 1,867 repos: agentic instruction files grow +226% because deletion costs O(2^|D|)
+- [[alfworld]] · [[webshop]] · [[mle-bench]] — the recurring evaluation environments, now with pages
+
+### Agent safety (2026)
+- [[stealing-reasoning-traces-panfilov-2026]] — encrypted reasoning blocks are portable across sessions, users and models, so a weaker sibling decodes a stronger model's hidden trace; disclosed and mitigated
+- [[mind-viruses-papadopoulos-2026]] — Anthropic: self-propagating ideas in multi-agent systems; the agent-writable system-prompt file is the attack surface, and a one-paragraph warning confers immunity
+
+### Self-improving agents (2026)
+- [[rehearse-confidence-cliff-autoresearch-ji-2026]] — the judge deciding what to try degrades 82.8% → 56.9% as the trajectory deepens, while committing *more*
+- [[frontis-ma1-ai4ai-recursive-self-improvement-yang-2026]] — 71.21% Medal Average on MLE-Bench Lite, ±8.57 pp
+- [[agentopsd-recursive-self-distillation-agentic-rl-wang-2026]] — turn-level credit assignment; −0.54 success points per extra turn vs GRPO's −2.91
+- [[cedar-agent-orchestrated-tree-search-complex-systems-tian-2026]] — Sakana AI: MCTS over feedback *structures* rather than parameters
+
+### Pretraining and distillation (2026)
+- [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]] — one coupling exponent restores the N–D interaction Chinchilla's additive form discards; 1.5–3× lower error
+- [[cracks-in-the-foundation-long-context-extension-bertsch-2026]] — four minor architectural choices compound to −47% relative long-context performance, invisible in loss
+- [[physics-of-multimodal-pretraining-han-2026]] — knowledge flows language→vision and understanding→generation, but not back
+- [[weak-to-strong-on-policy-distillation-yu-2026]] — a student surpassing the weaker models that supply its signal
+- [[on-policy-self-distillation-without-supervision-li-2026]] — beats gold supervision with pseudo-labels that are 13.3% wrong
+- [[on-policy-distillation]] · [[attention-sink]] — supporting concepts
 
 ### Cross-model KV reuse (2024–2026)
 - [[cross-model-kv-cache-transfer-heo-2026]] — NVIDIA: closed-form ridge map between matched-KV models; 4–25× vs re-prefill, and error *placement* beats error magnitude (R² anti-correlated with retention)

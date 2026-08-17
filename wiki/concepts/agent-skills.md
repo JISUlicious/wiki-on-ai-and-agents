@@ -171,3 +171,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[coding-agents-replicate-sciml-papers-hans-2026]] — a paper-replication *skill* whose completion criterion is workspace evidence, not the agent's self-report — 158/158 targets matched
 - [[prefix-caching]] — progressive disclosure and stable skill preambles are prefill optimizations — invariant content placed first stays cacheable across turns
 - [[is-progressive-disclosure-all-you-need-he-2026]] — the first controlled study of progressive disclosure — see the Contradiction callout above
+- [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] — ecosystem-scale audit of **138,133 public skills**: 89.3% violate the spec, 91.8% carry ≥1 defect, 67.0% have a routing defect. A 3-rule linter covers 71.9% of instances; LLM repair fixes 58.4% overall but **0% of bypass/injection defects**
+- [[continualskillbench-guan-2026]] — maintaining an explicit skill library scores **0.602 vs 0.605 for plain in-context learning** — no aggregate advantage; weaker models accumulate larger, more fragmented libraries
+- [[reason-wide-not-deep-singh-2026]] — a 40–130 line distilled skill recovers 55–100%+ of the reasoning gap at zero reasoning tokens, for $1.28–$2.44 per domain
+- [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — **skill descriptions rank last in precedence** — system prompts, project files and user instructions all outrank tool and skill descriptions when they conflict
+- [[catastrophic-remembering]] — why appended skills stop compounding

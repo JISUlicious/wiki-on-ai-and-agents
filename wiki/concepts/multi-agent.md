@@ -70,3 +70,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[technical-taxonomy-llm-agent-communication-protocols-sander-2026]] — taxonomy of LLM-agent communication protocols
 - [[skill-mas-evolving-meta-skill-automatic-multi-agent-systems-lin-2026]] — Skill-MAS: orchestration as an evolvable Meta-Skill
 - [[consensus-is-strategically-insufficient-wawer-2026]] — consensus illusion: output agreement hides reasoning disagreement
+- [[mind-viruses-papadopoulos-2026]] — Anthropic: ideas that propagate agent-to-agent by inducing each host to transmit them onward. Evolved (not authored) payloads; the agent-writable system-prompt file is the attack surface (**55% vs 17%** propagation); a one-paragraph system-prompt warning confers total immunity

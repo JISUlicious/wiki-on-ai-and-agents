@@ -45,3 +45,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[reinforcement-learning-with-metacognitive-feedback-liu-2026]] — RLMF: metacognition as the RL reward for faithful uncertainty
 - [[gflowrl-scaling-distribution-matching-rl-liu-2026]] — distribution-matching RL that drops the learned partition function for an in-batch Monte-Carlo estimate; 2048 Codeforces Elo at 14B
 - [[right-in-the-right-way-damani-2026]] — adds a human-demonstration discriminator alongside verifiable reward to stop style/diversity collapse
+- [[agentopsd-recursive-self-distillation-agentic-rl-wang-2026]] — turn-level credit assignment as a bounded positive multiplier on GRPO's advantage; **−0.54** success points per extra turn vs GRPO's −2.91
+- [[harness-r1-learning-to-edit-runtime-harnesses-shao-2026]] — RL applied to the harness instead of the policy, with the target agent frozen

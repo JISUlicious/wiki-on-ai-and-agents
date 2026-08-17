@@ -32,6 +32,13 @@ Re-derived the laws with better methodology and concluded:
 
 The Chinchilla picture shifted the field toward training smaller models on more data — visible in LLaMA, LLaMA-2, Mistral, etc.
 
+> [!note] Refinement — the additive form assumes N and D don't interact
+> [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026|Skaling]] (FAIR, 2026) is a strict **one-parameter generalization**, `L = (A/N^α + B/D^β)^k + E`, recovering Chinchilla exactly at `k = 1`. Its argument is that any additive form forces the cross-derivative `∂²L/∂N∂D ≡ 0`, while the measured mixed derivative is non-zero everywhere and predominantly negative; fitted `k` is 0.41 and 0.31 on two grids. Error falls 1.5–3× (interpolation MAPE 0.41 vs 0.77; far extrapolation 0.70 vs 5.17 on one grid), with the largest corrections away from the compute-optimal ridge — which is where deployment now happens.
+>
+> **What this touches is the bullet above about equal scaling.** "Parameters and tokens should scale roughly equally" is a *consequence of the additive form*, not an independent measurement. Under coupling the optimal ratio `D*/N* ∝ C^((α−β)/(α+β))` becomes compute-dependent: on one grid the exponent is −0.11 against Chinchilla's ≈+0.03, implying **20–40 tokens/parameter at 10²⁵ FLOPs where Chinchilla extrapolates to 380**.
+>
+> Treat this as a refinement with an open frontier rather than a refutation. The Chinchilla-vs-Gopher empirical result is untouched, and — importantly — **the sign of the correction flips between the paper's two fitted grids**, so the authors' own conclusion is that coupling changes allocation but the *direction* depends on the data and architecture fitted. The practical takeaway is cheaper profiling: an L-shaped sparse grid of low-compute runs extrapolates the full grid at roughly 5–10× less compute.
+
 ## Why scaling laws matter
 
 - **Predictability**: you can extrapolate the loss of a model 100× larger from smaller-scale runs, before spending the compute.
@@ -63,3 +70,4 @@ Scaling laws have also been derived for:
 Surfaced via newsletter ingests; see [[index]].
 
 - [[understanding-reasoning-pretraining-posttraining-shen-2026]] — explicit **joint pretraining–RL scaling law**; adds the outer split (pretraining vs RL) while leaving Chinchilla's inner split unchanged
+- [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]] — one coupling exponent restores the N–D interaction the additive form discards; 1.5–3× lower error and a 5–10× cheaper profiling grid

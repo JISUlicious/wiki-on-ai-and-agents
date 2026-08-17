@@ -26,3 +26,8 @@ The skill library is the [[procedural-memory|procedural-memory]] ancestor of the
 ## References
 
 - [[voyager-wang-2023]]
+
+## Related 2026 sources
+
+- [[continualskillbench-guan-2026]] — never-overwriting has its own cost: selection and maintenance burden scaling with a fragmented library. GPT-4o accumulated 384 skills at quality 5.68 vs GPT-5.3-Codex's 205 at 7.94
+- [[catastrophic-remembering]] — the general form of that cost, measured across six papers

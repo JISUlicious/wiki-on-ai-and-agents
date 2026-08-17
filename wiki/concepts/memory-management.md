@@ -140,3 +140,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[acm-agentic-context-management-li-2026]] — agent-initiated *lossless* compression: offload raw messages, query them back by ID
 - [[from-memory-to-skills-tang-2026]] — promoting skills from a governed three-level memory rather than distilling raw traces
 - [[bad-memory-prompt-injection-agentic-gadgil-2026]] — memory as an attack surface
+- [[zero-mem-zero-token-memory-operations-xiao-2026]] — **zero LLM tokens** outside the final answer, against LightMem's 877,086 — memory-operation time down 57.6% while scoring highest
+- [[memharness-memory-is-reconstructed-not-replayed-wu-2026]] — reconstruct-or-reject rather than replay; verbatim replay lands **22–24 points below plain GRPO**
+- [[metis-memory-foundation-model-zhang-2026]] — memory states and operations moved *into* the architecture as fast weights — but scoring 26.74 against full-context's 65.03, so not a replacement
+- [[lost-in-compaction-side-constraint-loss-wang-2026]] — compactors retain only **17%** of session constraints; some retain 0.0%
+- [[catastrophic-remembering]] — the cross-cutting failure these four circle

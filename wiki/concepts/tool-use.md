@@ -53,3 +53,7 @@ See [[function-calling]] for the canonical treatment — the model/application c
 
 - [[react-yao-2022]]
 - [[function-calling-llms-promptingguide]]
+
+## Related 2026 sources
+
+- [[programmatic-tool-calling]] — expose tools as typed code stubs instead of JSON schemas — wins on capable models and under parallel fan-out, loses on the 14-model mean

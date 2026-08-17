@@ -26,3 +26,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[on-the-geometry-of-on-policy-distillation-shen-2026]] — geometry of on-policy distillation: a distinct weight update
 - [[multi-turn-on-policy-distillation-prefix-replay-liao-2026]] — ReOPD: replay pre-collected prefixes so the student never touches the environment — 4.2–9.1× faster rollouts
 - [[on-policy-delta-distillation-heo-2026]] — OPD²: distil the *delta* (teacher minus the teacher's own base) rather than teacher minus student; +19.8 pp at 1.7B
+- [[on-policy-distillation]] — train on the *student's* rollouts — the variant family behind three 2026 results
+- [[weak-to-strong-on-policy-distillation-yu-2026]] — a student surpassing the weaker models supplying its signal (51.8 vs the 4B expert's 48.8)
+- [[on-policy-self-distillation-without-supervision-li-2026]] — beats gold-label supervision with pseudo-labels that are 13.3% wrong

@@ -43,3 +43,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[linear-attention]] — subquadratic prefill; the advantage only appears past ~128k (2.9× at 1M)
 - [[frontier-lms-struggle-to-copy-wen-2026]] — frontier models fail to copy text well inside their window; traced to 1D positional encodings, fixed by a 2D view
 - [[pro-long-programmatic-memory-fox-2026]] — programmatic memory over a verbatim log as an alternative to summarization
+- [[attention-sink]] — and the sign inversion in that same sweep: sinks correlate *positively* with long-context performance (R²=0.38), against the prior reading of them as a pathology
+- [[cracks-in-the-foundation-long-context-extension-bertsch-2026]] — four minor architectural choices — normalization, GQA, pretraining context length, SWA — compound to **−47% relative** long-context performance, invisible in loss (end-of-extension loss explains R²=0.06)
+- [[lost-in-compaction-side-constraint-loss-wang-2026]] — constraint retention rises *monotonically* with injection position, diverging from the U-shaped lost-in-the-middle pattern

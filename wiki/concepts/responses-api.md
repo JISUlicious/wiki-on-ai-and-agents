@@ -77,3 +77,7 @@ The Responses API is the modern delivery vehicle for [[function-calling]] on Ope
 - [[structured-outputs]] — strict-mode schema enforcement
 - [[mcp]] — Model Context Protocol, available as a built-in tool
 - [[openai-function-calling-2025]] — source documentation
+
+## Related 2026 sources
+
+- [[stealing-reasoning-traces-panfilov-2026]] — the encrypted-reasoning-block pattern this API standardized is the vulnerability: blocks are portable across sessions, users and models within one provider, so a weaker sibling decodes a stronger model's hidden trace

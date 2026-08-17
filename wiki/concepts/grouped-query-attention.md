@@ -34,6 +34,15 @@ MQA shrinks the [[kv-cache|KV cache]] aggressively but degrades quality and can 
 
 Its prefill-adjacent benefit is indirect but real: a smaller KV cache frees HBM, raising the batch size and context length you can serve at all.
 
+> [!warning] A cost that shows up only after context extension
+> The table above prices GQA on quality-at-fixed-context and inference time. [[cracks-in-the-foundation-long-context-extension-bertsch-2026|Bertsch et al. (COLM 2026)]] price a different axis and find GQA is **not free for long-context extensibility**: on a controlled sweep of 26 comparable 7B models (38 checkpoints each, ~170,000 H100 hours), GQA-8 versus MHA-32 costs **−3.4 HELMET points at 32K after context extension**, and **−9 in combination with sliding-window attention**.
+>
+> GQA is one of four seemingly minor choices — with QK-norm (−3.8 to −6), pretraining context length (−1 to −2), and SWA (−1.1 alone) — that each ship in at least one of the Olmo, Llama and Qwen families. **Combining three or more drops downstream long-context performance by up to 47% relative** (26.5 points on HELMET), and the best single predictor of the damage is simply the *count* of features present (R² = 0.67).
+>
+> The part that matters operationally: **none of this is visible in loss.** End-of-extension loss explains R² = 0.06 of downstream score, held-out perplexity 0.01–0.39, and pre-extension HELMET at 8K only 0.32. A team choosing GQA on short-context evals has no signal that it is buying a long-context cost.
+>
+> This qualifies rather than contradicts the result above — Ainslie's decode-bandwidth claim stands untouched. Read the entry as "a trade whose cost appears only in post-extension long-context evaluation," not "an unambiguous win." Note also that Llama 3's configuration (GQA-8, but no QK-norm, no SWA, 8K pretraining) is among the *better* configs; the damage is combinatorial, not attributable to GQA alone.
+
 - [[cross-model-kv-cache-transfer]] — 'matched-KV' pairs are defined by shared KV head count and per-head dim — GQA's parameters become the compatibility contract
 
 ## Related

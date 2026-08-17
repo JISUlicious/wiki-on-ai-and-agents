@@ -38,3 +38,7 @@ This is the basic recipe behind LLaVA, MiniGPT-4, BLIP-2, and many open-source v
 
 - [[gpt-4-openai-2023]]
 - [[vit-dosovitskiy-2020]]
+
+## Related 2026 sources
+
+- [[physics-of-multimodal-pretraining-han-2026]] — knowledge flows language→vision and understanding→generation, but generation→understanding is negligible; an asymmetric L70/U25/G5 mix beats a balanced one on all three axes

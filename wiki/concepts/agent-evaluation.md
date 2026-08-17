@@ -168,3 +168,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[role-drift-in-compound-llm-systems-cao-2026]] — end-to-end RL improves the end task while modules silently abandon their nominal roles — the failure outcome-only evaluation cannot see
 - [[gamut-two-level-meta-rubrics-chen-2026]] — two-level meta-rubrics for open-ended generation
 - [[jaxbench-tpu-kernel-optimization-tschand-2026]] — TPU kernel-optimization benchmark; **the correctness bottleneck is information, not reasoning** — injecting docs beats upgrading the model
+- [[dataspace-benchmarking-data-agents-li-2026]] — 410 tasks / 15.01 GB of heterogeneous workspace, scored deterministically with no judge in the loop; best backbone 66.34%, and swapping the harness alone moves accuracy **15.36 points**
+- [[merchantbench-long-term-coherence-shi-2026]] — 365 simulated days of e-commerce; best config reaches **27.3%** of human net assets, and a rule-based baseline beats 6 of 16 LLM configurations purely by never stopping
+- [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — Against-Prior Accuracy: score only rules the agent would *not* have followed anyway. Every model drops 3.6–7.4 points, and the inflation varies twofold across the cohort
+- [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — localizing *where the repair belongs* rather than reporting system-level outcomes

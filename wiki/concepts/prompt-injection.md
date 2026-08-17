@@ -44,3 +44,8 @@ Distinguishing "instruction" from "data" requires reasoning about *intent*, *tru
 ## References
 
 - [[indirect-prompt-injection-greshake-2023]]
+
+## Related 2026 sources
+
+- [[stealing-reasoning-traces-panfilov-2026]] — injections hidden entirely inside encrypted reasoning blocks, invisible in the visible transcript
+- [[mind-viruses-papadopoulos-2026]] — self-propagating payloads that survive a context wipe by living in the agent's own writable instruction file
