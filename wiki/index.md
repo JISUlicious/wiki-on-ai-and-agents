@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 411 sources, 140 entities, 262 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 413 sources, 141 entities, 263 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -616,6 +616,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sublinear-memory-cost-chen-2016]] — Gradient checkpointing; O(√n) activation memory for one extra forward pass (~30% runtime), 1000-layer ResNet 48 GB → 7 GB
 - [[mixed-precision-training-micikevicius-2017]] — FP32 master weights + loss scaling + FP32 accumulation (ICLR 2018); master copy *raises* weight memory 50%
 - [[reducing-activation-recomputation-korthikanti-2022]] — Selective recomputation + sequence parallelism; `sbh(34 + 5as/h)` per layer, ~5× activation memory, 36% → 2% overhead at 530B/1T
+
+### Applied J-space (2026)
+- [[j-space-cognition-suite]] — **entity**: an Agent Skill package turning the J-space findings into an inference-time protocol; careful research digest, unmatched benchmark comparison
+- [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
+- [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
+- [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
 
 ### Agent harness engineering (2026)
 - [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — every agent failure as an edge between two components plus a fault side, so a symptom maps to a repair; 41 role-specific modes, judge κ=0.76

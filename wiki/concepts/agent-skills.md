@@ -176,3 +176,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[reason-wide-not-deep-singh-2026]] — a 40–130 line distilled skill recovers 55–100%+ of the reasoning gap at zero reasoning tokens, for $1.28–$2.44 per domain
 - [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — **skill descriptions rank last in precedence** — system prompts, project files and user instructions all outrank tool and skill descriptions when they conflict
 - [[catastrophic-remembering]] — why appended skills stop compounding
+- [[j-space-cognition-suite]] — a ~2.1k-star skill package operationalizing the J-space workspace findings as an inference-time protocol — nine modules mapped 1:1 onto the paper's five functional properties; a well-documented specimen of the format, with an unvalidated performance claim

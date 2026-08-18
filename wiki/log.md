@@ -9,6 +9,25 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-08-19] ingest | J-Space Cognition Suite V3.6 (GitHub) — 3 sources, 1 entity, 1 concept
+
+Ingested a third-party GitHub project by repository inspection: **[[j-space-cognition-suite-v3.6-github|J-Space Cognition Suite V3.6]]** (Apache-2.0, ~2.1k stars, Zenodo DOI), an [[agent-skills|Agent Skill]] package operationalizing [[global-workspace-in-language-models-anthropic-2026|Anthropic's J-space research]] as an inference-time protocol. This is the wiki's first *derived artifact* built on research it already holds the primary source for, which made the ingest chiefly an exercise in separating a faithful reading from an unsupported claim.
+
+**Two findings, pulling opposite ways.**
+
+*The research grounding is unusually careful.* All **nine** arXiv IDs cited in its science digest were verified against `citation_title` and **all nine resolve with matching titles** — better sourcing than the newsletters this wiki ingests weekly. It incorporates the sceptical invited commentary rather than omitting it (Dehaene & Naccache argue the paper's ~25 active representations is inflated and the real number is one or two; the suite writes "This suite plans against one or two"), and states its instrument's limits as content rather than as a disclaimer. Its nine modules map 1:1 onto the paper's five functional properties of conscious access, plus four from secondary evidence bases.
+
+*The benchmark table cannot support a causal reading.* It reports +4.4 to +16.0 points across nine benchmarks — but by the README's own account the comparator values "retain the evaluation contexts published by their respective providers" while the J-Space column was run in "the project's available evaluation environment." **The control is a vendor model card and the treatment is a self-run harness.** Every claimed delta falls inside the band that harness substitution alone produces on a fixed backbone: 15.36 points ([[dataspace-benchmarking-data-agents-li-2026]]), 11–15 points ([[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]]). Efficiency rows are single runs with no seeds under scaling coefficients that make only the ratio interpretable. Filed with the [[harness-vs-model-attribution]] numbers rather than as a flat dismissal — this is a specimen to test, not an answer.
+
+**A precise error found in the suite.** Its science digest describes "the Nelson–Narens **two-level** account: a monitoring level that observes an object level, and a control level that acts" — naming two levels and enumerating three. The framework has two levels (object, meta) connected by two *directional relations* (monitoring, control). The correction matters because the property lost in the misreading — control acting on exactly the state monitoring produced — is the one the suite's own design rule depends on. Its prose is wrong; its protocol is right.
+
+**Supporting ingest**: [[llms-know-when-they-know-cao-2026]] (arXiv:2605.14186), the monitoring-to-control result the suite's central design argument rests on. The 48.3 → 56.9 figure **verifies exactly** (recomputed the question-weighted pooling independently: 48.35 / 56.91). One qualifier the suite drops: "no parameter updates" is true of the LLM and false of the system — the stop/retry decision is an SVM fitted on 100 labelled examples.
+
+**New concept**: [[metacognition]] — three source pages now depended on it with no page to link. It carries the two-level account, the monitoring–control gap, and the reconciliation with [[sample-more-reflect-less-mirzaei-2026]]: the two are **compatible, not contradictory**. Cao et al. independently reproduce both of Mirzaei's negative findings, then use monitoring as a cross-problem *allocator* with a trained classifier rather than as a self-judge. No Contradiction callout filed. The decisive experiment — against repeated sampling with a vote — is run by neither.
+
+Sources 412 → 414, entities +1, concepts 262 → 263.
+
+
 ## [2026-08-17] ingest | Re-verification pass + scaling-law comparison
 
 Re-read the five papers flagged as internally inconsistent during the 08-17 sweep, checking each claim against the paper's own HTML full text rather than the agent reports. **All five confirmed**, and the count in the sweep summary was understated — it was five, not three.

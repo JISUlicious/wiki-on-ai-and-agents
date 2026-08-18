@@ -72,3 +72,7 @@ The empirical verdict is negative-with-caveats: **LLMs are not yet capable of ro
 ## References
 
 - [arXiv:2607.11881](https://arxiv.org/abs/2607.11881) — "Metacognition in LLMs: Foundations, Progress, and Opportunities", Gabrielle Kaili-May Liu, Areeb Gani, Jacqueline Lu, Jordan Thomas, Mark Steyvers, Arman Cohan, 2026.
+
+## Related 2026 sources
+
+- [[llms-know-when-they-know-cao-2026]] — the control half: FOK/JOL wired as an interface rather than measured, 48.3 → 56.9 on a fixed model

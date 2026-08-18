@@ -103,3 +103,7 @@ Swap in a better instrument and the readout basis should shift; the underlying w
 ## References
 
 - [[global-workspace-in-language-models-anthropic-2026]] — the source (Anthropic, 2026).
+
+## Related 2026 sources
+
+- [[j-space-cognition-suite]] — the first third-party artifact in this wiki built on the J-space findings — and a case study in the gap between an interpretability result and a performance claim derived from it

@@ -181,3 +181,8 @@ Two smaller tensions worth wiring:
 - Madaan et al. (2023), *Self-Refine*, NeurIPS, [arXiv:2303.17651](https://arxiv.org/abs/2303.17651)
 - Huang et al. (2024), *Large Language Models Cannot Self-Correct Reasoning Yet*, ICLR, [arXiv:2310.01798](https://arxiv.org/abs/2310.01798)
 - Code, prompts, and every raw generation released by the author
+
+## Related 2026 sources
+
+- [[llms-know-when-they-know-cao-2026]] — **compatible, not conflicting** — it independently reproduces both of this paper's negative findings (full-trace critique is its worst ablation; max-JOL selection underperforms), then uses monitoring as a cross-problem *allocator* with a trained classifier rather than as a self-judge. It has no majority-vote arm, so the decisive comparison here is never run
+- [[metacognition]] — the concept page holding both results

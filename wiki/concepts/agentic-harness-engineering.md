@@ -107,3 +107,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[evo-bench-can-language-models-improve-agent-harness-huang-2026]] — can a model improve its own harness? Up to +16.6 — but overwhelmingly a Search effect (+32.8), with Office flat and every configuration run once against a 2.2-point revision spread
 - [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — instruction following across the five configurable surfaces, with an Against-Prior metric that strips out compliance-by-coincidence
 - [[same-task-different-work-weinberger-2026]] — harness choice costs **5–30× per success** at equal success rate, driven by a 12–15× static prefix; prompt effects do **not** transfer across harnesses
+- [[llms-know-when-they-know-cao-2026]] — a harness whose stages are metacognitive rather than tool-oriented — monitoring signals gate retry and aggregation

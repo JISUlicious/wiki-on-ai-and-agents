@@ -70,3 +70,7 @@ Distinguishes **access consciousness** (functional: reportable, reasoned-with, a
 - Blog: https://www.anthropic.com/research/global-workspace
 - Full paper: http://transformer-circuits.pub/2026/workspace/index.html
 - _Original source: `sources/global-workspace-in-language-models-anthropic-2026.html` (+ extracted `.md`)_
+
+## Related 2026 sources
+
+- [[j-space-cognition-suite]] — a downstream skill package reading this paper as an operating protocol. Its digest is faithful on the mechanism; the inferential step from *models have a workspace* to *telling a model it has one improves performance* is its own, and this paper does not test it

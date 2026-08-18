@@ -71,3 +71,7 @@ Every one of these restores the deleted information — rationale, relevance, or
 ## References
 
 - [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[continualskillbench-guan-2026]] · [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[memharness-memory-is-reconstructed-not-replayed-wu-2026]] · [[lost-in-compaction-side-constraint-loss-wang-2026]]
+
+## Related 2026 sources
+
+- [[j-space-cognition-suite]] — a slot-based counter-design in the wild: a fixed-capacity hub with explicit swap, one next action replaced rather than appended, questions closed against a recorded checkpoint

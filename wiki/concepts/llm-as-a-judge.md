@@ -84,3 +84,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[metacognition-in-llms-liu-2026]] — survey of LLM self-monitoring: verdict *not yet robust*, and better reasoning does not buy better metacognition
 - [[llm-as-a-verifier-kwok-2026]] — a continuous scoring-token expectation beats discrete judging by 16.6 pts on the identical base model
 - [[rehearse-confidence-cliff-autoresearch-ji-2026]] — the confidence cliff: 82.8% → 56.9% selective accuracy as a self-improvement trajectory deepens, while coverage *rises*
+- [[metacognition]] — JOL is a poor *ranker* — within-problem SD 0.048 vs 0.270 across problems, so self-confidence can allocate compute but cannot pick the best attempt

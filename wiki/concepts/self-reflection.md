@@ -37,3 +37,7 @@ Self-reflection is bounded by the model's own competence. If the model can't tel
 ## References
 
 - [[reflexion-shinn-2023]]
+
+## Related 2026 sources
+
+- [[metacognition]] — the monitoring/control distinction that separates what works here from what doesn't
