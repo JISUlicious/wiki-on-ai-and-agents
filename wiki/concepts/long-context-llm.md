@@ -46,3 +46,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[attention-sink]] — and the sign inversion in that same sweep: sinks correlate *positively* with long-context performance (R²=0.38), against the prior reading of them as a pathology
 - [[cracks-in-the-foundation-long-context-extension-bertsch-2026]] — four minor architectural choices — normalization, GQA, pretraining context length, SWA — compound to **−47% relative** long-context performance, invisible in loss (end-of-extension loss explains R²=0.06)
 - [[lost-in-compaction-side-constraint-loss-wang-2026]] — constraint retention rises *monotonically* with injection position, diverging from the U-shaped lost-in-the-middle pattern
+- [[rope-scaling]] — how an advertised window gets extended past the trained one — and why the extension needs its own evaluation rather than inheriting native-length numbers
+- [[qwen3.8-flash-next]] — a 2026 worked example: 256K native, 1M via YaRN 4×, with no published number measured on the extended path

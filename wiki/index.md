@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 413 sources, 141 entities, 263 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 414 sources, 144 entities, 264 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Context extension (2026)
+- [[rope-scaling]] — **concept**: PI → NTK-aware → YaRN, why static scaling taxes short context, and what extension does *not* give you
+- [[qwen3.8-flash-next]] — **entity**: 125B/6B-activated multimodal MoE; 36 of 48 layers linear, sparse attention with a 2K budget, 256K native → 1M by opt-in YaRN
+- [[qwen3.8-flash-next-model-card-2026]] — the card read against its own config: the 1M is documented but no published number was measured with scaling on
+- [[qwen]] · [[alibaba]] — the family and org, closing a 110-page reference gap
 
 ### Agent harness engineering (2026)
 - [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — every agent failure as an edge between two components plus a fault side, so a symptom maps to a repair; 41 role-specific modes, judge κ=0.76

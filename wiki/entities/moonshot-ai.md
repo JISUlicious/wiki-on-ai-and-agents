@@ -42,3 +42,7 @@ To be precise about the hybrid: it is the *K3 attention stack* that is hybrid, n
 
 - [[kimi-k3-moonshot-2026]] · [[flash-kda-moonshot-2026]] · [[kimi-linear-kimi-team-2025]] · [[attention-residuals-kimi-team-2026]]
 - [vLLM: Kimi K3 day-0 support](https://vllm.ai/blog/2026-07-27-k3) — secondary source, superseded for architecture details by the K3 technical report above.
+
+## Related 2026 sources
+
+- [[qwen3.8-flash-next]] — convergent design: Qwen's Gated DeltaNet + sparse attention hybrid lands on the same 3:1 linear-to-full ratio as Kimi Linear, reached independently

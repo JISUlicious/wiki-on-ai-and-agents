@@ -54,3 +54,7 @@ Its prefill-adjacent benefit is indirect but real: a smaller KV cache frees HBM,
 ## References
 
 - [[grouped-query-attention-ainslie-2023]]
+
+## Related 2026 sources
+
+- [[qwen3.8-flash-next]] — 24 Q : 2 KV with only 64 of 256 head dims rotary — an aggressive instance of the GQA-plus-hybrid profile Bertsch et al. flag as costly under context extension

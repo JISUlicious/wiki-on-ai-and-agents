@@ -39,3 +39,7 @@ Vaswani et al. found that **learned positional embeddings** (used by [[bert]] an
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Related 2026 sources
+
+- [[rope-scaling]] — post-training extension of RoPE: PI, NTK-aware, YaRN, and why partial rotary reduces the blast radius

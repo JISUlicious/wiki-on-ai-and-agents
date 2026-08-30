@@ -84,3 +84,7 @@ Kimi Linear states them: finite-state capacity still caps exact recall (hence th
 ## References
 
 - [[kimi-linear-kimi-team-2025]] · [[flash-kda-moonshot-2026]] · [[a-hippocampus-for-linear-attention-cui-2026]]
+
+## Related 2026 sources
+
+- [[qwen3.8-flash-next]] — 36 of 48 layers are Gated DeltaNet, with the other 12 sparse — the same 3:1 linear-to-full ratio Kimi Linear reached independently

@@ -92,3 +92,7 @@ Nothing privileges the stream's coordinate axes — individual dimensions are mo
 
 - [[global-workspace-in-language-models-anthropic-2026]] — states the residual-stream framing used here ("a shared memory that every layer reads from and writes to").
 - Elhage et al., *A Mathematical Framework for Transformer Circuits* (Anthropic, 2021) — origin of the "communication channel" reframing.
+
+## Related 2026 sources
+
+- [[qwen3.8-flash-next]] — Gated Residual — 4 branches, rank 320, with a data-dependent read gate and per-branch scalar write gate; the residual stream stops being a plain unweighted sum

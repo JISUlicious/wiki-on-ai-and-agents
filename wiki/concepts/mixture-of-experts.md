@@ -59,3 +59,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[nemotron-3-puzzle-75b-a9b-nvidia-2026]] — heterogeneous expert pruning + per-layer top-k (22 → 4–18) compressing Nemotron-3-Super 120.7B → 75.3B
 - [[moonshot-ai]] — Kimi K3 pairs KDA + AttnRes with Stable LatentMoE at 16-of-896 sparsity
 - [[distributed-training]] — expert parallelism as a fourth dimension alongside DP/TP/PP
+- [[qwen3.8-flash-next]] — 512 experts, 10 routed + 1 shared, 6B activated of 125B — plus a 51B n-gram embedding table offered as a cheaper parameter-scaling axis than more experts

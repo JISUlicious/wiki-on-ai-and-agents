@@ -110,3 +110,8 @@ The interaction is the point: SWA costs ~1 point on its own and ~9 in combinatio
 ## References
 
 - [arXiv:2608.10296](https://arxiv.org/abs/2608.10296)
+
+## Related 2026 sources
+
+- [[rope-scaling]] — the operation whose latent costs this paper prices
+- [[qwen3.8-flash-next]] — a shipped model with the exact feature profile this paper warns about, and no published evaluation on its extended path

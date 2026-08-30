@@ -9,6 +9,25 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-08-30] ingest | Qwen3.8-Flash-Next — 1 source, 3 entities, 1 concept
+
+Ingested the [[qwen3.8-flash-next-model-card-2026|Qwen3.8-Flash-Next model card]] by reading it against the published `config.json`, driven by one question: what implements "262,144 natively and extensible up to 1,000,000 tokens"?
+
+**Answer**: [[rope-scaling|YaRN]] at `factor: 4.0` (262,144 × 4 = 1,048,576), **opt-in at serving time and absent from the shipped artifact** — the released config sets `"rope_type": "default"`. Enabling it requires overriding `rope_parameters` plus a per-framework env var. Qwen's own caveat is that OSS frameworks implement *static* YaRN, so the factor applies unconditionally and degrades short-context quality on all traffic; they advise sizing it to the workload (2.0 for 512K, not 4.0).
+
+The stretch is cheap here because the architecture pre-pays it: only **64 of 256 head dims are rotary** (`partial_rotary_factor: 0.25`), `rope_theta` is already 10,000,000, **36 of 48 layers are [[linear-attention]]**, and the 12 global layers use Qwen Sparse Attention with a fixed **2,048-token** micro-block budget. Also worth recording: the limit covers input *plus output*, and the card's own output recommendation (262,144 reasoning + 131,072 response) only fits under the 1M ceiling — the extension targets long agentic generation as much as long documents.
+
+**A correction I had to make mid-investigation, recorded because the method matters.** I first reported that the card contained *no* long-context evaluation and that *every* benchmark was footnoted at 256K. Both were wrong, and both because I grepped for the benchmark names I expected (RULER, NIAH, LongBench, HELMET, MRCR) instead of reading the table. The card does report **LVBench (long video) 76.6**, ahead of Qwen3.7-Plus and Claude-Opus-4.6, and only **three** benchmarks state a context window, not all of them.
+
+The defensible claim is narrower and is what the pages now carry: **no published number was measured with YaRN enabled.** The three benchmarks that state a window state 256K — native — and LVBench's ~224k video tokens also sit *inside* the native window. So the 1M path is documented and supported but not evidenced. That matters because [[cracks-in-the-foundation-long-context-extension-bertsch-2026|Bertsch et al.]] found aggressive GQA plus hybrid attention — this model's exact profile — compounding to −47% relative *after* extension, invisibly in loss.
+
+**New concept**: [[rope-scaling]] — PI → NTK-aware → YaRN, the static-vs-dynamic distinction, partial rotary as blast-radius reduction, and the separation between making long positions *representable* and making them *usable*. All four cited papers verified against `citation_title`.
+
+**New entities**: [[qwen3.8-flash-next]], plus [[qwen]] and [[alibaba]] — the family was referenced by over a hundred pages with no page of its own, a gap lint had flagged earlier.
+
+Sources 414 → 415, entities +3, concepts 263 → 264.
+
+
 ## [2026-08-19] ingest | J-Space Cognition Suite V3.6 (GitHub) — 3 sources, 1 entity, 1 concept
 
 Ingested a third-party GitHub project by repository inspection: **[[j-space-cognition-suite-v3.6-github|J-Space Cognition Suite V3.6]]** (Apache-2.0, ~2.1k stars, Zenodo DOI), an [[agent-skills|Agent Skill]] package operationalizing [[global-workspace-in-language-models-anthropic-2026|Anthropic's J-space research]] as an inference-time protocol. This is the wiki's first *derived artifact* built on research it already holds the primary source for, which made the ingest chiefly an exercise in separating a faithful reading from an unsupported claim.
