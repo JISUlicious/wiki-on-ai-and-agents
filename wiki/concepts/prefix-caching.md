@@ -70,3 +70,7 @@ The mechanism descends from [[paged-attention|PagedAttention]]'s ref-counted, co
 
 - [[sglang-radixattention-zheng-2023]] · [[prompt-cache-gim-2023]] · [[paged-attention-kwon-2023]]
 - [[methods-to-speed-up-prompt-processing]] — where prefix caching sits among the other prefill levers
+
+## Related 2026 sources
+
+- [[speculative-prefill]] — composes: oMLX prefills stable system/tool prefixes in full and caches them, so only conversation tokens enter draft selection

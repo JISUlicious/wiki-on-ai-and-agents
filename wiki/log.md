@@ -9,6 +9,27 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-03] ingest | Sparse / speculative prefill — 11 sources, 5 concepts
+
+Prompted by a Reddit comment recommending *"Qwen3.5-0.8B-oQ8 with MTP as a prefillspec draft for Qwen3.8-27B on oMLX"* for faster prompt processing. Searched the literature, verified **10 arXiv IDs** against `citation_title` (0 duplicates), read the [[omlx-specprefill-github-2026|oMLX implementation]] from source, and checked the recommended model pair against the Hub.
+
+**The comment conflates two levers.** "prefillspec draft" is [[speculative-prefill]] — a draft model's lookahead attention decides which prompt tokens the target prefills; it accelerates **prefill**. "with MTP" is multi-token prediction feeding [[speculative-decoding]]; it accelerates **decode**. Both Qwen checkpoints carry an MTP head and share a tokenizer (vocab 248,320), so the pair works in oMLX — but "pp decode" is not a phase. Filed the disambiguation on [[speculative-decoding]] and in the query page's "does not speed up prefill" list.
+
+**The ingest produced a taxonomy the wiki lacked.** Three orthogonal, composable families under the new umbrella [[sparse-prefill]]: [[speculative-prefill]] (draft picks tokens), [[token-pruning]] (the target's own layer-~13 attention picks), and [[sparse-attention]] (keep every token, skip attention entries). The first two shrink the FFN; the third cannot.
+
+**And a decision rule.** Attention's share of prefill FLOPs grows with context — derived from three papers at ~¼ (10K), ~70–80% (128K), >90% (300K–1M). So sparse attention is Amdahl-bounded below ~64K ([[minference-dynamic-sparse-attention-jiang-2024|MInference]] measures **×0.47, slower than dense**, on LongBench-length prompts) and the only lever past 300K (10× at 1M). Token-dropping is the reverse. Added as Tier 2b of [[methods-to-speed-up-prompt-processing]], with the order-of-attack renumbered.
+
+**What every token-dropping method shares**: dropped tokens **never receive KV** — gone for the generation and later turns. Only LazyLLM and SlimInfer can revive. Quality is task-shaped: at 10% keep [[speculative-prefill-liu-2025|SpecPrefill]] retains 98.5% of LongBench and *improves* code, but RULER aggregation collapses 99.7 → 77.9 and summarization loses ~16%. Positional handling is unsettled — Liu, oMLX, LazyLLM, SlimInfer, SPTS keep original positions; Upasani, SpecPC, GemFilter re-index contiguously with **no ablation from any of them**.
+
+**oMLX, from source**: implements Liu et al.'s estimator exactly (8 lookahead steps, pool kernel 13, max over layers × heads, mean over lookahead), 32-token chunks, mandatory 512-token tail, keep 20% default, triggers above 8,192 tokens, system prompt always full, tokenizer must match. Ceiling ≈ 4× on the conversation portion for the recommended pair. **No speedup or quality number exists anywhere in the repository**; the release notes show the mandatory tail was added after users reported chat-structure tokens being dropped (#419, #548, #1401, #2439).
+
+**Corrections against abstracts**: CLAA reclassified from sparse attention to token pruning (it gathers hidden states and cuts FFN work). GemFilter's "1000×" is a single Figure-1 demo. Token Sparse Attention's "×3.23" appears in no table. Upasani's "90–100% retention" hides 79–82% with a short-context draft. SPTS's "training-free" rests on an SVD calibrated on the evaluation benchmark, and its Qwen baseline rows are digit-for-digit copies of SlimInfer's. One Contradiction filed: cross-family drafts work in Upasani et al. and lose 6.4 points in Galim et al.'s SpecPC.
+
+**New concepts** (5): [[sparse-prefill]], [[speculative-prefill]], [[token-pruning]], [[sparse-attention]], [[longbench]]. All except the last were dangling from 3–11 new pages.
+
+Sources 415 → 426, concepts 264 → 269.
+
+
 ## [2026-08-30] ingest | Qwen3.8-Flash-Next — 1 source, 3 entities, 1 concept
 
 Ingested the [[qwen3.8-flash-next-model-card-2026|Qwen3.8-Flash-Next model card]] by reading it against the published `config.json`, driven by one question: what implements "262,144 natively and extensible up to 1,000,000 tokens"?

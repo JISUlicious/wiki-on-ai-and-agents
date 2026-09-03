@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 414 sources, 144 entities, 264 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 425 sources, 144 entities, 269 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,24 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Sparse prefill (2024–2026)
+- [[sparse-prefill]] — **concept**: the umbrella — three orthogonal families, and the decision rule that attention's share of prefill grows from ~¼ at 10K to >90% past 300K
+- [[speculative-prefill]] — **concept**: a small draft's lookahead attention picks which tokens the target prefills; 7.66× TTFT on 405B at 10% keep; dropped tokens never get KV
+- [[token-pruning]] — **concept**: the target's own layer-~13 attention as selector; static (GemFilter) vs dynamic-with-revival (LazyLLM, SlimInfer) vs skipping (SPTS)
+- [[sparse-attention]] — **concept**: keep every token, skip attention entries; 10× at 1M, slower than dense at 8K
+- [[longbench]] — the benchmark, and why its prompt lengths flatter token-dropping and punish sparse attention
+- [[speculative-prefill-liu-2025]] — SpecPrefill (ICML 2025): draft costs 2.96% of a 405B target; retrieval/QA free at 10% keep, aggregation collapses 99.7 → 77.9
+- [[cross-family-speculative-prefill-upasani-2026]] — Qwen3 ↔ Llama-3 drafts within 0–1 pt of in-family; what matters is the draft's native context length
+- [[draft-based-approximate-inference-galim-2025]] — SpecKV / SpecPC / SpecKV-PC (ICLR 2026): a unifying frame with error bounds, and a Contradiction on cross-family drafts
+- [[lazyllm-dynamic-token-pruning-fu-2024]] — Apple: dynamic per-step pruning with revival via an Aux Cache; 2.34× TTFT on multi-doc QA, 1.02× on summarization
+- [[discovering-the-gems-in-early-layers-shi-2024]] — GemFilter: one early layer selects, re-run from scratch on k tokens; the "1000×" is a single demo
+- [[sliminfer-dynamic-token-pruning-long-2025]] — 64-token blocks, CPU-offloaded KV, 2.53× TTFT at 32K on an RTX 4090; 0.93× at 4K
+- [[probe-and-skip-self-predictive-token-skipping-wu-2026]] — token *skipping* via the residual: 47.80 vs 47.98 dense at 1.68×; calibrated on the eval benchmark
+- [[minference-dynamic-sparse-attention-jiang-2024]] — NeurIPS 2024 Spotlight: A-shape / vertical-slash / block-sparse per head; 10× end-to-end at 1M, ×0.47 on LongBench
+- [[token-sparse-attention-jo-2026]] — ICML 2026: per-head gather/scatter; ×1.36 attention → ×1.27 TTFT at 128K; attention-map sparsity only 54%
+- [[claa-cross-layer-attention-aggregation-mcdanel-2026]] — reclassified: token pruning, not sparse attention; −39% TTFT at 10K by running half the layers on 10% of tokens
+- [[omlx-specprefill-github-2026]] — the Apple-Silicon implementation read from source: 8 lookahead steps, 32-token chunks, 512-token tail, keep 20%, triggers above 8,192 tokens; nothing measured in-repo
 
 ### Context extension (2026)
 - [[rope-scaling]] — **concept**: PI → NTK-aware → YaRN, why static scaling taxes short context, and what extension does *not* give you

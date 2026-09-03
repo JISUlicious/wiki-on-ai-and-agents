@@ -42,3 +42,7 @@ Results: **decode throughput up to 10×** (2.8–10× range), 1.33× end-to-end 
 ## References
 
 - [[sarathi-chunked-prefill-agrawal-2023]] · [[distserve-zhong-2024]] · [[splitwise-patel-2023]]
+
+## Related 2026 sources
+
+- [[sparse-prefill]] — orthogonal — chunked prefill *schedules* prefill against decode (and spends it); sparse prefill *reduces* it

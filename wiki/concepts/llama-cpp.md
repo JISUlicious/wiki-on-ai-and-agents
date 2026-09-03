@@ -31,3 +31,7 @@ Useful flags: `-ctk` / `-ctv` set [[kv-cache]] precision (`f16` / `q8_0` / `q4_0
 ## References
 
 - [[which-quantization-kurt-2026]]
+
+## Related 2026 sources
+
+- [[omlx-specprefill-github-2026]] — the Apple-Silicon server that ships positional SpecPrefill, oQ mixed-precision quantization, MTP and DFlash speculative decoding, and a tiered KV cache with SSD spill

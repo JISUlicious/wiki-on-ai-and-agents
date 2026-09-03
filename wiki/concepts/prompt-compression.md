@@ -52,3 +52,8 @@ Related evidence that prompts are highly compressible: [[can-lms-actually-retrie
 ## References
 
 - [[llmlingua-jiang-2023]] · [[llmlingua-2-pan-2024]]
+
+## Related 2026 sources
+
+- [[sparse-prefill]] — compression with attention as the selector instead of a separate compressor — training-free, and (in positional variants) survivors keep their document position
+- [[speculative-prefill]] — SpecPrefill at 10% keep retains 98.5% of LongBench on a 70B where LLMLingua-2 scores 30.9 vs 47.8 dense on the same benchmark in Galim et al.

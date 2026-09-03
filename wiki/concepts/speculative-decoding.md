@@ -46,3 +46,4 @@ Two frontier drafting directions push on the *drafter* and the *verification sch
 Surfaced via newsletter ingests; see [[index]].
 
 - [[speculate-while-you-reason-ji-2026]] — self-speculation of the agent's own next tool call beats external drafters *and* is cheaper by reusing the prefix KV cache
+- [[speculative-prefill]] — **not the same thing** — a draft scoring *input* tokens so the target prefills a subset; accelerates prefill, not decode. A draft with an MTP head can serve both, but they are two levers

@@ -52,3 +52,7 @@ Both are the roofline expressed operationally: weight-only quantization relieves
 ## References
 
 - [arXiv:2402.16363](https://arxiv.org/abs/2402.16363)
+
+## Related 2026 sources
+
+- [[sparse-prefill]] — the per-layer intensities here are at short context; attention's share of prefill grows from ~¼ at 10K to >90% past 300K, which decides whether to shrink the sequence or sparsify attention

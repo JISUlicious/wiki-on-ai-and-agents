@@ -85,3 +85,7 @@ Part of the [[qwen|Qwen]] family; the architecture line (`qwen4_exp`) is new rat
 ## References
 
 - [[qwen3.8-flash-next-model-card-2026]] · [[cracks-in-the-foundation-long-context-extension-bertsch-2026]]
+
+## Related 2026 sources
+
+- [[sparse-attention]] — Qwen Sparse Attention's 2,048-token indexer budget is the *trained* form of what MInference assigns offline and Token Sparse Attention selects online

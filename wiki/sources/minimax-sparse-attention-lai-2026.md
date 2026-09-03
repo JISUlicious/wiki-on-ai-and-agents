@@ -50,3 +50,7 @@ The design follows a simplicity/scalability principle (Occam's razor over ablate
 - [arXiv:2606.13392](https://arxiv.org/abs/2606.13392) — "MiniMax Sparse Attention," Lai et al., 2026 (MiniMax).
 - Inference kernel: github.com/MiniMax-AI/MSA. Model: huggingface.co/MiniMaxAI/MiniMax-M3.
 - Local source text: `minimax-sparse-attention-lai-2026.md`.
+
+## Related 2026 sources
+
+- [[sparse-attention]] — the concept page: trained sparse attention (this, QSA) vs offline-assigned (MInference) vs online (FlexPrefill, Token Sparse Attention), and the attention-share bound they all live under

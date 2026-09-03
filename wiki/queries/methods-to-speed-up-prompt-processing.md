@@ -2,7 +2,7 @@
 title: "Methods to Speed Up Prompt Processing (prefill / pp)"
 type: query
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-09-03
 sources:
   - llm-inference-roofline-yuan-2024.md
   - flash-attention-dao-2022.md
@@ -68,6 +68,23 @@ Evidence prompts are highly compressible: [[can-lms-actually-retrieve-in-context
 
 Architecturally, [[agent-skills|progressive disclosure]] is a prefill optimization: tokens never loaded never get prefilled.
 
+### Tier 2b — Shrink it *inside* the model: [[sparse-prefill]]
+
+The compressor in Tier 2 is a separate model reading text. **Sparse prefill** uses *attention itself* as the selector — training-free, task-agnostic, and (in the positional variants) position-preserving, so survivors keep their place in the document. Three families, orthogonal and composable:
+
+| Family | Selector | Cuts FFN? | Best regime |
+|---|---|---|---|
+| **[[speculative-prefill]]** | a small draft model's lookahead attention | yes | 8K–128K, large targets |
+| **[[token-pruning]]** | the target's own layer ~13 attention | yes | 8K–64K |
+| **[[sparse-attention]]** | per-head pattern; every token stays | **no** | **300K+** |
+
+**The decision rule is attention's share of prefill, which grows with N**: ~¼ at 10K, ~70–80% at 128K, >90% past 300K. So below ~64K only token-dropping helps — [[minference-dynamic-sparse-attention-jiang-2024|MInference]] measures **×0.47, slower than dense**, on LongBench-length prompts — while past 300K sparse attention is the only lever that reaches **10× at 1M**.
+
+The numbers that matter: [[speculative-prefill-liu-2025|SpecPrefill]] at 10% keep gives **7.66× TTFT on a 405B target** with the draft costing 2.96% of its FLOPs, retaining 98.5% of LongBench — but RULER *aggregation* collapses 99.7 → 77.9 and summarization loses ~16%. [[probe-and-skip-self-predictive-token-skipping-wu-2026|SPTS]] reaches 2.46× TTFT at 32K on an 8B with 47.80 vs 47.98 dense. Every token-dropping method shares one hazard: **dropped tokens never get KV**, so a later turn asking about them cannot be answered without re-prefilling.
+
+> [!note] On Apple Silicon
+> [[omlx-specprefill-github-2026|oMLX]] ships positional SpecPrefill: a Qwen3.5-0.8B draft scoring for a Qwen3.8-27B target at default keep 20% above 8,192 tokens, system prompt always full, 512-token tail always kept. Ceiling ≈ 4× on the conversation portion. **Nothing in the repo measures it** — treat community throughput figures as one machine's report.
+
 ## Tier 3 — Cut the quadratic term
 
 **[[flash-attention]]** — exact, not approximate. Does **more FLOPs** (66.6 → 75.2 GFLOPs) while cutting HBM traffic **40.3 GB → 4.4 GB** and runtime **41.7 → 7.3 ms**; memory goes quadratic → linear. v2 reaches **73% of A100 peak**; v3 adds Hopper asynchrony for **740 TFLOPs/s**. This is table stakes, not an optimization.
@@ -102,7 +119,7 @@ Three traps, all of them things that genuinely help decode:
 2. **[[grouped-query-attention|GQA]].** The paper deliberately excludes encoder self-attention because *"encoder representations are computed in parallel, and memory bandwidth is therefore generally not the primary bottleneck"* — that parallel regime **is** prefill. GQA shrinks the KV cache; its prefill benefit is only indirect (freed HBM → larger batch).
 3. **[[chunked-prefill]].** Commonly misfiled as a prefill optimization; it is the opposite. SARATHI *spends* prefill — **~5× slower at chunk 64**, ~20% loss at chunk 256 — to gain up to **10× decode throughput**: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."* It helps *other* requests' TTFT by reducing head-of-line blocking, not the chunked request's own.
 
-Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill is already parallel.
+Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill is already parallel. **Do not confuse it with [[speculative-prefill]]** — same word, opposite phase; a draft with an MTP head can serve both, but they are two levers.
 
 ## Measurement caveats
 
@@ -116,8 +133,9 @@ Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill
 2. **FlashAttention** — ensure it's actually enabled; it is table stakes.
 3. **FP8/INT8** if your hardware has the tensor cores.
 4. **Sparse attention** if contexts are genuinely long (≥100K).
-5. **Prompt compression** only after validating the ratio on *your* task, and only if the compressor is cheap.
-6. **Disaggregation** at multi-GPU serving scale, when TTFT and TPOT SLOs conflict.
+5. **[[sparse-prefill]]** — speculative prefill or token pruning at 8K–128K if the workload is retrieval/QA-shaped and single-turn; skip it for summarization, aggregation, or multi-turn over the same context.
+6. **Prompt compression** only after validating the ratio on *your* task, and only if the compressor is cheap.
+7. **Disaggregation** at multi-GPU serving scale, when TTFT and TPOT SLOs conflict.
 
 ## References
 

@@ -64,3 +64,7 @@ Memory also goes **quadratic → linear** in sequence length (up to 20× more me
 ## Training systems
 
 - [[activation-recomputation]] — attacks the same quadratic activation term from the kernel side rather than by recomputing
+
+## Related 2026 sources
+
+- [[sparse-attention]] — the approximate route: MInference's vertical-slash kernels reach 13–30× over FlashAttention *on the attention kernel* at 1M, but only where attention dominates prefill

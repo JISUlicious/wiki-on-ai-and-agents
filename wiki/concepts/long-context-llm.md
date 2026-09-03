@@ -48,3 +48,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[lost-in-compaction-side-constraint-loss-wang-2026]] — constraint retention rises *monotonically* with injection position, diverging from the U-shaped lost-in-the-middle pattern
 - [[rope-scaling]] — how an advertised window gets extended past the trained one — and why the extension needs its own evaluation rather than inheriting native-length numbers
 - [[qwen3.8-flash-next]] — a 2026 worked example: 256K native, 1M via YaRN 4×, with no published number measured on the extended path
+- [[sparse-prefill]] — the attention-share rule: sparse attention is Amdahl-bounded below ~64K and the only lever past 300K; token dropping is the reverse
+- [[sparse-attention]] — MInference reaches 10× end-to-end at 1M on one A100 — and ×0.47, slower than dense, at LongBench lengths

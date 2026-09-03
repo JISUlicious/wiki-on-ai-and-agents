@@ -37,3 +37,7 @@ Its significance is availability at many sizes. The family ships dense models fr
 ## References
 
 - [[qwen3.8-flash-next-model-card-2026]]
+
+## Related 2026 sources
+
+- [[omlx-specprefill-github-2026]] — the community-recommended pair: Qwen3.5-0.8B as SpecPrefill draft for Qwen3.8-27B — same tokenizer (vocab 248,320), both with MTP heads, target is dense
