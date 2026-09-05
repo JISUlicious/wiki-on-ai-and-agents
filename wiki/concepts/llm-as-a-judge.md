@@ -85,3 +85,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[llm-as-a-verifier-kwok-2026]] — a continuous scoring-token expectation beats discrete judging by 16.6 pts on the identical base model
 - [[rehearse-confidence-cliff-autoresearch-ji-2026]] — the confidence cliff: 82.8% → 56.9% selective accuracy as a self-improvement trajectory deepens, while coverage *rises*
 - [[metacognition]] — JOL is a poor *ranker* — within-problem SD 0.048 vs 0.270 across problems, so self-confidence can allocate compute but cannot pick the best attempt
+- [[lifecycle-of-llm-as-a-judge-recommendation-explanations-kong-2026]] — Netflix, in production: a judge as a four-phase lifecycle rather than a one-time artifact, with drift monitoring behind a review gate. Supplies the *mechanism* this page's "recalibrate periodically" rule lacked — a meta-judge over the judge's own reasoning traces mismatches back to specific rubric language

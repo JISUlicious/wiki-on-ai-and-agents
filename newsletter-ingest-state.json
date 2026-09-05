@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-08-17",
+  "last_processed_date": "2026-09-05",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -72,7 +72,14 @@
     "19ffcab64831d0a5",
     "19fe77880590e709",
     "19fe1e0defee127a",
-    "19fd8798075ad6c9"
+    "19fd8798075ad6c9",
+    "1a02f55207abde23",
+    "1a0534124c511d89",
+    "1a020b8092cfb74a",
+    "1a040e7b7d30bfff",
+    "1a065abb229aa9f6",
+    "1a02a114151f50a4",
+    "1a04e27e226d22ae"
   ],
   "runs": [
     {
@@ -201,6 +208,17 @@
       "new_concept_pages": 8,
       "dups_skipped": [],
       "notes": "NLP 08-09 (10) + 08-16 (10) + alphaXiv 08-06/08-13 (7 arXiv-backed; 2 alphaXiv-native skipped: 2608.blog Qwen3.8-Max, 2608.leanstral). Both AI Agents Weekly (08-08, 08-15) re-confirmed paywalled previews, but their TOCs named 2 papers not in the digests -> recovered via search and ingested (2608.09096 Evo-Bench, 2608.08453 138K SKILL.md). All 29 IDs verified vs citation_title; 0 dups. New concept: catastrophic-remembering, anchoring a 6-paper convergence that accumulation != compounding. 7 Contradiction/qualification callouts filed (self-improving-agent x2, agentic-context-engineering, self-reflection, reflexion, scaling-laws, grouped-query-attention, llm-as-a-judge). PDF verification caught the worst fabrication rate yet: 3 figures in the Prompt-Induced-Waste blurb appear nowhere in the paper. Product news (DeepSeek Harness v0.1, V4-Pro) recorded on the deepseek entity, flagged vendor-reported. Cursor -> 2026-08-17. 8 agents, 0 infra failures."
+    },
+    {
+      "date": "2026-09-05",
+      "type": "newsletter sweep (manual, NLP x2 + alphaXiv x3 + AI Agents Weekly x2)",
+      "threads_read": 7,
+      "candidate_ids_verified": 31,
+      "on_domain_ingested": 31,
+      "new_source_pages": 31,
+      "new_concept_pages": 2,
+      "dups_skipped": [],
+      "notes": "All 31 IDs verified vs citation_title, 0 dups. Committed in two parts: the first fan-out of 8 agents hit the session rate limit and all 8 died, but 15 verified pages were already on disk and were committed as a checkpoint; the remaining 16 were re-run as 4 agents. Introduced topic_watchlist to track paywalled AI Agents Weekly TOC keywords (resolved/product/unresolved) — recovered 4 papers from the 08-29 issue alone; 3 keywords have no arXiv presence. New concepts: skill-routing, skill-selection. Contradiction filed on harness-vs-model-attribution: the 13.3% raw ARC-AGI-3 baseline may be GPT-5.6 Terra not Sol, so the 6.4x harness effect is unverified; on the same backbone NVIDIA 85.1% beats Prime Agent 78.3%. Two counter-examples to catastrophic-remembering (Meta^n, WikiSkill) that escape via outcome-grounded provenance rather than pruning. Compaction Cliff and Lost-in-Compaction reconciled: agree on the fix, one conflict on positional-bias mechanism. Lesson: cap parallel ingest agents at ~4."
     }
   ],
   "pending_threads": [

@@ -30,3 +30,9 @@ Sycophancy in LLMs is the tendency to **agree with the user, flatter them, or al
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+
+## Related 2026 sources
+
+- [[from-passive-delegates-to-strategic-negotiators-hua-2026|SocialRL]] — the same disposition with a different victim: deferring to a *counterparty* rather than the user. Supplies a measurement this page lacked — **SFT raises over-conceding 17.3% → 29.4%** while PPO lowers it to 13.6%, so imitation alone can favour agreeable behaviour without calibrating how much value to surrender. A base Qwen3-4B reveals its own target price in **52.7%** of buyer messages, dropping to 1.0% after training.
+>
+> Two caveats recorded on that page: the paper's claim that *frontier* models routinely concede carries **no number anywhere** (the disclosure instruments were never run on them), and the trained delegate **fabricates market references** — the authors call it learned bluffing and report no rate.

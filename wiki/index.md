@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 440 sources, 144 entities, 269 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 456 sources, 144 entities, 271 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,33 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Newsletter sweep 2026-09-05 — part 2
+*Skills: routing, evaluation, evolution, poisoning*
+- [[skill-routing]] — **concept**: the binding constraint on skill libraries, measured four ways — 67% defect prevalence, precision collapse 29.6% → 3.3%, a *routing premium* metric, and routing as a security property
+- [[skill-selection]] — **concept**: retrieved vs selected vs actually used diverge by ~70 points at pool size 100
+- [[evaluating-skills-not-just-agents-kevin-2026]] — NVIDIA ACES: measure the *delta* from a paired run, not the document; structural scan predicts live lift at ρ = −0.018
+- [[wikiskill-compiling-agent-experience-tang-2026]] — Google: compile agent experience into a persistent wiki; separates an unbounded store from a bounded context surface
+- [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026]] — a planted skill is never invoked but retrieved as an *authoring template*; self-poisoning 20.3–41.8%
+
+*Harness evolution and recursion*
+- [[prime-agent-self-improving-rlm-harness-karten-2026]] — Prime Intellect's open harness; 95.5% RHAE on ARC-AGI-3, but not a controlled ablation
+- [[meta-n-recursive-self-improvement-emergent-depth-kim-2026]] — realized meta-depth caps near two; recurse on the input instead. Reports seeds and variance
+- [[ai4ai-bench-algorithmic-design-chi-2026]] — can an agent redesign a training algorithm? 141 of 263 submissions never touch how the model learns
+- [[when-agents-coordinate-destefanis-2026]] — naming a coordinator creates no hub; and in a sealed rerun, 80% of agents opened a decoy answer key
+
+*Memory, context, serving*
+- [[compaction-cliff-long-running-agent-memory-zerhoudi-2026]] — safety rules survive one compaction round at 53%, five rounds at 10%; type-aware routing restores 96%
+- [[recuris-experiential-working-memory-evolution-yu-2026]] — working vs experiential memory; the working half carries almost all the gain
+- [[from-llm-inference-to-agentic-workloads-chang-2026]] — the **control-plane tax**: at step 261 the model emits 151 tokens after processing 166,721
+- [[code-world-model-coding-agent-as-world-brain-chen-2026]] — the code is the world model, the video model is the observation model
+
+*Science, negotiation, training*
+- [[training-ai-scientists-replicate-research-falck-2026]] — Faraday: RL-trained figure replication; the frontier comparison is not matched-harness
+- [[mathematics-in-the-age-of-ai-tao-2026]] — Terence Tao on a crisis of mathematical *values and practices*, not foundations
+- [[from-passive-delegates-to-strategic-negotiators-hua-2026]] — aligning an assistant and aligning a delegate pull in different directions
+- [[normalized-low-rank-adaptation-kang-2026]] — LoRA's column norms are per-coordinate learning rates; normalizing them is worth +5.44
+- [[ttpo-test-time-policy-optimization-wang-2026]] — consensus as reward, no verifier; never compared against self-consistency at matched compute
 
 ### Newsletter sweep 2026-09-05 — part 1
 *The harness as a training substrate*

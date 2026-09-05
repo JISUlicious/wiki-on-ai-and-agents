@@ -94,4 +94,13 @@ Surfaced via newsletter ingests; see [[index]].
 - [[the-harness-effect-token-economics-writer-2026]] — 22 tasks × 6 models with only the orchestration layer swapped: efficiency gains are model-invariant, but quality gain tracks base-model strength at r=0.99
 - [[rethinking-evaluation-harness-evolution-wang-2026]] — harness *evolution* fails to beat plain test-time scaling at matched budgets (67.4 vs 72.3)
 - [[nvidia-oo-agents-furgale-2026]] — RHAE 85.1% vs 13.3% for the raw model on ARC-AGI-3 — a 6.4× harness effect on one backbone
+
+> [!warning] Contradiction — the 13.3% baseline may be the wrong model
+> [[prime-agent-self-improving-rlm-harness-karten-2026|Prime Agent]] (2026) reports the ARC-AGI-3 reference figures with a different attribution: **13.3% is GPT-5.6 *Terra***, while GPT-5.6 **Sol** — the backbone NVIDIA used — is listed at **38.3%** (Responses API) and **7.0%** (ARC harness). Against 38.3% the NVIDIA harness effect is **2.2×**, not 6.4×; against 7.0% it is 12.2×.
+>
+> Both papers cite external ARC Prize numbers rather than running the raw baseline themselves, so this is a citation conflict, not a measurement conflict. **Treat 6.4× as unverified** until the raw Sol baseline is pinned down. The qualitative claim — that the harness is worth a large multiple on this benchmark — survives either way.
+>
+> A second data point in the same table cuts against the newer system: **on the same backbone (GPT-5.6 Sol), NVIDIA's 85.1% beats Prime Agent's 78.3%.** Prime Agent's headline 95.5% comes from switching to Claude Opus 5, not from a better harness — and its authors say the reference numbers "situate the result rather than isolate a causal harness effect."
+>
+> Note also that a widely-circulated "NVIDIA AVO at 100% on ARC-AGI-3" figure (AI Agents Weekly, 2026-08-22) **could not be verified against any paper** and is recorded only as product news.
 - [[j-space-cognition-suite]] — a worked example: every claimed gain (+4.4 to +16.0) falls inside the harness-substitution band this page quantifies, and the control column comes from a vendor model card rather than a matched run

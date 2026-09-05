@@ -118,3 +118,12 @@ A ~6 pp Hit@1 gap. The authors are careful: shipped harnesses use an LLM-as-sele
 - Dataset: https://huggingface.co/datasets/FayeZC/SkillMD-138K
 - [[agentskills-io-spec-2025]] — the official specification the Tier 1 checks encode
 - [[agent-skills-survey-xu-2026]] — the survey context for skill packaging as a paradigm
+
+## Related 2026 sources
+
+> [!warning] What structural defects do *not* predict
+> [[evaluating-skills-not-just-agents-kevin-2026|NVIDIA's ACES]] scanned 145 skills and found structural scan score correlates with an LLM-judge document rubric at **Spearman ρ = 0.14** — and, more pointedly, with *live paired-run Skill Lift* at **ρ = −0.018** (n = 62, CI [−0.267, +0.233]).
+>
+> This does not refute anything measured here. The one functional result on this page — clean vs defective retrieval at **88.5% vs 82.6% Hit@1** — is in the predicted direction and sits comfortably inside that confidence interval. The two studies differ in dependent variable (scan-vs-scan versus scan-vs-runtime), in aggregation (31 per-defect binaries versus one weighted scalar, which flattens a shipped API key and a duplicated H1 onto the same dial), and in range (138,133 unfiltered public skills versus 62 skills that had already passed a review gate, 94.5% of them above it).
+>
+> What the ACES result does kill is an **inference neither paper makes but every skill linter implies**: that fixing structural defects buys runtime value. The three-rule linter covering 71.9% of defect instances and the 58.4% LLM repair rate are real, and their downstream payoff is unmeasured. The missing experiment is these per-defect binaries regressed on live lift.

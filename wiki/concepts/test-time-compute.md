@@ -18,3 +18,7 @@ Test-time compute is the strategy of spending more inference-time computation �
 ## References
 
 - [[sleep-time-compute-lin-2025]]
+
+## Related 2026 sources
+
+- [[ttpo-test-time-policy-optimization-wang-2026]] — transductive test-time *training*: LoRA adapters fitted over the unlabeled test set with **consensus as the reward** — no verifier, no execution. The paper never compares against self-consistency at matched compute, and its own Figure 6 shows the trained model rising to meet what untrained 12-sample voting already achieved

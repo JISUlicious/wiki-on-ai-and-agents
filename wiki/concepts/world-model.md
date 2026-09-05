@@ -50,3 +50,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[from-foundation-to-application-vla-wu-2026]] — LingBot-VLA 2.0: the embodied-policy sibling; predicts future depth and semantic features before acting
 - [[masked-visual-actions-alzayer-2026]] — one video model as both forward and inverse dynamics via a pixel-space control interface
 - [[robottt-context-scaling-robot-policies-jiang-2026]] — test-time training as the recurrent state; context scaling to 8K timesteps at flat latency
+- [[code-world-model-coding-agent-as-world-brain-chen-2026]] — an explicitly **anti-latent** world model: the agent-code loop is the transition function and the video model the observation function. Persistence that latent designs solve with spatial memory is solved here by storing it in a program variable. Note it reports **no quantitative results at all**

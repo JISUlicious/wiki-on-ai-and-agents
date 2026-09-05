@@ -9,6 +9,25 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-05] ingest | Newsletter sweep — part 2 of 2 (16 sources, 2 concepts)
+
+Completes the sweep. **All 31 papers ingested**, every arXiv ID verified against `citation_title`, zero duplicates. Re-ran the failed groups as four agents instead of eight after the earlier rate-limit failure.
+
+**New concepts**: [[skill-routing]] and [[skill-selection]]. Routing was overdue — six source pages now link it, and four independent groups measure it four different ways: prevalence (67% of 138,133 skills carry a routing defect), scarcity (skills compete for a small number of reliable trigger slots), precision collapse (**29.6% → 3.3%** as a pool grows 5 → 100), and a proposed metric (**routing premium** = grouped lift minus isolated lift). [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026|EvoMal]] makes it a *security* property: targeting a skill's description rather than its body lifts self-poisoning **+26.9 pp to a peak of 86.7%**, because a malicious skill never needs to be invoked — being retrieved as an authoring template is enough.
+
+**Contradiction filed against a number this wiki relies on.** [[harness-vs-model-attribution]] cites raw GPT-5.6-sol at **13.3%** on ARC-AGI-3, giving NVIDIA a 6.4× harness effect. [[prime-agent-self-improving-rlm-harness-karten-2026|Prime Agent]] assigns 13.3% to GPT-5.6 ***Terra***, listing Sol at 38.3% and 7.0%. Both cite external ARC numbers rather than measuring, so it is a citation conflict — but 6.4× is now marked unverified. Worse for the newer system: **on the same backbone NVIDIA's 85.1% beats Prime Agent's 78.3%**, and the 95.5% headline comes from switching to Opus 5. The circulating "NVIDIA AVO at 100%" could not be verified against any paper.
+
+**Two counter-examples to [[catastrophic-remembering]]**, both escaping by breaking assumption 2 rather than by pruning. [[meta-n-recursive-self-improvement-emergent-depth-kim-2026|Meta^n]]'s archive grows monotonically but is read *selectively* and every entry carries an executed score. [[wikiskill-compiling-agent-experience-tang-2026|WikiSkill]] never deletes, but writes outcomes programmatically with validation labels — and separates an **unbounded store from a bounded context surface**, measured: giving the inference agent wiki access *costs* 2.8 points. This vault has the same shape and the same missing pruning mechanism.
+
+**Compaction, reconciled.** [[compaction-cliff-long-running-agent-memory-zerhoudi-2026]] and [[lost-in-compaction-side-constraint-loss-wang-2026]] agree emphatically on the fix — both reject better compactor prompts, both put a cheap classifier *outside* the compactor, both land at 90–96%. The 17%-vs-53% gap is construct and pressure, not conflict. One genuine conflict: the newer paper grounds part of the failure in positional bias, which the older paper's monotonic-position finding rules out for this task.
+
+**A third failure mode named**: [[harness-continual-learning-kang-2026|harness-level forgetting]] — update a harness component and reliable behaviour breaks with the model untouched. Alongside catastrophic forgetting (weights) and catastrophic remembering (accumulation).
+
+**Verification corrections**: Prime Agent's "81.7% of the speedrun gap" appears nowhere in the paper (it belongs to a company blog). Meta^n's "only method above zero on ARC-AGI-2" is contradicted by its own Table 2, and its "all eight benchmark families" is "at least one estimator" with four families having no baseline at all. Faraday's frontier comparison is **not matched-harness** — its system contains a full Codex agent as a nested tool, so it strictly contains its own baseline. SocialRL's claim about frontier models conceding carries no number anywhere, and its trained delegate **fabricates market references**. ACES's ρ = 0.14 is scan-vs-scan, not scan-vs-quality. NoRA states two different pretraining corpora.
+
+Sources 441 → 457, concepts 269 → 271.
+
+
 ## [2026-09-05] ingest | Newsletter sweep — part 1 of 2 (15 sources)
 
 Swept seven threads since the 08-17 cursor: NLP "Top AI Papers" 08-23 and 08-30 (10 papers each), three alphaXiv digests, and both AI Agents Weekly previews. **31 arXiv IDs verified against `citation_title`, zero duplicates.**

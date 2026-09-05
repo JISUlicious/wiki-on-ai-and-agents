@@ -135,3 +135,7 @@ So "beats six frontier models" holds for **length-adjusted scores under both jud
 - Schmidgall et al., 2025 — Agent Laboratory (the external baseline)
 - HealthBench / HealthBench Professional: `openai/healthbench`, `openai/healthbench-professional` on Hugging Face
 - Swarm colony images: https://doi.org/10.5281/zenodo.19612563
+
+## Related 2026 sources
+
+- [[mathematics-in-the-age-of-ai-tao-2026]] — the sceptical companion: Tao argues that verification, exposition, community acceptance and canonicalization were historically correlated with solution generation and are now being pulled apart by it. His critique of AI-math evidence — undisclosed attempts, **scaffolding**, compute, contamination — is an independent arrival at this wiki's harness-disclosure position

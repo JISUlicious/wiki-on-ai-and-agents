@@ -156,3 +156,7 @@ Further gaps visible from the outside:
 - Zhao et al. 2025 — proactive preference-following under long context; the nearest prior work and the source of the proximity effect this paper's positional result matches.
 - Robinette et al. 2026 — verifiable long-context instruction following on *static* contexts.
 - Hsieh et al. 2024; Liu et al. 2024 — the U-shaped "lost in the middle" retrieval finding that this paper's monotonic pattern diverges from.
+
+## Related 2026 sources
+
+- [[compaction-cliff-long-running-agent-memory-zerhoudi-2026]] — the sibling result (CIKM '26), and it **agrees on the fix**: both reject better compactor prompts and propose a cheap classifier *outside* the compactor that reinstates the constraint class verbatim, both landing in a 90–96% band. The 17% vs 53% gap is construct and pressure, not conflict — transient session constraints under 182× compression versus installed config text under 2×. **One genuine conflict**: that paper grounds part of the failure in positional bias, citing lost-in-the-middle, which this paper's monotonic-position finding rules out for this task.

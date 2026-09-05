@@ -23,3 +23,7 @@ Related: [[swe-bench-live]], [[swe-gym]], [[llm-agent]], [[agentic-rl]]
 
 ## References
 - [[swe-bench-jimenez-2023]]
+
+## Related 2026 sources
+
+- [[swe-refactor-bench-hong-2026]] — the long-horizon counterpart: whole-repository stack migrations, where **28 of 520 runs (5.4%) pass all three stages** and 13 of 20 tasks receive no accepted solution — against frontier resolution rates in the 70s on this benchmark

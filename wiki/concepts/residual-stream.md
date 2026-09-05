@@ -96,3 +96,4 @@ Nothing privileges the stream's coordinate axes — individual dimensions are mo
 ## Related 2026 sources
 
 - [[qwen3.8-flash-next]] — Gated Residual — 4 branches, rank 320, with a data-dependent read gate and per-branch scalar write gate; the residual stream stops being a plain unweighted sum
+- [[recirculation-mozer-2026]] — a training-free inference-time change that feeds deep-layer representations back through the stack, so early layers see contextualized states they normally could not

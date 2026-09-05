@@ -112,3 +112,7 @@ The honest summary: Kaplan had coupling but tied exponents; Chinchilla freed the
 ## References
 
 - [[scaling-laws-kaplan-2020]] · [[chinchilla-hoffmann-2022]] · [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]]
+
+## Related 2026 sources
+
+- [[small-scale-experiments-are-we-there-yet-lourie-2026]] — the methodological precondition for every fit on this page: scaling laws *are* observable in very small models, **but only with rigorous per-scale hyperparameter tuning** — untuned small runs have enough hyperparameter sensitivity to obscure the law entirely. That is a direct caution for the L-shaped sparse grid, which is built from exactly those cheap low-compute runs
