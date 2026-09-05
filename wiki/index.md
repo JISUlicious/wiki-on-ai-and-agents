@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 425 sources, 144 entities, 269 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 440 sources, 144 entities, 269 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,36 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Newsletter sweep 2026-09-05 — part 1
+*The harness as a training substrate*
+- [[agent-lightning-v1-harnessed-agentic-rl-he-2026]] — Microsoft: an endpoint proxy at the model boundary trains any harness with RL; names what silently corrupts gradients when a harness sits between policy and reward
+- [[clawgym-ii-black-box-rl-agent-harness-song-2026]] — black-box RL through OpenClaw and Claude Code as opaque boxes, recovering multi-turn structure as prefix trees
+- [[envharness-awakening-static-worlds-huang-2026]] — customizing static environments to generate targeted learning signal
+
+*Agent skills, measured*
+- [[at-skills-attention-is-all-you-have-yin-2026]] — the trigger bottleneck: skills compete for a scarce number of reliable trigger slots; separates content, persistence and triggering into three tiers
+- [[demystifying-agent-skills-jiang-2026]] — skills work by procedural anchoring, not knowledge injection; selection precision collapses as the library grows
+
+*Self-evolving harnesses*
+- [[harness-continual-learning-kang-2026]] — **harness-level forgetting**: update a harness component and reliable behavior breaks with the model untouched; a guarded propose/commit gate
+- [[jit-agent-just-in-time-harness-evolution-zhang-2026]] — the model's output *is* a harness, synthesized per task and patched mid-run
+
+*Negative results on self-improvement*
+- [[on-the-fragility-of-self-improving-agents-ye-2026]] — reported gains shrink under multiple runs and shuffled task order; default orderings impose an implicit curriculum
+- [[what-is-missing-from-ai-post-training-ai-lim-2026]] — strategy lock-in: the agent commits at step one and spends the rest of its budget inside that choice
+
+*Memory and context*
+- [[context-as-an-environment-scroll-lin-2026]] — Alibaba: context management as code over an append-only event log and a persistent Python kernel; only printed projections enter the prompt
+
+*Evaluation*
+- [[lifecycle-of-llm-as-a-judge-recommendation-explanations-kong-2026]] — Netflix: a judge as a four-phase lifecycle with drift monitoring, in production over tens of millions of members
+- [[swe-refactor-bench-hong-2026]] — whole-repository stack migration; 5.4% of runs pass all three stages
+
+*Science, training, architecture*
+- [[accelerating-scientific-research-gemini-real-world-schmidgall-2026]] — Google DeepMind Co-Scientist driving physical experiments
+- [[small-scale-experiments-are-we-there-yet-lourie-2026]] — FAIR/NYU: scaling laws are observable in very small models *if* hyperparameters are tuned
+- [[recirculation-mozer-2026]] — training-free inference-time architectural change for deep-layer contextualized representations
 
 ### Sparse prefill (2024–2026)
 - [[sparse-prefill]] — **concept**: the umbrella — three orthogonal families, and the decision rule that attention's share of prefill grows from ~¼ at 10K to >90% past 300K

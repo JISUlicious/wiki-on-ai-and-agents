@@ -8,8 +8,8 @@
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
-    "nlpnews 'Top AI Papers' mask IDs behind substack redirects \u2014 resolve+verify before ingest.",
-    "nlpnews 'AI Agents Weekly' are paywalled previews \u2014 papers section not in email body; low yield.",
+    "nlpnews 'Top AI Papers' mask IDs behind substack redirects — resolve+verify before ingest.",
+    "nlpnews 'AI Agents Weekly' are paywalled previews — papers section not in email body; low yield.",
     "Every candidate arXiv ID is verified against arxiv.org/abs/{id} before download."
   ],
   "processed_thread_ids": [
@@ -208,25 +208,189 @@
       "id": "19f2d6bdc796b0fc",
       "sender": "nlpnews@substack.com",
       "date": "2026-07-04",
-      "reason": "AI Agents Weekly (Claude Sonnet 5, LongCat-2.0, Grok Voice\u2026) \u2014 product news."
+      "reason": "AI Agents Weekly (Claude Sonnet 5, LongCat-2.0, Grok Voice…) — product news."
     },
     {
       "id": "19f099ef34f7de9d",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-27",
-      "reason": "AI Agents Weekly (GPT-5.6, Ornith-1.0, Codex Inside OpenAI\u2026) \u2014 product news."
+      "reason": "AI Agents Weekly (GPT-5.6, Ornith-1.0, Codex Inside OpenAI…) — product news."
     },
     {
       "id": "19ee5b63d6938554",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-20",
-      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts\u2026) \u2014 product news."
+      "reason": "AI Agents Weekly (GLM-5.2, Claude Code Artifacts…) — product news."
     },
     {
       "id": "19ecd09cbe2eed3c",
       "sender": "nlpnews@substack.com",
       "date": "2026-06-15",
-      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article \u2014 may cite papers."
+      "reason": "'Autonomous Long-Running Coding Agents' deep-dive article — may cite papers."
+    }
+  ],
+  "topic_watchlist_description": "TOC lines from paywalled AI Agents Weekly previews. Each run: search unresolved keywords on arXiv (allowed_domains arxiv.org), verify citation_title, ingest on hit. 'product' = news, not a paper; note on the relevant entity page if notable. Keyword recurrence across issues = the running theme.",
+  "topic_watchlist": [
+    {
+      "issue": "2026-08-15",
+      "thread": "1a0064eca032ae24",
+      "keyword": "Evo-Bench measures harness evolution",
+      "status": "resolved",
+      "arxiv_id": "2608.09096",
+      "page": "evo-bench-can-language-models-improve-agent-harness-huang-2026"
+    },
+    {
+      "issue": "2026-08-15",
+      "thread": "1a0064eca032ae24",
+      "keyword": "Study finds 91.8% of skills defective",
+      "status": "resolved",
+      "arxiv_id": "2608.08453",
+      "page": "what-keeps-agent-skills-from-being-reusable-zhang-2026"
+    },
+    {
+      "issue": "2026-08-15",
+      "thread": "1a0064eca032ae24",
+      "keyword": "DeepSeek open-sources its agent harness",
+      "status": "product",
+      "page": "deepseek"
+    },
+    {
+      "issue": "2026-08-15",
+      "thread": "1a0064eca032ae24",
+      "keyword": "DeepSeek-V4-Pro ships agent upgrades",
+      "status": "product",
+      "page": "deepseek"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "NVIDIA AVO hits 100% on ARC-AGI-3",
+      "status": "product",
+      "note": "successor to RHAE 85.1% in nvidia-oo-agents-furgale-2026; Claude Opus 5 alone ~30%"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "TrueFoundry open-sources TrueForge harness",
+      "status": "product",
+      "note": "MIT, ~2.8k stars at 08-22"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "Chroma ships Foundation agent memory",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "Self-improvement gains vanish when reshuffled",
+      "status": "resolved",
+      "arxiv_id": "2608.18066"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "Ornith-1.5 self-improves to Opus level",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "dots3-note runs for days",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "DeepSeek adds vision to V4-Flash",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-22",
+      "thread": "1a02a114151f50a4",
+      "keyword": "LEGO-RL trains agents in Claude Code",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-05"
+      ],
+      "note": "no arXiv hit; may be blog/product"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "GLM-5.3-Flash ships under MIT",
+      "status": "product",
+      "note": "320B-A18B, 1M ctx, hybrid linear+sparse attention; attn compute 3.0x down, KV 4.4x down vs GLM-5.3",
+      "page": "z-ai"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Tencent opens Hy4 preview weights",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Qwen previews the Qwen4 architecture",
+      "status": "resolved",
+      "page": "qwen3.8-flash-next",
+      "note": "= Qwen3.8-Flash-Next, ingested 08-30"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Claude gets its own browser",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Terminal-Bench-Science scores agents on science",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-05"
+      ],
+      "note": "no arXiv hit; likely a leaderboard/blog, not a paper"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "OpenAI reports first Jalapeno results",
+      "status": "product"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Headlong keeps agents always thinking",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-05"
+      ],
+      "note": "no arXiv hit; likely product"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "AI4AI-Bench tests recursive self-improvement",
+      "status": "resolved",
+      "arxiv_id": "2608.20318"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Agents close 81.7% of the speedrun gap",
+      "status": "resolved",
+      "arxiv_id": "2608.23552",
+      "note": "Prime Agent, nanoGPT speedrun result; confirm figure on page"
+    },
+    {
+      "issue": "2026-08-29",
+      "thread": "1a04e27e226d22ae",
+      "keyword": "Repo-wide migrations survive 5.4% of runs",
+      "status": "resolved",
+      "arxiv_id": "2608.23564"
     }
   ]
 }

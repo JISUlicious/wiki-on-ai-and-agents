@@ -9,6 +9,19 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-05] ingest | Newsletter sweep — part 1 of 2 (15 sources)
+
+Swept seven threads since the 08-17 cursor: NLP "Top AI Papers" 08-23 and 08-30 (10 papers each), three alphaXiv digests, and both AI Agents Weekly previews. **31 arXiv IDs verified against `citation_title`, zero duplicates.**
+
+**This entry covers 15 of the 31.** The run was fanned out to eight parallel ingest agents and hit the session rate limit mid-flight; all eight terminated early, but 15 source pages had already been written and verified against the papers. Committing them as a checkpoint rather than losing verified work. Part 2 covers the remaining 16.
+
+Also added a **[[newsletter topic watchlist|topic_watchlist]]** to `newsletter-ingest-state.json` — the AI Agents Weekly issues are paywalled previews whose table of contents names papers the body does not link. Each TOC line is now tracked as a keyword with status `resolved` (arXiv ID found and ingested), `product` (news, not a paper), or `unresolved` (searched, no hit). 22 entries so far: 7 resolved, 12 product, 3 unresolved. Two of this sweep's papers were recovered this way (AI4AI-Bench, SWE Refactor Bench), and three keywords have no arXiv presence at all (LEGO-RL, Terminal-Bench-Science, Headlong) — recording the negative result so later runs do not re-search them.
+
+Recorded from the product-news issues: **GLM-5.3-Flash** on [[z-ai]] — 320B-A18B, 1M context, MIT, with a hybrid [[linear-attention]] + [[sparse-attention]] stack cutting attention compute 3.0× and KV cache 4.4×. Worth noting the convergence: Qwen ([[qwen3.8-flash-next]]), Moonshot, and Z.ai have all shipped hybrid linear-plus-sparse attention within a two-month window.
+
+Sources 426 → 441.
+
+
 ## [2026-09-03] ingest | Sparse / speculative prefill — 11 sources, 5 concepts
 
 Prompted by a Reddit comment recommending *"Qwen3.5-0.8B-oQ8 with MTP as a prefillspec draft for Qwen3.8-27B on oMLX"* for faster prompt processing. Searched the literature, verified **10 arXiv IDs** against `citation_title` (0 duplicates), read the [[omlx-specprefill-github-2026|oMLX implementation]] from source, and checked the recommended model pair against the Hub.
