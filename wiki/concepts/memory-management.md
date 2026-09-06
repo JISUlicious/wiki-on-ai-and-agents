@@ -145,3 +145,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[metis-memory-foundation-model-zhang-2026]] — memory states and operations moved *into* the architecture as fast weights — but scoring 26.74 against full-context's 65.03, so not a replacement
 - [[lost-in-compaction-side-constraint-loss-wang-2026]] — compactors retain only **17%** of session constraints; some retain 0.0%
 - [[catastrophic-remembering]] — the cross-cutting failure these four circle
+- [[selective-forgetting-graph-based-memory-rusu-2026]] — graph *retrieval* loses to a flat vector baseline at matched budget (F1 0.417 vs 0.468), but graph *forgetting* works — 9.8% of nodes pruned with F1 unchanged
+- [[skill-state-scalable-long-horizon-agent-skills-badhe-2026]] — replaces append-only history with an explicit mutable state: prompt size **O(T) → O(1)**, flat at ~1,800 characters from step 10 to step 200 while the append baseline reaches 72,305

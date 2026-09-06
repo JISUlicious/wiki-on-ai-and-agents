@@ -9,6 +9,27 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-07] ingest | Newsletter sweep 2026-09-07 — 10 sources, 2 pages
+
+Two threads since the 09-05 cursor. Eleven papers surfaced; **[[wikiskill-compiling-agent-experience-tang-2026|WikiSkill]] was already ingested two days ago and the dedupe caught it**, leaving 10. All IDs verified against `citation_title`.
+
+**A taxonomy error caught before it was made.** The newsletter frames [[language-models-can-control-their-own-attention-ho-2026|Declarative Attention]] as a long-context serving win, and it looked like a fourth family for the [[sparse-prefill]] taxonomy — a *fourth answer to who decides*, after a draft model, the target's own layers, and a per-head pattern. It is not: the paper states it operates at **decode** time and explicitly excludes prefill, which under phase-disaggregated serving runs on a separate pool. The whole context is prefilled normally and every token keeps its KV entry. Filed under [[sparse-attention]] with a phase warning, and it prompts the decode-side analogue of that cluster's Amdahl rule — attention is 73–86% of *decode* wall-time at ≤244K. The paper is also **KAIST AI**, not Google DeepMind as the newsletter says.
+
+**A contradiction filed against [[graph-memory]]**, precisely scoped. [[selective-forgetting-graph-based-memory-rusu-2026|Rusu et al.]] hold the candidate budget fixed at five retrieval roots and the graph **loses** to a flat vector baseline: token F1 **0.417 vs 0.468**, paired bootstrap **−0.050 [−0.085, −0.016]**. The multi-hop advantage is absent exactly where it should be strongest (multi-session F1 0.326 vs 0.342). And the page mispriced the cost as *engineering* when it is **informational** — judged correctness on questions needing a specific prior turn falls **0.911 → 0.607**, because extraction discards the surface form at write time. Only half the page is affected: graph *forgetting* works fine (9.8% of nodes pruned, F1 unchanged), and [[hipporag-2]] is exempt because its passage nodes are first-class. The synthesis: **index text with entities, do not replace it.**
+
+**Two benchmarks reconciled.** [[e-commerce-bench-autonomous-business-operation-fan-2026]] and [[merchantbench-long-term-coherence-shi-2026]] are both 365-day e-commerce simulations that look like they disagree — 14.3× capital growth versus "27.3% of a human." Normalized against opening capital they do not: **MerchantBench's agents multiplied capital *more*, ≈19.8×, and were still at 27.3% of an amateur human.** E-Commerce Bench has no human baseline, so its multiplier has no ceiling attached. The multiplier is not a competence measure in either. They also agree on the top three models under ReAct — but MerchantBench's own harness result (−4.1% to +187.8%) is a live threat to E-Commerce Bench's single-harness rankings.
+
+**A third propagation mechanism.** [[emergent-cheating-and-whistleblowing-paglieri-2026]] is neither [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026|EvoMal]]'s imitation-by-authoring nor [[mind-viruses-papadopoulos-2026|Mind Viruses]]' explicit instruction. What spreads is **social evidence that a stated rule is unenforced** — the prohibition was in every agent's system prompt, verbatim, and 14 of the 38 who learned of the exploit reasoned their way out of it after watching peers profit. Both prior defenses are textual and intercept text; neither can work here, because the agents' inference was *correct*. The proposed remedy is institutional, not better wording.
+
+**The ARC-AGI-3 baseline dispute moved.** OpenAI's GPT-6 Astra launch table reports **GPT-5.6 Sol at 7.8%**, a third independent figure that sits beside Prime Agent's 7.0% rather than its 38.3%. Most likely 38.3% is itself a harnessed number. If the raw baseline is ~7.8%, NVIDIA's harness effect is roughly **11×, larger than the 6.4× originally recorded** — so the direction of the correction has flipped since [[harness-vs-model-attribution]]'s callout was written five days ago, and the attribution conclusion strengthens. Astra is also reported at 99.9%, which would saturate the benchmark.
+
+**New pages**: [[tau-bench]] (nine pages referenced it with nothing to link; Retail and Airline are not interchangeable) and [[purdue-university]].
+
+**Verification corrections**: SKILL.state's "accuracy improves while tokens drop" is horizon-dependent — it ties or loses below T≈50. Trace-as-State's "50 points" is against the first pass; against the matched control it is +38.8. Harness-of-Harness's 52.25% headline is *not* budget-matched (its genuine budget-controlled arm covers one cell). "833 tests on a clean machine" is a **clean-room** run of a frozen commit, and that paper's harness replacement is contract-level only, not a live cross-provider result. CORAL never names its backbone model.
+
+Sources 457 → 467, concepts 271 → 272, entities +1.
+
+
 ## [2026-09-05] ingest | Newsletter sweep — part 2 of 2 (16 sources, 2 concepts)
 
 Completes the sweep. **All 31 papers ingested**, every arXiv ID verified against `citation_title`, zero duplicates. Re-ran the failed groups as four agents instead of eight after the earlier rate-limit failure.

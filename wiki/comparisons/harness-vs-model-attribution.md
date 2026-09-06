@@ -103,4 +103,13 @@ Surfaced via newsletter ingests; see [[index]].
 > A second data point in the same table cuts against the newer system: **on the same backbone (GPT-5.6 Sol), NVIDIA's 85.1% beats Prime Agent's 78.3%.** Prime Agent's headline 95.5% comes from switching to Claude Opus 5, not from a better harness — and its authors say the reference numbers "situate the result rather than isolate a causal harness effect."
 >
 > Note also that a widely-circulated "NVIDIA AVO at 100% on ARC-AGI-3" figure (AI Agents Weekly, 2026-08-22) **could not be verified against any paper** and is recorded only as product news.
+
+> [!note] Update 2026-09-07 — a third number, and it points the other way
+> OpenAI's **GPT-6 Astra launch comparison** reports **GPT-5.6 Sol at 7.8%** on ARC-AGI-3. That is a third independent figure for the same raw model, and it sits next to Prime Agent's **7.0%** ("ARC harness") rather than its 38.3% ("Responses API").
+>
+> The most likely reconciliation: **38.3% is itself a harnessed number** — the Responses API supplies its own agentic loop — while ~7–8% is the genuinely raw baseline, and NVIDIA's 13.3% is a fourth measurement condition. If the raw Sol baseline is ~7.8%, NVIDIA's 85.1% is roughly an **11× harness effect, larger than the 6.4× originally recorded**, not smaller.
+>
+> So the direction of the correction has flipped since this callout was first written. The scaffold-attribution conclusion strengthens; only the specific multiplier was wrong. All three figures remain vendor- or third-party-reported with no common protocol, which is precisely the disclosure problem [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026|Zhang et al.]] argue makes cross-system agent numbers uncomparable — this page is now its own worked example.
+>
+> Separately, Astra is reported at **99.9%** on ARC-AGI-3. If that holds, the benchmark is saturated and ceases to discriminate harnesses at all.
 - [[j-space-cognition-suite]] — a worked example: every claimed gain (+4.4 to +16.0) falls inside the harness-substitution band this page quantifies, and the control column comes from a vendor model card rather than a matched run

@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-09-05",
+  "last_processed_date": "2026-09-07",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -79,7 +79,9 @@
     "1a040e7b7d30bfff",
     "1a065abb229aa9f6",
     "1a02a114151f50a4",
-    "1a04e27e226d22ae"
+    "1a04e27e226d22ae",
+    "1a0774888df24f36",
+    "1a0723908df9606e"
   ],
   "runs": [
     {
@@ -219,6 +221,19 @@
       "new_concept_pages": 2,
       "dups_skipped": [],
       "notes": "All 31 IDs verified vs citation_title, 0 dups. Committed in two parts: the first fan-out of 8 agents hit the session rate limit and all 8 died, but 15 verified pages were already on disk and were committed as a checkpoint; the remaining 16 were re-run as 4 agents. Introduced topic_watchlist to track paywalled AI Agents Weekly TOC keywords (resolved/product/unresolved) — recovered 4 papers from the 08-29 issue alone; 3 keywords have no arXiv presence. New concepts: skill-routing, skill-selection. Contradiction filed on harness-vs-model-attribution: the 13.3% raw ARC-AGI-3 baseline may be GPT-5.6 Terra not Sol, so the 6.4x harness effect is unverified; on the same backbone NVIDIA 85.1% beats Prime Agent 78.3%. Two counter-examples to catastrophic-remembering (Meta^n, WikiSkill) that escape via outcome-grounded provenance rather than pruning. Compaction Cliff and Lost-in-Compaction reconciled: agree on the fix, one conflict on positional-bias mechanism. Lesson: cap parallel ingest agents at ~4."
+    },
+    {
+      "date": "2026-09-07",
+      "type": "newsletter sweep (manual, NLP Top-Papers + AI Agents Weekly)",
+      "threads_read": 2,
+      "candidate_ids_verified": 11,
+      "on_domain_ingested": 10,
+      "new_source_pages": 10,
+      "new_concept_pages": 1,
+      "dups_skipped": [
+        "2608.27454"
+      ],
+      "notes": "11 papers surfaced, WikiSkill (2608.27454) already ingested 2 days prior and caught by dedupe. 3 agents (kept under the limit after the 09-05 failure). Declarative Attention reframed: decode-time not prefill, so NOT a fourth sparse-prefill family - filed under sparse-attention with a phase warning; also KAIST not DeepMind. Contradiction filed on graph-memory: graph retrieval loses to flat vectors at matched budget (F1 0.417 vs 0.468), multi-hop advantage absent, cost is informational not engineering; graph forgetting survives, hipporag-2 exempt. E-Commerce Bench vs MerchantBench reconciled by normalizing to opening capital (19.8x vs 14.3x - MerchantBench agents did better and were still at 27.3% of human). Third propagation mechanism identified (social evidence of unenforced rules) vs EvoMal imitation and Mind Viruses instruction. RHAE dispute advanced: OpenAI's own table puts GPT-5.6 Sol at 7.8%, so the harness effect is likely ~11x not 6.4x - correction direction flipped. New: tau-bench, purdue-university. Watchlist +14 entries (36 total)."
     }
   ],
   "pending_threads": [
@@ -409,6 +424,103 @@
       "keyword": "Repo-wide migrations survive 5.4% of runs",
       "status": "resolved",
       "arxiv_id": "2608.23564"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "OpenAI ships GPT-6 Astra",
+      "status": "product",
+      "note": "vendor launch table: 41.4% AutomationBench, 57.9% Terminal-Bench 4.0, 97.6% FrontierMath Tier 4, 99.9% ARC-AGI-3 vs 7.8% GPT-5.6 Sol"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Anthropic releases Claude Fable 5.1 and Mythos 5.1",
+      "status": "product",
+      "page": "claude"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Google ships Gemini 3.8 Flash and a cyber variant",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "NVIDIA agrees to acquire Hugging Face",
+      "status": "product",
+      "page": "nvidia",
+      "note": "industry structure; noted on nvidia + huggingface"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "xAI publishes the design thinking behind Grok Bot",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Meta releases Muse Spark 1.3",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "FrontierHarness Eval compares nine harnesses on one model",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-07"
+      ],
+      "note": "no arXiv hit; directly relevant to harness-vs-model-attribution if it ever surfaces"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Claude uses your computer in the background",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Claude Code previews Function Hooks",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Anthropic open-sources Claude Commerce Agents",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Cursor runs cloud agents on your own machines",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Cline migrates its extension onto a new SDK harness",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "FrontierSWE v2 extends coding agent runs to 20 hours",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-07"
+      ],
+      "note": "benchmark update; no arXiv hit yet"
+    },
+    {
+      "issue": "2026-09-05",
+      "thread": "1a0723908df9606e",
+      "keyword": "Cheating and whistleblowing emerge in a 100-agent research swarm",
+      "status": "resolved",
+      "arxiv_id": "2609.04170"
     }
   ]
 }

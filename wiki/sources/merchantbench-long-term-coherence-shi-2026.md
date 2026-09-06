@@ -156,3 +156,7 @@ No limitations section in the paper; these are observed:
 - Environment data source: 1688 (Alibaba Group), 1 Jun 2025 – 31 May 2026
 - Frameworks: ReAct; Hermes
 </content>
+
+## Related 2026 sources
+
+- [[e-commerce-bench-autonomous-business-operation-fan-2026]] — the sibling 365-day simulation, and the reconciliation is instructive. **Normalized against opening capital, this benchmark's agents multiplied capital *more* — ≈19.8× against 14.3× — and were still at 27.3% of an amateur human.** E-Commerce Bench has no human baseline, so its 14.3× has no ceiling attached; the multiplier is not a competence measure in either. On the six shared models the top three match exactly under ReAct — but this page's own harness result (−4.1% to +187.8%) is a live threat to E-Commerce Bench's single-harness rankings. They disagree on failure mode: Activity Decay here, bankruptcy-from-unsold-inventory there, with late-year collapse explicitly rejected (paired t = −3.95)

@@ -106,3 +106,7 @@ Breadth alone buys nothing (6.9% vs 7.1%); **the selection step is what makes a 
 ## References
 
 - [arXiv:2607.27687](https://arxiv.org/abs/2607.27687)
+
+## Related 2026 sources
+
+- [[ai-research-preference-models-foster-2026]] — **a tension worth holding open, not a contradiction.** That paper finds *"supplying the RPM with a deeper history of historical search tree nodes and their validation scores **consistently improves** child-selection judgment"* (65.1% at zero cited metrics → 81.2% at ≥5), where this paper finds a full history dump loses **12.7 points** to a candidate-relevant slice from the same store. Three reasons they may not truly conflict: the other paper's context is **structured node + validation-score records** while this one's dump is **raw rationale text**; its citation result is **correlational**, not a controlled context-size intervention; and it **averages over depths** while this finding is depth-specific. It also has no coverage/abstention split — its tournament always emits a choice — so the statistic that revealed the cliff here cannot move there. **Nobody has run the crossed experiment**

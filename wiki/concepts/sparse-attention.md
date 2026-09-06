@@ -65,3 +65,7 @@ Trained sparse attention — [[minimax-sparse-attention-lai-2026|MiniMax]]'s 28.
 ## References
 
 - [[minference-dynamic-sparse-attention-jiang-2024]] · [[token-sparse-attention-jo-2026]] · [[minimax-sparse-attention-lai-2026]] · [[draft-based-approximate-inference-galim-2025]]
+
+## Related 2026 sources
+
+- [[language-models-can-control-their-own-attention-ho-2026]] — a fourth answer to *who decides* the sparsity pattern — **the model declares it in its own chain-of-thought** and the engine parses it like a tool call, driving selection cost from O(N) to zero. **Decode-time, not prefill**: attended tokens fall 52.0% on Gemma-4-31B for 1.27 pp of accuracy

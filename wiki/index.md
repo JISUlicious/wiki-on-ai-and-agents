@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 456 sources, 144 entities, 271 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 466 sources, 145 entities, 272 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Newsletter sweep 2026-09-07
+- [[language-models-can-control-their-own-attention-ho-2026]] — the model declares in its own chain-of-thought where to attend and the engine parses it like a tool call; **decode-time, not prefill** — 52.0% fewer attended tokens for 1.27 pp
+- [[trace-as-state-reasoning-traces-as-conditional-states-zou-2026]] — put the trace *before* the long context on a fresh pass, not after: GraphWalks Parents 29.2 → 81.8, winning 26 of 27 cells
+- [[skill-state-scalable-long-horizon-agent-skills-badhe-2026]] — replace append-only history with mutable state; prompt **O(T) → O(1)**, flat from step 10 to 200
+- [[harness-of-harness-multi-day-autonomous-development-yan-2026]] — wrap a fixed harness in plan/code/test increments passing an evidence bundle; FrontierSWE Dominance 27.33% → 76.00%
+- [[coral-llm-native-harness-production-recommender-azhar-2026]] — Meta, on a live recommender, with A/B results and **no human approval gate**
+- [[runtime-independent-persistent-agents-zhao-2026]] — move an agent across model, harness and host: mechanical substitutability, explicitly **not** behavioral invariance
+- [[ai-research-preference-models-foster-2026]] — train a selector to pick which experiment to run; the unguided agent's 24-hour score in ~15 hours
+- [[selective-forgetting-graph-based-memory-rusu-2026]] — graph *retrieval* loses to flat vectors at matched budget; graph *forgetting* works
+- [[e-commerce-bench-autonomous-business-operation-fan-2026]] — 365 simulated days, 18 models; the top earner ranks 16th of 18 on fraud avoidance
+- [[emergent-cheating-and-whistleblowing-paglieri-2026]] — DeepMind: 100 identical agents; a verifier exploit clears 34 conjectures in 27 minutes, and 24 agents spontaneously blow the whistle
+- [[tau-bench]] — the benchmark, and why Retail and Airline numbers are not interchangeable
+- [[purdue-university]] — affiliation entity, resolving a link from the SKILL.state page
 
 ### Newsletter sweep 2026-09-05 — part 2
 *Skills: routing, evaluation, evolution, poisoning*
