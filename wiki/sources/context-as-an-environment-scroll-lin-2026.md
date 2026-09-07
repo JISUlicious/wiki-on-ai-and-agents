@@ -33,6 +33,51 @@ Bounding the view is done by **recoverable eviction** (Algorithm 1), triggered w
 
 Headline results, all with Qwen3.8-Max (a [[qwen]] model) on the QwenPaw agent OS orchestrated with Harbor: **94.8% LongMemEval_S**, **73.1 on BEAM_10M** (+5.1 over the best published system), **86.7% LOCA_256K** (+37.4 over the best published long-horizon agent). All three newsletter numbers verify. The ablation is the more instructive result: discarding originals at ingestion collapses BEAM_10M to **19.9**, removing the persistent kernel costs **7.3**, removing the eviction index costs **1.8**.
 
+## The loop
+
+```mermaid
+flowchart TB
+    subgraph ENV["SESSION ENVIRONMENT — durable, unbounded"]
+        direction LR
+        LOG[("Event Log Lt<br/>SQLite, append-only<br/>immutable seq · role · ts<br/>BM25, no LLM at ingest")]
+        PAY[("Payloads Pt<br/>large results → files<br/>bounded preview + pointer")]
+        KER["Python Kernel Vt<br/>typed namespace<br/>SURVIVES across calls"]
+    end
+
+    VIEW["WORKING VIEW ct<br/>hard bound |ct| ≤ C"]
+    MODEL{{"Model call"}}
+    PROG["Program πt<br/>written by the model<br/>at step t"]
+    EVICT["Recoverable eviction<br/>1 · payloads → seq pointers<br/>2 · whole spans if still over<br/>invariant: stays addressable"]
+    IDX["Eviction index<br/>headlines bound to seq<br/>tiered roll-up O(k log k n)"]
+
+    VIEW ==> MODEL
+    MODEL ==> PROG
+    PROG -->|"ms.search — locate"| LOG
+    PROG -->|"ms.expand seq — verbatim"| LOG
+    PROG -->|"deref handle"| PAY
+    PROG -->|"filter · join · aggregate"| KER
+    KER ==>|"print — THE ONLY CHANNEL IN"| VIEW
+    MODEL -->|"append events"| LOG
+    VIEW -->|"over ρC"| EVICT
+    EVICT -->|"headline + seq span"| IDX
+    IDX --> VIEW
+    EVICT -.->|"nothing destroyed"| LOG
+
+    style VIEW fill:#fff3cd,stroke:#856404,stroke-width:3px
+    style KER fill:#d1ecf1,stroke:#0c5460,stroke-width:2px
+    style LOG fill:#e2e3e5,stroke:#383d41
+    style PAY fill:#e2e3e5,stroke:#383d41
+    style EVICT fill:#f8d7da,stroke:#721c24
+```
+
+Read the diagram by the **asymmetry between the two thick edges**. `exec` reaches the whole environment — the full log, every payload, arbitrary computation — while `print` is a narrow one-way valve into the next context. The paper's one-line statement of it: *"`exec` decides how the environment is accessed and transformed; `print` decides what enters the next model context."*
+
+Three consequences follow directly from the shape:
+
+1. **The unbounded box and the bounded box are different boxes.** The Event Log grows forever; the working view never exceeds `C`. Compaction and external-memory systems collapse these two into one, which is why their reduction has to be decided at write time.
+2. **The dashed edge is the whole design.** Eviction removes things from the view and *never* from the log, so the map from history to context is recomputed per query rather than committed once.
+3. **The index exists because search is not enough.** Lexical search only recovers what the agent thinks to ask for, so evicted spans leave a headline behind — the agent stays aware of what it can no longer see. That is also the residual weakness: headlines record task, verified state, next action and status, **not constraints**.
+
 ## Key points
 
 **Comparison with long-term memory systems** (Table 2). This is explicitly *not* a controlled comparison: each baseline is its best publicly reported number under its own backbone/retrieval budget/judge as of 15 Aug 2026 (readers range from GPT-4o to Gemini 3 Pro), and the authors decline to reproduce baselines because "independent reproductions in this area have repeatedly led to disagreement over evaluation setup."
