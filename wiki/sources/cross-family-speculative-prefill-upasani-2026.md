@@ -18,7 +18,6 @@ authors:
 tags:
   - 2026
   - paper
-  - speculative-prefill
 status: complete
 importance: medium
 ---

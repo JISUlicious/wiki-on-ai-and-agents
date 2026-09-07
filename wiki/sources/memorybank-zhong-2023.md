@@ -69,7 +69,7 @@ To demonstrate practicality, the authors build **SiliconFriend**, an AI-companio
 - [[ebbinghaus-forgetting]]
 - [[memory-management]]
 - [[memory-decay]]
-- [[long-term-memory-llm]]
+- [[long-term-memory]]
 - [[dpr|dense passage retrieval]] — retrieval substrate
 - [[lora]] — used for psychological-dialogue fine-tuning of open-source backbones (rank 16, 3 epochs on A100)
 - [[rag]] — broader family the retrieval step belongs to

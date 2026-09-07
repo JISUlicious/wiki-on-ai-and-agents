@@ -14,7 +14,6 @@ authors:
 tags:
   - 2025
   - paper
-  - speculative-prefill
 status: complete
 importance: high
 ---

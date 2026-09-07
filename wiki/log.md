@@ -9,6 +9,27 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-07] lint | Wiki health check — 903 pages
+
+Full 11-check pass, the first since check 11 (markdown rendering hygiene) was added.
+
+**Clean on every structural check**: 0 orphans, 0 index gaps, 0 index ghosts, 0 frontmatter violations, 0 rendering defects, 0 entity-classification errors. The pipe-escaping sweep earlier today holds.
+
+**Fixed (6).** Two broken links that were genuine same-concept misspellings — `linear-self-attention` → [[linear-attention]] and `long-term-memory-llm` → [[long-term-memory]]. Four tags duplicating a page slug, all created by this week's own ingests: the `speculative-prefill` and `metacognition` concept pages were written *after* the source pages that had been tagged with those names. Dropped the tags and, per the tag policy, added the missing body link on [[llms-know-when-they-know-cao-2026]].
+
+**Rejected two near-miss "typos"** that a fuzzy matcher proposed and that are genuinely distinct pages: `gpt-4o` is not [[gpt-4]], and `swe-bench-lite` (a 300-task subset) is not [[swe-bench-live]] (the freshness variant). Recording these because the same false positives have now been proposed twice in this wiki's history.
+
+**206 broken links remain, and that is by design.** SKILL.md instructs writers to link a concept that *should* have a page even when it doesn't, so lint surfaces it. Only 4 of 206 were near-misses to existing slugs, which suggests the convention is being followed rather than abused. The heaviest gaps are infrastructure concepts the corpus keeps citing without a home: `tensor-parallelism` (7 refs), `pipeline-parallelism` (5), plus benchmark and org stubs (`skillsbench`, `appworld`, `all-hands-ai`, `university-of-british-columbia`).
+
+**23 Contradiction callouts across 21 pages** — all deliberate, filed during ingest rather than silently resolved. Concentrated where this month's sweeps landed: [[self-improving-agent]] and [[quantization-quality]] carry two each.
+
+**Lint refinement noted, not applied.** Check 9's promotion heuristic ("non-classification tag on ≥3 pages with no page") fires on all ten of its candidates as false positives — `2026` (370 pages), `paper` (168), `benchmark` (21), `survey` (10) and the year tags are precisely the organizational tags the policy says to *keep*. The heuristic needs to exclude four-digit years and the source-format vocabulary before it produces a usable signal.
+
+**Coverage, for context**: 243 pages carry `status: draft` and 190 concept pages rest on a single source. Both are expected for a wiki grown mostly by newsletter ingest, and neither is actionable in bulk — flagged as standing enrichment targets.
+
+Fixed: 6. Reported without fix: 206 missing-page links, 23 contradictions, 433 coverage suggestions.
+
+
 ## [2026-09-07] ingest | Newsletter sweep 2026-09-07 — 10 sources, 2 pages
 
 Two threads since the 09-05 cursor. Eleven papers surfaced; **[[wikiskill-compiling-agent-experience-tang-2026|WikiSkill]] was already ingested two days ago and the dedupe caught it**, leaving 10. All IDs verified against `citation_title`.

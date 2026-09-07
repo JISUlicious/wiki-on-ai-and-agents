@@ -59,7 +59,7 @@ To go from "global minimizer = preconditioned GD" to "training converges to it,"
 - [[gradient-descent-as-icl]] — the hypothesis that transformers implement gradient descent in-context; this paper turns the hypothesis into a theorem for the looped, linear, Gaussian setting.
 - [[in-context-learning]] — the broader phenomenon being explained.
 - [[optimization-theory]] — gradient flow analysis on a non-convex landscape via a Polyak-Łojasiewicz-style gradient-dominance bound.
-- [[linear-self-attention]] — the attention variant used (no softmax), which makes the closed-form analysis tractable.
+- [[linear-attention|linear self-attention]] — the attention variant used (no softmax), which makes the closed-form analysis tractable.
 - [[preconditioned-gradient-descent]] — the iterative algorithm the model converges to implementing.
 
 ## Quotes

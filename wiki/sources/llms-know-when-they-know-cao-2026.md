@@ -15,7 +15,6 @@ year: 2026
 tags:
   - 2026
   - paper
-  - metacognition
 status: complete
 importance: high
 ---
@@ -169,6 +168,9 @@ This omission is partly forced and Mirzaei says so himself: *"Mathematics is not
 > These two pages should not carry a `> [!warning] Contradiction`. The papers disagree about Self-Refine's sign at incomparable model scales under incomparable baselines, and agree about the two mechanisms both actually measured (full-trace feedback hurts; self-confidence cannot rank candidates). The correct wiring is complementary: Mirzaei bounds what *untrained self-inspection* buys at small scale; Cao et al. show what *trained metacognitive allocation* buys at frontier scale — with the cost-matched sampling comparison that would join them still missing from both sides.
 
 ## Related
+
+- [[metacognition]] — the concept page this paper anchors: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates compute across problems but cannot rank attempts within one.
+
 
 - [[sample-more-reflect-less-mirzaei-2026]] — the budget-matched negative result on self-inspection; see the reconciliation above. Its Self-Refine and Best-of-N verdicts are the direct counterweight to this paper's baselines.
 - [[metacognition-in-llms-liu-2026]] — the survey this paper is the constructive answer to. Liu et al. report that "LLMs largely cannot reason about how to allocate limited effort across problems" and that "even when predictive metacognitive information is present it often fails to drive effective monitoring or behavior adaptation" — which is Cao et al.'s title, restated. Their diagnosis axes (metacognitive *sensitivity* = AUROC, *calibration* = ECE) are exactly the two axes of Cao's rubric. Two tensions: Liu et al. report GPT models "largely fail at judgments of learning," whereas JOL is the cleaner signal on Cao's panel; and Liu et al. find metacognition **domain-specific rather than domain-general**, whereas Cao et al. fit one controller and apply it across text, code, and multimodal reasoning.
