@@ -199,3 +199,7 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 - Corpus: public GitHub repositories carrying `CLAUDE.md`, `AGENTS.md`, or `copilot-instructions.md`
 - Benchmarks inverted: IFEval; WildIFEval
 </content>
+
+## Related 2026 sources
+
+- [[ai-native-sdlc-playbook-anthropic-2026]] — the ratchet **prescribed as practice**: *"when Claude makes a mistake twice, the correction goes into `CLAUDE.md`"*. It does bound the file at one page, but specifies no deletion mechanism, no review cadence and no way to tell which instructions still earn their place — the exact gaps this paper measures. Its comments fix would make that bound enforceable

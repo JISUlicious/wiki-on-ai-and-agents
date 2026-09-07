@@ -4,6 +4,7 @@ type: concept
 created: 2026-09-07
 updated: 2026-09-07
 sources:
+  - ai-native-sdlc-playbook-anthropic-2026.md
   - agentic-coding-trends-report-anthropic-2026.md
   - swe-refactor-bench-hong-2026.md
   - when-agents-coordinate-destefanis-2026.md
@@ -15,53 +16,82 @@ importance: high
 
 # AI-Native SDLC
 
-The claim that agentic coding does not merely speed up the software development lifecycle but **restructures the role of the engineer within it** — from writing implementations to specifying, orchestrating and validating agents that write them.
+Restructuring the software development lifecycle around the fact that **writing code is no longer the bottleneck**.
 
-The stages survive. [[agentic-coding-trends-report-anthropic-2026|Anthropic's framing]] is explicit that *"traditional SDLC stages remain"* and what collapses is cycle time. So this is a claim about **who does which stage and how long it takes**, not about a new lifecycle diagram.
+The traditional lifecycle assumed implementation was the expensive step and arranged everything else around protecting it. Agentic coding collapses build time from weeks to hours while planning, review, testing and deployment continue to run at human speed — so the constraint **inverts**. The stages survive; their relative cost does not.
 
-## The two halves of the claim, and their very different evidential status
+That inversion is the whole idea, and it has a sharp consequence: **optimizing the build stage further returns nothing.** The gain is in restructuring the stages around it.
 
-**Half one — the role shift — is well evidenced and largely uncontested.** Engineers report using AI in roughly **60%** of their work. The delegation boundary is consistent and behavioural: they hand off what is **easily verifiable, well-defined, or repetitive**, and keep anything requiring organizational context or judgment. Gains show up as **output volume** rather than time-per-task — more features, more experiments, more previously-deprioritized "papercuts" fixed.
+## The artifact chain
 
-**Half two — autonomous long-horizon delivery — is where the narrative outruns the measurements.** Every controlled long-horizon result in this wiki lands well below what the industry framing implies.
+[[ai-native-sdlc-playbook-anthropic-2026|Anthropic's playbook]] gives the concrete form. Each stage commits a versioned artifact that triggers the next, and the chain doubles as the audit trail:
 
-| What is claimed | What is measured |
+```
+intent.md → spec.md → plan.md → diff + tests → PR review record → deployment log → incident record
+     ↑                                                                                    │
+     └────────────────────  control-band breach reopens as intent  ────────────────────────┘
+```
+
+Six stages — Plan, Design, Build, Test, Deploy, Maintain — with the loop closing rather than terminating. Every link carries a commit SHA, timestamp, author and approvals, which is what makes the lifecycle auditable without a separate compliance apparatus.
+
+## Three enforcement layers, deliberately unequal
+
+The most transferable part, and the part most often got wrong:
+
+| Layer | Strength | Use for |
+|---|---|---|
+| **Skills** | advisory | conventions, house style, things that *should* hold |
+| **Hooks** | deterministic — blocks and explains itself | anything that *must* hold |
+| **Managed settings** | non-overridable by engineers | regulatory and safety gates |
+
+[[harness-if-instruction-following-across-instruction-surfaces-huang-2026|Harness-IF]] supplies the measurement that justifies the hierarchy: **skill and tool descriptions rank last in precedence** when instruction surfaces conflict, below system prompts, project files and user instructions. A policy encoded only as a skill will lose an argument. Put it in a hook.
+
+Two directions of movement: controls shift **left** (policy applied during generation, not discovered in review) and **down** (enforcement in hooks, not in review comments). Autonomy tiers by environment, with the rule that *the agent may act up to the production gate but cannot pass it*.
+
+## What the evidence supports, and what it doesn't
+
+**The role shift is well evidenced.** Engineers report using AI in roughly **60%** of their work, delegating what is easily verifiable, well-defined or repetitive and keeping anything needing organizational context or taste. Gains appear as **output volume** rather than reduced time-per-task.
+
+**Autonomous long-horizon delivery is where the narrative outruns the measurements.** Anthropic's own reporting is the first counterweight: developers can *"fully delegate"* only **0–20%** of tasks, a figure the [[agentic-coding-trends-report-anthropic-2026|Trends Report]] publishes and names *"the collaboration paradox."* Then:
+
+| Claimed in industry framing | Measured |
 |---|---|
-| Agents work "for days at a time, building entire applications" | [[swe-refactor-bench-hong-2026]]: whole-repository migrations, **28 of 520 runs (5.4%)** pass all three stages; **13 of 20 tasks** get no accepted solution at all |
-| Sustained coherence over long horizons | [[merchantbench-long-term-coherence-shi-2026]]: **27.3%** of human performance over 365 simulated days; a rule-based baseline beats 6 of 16 LLM configurations purely by never stopping |
-| Multi-agent orchestration replaces single-agent | [[when-agents-coordinate-destefanis-2026]]: naming a coordinator produces **no communication hub and no reliable success gain**; the one significant contrast **fails to reproduce under a sealed rerun** |
-| AI reviews AI, so oversight scales | [[rehearse-confidence-cliff-autoresearch-ji-2026]]: judge selective accuracy **82.8% → 56.9%** as a trajectory deepens, *while coverage rises* — degrading silently, committing more |
+| agents build entire applications over days | [[swe-refactor-bench-hong-2026]]: **28 of 520 runs (5.4%)** pass whole-repository migration; 13 of 20 tasks unsolved |
+| sustained long-horizon coherence | [[merchantbench-long-term-coherence-shi-2026]]: **27.3%** of human over 365 simulated days |
+| orchestrator-coordinated multi-agent teams | [[when-agents-coordinate-destefanis-2026]]: naming a coordinator gives **no communication hub and no reliable success gain**; the one significant contrast fails to reproduce under a sealed rerun |
+| AI reviews AI, so oversight scales | [[rehearse-confidence-cliff-autoresearch-ji-2026]]: judge accuracy **82.8% → 56.9%** as a trajectory deepens, *while coverage rises* — degrading silently, committing more |
 
-## The number that should anchor any planning
+**So the practical shape is throughput under supervision, not autonomy.** Many parallel supervised streams rather than a few unsupervised ones — which the playbook implicitly concedes when it names the parallelism ceiling as *"how many streams one person can review properly."* That relocates the bottleneck onto **human review capacity**, which is precisely the thing the degrading-judge result says cannot be safely automated away.
 
-Developers report being able to **"fully delegate" only 0–20% of tasks** — a figure Anthropic publishes in its own bullish report and names *"the collaboration paradox."*
+## Three things that dominate outcomes and rarely appear in SDLC narratives
 
-Take that seriously and the practical shape of an AI-native SDLC is not *autonomy* but **throughput under supervision**: many parallel supervised streams rather than a few unsupervised ones. Which relocates the bottleneck onto human review capacity — precisely what the [[rehearse-confidence-cliff-autoresearch-ji-2026|degrading-judge]] result says cannot be safely automated away.
+**The harness, not the model.** Scaffold-only variation moves results **11–15 points** on SWE-bench Verified with the model fixed, up to ~48 on some leaderboards ([[harness-vs-model-attribution]]). Cost per success swings **5–30×** across harnesses at equal success rate ([[same-task-different-work-weinberger-2026]]). The playbook gets this right in one place worth copying: it treats a change to the model, prompt, `CLAUDE.md`, skills *or* hooks as a configuration change that must re-run the eval suite.
 
-## What actually determines whether this works
+**Prompt wording, independent of content.** Asking for "multiple approaches" inflates reasoning tokens **2.4–7.4×** across six models **with no success gain**. Bounded-efficiency wording — scope, acceptance criteria, stop condition — is neutral-or-better everywhere.
 
-The wiki's measurements point at three factors that dominate model capability, and none of them appear in industry SDLC narratives:
+**Instruction-file entropy.** The new maintenance burden. See below.
 
-**The harness, not the model.** Scaffold-only variation moves outcomes **11–15 points** on SWE-bench Verified with the model held fixed, and up to ~48 on some leaderboards ([[harness-vs-model-attribution]]). Cost per success swings **5–30×** across harnesses at equal success rate ([[same-task-different-work-weinberger-2026]]).
-
-**Prompt wording, independent of content.** Asking for "multiple approaches" inflates reasoning tokens **2.4–7.4×** across six models **with no success gain**. Bounded-efficiency wording — scope, acceptance criteria, stop condition — is neutral-or-better everywhere. Most agent spend is decided before the model reasons at all.
-
-**Instruction-file entropy.** Agentic instruction files grow **+226%** over their lifetime because adding is cheap and deleting requires provenance nobody recorded ([[why-does-claude-md-keep-growing-chakrabarti-2026]], [[catastrophic-remembering]]). An AI-native SDLC accumulates a new maintenance burden the traditional one didn't have, and **better models ratchet harder**.
+> [!warning] The lifecycle accumulates a cost the traditional one did not have
+> The standard prescription — *"when the agent makes a mistake twice, the correction goes into `CLAUDE.md`"* — is exactly the mechanism [[why-does-claude-md-keep-growing-chakrabarti-2026|measured]] to grow agentic instruction files **+226% in count and +140% in size** over their lifetime, with deletion hazard *falling* as instructions age. Redundancy makes honest pruning exponential, and **better models ratchet harder**.
+>
+> A page-length cap helps only if paired with a way to tell which instructions still earn their place. The measured fix is **outcome-grounded rationale** recorded beside each instruction — comments carrying what went wrong and what happened after, which removes 99.3% of excess in a verifiable setting. Note the corollary: attempts recorded *without* outcomes are **worse than no comment at all**. See [[catastrophic-remembering]].
 
 ## Reading the vendor literature
 
-> [!note] Provenance discipline
-> The industry sources here are vendor reports whose case studies are customers, and which carry **no methodology sections** — no sample sizes, no instruments, no time windows. They are valuable as statements of direction and as descriptions of current practice, and they are not evidence for their forecasts. Where this wiki has a controlled measurement on the same question, prefer the measurement and note the gap.
+> [!note] Provenance
+> The two anchor sources here are vendor documents. The [[ai-native-sdlc-playbook-anthropic-2026|playbook]] makes **no quantitative claims at all** — a defensible choice, and it means the structure is the contribution, not any result. The [[agentic-coding-trends-report-anthropic-2026|Trends Report]] does carry numbers but has **no methodology section**, and all seven case studies are customers. Both are valuable as statements of direction and as descriptions of current practice; neither is evidence for its forecasts. Where this wiki holds a controlled measurement on the same question, prefer the measurement.
 
 ## Related
 
-- [[agentic-coding-trends-report-anthropic-2026]] — the anchor source, and the origin of the 60% / 0–20% figures.
-- [[agentic-harness-engineering]] · [[code-as-harness]] · [[harness-vs-model-attribution]] — the layer that actually moves outcomes.
-- [[catastrophic-remembering]] — the new maintenance cost.
-- [[swe-bench]] · [[swe-refactor-bench-hong-2026]] · [[terminal-bench]] — how "can agents build systems" gets measured.
-- [[llm-as-a-judge]] · [[agent-as-a-judge]] — the oversight-scaling assumption.
-- [[claude-code]] · [[agent-skills]] · [[multi-agent]] · [[llm-agent]]
+- [[ai-native-sdlc-playbook-anthropic-2026]] — the operational anchor: six stages, artifact chain, leading/lagging measures per play.
+- [[agentic-coding-trends-report-anthropic-2026]] — the forecast companion, and the source of the 0–20% delegation figure.
+- [[agentic-harness-engineering]] · [[code-as-harness]] · [[harness-vs-model-attribution]]
+- [[agent-skills]] · [[skill-routing]] · [[guardrailing]] — the policy layers and their real precedence.
+- [[catastrophic-remembering]] — the accumulating cost.
+- [[llm-as-a-judge]] · [[agent-as-a-judge]] · [[demystifying-evals-for-ai-agents-anthropic-2026]] — oversight and evals.
+- [[swe-bench]] · [[swe-refactor-bench-hong-2026]] · [[terminal-bench]] — how the autonomy claim gets measured.
+- [[claude-code]] · [[multi-agent]] · [[llm-agent]]
 
 ## References
 
-- [[agentic-coding-trends-report-anthropic-2026]] · [[swe-refactor-bench-hong-2026]] · [[when-agents-coordinate-destefanis-2026]] · [[same-task-different-work-weinberger-2026]] · [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[merchantbench-long-term-coherence-shi-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]]
+- [[ai-native-sdlc-playbook-anthropic-2026]] · [[agentic-coding-trends-report-anthropic-2026]] · [[swe-refactor-bench-hong-2026]] · [[when-agents-coordinate-destefanis-2026]] · [[same-task-different-work-weinberger-2026]] · [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[merchantbench-long-term-coherence-shi-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]]

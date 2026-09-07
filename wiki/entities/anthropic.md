@@ -43,3 +43,4 @@ In this wiki, Anthropic is the source of the [[emotion-concepts-anthropic-2026|E
 ## Related 2026 sources
 
 - [[agentic-coding-trends-report-anthropic-2026]] — the 2026 predictions report — useful for its descriptive findings (AI used in ~60% of developer work but only **0–20% fully delegated**, and ~27% of AI-assisted work is newly viable rather than accelerated), with the caveat that it carries no methodology section and every case study is a customer
+- [[ai-native-sdlc-playbook-anthropic-2026]] — the operational counterpart to the Trends Report: six stages, a versioned artifact chain that doubles as the audit trail, and leading/lagging measures for every play. Makes no quantitative claims at all

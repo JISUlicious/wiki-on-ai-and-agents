@@ -168,3 +168,7 @@ The paper's own reliability section is unusually candid, and the numbers there a
 ## References
 
 - [arXiv:2608.11727](https://arxiv.org/abs/2608.11727)
+
+## Related 2026 sources
+
+- [[ai-native-sdlc-playbook-anthropic-2026]] — independent arrival at this paper's precedence finding: the playbook tells teams to put anything that must always hold in a hook rather than a skill, because skills are advisory

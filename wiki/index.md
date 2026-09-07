@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 467 sources, 145 entities, 273 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 468 sources, 145 entities, 273 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -624,8 +624,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
 
 ### AI-native software development (2026)
-- [[ai-native-sdlc]] — **concept**: the role shift is well evidenced; autonomous long-horizon delivery is where the narrative outruns the measurements. Anchored on the 0–20% full-delegation figure
-- [[agentic-coding-trends-report-anthropic-2026]] — Anthropic's eight-trend forecast, read against the wiki's controlled results. No methodology section; every case study is a customer
+- [[ai-native-sdlc]] — **concept**: writing code stops being the bottleneck, so the constraint inverts onto plan/review/test/deploy. Practical shape is throughput under supervision, not autonomy
+- [[ai-native-sdlc-playbook-anthropic-2026]] — the operational anchor: six stages, the `intent.md → spec.md → plan.md → PR → deploy → incident` artifact chain as audit trail, three unequal enforcement layers, and leading/lagging measures per play
+- [[agentic-coding-trends-report-anthropic-2026]] — the forecast companion, and the source of the 60% / 0–20% delegation figures. No methodology section; every case study is a customer
 
 ### Newsletter sweep 2026-09-07
 - [[language-models-can-control-their-own-attention-ho-2026]] — the model declares in its own chain-of-thought where to attend and the engine parses it like a tool call; **decode-time, not prefill** — 52.0% fewer attended tokens for 1.27 pp

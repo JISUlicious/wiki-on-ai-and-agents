@@ -114,3 +114,7 @@ The appendix surveys frameworks (Harbor for containerized trials, Arize Phoenix/
 
 - [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) (2026-01-09)
 - _Original source: `sources/demystifying-evals-for-ai-agents-anthropic-2026.html` (+ extracted `.md`)_
+
+## Related 2026 sources
+
+- [[ai-native-sdlc-playbook-anthropic-2026]] — the same practice placed in a lifecycle: 20–50 real tasks, gate configuration changes on pass rate, make every production incident a permanent eval. Note its unit of 'configuration' — model, prompt, `CLAUDE.md`, skills *and* hooks, i.e. the whole harness

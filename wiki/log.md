@@ -9,6 +9,25 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-07] ingest | The AI-Native SDLC Playbook — 1 source, 1 concept rewritten
+
+**Correction to the previous entry.** The requested article was [claude.com/blog/the-ai-native-sdlc-playbook](https://claude.com/blog/the-ai-native-sdlc-playbook); I searched anthropic.com and ingested the [[agentic-coding-trends-report-anthropic-2026|Agentic Coding Trends Report]] instead. That page stands on its own merits and is kept, but it is a *forecast* where this is a *playbook*. [[ai-native-sdlc]] has been rewritten to anchor on the correct source, with the Trends Report demoted to companion.
+
+**The thesis is a bottleneck inversion**, and it is sharper than "AI makes development faster": the traditional lifecycle assumed writing code was the expensive step, agentic coding collapses build from weeks to hours, and the constraint moves onto the stages still running at human speed. The operational consequence — optimizing build further returns nothing — is what makes the framing worth having.
+
+**The design is an artifact chain**: `intent.md → spec.md → plan.md → diff+tests → PR record → deployment log → incident record`, closing back to `intent.md` when a control band breaches. Each link carries commit SHA, timestamp, author and approvals, so the chain *is* the audit trail rather than needing one bolted alongside.
+
+**Three unequal enforcement layers** — skills advisory, hooks deterministic and self-explaining, managed settings non-overridable. The playbook states the limit correctly (*"skills are advisory only"*), and [[harness-if-instruction-following-across-instruction-surfaces-huang-2026|Harness-IF]] supplies the measurement behind it: skill and tool descriptions rank **last** in precedence when surfaces conflict. Independent arrival at the same conclusion, worth recording.
+
+**One tension filed, and it is a good one.** The playbook prescribes *"when Claude makes a mistake twice, the correction goes into `CLAUDE.md`"* — precisely the mechanism [[why-does-claude-md-keep-growing-chakrabarti-2026|measured]] to grow instruction files +226% in count and +140% in size, with deletion hazard falling as instructions age. It does bound the file at one page, which is more than most guidance offers, but names no deletion mechanism, no review cadence, and no way to identify which instructions still earn their place. Chakrabarti's outcome-grounded comments are what would make that bound enforceable rather than aspirational.
+
+**Also noted**: the PR-review play inherits the [[rehearse-confidence-cliff-autoresearch-ji-2026|degrading-judge]] failure mode, and its monthly tuning ritual is calibration by sampling that will not surface silent degradation. Its skill metric is *latency*, not lift — [[evaluating-skills-not-just-agents-kevin-2026|ACES]] shows structural quality predicts live lift at ρ = −0.018. And its eval trigger treats model, prompt, `CLAUDE.md`, skills *and* hooks as one configuration unit, which matches [[harness-vs-model-attribution|this wiki's attribution finding]] and is the right unit.
+
+The playbook makes **no quantitative claims at all** — no baselines, no percentages, no citations. Correct for a playbook; it means the structure and the per-play leading/lagging measurement scheme are the contribution, and nothing in it can be cited as evidence.
+
+Sources 468 → 469, concepts 273 (rewritten, not added).
+
+
 ## [2026-09-07] ingest | Anthropic 2026 Agentic Coding Trends Report — 1 source, 1 concept
 
 Ingested from the full PDF (17pp, dated 2026-01-12) rather than the landing page, which is a download teaser containing none of the content.

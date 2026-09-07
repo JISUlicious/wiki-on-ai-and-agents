@@ -82,3 +82,4 @@ Modern alignment stacks **layer both surfaces**. [[claude|Claude]]'s training is
 Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini Autoresearch Discovers State of the Art Adversarial
+- [[ai-native-sdlc-playbook-anthropic-2026]] — a three-tier enforcement model worth copying: skills advisory, hooks deterministic and self-explaining, managed settings non-overridable by engineers — with autonomy tiered by environment and the agent permitted to act *up to* the production gate but never past it
