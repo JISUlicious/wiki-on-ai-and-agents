@@ -63,7 +63,7 @@ For comparison, the **guardrailing** cluster works on different surfaces:
 | **Surface of intervention** | External (inputs, outputs, system prompts, tool permissions) | Internal (activations) |
 | **Mechanism** | Filtering, refusing, sandboxing, restricting | Adding / suppressing vectors in residual stream / attention heads |
 | **What it controls** | Whether a behavior is *allowed* to happen | Whether a behavior is *likely* to happen |
-| **Techniques** | [[rlhf]], [[constitutional-ai]], [[red-teaming]], permission systems, output classifiers, sandboxing | [[activation-addition]], [[contrastive-activation-addition]], [[representation-engineering]], [[sparse-autoencoder|SAE features]], [[inference-time-intervention]] |
+| **Techniques** | [[rlhf]], [[constitutional-ai]], [[red-teaming]], permission systems, output classifiers, sandboxing | [[activation-addition]], [[contrastive-activation-addition]], [[representation-engineering]], [[sparse-autoencoder\|SAE features]], [[inference-time-intervention]] |
 | **Data requirements** | Thousands of labeled preferences (RLHF) | Few hundred contrastive examples (CAA) or unsupervised (SAE) |
 | **Inspectability** | Logs, audits, output samples | Activation values, feature dictionaries |
 | **Failure modes** | Brittle to adversarial inputs; refusal-without-engagement | Can degrade fluency; direction may correlate with off-target concepts |

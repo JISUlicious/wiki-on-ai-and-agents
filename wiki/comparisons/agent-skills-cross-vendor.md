@@ -70,10 +70,10 @@ The [[agent-skills-survey-xu-2026|Xu & Yan 2026 survey]] is the first to attempt
 
 | Lineage | Definition of "skill" | Rigor | Examples |
 |---|---|---|---|
-| **Program-synthesis** | A lambda-abstraction extracted by formal refactoring/compression that provably preserves execution semantics | rigorous | [[dreamcoder]] → [[lilo-grand-2023|LILO]] → ReGAL |
+| **Program-synthesis** | A lambda-abstraction extracted by formal refactoring/compression that provably preserves execution semantics | rigorous | [[dreamcoder]] → [[lilo-grand-2023\|LILO]] → ReGAL |
 | **LLM-agent (code)** | An executable code module, description-indexed, retrieved by embedding, append-only, composable | operational | [[voyager]], [[skill-library]] |
-| **LLM-agent (NL)** | Distilled natural-language insight or rule, no executable code | loose | [[expel-zhao-2023|ExpeL]] |
-| **Industry (Anthropic et al.)** | A portable file bundle of instructions + code + resources loaded on demand | operational/normative | [[agent-skills]], [[agentskills-io-spec-2025|agentskills.io]] |
+| **LLM-agent (NL)** | Distilled natural-language insight or rule, no executable code | loose | [[expel-zhao-2023\|ExpeL]] |
+| **Industry (Anthropic et al.)** | A portable file bundle of instructions + code + resources loaded on demand | operational/normative | [[agent-skills]], [[agentskills-io-spec-2025\|agentskills.io]] |
 
 The **self-authored tool** thread ([[llm-as-tool-makers-cai-2023|LATM]], [[craft-yuan-2023|CRAFT]]) bridges program-synthesis and LLM-agent lineages: agents that *write their own reusable skills* at runtime.
 

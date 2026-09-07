@@ -80,7 +80,7 @@ The named modes number 39; the paper's **41** counts `model — model` modes onc
 | GPT-5.5 | **0.80** | **0.69** | **0.72** | **0.64** |
 | Claude Opus 4.6 | 0.75 | 0.61 | 0.70 | 0.57 |
 | Claude Opus 4.7 | 0.75 | 0.63 | 0.62 | 0.53 |
-| [[claude-opus-4-8|Claude Opus 4.8]] | 0.75 | 0.62 | 0.68 | 0.58 |
+| [[claude-opus-4-8\|Claude Opus 4.8]] | 0.75 | 0.62 | 0.68 | 0.58 |
 
 Cohen's κ on category labels: **GPT-5.5 0.76**, Opus 4.6 and 4.7 **0.71** each, Opus 4.8 **0.70**; highest judge-judge pair **κ=0.84** (Opus 4.6 ↔ 4.8). Failure-mode κ is lower across all pairs.
 

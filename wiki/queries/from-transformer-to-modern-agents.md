@@ -27,14 +27,14 @@ The road from [[transformer|the Transformer (2017)]] to a working coding agent l
 
 | # | Track | Question it answers | Canonical works |
 |---|---|---|---|
-| 1 | **Architecture** | What sequence model scales? | [[attention-is-all-you-need-vaswani-2017|Transformer]], [[bert]], [[gpt-1]], [[transformer-decoder]], [[t5]] |
-| 2 | **Scaling** | How do we know it'll work at scale? | [[scaling-laws-kaplan-2020|Kaplan]], [[chinchilla-hoffmann-2022|Chinchilla]] |
-| 3 | **Pre-training paradigms** | One model, many tasks? | [[gpt-2-radford-2019|GPT-2]], [[t5-raffel-2019|T5 text-to-text]], [[flan-wei-2021|FLAN]] |
-| 4 | **Alignment / RLHF** | Make it useful as an assistant. | [[rlhf-christiano-2017|Christiano]], [[instructgpt-ouyang-2022|InstructGPT]], [[constitutional-ai-bai-2022|CAI]], [[dpo-rafailov-2023|DPO]] |
-| 5 | **Reasoning** | Make it think before answering. | [[chain-of-thought-wei-2022|CoT]], [[zero-shot-cot-kojima-2022|Zero-shot CoT]], [[self-consistency-wang-2022|Self-Consistency]], [[tree-of-thoughts-yao-2023|ToT]] |
-| 6 | **Retrieval** | External knowledge without retraining. | [[dpr-karpukhin-2020|DPR]], [[rag-lewis-2020|RAG]], [[retro-borgeaud-2021|RETRO]] |
-| 7 | **Tool use / Agent loop** | Acting, not just generating. | [[webgpt-nakano-2021|WebGPT]], [[react-yao-2022|ReAct]], [[toolformer-schick-2023|Toolformer]], [[reflexion-shinn-2023|Reflexion]] |
-| 8 | **Multi-agent orchestration** | Coordinating multiple agents. | [[metagpt-hong-2023|MetaGPT]], [[autogen-wu-2023|AutoGen]] |
+| 1 | **Architecture** | What sequence model scales? | [[attention-is-all-you-need-vaswani-2017\|Transformer]], [[bert]], [[gpt-1]], [[transformer-decoder]], [[t5]] |
+| 2 | **Scaling** | How do we know it'll work at scale? | [[scaling-laws-kaplan-2020\|Kaplan]], [[chinchilla-hoffmann-2022\|Chinchilla]] |
+| 3 | **Pre-training paradigms** | One model, many tasks? | [[gpt-2-radford-2019\|GPT-2]], [[t5-raffel-2019\|T5 text-to-text]], [[flan-wei-2021\|FLAN]] |
+| 4 | **Alignment / RLHF** | Make it useful as an assistant. | [[rlhf-christiano-2017\|Christiano]], [[instructgpt-ouyang-2022\|InstructGPT]], [[constitutional-ai-bai-2022\|CAI]], [[dpo-rafailov-2023\|DPO]] |
+| 5 | **Reasoning** | Make it think before answering. | [[chain-of-thought-wei-2022\|CoT]], [[zero-shot-cot-kojima-2022\|Zero-shot CoT]], [[self-consistency-wang-2022\|Self-Consistency]], [[tree-of-thoughts-yao-2023\|ToT]] |
+| 6 | **Retrieval** | External knowledge without retraining. | [[dpr-karpukhin-2020\|DPR]], [[rag-lewis-2020\|RAG]], [[retro-borgeaud-2021\|RETRO]] |
+| 7 | **Tool use / Agent loop** | Acting, not just generating. | [[webgpt-nakano-2021\|WebGPT]], [[react-yao-2022\|ReAct]], [[toolformer-schick-2023\|Toolformer]], [[reflexion-shinn-2023\|Reflexion]] |
+| 8 | **Multi-agent orchestration** | Coordinating multiple agents. | [[metagpt-hong-2023\|MetaGPT]], [[autogen-wu-2023\|AutoGen]] |
 | 9 | **[[steering]] + [[guardrailing]]** | Shape internals + restrict externals. | [[activation-engineering-turner-2023\|ActAdd]], [[representation-engineering-zou-2023\|RepE]], [[sparse-autoencoders-cunningham-2023\|SAEs]], [[red-teaming-ganguli-2022\|red-teaming]], [[indirect-prompt-injection-greshake-2023\|injection]] |
 
 ## Path-by-path summary

@@ -30,7 +30,7 @@ The key under-appreciated point: "Fugu" is *two different orchestration mechanis
 | Output | a **single worker selection** per turn | a **full agentic workflow** (subtasks + worker-id + access-list) |
 | Mechanism | lightweight **selection head** over the backbone hidden state → L logits (one per worker); **no role assignment, no autoregressive decoding** | LM that writes NL workflows → best-of-N / chain / **tree topologies**, plus adaptive agent memory |
 | Trainable params | tiny: lightweight head + **singular-value fine-tuning** (train only SV scales, freeze orthogonal components) | full RL-trained orchestrator |
-| Training | SFT (soft worker-distribution via softmax+KL) → **sep-CMA-ES** evolutionary search on end-to-end trajectories | **[[grpo|GRPO]]** with a 2-condition reward (format parse + correctness) |
+| Training | SFT (soft worker-distribution via softmax+KL) → **sep-CMA-ES** evolutionary search on end-to-end trajectories | **[[grpo\|GRPO]]** with a 2-condition reward (format parse + correctness) |
 | Use case | everyday interactive, latency-bounded | hardest problems, latency-tolerant |
 
 **The latency trick**: Fugu computes a hidden state at an *early token position*, applies the selection head, and dispatches — skipping autoregressive decoding entirely. The orchestrator emits a *decision*, not text. This also makes evolutionary optimization tractable.

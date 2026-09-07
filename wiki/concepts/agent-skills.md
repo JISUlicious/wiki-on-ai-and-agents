@@ -70,7 +70,7 @@ Anthropic frames Skills around four properties differentiating them from naive t
 | Property | Meaning |
 |---|---|
 | **Composability** | Skills stack. Claude identifies which apply and coordinates them — no manual selection. |
-| **Portability** | Same format across apps, [[claude-code|Code]], and API. Build once, run anywhere. |
+| **Portability** | Same format across apps, [[claude-code\|Code]], and API. Build once, run anywhere. |
 | **Efficiency** | Load only what's needed, when it's needed (progressive disclosure). |
 | **Power** | Skills can include executable code — deterministic execution beats token generation for many tasks. |
 

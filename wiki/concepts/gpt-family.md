@@ -19,7 +19,7 @@ The GPT family is the line of [[decoder-only-transformer|decoder-only Transforme
 |---|---|---|---|
 | [[gpt-1]] | 2018 | 117M | The recipe: generative pre-training + discriminative fine-tuning |
 | [[gpt-2]] | 2019 | 1.5B | Scale + zero-shot transfer; "language models are unsupervised multi-task learners" |
-| [[gpt-3]] | 2020 | 175B | [[in-context-learning|In-context learning]] / few-shot prompting; [[scaling-laws|scaling laws]] confirmed |
+| [[gpt-3]] | 2020 | 175B | [[in-context-learning\|In-context learning]] / few-shot prompting; [[scaling-laws\|scaling laws]] confirmed |
 | [[gpt-4]] | 2023 | undisclosed | Multimodality (images), strong reasoning, post-trained for alignment |
 
 ChatGPT (Nov 2022) is a deployed product based on a fine-tuned GPT-3.5 / GPT-4 — not itself a separate model family member, but the event that took LLMs mainstream.

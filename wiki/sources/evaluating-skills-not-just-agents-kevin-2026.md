@@ -104,8 +104,8 @@ Skill efficiency has the third-largest mean lift but is positive in **only 41.7%
 
 | Harness | Mean overall lift | Scored cells / paired cases |
 |---|---|---|
-| [[opencode|OpenCode]] | **0.3611** | 34 / 211 |
-| [[claude-code|Claude Code]] | 0.2904 | 56 / 251 |
+| [[opencode\|OpenCode]] | **0.3611** | 34 / 211 |
+| [[claude-code\|Claude Code]] | 0.2904 | 56 / 251 |
 | Codex | 0.1264 | 50 / 259 |
 | Terminus-2 | 0.0896 | 37 / 226 |
 

@@ -53,14 +53,14 @@ Across **8 frontier models in 26 model-effort configurations, 520 runs**, only *
 
 | Model | Harness | Best effort | Behavioural pass | Accepted /20 | Score /100 | USD/task |
 |---|---|---|---|---|---|---|
-| claude-opus-5 | [[claude-code|Claude Code]] | xhigh | 92.8% | 5 | **47.0** | 74.9 |
+| claude-opus-5 | [[claude-code\|Claude Code]] | xhigh | 92.8% | 5 | **47.0** | 74.9 |
 | gpt-5.6-sol | Codex | max | 84.1% | 4 | 28.5 | 143.5 |
 | kimi-k3 | Claude Code | max | 93.9% | 2 | 19.5 | 28.9 |
 | claude-sonnet-5 | Claude Code | medium | 73.9% | 1 | 15.0 | 11.9 |
 | gpt-5.6-luna | Codex | max | 89.1% | 0 | 10.5 | 2.8 |
 | qwen3.8-max | Claude Code | max | 74.7% | 2 | 10.0 | 14.5 |
 | dsv4-flash | Claude Code | max | 90.7% | 0 | 7.0 | 4.3 |
-| [[glm-5-2|glm-5.2]] | Claude Code | max | 85.2% | 0 | 6.5 | 17.5 |
+| [[glm-5-2\|glm-5.2]] | Claude Code | max | 85.2% | 0 | 6.5 | 17.5 |
 
 Three points from this table. Behavioural pass rate and score are nearly unrelated — kimi-k3 has the highest pass rate and a score of 19.5. Three models (gpt-5.6-luna, dsv4-flash, glm-5.2) never had a run accepted yet each produced 3–4 runs that passed every fixed check, all of which fell at Stage I or III. And effort is not monotone: claude-opus-5 goes 20.5 → 28.5 → 34.5 → **47.0** → 31.0 from low to max, and gpt-5.6-sol's xhigh (9.5) is worse than its high (19.0). Harness is confounded with vendor (GPT models via Codex, everything else via Claude Code), so model and scaffold cannot be separated here — the attribution problem [[terminal-bench]] is designed around.
 

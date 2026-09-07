@@ -48,11 +48,11 @@ The survey distinguishes three coupled elements:
 
 | Where | Canonical paper | What it embodies |
 |---|---|---|
-| Math / scientific reasoning | [[pal-gao-2023|PAL]] | Code-for-reasoning: Python interpreter as offload target for arithmetic / symbolic logic |
-| Embodied / robotic | [[code-as-policies-liang-2022|Code as Policies]] | Code-for-acting: LLM emits Python that orchestrates perception + control APIs |
-| Generalist agents | [[codeact-wang-2024|CodeAct]] | Replaces JSON tool calls with executable Python; +20% absolute on tool-use evals |
-| Software engineering | [[swe-agent-yang-2024|SWE-agent]] + [[openhands-wang-2024|OpenHands]] | Agent-Computer Interface (ACI) abstraction: purpose-built tool surface; SWE-bench 12.5% → 26.7% |
-| Multi-agent code collaboration | [[chatdev-qian-2023|ChatDev]] + [[agentcoder-huang-2023|AgentCoder]] + [[metagpt-hong-2023|MetaGPT]] + [[autogen-wu-2023|AutoGen]] | Multiple agents collaborate over a shared program state / test suite |
+| Math / scientific reasoning | [[pal-gao-2023\|PAL]] | Code-for-reasoning: Python interpreter as offload target for arithmetic / symbolic logic |
+| Embodied / robotic | [[code-as-policies-liang-2022\|Code as Policies]] | Code-for-acting: LLM emits Python that orchestrates perception + control APIs |
+| Generalist agents | [[codeact-wang-2024\|CodeAct]] | Replaces JSON tool calls with executable Python; +20% absolute on tool-use evals |
+| Software engineering | [[swe-agent-yang-2024\|SWE-agent]] + [[openhands-wang-2024\|OpenHands]] | Agent-Computer Interface (ACI) abstraction: purpose-built tool surface; SWE-bench 12.5% → 26.7% |
+| Multi-agent code collaboration | [[chatdev-qian-2023\|ChatDev]] + [[agentcoder-huang-2023\|AgentCoder]] + [[metagpt-hong-2023\|MetaGPT]] + [[autogen-wu-2023\|AutoGen]] | Multiple agents collaborate over a shared program state / test suite |
 
 ## Frontier — Agentic Harness Engineering
 

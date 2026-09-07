@@ -25,7 +25,7 @@ Synthesizing [[cross-agent-comparison-doc-2026|the source comparison document]].
 
 | Axis | claude-code | opencode | pi | hermes | openclaw |
 |---|---|---|---|---|---|
-| **Maker** | [[anthropic|Anthropic]] | SST + community | Mario Zechner | Nous Research | community |
+| **Maker** | [[anthropic\|Anthropic]] | SST + community | Mario Zechner | Nous Research | community |
 | **Language** | TypeScript | TypeScript | TypeScript | Python | TypeScript |
 | **Runtime** | Node (Ink) | Bun (Effect) | Node | CPython | Node (≥22.12) |
 | **Process model** | single binary | server + clients | single binary | multi-process | Gateway + clients |

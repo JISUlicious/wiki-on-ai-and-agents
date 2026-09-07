@@ -86,8 +86,8 @@ Three consequences follow directly from the shape:
 |---|---|---|
 | RAG | – | 24.9 |
 | LIGHT | – | 26.6 |
-| [[zep|Zep]] | 90.2 | – |
-| [[mem0|Mem0]] | 94.4 | 48.6 |
+| [[zep\|Zep]] | 90.2 | – |
+| [[mem0\|Mem0]] | 94.4 | 48.6 |
 | Hindsight | 94.6 | 64.1 |
 | EmergenceMem | 86.0 | – |
 | Honcho | 90.4 | 40.6 |
@@ -122,7 +122,7 @@ The profile is the paper's real argument. Scroll wins by the widest margins exac
 
 | Agent loop | 128K | 256K | Δ |
 |---|---|---|---|
-| Summarization agent ([[react|ReAct]] + periodic compaction) | 86.7 | 65.3 | −21.4 |
+| Summarization agent ([[react\|ReAct]] + periodic compaction) | 86.7 | 65.3 | −21.4 |
 | Retrieval agent (ReAct + evict-and-recall tool) | 88.0 | 66.7 | −21.3 |
 | CodeAct agent (programmatic tool calling) | 89.3 | 85.3 | −4.0 |
 | **Scroll** | 89.3 | **86.7** | **−2.6** |
@@ -135,8 +135,8 @@ Two readings. First, the persistent-kernel idea alone (plain CodeAct) captures a
 |---|---|---|---|---|
 | Qwen3.8-Max | 94.8 | 73.1 | 89.3 | 86.7 |
 | Qwen3.7-Max | 92.8 | 66.6 | 78.7 | 60.0 |
-| [[deepseek|DeepSeek]]-v4-pro | 93.2 | 70.2 | 69.3 | 58.7 |
-| [[glm-5-2|GLM-5.2]] | 93.6 | 70.7 | 66.7 | 62.7 |
+| [[deepseek\|DeepSeek]]-v4-pro | 93.2 | 70.2 | 69.3 | 58.7 |
+| [[glm-5-2\|GLM-5.2]] | 93.6 | 70.7 | 66.7 | 62.7 |
 | Kimi-K2.7 ([[moonshot-ai]]) | 92.0 | 67.2 | 30.7 | 32.0 |
 | Qwen3.6-35B-A3B | 88.8 | 58.1 | 37.3 | 22.7 |
 

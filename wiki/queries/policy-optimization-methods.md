@@ -63,8 +63,8 @@ What end-to-end alignment runs look like:
 
 | Pipeline | Stages | Method choice |
 |---|---|---|
-| [[rlhf]] — RL from Human Feedback | SFT → RM → policy opt | Classical: SFT → human-labeled [[preference-modeling]] → [[reward-modeling]] → [[ppo|PPO]] |
-| [[rlaif]] — RL from AI Feedback | SFT → AI-judge → RM → policy opt | AI evaluator (often guided by a [[constitutional-ai|constitution]]) replaces humans in step 2 |
+| [[rlhf]] — RL from Human Feedback | SFT → RM → policy opt | Classical: SFT → human-labeled [[preference-modeling]] → [[reward-modeling]] → [[ppo\|PPO]] |
+| [[rlaif]] — RL from AI Feedback | SFT → AI-judge → RM → policy opt | AI evaluator (often guided by a [[constitutional-ai\|constitution]]) replaces humans in step 2 |
 | [[constitutional-ai]] — Anthropic's CAI | SFT → critique → revise → RLAIF | Written principles bootstrap a self-critic that generates the preference data |
 | [[agentic-rl]] — agentic RL | (SFT cold-start) → multi-step tool-use traces with outcome reward → GRPO | [[deepseek-r1]] (pure RL with rule-based rewards), [[search-r1]] (tool-use RL with retrieved-token masking), [[swe-gym]] (SWE-agent training) |
 | **Iterated DPO** | SFT → DPO → re-sample → DPO again | The DPO equivalent of "online RLHF" — refresh preference data each iteration |
