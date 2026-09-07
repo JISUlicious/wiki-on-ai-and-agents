@@ -9,6 +9,30 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-07] ingest | Anthropic 2026 Agentic Coding Trends Report — 1 source, 1 concept
+
+Ingested from the full PDF (17pp, dated 2026-01-12) rather than the landing page, which is a download teaser containing none of the content.
+
+**What it is, stated plainly on the page**: a vendor predictions report with **no methodology section anywhere** — no sample sizes, no instrument, no time windows — and seven case studies, every one of them an Anthropic customer or Anthropic itself. Its own framing concedes the point: *"These predictions reflect what we're seeing with customers today, not certainties about tomorrow."*
+
+**The most valuable thing in it undercuts its own headline.** Twice, the report cites internal research that developers use AI in roughly **60%** of their work but can **"fully delegate" only 0–20% of tasks**. Trend 4 names this *"the collaboration paradox."* That sits directly against Trend 3's forecast of agents working *"for days at a time, building entire applications with minimal human intervention"* — and the report presents both without reconciling them.
+
+**New concept**: [[ai-native-sdlc]], written to hold the tension rather than pick a side. The role shift (engineers move to specification, orchestration, validation) is well evidenced and largely uncontested. Autonomous long-horizon delivery is where the narrative outruns every controlled measurement this wiki holds:
+
+| Claimed | Measured |
+|---|---|
+| agents build entire applications over days | [[swe-refactor-bench-hong-2026]]: **5.4%** of runs pass; 13 of 20 tasks unsolved |
+| sustained long-horizon coherence | [[merchantbench-long-term-coherence-shi-2026]]: **27.3%** of human |
+| orchestrator-coordinated multi-agent | [[when-agents-coordinate-destefanis-2026]]: coordinator label yields **no hub and no reliable gain** |
+| AI reviews AI, so oversight scales | [[rehearse-confidence-cliff-autoresearch-ji-2026]]: judge **82.8% → 56.9%**, degrading silently while committing more |
+
+The practical read filed on the concept page: if full delegation caps near 20%, the shape of an AI-native SDLC is **throughput under supervision**, not autonomy — which relocates the bottleneck onto human review capacity, exactly what the degrading-judge result says cannot be safely automated.
+
+Also recorded: the **27% additionality** claim (a quarter of AI-assisted work is newly viable rather than accelerated — dashboards, exploration, deprioritized papercuts). Unsourced, but the most interesting number in the document, because if true it means throughput comparisons treating AI work as a substitute for human work measure the wrong thing.
+
+Raw PDF archived to `sources/` (gitignored). Sources 467 → 468, concepts 272 → 273.
+
+
 ## [2026-09-07] lint | Wiki health check — 903 pages
 
 Full 11-check pass, the first since check 11 (markdown rendering hygiene) was added.

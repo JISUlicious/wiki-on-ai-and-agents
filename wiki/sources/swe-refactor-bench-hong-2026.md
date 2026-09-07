@@ -108,3 +108,7 @@ Build-toolchain and platform work leaves product code mostly untouched, so it cl
 ## References
 
 - [arXiv:2608.23564](https://arxiv.org/abs/2608.23564)
+
+## Related 2026 sources
+
+- [[ai-native-sdlc]] — the counterweight this benchmark supplies: 5.4% whole-repository success against an industry forecast of agents building entire applications over days

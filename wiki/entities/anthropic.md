@@ -39,3 +39,7 @@ In this wiki, Anthropic is the source of the [[emotion-concepts-anthropic-2026|E
 ## Agent evaluation guidance
 
 [[demystifying-evals-for-ai-agents-anthropic-2026|"Demystifying evals for AI agents"]] (2026-01-09) is among the most-shared practitioner guides on [[agent-evaluation]], supplying the task/trial/grader/transcript/outcome vocabulary now used across the tooling ecosystem.
+
+## Related 2026 sources
+
+- [[agentic-coding-trends-report-anthropic-2026]] — the 2026 predictions report — useful for its descriptive findings (AI used in ~60% of developer work but only **0–20% fully delegated**, and ~27% of AI-assisted work is newly viable rather than accelerated), with the caveat that it carries no methodology section and every case study is a customer

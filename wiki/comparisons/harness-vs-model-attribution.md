@@ -113,3 +113,4 @@ Surfaced via newsletter ingests; see [[index]].
 >
 > Separately, Astra is reported at **99.9%** on ARC-AGI-3. If that holds, the benchmark is saturated and ceases to discriminate harnesses at all.
 - [[j-space-cognition-suite]] — a worked example: every claimed gain (+4.4 to +16.0) falls inside the harness-substitution band this page quantifies, and the control column comes from a vendor model card rather than a matched run
+- [[ai-native-sdlc]] — why this page matters operationally: SDLC narratives attribute outcomes to model capability, while scaffold-only variation moves them 11–15 points with the model fixed

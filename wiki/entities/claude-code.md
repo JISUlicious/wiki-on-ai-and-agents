@@ -51,3 +51,7 @@ As of May–June 2026, Claude Code can **write and orchestrate its own multi-age
 - [[cross-agent-comparison-doc-2026]]
 - [[claude-code-dynamic-workflows-2026]] — dynamic workflows announcement
 - [[claude-code-dynamic-workflows-harness-2026]] — dynamic workflows engineering deep-dive
+
+## Related 2026 sources
+
+- [[ai-native-sdlc]] — the lifecycle claim this tool anchors, and where the industry narrative meets the wiki's controlled measurements
