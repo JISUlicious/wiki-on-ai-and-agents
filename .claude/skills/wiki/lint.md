@@ -137,6 +137,50 @@ Items missing both `target:` and a recognized alias are flagged.
 4. Validate each relation field's values: wikilink shape, target resolution, dict-form keys.
 5. For each entity/source page, check the suggested fields against body section headings.
 
+### 11. Markdown Rendering Hygiene (Error)
+
+Constructs that are valid as *text* but break as *markdown*. These are invisible to §1 and §10 because the wikilink itself is well-formed — only the rendering is wrong — so they need their own pass.
+
+**Error — unescaped pipe inside a table cell.** A `[[slug|alias]]` wikilink in a table row renders its pipe as a **column separator**. The row gains a phantom column, the table goes ragged, and the link shows as literal text. Obsidian, GitHub and most renderers all break the same way.
+
+```markdown
+| [[mem0|Mem0]] | 94.4 |          <!-- WRONG: renders as three columns -->
+| [[mem0\|Mem0]] | 94.4 |         <!-- RIGHT -->
+```
+
+Writing `[[slug|Alias]]` is correct everywhere *except* inside a table, which is why it keeps getting through.
+
+**Error — double-escaped pipe.** `[[slug\\|alias]]` renders a literal backslash. Any run of two or more backslashes before the pipe is wrong. **This is the failure mode of a careless fix, not of authoring** — see the fix procedure below.
+
+**Error — ragged table.** Any table whose rows disagree on separator count, counting only pipes *not* preceded by a backslash. Usually a symptom of the above, but also catches a hand-edited row with a missing or extra `|`.
+
+**Warning — unbalanced code fence.** An odd number of ` ``` ` in a file. Everything after the unclosed fence renders as code, silently hiding content and defeating link resolution for the rest of the page.
+
+**How to scan.** Glob `{WIKI}/**/*.md`. Track fenced-code state line by line and **skip fenced regions entirely** — a table inside a code block is illustrative, not real. Then, for lines whose first non-space character is `|`:
+
+| Defect | Pattern |
+|---|---|
+| double-escaped | `\[\[[^\]]*?\\{2,}\|` |
+| unescaped | `\[\[[^\]]*?(?<!\\)\|` |
+| column count | number of matches of `(?<!\\)\|` |
+
+Test double-escaped **before** unescaped, since the double case also matches the unescaped pattern. Flag a table block when its rows produce more than one distinct column count. Separately, flag any file with an odd count of ` ``` `.
+
+**How to fix.** Only the two pipe errors are auto-fixable. Apply per table-cell line, outside fences:
+
+1. **Collapse first**: replace `(\[\[[^\]]*?)\\{2,}\|` with `\1\|`, repeating until the line stops changing.
+2. **Then escape**: replace `(\[\[[^\]\|]*?)(?<!\\)\|` with `\1\|`.
+
+> [!warning] Do not skip step 1, and do not reorder these
+> A naive "escape every pipe in a wikilink" pass **will corrupt links that were already correct**, turning `\|` into `\\|`. This is not hypothetical: a 2026-09 repair pass did exactly that to 95 already-correct links before the verification step caught it. The `[^\]\|]` in step 2's first group and the `(?<!\\)` lookbehind are both load-bearing — they make the operation **idempotent**, so running it twice is safe.
+
+After fixing, re-scan and confirm three things: zero unescaped, **zero double-escaped**, and zero ragged tables. Verifying only the first will miss damage you just caused.
+
+**Never auto-fix** ragged tables or unbalanced fences — the correct repair depends on which column or fence the author intended.
+
+> [!important] Why this check exists
+> This is the one defect class the wiki has repeatedly reintroduced. Ingest agents write `[[slug|Alias]]` correctly in prose and carry the habit into comparison tables. A 2026-09 sweep found **53 instances across 13 files**, some months old — none visible to any other check, because every link resolved fine.
+
 ## Report Format
 
 Group findings by severity:
@@ -180,6 +224,7 @@ For auto-fix:
 - **Tag promotion**: For each promotion candidate, create a stub concept/entity page derived from contexts where the tag appears (Grep the tagged pages, extract a short description). Remove the tag from those pages and replace mentions with `[[wikilink]]` where appropriate.
 - **Tag-as-page duplicates**: Remove the duplicating tag; ensure the body links the page.
 - **Over-tagged pages**: Drop the most page-worthy tags by promoting them (see above); keep at most 3 purely organizational tags.
+- **Rendering hygiene**: Apply §11's two-step fix (collapse double-escapes, then escape unescaped), in that order, then re-scan for *both* error types. Ragged tables and unbalanced fences are reported but **never auto-fixed**.
 
 ## Log
 

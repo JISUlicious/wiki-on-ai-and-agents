@@ -270,3 +270,14 @@ Tell the user:
 - Pages updated (with what changed)
 - Any contradictions found
 - Suggested follow-up: related sources to look for, questions to explore, concepts that need their own page
+
+## Before you finish: markdown rendering check
+
+A `[[slug|alias]]` wikilink inside a **table cell** renders its pipe as a column separator, breaking the row while the link itself still resolves — so no link check will catch it.
+
+```
+| [[mem0|Mem0]] | 94.4 |     WRONG — renders as three columns
+| [[mem0\|Mem0]] | 94.4 |    RIGHT
+```
+
+Writing `[[slug|Alias]]` is correct everywhere *except* inside a table. Escape the pipe as `\|` in every table cell. See lint.md §11 for the full scan and the idempotent two-step fix; note that a careless repair pass introduces double-escapes, so if you fix any, verify both error types afterwards.
