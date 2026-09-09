@@ -2,7 +2,7 @@
 title: "oMLX SpecPrefill implementation (GitHub)"
 type: source
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-09
 sources:
   - https://github.com/jundot/omlx
 authors:
@@ -64,7 +64,7 @@ The circulating advice — *"add Qwen3.5-0.8B (oQ8 or oQ4) with MTP to oMLX and 
 | `mtp_num_hidden_layers` | 1 | 1 |
 | dense or MoE | dense | **dense** |
 
-Same tokenizer, so the pair passes admission. The **"with MTP"** in the advice is a second, separate feature: both checkpoints ship a multi-token-prediction head, which oMLX uses for **[[speculative-decoding|speculative decoding]]** — a decode-phase speedup. The phrase "pp decode" in the advice conflates the two. SpecPrefill accelerates **prefill**; MTP accelerates **token generation**; they compose but are not the same lever.
+Same tokenizer, so the pair passes admission. Field-verified on a third family member on 2026-09-09: **Qwen3.6-35B-A3B** reports `vocab_size` 248,320 in its config, so the assertion passes across Qwen3.5 / 3.6 / 3.8 and the 0.8B draft is usable against any of them. Note that 35B-A3B is a **MoE** — a closer match to the module docstring's stated target (*"experimental sparse prefill for MoE"*) than the dense 27B the circulating advice names. The **"with MTP"** in the advice is a second, separate feature: both checkpoints ship a multi-token-prediction head, which oMLX uses for **[[speculative-decoding|speculative decoding]]** — a decode-phase speedup. The phrase "pp decode" in the advice conflates the two. SpecPrefill accelerates **prefill**; MTP accelerates **token generation**; they compose but are not the same lever.
 
 The arithmetic behind "huge boost": at `keep_pct=0.20` the 27B prefills ~20% of conversation tokens, and the 0.8B draft's full prefill plus 8 lookahead steps costs roughly 3% of a 27B pass — so the ceiling is about **4× on the conversation portion**, before the always-full system prompt and the mandatory 512-token tail are added back.
 

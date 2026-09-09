@@ -2,7 +2,7 @@
 title: "Methods to Speed Up Prompt Processing (prefill / pp)"
 type: query
 created: 2026-07-27
-updated: 2026-09-03
+updated: 2026-09-09
 sources:
   - llm-inference-roofline-yuan-2024.md
   - flash-attention-dao-2022.md

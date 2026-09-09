@@ -2,7 +2,7 @@
 title: Chunked Prefill
 type: concept
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-09-09
 sources:
   - sarathi-chunked-prefill-agrawal-2023.md
   - distserve-zhong-2024.md
@@ -21,10 +21,13 @@ Decode is catastrophically inefficient per token: measured at **200× / 100× / 
 
 Results: **decode throughput up to 10×** (2.8–10× range), 1.33× end-to-end on LLaMA-13B/A6000, and under pipeline parallelism on GPT-3 it cuts median pipeline-bubble time **6.29×** for **1.91× end-to-end**.
 
-> [!warning] Chunked prefill makes *prefill slower*, deliberately
+> [!warning] In multi-request serving, chunked prefill makes *prefill slower*, deliberately
 > This is a common misreading. Chunking lowers arithmetic intensity and forces KV reloads, costing **~5× total prefill time at chunk 64**, ~20% prefill loss at chunk 256, ~10% at chunk 512. The authors are explicit about the trade: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."*
 >
 > So chunked prefill is a **decode-throughput and pipeline-utilization** technique that *spends* prefill. It does help *other* requests' TTFT by reducing head-of-line blocking, but it does not make prompt processing faster. Chunk sizes should be multiples of 128 (tile quantization); 256 beat 320.
+
+> [!warning] That verdict is scoped to serving — single-user local inference inverts it
+> SARATHI's cost is a *scheduling* trade against concurrent requests. With none in flight there is nothing to trade against, and chunking becomes a **memory-bounding** technique that is often outright faster at the right size. Field measurement on an M4 Air (Qwen3.6-35B-A3B, 3-bit MLX, single user, same 32K prompt): **unchunked OOMs** on a 34 GB attention buffer; chunk 128 → 106 tok/s; **chunk 512 → 135 tok/s**; chunk 2048 → 112 tok/s. Non-monotonic with a clear optimum. Establish which regime you are in before reading either number as a verdict — the full table is on [[methods-to-speed-up-prompt-processing]].
 
 ## The disaggregation counter-argument
 

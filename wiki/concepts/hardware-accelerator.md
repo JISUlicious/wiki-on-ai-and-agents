@@ -43,7 +43,14 @@ Two patterns account for most inflated numbers in this literature, and both appe
 
 There is **no path to an FPGA accelerator on a Mac**, for three independent reasons, any one sufficient: Xilinx XRT's memory management lives in a Linux kernel driver with no macOS or Apple Silicon build; every accelerator above is a PCIe card and no Apple Silicon Mac exposes usable third-party PCIe; and Thunderbolt gives ~3–5 GB/s (TB4) or ~10–15 (TB5) against ~120 GB/s of unified memory.
 
-The interconnect objection is decisive **for accelerators that do not hold the model**, because the link then carries traffic every step. It does *not* apply to an external GPU whose VRAM holds the whole model — there the link carries only prompts and tokens after a one-time load. As of 31 March 2026, Apple approved Tiny Corp's TinyGPU driver extension, making external Nvidia and AMD GPUs over Thunderbolt/USB4 the first officially sanctioned third-party discrete GPU path on Apple Silicon.
+The interconnect objection is decisive **for accelerators that do not hold the model**, because the link then carries traffic every step. It does *not* apply to an external GPU whose VRAM holds the whole model — there the link carries only prompts and tokens after a one-time load. As of 31 March 2026, Apple approved Tiny Corp's TinyGPU driver extension — the first officially sanctioned third-party discrete GPU on Apple Silicon, over Thunderbolt/USB4 with no SIP bypass.
+
+> [!warning] The eGPU path exists at the driver level and nowhere else (as of 2026-09)
+> Two independent blockers, either one sufficient, checked against the projects' own docs on 2026-09-09:
+> - **TinyGPU exposes the GPU only to tinygrad.** Its docs describe use "with tinygrad" (`DEV={AMD|NV} python3 -m tinygrad.llm`) and say nothing about PyTorch, MLX or llama.cpp. It is a runtime-specific driver, not a CUDA/ROCm compatibility shim.
+> - **MLX's CUDA backend does not run on macOS.** The backend exists in-tree, but per MLX's own docs (ml-explore/mlx #2422) it targets Linux servers and "does not add CUDA support on Mac".
+>
+> So an eGPU today would **replace** an MLX-tuned local stack rather than accelerate it — losing MTP speculative decode (measured 1.8×), prefix caching (6.1×), 4-bit KV quantization and the rest — in exchange for a research framework's inference loop. The bandwidth physics above is right; the software path does not exist. Revisit if MLX ships a macOS CUDA/TinyGPU target or a serving engine adds a tinygrad backend.
 
 ## Related
 

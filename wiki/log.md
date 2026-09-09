@@ -9,6 +9,11 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-09] ingest | Peer-session field measurements — M4 Air, Qwen3.6-35B-A3B — 5 pages corrected
+
+A peer session running Qwen3.6-35B-A3B on an M4 Air contributed measurements that corrected four pages and closed one open item. **[[chunked-prefill]]** and [[methods-to-speed-up-prompt-processing]] had stated SARATHI's "~5× slower prefill" as a general verdict; it is a multi-request scheduling trade, and single-user the same technique is memory-bounding and often faster — unchunked 32K OOMs, chunk 512 gives 135 tok/s, 2048 drops to 112. Both pages now scope the verdict. **[[hardware-accelerator]]**, written hours earlier, implied Apple's approval of TinyGPU opened an eGPU path; it does not — TinyGPU exposes the device only to tinygrad and MLX's CUDA backend is Linux-only, so an eGPU would replace an MLX-tuned stack rather than accelerate it. Corrected in a callout. **[[quantization-performance]]** gains a MoE counter-example to its dense-7B bandwidth tables: 4-bit→3-bit is 1.28× smaller for only 1.09× faster, which is overhead-bound, not bandwidth-bound. **[[omlx-specprefill-github-2026]]**'s tokenizer-parity item closes: Qwen3.6-35B-A3B `vocab_size` 248,320, matching 3.5 and 3.8.
+
+
 ## [2026-09-09] ingest | FPGA and non-GPU LLM accelerators — 4 sources, 2 concepts
 
 Prompted by a question about whether an FPGA could accelerate prefill or decode on a Mac. The answer is no — three independent blockers, any one sufficient: **XRT's memory management lives in a Linux kernel driver** with no macOS build, **no Apple Silicon Mac exposes usable third-party PCIe**, and Thunderbolt gives 3–15 GB/s against ~120 GB/s of unified memory. But the literature is real and worth holding, and this wiki had **zero** hardware-accelerator coverage.

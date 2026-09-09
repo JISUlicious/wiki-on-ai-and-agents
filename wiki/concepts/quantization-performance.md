@@ -2,7 +2,7 @@
 title: "Quantization Performance: Memory, Prefill (pp) and Decode (tg)"
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-09
 sources:
   - llm-inference-roofline-yuan-2024.md
   - marlin-frantar-2024.md
@@ -65,6 +65,9 @@ Achieved bandwidth (`tg × model_size`) falls monotonically as bit width drops:
 | M2 Ultra | 800 GB/s | 69% | 60% | **45%** |
 
 This is why observed tg speedup (2.3–2.9×) undershoots the ideal size ratio (3.53×): lower precision means more ALU work per byte delivered. The effect is worst on the widest-bandwidth chip — more bandwidth to saturate, same per-byte dequant cost.
+
+> [!note] On a MoE, decode can be overhead-bound rather than bandwidth-bound
+> The tables above are dense 7B, where `tg × model_size` tracks bandwidth at 63–86% of peak. A field sweep on an M4 Air (Qwen3.6-35B-A3B, MLX, single user, 2026-09) does not: **4-bit 19.64 GB → 18.2 tok/s; 3-bit 15.33 GB → 19.8 tok/s** — 1.28× smaller for 1.09× faster. If decode were reading weights at the bandwidth wall those would track. They do not, which points at a fixed per-token cost — MoE routing and, on this hybrid architecture, the per-layer recurrent-state traffic [[arithmetic-intensity]] describes — rather than bytes. Two cautions: for a MoE only the active experts' bytes move per token, so the `tg × model_size` proxy over-counts and no utilization figure is quoted here; and the same sweep's 2-bit row (10.85 GB → 31.9 tok/s) was a degenerate build with collapsed routing, so its speed is an artifact of touching fewer experts, not evidence about bandwidth.
 
 > [!note] On CPU, prefill is about kernel maturity, not physics
 > [[which-quantization-kurt-2026|Kurt 2026]] (Llama-3.1-8B, dual Xeon 8488C) finds `tg128` spans 2.83 → 9.91 t/s (**3.5×**, cleanly correlated with file size) while `pp512` is **non-monotonic and uncorrelated with bit width**: Q4_0 is fastest at 97.35 t/s, but higher-precision Q5_1 manages only 45.98, and Q3_K_S is *28% slower than F16*. Formats with mature AVX-512 GEMM paths win; those with awkward unpacking lose. Cite as evidence that quantization **does not reliably help prefill** — not as a trend.
