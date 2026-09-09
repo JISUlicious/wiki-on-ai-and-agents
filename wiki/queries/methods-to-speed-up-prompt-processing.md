@@ -117,7 +117,21 @@ Three traps, all of them things that genuinely help decode:
 
 1. **Weight-only quantization (W4A16, Q4_K_M).** A memory-bandwidth optimization. Measured **2–12% slower** prefill on Apple Silicon.
 2. **[[grouped-query-attention|GQA]].** The paper deliberately excludes encoder self-attention because *"encoder representations are computed in parallel, and memory bandwidth is therefore generally not the primary bottleneck"* — that parallel regime **is** prefill. GQA shrinks the KV cache; its prefill benefit is only indirect (freed HBM → larger batch).
-3. **[[chunked-prefill]].** Commonly misfiled as a prefill optimization; it is the opposite. SARATHI *spends* prefill — **~5× slower at chunk 64**, ~20% loss at chunk 256 — to gain up to **10× decode throughput**: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."* It helps *other* requests' TTFT by reducing head-of-line blocking, not the chunked request's own.
+3. **[[chunked-prefill]]**, *in a multi-request serving context*. Commonly misfiled as a prefill optimization; there it is the opposite. SARATHI *spends* prefill — **~5× slower at chunk 64**, ~20% loss at chunk 256 — to gain up to **10× decode throughput**: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."* It helps *other* requests' TTFT by reducing head-of-line blocking, not the chunked request's own.
+
+> [!warning] That verdict does not transfer to single-user local inference
+> SARATHI's cost is a *scheduling* trade against concurrent requests. With no other requests in flight there is nothing to trade against, and chunking becomes a **memory-bounding** technique that is often outright faster at the right chunk size. Field measurement on an M4 Air (Qwen3.6-35B-A3B, 3-bit MLX, single user, same prompt):
+>
+> | Chunk | Prefill |
+> |---|---|
+> | unchunked, 32K | **OOM** — 34 GB attention buffer |
+> | 128 | 106 tok/s |
+> | **512** | **135 tok/s** |
+> | 2048 | 112 tok/s |
+>
+> Non-monotonic with a clear optimum, so the chunk size is the whole decision. Below it you pay per-chunk launch overhead; above it the attention buffer grows again. Unchunked does not run at all.
+>
+> The general rule: **chunked prefill costs you when you are scheduling against other requests and helps you when you are bounding memory.** Establish which regime you are in before reading SARATHI's number as a verdict.
 
 Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill is already parallel. **Do not confuse it with [[speculative-prefill]]** — same word, opposite phase; a draft with an MTP head can serve both, but they are two levers.
 
