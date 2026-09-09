@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 476 sources, 147 entities, 276 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 476 sources, 147 entities, 278 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -629,6 +629,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[neuroprefetcher-delta-prefetching-dhar-2026]] — ICPP 2026, Jetson Orin: delta prefetching on 82–85% neuron persistence; 3.22 vs 0.34 tok/s over llama.cpp mmap — at ~88–90% of dense HellaSwag
 - [[ssd-offloading-moe-weights-considered-harmful-kyung-2025]] — IEEE CAL: analytical model; SSD experts cost 3.8–12.5× HBM energy per token, but 1.14× vs dense at batch 1 and no caching modelled
 - [[flash-moe-ssd-expert-streaming-woods-2026]] — the catalyst: C/Metal engine running Qwen3.5-397B-A17B on a 48 GB M3 Max at 4.36 tok/s, built in 24 h of Claude Code autoresearch; top-k cut 10→4, no accuracy delta reported
+- [[activation-sparsity]] — **concept (draft)**: three sources — ReLU zeros (exact), magnitude thresholding (lossy), MoE routing (exact, no predictor) — and the 1–3 MMLU-point cost of relufying a SiLU model
+- [[edge-inference]] — **concept (draft)**: the single-device regime where "does not fit" is the baseline; hub for the streaming, FPGA and Apple Silicon pages
 - [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
 - [[apple]] — **entity (org)**: the Apple Silicon platform, MLX, LLM in a flash, TinyGPU approval
 

@@ -21,7 +21,9 @@ Prompted by "what was the name of that offloading-model-weights-to-SSD technique
 
 **Verification corrections**: the energy objection ([[ssd-offloading-moe-weights-considered-harmful-kyung-2025|Kyung et al.]]) is an analytical model with uniform-random routing and no caching; its "~12× for DeepSeek-R1" is Mixtral at batch 16, R1 peaks at 9.8×, and the batch-1 penalty versus a dense model is 1.14×. LLM in a flash's "4–5× / 20–25×" is early-version wording; the table supports 4.8× and 26×. NeuroPrefetcher's Fig. 6 and Table 4 disagree (1.60 vs 3.22 tok/s at the same budget), unreconciled. Also caught mid-ingest: this wiki's [[memory-management]] page is about *agent* memory, not DRAM — a backlink I had added there was removed.
 
-Sources 473 → 477, concepts 275 → 276, entities +2.
+Two links crossed the promotion threshold during the ingest and got draft stubs: [[activation-sparsity]] (3 links) and [[edge-inference]] (4).
+
+Sources 473 → 477, concepts 275 → 278, entities +2.
 
 
 ## [2026-09-09] ingest | Peer-session field measurements — M4 Air, Qwen3.6-35B-A3B — 5 pages corrected
