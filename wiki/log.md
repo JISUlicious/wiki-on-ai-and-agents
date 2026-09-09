@@ -9,6 +9,21 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-10] ingest | Weight streaming from SSD — 4 sources, 1 concept, 2 entities
+
+Prompted by "what was the name of that offloading-model-weights-to-SSD technique" (it was Apple's *LLM in a flash*, 2023) and a follow-up search for newer work and MLX implementations. The wiki had nothing on it.
+
+**New concept [[weight-streaming]]** — the byte-budget arithmetic (random reads at streaming granularity reach only 17–37% of an NVMe's rating, so the effective gap to unified memory is 50–600×, not 20–100×), the three sparsity sources across three generations, and a ten-project survey of Apple Silicon implementations with README-reported numbers. New entities [[mlx]] (product, draft) and [[apple]] (org, draft).
+
+**The structural finding**: the 2023 technique needed ReLU and does not transfer to SiLU/GELU models unmodified — [[llm-in-a-flash-alizadeh-2023|Alizadeh et al.]] had to *relufy* Falcon, Phi-2 and Llama 2 at 1–3 MMLU points each. The 2026 escape routes are lossy activation thresholding ([[neuroprefetcher-delta-prefetching-dhar-2026|NeuroPrefetcher]], Jetson Orin, 3.22 vs 0.34 tok/s but at ~88–90% of dense HellaSwag) or MoE routing, which gives an exact read list before the read with no accuracy change by construction. Every Mac implementation streams experts. The catalyst was [[flash-moe-ssd-expert-streaming-woods-2026|flash-moe]] (2026-03-18): Qwen3.5-397B-A17B on a 48 GB M3 Max at 4.36 tok/s, built in 24 hours of [[claude-code]] autoresearch — with experts-per-token cut from 10 to 4 and no accuracy delta reported. **Nothing is upstream**: the mlx-lm request has 32 comments and zero maintainer replies; the oMLX PR is open and unmerged (noted on [[omlx-specprefill-github-2026]]).
+
+**Measurements worth carrying**: the [[kv-cache]] and the expert cache share one RAM budget and KV wins — a 126 GB MoE streamed on a 64 GB M5 Pro falls from 4.65 tok/s at 512 context to 0.32 at 40K, and KV quantization restores 4.16. Streaming a model that would fit costs 7×. The same code runs 3.3× faster on an M5 Max than an M3 Max, which is the expert-cache hit rate talking.
+
+**Verification corrections**: the energy objection ([[ssd-offloading-moe-weights-considered-harmful-kyung-2025|Kyung et al.]]) is an analytical model with uniform-random routing and no caching; its "~12× for DeepSeek-R1" is Mixtral at batch 16, R1 peaks at 9.8×, and the batch-1 penalty versus a dense model is 1.14×. LLM in a flash's "4–5× / 20–25×" is early-version wording; the table supports 4.8× and 26×. NeuroPrefetcher's Fig. 6 and Table 4 disagree (1.60 vs 3.22 tok/s at the same budget), unreconciled. Also caught mid-ingest: this wiki's [[memory-management]] page is about *agent* memory, not DRAM — a backlink I had added there was removed.
+
+Sources 473 → 477, concepts 275 → 276, entities +2.
+
+
 ## [2026-09-09] ingest | Peer-session field measurements — M4 Air, Qwen3.6-35B-A3B — 5 pages corrected
 
 A peer session running Qwen3.6-35B-A3B on an M4 Air contributed measurements that corrected four pages and closed one open item. **[[chunked-prefill]]** and [[methods-to-speed-up-prompt-processing]] had stated SARATHI's "~5× slower prefill" as a general verdict; it is a multi-request scheduling trade, and single-user the same technique is memory-bounding and often faster — unchunked 32K OOMs, chunk 512 gives 135 tok/s, 2048 drops to 112. Both pages now scope the verdict. **[[hardware-accelerator]]**, written hours earlier, implied Apple's approval of TinyGPU opened an eGPU path; it does not — TinyGPU exposes the device only to tinygrad and MLX's CUDA backend is Linux-only, so an eGPU would replace an MLX-tuned stack rather than accelerate it. Corrected in a callout. **[[quantization-performance]]** gains a MoE counter-example to its dense-7B bandwidth tables: 4-bit→3-bit is 1.28× smaller for only 1.09× faster, which is overhead-bound, not bandwidth-bound. **[[omlx-specprefill-github-2026]]**'s tokenizer-parity item closes: Qwen3.6-35B-A3B `vocab_size` 248,320, matching 3.5 and 3.8.

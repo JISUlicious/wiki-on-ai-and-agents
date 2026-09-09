@@ -63,3 +63,7 @@ The interconnect objection is decisive **for accelerators that do not hold the m
 ## References
 
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] · [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] · [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] · [[hbm-is-not-all-you-need-wei-2026]]
+
+## Related 2026 sources
+
+- [[weight-streaming]] — the third Mac path, and the one that works: with FPGA blocked by drivers and eGPU blocked by the software stack, streaming MoE experts from the internal SSD is how models larger than RAM actually run on Apple Silicon in 2026

@@ -48,3 +48,4 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 - [[toktier-exact-stateful-tokenization-zhang-2026]] — once prefix caching works the bottleneck moves upstream: tokenization grows to 64% of TTFT, because caching cannot start until token IDs exist
 - [[sparse-prefill]] — every token-dropping method leaves dropped tokens with **no KV entry** — gone for the generation and later turns; only LazyLLM and SlimInfer can revive them
 - [[token-pruning]] — distinct from KV *eviction* (SnapKV, H2O): pruning skips the tokens' attention and FFN during prefill, eviction prefills everything then forgets
+- [[weight-streaming]] — the KV cache competes with the streamed-expert cache for one RAM budget, and KV wins: a 126 GB MoE streamed on a 64 GB Mac falls from 4.65 tok/s at 512 context to **0.32 at 40K**, and KV quantization restores it to 4.16. At long context, quantizing the KV cache is the precondition for streaming, not an optimization of it

@@ -172,3 +172,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[llm-memory-and-compute-bottlenecks]] — how the inference roofline sits against the training-side picture
 - [[arithmetic-intensity]] — the concept page consolidating the roofline material here
 - [[hardware-accelerator]] — how to audit non-GPU accelerator claims with it
+- [[weight-streaming]] — two Apple Silicon measurements that belong beside the tables here: streaming a model that *would* fit costs 7× (77.5 → 10.8 tok/s on gemma-4-26b), and at 40K context only KV quantization keeps a streamed 126 GB model above 0.32 tok/s

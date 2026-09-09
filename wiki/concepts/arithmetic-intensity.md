@@ -61,3 +61,7 @@ Intensity is also the tool for auditing accelerator results. An FPGA or ASIC tha
 ## References
 
 - [[llm-inference-roofline-yuan-2024]] · [[quantization-performance]] · [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]]
+
+## Related 2026 sources
+
+- [[weight-streaming]] — SSD as the tier below DRAM — 20–100× slower per byte than unified memory at sequential rating and 50–600× at the random-read granularity streaming actually uses, so viable only when the per-token working set is a small, *pre-known* fraction of the model

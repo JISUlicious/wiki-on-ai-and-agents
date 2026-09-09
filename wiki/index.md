@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 472 sources, 145 entities, 275 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 476 sources, 147 entities, 276 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Weight streaming from SSD (2026)
+- [[weight-streaming]] — **concept**: running a model larger than DRAM by reading only the per-token slice from flash; three sparsity sources (ReLU 2023, lossy thresholding 2026, MoE routing 2026) and the Apple Silicon implementation survey
+- [[llm-in-a-flash-alizadeh-2023]] — Apple, ACL 2024: windowing + row-column bundling; 4.8× CPU / 26× GPU vs naive reload on OPT-6.7B; needs ReLU, and relufying costs 1–3 MMLU points
+- [[neuroprefetcher-delta-prefetching-dhar-2026]] — ICPP 2026, Jetson Orin: delta prefetching on 82–85% neuron persistence; 3.22 vs 0.34 tok/s over llama.cpp mmap — at ~88–90% of dense HellaSwag
+- [[ssd-offloading-moe-weights-considered-harmful-kyung-2025]] — IEEE CAL: analytical model; SSD experts cost 3.8–12.5× HBM energy per token, but 1.14× vs dense at batch 1 and no caching modelled
+- [[flash-moe-ssd-expert-streaming-woods-2026]] — the catalyst: C/Metal engine running Qwen3.5-397B-A17B on a 48 GB M3 Max at 4.36 tok/s, built in 24 h of Claude Code autoresearch; top-k cut 10→4, no accuracy delta reported
+- [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
+- [[apple]] — **entity (org)**: the Apple Silicon platform, MLX, LLM in a flash, TinyGPU approval
 
 ### Hardware acceleration (2026)
 - [[arithmetic-intensity]] — **concept**: `FLOPs / bytes moved` and the ridge point; the number that decides which optimizations can possibly help a phase

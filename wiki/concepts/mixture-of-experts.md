@@ -60,3 +60,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[moonshot-ai]] — Kimi K3 pairs KDA + AttnRes with Stable LatentMoE at 16-of-896 sparsity
 - [[distributed-training]] — expert parallelism as a fourth dimension alongside DP/TP/PP
 - [[qwen3.8-flash-next]] — 512 experts, 10 routed + 1 shared, 6B activated of 125B — plus a 51B n-gram embedding table offered as a cheaper parameter-scaling axis than more experts
+- [[weight-streaming]] — the 2026 consequence of routing sparsity: because the router names the *k* experts before their weights are needed, a MoE can be run from SSD with only the active experts in RAM and **no accuracy change by construction** — a 397B model on a 48 GB laptop at ~4 tok/s. Dense models cannot do this without a lossy activation predictor

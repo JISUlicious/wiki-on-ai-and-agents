@@ -55,3 +55,4 @@ As of May–June 2026, Claude Code can **write and orchestrate its own multi-age
 ## Related 2026 sources
 
 - [[ai-native-sdlc]] — the lifecycle claim this tool anchors, and where the industry narrative meets the wiki's controlled measurements
+- [[flash-moe-ssd-expert-streaming-woods-2026]] — a 24-hour *autoresearch* build: ~90 propose-run-read experiments, generating the Objective-C and Metal for an SSD expert-streaming engine that runs a 397B MoE on a 48 GB laptop. Also a caution — the loop's claim that 2-bit was "indistinguishable from 4-bit" was not backed by a described evaluation, and the 2-bit build broke tool calling
