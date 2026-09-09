@@ -89,3 +89,4 @@ Part of the [[qwen|Qwen]] family; the architecture line (`qwen4_exp`) is new rat
 ## Related 2026 sources
 
 - [[sparse-attention]] — Qwen Sparse Attention's 2,048-token indexer budget is the *trained* form of what MInference assigns offline and Token Sparse Attention selects online
+- [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — an FPGA accelerator targeting this architecture's GDN layers specifically — it cites 'Qwen3-Next uses 75% GDN layers', matching this page's 36-of-48 split

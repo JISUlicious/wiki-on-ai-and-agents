@@ -145,3 +145,4 @@ Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill
 
 - [[cross-model-kv-cache-transfer]] — a fifth 'skip it' route — reuse the *previous model's* KV when routing swaps models mid-conversation; 4–25× vs re-prefill on matched-KV pairs
 - [[from-llm-inference-to-agentic-workloads-chang-2026]] — the orthogonal finding: **the model is often not the bottleneck.** Non-LLM components dominate latency in 5 of 10 instrumented applications, and a fixed 5-minute KV TTL against human-paced idle gaps evicts 59.4% of sessions, causing **31.5% of total monetary cost**
+- [[hardware-accelerator]] — the silicon answer to the same question — and why there is **no FPGA path on a Mac**: XRT is Linux-only, no Apple Silicon PCIe, and Thunderbolt gives 3–15 GB/s against ~120 GB/s of unified memory

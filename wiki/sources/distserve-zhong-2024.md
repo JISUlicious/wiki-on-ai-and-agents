@@ -69,3 +69,7 @@ The paper is also the sharpest published critique of [[chunked-prefill]]. It cha
 ## References
 
 - [arXiv:2401.09670](https://arxiv.org/abs/2401.09670)
+
+## Related 2026 sources
+
+- [[hbm-is-not-all-you-need-wei-2026]] — the same phase split across **heterogeneous memory** rather than identical GPUs: GDDR parts for prefill, HBM for decode. Motivated by an A100 leaving **96.8–97.2% of HBM bandwidth idle** during 4K prefill while HBM is 18–45% of build cost. Measured 3.2× goodput and 4.8× goodput-per-dollar at 14B — with an honest loss at 4B. DistServe-Homo is both its baseline and its SLO calibration

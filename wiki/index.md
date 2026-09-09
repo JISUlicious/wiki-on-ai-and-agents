@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 468 sources, 145 entities, 273 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 472 sources, 145 entities, 275 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Hardware acceleration (2026)
+- [[arithmetic-intensity]] — **concept**: `FLOPs / bytes moved` and the ridge point; the number that decides which optimizations can possibly help a phase
+- [[hardware-accelerator]] — **concept**: non-GPU silicon, and how to read its claims — scope and host-transfer accounting are where the headlines break
+- [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — Gated DeltaNet decode on an Alveo U55C; holds a 2 MB recurrent state for **one layer** and no weights. Also measures GDN at 0.87 FLOP/B — subquadratic is *more* memory-bound than what it replaces
+- [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse-attention prefill on an FPGA; a 5.4 TOPS part beating a 222 TOPS GPU, with four inconsistent statements of its own headline
+- [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] — GPUs win prefill by up to 39×; GroqRack wins decode by ~4× TPOT, crossing over at batch > 4
+- [[hbm-is-not-all-you-need-wei-2026]] — disaggregation across *memory technologies*: GDDR for prefill, HBM for decode, 4.8× goodput-per-dollar at 14B
 
 ### AI-native software development (2026)
 - [[ai-native-sdlc]] — **concept**: writing code stops being the bottleneck, so the constraint inverts onto plan/review/test/deploy. Practical shape is throughput under supervision, not autonomy

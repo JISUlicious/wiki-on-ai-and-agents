@@ -167,3 +167,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[training-memory-anatomy]] — the training-side counterpart: optimizer states and activations dominate, not weights
 - [[mixed-precision-training]] — fp16/bf16 training and why the fp32 master copy *raises* weight memory 50%
 - [[llm-memory-and-compute-bottlenecks]] — how the inference roofline sits against the training-side picture
+- [[arithmetic-intensity]] — the concept page consolidating the roofline material here
+- [[hardware-accelerator]] — how to audit non-GPU accelerator claims with it

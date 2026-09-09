@@ -9,6 +9,27 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-09] ingest | FPGA and non-GPU LLM accelerators — 4 sources, 2 concepts
+
+Prompted by a question about whether an FPGA could accelerate prefill or decode on a Mac. The answer is no — three independent blockers, any one sufficient: **XRT's memory management lives in a Linux kernel driver** with no macOS build, **no Apple Silicon Mac exposes usable third-party PCIe**, and Thunderbolt gives 3–15 GB/s against ~120 GB/s of unified memory. But the literature is real and worth holding, and this wiki had **zero** hardware-accelerator coverage.
+
+**New concepts.** [[arithmetic-intensity]] — `FLOPs / bytes moved` against the ridge point — was overdue: 16 existing pages discuss it and both [[quantization-performance]] and [[llm-inference-roofline-yuan-2024]] carried the material without a home. [[hardware-accelerator]] is the umbrella, written sceptically, because these papers' headlines are unusually hard to read.
+
+**The finding worth carrying beyond hardware**: [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026|Gupta et al.]] measure Gated DeltaNet decode at **0.87 FLOP/byte** against MHSA+GQA's ~1 and an H100 ridge point of 25.6. **Subquadratic attention is *more* memory-bound at decode than the Transformers it replaces.** A fixed-size recurrent state is a memory-*capacity* win and an *intensity* loss, because every layer reads and writes its entire state matrix on every token regardless of sequence length. Filed on [[linear-attention]] — it qualifies the whole hybrid-architecture story this wiki has been tracking through [[qwen3.8-flash-next]] and Kimi's KDA.
+
+**Verification found the headlines do not survive contact with the bodies.**
+
+*Gupta et al.*: every quoted figure verifies — 63.2 μs/token, 4.5× vs H100 PCIe, 9.96 W, 2 MB in BRAM — but **the configuration producing them never places and routes**. Only H_iter=2 was implemented, at 161.7 μs, a realised **1.76×**; H_iter=4 fails with 88,725 unroutable signals. The board holds the recurrent state for **one layer** and no weights at all — no projections, no FFN/MoE, no softmax layers, no prefill. Derived: 36 GDN layers × 63.2 μs ≈ **2.27 ms/token ≈ 440 tok/s** for the GDN layers alone, so a per-layer 4.5× does not compose into a system win. The paper is honest in one place the abstract is not: *"assuming the full 150 W board TDP, energy efficiency ranges from 7.6× to 10.5×"* — that is the like-for-like number, not 60×. And its H100 baseline sits **~134× above its own roofline**, i.e. dominated by PyTorch eager overhead rather than the HBM round-trip the paper indicts; FlashInfer is cited but never benchmarked.
+
+*FAST-Prefill*: states its headline **four mutually inconsistent ways** in one paper (abstract "up to 2.5×", intro "1.2–2.5×", §V-B2 "1.5× to 2.5×", conclusion "up to 2×"), reports **no absolute latency or power anywhere**, and **never names the host interconnect** — "PCIe" does not appear in the text. Strong circumstantial evidence the transfer is excluded: FPGA latency comes from Vitis Analyzer (device-side) while the GPU uses PyTorch timing (host-observed). Its accuracy story omits that the INT-8 baseline it matches has already lost **46% relative on 1B** versus BF16, and no BF16 comparison is ever made.
+
+*Wei et al.* is the strongest of the four and the direct [[distserve-zhong-2024|DistServe]] descendant, with the host path honestly accounted (device-to-host DMA measured at 6.7 GB/s, fabric at 92.3 Gb/s, both on the critical path). Its own quality narrative fails on Qwen3-8B, where full BFP8 beats its method by 8.6 points on AIME25 — flagged on the page.
+
+*Usami et al.* supplies the phase asymmetry: GPUs win prefill by up to **39× latency / 41× throughput**; GroqRack wins decode by **~4× TPOT**, with the GPU crossing over at batch > 4. Two of its four causes are implementation limits rather than silicon — Groq's supplied binary runs one token per invocation because the LPU has no branch instructions.
+
+Sources 469 → 473, concepts 273 → 275.
+
+
 ## [2026-09-07] ingest | The AI-Native SDLC Playbook — 1 source, 1 concept rewritten
 
 **Correction to the previous entry.** The requested article was [claude.com/blog/the-ai-native-sdlc-playbook](https://claude.com/blog/the-ai-native-sdlc-playbook); I searched anthropic.com and ingested the [[agentic-coding-trends-report-anthropic-2026|Agentic Coding Trends Report]] instead. That page stands on its own merits and is kept, but it is a *forecast* where this is a *playbook*. [[ai-native-sdlc]] has been rewritten to anchor on the correct source, with the Trends Report demoted to companion.

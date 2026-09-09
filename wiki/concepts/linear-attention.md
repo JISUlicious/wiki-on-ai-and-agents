@@ -88,3 +88,4 @@ Kimi Linear states them: finite-state capacity still caps exact recall (hence th
 ## Related 2026 sources
 
 - [[qwen3.8-flash-next]] — 36 of 48 layers are Gated DeltaNet, with the other 12 sparse — the same 3:1 linear-to-full ratio Kimi Linear reached independently
+- [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — the uncomfortable measurement: Gated DeltaNet's arithmetic intensity at decode is **0.87 FLOP/byte** against MHSA+GQA's ~1 and an H100 ridge point of 25.6 — **subquadratic models are *more* memory-bound at decode than the Transformers they replace**. A fixed-size state is a capacity win and an intensity loss, because every layer reads and writes its whole state matrix on every token regardless of sequence length

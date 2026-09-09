@@ -65,3 +65,7 @@ It is orthogonal to [[prefix-caching]] (skip repeated content), [[chunked-prefil
 ## References
 
 - [[speculative-prefill-liu-2025]] · [[cross-family-speculative-prefill-upasani-2026]] · [[draft-based-approximate-inference-galim-2025]] · [[lazyllm-dynamic-token-pruning-fu-2024]] · [[discovering-the-gems-in-early-layers-shi-2024]] · [[sliminfer-dynamic-token-pruning-long-2025]] · [[probe-and-skip-self-predictive-token-skipping-wu-2026]] · [[minference-dynamic-sparse-attention-jiang-2024]] · [[token-sparse-attention-jo-2026]] · [[claa-cross-layer-attention-aggregation-mcdanel-2026]]
+
+## Related 2026 sources
+
+- [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse attention implemented in silicon — a **5.4 TOPS FPGA beating a 222 TOPS GPU** because the kernel is memory-bound, which is this cluster's decision rule stated in hardware
