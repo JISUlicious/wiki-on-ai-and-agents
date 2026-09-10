@@ -9,7 +9,7 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
-## [2026-09-10] ingest | Prefill acceleration sweep — 12 sources, 1 concept
+## [2026-09-10] ingest | Prefill acceleration sweep — 17 sources, 1 concept
 
 Prompted by "search for prefill boosting methods." The wiki's [[methods-to-speed-up-prompt-processing]] page was a 2024–2025 answer; this adds the 2026 layer and a lineage it had entirely missed.
 
@@ -24,6 +24,8 @@ Prompted by "search for prefill boosting methods." The wiki's [[methods-to-speed
 **Apple Silicon**: [[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's M5 post]] — 3.3–4.1× TTFT over M4, 1.19–1.27× generation — dominates the software list for a Mac user; on M4 GPUs FP8 is emulated (Rigel, page pending). The query page's recommended order gets three amendments.
 
 Peer corrections applied mid-ingest: a prefix-caching figure I had attributed to the peer came from an earlier session they cannot vouch for and was removed from [[hardware-accelerator]]; their MTP measurement (2.11× on a dense 27B, 94.6% acceptance) is on [[speculative-decoding]]; oMLX's VLM-MTP path is verified to sample at temperature while its DFlash path is recorded as **unverified**, on [[omlx-specprefill-github-2026]].
+
+**Wave two (after the limit reset)** — five more sources. [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026|Rigel]] settles the M4 precision question with measurement: fp16 `matmul2d` at 14.80 TFLOP/s (≈46% of the scalar roofline) and fp8 at 0.871–0.941× fp16, i.e. emulated; only fp16 and fp8 are measured, so any "M4 INT8/BF16 TFLOPS" attributed to it is not in the paper. [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026|The M1 AMX paper]] is the CPU path — 1.44× llama.cpp prefill at 128 tokens, reversing to 0.82× at 512, never compared to Metal. [[basert-native-metal-inference-apple-silicon-rathnayaka-2026|BaseRT]]'s headline hides that it **trails llama.cpp on dense prefill in 7 of 8 configs** and MLX from 512 tokens up, its MoE prefill lead decays to ~1.0× by 2,048 tokens, its engine is proprietary, and it never measures M5. [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] adds a fourth position to [[trained-sparse-attention]]'s axis — a training-free retrofit that presupposes a DSA-trained model — at 3.82× on a kernel that is ~3% of compute. [[gated-sparse-attention-shen-2026|Gated Sparse Attention]]'s own ablation shows sparse-only is *more* stable than dense and that its RULER gain is mostly the gates'; it also assumes DSA's indexer has 4 heads where the released config says 64 — filed as a Contradiction on the concept page.
 
 One agent (NSA/MoBA/DSA) died on a session rate limit after writing two of three pages; the DSA page was written from a targeted full-text fetch. Rigel, BaseRT, the M1 AMX paper, MISA and Gated Sparse Attention are queued for a second wave after the limit resets.
 

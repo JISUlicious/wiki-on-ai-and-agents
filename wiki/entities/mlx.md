@@ -38,3 +38,4 @@ The LLM layer is **mlx-lm** (Python: `mlx_lm.load`, `generate`, an OpenAI-compat
 ## Related 2026 sources
 
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — Apple's M5 benchmark: 3.3–4.1× TTFT over M4 through MLX, automatic on macOS 26.2+
+- [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] — a closed-core native-Metal runtime benchmarked against MLX v0.31.2 on M4 Pro: decode 0.90–1.35× (the 1.35× is one 0.6B cell); **dense prefill 0.82–0.90× MLX at 2,048 tokens**; MoE prefill 1.42–1.78× at 128 tokens decaying to ~1.0× at 2,048. No M5 / Neural Accelerator comparison

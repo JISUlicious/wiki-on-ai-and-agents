@@ -36,3 +36,4 @@ DeepSeek's open releases — particularly the R1 weights and recipe — substant
 - [[deepseek-v3.2-sparse-attention-deepseek-2025]] — DSA and the lightning indexer: sparsity retrofitted onto V3.1-Terminus with ~1T tokens of continued pre-training
 - [[native-sparse-attention-yuan-2025]] — NSA, ACL 2025 best paper — the from-scratch version
 - [[trained-sparse-attention]] — the lineage page
+- [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — a third-party retrofit that makes V3.2's lightning indexer 3.82× cheaper by skipping 56 of its 64 heads per query

@@ -36,3 +36,5 @@ Useful flags: `-ctk` / `-ctv` set [[kv-cache]] precision (`f16` / `q8_0` / `q4_0
 
 - [[omlx-specprefill-github-2026]] — the Apple-Silicon server that ships positional SpecPrefill, oQ mixed-precision quantization, MTP and DFlash speculative decoding, and a tiered KV cache with SSD spill
 - [[weight-streaming]] — why a memory-mapped GGUF larger than RAM "runs" but crawls: `mmap` is OS demand paging with no knowledge of what the next token needs. Streaming runtimes read ahead from the router's expert list instead; NeuroPrefetcher's 3.22 vs 0.34 tok/s is measured against exactly this llama.cpp baseline
+- [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] — trails llama.cpp on dense prefill in 7 of 8 configs (by 1–10%) while leading decode 1.04–1.56×; the headline numbers are the single Qwen3-0.6B Q4 cell
+- [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] — the `ggml-blas` CPU path made 1.44× faster at 128-token fp32 prefill with direct-AMX kernels — and 0.82× at 512

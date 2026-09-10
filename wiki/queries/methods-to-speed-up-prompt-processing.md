@@ -155,7 +155,7 @@ Eleven sources ingested in one pass; the numbers below are body-verified unless 
 
 **Trained sparse attention is a model choice, not a kernel choice.** [[trained-sparse-attention]] — NSA, MoBA, DeepSeek-V3.2's DSA — puts the selector in the training loop, and a model that ships it has already taken the long-context win. No evidence exists for stacking a retrofit on top.
 
-**Apple Silicon, two hardware facts.** The M5's GPU Neural Accelerators give **3.3–4.1× TTFT over M4** at a 4,096-token prompt and only 1.19–1.27× on generation ([[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's own post]], vendor numbers). And on M4-generation GPUs FP8 matmul is *emulated* at 0.87–0.94× FP16 throughput (Rigel, arXiv:2606.12765), so Tier 4 does not apply to M4 Macs.
+**Apple Silicon, two hardware facts.** The M5's GPU Neural Accelerators give **3.3–4.1× TTFT over M4** at a 4,096-token prompt and only 1.19–1.27× on generation ([[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's own post]], vendor numbers). And on M4-generation GPUs FP8 matmul is *emulated* at 0.87–0.94× FP16 throughput ([[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026|Rigel]]), so Tier 4 does not apply to M4 Macs.
 
 > [!note] Field measurement: prefill cost tracks *active* parameters
 > Same M4 Air (32 GB), same oMLX harness, same prompts, temperature 0, 2026-09-10, contributed by a peer session. Both a dense and a MoE model amortize fixed overhead with length — the curves have the same shape, a climb and then a memory-pressure knee near 35K — but sit at levels separated by ~9×:
@@ -195,3 +195,7 @@ Eleven sources ingested in one pass; the numbers below are body-verified unless 
 - [[cross-model-kv-cache-transfer]] — a fifth 'skip it' route — reuse the *previous model's* KV when routing swaps models mid-conversation; 4–25× vs re-prefill on matched-KV pairs
 - [[from-llm-inference-to-agentic-workloads-chang-2026]] — the orthogonal finding: **the model is often not the bottleneck.** Non-LLM components dominate latency in 5 of 10 instrumented applications, and a fixed 5-minute KV TTL against human-paced idle gaps evicts 59.4% of sessions, causing **31.5% of total monetary cost**
 - [[hardware-accelerator]] — the silicon answer to the same question — and why there is **no FPGA path on a Mac**: XRT is Linux-only, no Apple Silicon PCIe, and Thunderbolt gives 3–15 GB/s against ~120 GB/s of unified memory
+- [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] — runtime choice is not a prefill lever on Apple Silicon: BaseRT trails llama.cpp on dense prefill in 7 of 8 configs and MLX from 512 tokens up; its MoE prefill lead exists only at short prompts. Engine proprietary; no M5 comparison
+- [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] — CPU-side prefill on M1: 1.44× at 128 tokens, 0.82× at 512 — the AMX path does not scale with prompt length
+- [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — a training-free speedup for models *already* running DSA: 3.82× on the indexer kernel, ~3% of per-token compute, so low-single-digit end-to-end
+- [[gated-sparse-attention-shen-2026]] — from-scratch trained sparse attention with element-wise gates; the long-context gain is mostly the gates'

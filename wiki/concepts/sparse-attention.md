@@ -75,3 +75,5 @@ Trained sparse attention — [[minimax-sparse-attention-lai-2026|MiniMax]]'s 28.
 - [[deepseek-v3.2-sparse-attention-deepseek-2025]] — the lightning indexer: FP8, few heads, top-2,048 per query; a dense model adapted with ~1T tokens of continued pre-training
 - [[sts-speculative-token-sparsity-yu-2026]] — **decode-side**: draft-model attention builds a per-head mask for the target's verification pass; 1.36×/2.06×/2.88× at 10K/32K/100K generation; prefill kept dense by default
 - [[specattn-speculating-sparse-attention-shah-2025]] — same idea at layer granularity with top-p; 78% of KV reads skipped at +15% perplexity — but **net slower** than plain speculative decoding (59.95 vs 68.26 tok/s)
+- [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — routes each query to 8 of DSA's 64 indexer heads, parameter-free; retrofit onto DSA-trained models only
+- [[gated-sparse-attention-shen-2026]] — DSA-style indexer plus G1/G2 gates, 1.7B from scratch; sparse-only is already *more* stable than dense in its own table

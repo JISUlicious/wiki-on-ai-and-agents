@@ -50,7 +50,7 @@ The split is the [[arithmetic-intensity]] argument in hardware form. Prefill is 
 > [!note] Hardware first, then software
 > Every software lever on [[methods-to-speed-up-prompt-processing]] — [[prefix-caching]], [[sparse-prefill]], [[speculative-prefill]], token pruning — is worth 1.1–2.3× on a cold prompt at the lengths a laptop sees. A generation change is worth 3.3–4.1× on the same phase and composes with all of them. For a user whose complaint is prompt-processing time, the M4→M5 step dominates the whole software list.
 >
-> The converse also holds. On M4-generation GPUs there is no low-precision datapath at all: Metal 4.1's FP8 matmul is emulated at 0.87–0.94× FP16 throughput (Rigel, 2026), so the "lower the compute roof with FP8/INT8" tier of that page does not apply to M4 Macs.
+> The converse also holds. On M4-generation GPUs there is no low-precision datapath at all: Metal 4.1's FP8 matmul is emulated at 0.87–0.94× FP16 throughput ([[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026|Rigel]], 2026), so the "lower the compute roof with FP8/INT8" tier of that page does not apply to M4 Macs.
 
 The same generation step shows up on the [[weight-streaming]] page from the other side: the flash-moe engine runs 3.3× faster on an M5 Max than an M3 Max on identical code.
 

@@ -8,6 +8,8 @@ sources:
   - moba-mixture-of-block-attention-lu-2025.md
   - deepseek-v3.2-sparse-attention-deepseek-2025.md
   - flashmemory-lookahead-sparse-attention-wang-2026.md
+  - misa-mixture-of-indexer-sparse-attention-zhou-2026.md
+  - gated-sparse-attention-shen-2026.md
 status: complete
 importance: high
 ---
@@ -25,6 +27,13 @@ The shared design across the lineage: a cheap per-query selector (pooled keys, c
 | **NSA** (DeepSeek, Feb 2025; ACL 2025 best paper) | three parallel branches — compressed coarse tokens, selected fine-grained blocks, sliding window — mixed by a learned gate; blocks aligned to GQA groups | block | **from scratch**: 27B total / 3B active, 260–270B tokens | attention kernel **9.0× forward / 6.0× backward at 64K**, 11.6× decode; matches or beats full attention on general, long-context and reasoning benchmarks |
 | **MoBA** (Moonshot, Feb 2025) | per-query top-k over mean-pooled key blocks, MoE-style gate; the current block always attended | block | **adapt**: fine-tune a dense model, can switch full↔sparse | **6.5× at 1M**, 16× at 10M, ~1× at 512K; deployed for Kimi's long-context serving |
 | **DSA** (DeepSeek-V3.2, Dec 2025) | lightning indexer — few heads, FP8, `ReLU(q·k)` scores — then top-2,048 entries per query under MLA | **token** | **adapt**: 2.1B-token dense warm-up training only the indexer, then 943.7B-token sparse stage on the whole model | parity with V3.1-Terminus on short and long tasks; O(L²) → O(L·k) main attention |
+| **Gated Sparse Attention** (Jan 2026) | DSA-style indexer with sigmoid scores plus Qiu et al.'s element-wise G1/G2 gates on values and head outputs; adaptive k in [256, 4,096] | token | **from scratch**: 1.7B, 400B SlimPajama tokens, 4K window, YaRN to 128K | RULER-128K **62.2 vs 31.7** dense — but *gated-only dense* scores 58.8, so the gain is mostly gating's; "11×" prefill at 128K is relative and unscoped |
+| **MISA** (May 2026) | route each query to **8 of the indexer's 64 heads** with a parameter-free router over pooled keys; main attention unchanged | token, head-axis cut | **training-free retrofit — but only onto models already trained with DSA** (V3.2, GLM-5) | **3.82× on the indexer kernel** (H200); LongBench 50.85 vs DSA 51.05; kernel-only, and the indexer is ~3% of per-token compute at 128K |
+
+[[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] adds a **fourth position** the from-scratch / adapt / retrofit axis did not have: a training-free retrofit that presupposes the trained column. It cannot sparsify a dense model; it makes an already-sparse model's selector cheaper. [[gated-sparse-attention-shen-2026|GSA]] is the cautionary entry — its own ablation shows the sparse-only baseline is *already more stable* than dense (8.7 vs 12.3 loss spikes per 100K steps), so the paper does not show sparsity causing instability, and its long-context win belongs mostly to a generic gating trick.
+
+> [!warning] Contradiction — how many heads does DSA's lightning indexer have?
+> [[gated-sparse-attention-shen-2026|GSA]] §2.2 says "typically 4" and builds its theoretical cost figures on H^I = 4. The released DeepSeek-V3.2 and V3.2-Exp configs say `index_n_heads: 64`, which is also what [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] uses and what its 8-of-64 routing presupposes. The config is authoritative; GSA's theoretical numbers are off by that factor.
 
 Two details from the source pages that the headlines hide:
 
@@ -54,4 +63,4 @@ The practical consequence for anyone choosing a model rather than a kernel: **a 
 
 ## References
 
-- [[native-sparse-attention-yuan-2025]] · [[moba-mixture-of-block-attention-lu-2025]] · [[deepseek-v3.2-sparse-attention-deepseek-2025]] · [[flashmemory-lookahead-sparse-attention-wang-2026]] · [[minference-dynamic-sparse-attention-jiang-2024]]
+- [[native-sparse-attention-yuan-2025]] · [[moba-mixture-of-block-attention-lu-2025]] · [[deepseek-v3.2-sparse-attention-deepseek-2025]] · [[gated-sparse-attention-shen-2026]] · [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] · [[flashmemory-lookahead-sparse-attention-wang-2026]] · [[minference-dynamic-sparse-attention-jiang-2024]]

@@ -64,3 +64,8 @@ The rest of the paper — the RL training pipeline, reasoning-mode results, the 
 ## References
 
 - [arXiv:2512.02556](https://arxiv.org/abs/2512.02556)
+
+## Related 2026 sources
+
+- [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — skips 56 of the indexer's 64 heads per query, training-free, at LongBench 50.85 vs 51.05
+- [[gated-sparse-attention-shen-2026]] — assumes the indexer has 4 heads; the released config says 64 — see the contradiction on [[trained-sparse-attention]]

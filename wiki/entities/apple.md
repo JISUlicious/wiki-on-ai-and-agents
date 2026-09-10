@@ -29,3 +29,4 @@ Hardware and platform company whose relevance to this wiki is the **Apple Silico
 ## Related 2026 sources
 
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the M5 Neural Accelerators measured: Qwen3-14B 4-bit 4.06× TTFT, 1.19–1.27× generation
+- [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] — Metal 4.1's tensor path on the M4 Max reverse-engineered: fp8 emulated, M4 explicitly "a pre–neural-accelerator generation"

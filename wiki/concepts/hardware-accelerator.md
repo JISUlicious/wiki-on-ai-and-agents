@@ -68,3 +68,4 @@ The interconnect objection is decisive **for accelerators that do not hold the m
 
 - [[weight-streaming]] — the third Mac path, and the one that works: with FPGA blocked by drivers and eGPU blocked by the software stack, streaming MoE experts from the internal SSD is how models larger than RAM actually run on Apple Silicon in 2026
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the accelerator that *is* on a Mac: matrix units in every M5 GPU core, 3.3–4.1× on the compute-bound phase
+- [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] — why FP8 buys nothing on M4 GPUs — the MPP `matmul2d` path lowers onto the same shader ALUs as `simdgroup_matrix`, with no low-precision datapath until the M5 Neural Accelerators

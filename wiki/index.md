@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 487 sources, 147 entities, 279 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 492 sources, 147 entities, 279 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -636,6 +636,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[moba-mixture-of-block-attention-lu-2025]] — Moonshot; top-k pooled key blocks; 6.5× at 1M, ~1× at 512K; deployed in Kimi
 - [[deepseek-v3.2-sparse-attention-deepseek-2025]] — DSA: FP8 lightning indexer, top-2,048 per query, ~1T tokens to retrofit onto V3.1-Terminus
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — Apple: M5 over M4 is 3.3–4.1× TTFT and 1.19–1.27× generation at a 4,096-token prompt
+- [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] — M4 Max GPU reverse-engineered: fp16 14.80 TFLOP/s at 2048³ (≈46% of roofline); **fp8 emulated at 0.871–0.941× fp16**; no BF16/INT8 row; M4 is "pre–neural-accelerator"
+- [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] — CPU path: direct-AMX fp32 GEMM on M1, 1.17× over Accelerate, llama.cpp prefill 1.44× at 128 tokens and 0.82× at 512; never compared to Metal
+- [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] — closed-core native-Metal runtime: decode 1.04–1.56× llama.cpp, but **trails on dense prefill in 7 of 8 configs** and MLX from 512 tokens; MoE prefill lead only at short prompts; no M5
+- [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — training-free retrofit *onto DSA-trained models*: 8 of 64 indexer heads per query, 3.82× on the indexer kernel, ~3% of compute
+- [[gated-sparse-attention-shen-2026]] — 1.7B from scratch with DSA-style indexer + G1/G2 gates; RULER-128K 62.2 vs 31.7, but gated-only dense gets 58.8; assumes 4 indexer heads vs 64 in the released config
 
 ### Weight streaming from SSD (2026)
 - [[weight-streaming]] — **concept**: running a model larger than DRAM by reading only the per-token slice from flash; three sparsity sources (ReLU 2023, lossy thresholding 2026, MoE routing 2026) and the Apple Silicon implementation survey
