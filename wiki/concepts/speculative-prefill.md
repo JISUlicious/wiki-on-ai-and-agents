@@ -70,7 +70,7 @@ Liu et al. keep every surviving token at its **original position ID**, so the ta
 > | 17,357 | 313.7 | 233.1 | 0.74 | 1.06× |
 > | 35,449 | 164.3 | 125.3 | 0.76 | 1.04× |
 >
-> The draft degrades with length too, so the ratio plateaus near 0.75 rather than opening up. A dense ~3.1B-active draft is simply not cheap relative to a 3B-active target: **prefill cost tracks active parameters on both sides**, and "a 4B draft for a 35B model" is a category error when the 35B is sparse. Against a dense 27B the same draft projects to a 0.16–0.26 ratio and 2.2–2.8× — projected, not measured. Contributed by a peer session; the full pipeline was not run, only the cost ratio that bounds it.
+> The draft degrades with length too, so the ratio plateaus near 0.75 rather than opening up. A dense ~3.1B-active draft is simply not cheap relative to a 3B-active target: **prefill cost tracks active parameters on both sides**, and "a 4B draft for a 35B model" is a category error when the 35B is sparse. Against a dense 27B the same draft projects to a 0.16–0.26 ratio and 2.2–2.8× — projected, not measured. Any future measurement of that row must pair the speed number with needle recall at five prompt depths: keep 0.20 discards four fifths of the prompt, and a speedup that loses mid-context facts is not a speedup. Contributed by a peer session; the full pipeline was not run, only the cost ratio that bounds it.
 
 ## Related
 
