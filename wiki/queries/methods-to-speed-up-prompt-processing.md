@@ -133,7 +133,7 @@ Three traps, all of them things that genuinely help decode:
 >
 > The general rule: **chunked prefill costs you when you are scheduling against other requests and helps you when you are bounding memory.** Establish which regime you are in before reading SARATHI's number as a verdict.
 >
-> Provenance: these tok/s figures come from an earlier peer session; a successor session later found its harness vulnerable to prefix-cache contamination. The OOM and the non-monotonic shape are robust; treat the absolute tok/s as unverified.
+> Provenance: measured with `mlx_lm` on a bare model — fresh KV cache per run, synthetic prompt, no server in the loop — so immune by construction to the prefix-cache contamination that invalidated the served-path ladder in the 2026 section below. The absolute tok/s stand. They characterize chunk-size behaviour in isolation; the served-path numbers below characterize the oMLX scheduler. Different stack, different chunk policy — do not put them in one table.
 
 Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill is already parallel. **Do not confuse it with [[speculative-prefill]]** — same word, opposite phase; a draft with an MTP head can serve both, but they are two levers.
 
