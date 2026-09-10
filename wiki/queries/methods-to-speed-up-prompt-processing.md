@@ -132,6 +132,8 @@ Three traps, all of them things that genuinely help decode:
 > Non-monotonic with a clear optimum, so the chunk size is the whole decision. Below it you pay per-chunk launch overhead; above it the attention buffer grows again. Unchunked does not run at all.
 >
 > The general rule: **chunked prefill costs you when you are scheduling against other requests and helps you when you are bounding memory.** Establish which regime you are in before reading SARATHI's number as a verdict.
+>
+> Provenance: these tok/s figures come from an earlier peer session; a successor session later found its harness vulnerable to prefix-cache contamination. The OOM and the non-monotonic shape are robust; treat the absolute tok/s as unverified.
 
 Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill is already parallel. **Do not confuse it with [[speculative-prefill]]** — same word, opposite phase; a draft with an MTP head can serve both, but they are two levers.
 
@@ -157,19 +159,22 @@ Eleven sources ingested in one pass; the numbers below are body-verified unless 
 
 **Apple Silicon, two hardware facts.** The M5's GPU Neural Accelerators give **3.3–4.1× TTFT over M4** at a 4,096-token prompt and only 1.19–1.27× on generation ([[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's own post]], vendor numbers). And on M4-generation GPUs FP8 matmul is *emulated* at 0.87–0.94× FP16 throughput ([[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026|Rigel]]), so Tier 4 does not apply to M4 Macs.
 
-> [!note] Field measurement: prefill cost tracks *active* parameters
-> Same M4 Air (32 GB), same oMLX harness, same prompts, temperature 0, 2026-09-10, contributed by a peer session. Both a dense and a MoE model amortize fixed overhead with length — the curves have the same shape, a climb and then a memory-pressure knee near 35K — but sit at levels separated by ~9×:
+> [!warning] Field measurement, retracted and corrected the same day (2026-09-10)
+> A peer session first reported that prefill throughput on an M4 Air *climbs* with prompt length — 293 → 749 tok/s on Qwen3.6-35B-A3B. **That measurement was oMLX's prefix cache, not prefill.** The harness appended its nonce to the *end* of a fixed filler, so each rung's prompt was a strict prefix of the next, and the server reported 69–87% of tokens served from cache. Re-run with the nonce first and `cached_tokens` asserted zero on every request, same model, 4-bit:
 >
-> | Prompt tokens | Qwen3.8-27B dense, 4-bit | Qwen3.6-35B-A3B MoE, 4-bit |
-> |---|---|---|
-> | 449 | 51.1 tok/s | 293 tok/s |
-> | 5,974 | 32.1 | 395 |
-> | 11,869 | 47.6 | 534 |
-> | 17,346 | 66.4 | 744 |
-> | 23,654 | **81.7** | **749** |
-> | 35,442 | 63.0 (0.2 GB free) | 379 (chunk throttled 2048→1024) |
+> | Prompt tokens | First reported | Actual | Inflation |
+> |---|---|---|---|
+> | 5,972 | 395 | **403.7** | 1.0× |
+> | 11,871 | 534 | **385.1** | 1.4× |
+> | 17,342 | 744 | **233.1** | 3.2× |
+> | 23,657 | 749 | **145.9** | 5.1× |
+> | 35,441 | 379 | **125.3** | 3.0× |
 >
-> At 35,442 tokens the time to first token was **562 s** for the 27B dense on one Mac, **575 s** for Qwen3.8-Flash-Next-99B-A5B pipeline-parallel across *two* Macs over Thunderbolt (peak 79.9 tok/s, reached at 1.5K), and **93 s** for the 35B-A3B on one Mac. Architecture dominates both parameter count and machine count. The gap is per-token GEMM, which is what token pruning cuts and sparse attention mostly does not — the UniPrefill rule, measured.
+> Prefill is **flat at ~380–400 tok/s to ~12K and then declines**; a 35K prompt costs 283 s, not 93 s. A dense-27B ladder ran on the same script and is withdrawn with it. A three-way comparison against a two-Mac 99B cluster is withdrawn as method-inconsistent: the distributed path appears never to have used the cache, so only the single-node runs were helped, and the weights are gone so it cannot be re-run.
+>
+> **What survives**: the level tracks active parameters, on weaker evidence than first claimed. **What the bug revealed**: prefix caching is the largest prefill lever on this hardware — roughly **4× wall-clock on a repeated prefix, on by default, no configuration** — consistent with a 6.1× figure from an earlier session that this wiki removed for lack of provenance and which now looks real.
+>
+> Two more results from the corrected harness. **Speculative prefill cannot pay against a 3B-active MoE.** The draft performs a full prefill plus lookahead, so `speedup = 1 / (c_draft/c_target + keep)`, and it wins only if the cost ratio is below `1 − keep`. A dense 4B draft against the 35B-A3B, both cache-defeated, gives ratios of 1.61 / 1.14 / 0.74 / 0.76 at 1.5K / 6K / 17K / 35K — **0.75× / 0.79× / 1.06× / 1.04× at keep 0.20**. The draft degrades with length as well, so the ratio plateaus near 0.75 instead of opening up. A "4B draft for a 35B target" is a category error when the target is sparse: prefill cost tracks *active* parameters on both sides. Against a dense 27B the projected ratio is 0.16–0.26 and the projected gain 2.2–2.8× — projected, not measured. **The ANE path is a regression** on this model: −35% at 6K and −16% at 17K once its memory-guard headroom was fixed.
 
 ## Recommended order of attack
 
@@ -177,6 +182,8 @@ Eleven sources ingested in one pass; the numbers below are body-verified unless 
 > - **Step 3 (FP8/INT8)**: not on M4-generation Macs — no low-precision datapath; on M5 the Neural Accelerators are the win and need no format change.
 > - **Steps 4–5**: on a hybrid linear/full-attention model (Qwen3-Next, Qwen3.6/3.8 hybrids, Gemma-3, Kimi), skip sparse attention entirely and use the token-pruning family — but only from ~16–32K up; below that it is a net loss.
 > - **New step 5b**: on a dense full-attention model at ≥2K prompts, POP's prefill-only layer skipping is training-free and worth ~1.3×, and composes with everything above.
+> - **Step 5, speculative prefill**: only when the draft is cheap relative to the target's *active* parameters. A dense 4B draft against a 3B-active MoE is measured at 0.75–1.06× — a loss or a wash at every length.
+> - **Step 1, prefix caching**: it is also the thing that will corrupt your prefill benchmarks if any two prompts share a prefix. Put the nonce first and assert `cached_tokens == 0`.
 
 1. **Prefix caching** — usually the largest win, no accuracy cost, and free if you already run vLLM/SGLang. Restructure prompts so invariants come first.
 2. **FlashAttention** — ensure it's actually enabled; it is table stakes.

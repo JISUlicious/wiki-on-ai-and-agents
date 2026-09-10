@@ -9,6 +9,15 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-10] fix | Peer retraction — prefill-curve callouts corrected, SpecPrefill cost model filed
+
+The peer session behind today's field measurements retracted them: its ladder placed the nonce at the *end* of a fixed filler, so each rung's prompt was a strict prefix of the next and oMLX's prefix cache served 69–87% of tokens. Every long-context prefill figure it sent was inflated, up to 5.1×. Corrected, cache-defeated numbers for Qwen3.6-35B-A3B: **flat ~380–400 tok/s to ~12K, declining to 125 at 35K** — a 35K prompt costs 283 s, not 93. The "both curves climb, same shape, 9× apart" framing is cut from [[methods-to-speed-up-prompt-processing]] and [[arithmetic-intensity]]; the dense-27B ladder and the two-Mac three-way table are withdrawn (the latter as method-inconsistent — the distributed path appears never to have used the cache). Earlier chunked-prefill tok/s figures from a predecessor session carry a provenance caveat on [[chunked-prefill]] and the query page; the OOM and the shape stand.
+
+What the bug revealed is the real finding: prefix caching is the largest prefill lever on this hardware, ~4× on a repeated prefix, on by default. The 6.1× prior-session figure removed earlier today now looks real; it stays out for provenance but is mentioned.
+
+Filed from the corrected harness: the **SpecPrefill cost model, measured** — `speedup = 1/(c_draft/c_target + keep)`; a dense 4B draft against the 3B-active MoE runs 0.75–1.06× at keep 0.20 at every length, because prefill cost tracks active parameters on both sides. On [[speculative-prefill]] and [[omlx-specprefill-github-2026]]. The ANE path is a −16 to −35% regression on that model. The peer is closing this line of work; no further numbers expected.
+
+
 ## [2026-09-10] ingest | Prefill acceleration sweep — 17 sources, 1 concept
 
 Prompted by "search for prefill boosting methods." The wiki's [[methods-to-speed-up-prompt-processing]] page was a 2024–2025 answer; this adds the 2026 layer and a lineage it had entirely missed.

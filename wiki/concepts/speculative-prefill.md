@@ -2,7 +2,7 @@
 title: Speculative Prefill
 type: concept
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-10
 sources:
   - speculative-prefill-liu-2025.md
   - cross-family-speculative-prefill-upasani-2026.md
@@ -59,6 +59,18 @@ Liu et al. keep every surviving token at its **original position ID**, so the ta
 ## The standing limitation
 
 **Dropped tokens never get KV.** They are gone for the generation and for any later turn. A follow-up question about dropped content cannot be answered without re-prefilling. The practical mitigations are structural: always prefill the system prompt in full, always keep a trailing window (oMLX added a mandatory 512-token tail after users reported chat-structure tokens being dropped — issues #419, #548, #1401), and cache stable prefixes on the target so they never enter the selection at all.
+
+> [!warning] Field measurement: the draft is a full prefill, and against a sparse target it does not pay (2026-09-10)
+> The draft does a complete prefill of the prompt plus its lookahead steps, so its cost is a full forward pass, not a cheap scorer: `speedup = 1 / (c_draft/c_target + keep)`, a win only if `c_draft/c_target < 1 − keep`. Measured on an M4 Air with both sides cache-defeated, dense Qwen3.5-4B draft (2.3 GB, vocab 248,320) against Qwen3.6-35B-A3B:
+>
+> | Prompt tokens | Draft tok/s | Target tok/s | Cost ratio | Speedup at keep 0.20 |
+> |---|---|---|---|---|
+> | 1,562 | 236.0 | 381.1 | 1.61 | **0.75×** |
+> | 5,981 | 355.0 | 403.7 | 1.14 | **0.79×** |
+> | 17,357 | 313.7 | 233.1 | 0.74 | 1.06× |
+> | 35,449 | 164.3 | 125.3 | 0.76 | 1.04× |
+>
+> The draft degrades with length too, so the ratio plateaus near 0.75 rather than opening up. A dense ~3.1B-active draft is simply not cheap relative to a 3B-active target: **prefill cost tracks active parameters on both sides**, and "a 4B draft for a 35B model" is a category error when the 35B is sparse. Against a dense 27B the same draft projects to a 0.16–0.26 ratio and 2.2–2.8× — projected, not measured. Contributed by a peer session; the full pipeline was not run, only the cost ratio that bounds it.
 
 ## Related
 

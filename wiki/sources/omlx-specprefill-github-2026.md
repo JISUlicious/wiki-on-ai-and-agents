@@ -68,6 +68,9 @@ Same tokenizer, so the pair passes admission. Field-verified on a third family m
 
 The arithmetic behind "huge boost": at `keep_pct=0.20` the 27B prefills ~20% of conversation tokens, and the 0.8B draft's full prefill plus 8 lookahead steps costs roughly 3% of a 27B pass — so the ceiling is about **4× on the conversation portion**, before the always-full system prompt and the mandatory 512-token tail are added back.
 
+> [!warning] That "~3%" assumes a dense target. Against a sparse one the draft is not cheap
+> Measured on an M4 Air with a dense 4B draft against Qwen3.6-35B-A3B, both cache-defeated: the draft's full prefill costs **0.74–1.61× the target's**, giving 0.75–1.06× at keep 0.20 — a loss below ~17K and a wash above. The recommended dense 27B target is where the arithmetic works (projected 2.2–2.8×); the MoE the module docstring names is where it does not. Details on [[speculative-prefill]].
+
 > [!warning] Nothing here is measured in the repository
 > The docs contain **no SpecPrefill speedup or quality numbers**. The "leaderboard" the release notes refer to is a user-submitted dashboard. The module docstring describes the feature as *"experimental sparse prefill for MoE,"* though the scheduler gates only on `specprefill_enabled`, not on architecture, and the recommended target above is dense. Treat any "300 tok/s" figure as one user's report on one machine.
 
