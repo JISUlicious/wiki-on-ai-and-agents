@@ -2,7 +2,7 @@
 title: "Speculative Decoding"
 type: concept
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-10
 sources:
   - speculative-speculative-decoding-kumar-2026.md
 status: complete
@@ -25,6 +25,17 @@ Two frontier drafting directions push on the *drafter* and the *verification sch
 - Draft model proposes; target model verifies in one parallel pass.
 - Speedup scales with the draft model's acceptance rate.
 - Bottleneck: sequential dependence between drafting and verification.
+
+> [!note] Field measurement: an MTP head on a dense 27B, Apple Silicon (2026-09-10)
+> Qwen3.8-27B dense, 4-bit, M4 Air 32 GB, oMLX, single stream, contributed by a peer session. Drafter `mlx-community/Qwen3.8-27B-MTP-4bit`, **0.22 GB — 1.4% of the 15.7 GiB resident model**, block size 3.
+>
+> | | 120 tokens | 240 tokens |
+> |---|---|---|
+> | baseline decode | 6.6 tok/s | 6.7 tok/s |
+> | + MTP head | 12.92 | 14.11 |
+> | speedup | 1.96× | **2.11×** |
+>
+> Acceptance *rises* with generation length — 83.3% at 9 rounds, 91.7% at 42, **94.6% at 83** (2.89 tokens per round of a possible 3). That is well above what a generic draft model achieves, and the peer's hypothesis is structural: an MTP head is trained to predict its own parent's next tokens, not to approximate a different network's distribution. If it generalizes, it is a stronger argument for MTP heads over draft-model speculation than the speedup alone. One model, one machine; not yet reproduced.
 
 ## Related
 

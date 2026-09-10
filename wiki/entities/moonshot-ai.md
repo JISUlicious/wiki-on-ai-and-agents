@@ -46,3 +46,5 @@ To be precise about the hybrid: it is the *K3 attention stack* that is hybrid, n
 ## Related 2026 sources
 
 - [[qwen3.8-flash-next]] — convergent design: Qwen's Gated DeltaNet + sparse attention hybrid lands on the same 3:1 linear-to-full ratio as Kimi Linear, reached independently
+- [[moba-mixture-of-block-attention-lu-2025]] — MoBA — block attention with an MoE-style gate, deployed for Kimi's long-context serving; 6.5× at 1M
+- [[trained-sparse-attention]] — the lineage page

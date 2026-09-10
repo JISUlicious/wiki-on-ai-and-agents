@@ -2,7 +2,7 @@
 title: "Methods to Speed Up Prompt Processing (prefill / pp)"
 type: query
 created: 2026-07-27
-updated: 2026-09-09
+updated: 2026-09-10
 sources:
   - llm-inference-roofline-yuan-2024.md
   - flash-attention-dao-2022.md
@@ -141,7 +141,42 @@ Also: [[speculative-decoding]] targets the sequential decode bottleneck; prefill
 - **Separate TTFT from prefill throughput.** TTFT includes queueing and is what users feel.
 - **On CPU, kernel maturity beats physics.** [[which-quantization-kurt-2026|Kurt 2026]] found `pp512` **non-monotonic and uncorrelated with bit width**: Q4_0 fastest at 97.35 t/s, higher-precision Q5_1 only 45.98, Q3_K_S **28% slower than F16**. Benchmark your actual format and backend.
 
+## 2026 additions (sweep of 2026-09-10)
+
+Eleven sources ingested in one pass; the numbers below are body-verified unless marked.
+
+**The hybrid-architecture rule.** [[uniprefill-block-wise-dynamic-sparsification-fan-2026|UniPrefill]] makes the structural point every retrofit on this page had been missing: on a hybrid linear/full-attention model, **sparse attention can only touch the full-attention layers** — ≤25% of a 3:1 hybrid, and measured ≤1.11× at any length for every sparse-attention method on Qwen3-Next and Gemma-3. **Token pruning that cascades** — drop a token at a full-attention layer and exclude it from every later layer — cuts GEMM in all layers. But it gains *less* on hybrids than on dense models (1.08–1.68× vs 1.21–2.26× TTFT), because dropping a fraction ρ is ρ² on N² attention and only ρ on GEMMs, and a hybrid has few quadratic layers to collect the ρ². And it is **negative below ~16K on hybrids in serving**: −5% / −4% at 4K / 8K on Qwen3-Next at batch 1.
+
+**A third axis: skip model compute, keep every token.** Tier 2 above shrinks the *prompt*; Tier 3 shrinks *attention*. [[pop-prefill-only-pruning-he-2026|POP]] and [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026|Fast Forward]] shrink the *model* during prefill only. POP is training-free: skip the last third of layers for prompt tokens 1…N−1, still run their pretrained K/V projections, process the last prompt token with the full model — **1.36× at 2K tokens, 1.02× at 32**, −1.7 accuracy points on Llama-3.1-8B. Fast Forward is not: a neuron predictor plus an error-compensation network (~3.6% new parameters), 1.44× at 2–4K falling to 1.20× at 32K, under 6% LongBench loss. Both compose with everything else on this page.
+
+**Kernel numbers are not TTFT numbers.** [[trianglemix-decoding-time-contribution-sparsity-he-2025|TriangleMix]] headlines 15.3× on the attention kernel at 128K; its end-to-end TTFT on Llama-3.1-8B is **1.14× at 32K and 1.47× at 128K**, in §3.4. [[sale-low-bit-estimation-sparse-attention-prefill-ji-2025|SALE]] reports attention-only latency — 1.39× at 8K implies ~1.07× TTFT — and requires INT4 Tensor Cores, so it has no Apple Silicon path. [[native-sparse-attention-yuan-2025|NSA]]'s 9× is likewise a kernel figure with no end-to-end number in the paper. The attention-share rule in Tier 2b is the conversion.
+
+**Two decode-only methods that look like prefill methods.** [[sts-speculative-token-sparsity-yu-2026|STS]] and [[specattn-speculating-sparse-attention-shah-2025|SpecAttn]] use a draft model's attention to sparsify the *target's verification pass* in speculative decoding. STS's default config keeps prefill dense and reports no TTFT; SpecAttn prefills both models densely and is net slower than plain speculative decoding (59.95 vs 68.26 tok/s). Neither belongs on this page except as a warning; see [[sparse-attention]].
+
+**Trained sparse attention is a model choice, not a kernel choice.** [[trained-sparse-attention]] — NSA, MoBA, DeepSeek-V3.2's DSA — puts the selector in the training loop, and a model that ships it has already taken the long-context win. No evidence exists for stacking a retrofit on top.
+
+**Apple Silicon, two hardware facts.** The M5's GPU Neural Accelerators give **3.3–4.1× TTFT over M4** at a 4,096-token prompt and only 1.19–1.27× on generation ([[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's own post]], vendor numbers). And on M4-generation GPUs FP8 matmul is *emulated* at 0.87–0.94× FP16 throughput (Rigel, arXiv:2606.12765), so Tier 4 does not apply to M4 Macs.
+
+> [!note] Field measurement: prefill cost tracks *active* parameters
+> Same M4 Air (32 GB), same oMLX harness, same prompts, temperature 0, 2026-09-10, contributed by a peer session. Both a dense and a MoE model amortize fixed overhead with length — the curves have the same shape, a climb and then a memory-pressure knee near 35K — but sit at levels separated by ~9×:
+>
+> | Prompt tokens | Qwen3.8-27B dense, 4-bit | Qwen3.6-35B-A3B MoE, 4-bit |
+> |---|---|---|
+> | 449 | 51.1 tok/s | 293 tok/s |
+> | 5,974 | 32.1 | 395 |
+> | 11,869 | 47.6 | 534 |
+> | 17,346 | 66.4 | 744 |
+> | 23,654 | **81.7** | **749** |
+> | 35,442 | 63.0 (0.2 GB free) | 379 (chunk throttled 2048→1024) |
+>
+> At 35,442 tokens the time to first token was **562 s** for the 27B dense on one Mac, **575 s** for Qwen3.8-Flash-Next-99B-A5B pipeline-parallel across *two* Macs over Thunderbolt (peak 79.9 tok/s, reached at 1.5K), and **93 s** for the 35B-A3B on one Mac. Architecture dominates both parameter count and machine count. The gap is per-token GEMM, which is what token pruning cuts and sparse attention mostly does not — the UniPrefill rule, measured.
+
 ## Recommended order of attack
+
+> [!note] 2026 amendments to this list
+> - **Step 3 (FP8/INT8)**: not on M4-generation Macs — no low-precision datapath; on M5 the Neural Accelerators are the win and need no format change.
+> - **Steps 4–5**: on a hybrid linear/full-attention model (Qwen3-Next, Qwen3.6/3.8 hybrids, Gemma-3, Kimi), skip sparse attention entirely and use the token-pruning family — but only from ~16–32K up; below that it is a net loss.
+> - **New step 5b**: on a dense full-attention model at ≥2K prompts, POP's prefill-only layer skipping is training-free and worth ~1.3×, and composes with everything above.
 
 1. **Prefix caching** — usually the largest win, no accuracy cost, and free if you already run vLLM/SGLang. Restructure prompts so invariants come first.
 2. **FlashAttention** — ensure it's actually enabled; it is table stakes.

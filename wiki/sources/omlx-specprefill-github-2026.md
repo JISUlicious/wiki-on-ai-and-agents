@@ -85,6 +85,13 @@ The trailing-window fix is the practical echo of the papers' central limitation:
 
 oMLX bundles the other Apple-Silicon speed levers this wiki tracks: **oQ** data-driven mixed-precision quantization (oQ4 ≈ 4.6 bpw recommended, oQ8 ≈ 8.6 near-lossless — see [[quantization]]), MTP and **DFlash** block-diffusion [[speculative-decoding]], a tiered hot/cold [[kv-cache]] with SSD spill, [[prefix-caching]], and [[chunked-prefill]]. The context-scaling shim for [[claude-code]] auto-compaction is a small but telling feature.
 
+## Speculative-decoding paths: verified and unverified (2026-09-10)
+
+oMLX documents two **mutually exclusive** speculative-decoding paths: the external MTP side-car drafter (`vlm_mtp_enabled` + `vlm_mtp_draft_model`) and **DFlash** block-diffusion drafting. A peer session tested only the first.
+
+- **VLM-MTP path: sampling is live.** Same prompt three times at temperature 1.0, 80 tokens each, Qwen3.8-27B + MTP head — **3 of 3 outputs distinct**. Throughput on that model: 6.6 → 12.9–14.1 tok/s (**2.11×**), acceptance climbing to 94.6%; details on [[speculative-decoding]].
+- **DFlash path: unverified.** SwiftLM's README flags *its own* DFlash implementation as unsuitable for production on Qwen3.6-35B-A3B because it decodes greedily regardless of temperature. A code read of oMLX's `dflash.py` shows temperature threaded through every sampling site, but no run has confirmed the behaviour, and the peer explicitly declined to treat the VLM-MTP result as clearing DFlash. Do not record DFlash as verified on the strength of this page.
+
 ## Expert streaming: requested, implemented, unmerged (2026-09)
 
 Issue #986 (2026-04-28), *"Add Flash-MoE-style SSD-backed expert streaming for large MoE models,"* asked for the technique described on [[weight-streaming]]. A working implementation arrived as **PR #2595** (2026-08-11, +1,841 / −5 lines): a configurable fraction of each layer's experts stays resident in a fixed slot cache and the rest are streamed on demand **from the checkpoint's own safetensors** by mmap slab reads — no converted copy, no write path. The stock `SwitchGLU` modules are swapped before `materialize_lazy_state`, so non-resident experts are never materialized. Measured through the batched engine's own load path, gemma-4-26b runs in **4.6 GB instead of 14.2 GB**; no throughput figure is given. As of 2026-09-10 the PR is **open and unmerged**, so oMLX users who need a model larger than RAM still have to look at the third-party projects surveyed on [[weight-streaming]].

@@ -121,3 +121,7 @@ Post-training is RL across coding, general-agent, reasoning and knowledge domain
 ## References
 
 - [arXiv:2607.24653](https://arxiv.org/abs/2607.24653)
+
+## Related 2026 sources
+
+- [[moba-mixture-of-block-attention-lu-2025]] — Moonshot's earlier sparse-softmax branch, deployed in Kimi before KDA

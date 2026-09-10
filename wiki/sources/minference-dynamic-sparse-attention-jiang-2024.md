@@ -149,3 +149,9 @@ Dynamic index estimation is the load-bearing piece; slash lines carry more than 
 
 - [arXiv:2407.02490](https://arxiv.org/abs/2407.02490) — v2, 30 Oct 2024; NeurIPS 2024 Spotlight.
 - Code: https://aka.ms/MInference
+
+## Related 2026 sources
+
+- [[trianglemix-decoding-time-contribution-sparsity-he-2025]] — the same group's follow-up: a static pattern that stacks on MInference for a further 19–24% TTFT at 128K; also measures MInference at **0.5× at 32K**
+- [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — beats MInference on speed at 128K (2.26× vs 1.34×) but MInference stays *more accurate* on RULER (90.68 vs 90.45)
+- [[trained-sparse-attention]] — the trained alternative to retrofits like this one

@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 476 sources, 147 entities, 278 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 487 sources, 147 entities, 279 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Prefill acceleration — 2026 sweep
+- [[trained-sparse-attention]] — **concept**: NSA, MoBA, DSA — the selector in the training loop; why retrofits must be conservative; kernel numbers are not TTFT numbers
+- [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — cascading token pruning; the hybrid-architecture rule (sparse attention ≤1.11× on hybrids); 1.21–2.26× LLaMA, 1.08–1.68× Qwen3-Next, negative below 16K on hybrids
+- [[trianglemix-decoding-time-contribution-sparsity-he-2025]] — MInference group: blocks that score high at prefill but contribute nothing to decoding; 15.3× kernel, **1.14× end-to-end at 32K**
+- [[pop-prefill-only-pruning-he-2026]] — training-free: skip the last third of layers for prompt tokens at prefill only; 1.36× at 2K, 1.02× at 32
+- [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026]] — learned block-level FFN sparsity at prefill; 1.44× at 2–4K, <6% LongBench loss; not training-free
+- [[sale-low-bit-estimation-sparse-attention-prefill-ji-2025]] — INT4 QK estimation → block-sparse; ≥3.36× on attention past 64K; needs INT4 Tensor Cores
+- [[sts-speculative-token-sparsity-yu-2026]] — **decode-only** despite the name; draft attention masks the target's verification pass
+- [[specattn-speculating-sparse-attention-shah-2025]] — decode-only; net slower than plain speculative decoding
+- [[native-sparse-attention-yuan-2025]] — NSA, ACL 2025 best paper; 9× attention kernel at 64K, no end-to-end number
+- [[moba-mixture-of-block-attention-lu-2025]] — Moonshot; top-k pooled key blocks; 6.5× at 1M, ~1× at 512K; deployed in Kimi
+- [[deepseek-v3.2-sparse-attention-deepseek-2025]] — DSA: FP8 lightning indexer, top-2,048 per query, ~1T tokens to retrofit onto V3.1-Terminus
+- [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — Apple: M5 over M4 is 3.3–4.1× TTFT and 1.19–1.27× generation at a 4,096-token prompt
 
 ### Weight streaming from SSD (2026)
 - [[weight-streaming]] — **concept**: running a model larger than DRAM by reading only the per-token slice from flash; three sparsity sources (ReLU 2023, lossy thresholding 2026, MoE routing 2026) and the Apple Silicon implementation survey

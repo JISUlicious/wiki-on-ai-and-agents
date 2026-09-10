@@ -21,6 +21,7 @@ The fraction of a feed-forward layer's intermediate neurons that contribute noth
 | **ReLU zeros** — the activation is literally 0 | yes | yes, to know *before* the read (~1.25% of model size) | [[llm-in-a-flash-alizadeh-2023]]: OPT-6.7B is ~97% sparse; 2.4% of FFN neurons loaded per token with windowing |
 | **Magnitude thresholding** on SiLU/GELU — keep the top-k by absolute value | **no** — lossy by construction | yes (2.86% of model size) | [[neuroprefetcher-delta-prefetching-dhar-2026]]: 62% sparsity gives 9.5× over demand paging at ~88–90% of dense HellaSwag |
 | **MoE routing** — the router selects *k* of *N* experts | yes | **no** — the router *is* the read list | [[mixture-of-experts]]; every Apple Silicon expert streamer on [[weight-streaming]] |
+| **Learned block-level top-K at prefill** — top-50% neurons by gated-activation norm over a 128-token block, predicted by a small MLP | no — lossy, with an error-compensation network | yes (~3.6% of model size, plus compensator) | [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026]]: 1.44× TTFT at 2–4K, <6% LongBench loss. Saves **FLOPs at prefill**, where the rows above save **bytes at decode** |
 
 ## The thing that broke between 2023 and 2026
 

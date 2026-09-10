@@ -69,3 +69,9 @@ It is orthogonal to [[prefix-caching]] (skip repeated content), [[chunked-prefil
 ## Related 2026 sources
 
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse attention implemented in silicon — a **5.4 TOPS FPGA beating a 222 TOPS GPU** because the kernel is memory-bound, which is this cluster's decision rule stated in hardware
+- [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — token pruning that **cascades through every layer**, and the rule that on hybrid architectures sparse attention is capped at ≤1.11× while token dropping cuts GEMM everywhere. 1.21–2.26× TTFT on LLaMA-3.1-8B, 1.08–1.68× on Qwen3-Next-80B-A3B; **negative at 4K–8K on hybrids** (−5%/−4%), confirming this page's net-loss rule
+- [[trianglemix-decoding-time-contribution-sparsity-he-2025]] — a *new kind* of sparsity — attention blocks that score high at prefill but contribute nothing to decoding (gradient probe). Static triangle mask, training-free; **15.3× on the kernel at 128K but 1.14× end-to-end at 32K**, which is this page's attention-share rule measured (34% at 32K, 70% at 128K)
+- [[sale-low-bit-estimation-sparse-attention-prefill-ji-2025]] — INT4 QK estimation to choose blocks; ≥3.36× on attention past 64K, 1.39× at 8K (≈1.07× TTFT); needs INT4 Tensor Cores
+- [[pop-prefill-only-pruning-he-2026]] — the **model-axis** family this page did not have: keep every token, skip the last third of layers at prefill only. Training-free, 1.36× at 2K prompts
+- [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026]] — same axis, FFN width instead of depth; trained predictor + compensator; 1.44× at 2–4K, <6% LongBench loss
+- [[sts-speculative-token-sparsity-yu-2026]] — **does not belong here** — decode-only despite the name; filed under [[sparse-attention]] with [[specattn-speculating-sparse-attention-shah-2025]]. Recorded so the misfiling is not repeated

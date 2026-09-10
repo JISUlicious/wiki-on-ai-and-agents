@@ -47,3 +47,8 @@ A technical report (branded around the DeepSeek-V4 architecture) tackling the KV
 
 - [arXiv:2606.09079](https://arxiv.org/abs/2606.09079)
 - Source PDF: `flashmemory-lookahead-sparse-attention-wang-2026.pdf`
+
+## Related 2026 sources
+
+- [[deepseek-v3.2-sparse-attention-deepseek-2025]] — the V3.2 lightning indexer this extends
+- [[trained-sparse-attention]] — the lineage page

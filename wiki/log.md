@@ -9,6 +9,25 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-10] ingest | Prefill acceleration sweep — 12 sources, 1 concept
+
+Prompted by "search for prefill boosting methods." The wiki's [[methods-to-speed-up-prompt-processing]] page was a 2024–2025 answer; this adds the 2026 layer and a lineage it had entirely missed.
+
+**The structural finding**: [[uniprefill-block-wise-dynamic-sparsification-fan-2026|UniPrefill]] shows that on hybrid linear/full-attention models sparse attention is capped at the full-attention layers (measured ≤1.11× at any length) while cascading token pruning cuts GEMM everywhere — but gains less on hybrids than dense models (ρ² vs ρ), and is **negative below 16K** on them. A peer session's field measurements corroborate the mechanism: dense 27B and 35B-A3B MoE both amortize with prompt length on the same curve shape, at levels 9× apart, and at 35K the MoE reaches first token in 93 s against 562 s. Recorded as a callout on the query page and on [[arithmetic-intensity]].
+
+**New lineage**: [[trained-sparse-attention]] — NSA (from scratch, 9× kernel, no end-to-end number), MoBA (fine-tune, 6.5× at 1M, ~1× at 512K, still quadratic), DSA (lightning indexer, ~1T tokens to retrofit). The wiki had zero source pages on any of them.
+
+**A third axis**: [[pop-prefill-only-pruning-he-2026|POP]] (training-free, skip the last third of layers at prefill, 1.36× at 2K) and [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026|Fast Forward]] (trained FFN sparsity, 1.44×) shrink the *model* rather than the prompt or the attention.
+
+**Verification corrections**: TriangleMix's 15.3× is a kernel number; end-to-end is 1.14× at 32K (§3.4). UniPrefill's "2.1× TTFT" is batch-16 throughput. SALE's "≈11% overhead" holds only ≥64K (23.9% at 8K) and needs INT4 Tensor Cores. **STS and SpecAttn are decode-only** — STS's default keeps prefill dense; SpecAttn is net slower than plain speculative decoding — filed under [[sparse-attention]] with a warning so the Declarative Attention misfiling is not repeated. POP's "independent KV projections" are the pretrained ones, not trained — I had told the peer otherwise and corrected it.
+
+**Apple Silicon**: [[exploring-llms-mlx-m5-neural-accelerators-apple-2025|Apple's M5 post]] — 3.3–4.1× TTFT over M4, 1.19–1.27× generation — dominates the software list for a Mac user; on M4 GPUs FP8 is emulated (Rigel, page pending). The query page's recommended order gets three amendments.
+
+Peer corrections applied mid-ingest: a prefix-caching figure I had attributed to the peer came from an earlier session they cannot vouch for and was removed from [[hardware-accelerator]]; their MTP measurement (2.11× on a dense 27B, 94.6% acceptance) is on [[speculative-decoding]]; oMLX's VLM-MTP path is verified to sample at temperature while its DFlash path is recorded as **unverified**, on [[omlx-specprefill-github-2026]].
+
+One agent (NSA/MoBA/DSA) died on a session rate limit after writing two of three pages; the DSA page was written from a targeted full-text fetch. Rigel, BaseRT, the M1 AMX paper, MISA and Gated Sparse Attention are queued for a second wave after the limit resets.
+
+
 ## [2026-09-10] ingest | Weight streaming from SSD — 4 sources, 1 concept, 2 entities
 
 Prompted by "what was the name of that offloading-model-weights-to-SSD technique" (it was Apple's *LLM in a flash*, 2023) and a follow-up search for newer work and MLX implementations. The wiki had nothing on it.

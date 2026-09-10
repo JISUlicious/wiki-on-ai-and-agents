@@ -2,7 +2,7 @@
 title: Hardware Accelerator
 type: concept
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-10
 sources:
   - fast-prefill-fpga-sparse-attention-jayanth-2026.md
   - persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026.md
@@ -50,7 +50,7 @@ The interconnect objection is decisive **for accelerators that do not hold the m
 > - **TinyGPU exposes the GPU only to tinygrad.** Its docs describe use "with tinygrad" (`DEV={AMD|NV} python3 -m tinygrad.llm`) and say nothing about PyTorch, MLX or llama.cpp. It is a runtime-specific driver, not a CUDA/ROCm compatibility shim.
 > - **MLX's CUDA backend does not run on macOS.** The backend exists in-tree, but per MLX's own docs (ml-explore/mlx #2422) it targets Linux servers and "does not add CUDA support on Mac".
 >
-> So an eGPU today would **replace** an MLX-tuned local stack rather than accelerate it — losing MTP speculative decode (measured 1.8×), prefix caching (6.1×), 4-bit KV quantization and the rest — in exchange for a research framework's inference loop. The bandwidth physics above is right; the software path does not exist. Revisit if MLX ships a macOS CUDA/TinyGPU target or a serving engine adds a tinygrad backend.
+> So an eGPU today would **replace** an MLX-tuned local stack rather than accelerate it — losing MTP speculative decode (measured 2.1× on a 27B dense), prefix caching, 4-bit KV quantization and the rest — in exchange for a research framework's inference loop. The bandwidth physics above is right; the software path does not exist. Revisit if MLX ships a macOS CUDA/TinyGPU target or a serving engine adds a tinygrad backend.
 
 ## Related
 
@@ -67,3 +67,4 @@ The interconnect objection is decisive **for accelerators that do not hold the m
 ## Related 2026 sources
 
 - [[weight-streaming]] — the third Mac path, and the one that works: with FPGA blocked by drivers and eGPU blocked by the software stack, streaming MoE experts from the internal SSD is how models larger than RAM actually run on Apple Silicon in 2026
+- [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the accelerator that *is* on a Mac: matrix units in every M5 GPU core, 3.3–4.1× on the compute-bound phase

@@ -34,3 +34,7 @@ The LLM layer is **mlx-lm** (Python: `mlx_lm.load`, `generate`, an OpenAI-compat
 ## Related
 
 - [[apple]] · [[hardware-accelerator]] · [[arithmetic-intensity]]
+
+## Related 2026 sources
+
+- [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — Apple's M5 benchmark: 3.3–4.1× TTFT over M4 through MLX, automatic on macOS 26.2+

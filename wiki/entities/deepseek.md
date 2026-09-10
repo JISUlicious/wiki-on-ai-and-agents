@@ -30,3 +30,9 @@ DeepSeek's open releases — particularly the R1 weights and recipe — substant
 ## References
 
 - [[deepseek-r1-2025]]
+
+## Related 2026 sources
+
+- [[deepseek-v3.2-sparse-attention-deepseek-2025]] — DSA and the lightning indexer: sparsity retrofitted onto V3.1-Terminus with ~1T tokens of continued pre-training
+- [[native-sparse-attention-yuan-2025]] — NSA, ACL 2025 best paper — the from-scratch version
+- [[trained-sparse-attention]] — the lineage page

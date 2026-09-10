@@ -50,3 +50,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[qwen3.8-flash-next]] — a 2026 worked example: 256K native, 1M via YaRN 4×, with no published number measured on the extended path
 - [[sparse-prefill]] — the attention-share rule: sparse attention is Amdahl-bounded below ~64K and the only lever past 300K; token dropping is the reverse
 - [[sparse-attention]] — MInference reaches 10× end-to-end at 1M on one A100 — and ×0.47, slower than dense, at LongBench lengths
+- [[trained-sparse-attention]] — NSA, MoBA, DSA — sparsity in the training loop

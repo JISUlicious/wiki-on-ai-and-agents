@@ -2,7 +2,7 @@
 title: Arithmetic Intensity
 type: concept
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-10
 sources:
   - llm-inference-roofline-yuan-2024.md
   - persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026.md
@@ -44,6 +44,8 @@ Note the third row: `qk_matmul` is memory-bound *even during prefill*, which is 
 **Attention's share grows with context, so the right lever changes with N.** [[sparse-prefill]] records the climb: attention is ~¼ of prefill at 10K, 70–80% at 128K, >90% past 300K. Below ~64K, shrinking the sequence (which also shrinks the FFN) beats sparsifying attention; past 300K the reverse.
 
 **A capacity win can be an intensity loss.** [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026|Gupta et al.]] make this unusually clear for [[linear-attention]]: replacing a growing [[kv-cache]] with a fixed-size recurrent state is a memory-*capacity* win, but every layer must read and write its **entire** state matrix on every token regardless of sequence length. Short sequences therefore pay full state traffic for very little compute — low intensity, hard against the bandwidth wall. The fixed state is not free; it relocates the cost.
+
+**Prefill cost tracks *active* parameters, and both dense and MoE amortize.** Field measurement on an M4 Air, same harness and prompts: Qwen3.8-27B dense climbs 32 → 82 tok/s between 6K and 24K before a memory knee; Qwen3.6-35B-A3B climbs 293 → 749 over the same range. Same curve shape, levels ~9× apart, and the level is set by per-token GEMM on active parameters. At 35K tokens the MoE reached first token in 93 s against 562 s for the dense model on the same machine. The full table is on [[methods-to-speed-up-prompt-processing]]; the consequence for method choice is on [[sparse-prefill]].
 
 ## Reading hardware claims with it
 

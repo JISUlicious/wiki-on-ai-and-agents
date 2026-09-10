@@ -25,3 +25,7 @@ Hardware and platform company whose relevance to this wiki is the **Apple Silico
 ## Related
 
 - [[mlx]] · [[weight-streaming]] · [[hardware-accelerator]] · [[quantization-performance]] · [[llama-cpp]] · [[omlx-specprefill-github-2026]]
+
+## Related 2026 sources
+
+- [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the M5 Neural Accelerators measured: Qwen3-14B 4-bit 4.06× TTFT, 1.19–1.27× generation

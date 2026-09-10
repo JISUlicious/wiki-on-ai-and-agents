@@ -173,3 +173,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[arithmetic-intensity]] — the concept page consolidating the roofline material here
 - [[hardware-accelerator]] — how to audit non-GPU accelerator claims with it
 - [[weight-streaming]] — two Apple Silicon measurements that belong beside the tables here: streaming a model that *would* fit costs 7× (77.5 → 10.8 tok/s on gemma-4-26b), and at 40K context only KV quantization keeps a streamed 126 GB model above 0.32 tok/s
+- [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the generation step that dwarfs every format choice on prefill: M5 over M4 is 3.3–4.1× TTFT at 4,096 tokens, and 4-bit gains slightly *more* than BF16. Also: on M4 GPUs FP8 matmul is emulated at 0.87–0.94× FP16 (Rigel, 2026), so there is no precision lever for prefill on M4
