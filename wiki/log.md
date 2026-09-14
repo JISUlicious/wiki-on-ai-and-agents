@@ -9,6 +9,11 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-14] query | Sample prompts from Chinese labs in the Anthropic threat report
+
+Question: "From the above article, is it possible to find an example or sample of a prompt sent from Chinese companies?" Not filed. Key pages consulted: [[anthropic-threat-intelligence-report-september-2026]], [[illicit-distillation]]; checked against the PDF text and rendered pages 144–145. Finding: the report quotes four reasoning-extraction prompts verbatim, in separate boxes on pages 145–146, but attributes them only to "unauthorized labs," not to any named company; Alibaba's fixed injected prompt and DeepSeek's harness-detection strings are described but not quoted. Two further boxes quote end-user prompts that labs relayed to Claude, with sensitive values redacted — prompts from those labs' customers, not from the labs. The PRC surveillance and weapons cases give role-play personas and terminology rules in paraphrase, attributed to state-linked actors and a contractor rather than companies.
+
+
 ## [2026-09-14] ingest | Anthropic threat intelligence report, September 2026 — 1 source, 3 concepts, 2 entities
 
 The wiki's first misuse source. Anthropic's *Detecting and countering misuse of AI: September 2026* (published 2026-09-10, 154 pages, plus an IOC CSV) covers operations disrupted between December 2025 and August 2026 across seven harm areas. The web page summary was used only to locate the PDF; every figure on the new pages was checked against the PDF text, and several web-summary details that did not appear in the PDF were dropped. The PDF, extracted text and IOC CSV are in `sources/`; indicators of compromise are not reproduced in the wiki, and operator handles and details identifying private individuals are omitted.
