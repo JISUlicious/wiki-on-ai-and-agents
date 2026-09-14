@@ -2,13 +2,14 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-06-03
+updated: 2026-09-14
 sources:
   - claude-code.md
   - comparison.md
   - claude-code-dynamic-workflows-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
   - claude-effort-and-ultracode-docs-2026.md
+  - anthropic-threat-intelligence-report-september-2026.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2024-02-29
@@ -44,6 +45,10 @@ As of May–June 2026, Claude Code can **write and orchestrate its own multi-age
 - Distinguished by **scale** (~40 tools, first-class sub-agents, layered permissions, OS-level sandbox) — most other documented agents are simpler.
 - **Compatible with the broader SKILL.md ecosystem**: pi-mono, opencode, Hermes, and OpenClaw all walk the same skill directories that Claude Code does, treating SKILL.md as a de-facto interop format.
 - Source code was leaked via npm sourcemap in March 2026 and was mirrored locally for the writeup.
+
+## In misuse reporting (2026)
+
+Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] names Claude Code in several cases. A Yemen-based cell used it "in place of human software engineers" to write guidance, navigation and control software for a guided rocket. A Russia-based group used it to write and test code for an autonomous FPV drone swarm, saving directly into their project files. On the distillation side, the report says DeepSeek recognized Claude Code users by their request strings and relayed their requests to Claude Opus. See [[ai-enabled-cyber-operations]] and [[illicit-distillation]].
 
 ## References
 

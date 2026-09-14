@@ -2,9 +2,10 @@
 title: Z.ai (Zhipu AI)
 type: entity
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-09-14
 sources:
   - glm-5-2-zai-2026.md
+  - anthropic-threat-intelligence-report-september-2026.md
 status: draft
 importance: medium
 tags:
@@ -25,6 +26,12 @@ tags:
 
 > [!note] Draft
 > Created to anchor the GLM lineage. Expand with company history, the broader GLM model line, and other releases on a future ingest.
+
+## Named in a distillation allegation (2026)
+
+Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] attributes to Zhipu a chain-of-thought extraction pipeline against Claude Opus 4.8 run through 273 fraudulent accounts (GTG-16006). It counts 770,609 exchanges through the trace-cleaning step in 10 days of June, and over 3.4 million exchanges across 17 days of June and July. Ahead of GLM 5.3, the report says Zhipu built capture-the-flag challenges from public vulnerability data to distill another US lab's cyber capabilities, using Opus 4.6 as a grader.
+
+The report's most specific safeguards claim is also here. Zhipu first targeted Claude Fable's cyber capabilities, "eventually gave up," and its employees moved to Opus 4.6 and a rival lab's model "expressly because they assessed the safeguards were weaker." This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
 
 ## References
 

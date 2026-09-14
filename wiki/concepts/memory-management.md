@@ -147,3 +147,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[catastrophic-remembering]] — the cross-cutting failure these four circle
 - [[selective-forgetting-graph-based-memory-rusu-2026]] — graph *retrieval* loses to a flat vector baseline at matched budget (F1 0.417 vs 0.468), but graph *forgetting* works — 9.8% of nodes pruned with F1 unchanged
 - [[skill-state-scalable-long-horizon-agent-skills-badhe-2026]] — replaces append-only history with an explicit mutable state: prompt size **O(T) → O(1)**, flat at ~1,800 characters from step 10 to step 200 while the append baseline reaches 72,305
+- [[influence-operations]] — persistent memory files in adversarial use: influence operators kept doctrine, banned words and approved-source lists in files reused across hundreds of sessions, so contributors never had to coordinate
+- [[ai-enabled-cyber-operations]] — an exploit-research skill that loads a `MEMORY.md` index before work and appends confirmed dead ends — "institutional memory for exploit R&D"

@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 492 sources, 147 entities, 279 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 493 sources, 149 entities, 282 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### AI misuse and security (2026)
+- [[anthropic-threat-intelligence-report-september-2026]] — Anthropic, 2026-09-10, 154 pp: misuse of Claude disrupted Dec 2025–Aug 2026 across seven harm areas; Haiku/Sonnet/Opus misused, Fable and Mythos not (bar one distillation attempt that gave up on Fable)
+- [[ai-enabled-cyber-operations]] — **concept**: uplift as speed, scale and depth; "vibe hacking"; autonomy is not severity; breaches in 2–3 hours; attackers using ordinary agent skills and memory files
+- [[illicit-distillation]] — **concept**: covert capability extraction through fraud; seven China-based labs named by Anthropic, largest >151M exchanges; thinking-signature replay; defenses — a vendor's allegations, flagged as such
+- [[influence-operations]] — **concept**: nine operations, Breakout Scale, influence-as-a-service, laundering of attribution and certainty; most reached almost no one
+- [[minimax]] — **entity (org, draft)**: Chinese lab; M2 series and sparse attention in this wiki; named in Anthropic's distillation allegations
+- [[xiaomi]] — **entity (org, draft)**: MiMo models; named in Anthropic's distillation allegations
 
 ### Prefill acceleration — 2026 sweep
 - [[trained-sparse-attention]] — **concept**: NSA, MoBA, DSA — the selector in the training loop; why retrofits must be conservative; kernel numbers are not TTFT numbers

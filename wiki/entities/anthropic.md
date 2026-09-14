@@ -2,9 +2,10 @@
 title: Anthropic
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-14
 sources:
   - gpt-3-brown-2020.md
+  - anthropic-threat-intelligence-report-september-2026.md
 status: complete
 importance: high
 tags:
@@ -35,6 +36,10 @@ In this wiki, Anthropic is the source of the [[emotion-concepts-anthropic-2026|E
 ## References
 
 - [[gpt-3-brown-2020]]
+
+## Threat intelligence reporting
+
+Anthropic publishes periodic reports on misuse of Claude: March 2025, August 2025, November 2025 (an AI-orchestrated espionage campaign), a February 2026 distillation disclosure, and the [[anthropic-threat-intelligence-report-september-2026|September 2026 report]] held here. The reports use internal **GTG** designators ("Generative Threat Groups") for actors, publish indicators of compromise, and describe the safeguards changed in response. The September 2026 report covers seven harm areas: [[ai-enabled-cyber-operations|cyber]], [[influence-operations|influence]], surveillance, conventional weapons, biological misuse, scams, and [[illicit-distillation]]. It also notes that Anthropic's Frontier Red Team built new evaluations for tactical intelligence targeting and conventional weapons development.
 
 ## Agent evaluation guidance
 

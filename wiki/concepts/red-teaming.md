@@ -45,3 +45,7 @@ External evaluation organizations (METR, AISI, NIST AISIC) have emerged to provi
 ## References
 
 - [[red-teaming-ganguli-2022]]
+
+## Related 2026 sources
+
+- [[anthropic-threat-intelligence-report-september-2026]] — the post-deployment counterpart: Anthropic's threat-intelligence team documents real misuse across seven harm areas, and its Frontier Red Team built new evaluations for tactical intelligence targeting and conventional weapons development in response

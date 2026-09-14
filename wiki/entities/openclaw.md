@@ -51,3 +51,7 @@ OpenClaw is a single-operator, multi-channel personal AI assistant. Runs as a lo
 
 - [[openclaw-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+
+## Related 2026 sources
+
+- [[illicit-distillation]] — named twice in Anthropic's 2026 report: Xiaomi allegedly replayed its users' OpenClaw sessions through Claude for training data, and attackers prompt-injected OpenClaw deployments to steal API keys

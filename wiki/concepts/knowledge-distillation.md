@@ -29,3 +29,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[on-policy-distillation]] — train on the *student's* rollouts — the variant family behind three 2026 results
 - [[weak-to-strong-on-policy-distillation-yu-2026]] — a student surpassing the weaker models supplying its signal (51.8 vs the 4B expert's 48.8)
 - [[on-policy-self-distillation-without-supervision-li-2026]] — beats gold-label supervision with pseudo-labels that are 13.3% wrong
+- [[illicit-distillation]] — the same technique done covertly and without authorization, through fraudulent accounts and proxy networks. Anthropic's 2026 report attributes seven campaigns to China-based labs, the largest at over 151 million exchanges, and claims a distilled student inherits capability but not the teacher's refusals

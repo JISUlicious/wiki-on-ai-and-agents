@@ -2,9 +2,10 @@
 title: DeepSeek
 type: entity
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-14
 sources:
   - deepseek-r1-2025.md
+  - anthropic-threat-intelligence-report-september-2026.md
 status: draft
 importance: medium
 tags:
@@ -26,6 +27,10 @@ DeepSeek's open releases — particularly the R1 weights and recipe — substant
 
 > [!note] Product-news provenance
 > The two entries above come from a newsletter digest (AI Agents Weekly, 2026-08-15), not a paper or a first-party technical report. Benchmark figures are vendor-reported and unverified here.
+
+## Named in a distillation allegation (2026)
+
+Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] attributes a campaign to DeepSeek (GTG-16001) using the same thinking-signature replay attack as Moonshot. According to the report, DeepSeek identified users reaching its models through [[claude-code|Claude Code]], the Claude Agent SDK or [[opencode|OpenCode]] by strings in their requests, and silently relayed selected users' requests to Claude Opus. It counts over 12.1 million exchanges in 14 days of July 2026. This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
 
 ## References
 

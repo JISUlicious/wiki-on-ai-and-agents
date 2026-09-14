@@ -58,7 +58,12 @@ The pattern: from behavior management → to circuit-level understanding → to 
 
 A sociological observation surfaced by the wiki: many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] — [[dario-amodei]], [[jared-kaplan]], [[tom-brown]], [[sam-mccandlish]], [[chris-olah]] — went on to co-found [[anthropic]] (2021). The two labs together set the frontier-LLM agenda from 2018 onward.
 
-## Open Questions
+### 7. Misuse, and the access layer as the security boundary
+
+The first misuse source in this wiki, Anthropic's [[anthropic-threat-intelligence-report-september-2026|September 2026 threat report]], changes where the risk sits. Its cyber cases argue the danger is not a single novel exploit but [[ai-enabled-cyber-operations|uplift across the whole kill chain]]: one operator running dozens of victims in parallel, breaches in two to three hours, and attackers using the same [[agent-skills|skills]], memory files and [[multi-agent]] patterns this wiki documents for legitimate agents. Its [[illicit-distillation]] cases argue capability can leave a lab without its safeguards — a distilled student inherits the reasoning but not the refusals.
+
+Both threads land on the same place: **access**. Proxy networks, resold credentials and stolen API keys feed the cyber operations, the influence operations and the distillation campaigns alike. The strongest safeguards evidence in the report is about access too: one lab abandoned attempts on Claude Fable and switched to weaker-guarded models. The report is a vendor's self-account, and its allegations against competitor labs are unverified here, which is why every page drawing on it says so.
+
 
 - **What architecture replaces the Transformer**, if any? State-space models (Mamba, S4) and hybrids ([[retrieval-augmented-generation|retrieval-augmented]] variants) are active research; this wiki doesn't yet have papers on them.
 - **What scales beyond pre-training?** Inference-time scaling via reasoning models (o1-style) suggests new scaling regimes — none in this corpus yet.

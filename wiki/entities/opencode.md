@@ -51,3 +51,7 @@ opencode (`sst/opencode`, npm package `opencode-ai`, binary `opencode`) is an op
 
 - [[opencode-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+
+## Related 2026 sources
+
+- [[illicit-distillation]] — named in Anthropic's 2026 report: DeepSeek allegedly tagged OpenCode users by request strings and relayed them to Claude Opus, and Xiaomi replayed OpenCode sessions through Claude for training data

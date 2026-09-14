@@ -2,11 +2,12 @@
 title: Moonshot AI
 type: entity
 created: 2026-07-28
-updated: 2026-08-04
+updated: 2026-09-14
 sources:
   - flash-kda-moonshot-2026.md
   - attention-residuals-kimi-team-2026.md
   - kimi-k3-moonshot-2026.md
+  - anthropic-threat-intelligence-report-september-2026.md
 status: draft
 importance: medium
 tags:
@@ -33,6 +34,10 @@ To be precise about the hybrid: it is the *K3 attention stack* that is hybrid, n
 
 > [!note] Draft
 > Created during the FlashKDA ingest. Founding date, funding and headcount are not yet recorded. Kimi K2 is characterized only through the K3 report's comparison table (1.04T total / 32.6B activated, 61 MLA layers, 384 experts with 8 active, 128K context); K1/K1.5 and K2.5 have no pages yet.
+
+## Named in a distillation allegation (2026)
+
+Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] says Moonshot silently forwarded Kimi customers' requests to Claude, showed Claude's answers as Kimi's, and kept the exchanges for training (GTG-16002). In one 10-day window it relayed almost 300,000 customer requests, mostly to Opus, through 5,380 fraudulent accounts, and over 23 million exchanges between May and July 2026. The report says Moonshot defeated Claude's *thinking signature* control by replaying the signature in a new session and asking Claude to expand it into the full trace. It also says the relayed traffic exposed Moonshot customers' sensitive data, including one user it assesses as likely PLA-affiliated analyzing CCTV footage of a tracked individual. This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
 
 ## Related
 

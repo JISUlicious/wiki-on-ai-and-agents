@@ -26,3 +26,7 @@ Chain-of-thought (CoT) is the technique of prompting an LLM to produce intermedi
 
 - [[chain-of-thought-prompting]]
 - [[latent-reasoning]]
+
+## Related 2026 sources
+
+- [[illicit-distillation]] — reasoning traces are the target of capability theft, which is why Claude now summarizes its reasoning before responding and returns a *thinking signature* instead of the raw trace. Attackers defeated the signature by replaying it in a fresh session; Fable 5.1's preserved thinking closes that path
