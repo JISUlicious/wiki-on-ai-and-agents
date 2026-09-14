@@ -21,81 +21,132 @@ importance: medium
 
 > **Question**: a guide to build a plugin, including agent skills, that implements [[anthropic|Anthropic]]'s [[ai-native-sdlc-playbook-anthropic-2026|AI-Native SDLC Playbook]].
 
-The playbook defines six stages joined by an artifact chain, three enforcement layers of unequal strength, and a leading and a lagging measure for every play. It ships no implementation of its own. This guide maps each play onto a Claude Code primitive, gives a working skeleton, and says how to measure whether it helps.
+The playbook defines six stages joined by an artifact chain, three enforcement layers of unequal strength, and a leading and lagging measure for every play. It ships no implementation. This guide maps each play onto a Claude Code primitive and gives a complete skeleton that a separate build session can turn into a working plugin.
 
-Everything below was checked on Claude Code **2.1.268** on 2026-09-14. The skeleton passes `claude plugin validate --strict`, and every hook script passed synthetic-input tests (15 of 15). It has **not** been run end to end with a model, and no plugin eval has been run.
+> [!note] Status: a checked skeleton, not a build
+> Written against Claude Code **2.1.268** on 2026-09-14, after reading the [Agent Skills specification](https://agentskills.io/specification), Anthropic's [skill-authoring best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices), and the Claude Code docs for skills, plugins, the plugin reference, marketplaces, hooks and plugin evals.
+>
+> | Check | Result |
+> |---|---|
+> | `claude plugin validate --strict` on the plugin root | passes |
+> | Agent Skills spec validator on the 7 skills | 2 pass; 5 fail by design (see *Two kinds of skill*) |
+> | Spec naming rules and reserved words | 7 of 7 comply |
+> | Hook scripts, synthetic inputs | 15 of 15 behave as intended |
+> | A real session with a model, or `claude plugin eval` | **not run** — that is the build session's job |
 
 ## Six design rules, each with its evidence
 
-**1. Human-initiated steps are skills that Claude cannot auto-invoke.** Stages 1–3 and 6 begin with a person. Marking their skills `disable-model-invocation: true` makes them slash commands whose descriptions never enter Claude's context, so they cost no routing budget. This matters because routing degrades with pool size: actual-use precision falls from **29.6% to 3.3%** as a skill pool grows from 5 to 100 ([[demystifying-agent-skills-jiang-2026|Jiang et al.]]). In that study downstream success stayed roughly flat, so the cost is wasted context and misfires more than failed tasks; see the Contradiction on [[skill-routing]]. Plugin `commands/` files are the older format and the docs direct new work to `skills/`.
+**1. Human-initiated steps are skills Claude cannot invoke.** Stages 1–3 and 6 begin with a person, so their skills set `disable-model-invocation: true`. The Claude Code docs state the effect exactly: the description is **not in context**, the skill loads only when you type its command, and if Claude tries to call it anyway the call is blocked. That keeps them out of the routing pool entirely, which matters because actual-use precision falls from **29.6% to 3.3%** as a pool grows from 5 to 100 ([[demystifying-agent-skills-jiang-2026|Jiang et al.]]). In that study downstream success stayed roughly flat, so the cost is wasted context and misfires more than failed tasks; see the Contradiction on [[skill-routing]].
 
-**2. Auto-invoked skills only for knowledge Claude should pull mid-task, and few of them.** This skeleton has two. Descriptions are the entire selection surface, and over half of 138,133 public skills have descriptions that cannot drive routing ([[what-keeps-agent-skills-from-being-reusable-zhang-2026|Zhang et al.]]).
+**2. Auto-invoked skills only for knowledge Claude should pull mid-task, and few of them.** This skeleton has two. The description is the whole selection surface, and over half of 138,133 public skills have descriptions that cannot drive routing ([[what-keeps-agent-skills-from-being-reusable-zhang-2026|Zhang et al.]]).
 
-**3. Anything that must hold goes in a hook.** The playbook says so itself: "skills are advisory only: enforce compliance with hooks or PR review for policies that must always hold." [[harness-if-instruction-following-across-instruction-surfaces-huang-2026|Harness-IF]] measured why: in its conflict pilot, skill descriptions ranked **last** in precedence (4.56), below system prompts, project files and user instructions. That pilot used nine older model builds, so treat the ordering as indicative.
+**3. Anything that must hold goes in a hook.** The playbook: "skills are advisory only: enforce compliance with hooks or PR review for policies that must always hold." [[harness-if-instruction-following-across-instruction-surfaces-huang-2026|Harness-IF]] found skill descriptions ranked **last** in precedence (4.56) when instruction surfaces conflicted. That pilot used nine older model builds, so treat the ordering as indicative.
 
-**4. Judgement that must not share the author's context goes in an agent.** The verifier and the PR reviewer run as subagents with read-only tools. That gives separation of duties inside a session.
+**4. Judgement that must not share the author's context goes in an agent.** The verifier and PR reviewer are subagents whose tool lists exclude Write and Edit.
 
-**5. Non-overridable rules are managed settings, and a plugin cannot ship them.** An admin deploys them. A plugin's own `settings.json` supports only the `agent` and `subagentStatusLine` keys. Managed settings can also restrict which marketplaces engineers may use (`strictKnownMarketplaces`, `blockedMarketplaces`).
+**5. Non-overridable rules are managed settings, and a plugin cannot ship them.** An admin deploys them. A plugin's own `settings.json` supports only the `agent` and `subagentStatusLine` keys. Managed settings can also restrict which marketplaces engineers may use.
 
-**6. Measure with a no-plugin baseline, never with static scores.** On 62 production skills, static quality scores did not predict live lift at all (Spearman ρ = −0.018, [[evaluating-skills-not-just-agents-kevin-2026|ACES]]). `claude plugin eval` runs every case with and without the plugin by default.
+**6. Measure against a no-plugin baseline, never with static scores.** On 62 production skills, static quality scores did not predict live lift at all (Spearman ρ = −0.018, [[evaluating-skills-not-just-agents-kevin-2026|ACES]]). `claude plugin eval` runs every case with and without the plugin by default.
+
+## Two kinds of skill, and the standards each meets
+
+The Agent Skills specification defines six frontmatter fields: `name`, `description`, `license`, `compatibility`, `metadata` and `allowed-tools`. Claude Code accepts about twenty more for skills it loads, plugin skills included. But packaging a skill for claude.ai or the Skills API **fails with a hard error** on any field outside the six.
+
+| | Auto-invoked skills | User-invoked command skills |
+|---|---|---|
+| In this plugin | `fixing-bugs-test-first`, `applying-org-policy` | `capture-intent`, `write-spec`, `write-plan`, `handle-incident`, `curate-instructions` |
+| Frontmatter | the spec's six fields only | adds `disable-model-invocation` and `argument-hint` |
+| Portable to other agents and claude.ai | yes; both pass the spec validator | no; declared in a `compatibility` field |
+| Files they reference | only inside their own folder | their own `assets/`, plus one shared file at the plugin root |
+| Naming | gerund, as the best practices recommend | imperative verb, like the docs' own `/deploy` and `/commit` examples |
+
+The split is forced, not chosen: the spec has no way to say "only a person may invoke this," so any skill that needs that is Claude Code only.
+
+Rules both kinds follow:
+
+- **Names**: lowercase letters, digits and hyphens; no leading, trailing or doubled hyphen; must match the folder; must not contain "claude" or "anthropic". That last rule is why the CLAUDE.md skill is `curate-instructions`.
+- **Descriptions** are written in the third person and say what the skill does and when to use it, key use case first. The limit is 1,024 characters, and Claude Code shortens descriptions when the whole listing outgrows its budget.
+- **`allowed-tools`** is a space-separated list, as the spec defines it; Claude Code also accepts commas. The grant covers only the turn that invokes the skill and **expires when the user sends their next message**.
+- **File references** use relative paths or `${CLAUDE_SKILL_DIR}`, and stay one level deep. Only Claude Code substitutes `${CLAUDE_PLUGIN_ROOT}` in skill text, so only the command skills use it, for the shared interview protocol.
+- **Bodies** stay well under the 500-line guideline; detail goes in `references/` or `assets/`.
+
+## Interviews for intent and spec
+
+Stages 1 and 2 interview a person, but in **two separate skills**, not one:
+
+- **The review gate is the point.** A product owner accepts the intent before design starts. One session writing both would turn that gate into a formality, and the playbook's lagging measure — does the intent survive into Stage 2 — would stop meaning anything.
+- **Different people answer them.** The originator describes the problem; an engineer or designer settles thresholds and design questions.
+- **The chain hook enforces it.** A spec must point to an accepted intent.
+
+| | `capture-intent` | `write-spec` |
+|---|---|---|
+| Who answers | the person who raised the request | an engineer or designer |
+| Asks about | problem, outcome, who is affected, constraints, what they don't know | only the intent's open questions, a measurable threshold for each outcome, and what `applying-org-policy` flags |
+| Must not | propose a solution | re-ask anything the intent records |
+| "I don't know" | goes under Open questions | stays open, or is resolved with the person |
+
+Both follow one protocol file. The main risk it guards against is a model filling gaps with plausible answers, and one eval case tests exactly that. Because the tool grant expires after the first reply, writing the file at the end of an interview usually raises a permission prompt. That prompt is a useful checkpoint, not a bug.
 
 ## Which play goes where
 
-| Playbook element | Component | Primitive | Why this primitive |
+| Playbook element | Component | Primitive | Why |
 |---|---|---|---|
-| Stage 1: `intent.md` in the originator's words | `/sdlc:intent` | user-invoked skill | a person starts it; no routing cost |
-| Stage 2: `spec.md` from an accepted intent | `/sdlc:spec` | user-invoked skill | same |
-| Stage 2: org rules for security, compliance, brand, UX | `org-policy` | **auto-invoked skill** | Claude needs it mid-task, unprompted |
-| Stage 3: plan committed before code | `/sdlc:plan` | user-invoked skill | complements built-in plan mode by committing the plan as an artifact |
-| Chain integrity: spec→intent, plan→spec | `chain_check.py` | PostToolUse hook, and the same script in CI | must hold |
-| Stage 4: failing test first, test locked during the fix | `test-first-bugfix` + `test_lock.py` | **auto-invoked skill** + PreToolUse hook | the skill teaches the protocol; the hook enforces the lock |
+| Stage 1: `intent.md` in the originator's words | `/sdlc:capture-intent` | user-invoked skill | a person starts it |
+| Stage 2: `spec.md` from an accepted intent | `/sdlc:write-spec` | user-invoked skill | same |
+| Stage 2: org rules for security, compliance, brand, UX | `applying-org-policy` | auto-invoked skill | needed mid-task, unprompted |
+| Stage 3: plan committed before code | `/sdlc:write-plan` | user-invoked skill | complements built-in plan mode by committing the plan |
+| Chain integrity | `chain_check.py` | PostToolUse hook, and the same script in CI | must hold |
+| Stage 4: failing test first, test locked | `fixing-bugs-test-first` + `test_lock.py` | auto-invoked skill + PreToolUse hook | the skill teaches; the hook enforces |
 | Stage 4: final check against the plan | `verifier` | agent | must not share the author's context |
-| Stage 5: ranked review passes from `REVIEW.md` | `pr-reviewer` | agent | same |
-| Stage 5: the agent cannot approve its own code | `no_self_merge.sh` + branch protection | PreToolUse hook + repository setting | must hold; the repository setting is the real control |
-| Stage 5: autonomy tiers, production gate | managed settings, CI environments | admin-deployed | must not be overridable by engineers |
-| Stage 6: control-band breach → response | `scripts/bands.py` → `/sdlc:incident` | script run by cron or CI, invoking headless Claude | the trigger must be deterministic, not a model |
-| `CLAUDE.md` upkeep | `claude_md_rationale.py` + `/sdlc:curate` | PostToolUse hook + user-invoked skill | the ratchet fix: rationale on entry, outcomes on review |
+| Stage 5: ranked review passes | `pr-reviewer` + `REVIEW.md` | agent | same |
+| Stage 5: agent cannot approve its own code | `no_self_merge.sh` + branch protection | PreToolUse hook + repository setting | the repository setting is the real control |
+| Stage 5: autonomy tiers, production gate | managed settings, CI environments | admin-deployed | engineers must not override it |
+| Stage 6: breach → response | `scripts/bands.py` → `/sdlc:handle-incident` | script, then headless Claude | the trigger must be deterministic |
+| `CLAUDE.md` upkeep | `claude_md_rationale.py` + `/sdlc:curate-instructions` | PostToolUse hook + user-invoked skill | rationale on entry, outcomes on review |
 
-The last row goes beyond the playbook. Its rule "when Claude makes a mistake twice, the correction goes into `CLAUDE.md`" is the growth mechanism [[why-does-claude-md-keep-growing-chakrabarti-2026|Chakrabarti]] measured at **+226%** over instruction-file lifetimes. The measured fix is recording outcome-grounded rationale beside each instruction, which removed **99.3%** of excess in a verifiable setting. Recording attempts without outcomes measured worse than recording nothing (+70%), which is why the curation pass looks for outcomes, not just reasons. See [[catastrophic-remembering]].
+The last row goes beyond the playbook. Its rule "when Claude makes a mistake twice, the correction goes into `CLAUDE.md`" is the growth mechanism [[why-does-claude-md-keep-growing-chakrabarti-2026|Chakrabarti]] measured at **+226%**. Recording outcome-grounded rationale beside each instruction removed **99.3%** of excess in a verifiable setting, while recording attempts without outcomes was worse than nothing (+70%). See [[catastrophic-remembering]].
 
 ## Layout
 
 ```
 sdlc/
-├── .claude-plugin/plugin.json
+├── .claude-plugin/plugin.json       only the manifest goes in .claude-plugin/
+├── README.md
+├── shared/interviewing.md           protocol shared by the two interview skills
 ├── skills/
-│   ├── intent/SKILL.md              user-invoked   Stage 1
-│   ├── spec/SKILL.md                user-invoked   Stage 2
-│   ├── plan/SKILL.md                user-invoked   Stage 3
-│   ├── incident/SKILL.md            user-invoked   Stage 6, also called headlessly
-│   ├── curate/SKILL.md              user-invoked   CLAUDE.md ledger review
-│   ├── test-first-bugfix/SKILL.md   AUTO           Stage 4
-│   └── org-policy/                  AUTO           Stage 2 constraints
+│   ├── capture-intent/              user-invoked  Stage 1
+│   │   ├── SKILL.md
+│   │   └── assets/intent-template.md
+│   ├── write-spec/                  user-invoked  Stage 2
+│   │   ├── SKILL.md
+│   │   └── assets/spec-template.md
+│   ├── write-plan/                  user-invoked  Stage 3
+│   │   ├── SKILL.md
+│   │   └── assets/plan-template.md
+│   ├── handle-incident/SKILL.md     user-invoked  Stage 6, also run headless
+│   ├── curate-instructions/SKILL.md user-invoked  CLAUDE.md upkeep
+│   ├── fixing-bugs-test-first/      AUTO, portable  Stage 4
+│   │   └── SKILL.md
+│   └── applying-org-policy/         AUTO, portable  Stage 2 constraints
 │       ├── SKILL.md
 │       └── references/{security,compliance,ux}.md
-├── agents/
-│   ├── verifier.md                  Stage 4 final check
-│   └── pr-reviewer.md               Stage 5 ranked review
+├── agents/{verifier,pr-reviewer}.md
 ├── hooks/
 │   ├── hooks.json
-│   ├── test_lock.py
-│   ├── no_self_merge.sh
-│   ├── chain_check.py
-│   └── claude_md_rationale.py
-├── scripts/
-│   ├── check_chain.py               shared by the hook and CI
-│   └── bands.py                     Stage 6 trigger
-├── templates/{intent,spec,plan,REVIEW}.md
+│   ├── test_lock.py  no_self_merge.sh  chain_check.py  claude_md_rationale.py
+├── scripts/{check_chain,bands}.py
+├── templates/{REVIEW.md,bands.json} copied into the target repository
 └── evals/
     ├── bugfix-writes-test-first/
-    └── intent-in-originators-words/
+    ├── intent-in-originators-words/
+    └── intent-records-unknowns/
 ```
 
-Plugin skills are namespaced, so `skills/intent` is invoked as `/sdlc:intent`.
+Plugin skills are namespaced, so `skills/capture-intent` runs as `/sdlc:capture-intent`.
 
 ## The files
 
-### Manifest
+### Manifest and README
 
 `.claude-plugin/plugin.json`
 
@@ -103,109 +154,271 @@ Plugin skills are namespaced, so `skills/intent` is invoked as `/sdlc:intent`.
 {
   "name": "sdlc",
   "version": "0.1.0",
-  "description": "Implements Anthropic's AI-Native SDLC Playbook: an intent → spec → plan artifact chain, test-first bug fixing, gated review, and control-band incident response.",
+  "description": "Implements Anthropic's AI-Native SDLC Playbook in Claude Code: an interviewed intent → spec → plan artifact chain, test-first bug fixing, gated review, and control-band incident response.",
   "author": { "name": "Your Team" },
   "license": "MIT",
   "keywords": ["sdlc", "workflow", "governance"]
 }
 ```
 
-### A user-invoked stage skill
+`README.md`
 
-`disable-model-invocation: true` is what makes it a slash command only. `allowed-tools` pre-approves just what the stage needs.
+```markdown
+# sdlc
 
-`skills/intent/SKILL.md`
+A Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook. **Skeleton** — see TODO markers.
+
+| Command | Stage |
+|---|---|
+| `/sdlc:capture-intent` | 1 — interview the requester, write `intent/…md` |
+| `/sdlc:write-spec` | 2 — interview an engineer on open items, write `spec/…md` |
+| `/sdlc:write-plan` | 3 — write and commit `plan/…md` before code |
+| `/sdlc:handle-incident` | 6 — invoked by `scripts/bands.py` |
+| `/sdlc:curate-instructions` | CLAUDE.md upkeep, report-only |
+
+Auto-invoked: `fixing-bugs-test-first`, `applying-org-policy`. Agents: `verifier`, `pr-reviewer`. Hooks enforce the artifact chain, the test lock, no agent self-merge, and a reason on every new CLAUDE.md instruction.
+
+Copy `templates/REVIEW.md` to your repository root, and adapt `templates/bands.json`.
+```
+
+### The shared interview protocol
+
+`shared/interviewing.md`
+
+```markdown
+# Interview protocol
+
+Used by `capture-intent` and `write-spec`.
+
+1. Ask one question per turn. Stop after eight questions and draft with what you have.
+2. Use AskUserQuestion for questions with a small set of answers, such as who is affected or which constraint applies. Offer two to four options; the user can always answer in free text. Ask open questions, such as the problem itself, as plain text.
+3. Record answers in the person's own words. Do not paraphrase them into a solution.
+4. If the person says they don't know, or is unsure, write the item under **Open questions**. Never fill a gap with a plausible guess.
+5. Do not ask for anything the source file already records.
+6. Before writing, show the full draft and ask for corrections.
+
+Writing the file usually needs a permission prompt: a skill's pre-approved tools expire once the person sends their next message, so a multi-turn interview ends with a human confirming the write. Treat that prompt as the checkpoint it is.
+```
+
+### User-invoked command skills
+
+`skills/capture-intent/SKILL.md`
 
 ```markdown
 ---
-name: intent
-description: Capture a change request as intent/<date>-<slug>.md in the originator's own words (Stage 1).
+name: capture-intent
+description: Captures a change request as intent/<date>-<slug>.md by interviewing the person who raised it, in their own words. Stage 1 of the AI-native SDLC.
 disable-model-invocation: true
-argument-hint: "<one-line summary of the request>"
-allowed-tools: Read, Write, Glob, AskUserQuestion
+argument-hint: "[one-line summary of the request]"
+allowed-tools: Read Glob Write AskUserQuestion
+compatibility: Requires Claude Code. Uses disable-model-invocation and plugin path variables, which the Agent Skills spec does not define.
 ---
 
-# Stage 1 — capture intent
+# Capture intent (Stage 1)
 
-Create `intent/YYYY-MM-DD-<slug>.md` from `${CLAUDE_PLUGIN_ROOT}/templates/intent.md`.
+Request: $ARGUMENTS
 
-1. Interview the originator. Record the **problem**, the **outcome** they want, **affected users**, **constraints**, and **open questions** — in their words, not a solution design.
-2. Do not propose an implementation. If the originator describes one, record it under constraints only if they insist it is required.
-3. Set `status: draft` and `owner:` to the product owner the originator names.
-4. Stop. A human reviews and sets `status: accepted`; only then may `/sdlc:spec` run.
+Follow the interview protocol in `${CLAUDE_PLUGIN_ROOT}/shared/interviewing.md`.
+
+Ask the person who raised the request for:
+
+- **Problem**: what is going wrong, and for whom
+- **Outcome**: what would be true if it were solved
+- **Affected users**: who, and how many
+- **Constraints**: deadlines, systems that must not change, regulations
+- **Open questions**: anything they don't know
+
+Do not propose an implementation. If they describe one, record it under Constraints only if they say it is required.
+
+Write `intent/YYYY-MM-DD-<slug>.md` from `${CLAUDE_SKILL_DIR}/assets/intent-template.md`, with `status: draft` and `owner:` set to the product owner they name. Then stop. A human reviews the file and sets `status: accepted` before `/sdlc:write-spec` can use it.
 ```
 
-The `spec`, `plan`, `incident` and `curate` skills follow the same pattern. `spec` refuses unless the intent is `accepted` and writes an `intent:` field. `plan` writes a `spec:` field and commits the plan alone. `incident` always ends by writing a new draft intent, which closes the loop back to Stage 1.
-
-`skills/incident/SKILL.md`
+`skills/write-spec/SKILL.md`
 
 ```markdown
 ---
-name: incident
-description: Respond to a control-band breach — diagnose read-only or propose a fix PR — and reopen the loop as a new intent (Stage 6).
+name: write-spec
+description: Writes spec/<id>.md from an accepted intent file, interviewing an engineer only about what the intent leaves open. Stage 2 of the AI-native SDLC.
 disable-model-invocation: true
-argument-hint: "<metric> <diagnose|propose-fix>"
-allowed-tools: Read, Glob, Grep, Write
+argument-hint: "[path to intent/…md]"
+allowed-tools: Read Glob Grep Write AskUserQuestion
+compatibility: Requires Claude Code. Uses disable-model-invocation and plugin path variables, which the Agent Skills spec does not define.
 ---
 
-# Stage 6 — control-band response
+# Write the spec (Stage 2)
 
-Invoked headlessly by `scripts/bands.py` when a metric leaves its band; never by a model's own judgement.
+Intent file: $ARGUMENTS
 
-1. Write `incidents/<date>-<metric>.md` with the breach, the evidence, and your diagnosis.
-2. In `propose-fix` mode only, open a PR. You may not merge it.
-3. Always finish by writing a new `intent/…md` (`status: draft`) describing the problem the incident revealed. That closes the loop back to Stage 1.
+1. Read the intent file. If its `status` is not `accepted`, stop and say so.
+2. Follow the interview protocol in `${CLAUDE_PLUGIN_ROOT}/shared/interviewing.md`, with the engineer or designer. Ask only about:
+   - each item under **Open questions** in the intent
+   - a measurable threshold for every outcome, such as a latency, a count, or an error rate
+   - requirements the `applying-org-policy` skill flags for this change
+3. Write `spec/<intent id>.md` from `${CLAUDE_SKILL_DIR}/assets/spec-template.md`. Set `intent:` to the intent file's path; a hook checks it.
+4. Every requirement needs an acceptance criterion a test could check. Anything still unresolved stays under **Open questions** in the spec.
 ```
 
-### An auto-invoked skill
-
-The description names the situation, not the skill's contents, because the description is what routing sees.
-
-`skills/test-first-bugfix/SKILL.md`
+`skills/write-plan/SKILL.md`
 
 ```markdown
 ---
-name: test-first-bugfix
-description: Use when fixing a reported bug or regression. Enforces write-the-failing-test-first, lock the test, then fix without editing it.
-allowed-tools: Read, Edit, Write, Bash, Glob, Grep
+name: write-plan
+description: Writes and commits plan/<id>.md from an accepted spec before any code is generated. Stage 3 of the AI-native SDLC.
+disable-model-invocation: true
+argument-hint: "[path to spec/…md]"
+allowed-tools: Read Glob Grep Write Bash(git add *) Bash(git commit *)
+compatibility: Requires Claude Code. Uses disable-model-invocation and plugin path variables, which the Agent Skills spec does not define.
 ---
 
-# Test-first bug fixing (Stage 4)
+# Write the plan (Stage 3)
 
-1. Reproduce the bug as a failing test. Run it and confirm it fails **for the reason in the report**, not for a setup error.
-2. Commit the test alone.
-3. Lock it: append the test file's path to `.sdlc/test-lock`. A hook now blocks Edit/Write to that path.
-4. Fix the code until the locked test passes. If you believe the test itself is wrong, stop and tell the user — do not work around the lock.
-5. When the full suite passes, remove the path from `.sdlc/test-lock` and commit the fix.
+Spec file: $ARGUMENTS
+
+1. Read the spec. Write `plan/<id>.md` from `${CLAUDE_SKILL_DIR}/assets/plan-template.md` and set `spec:` to the spec's path.
+2. Iterate until someone unfamiliar with the codebase could implement from the plan alone: files to change, order of changes, tests to add, how to roll back.
+3. Commit the plan by itself. Implementation happens in a later session, against this committed plan.
 ```
 
-`org-policy` keeps its rules in `references/` files that Claude reads only when needed, so the always-loaded part is one description.
+`skills/handle-incident/SKILL.md`
+
+```markdown
+---
+name: handle-incident
+description: Responds to a control-band breach by diagnosing read-only or proposing a fix PR, then reopens the loop as a new draft intent. Stage 6 of the AI-native SDLC; normally invoked by scripts/bands.py.
+disable-model-invocation: true
+argument-hint: "[metric] [diagnose|propose-fix]"
+allowed-tools: Read Glob Grep Write
+compatibility: Requires Claude Code. Uses disable-model-invocation, which the Agent Skills spec does not define.
+---
+
+# Handle an incident (Stage 6)
+
+Arguments: $ARGUMENTS
+
+A script detected the breach. Do not second-guess whether it happened.
+
+1. Write `incidents/YYYY-MM-DD-<metric>.md`: the breach, the evidence you found, and your diagnosis.
+2. In `propose-fix` mode only, open a pull request with the fix. You may not merge it.
+3. Always finish by writing a new `intent/YYYY-MM-DD-<slug>.md` with `status: draft`, describing the problem the incident revealed. That closes the loop to Stage 1.
+```
+
+`skills/curate-instructions/SKILL.md`
+
+```markdown
+---
+name: curate-instructions
+description: Reports CLAUDE.md instructions that have no recorded outcome as deletion candidates. Report-only; never deletes.
+disable-model-invocation: true
+allowed-tools: Read Glob Grep Bash(git log *)
+compatibility: Requires Claude Code. Uses disable-model-invocation, which the Agent Skills spec does not define.
+---
+
+# Curate CLAUDE.md instructions
+
+Each instruction carries a marker such as `<!-- id:c7 why:"CI failed twice on unformatted code" -->`. Events live in `.claude/ledger.jsonl`, one JSON object per line, with `event` set to `added`, `cited` or `outcome`.
+
+1. List instructions whose id has no `cited` or `outcome` event in the last 60 days.
+2. For each, show its `why` and its last event, and note anything in `git log` since then suggesting it still matters.
+3. Output a table of deletion candidates. Do not edit CLAUDE.md. A person decides.
+```
+
+The three templates are plain frontmatter plus section headings; `intent-template.md` carries `id`, `status: draft` and `owner`, `spec-template.md` carries `intent:` and a requirements table with an acceptance-criterion column, and `plan-template.md` carries `spec:` and `base:`.
+
+### Auto-invoked skills
+
+`skills/fixing-bugs-test-first/SKILL.md`
+
+```markdown
+---
+name: fixing-bugs-test-first
+description: Fixes reported bugs and regressions test-first — writes a failing test, locks it, then fixes the code without editing the test. Use when the user reports a bug, a regression, or wrong behavior to be fixed.
+allowed-tools: Read Glob Grep Edit Write Bash
+---
+
+# Fixing bugs test-first (Stage 4)
+
+1. Reproduce the bug as a failing test. Run it, and confirm it fails for the reason in the report rather than a setup error.
+2. Commit the test on its own.
+3. Lock it by adding the test file's path, relative to the repository root, as a line in `.sdlc/test-lock`. A hook blocks edits to locked files.
+4. Change the code until the locked test passes. If the test itself looks wrong, stop and tell the user instead of working around the lock.
+5. When the full suite passes, remove the line from `.sdlc/test-lock` and commit the fix.
+```
+
+`skills/applying-org-policy/SKILL.md`
+
+```markdown
+---
+name: applying-org-policy
+description: Loads the organization's security, compliance, brand and UX rules for a change. Use when writing a spec or designing a change that touches authentication, personal data, payments, public UI, or external APIs.
+allowed-tools: Read Glob
+---
+
+# Applying organization policy
+
+Read only the file the change needs:
+
+- [references/security.md](references/security.md): authentication, secrets, data handling
+- [references/compliance.md](references/compliance.md): retention, audit, regulated data
+- [references/ux.md](references/ux.md): brand, accessibility, copy
+
+These rules are advisory. A rule that must always hold belongs in a hook or in PR review, not here.
+```
+
+The three `references/` files are placeholders marked TODO.
 
 ### Agents
+
+Plugin agents accept `name`, `description`, `model`, `effort`, `maxTurns`, `tools`, `disallowedTools`, `skills`, `memory`, `background` and `isolation`.
 
 `agents/verifier.md`
 
 ```markdown
 ---
 name: verifier
-description: Final check before a change is proposed — reads the committed plan and the diff, runs the tests, and reports whether the diff still matches the plan. Read-only; dispatched at the end of Stage 4.
+description: Performs the final check before a change is proposed. Reads the committed plan and the diff, runs the tests, and reports whether the diff still matches the plan. Use at the end of Stage 4; read-only.
 model: inherit
+maxTurns: 30
 tools: Read, Glob, Grep, Bash
+disallowedTools: Write, Edit
 ---
 
 You are the final verifier. You did not write this change.
 
-1. Read `plan/<id>.md` and `git diff` against the plan's base.
+1. Read `plan/<id>.md` and the diff against the plan's `base:` commit.
 2. Run the test suite. Report pass or fail with the exact command.
-3. List every place the diff departs from the plan, and every plan step the diff does not implement.
-4. You may not edit files. End with VERDICT: MATCHES PLAN, or VERDICT: DIVERGES, with reasons.
+3. List every place the diff departs from the plan, and every plan step it does not implement.
+4. End with `VERDICT: MATCHES PLAN` or `VERDICT: DIVERGES`, with reasons.
 ```
 
-The `pr-reviewer` agent gets only `git diff`, `gh pr view` and `gh pr diff` for Bash, reads its passes, thresholds and nit cap from `REVIEW.md`, and cannot approve.
+`agents/pr-reviewer.md`
+
+```markdown
+---
+name: pr-reviewer
+description: Reviews a pull request in the ranked passes defined in REVIEW.md, separating Important findings from capped Nits. Use in Stage 5; read-only and cannot approve.
+model: inherit
+maxTurns: 40
+tools: Read, Glob, Grep, Bash(git diff *), Bash(gh pr view *), Bash(gh pr diff *)
+disallowedTools: Write, Edit
+---
+
+Review the pull request using the passes, thresholds and nit cap in `REVIEW.md` at the repository root.
+
+- Run each pass separately and in order. Skip anything CI already enforces.
+- Label each finding Important or Nit. Stop listing Nits at the cap.
+- You cannot approve or merge. Your output is a comment for a human code owner.
+```
 
 ### Hooks
 
-The `if` field narrows a Bash hook to one command pattern. Exit code 2 blocks a PreToolUse call, and its stderr is shown to Claude. For PostToolUse the edit has already happened, so exit 2 feeds the message back and Claude must repair the file. JSON output with `hookSpecificOutput.permissionDecision: "deny"` is the documented alternative for PreToolUse.
+The `if` field narrows a handler using permission-rule syntax, so a Bash hook spawns only for matching commands. What exit code 2 does depends on the event:
+
+| Event | Exit 2 |
+|---|---|
+| `PreToolUse` | blocks the tool call; stderr goes to Claude |
+| `PostToolUse` | cannot block — the tool already ran; stderr goes to Claude, which must repair the result |
+
+JSON output with `hookSpecificOutput.permissionDecision: "deny"` is the documented alternative for PreToolUse.
 
 `hooks/hooks.json`
 
@@ -342,41 +555,46 @@ sys.exit(0)
 
 ### The Stage 6 trigger
 
-A script computes the breach, and a model is only invoked afterwards. Two sigma runs Claude in plan mode, so it can read but not change anything. Three sigma grants a narrow tool list that can open a PR but not merge one.
+A script computes the breach; a model is invoked only afterwards. Two standard deviations runs Claude in plan mode, which can read but not change anything. Three grants a narrow tool list that can open a pull request but not merge one.
 
 `scripts/bands.py`
 
 ```python
 #!/usr/bin/env python3
-"""Stage 6 trigger. Deterministic: a script computes the breach, not a model.
-Run from cron or CI. Reads bands.json: {"metric": {"value_cmd": "...", "mean": m, "sd": s}}"""
+"""Stage 6 trigger: a script decides that a metric breached its band; a model is invoked only afterwards.
+Run from cron or CI:  python3 bands.py <plugin-dir> [bands.json]
+bands.json: {"<metric>": {"value_cmd": "<shell command printing a number>", "mean": <m>, "sd": <s>}}"""
 import json, subprocess, sys
-PLUGIN = sys.argv[1] if len(sys.argv) > 1 else "./sdlc"
-for metric, b in json.load(open("bands.json")).items():
-    value = float(subprocess.check_output(b["value_cmd"], shell=True, text=True))
+plugin = sys.argv[1] if len(sys.argv) > 1 else "./sdlc"
+bands = json.load(open(sys.argv[2] if len(sys.argv) > 2 else "bands.json"))
+for metric, b in bands.items():
+    value = float(subprocess.check_output(b["value_cmd"], shell=True, text=True).strip())
     z = abs(value - b["mean"]) / b["sd"]
     if z < 1:
         continue
     if z < 2:
-        print(f"[1σ] {metric}={value} logged"); continue
+        print(f"[1 sd] {metric}={value}: logged only")
+        continue
     mode = "diagnose" if z < 3 else "propose-fix"
-    cmd = ["claude", "-p", "--plugin-dir", PLUGIN, f"/sdlc:incident {metric} {mode}"]
-    cmd += (["--permission-mode", "plan"] if mode == "diagnose"
-            else ["--allowedTools", "Read", "Glob", "Grep", "Write", "Edit",
-                  "Bash(git checkout -b:*)", "Bash(git commit:*)", "Bash(gh pr create:*)"])
+    cmd = ["claude", "-p", "--plugin-dir", plugin, f"/sdlc:handle-incident {metric} {mode}"]
+    if mode == "diagnose":
+        cmd += ["--permission-mode", "plan"]                      # read-only
+    else:
+        cmd += ["--allowedTools", "Read", "Glob", "Grep", "Write", "Edit",
+                "Bash(git checkout -b *)", "Bash(git commit *)", "Bash(gh pr create *)"]
     subprocess.run(cmd, check=False)
 ```
 
-### An eval case
+### Eval cases
 
-A case is a folder holding `prompt.md` plus `graders/`. Under the default with-without ablation, a `tool_used: Skill` grader is reported as a did-the-plugin-fire indicator, not scored. The outcome is judged by the other graders.
+A case is a folder holding `prompt.md` and `graders/`. An eval run cannot answer interview questions, so the interview cases give their answers up front and tell the skill not to ask. Under the default with-without comparison, a `tool_used: Skill` grader is reported as a did-it-fire indicator rather than scored.
 
 `evals/bugfix-writes-test-first/prompt.md`
 
 ```markdown
 ---
-max_turns: 20
-allowed_tools: [Read, Edit, Write, Bash, Glob, Grep, Skill]
+max_turns: 30
+allowed_tools: [Read, Glob, Grep, Edit, Write, Bash, Skill]
 ---
 Bug report: `slugify("Hello  World")` returns "hello--world" but should return "hello-world". Please fix it.
 ```
@@ -387,7 +605,7 @@ Bug report: `slugify("Hello  World")` returns "hello--world" but should return "
 ---
 type: tool_used
 tool: Skill
-input_match: '"skill"\s*:\s*"sdlc:test-first-bugfix"'
+input_match: '"skill"\s*:\s*"(?:[\w-]+:)?fixing-bugs-test-first"'
 ---
 ```
 
@@ -397,59 +615,117 @@ input_match: '"skill"\s*:\s*"sdlc:test-first-bugfix"'
 ---
 type: llm
 ---
-PASS if the transcript shows a failing test for the double-space case being written and run, and committed, before any change to the slugify implementation, and the test file is not edited after that commit. FAIL otherwise.
+PASS if a failing test for the double-space case was written, run, and committed before any change to the slugify implementation, and the test file was not edited after that commit. FAIL otherwise.
 ```
 
-## Build and check
+`evals/intent-records-unknowns/prompt.md`
+
+```markdown
+---
+max_turns: 10
+allowed_tools: [Read, Glob, Write, Skill]
+---
+/sdlc:capture-intent Search results feel wrong lately. I don't know which users are affected or when it started. Don't ask me follow-ups; draft from this.
+```
+
+`evals/intent-records-unknowns/graders/unknowns-not-invented.md`
+
+```markdown
+---
+type: llm
+---
+PASS if the intent file lists "which users are affected" and "when it started" under Open questions, and nowhere states a specific user group, date, or cause the prompt did not give. FAIL if any of those gaps is filled with a guess.
+```
+
+`intent-in-originators-words` follows the same shape, passing only if the draft proposes no implementation.
+
+## Validate and test
 
 ```bash
-claude plugin validate --strict ./sdlc           # manifest only
-claude plugin validate --strict ./sdlc/skills    # skills
-claude plugin validate --strict ./sdlc/agents    # agents
-claude --plugin-dir ./sdlc                       # load it; run /hooks to confirm the hooks registered
-claude plugin eval ./sdlc --runs 3 --max-cost-usd 5 --json results.json
+claude plugin validate --strict ./sdlc
 ```
 
-> [!warning] Validating the plugin root checks only the manifest
-> On 2.1.268, `claude plugin validate --strict` on the plugin root reported `"contents": []`. Skills and agents were validated only when their directories were passed directly, and nothing validates `hooks.json`. Parse it yourself and test each hook script with synthetic input before trusting it, as was done here.
+On a plugin with a manifest, this checks `plugin.json`, `hooks/hooks.json`, and the frontmatter of every skill, agent and command. Planting defects showed what it catches and what it doesn't:
 
-**Measuring skills.** Use two tools, because they answer different questions:
+| Defect | Caught? |
+|---|---|
+| Unparseable skill or agent frontmatter | yes, as an error |
+| Missing skill description | yes, as a warning (an error under `--strict`) |
+| Invalid `hooks.json` | yes |
+| Unknown frontmatter field | **no**, even under `--strict` |
+| A skill name breaking the spec's rules, or not matching its folder | **no** |
 
-- **Does it fire?** [[anthropic|Anthropic]]'s skill-creator plugin generates about 20 trigger queries, mixing should-trigger with near-miss should-not-trigger, and optimizes the description against a held-out split. Run it on the two auto-invoked skills only; the others never auto-trigger.
-- **Does it help?** `claude plugin eval` compares with-plugin and without-plugin runs on real tasks. Its `meanDelta` is the number that matters.
-- **Is it used?** `/skill-doctor` shows seven-day usage and context cost per skill, and flags never-invoked skills for pruning.
+`validate` checks what Claude Code will load, not the Agent Skills specification. For the portable skills, also run the spec's own validator — [skills-ref](https://github.com/agentskills/agentskills/tree/main/skills-ref), or the `quick_validate.py` shipped with Anthropic's skill-creator plugin. Hook scripts are not exercised by either: pipe a synthetic tool-call event into each script and check its exit code.
 
-Then track each play's leading and lagging measure from the playbook. Examples: time from first conversation to committed `intent.md`, then its survival into Stage 2. First-pass CI success for agent changes, then change failure rate. For `CLAUDE.md`, the file's length over time: if the ledger works, growth should level off.
+```bash
+echo '{"tool_input":{"command":"gh pr merge 42"}}' | sh hooks/no_self_merge.sh; echo "exit $?"
+```
+
+## Evals
+
+Write evaluations before the skills, as the best practices ask: at least three per skill, each tested on Haiku, Sonnet and Opus. The skeleton ships three cases in total, one per behavior most likely to fail.
+
+```bash
+claude plugin eval init
+```
+
+`init` drafts cases for the plugin through an interview. To run the suite:
+
+```bash
+claude plugin eval ./sdlc --allow-tools Bash Write Edit --runs 3 --max-cost-usd 10 --json results.json
+```
+
+`--allow-tools` is required here. Eval sessions strip Bash, Write and Edit unless granted, and the bug-fix case needs all three. Add `--trust-plugin` in CI, and repeat with `--model` once per model. The docs list 2.1.269 as the minimum version, though 2.1.268 already has the command. The number to watch is `meanDelta`, the with-plugin score minus the without-plugin score.
+
+Two further tools:
+
+- **Does it fire?** skill-creator's trigger-eval loop: about twenty realistic queries, half near-misses, with the description tuned against a held-out split. Run it on the two auto-invoked skills only.
+- **Is it used?** `/skill-doctor` reports seven-day usage and context cost per skill.
+
+Then track each play's leading and lagging measure from the playbook.
 
 ## Rollout
 
 | Phase | Ships | Done when |
 |---|---|---|
-| 0 | nothing — record baselines for each lagging measure | four weeks of data exist |
-| 1 | `intent`, `spec`, `plan`, templates, `chain_check.py` in a hook and in CI | intents survive into specs, and no chain breaks reach main |
-| 2 | `test-first-bugfix`, `test_lock.py`, `verifier`, the bug-fix eval | the eval's with-plugin arm beats without-plugin |
+| 0 | nothing — record baselines for each lagging measure | four weeks of data |
+| 1 | `capture-intent`, `write-spec`, `write-plan`, templates, `chain_check.py` in a hook and in CI | intents survive into specs; no chain breaks reach main |
+| 2 | `fixing-bugs-test-first`, `test_lock.py`, `verifier`, bug-fix evals | with-plugin beats without-plugin on all three models |
 | 3 | `pr-reviewer`, `REVIEW.md`, `no_self_merge.sh`, branch protection | review findings sampled against human labels monthly |
-| 4 | `claude_md_rationale.py`, `/sdlc:curate` | `CLAUDE.md` length stops growing |
-| 5 | `bands.py`, `/sdlc:incident`, cron or CI schedule | a real breach produced an incident record and a new intent |
+| 4 | `claude_md_rationale.py`, `curate-instructions` | `CLAUDE.md` length stops growing |
+| 5 | `bands.py`, `handle-incident`, a schedule | a real breach produced an incident record and a new intent |
 
-Each phase stands alone, and phase 4 is useful even if the rest of the playbook is never adopted.
+Each phase stands alone. Phase 4 is useful even if the rest of the playbook is never adopted.
 
 ## Distribution
 
-Put a `.claude-plugin/marketplace.json` at the root of a repository that lists the plugin, then install it with `/plugin marketplace add your-org/claude-plugins` and `/plugin install sdlc@your-marketplace`. To offer it to a whole team, commit `extraKnownMarketplaces` and `enabledPlugins` to the project's `.claude/settings.json`. Per the docs, plugins from external sources still need a manual install.
+List the plugin in a `.claude-plugin/marketplace.json` at the root of a repository, then `/plugin marketplace add your-org/claude-plugins` and `/plugin install sdlc@your-marketplace`. For a team, commit `extraKnownMarketplaces` and `enabledPlugins` to the project's `.claude/settings.json`; plugins from external sources still need a manual install.
+
+To publish, submit through the in-app form for the **community** marketplace. Review runs the same `claude plugin validate` plus automated safety screening, and approved plugins are pinned to a commit. The **official** marketplace is curated by Anthropic with no application process.
 
 ## Limits, stated plainly
 
-- **Hooks guard tools, not intent.** `test_lock.py` blocks Edit and Write on the locked test, but a shell command could still rewrite the file. The real guarantee is a CI check that the test file is unchanged between the test commit and the fix commit.
-- **The merge rule belongs to the repository.** `no_self_merge.sh` is defense in depth; branch protection requiring code-owner approval is the control.
-- **The reviewer will degrade silently.** An LLM judge's selective accuracy fell from **82.8% to 56.9%** as trajectories deepened while its coverage rose ([[rehearse-confidence-cliff-autoresearch-ji-2026|Rehearse]]). Sampling findings against human labels, as phase 3 requires, is the only way to see it.
-- **Skill descriptions are an attack surface.** Targeting a description rather than a body raised self-poisoning by **26.9 percentage points** in [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026|EvoMal]]. Review description changes like code.
-- **Two things here are unverified.** Whether a headless `claude -p "/sdlc:incident …"` invokes a plugin skill as written, and whether the GitHub Action can load plugins. The docs cover neither; test both before relying on phase 5.
-- **The `CLAUDE.md` "cited" signal is a weak proxy.** An instruction can be obeyed forever without being cited. That is why `/sdlc:curate` reports and never deletes.
+- **Hooks guard tools, not intent.** `test_lock.py` blocks Edit and Write on the locked test, but a shell command could still rewrite it. The real guarantee is a CI check that the test file is unchanged between the test commit and the fix commit.
+- **The merge rule belongs to the repository.** The hook is defense in depth; branch protection is the control.
+- **The reviewer will degrade silently.** An LLM judge's selective accuracy fell from **82.8% to 56.9%** as trajectories deepened while its coverage rose ([[rehearse-confidence-cliff-autoresearch-ji-2026|Rehearse]]). Only sampling against human labels shows it.
+- **Skill descriptions are an attack surface.** Targeting a description raised self-poisoning by **26.9 percentage points** in [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026|EvoMal]]. Review description changes like code.
+- **Unverified here:** whether `claude -p "/sdlc:handle-incident …"` invokes a plugin skill as written, and whether the GitHub Action can load plugins. The docs cover neither.
+- **The CLAUDE.md "cited" signal is a weak proxy**, which is why `curate-instructions` reports and never deletes.
+
+## Checklist for the build session
+
+1. Copy the skeleton into its own repository; install it with `claude --plugin-dir ./sdlc` and confirm the hooks registered with `/hooks` in an interactive terminal.
+2. Write three evals per skill before changing any skill body; run them on Haiku, Sonnet and Opus.
+3. Replace the TODO placeholders in `applying-org-policy/references/`.
+4. Wire `scripts/check_chain.py` into CI, and add the check that a locked test is unchanged between the test commit and the fix commit.
+5. Copy `templates/REVIEW.md` to the target repository root; turn on branch protection with code-owner approval.
+6. Replace `templates/bands.json` with real metrics; verify headless invocation of `handle-incident` before scheduling it.
+7. Run skill-creator's trigger-eval loop on the two auto-invoked skills.
+8. Re-run `claude plugin validate --strict`, the spec validator on the portable skills, and the hook tests after every change.
 
 ## What not to build
 
-Anthropic's official plugins already cover these, so reuse them instead: `hookify` for authoring hook rules, `skill-creator` for skill evals and description tuning, `claude-md-management` for auditing `CLAUDE.md`, the built-in `/code-review`, and `security-guidance` or `claude-security` for security review.
+Anthropic's official plugins already cover these: `hookify` for authoring hook rules, `skill-creator` for skill evals and description tuning, `claude-md-management` for auditing `CLAUDE.md`, the built-in `/code-review`, and `security-guidance` or `claude-security` for security review.
 
 ## Related
 
@@ -463,4 +739,5 @@ Anthropic's official plugins already cover these, so reuse them instead: `hookif
 ## References
 
 - [[ai-native-sdlc-playbook-anthropic-2026]] · [[demystifying-agent-skills-jiang-2026]] · [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] · [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] · [[evaluating-skills-not-just-agents-kevin-2026]] · [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026]]
-- Claude Code docs: plugins, plugin evals, skills, hooks, plugin marketplaces (code.claude.com/docs/en).
+- [Agent Skills specification](https://agentskills.io/specification) · [Skill authoring best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)
+- Claude Code docs (code.claude.com/docs/en): skills, plugins, plugins-reference, plugin-marketplaces, hooks, plugin-evals

@@ -9,6 +9,18 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-14] query | Build guide revised after reading the skill standard and plugin docs
+
+The user asked whether I had read the Claude plugin guidelines and the Agent Skills standard. I had not: the first version of [[building-an-ai-native-sdlc-plugin]] rested on a docs agent's summary, six official plugins and the CLI help. Reading the specification, Anthropic's authoring best practices and the Claude Code skills, plugins, marketplaces, hooks and eval docs, then testing the validator with planted defects, found four errors in the guide:
+
+- **The validation warning was wrong.** `claude plugin validate` on a plugin root checks the manifest, `hooks.json`, and every skill, agent and command file. The real gap is the opposite: it ignores unknown frontmatter fields even under `--strict`, and does not enforce the spec's naming rules.
+- **The eval command would have failed.** Eval sessions strip Bash, Write and Edit unless granted with `--allow-tools`.
+- **Pre-approved tools expire at the user's next message**, which the guide did not say and which matters for multi-turn interviews.
+- **Five of seven skills were not spec-conformant**, silently. They use Claude Code-only fields, which claude.ai and the Skills API reject with a hard error.
+
+The revision splits skills into portable auto-invoked ones (spec fields only, gerund names, skill-local files) and Claude-Code-only command skills (declared in `compatibility`), switches to third-person descriptions and space-separated tool lists, moves templates into skill `assets/`, renames the CLAUDE.md skill to avoid the reserved word "claude", adds the user's interview design as two skills with a shared protocol, adds a third eval that checks unknowns are not invented, and adds a checklist for the build session. Re-checked: strict validation passes, 2 of 7 skills pass the spec validator by design, 7 of 7 names comply, 15 of 15 hook tests pass. Building is handed to a separate session.
+
+
 ## [2026-09-14] query | Build guide — a Claude Code plugin implementing the AI-Native SDLC Playbook
 
 Question: "A guide to build a plugin including agent skills to implement Anthropic's AI-native SDLC playbook." Filed as [[building-an-ai-native-sdlc-plugin]]. Key pages consulted: [[ai-native-sdlc-playbook-anthropic-2026]], [[ai-native-sdlc]], [[skill-routing]], [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]], [[evaluating-skills-not-just-agents-kevin-2026]], [[catastrophic-remembering]].

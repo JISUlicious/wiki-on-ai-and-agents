@@ -670,7 +670,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[hbm-is-not-all-you-need-wei-2026]] — disaggregation across *memory technologies*: GDDR for prefill, HBM for decode, 4.8× goodput-per-dollar at 14B
 
 ### AI-native software development (2026)
-- [[building-an-ai-native-sdlc-plugin]] — **query (guide)**: build a Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook — which play goes in a skill, hook, agent or managed setting, a skeleton that passes `claude plugin validate --strict`, evals with a no-plugin baseline, and a phased rollout
+- [[building-an-ai-native-sdlc-plugin]] — **query (guide)**: a Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook — which play goes in a skill, hook, agent or managed setting; interviewed intent and spec; portable vs Claude-Code-only skills checked against the Agent Skills spec; a skeleton that passes `claude plugin validate --strict`; evals with a no-plugin baseline
 - [[ai-native-sdlc]] — **concept**: writing code stops being the bottleneck, so the constraint inverts onto plan/review/test/deploy. Practical shape is throughput under supervision, not autonomy
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the operational anchor: six stages, the `intent.md → spec.md → plan.md → PR → deploy → incident` artifact chain as audit trail, three unequal enforcement layers, and leading/lagging measures per play
 - [[agentic-coding-trends-report-anthropic-2026]] — the forecast companion, and the source of the 60% / 0–20% delegation figures. No methodology section; every case study is a customer
