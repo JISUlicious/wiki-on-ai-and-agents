@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-09-07",
+  "last_processed_date": "2026-09-15",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -81,7 +81,10 @@
     "1a02a114151f50a4",
     "1a04e27e226d22ae",
     "1a0774888df24f36",
-    "1a0723908df9606e"
+    "1a0723908df9606e",
+    "1a09b7be8fdbd3b0",
+    "1a087bf349f7b51e",
+    "1a0964b52fb41651"
   ],
   "runs": [
     {
@@ -234,6 +237,25 @@
         "2608.27454"
       ],
       "notes": "11 papers surfaced, WikiSkill (2608.27454) already ingested 2 days prior and caught by dedupe. 3 agents (kept under the limit after the 09-05 failure). Declarative Attention reframed: decode-time not prefill, so NOT a fourth sparse-prefill family - filed under sparse-attention with a phase warning; also KAIST not DeepMind. Contradiction filed on graph-memory: graph retrieval loses to flat vectors at matched budget (F1 0.417 vs 0.468), multi-hop advantage absent, cost is informational not engineering; graph forgetting survives, hipporag-2 exempt. E-Commerce Bench vs MerchantBench reconciled by normalizing to opening capital (19.8x vs 14.3x - MerchantBench agents did better and were still at 27.3% of human). Third propagation mechanism identified (social evidence of unenforced rules) vs EvoMal imitation and Mind Viruses instruction. RHAE dispute advanced: OpenAI's own table puts GPT-5.6 Sol at 7.8%, so the harness effect is likely ~11x not 6.4x - correction direction flipped. New: tau-bench, purdue-university. Watchlist +14 entries (36 total)."
+    },
+    {
+      "date": "2026-09-15",
+      "type": "newsletter sweep (manual, relayed from another session; NLP Top-Papers + alphaXiv digest + AI Agents Weekly)",
+      "threads_read": 3,
+      "candidate_ids_verified": 16,
+      "on_domain_ingested": 12,
+      "new_source_pages": 12,
+      "new_concept_pages": 0,
+      "dups_skipped": [
+        "2609.04170",
+        "2609.02737",
+        "2608.31036",
+        "2609.01481"
+      ],
+      "off_domain_dropped": [
+        "alphaXiv 2609.navier-stokes (no arXiv ID)"
+      ],
+      "notes": "4 agents x 3 papers, no failures. Watchlist: LEGO-RL resolved (2608.17393); 5 unresolved. Near-miss 2609.11987 noted, not ingested."
     }
   ],
   "pending_threads": [
@@ -343,11 +365,13 @@
       "issue": "2026-08-22",
       "thread": "1a02a114151f50a4",
       "keyword": "LEGO-RL trains agents in Claude Code",
-      "status": "unresolved",
+      "status": "resolved",
       "searched": [
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-15"
       ],
-      "note": "no arXiv hit; may be blog/product"
+      "note": "LEGO-RL: Harness-Native Reinforcement Learning for Coding Agents — ingested in the 2026-09-15 sweep",
+      "arxiv_id": "2608.17393"
     },
     {
       "issue": "2026-08-29",
@@ -383,7 +407,8 @@
       "keyword": "Terminal-Bench-Science scores agents on science",
       "status": "unresolved",
       "searched": [
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-15"
       ],
       "note": "no arXiv hit; likely a leaderboard/blog, not a paper"
     },
@@ -399,7 +424,8 @@
       "keyword": "Headlong keeps agents always thinking",
       "status": "unresolved",
       "searched": [
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-15"
       ],
       "note": "no arXiv hit; likely product"
     },
@@ -471,9 +497,10 @@
       "keyword": "FrontierHarness Eval compares nine harnesses on one model",
       "status": "unresolved",
       "searched": [
-        "2026-09-07"
+        "2026-09-07",
+        "2026-09-15"
       ],
-      "note": "no arXiv hit; directly relevant to harness-vs-model-attribution if it ever surfaces"
+      "note": "no match yet. Near-miss 2609.11987 'Harness or Model?' is two harnesses on each of two models (not nine on one); not ingested, candidate for harness-vs-model-attribution"
     },
     {
       "issue": "2026-09-05",
@@ -511,7 +538,8 @@
       "keyword": "FrontierSWE v2 extends coding agent runs to 20 hours",
       "status": "unresolved",
       "searched": [
-        "2026-09-07"
+        "2026-09-07",
+        "2026-09-15"
       ],
       "note": "benchmark update; no arXiv hit yet"
     },
@@ -521,6 +549,72 @@
       "keyword": "Cheating and whistleblowing emerge in a 100-agent research swarm",
       "status": "resolved",
       "arxiv_id": "2609.04170"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "OpenAI launches the Agents API",
+      "status": "product",
+      "note": "managed Codex harness in public beta: compaction, on-demand tool search, multi_agent subagents, choice of sandboxes; the harness is open source. Noted on [[openai]]"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "Cognition ships SWE-2",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "DeepSeek drops V4.1-Flash",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "Sakana ships Fugu Max and Ultra v2",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "Meta launches Muse personal agent",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "GPT-Live-1 arrives in the API",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "Claude Code adds plugin evals",
+      "status": "product",
+      "note": "`claude plugin eval` — already documented on [[building-an-ai-native-sdlc-plugin]]. Noted on [[claude-code]]"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "ChatGPT Work gets a Data agent",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "Cursor introduces Projects",
+      "status": "product"
+    },
+    {
+      "issue": "2026-09-12",
+      "thread": "1a0964b52fb41651",
+      "keyword": "AutoResearchExam tests 24-hour research agents",
+      "status": "unresolved",
+      "searched": [
+        "2026-09-15"
+      ],
+      "note": "searched 2026-09-15 on arxiv.org: no match"
     }
   ]
 }

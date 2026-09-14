@@ -2,7 +2,7 @@
 title: Long-Context LLM
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-15
 sources:
   - em-llm-fountas-2024.md
   - titans-behrouz-2025.md
@@ -51,3 +51,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[sparse-prefill]] — the attention-share rule: sparse attention is Amdahl-bounded below ~64K and the only lever past 300K; token dropping is the reverse
 - [[sparse-attention]] — MInference reaches 10× end-to-end at 1M on one A100 — and ×0.47, slower than dense, at LongBench lengths
 - [[trained-sparse-attention]] — NSA, MoBA, DSA — sparsity in the training loop
+- [[parser-read-in-parallel-reason-in-depth-li-2026]] — read in parallel, reason in depth: 83–86% at every length up to 896K where 4B full-context reading falls to 31%

@@ -2,7 +2,7 @@
 title: Self-Improving Agent
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-15
 sources:
   - darwin-godel-machine-zhang-2025.md
   - voyager-wang-2023.md
@@ -85,3 +85,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[on-the-fragility-of-self-improving-agents-ye-2026]] · [[what-is-missing-from-ai-post-training-ai-lim-2026]] — the empirical tests of this page's premise.
 - [[ai4ai-bench-algorithmic-design-chi-2026]] — the benchmark counterpart: can an agent redesign a *training algorithm*? Mean 0.166, and **141 of 263 classifiable submissions stay entirely run-side** — only 8.7% replace the update rule, so most "self-improvement" never touches how the model learns
 - [[ai-research-preference-models-foster-2026]] — the positive counterpart to the selection-gate problem: train a dedicated preference model to pick which candidate to run *before* executing it. Both variants reach the unguided agent's 24-hour score in ~15 hours on under two-thirds of its budget, with selector and operator **sharing one backbone** so the gain cannot come from a stronger judge
+- [[last-ai-built-by-humans-recursive-self-improvement-duan-2026]] — a five-level autonomy scale for auditing what a claimed self-improving agent actually automates; Reflexion falls below it and the Darwin Gödel Machine is only a transition case. Its Headroom-Closed Index measures benchmark headroom, not self-improvement
+- [[procedural-graphs-self-evolving-execution-structures-lu-2026]] — a self-editing procedure graph gated on held-out validation — self-improvement with an explicit acceptance rule

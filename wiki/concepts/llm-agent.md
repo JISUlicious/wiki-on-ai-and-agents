@@ -2,7 +2,7 @@
 title: LLM Agent
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-15
 sources:
   - react-yao-2022.md
 status: complete
@@ -81,3 +81,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[how-ai-agents-reshape-knowledge-work-yang-2026]] — economics of agents vs assistants (Perplexity data)
 - [[hitchhikers-guide-to-agentic-ai-roitman-2026]] — survey/guide: foundations → systems of agentic AI
+- [[proactive-thought-partners-writing-zhang-2026]] — what an agent that speaks up unasked should look like, from a one-week study with 16 writers: 58% of 1,100 suggestions were ignored, and participants valued support that arrives unasked, small tags that fade away, and questions over instructions

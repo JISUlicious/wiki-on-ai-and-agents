@@ -9,6 +9,17 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-15] ingest | Newsletter sweep 2026-09-15 — 12 sources
+
+Run on the user's "/wiki ingest latest newsletters", typed by mistake into another session and relayed here. Three threads since the 2026-09-07 cursor: NLP "Top AI Papers of the Week" (Sep 7–13), alphaXiv weekly digest (Sep 9), and AI Agents Weekly (Sep 12, a paywalled preview). 16 candidates: 12 ingested; 4 duplicates skipped (emergent cheating 2609.04170, Declarative Attention 2609.02737, NoRA 2608.31036, Harness-of-Harness 2609.01481); 1 dropped as off-domain (a Navier–Stokes blowup result with no arXiv ID in the digest). Four agents, three papers each; every ID verified against citation_title and every number against the paper body.
+
+**The newsletter blurbs overstated five things**, all corrected on the pages: FrogNano is teacher-free only for trajectories (a stronger model writes its tasks) and its 61.5% is on its own validation set; the Co-Evolving seven-task drop is Qwen-only (Gemma 4 was tested on one task); PARSER's win over DeepSeek-V4-Pro holds on HotpotQA only, and its 11× latency gain falls to 1.3× at 32 concurrent requests; the design-docs paper's headline correctness result appears only in its abstract, with no results section behind it; and the RSI survey's Headroom-Closed Index measures benchmark headroom, not self-improvement. Codebook Agent's "about six topologies" is exactly the six fixed graphs it was trained on.
+
+**Cross-links worth keeping**: [[procedural-graphs-self-evolving-execution-structures-lu-2026]] gates every graph edit on held-out validation and files rejected edits with their scores — an engineered instance of the outcome-grounded fix on [[catastrophic-remembering]]. [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] measures trajectory imitation *hurting* a weaker model under its own evolved harness, a counterpoint on [[on-policy-distillation]] and [[knowledge-distillation]]. [[design-docs-are-all-you-need-kushnir-2026]] is the [[ai-native-sdlc]] artifact chain at its limit: no committed code, only design docs.
+
+**Watchlist**: LEGO-RL resolved (2608.17393, ingested); FrontierSWE v2, Terminal-Bench-Science, Headlong, FrontierHarness Eval and the new AutoResearchExam remain unresolved. A near-miss for FrontierHarness, 2609.11987 ("Harness or Model?"), finds no average harness advantage on two same-model contrasts — not ingested because it was not in the newsletters, but a candidate for [[harness-vs-model-attribution]]. Product news noted on [[openai]] (Agents API) and [[claude-code]] (plugin evals).
+
+
 ## [2026-09-14] query | Build guide revised after reading the skill standard and plugin docs
 
 The user asked whether I had read the Claude plugin guidelines and the Agent Skills standard. I had not: the first version of [[building-an-ai-native-sdlc-plugin]] rested on a docs agent's summary, six official plugins and the CLI help. Reading the specification, Anthropic's authoring best practices and the Claude Code skills, plugins, marketplaces, hooks and eval docs, then testing the validator with planted defects, found four errors in the guide:

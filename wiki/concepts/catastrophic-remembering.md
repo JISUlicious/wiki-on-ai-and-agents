@@ -2,7 +2,7 @@
 title: Catastrophic Remembering
 type: concept
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-15
 sources:
   - why-does-claude-md-keep-growing-chakrabarti-2026.md
   - continualskillbench-guan-2026.md
@@ -82,3 +82,5 @@ Every one of these restores the deleted information — rationale, relevance, or
 - [[ai-native-sdlc]] — the new maintenance burden an AI-native lifecycle takes on — and better models ratchet harder
 - [[ai-enabled-cyber-operations]] — an adversarial instance of the outcome-grounded escape: threat actors' exploit-research skills keep a ledger of "confirmed dead ends never to retry" — memory that records outcomes, not only rationale, which is the property this page identifies as the fix
 - [[building-an-ai-native-sdlc-plugin]] — a CLAUDE.md outcome ledger as plugin parts: a hook that rejects instructions without an id and a reason, and a report-only curation skill that lists instructions with no recorded outcome
+- [[procedural-graphs-self-evolving-execution-structures-lu-2026]] — an engineered instance of the outcome-grounded fix: every graph edit, deletions included, must hold on held-out validation before it is kept, and rejected edits are filed with their scores. Caveat: that rejection log itself grows without bound and is fed whole to the refiner
+- [[continual-learning-mechanisms-compose-long-horizon-memorization-zhang-2026]] — the gradient-based side of the dual: composing replay, self-distillation and synaptic intelligence with merged LoRA lifts retention over 100 tasks from 1.2% to 34.9%, but forgetting is slowed, not stopped, and general capability collapses from about 69% to 13%

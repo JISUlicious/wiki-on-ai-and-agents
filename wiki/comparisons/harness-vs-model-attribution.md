@@ -2,7 +2,7 @@
 title: "Harness vs. Model: Performance Attribution (factorial studies)"
 type: comparison
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-09-15
 sources:
   - cross-agent-comparison-doc-2026.md
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
@@ -114,3 +114,5 @@ Surfaced via newsletter ingests; see [[index]].
 > Separately, Astra is reported at **99.9%** on ARC-AGI-3. If that holds, the benchmark is saturated and ceases to discriminate harnesses at all.
 - [[j-space-cognition-suite]] — a worked example: every claimed gain (+4.4 to +16.0) falls inside the harness-substitution band this page quantifies, and the control column comes from a vendor model card rather than a matched run
 - [[ai-native-sdlc]] — why this page matters operationally: SDLC narratives attribute outcomes to model capability, while scaffold-only variation moves them 11–15 points with the model fixed
+- [[frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026]] — harness sensitivity depends on the model: an 8.3%→37.2% harness swing for a 4B base, none for MiniMax-M2.5 (66.5% under both)
+- [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — harness and fine-tuning recipe interact: a recipe that helps under one harness hurts under another

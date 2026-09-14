@@ -2,7 +2,7 @@
 title: AI-Native SDLC
 type: concept
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-15
 sources:
   - ai-native-sdlc-playbook-anthropic-2026.md
   - agentic-coding-trends-report-anthropic-2026.md
@@ -99,3 +99,4 @@ Two directions of movement: controls shift **left** (policy applied during gener
 ## Related 2026 sources
 
 - [[building-an-ai-native-sdlc-plugin]] — a build guide: this playbook implemented as a Claude Code plugin — user-invoked skills for the artifact chain, two auto-invoked skills, hooks for the must-hold rules, reviewer and verifier agents, and plugin evals with a no-plugin baseline
+- [[design-docs-are-all-you-need-kushnir-2026]] — the artifact chain taken to its limit: the library's main branch holds almost no code, humans edit only 50 design docs, and coding sub-agents regenerate everything for about $100 a rebuild. The headline correctness result appears only in the abstract

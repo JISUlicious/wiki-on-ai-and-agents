@@ -2,7 +2,7 @@
 title: On-Policy Distillation
 type: concept
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-15
 sources:
   - weak-to-strong-on-policy-distillation-yu-2026.md
   - on-policy-self-distillation-without-supervision-li-2026.md
@@ -44,3 +44,8 @@ All three get their gains from *where* the signal is measured rather than from a
 ## References
 
 - [[weak-to-strong-on-policy-distillation-yu-2026]] · [[on-policy-self-distillation-without-supervision-li-2026]] · [[agentopsd-recursive-self-distillation-agentic-rl-wang-2026]]
+
+## Related 2026 sources
+
+- [[rethinking-on-policy-distillation-ii-one-training-example-fu-2026]] — one training problem recovers 87% of full-data OPD's gain at 300 steps; the paper's diagnosis is that OPD is limited by how fast the student absorbs signal, not by data
+- [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — on-policy correction beats imitation: fine-tuning a weaker model on a stronger model's full trajectories *dropped* it on all seven tasks (−4 to −30 points) under the harness evolved for it; rewriting only the failing turn helps

@@ -2,7 +2,7 @@
 title: SWE-bench
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-09-15
 sources:
   - swe-bench-jimenez-2023.md
 status: draft
@@ -27,3 +27,5 @@ Related: [[swe-bench-live]], [[swe-gym]], [[llm-agent]], [[agentic-rl]]
 ## Related 2026 sources
 
 - [[swe-refactor-bench-hong-2026]] — the long-horizon counterpart: whole-repository stack migrations, where **28 of 520 runs (5.4%) pass all three stages** and 13 of 20 tasks receive no accepted solution — against frontier resolution rates in the 70s on this benchmark
+- [[frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026]] — 61.5% on Verified from a 4B model trained only with RL on synthetic tasks — but Verified is also its validation set
+- [[lego-rl-harness-native-reinforcement-learning-coding-agents-du-2026]] — harness-native RL results under three real harnesses

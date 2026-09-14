@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-06-09
+updated: 2026-09-15
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -112,3 +112,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[coral-llm-native-harness-production-recommender-azhar-2026]] — Meta, running against a live recommender: **the human is not an approval gate.** Each cycle's configuration applies *directly*; safety comes from a closed action space and a constrained optimizer that returns the projection onto the feasible set, binding **only** when a proposal would overspend. Engagement up at no extra serving cost on one platform; round-two savings up 44% with engagement unchanged on the other
 - [[runtime-independent-persistent-agents-zhao-2026]] — splits an agent into persistent (identity, memory, versioned body) and replaceable (reasoner, harness, device), with a six-phase quiesce–checkpoint–validate–bind–rehydrate–resume handoff. The authors are careful that this shows **mechanical substitutability, not behavioral invariance** — and note harness replacement is currently contract-level only, with Codex the sole bundled live runtime
 - [[ai-native-sdlc]] — the process-level framing: what the harness layer means for team structure, review capacity and role definition
+- [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — harness evolution lifts Qwen3-Coder-30B-A3B from 29.2% to 78.0%, and changes which fine-tuning recipe helps or hurts
+- [[lego-rl-harness-native-reinforcement-learning-coding-agents-du-2026]] — RL through unmodified real harnesses — OpenHands SDK, Claude Code, OpenCode — via a proxy at the model API; +5.8 to +9.4 on SWE-bench Verified
+- [[frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026]] — swapping only the harness lifts the untrained 4B base from 8.3% to 37.2% while a strong model scores the same under both

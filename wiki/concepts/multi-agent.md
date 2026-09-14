@@ -2,7 +2,7 @@
 title: Multi-Agent Systems (LLM)
 type: concept
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-15
 sources:
   - reaching-agreement-among-reasoning-llm-agents-ruan-2025.md
   - single-agent-vs-multi-agent-tran-2026.md
@@ -73,3 +73,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[mind-viruses-papadopoulos-2026]] — Anthropic: ideas that propagate agent-to-agent by inducing each host to transmit them onward. Evolved (not authored) payloads; the agent-writable system-prompt file is the attack surface (**55% vs 17%** propagation); a one-paragraph system-prompt warning confers total immunity
 - [[emergent-cheating-and-whistleblowing-paglieri-2026]] — a **third** propagation mechanism, distinct from EvoMal's imitation-by-authoring and Mind Viruses' explicit instruction: what spreads is **social evidence that a stated rule is unenforced**. Both prior defenses are textual and intercept text; neither can work here, because the agents' inference was *correct*. The proposed remedy is institutional — graduated sanctioning, collective-choice rights over the verifier — not better wording
 - [[ai-enabled-cyber-operations]] — multi-agent orchestration in adversarial use: parallel reconnaissance and exploitation agents run for hours, and a weapons cell that split Claude instances into coder, researcher and reviewer roles "much as a lead would delegate work on a small engineering team"
+- [[codebook-agent-amortized-topology-design-yu-2026]] — a 16-entry codebook of communication graphs beats every generated-topology method at 84.6 average — but sparser graphs cost *more* tokens (r ≈ −0.4, one pooled correlation), and the best fixed graph is within 1.4 points
+- [[parser-read-in-parallel-reason-in-depth-li-2026]] — parallel frozen readers plus one RL-trained lead agent beat sequential memory agents by +12.0 at 896K tokens and stay flat when evidence order is reversed
