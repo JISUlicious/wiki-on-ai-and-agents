@@ -30,7 +30,15 @@ DeepSeek's open releases — particularly the R1 weights and recipe — substant
 
 ## Named in a distillation allegation (2026)
 
-Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] attributes a campaign to DeepSeek (GTG-16001) using the same thinking-signature replay attack as Moonshot. According to the report, DeepSeek identified users reaching its models through [[claude-code|Claude Code]], the Claude Agent SDK or [[opencode|OpenCode]] by strings in their requests, and silently relayed selected users' requests to Claude Opus. It counts over 12.1 million exchanges in 14 days of July 2026. This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
+Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] attributes a campaign to DeepSeek (GTG-16001) using the same thinking-signature replay attack as Moonshot. According to the report, DeepSeek identified users reaching its models through [[claude-code|Claude Code]], the Claude Agent SDK or [[opencode|OpenCode]] by strings in their requests, and silently relayed selected users' requests to Claude Opus. It counts over 12.1 million exchanges in 14 days of July 2026.
+
+The report says the relayed requests were "likely routed to Anthropic without the knowledge or consent of DeepSeek's customers," and describes three cases:
+
+- **A Chinese technology company's AI program.** An employee analyzing internal documentation exposed the full specifications, organizational structure and strategic objectives of a flagship AI program.
+- **A Russian defense-linked agency.** An IT operator working with data from a Russian government agency associated with its Ministry of Defense exposed live credentials for a Russian government database.
+- **Police surveillance tooling.** Engineers building a case-management system for a municipal Public Security Bureau built a tool that compares a person's movements against police records using citizens' national ID numbers.
+
+This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
 
 ## References
 

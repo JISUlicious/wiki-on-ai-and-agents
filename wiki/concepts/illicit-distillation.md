@@ -26,6 +26,23 @@ The report names seven China-based labs as having run such campaigns against Cla
 
 The third route has a privacy consequence the report stresses. Customers of those labs had their prompts sent to a third party they never chose. The report cites relayed traffic containing names, emails, company data and live credentials of hundreds of end users in at least a dozen languages. Some came through routing services commonly used in the US and Europe.
 
+### What the relayed traffic contained
+
+The report names three labs as having fed their own users' conversations into Claude: Moonshot, DeepSeek and Xiaomi. It gives categories, never contents, and redacts every sensitive value.
+
+| Relayed by | Whose data | What it contained |
+|---|---|---|
+| [[moonshot-ai\|Moonshot]] | a user assessed as likely affiliated with the Chinese military | a CCTV archive from hundreds of Chengdu cameras, including outside military facilities and a state-owned enterprise, used to judge whether one tracked person behaved abnormally |
+| [[moonshot-ai\|Moonshot]] | an engineer at a major state-owned enterprise | internal code, and live credentials from multiple major Chinese companies |
+| [[deepseek\|DeepSeek]] | an employee of a Chinese technology company | full specifications, organizational structure and strategic objectives of a flagship AI program |
+| [[deepseek\|DeepSeek]] | an IT operator at a Russian agency tied to its Ministry of Defense | live credentials for a Russian government database |
+| [[deepseek\|DeepSeek]] | engineers at a municipal Public Security Bureau | a tool matching a person's movements against police records by national ID number |
+| [[xiaomi\|Xiaomi]] | hundreds of users, in at least a dozen languages | names, contact information and corporate data; no indication of US persons' data |
+| an unnamed lab's coding assistant, via a third-party router | a pharmaceutical company | internal 2026–28 capital-spending forecasts for sites in Ho Chi Minh City, Kuala Lumpur, Bangkok and Ljubljana |
+| an unnamed lab's coding assistant | a developer | a Telegram bot token, a Feishu app secret and a Notion integration key |
+
+The report calls these practices "likely inconsistent with privacy laws and the labs' own terms of service." The general lesson is not specific to these labs: a prompt sent to any model can reach a provider the user never chose, through a router, a reseller or the lab itself. Credentials pasted into a coding assistant are best treated as exposed.
+
 ## How reasoning is extracted
 
 Claude's reasoning traces are the prize, because general reasoning transfers across tasks. The report documents a progression of techniques:

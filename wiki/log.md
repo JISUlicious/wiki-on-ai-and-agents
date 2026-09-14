@@ -9,6 +9,11 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-14] update | What relayed traffic contained, from the Anthropic threat report
+
+Following a question about what sensitive data Chinese labs' servers sent to Claude, the report's relayed-traffic cases were added in full. [[illicit-distillation]] gains a table of all eight cases across Moonshot, DeepSeek, Xiaomi and two unnamed coding assistants. [[moonshot-ai]] now carries the state-owned-enterprise credentials case alongside the surveillance-footage one; [[deepseek]] gains its three cases (a flagship AI program's specifications, Russian defense-linked database credentials, police tracking tooling); [[xiaomi]] gains its data categories. All drawn from the PDF text already verified at ingest; categories only, as in the report.
+
+
 ## [2026-09-14] query | Sample prompts from Chinese labs in the Anthropic threat report
 
 Question: "From the above article, is it possible to find an example or sample of a prompt sent from Chinese companies?" Not filed. Key pages consulted: [[anthropic-threat-intelligence-report-september-2026]], [[illicit-distillation]]; checked against the PDF text and rendered pages 144–145. Finding: the report quotes four reasoning-extraction prompts verbatim, in separate boxes on pages 145–146, but attributes them only to "unauthorized labs," not to any named company; Alibaba's fixed injected prompt and DeepSeek's harness-detection strings are described but not quoted. Two further boxes quote end-user prompts that labs relayed to Claude, with sensitive values redacted — prompts from those labs' customers, not from the labs. The PRC surveillance and weapons cases give role-play personas and terminology rules in paraphrase, attributed to state-linked actors and a contractor rather than companies.
