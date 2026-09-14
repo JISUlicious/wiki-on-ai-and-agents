@@ -119,3 +119,7 @@ Unusual for a vendor playbook and the most reusable feature. Each play specifies
 
 - [The AI-Native SDLC Playbook](https://claude.com/blog/the-ai-native-sdlc-playbook)
 - [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] · [[evaluating-skills-not-just-agents-kevin-2026]] · [[demystifying-evals-for-ai-agents-anthropic-2026]]
+
+## Related 2026 sources
+
+- [[building-an-ai-native-sdlc-plugin]] — how to build it: a validated plugin skeleton mapping each play to the weakest primitive that holds it

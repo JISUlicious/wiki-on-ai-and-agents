@@ -95,3 +95,7 @@ Two directions of movement: controls shift **left** (policy applied during gener
 ## References
 
 - [[ai-native-sdlc-playbook-anthropic-2026]] · [[agentic-coding-trends-report-anthropic-2026]] · [[swe-refactor-bench-hong-2026]] · [[when-agents-coordinate-destefanis-2026]] · [[same-task-different-work-weinberger-2026]] · [[why-does-claude-md-keep-growing-chakrabarti-2026]] · [[merchantbench-long-term-coherence-shi-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]]
+
+## Related 2026 sources
+
+- [[building-an-ai-native-sdlc-plugin]] — a build guide: this playbook implemented as a Claude Code plugin — user-invoked skills for the artifact chain, two auto-invoked skills, hooks for the must-hold rules, reviewer and verifier agents, and plugin evals with a no-plugin baseline

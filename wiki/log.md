@@ -9,6 +9,15 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-14] query | Build guide — a Claude Code plugin implementing the AI-Native SDLC Playbook
+
+Question: "A guide to build a plugin including agent skills to implement Anthropic's AI-native SDLC playbook." Filed as [[building-an-ai-native-sdlc-plugin]]. Key pages consulted: [[ai-native-sdlc-playbook-anthropic-2026]], [[ai-native-sdlc]], [[skill-routing]], [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]], [[evaluating-skills-not-just-agents-kevin-2026]], [[catastrophic-remembering]].
+
+Plugin mechanics were verified, not recalled: against Anthropic's official plugins (manifest, `hooks.json` with `if` gating, agent frontmatter, hookify's deny output), the Claude Code docs, and the installed CLI (2.1.268). A docs lookup claimed `--allowedTools` was undocumented for headless runs; the installed CLI has it, and the guide uses it. Plugin `commands/` is deprecated in favor of `disable-model-invocation: true` skills, which keeps human-initiated stages out of the routing budget.
+
+The skeleton quoted in the guide was built and checked: `claude plugin validate --strict` passes, and all 15 synthetic-input hook tests pass. Two findings are recorded in the guide: validating the plugin root checks only the manifest (skills and agents validate only when passed directly; nothing validates `hooks.json`), and headless invocation of a plugin skill plus GitHub Action plugin loading remain unverified. Not run: any end-to-end model session or plugin eval.
+
+
 ## [2026-09-14] update | What relayed traffic contained, from the Anthropic threat report
 
 Following a question about what sensitive data Chinese labs' servers sent to Claude, the report's relayed-traffic cases were added in full. [[illicit-distillation]] gains a table of all eight cases across Moonshot, DeepSeek, Xiaomi and two unnamed coding assistants. [[moonshot-ai]] now carries the state-owned-enterprise credentials case alongside the surveillance-footage one; [[deepseek]] gains its three cases (a flagship AI program's specifications, Russian defense-linked database credentials, police tracking tooling); [[xiaomi]] gains its data categories. All drawn from the PDF text already verified at ingest; categories only, as in the report.

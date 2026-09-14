@@ -65,3 +65,7 @@ That generalizes a condition [[mind-viruses-papadopoulos-2026|Mind Viruses]] fou
 ## References
 
 - [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] · [[at-skills-attention-is-all-you-have-yin-2026]] · [[demystifying-agent-skills-jiang-2026]] · [[evaluating-skills-not-just-agents-kevin-2026]] · [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026]] · [[recuris-experiential-working-memory-evolution-yu-2026]]
+
+## Related 2026 sources
+
+- [[building-an-ai-native-sdlc-plugin]] — the routing-scarcity argument applied: seven skills in the plugin, only two of them competing for selection
