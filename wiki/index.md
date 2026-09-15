@@ -7,7 +7,7 @@ updated: 2026-08-04
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 505 sources, 149 entities, 282 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 506 sources, 149 entities, 282 concepts, 3 comparisons, 13 queries.
 
 ## Entities
 
@@ -622,6 +622,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
+
+### Long-context recall (2026-09-15)
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — Korea University: facts encoded as feed-forward residual vectors and regenerated on demand; 50–80% single-fact recall at 2M tokens from 3–5 questions per model, near-constant GPU memory, weak on paraphrased questions
 
 ### Newsletter sweep 2026-09-15
 *Agents and memory*

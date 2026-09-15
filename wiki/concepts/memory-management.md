@@ -2,7 +2,7 @@
 title: Memory Management
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-15
 sources:
   - reflexion-shinn-2023.md
   - generative-agents-park-2023.md
@@ -149,3 +149,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[skill-state-scalable-long-horizon-agent-skills-badhe-2026]] — replaces append-only history with an explicit mutable state: prompt size **O(T) → O(1)**, flat at ~1,800 characters from step 10 to step 200 while the append baseline reaches 72,305
 - [[influence-operations]] — persistent memory files in adversarial use: influence operators kept doctrine, banned words and approved-source lists in files reused across hundreds of sessions, so contributors never had to coordinate
 - [[ai-enabled-cyber-operations]] — an exploit-research skill that loads a `MEMORY.md` index before work and appends confirmed dead ends — "institutional memory for exploit R&D"
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — a parametric-style agent memory with verified entry-level deletion: removing 8 of 64 facts leaves the other 56 outputs unchanged

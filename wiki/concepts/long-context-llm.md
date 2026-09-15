@@ -52,3 +52,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[sparse-attention]] — MInference reaches 10× end-to-end at 1M on one A100 — and ×0.47, slower than dense, at LongBench lengths
 - [[trained-sparse-attention]] — NSA, MoBA, DSA — sparsity in the training loop
 - [[parser-read-in-parallel-reason-in-depth-li-2026]] — read in parallel, reason in depth: 83–86% at every length up to 896K where 4B full-context reading falls to 31%
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — recall beyond the context window at near-constant memory: facts extracted up front are encoded as feed-forward residual vectors, then regenerated on demand. 50–80% single-fact accuracy at 2M tokens, but from 3–5 questions per model, and routing fails on paraphrased questions

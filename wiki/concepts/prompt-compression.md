@@ -2,7 +2,7 @@
 title: Prompt Compression
 type: concept
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-09-15
 sources:
   - llmlingua-jiang-2023.md
   - llmlingua-2-pan-2024.md
@@ -57,3 +57,4 @@ Related evidence that prompts are highly compressible: [[can-lms-actually-retrie
 
 - [[sparse-prefill]] — compression with attention as the selector instead of a separate compressor — training-free, and (in positional variants) survivors keep their document position
 - [[speculative-prefill]] — SpecPrefill at 10% keep retains 98.5% of LongBench on a 70B where LLMLingua-2 scores 30.9 vs 47.8 dense on the same benchmark in Galim et al.
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — argues query-agnostic compression loses details a later question needs; LLMLingua-2 compressed to 4,096 tokens scores zero beyond 128K on its benchmarks

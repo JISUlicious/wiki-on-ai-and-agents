@@ -9,6 +9,15 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-15] ingest | Residual Vector-based Reconstruction as Long-Context Recall (arXiv:2609.12686)
+
+User-requested single paper. [[residual-vector-reconstruction-long-context-recall-ryu-2026]] answers questions about documents far beyond the context window, training-free and at near-constant GPU memory: sentences are extracted before any question is known, each is encoded as a feed-forward residual vector keyed by an activation, the document is discarded, and at question time routed facts are regenerated verbatim and answered from. Full text read; every number checked against the body.
+
+The headline needs its denominators. Single-fact recall at 2M tokens is 50–80% from 3–5 questions per model, which the authors call feasibility rather than an accuracy estimate; RULER's 100% cells are one question each, and one model scores below its own closed-book baseline. Routing is the limiting stage: 1 of 8 versus 7 of 8 for chunk retrieval when questions share few words with the stored facts. Recorded as this wiki's inference: the paper never compares against storing the same extracted sentences as text behind the same index, which would be deterministic, deletable and far smaller, so the gain over chunk retrieval may come from fact extraction and routing rather than from the residual vectors.
+
+Backlinks: [[long-context-llm]], [[kv-cache]], [[retrieval-augmented-generation]], [[prompt-compression]], [[memory-management]], [[catastrophic-remembering]].
+
+
 ## [2026-09-15] ingest | Newsletter sweep 2026-09-15 — 12 sources
 
 Run on the user's "/wiki ingest latest newsletters", typed by mistake into another session and relayed here. Three threads since the 2026-09-07 cursor: NLP "Top AI Papers of the Week" (Sep 7–13), alphaXiv weekly digest (Sep 9), and AI Agents Weekly (Sep 12, a paywalled preview). 16 candidates: 12 ingested; 4 duplicates skipped (emergent cheating 2609.04170, Declarative Attention 2609.02737, NoRA 2608.31036, Harness-of-Harness 2609.01481); 1 dropped as off-domain (a Navier–Stokes blowup result with no arXiv ID in the digest). Four agents, three papers each; every ID verified against citation_title and every number against the paper body.

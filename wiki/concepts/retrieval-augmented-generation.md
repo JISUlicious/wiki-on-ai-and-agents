@@ -71,3 +71,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[when-to-retrieve-during-reasoning-guo-2026]] — When to Retrieve During Reasoning Adaptive Retrieval for
 - [[prompt-compression]] — task-agnostic compression is query-independent, so a compressed document needn't be recompressed per query
 - [[stair-structure-aware-retriever-kumar-2026]] — retrieval by table of contents: Recall@1 82.6 vs 76.9 for DSI on 18 books, with output constrained to valid section titles
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — retrieval where the stored item is a feed-forward residual vector that regenerates a sentence, not the text itself. Beats top-3 chunk retrieval at long lengths on narrative recall, but loses 1 of 8 vs 7 of 8 when questions share few words with the facts. It is never compared with storing the same extracted sentences as text

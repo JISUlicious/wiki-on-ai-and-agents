@@ -2,7 +2,7 @@
 title: Activation Addition (ActAdd)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-15
 sources:
   - turner-activation-engineering-2023.md
 status: complete
@@ -41,3 +41,7 @@ That's it. No training, no optimization, no learning rate. One pair of demonstra
 
 > [!note] Substrate
 > The activations being added to are the [[residual-stream]] — see that page for the additive-bus property this technique depends on.
+
+## Related 2026 sources
+
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — the same mechanism — adding a vector to the residual stream — used for storage rather than steering: an optimized residual injected at one feed-forward layer regenerates a stored sentence

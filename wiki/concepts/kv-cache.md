@@ -2,7 +2,7 @@
 title: KV-Cache
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-15
 sources:
   - em-llm-fountas-2024.md
 status: draft
@@ -49,3 +49,4 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 - [[sparse-prefill]] — every token-dropping method leaves dropped tokens with **no KV entry** — gone for the generation and later turns; only LazyLLM and SlimInfer can revive them
 - [[token-pruning]] — distinct from KV *eviction* (SnapKV, H2O): pruning skips the tokens' attention and FFN during prefill, eviction prefills everything then forgets
 - [[weight-streaming]] — the KV cache competes with the streamed-expert cache for one RAM budget, and KV wins: a 126 GB MoE streamed on a 64 GB Mac falls from 4.65 tok/s at 512 context to **0.32 at 40K**, and KV quantization restores it to 4.16. At long context, quantizing the KV cache is the precondition for streaming, not an optimization of it
+- [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — replaces the KV cache for a discarded document with a bounded store of per-fact residual vectors; response-time GPU memory stays within about 1 GB of the bare model from 4K to 2M tokens
