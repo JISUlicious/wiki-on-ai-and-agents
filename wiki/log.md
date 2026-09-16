@@ -9,6 +9,11 @@ updated: 2026-08-04
 
 Chronological record of wiki operations. Newest entries first.
 
+## [2026-09-16] query | Latest trends in agent development
+
+Question: "What are the latest trends in agent dev?" Not filed. Synthesized from the index's 2026 agent sections ([[agentic-harness-engineering]], [[skill-routing]], [[catastrophic-remembering]], [[multi-agent]], [[self-improving-agent]], [[agent-evaluation]], [[ai-native-sdlc]]), the comparison pages ([[harness-vs-model-attribution]], [[cross-agent-comparison-2026]]) and the three most recent sweeps. Seven trends reported: the harness as the engineered unit and now an RL target; training through real harnesses rather than around them; routing as the binding constraint on skill libraries; memory designs that delete rather than append; multi-agent settling to small fixed topologies; evaluation with denominators and harness disclosure; and security arriving as an agent-development concern. Offered to file as a query page.
+
+
 ## [2026-09-15] ingest | Residual Vector-based Reconstruction as Long-Context Recall (arXiv:2609.12686)
 
 User-requested single paper. [[residual-vector-reconstruction-long-context-recall-ryu-2026]] answers questions about documents far beyond the context window, training-free and at near-constant GPU memory: sentences are extracted before any question is known, each is encoded as a feed-forward residual vector keyed by an activation, the document is discarded, and at question time routed facts are regenerated verbatim and answered from. Full text read; every number checked against the body.
