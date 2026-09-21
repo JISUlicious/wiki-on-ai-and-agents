@@ -52,6 +52,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[vllm]] — High-throughput LLM inference engine; ~25 tool-call parsers
 - [[autogpt]] — Early popular open-source autonomous agent (2023); GAIA co-author
 
+### System One / typed decision models (2026)
+- [[jev]] — TypeSafe AI's System One model; typed answers with probabilities, generates no text
+- [[typesafe-ai]] — Lab behind Jev; coined "System One model"
+- [[nimble]] — Bespoke-Nimble-9B, open LoRA fine-tune for typed decisions (2026-09-18)
+- [[bespoke-labs]] — Publishes small verifier-style open models and their data recipes
+- [[diffusiongemma]] — Google's open diffusion LM; substrate for the open Jev clones (2026-06-10)
+- [[openjev]] — Jev wire-compatible open decision server on DiffusionGemma
+
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
 - [[jurgen-schmidhuber]] — LSTM co-author; IDSIA / KAUST
@@ -485,6 +493,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Model families and lineage
 - [[gpt-family]] — The OpenAI GPT line: GPT-1 → GPT-4 and beyond
+
+### Typed decisions and calibration (2026)
+- [[system-one-model]] — A typed decision with a probability, instead of text
+- [[logit-scoring]] — Reading a decision off the model's distribution instead of generating it
+- [[calibration]] — Whether stated probabilities match observed frequencies
 
 ## Sources
 
@@ -1232,6 +1245,14 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[minimax-sparse-attention-lai-2026]] — MSA: blockwise sparse attention; 14.2× prefill / 7.6× decode at 1M context; powers MiniMax-M3 (Lai et al., MiniMax 2026)
 - [[latent-spatial-memory-for-video-world-models-wang-2026]] — Mirage: video world model with latent spatial memory; 10.57× faster, 55× less GPU memory (Wang et al., ZJU 2026)
 - [[glm-5-2-zai-2026]] — GLM-5.2 announcement: 744B/40B-active MoE, 1M context, IndexShare sparse attention (Z.ai 2026; no formal report)
+
+### System One models (2026-09)
+- [[introducing-system-one-models-and-jev-typesafe-2026]] — TypeSafe's Jev announcement; vendor claims throughout (2026-09-15)
+- [[open-jev-diffusiongemma-harness-github-2026]] — 88.4% vs Jev's 90.8% on Jev's own cases, untrained (2026-09-16)
+- [[bespoke-nimble-github-2026]] — Open typed-decision model via contrastive data curation (2026-09-18)
+- [[structured-generation-mode-for-diffusiongemma-mastracci-2026]] — vLLM PR #57250; Jev-like reads on DiffusionGemma
+- [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] — How DiffusionGemma actually commits tokens (arXiv:2606.14620)
+- [[how-transparent-is-diffusiongemma-engels-2026]] — Reasoning transparency and monitorability audit (arXiv:2606.20560)
 
 ## Comparisons
 

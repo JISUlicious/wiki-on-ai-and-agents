@@ -7,6 +7,18 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-21] ingest | System One models: Jev, Nimble, DiffusionGemma-as-Jev
+
+Ingested TypeSafe AI's Jev announcement and the open reimplementations that followed it within four days.
+
+Created — entities: [[jev]], [[typesafe-ai]], [[nimble]], [[bespoke-labs]], [[diffusiongemma]], [[openjev]]. Concepts: [[system-one-model]], [[calibration]], [[logit-scoring]]. Sources: [[introducing-system-one-models-and-jev-typesafe-2026]], [[bespoke-nimble-github-2026]], [[structured-generation-mode-for-diffusiongemma-mastracci-2026]], [[open-jev-diffusiongemma-harness-github-2026]], [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]], [[how-transparent-is-diffusiongemma-engels-2026]].
+
+**Correction made during the ingest.** The first draft of [[diffusiongemma]] asserted it was "not a System One model" and that the resemblance to Jev was superficial. That was wrong: Google's Gemma account promoted a "DiffusionGemma as Jev" pattern, vLLM PR #57250 implements a `/v1/systemone` endpoint on it, and two repos serve it as a Jev-compatible decision server. The page was rewritten. The corrected framing is that reading masked answer slots is the model's *native* operation, not a repurposing.
+
+**Vendor figures that do not survive measurement.** DeepMind's page claims 256 tokens committed per forward pass; the model card's widely-cited "15–20 tokens per pass" and "12–16 adaptive steps" appear in neither arXiv paper. Direct instrumentation gives 5.8–25.5 tokens per accept-call over 3.3–17.1 calls. Recorded as `> [!warning] Contradiction` callouts on [[diffusiongemma]], [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] and [[how-transparent-is-diffusiongemma-engels-2026]].
+
+**The load-bearing gap.** Open implementations reach 88.4–90.12% agreement against Jev's 90.8%, so the *interface* is clearly reproducible. But no calibration result — no reliability diagram, no ECE — has been published for Jev or any clone, and calibration is the entire stated point. Noted on [[system-one-model]]. Relatedly, DiffusionGemma's commit confidence predicts correctness on math (AUROC 0.749) but is null on factual recall (0.471), which is an unexamined caveat for every DiffusionGemma-based decision server.
+
 Chronological record of wiki operations. Newest entries first.
 
 ## [2026-09-16] query | Latest trends in agent development
