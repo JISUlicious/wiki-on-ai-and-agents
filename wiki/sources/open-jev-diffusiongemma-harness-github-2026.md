@@ -17,7 +17,15 @@ tags:
 
 # open-jev: typed JSON decisions with DiffusionGemma (GitHub)
 
-An experimental inference harness for typed JSON decisions with [[diffusiongemma|DiffusionGemma]], published 2026-09-16. Its framing is modest and worth preserving: "Denoise freely, then choose the most likely allowed tokens from the final logits. **No training or fine-tuning.**" The author states it is an independent experiment, not a reproduction of [[jev|Jev]]'s architecture, training or calibration.
+An experimental inference harness for typed JSON decisions with [[diffusiongemma|DiffusionGemma]], published 2026-09-16, with **no training or fine-tuning**. The author states it is an independent experiment, not a reproduction of [[jev|Jev]]'s architecture, training or calibration.
+
+> [!warning] The README tagline understates what the code does
+> "Denoise freely, then choose the most likely allowed tokens from the final logits" describes the *answer slots only*. The implementation pre-seeds the canvas with the literal JSON template and masks every non-answer position to exactly one token at **every** denoising step. Structure is hard-constrained throughout; only the answer positions are left open to the full vocabulary. This is much closer to the [[structured-generation-mode-for-diffusiongemma-mastracci-2026|constrained-canvas route]] than the phrasing suggests — see [[constrained-canvas-vs-free-denoise]].
+
+**How it emits real JSON without letter codes.** Every allowed value for a field is tokenized as the complete fragment `"key": value` and right-padded with space tokens so all options for that field are the same width. The canvas therefore cannot shift regardless of which value wins. The padding survives into the output — its own receipts contain `"line_0_kind": "work_or_goods" ,` — and `json.loads` accepts it. Values may be `str`, `int` or `bool` only: no floats, no null, no nesting.
+
+> [!warning] It returns no confidence at all
+> The shipped `FieldCanvas` path exposes **no per-value probability**. Selection walks a candidate trie greedily, picking the argmax among still-active candidates position by position — which the code notes is "greedy projection, NOT an autoregressive sequence likelihood," so the chosen value need not even be the joint argmax. Once values are multi-token and space-padded, no single position's softmax is a distribution over the field's values. A legacy single-token path computes an explicitly-named `uncalibrated_p_true`, used only for ranking retrieval candidates. So the agreement numbers below are accuracy results from a system that, unlike [[jev|Jev]], returns a bare typed value.
 
 This is the most quantitatively useful open source on the System One question, because it replays **Jev's own published cases**.
 

@@ -2,63 +2,81 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
   - introducing-system-one-models-and-jev-typesafe-2026.md
+  - independent-jev-calibration-audits-2026.md
 status: complete
 importance: high
 ---
 
 # Logit Scoring
 
-Reading a decision off a model's probability distribution instead of generating it as text. The model is never asked to *write* an answer; it is asked to produce a distribution over a fixed set of candidate tokens, and that distribution is the output.
+Reading a decision off a model's probability distribution instead of generating it as text. The model is never asked to *write* an answer; it produces a distribution over a fixed set of candidate tokens, and that distribution is the output.
 
 This is the mechanism underneath every [[system-one-model|System One model]], and it is what separates them from [[structured-outputs|structured output]] and [[constrained-decoding|constrained decoding]], which still generate tokens and merely restrict which ones are legal.
+
+The technique is old. [[cloze-scoring]] carries the lineage — in particular that this exact recipe is the [[mmlu|MMLU]] reference implementation from 2020.
 
 ## The recipe
 
 1. **Declare the answer space.** Every allowed answer is enumerated in advance.
-2. **Make each answer one token.** This is the load-bearing constraint. Multi-token labels are remapped to single tokens — `moderation_spam` becomes `A`, or `yes`/`no`, or `0`/`1`/`2` — with the legend supplied in the prompt. One token per answer means the position of everything else is fixed.
+2. **Make each answer one token.** Multi-token labels are remapped — `moderation_spam` becomes `A`, or `yes`/`no`, or `0`/`1`/`2` — with the legend in the prompt. One token per answer means the position of everything else is fixed.
 3. **Run one forward pass.**
 4. **Read the logits at the answer position** and softmax over only the candidate tokens.
-5. **Derive confidence from the distribution itself** — typically entropy-based. [[openjev]] uses `1 − H(p)/ln K`, which is 1 when the model is certain and 0 when the distribution is uniform.
+5. **Derive confidence from the distribution** — typically entropy-based. [[openjev]] uses `1 − H(p)/ln K`.
 
-Two properties follow for free. An answer **cannot go off-schema**, because only legal tokens are ever scored — there is no JSON to parse and no repair path. And the confidence is the model's own distribution rather than a number the model *says* about itself, which matters because verbalized self-confidence is poorly calibrated (see [[calibration]]).
+Two properties follow for free. An answer **cannot go off-schema**, because only legal tokens are ever scored — there is no JSON to parse and no repair path. And the confidence is the model's own distribution rather than a number the model *says* about itself.
 
-## Two implementations
+> [!note] That second property is narrower than it sounds
+> Reading the distribution beats verbalized self-report **for base models on bounded-candidate tasks** — the pre-trained GPT-4 is well calibrated on MMLU, and RLHF degrades it ([arXiv:2303.08774](https://arxiv.org/abs/2303.08774)). But for RLHF'd models on open-ended QA the comparison reverses: verbalized confidences are often *better* calibrated than conditional probabilities ([arXiv:2305.14975](https://arxiv.org/abs/2305.14975)). The advantage is real in this regime, not universal.
 
-The pattern is architecture-agnostic, which is why it appeared independently in both model families within a week of Jev's announcement:
+## Three implementations
 
-| | Autoregressive ([[nimble]]) | Diffusion ([[openjev]], [[diffusiongemma]]) |
-|---|---|---|
-| Where the answer lives | next-token position after the prompt | a masked slot in the canvas |
-| Fields per pass | one field per pass on CUDA; parallel on [[mlx\|MLX]] | all slots in one pass, natively |
-| Cross-field attention | none — fields scored independently | every slot attends to the full context and to the other slots |
-| Needs fine-tuning? | yes, [[lora\|LoRA]] on curated pairs | no — read the base model |
+The pattern is architecture-agnostic, which is why it appeared in three model families within a week of Jev's announcement:
 
-The diffusion route has a structural advantage here: filling masked slots *is* the model's native operation, so reading several answer slots in a single bidirectional pass is not a repurposing. The autoregressive route needs either one pass per field or a fine-tune that teaches the model to answer in a fixed position.
+| | Autoregressive ([[nimble]]) | Diffusion ([[openjev]]) | Encoder ([[laya]]) |
+|---|---|---|---|
+| Where the answer lives | next-token position | a masked canvas slot | a `[MASK]` per option |
+| Fields per pass | one on CUDA, parallel on [[mlx\|MLX]] | all slots in one pass | one per option |
+| Needs fine-tuning? | yes, [[lora\|LoRA]] | no — read the base model | yes |
+| Typical latency | 106 ms (H100) | 94 ms p50 | **32.8 ms p50** |
+
+The encoder route won on the merits. A 421M ModernBERT is 7.8× faster than Jev and competitive on accuracy, which is why the diffusion route looks in hindsight like a launch-week artifact rather than the destination.
+
+> [!warning] Contradiction: "all slots in one pass" is a liability, not an advantage
+> The diffusion route's apparent edge — every answer slot attends to the full context and to the other slots in a single bidirectional pass — is contradicted by every measurement available.
+>
+> dLLM-SetScore ([arXiv:2608.14649](https://arxiv.org/abs/2608.14649), a month *before* Jev) found that putting all labels on one canvas produces severe **slot-position asymmetry**: the first answer slot is predicted positive on **99.4%** of GoEmotions and **100%** of Reuters examples. Its fix is per-label scoring, one slot per pass — the configuration this table lists as the autoregressive route's handicap. Independently, [[open-jev-diffusiongemma-harness-github-2026|open-jev]] scored **88.4% with one question per canvas and 86.1% grouped**, on the same 337 questions with the same model.
+>
+> Two unrelated lines of evidence, same direction. [[jev|Jev]] and [[nimble]] both isolate questions by construction.
 
 ## Why it is fast
 
-The cost is one prefill plus one (or a handful of) forward passes, with **zero decode steps**. Generation cost normally scales with output length; here the output is a single token position per question, so latency is dominated by the prompt. That is the entire basis for the order-of-magnitude latency gaps reported across [[jev]] (246.7 ms), [[nimble]] (106 ms on H100), [[openjev]] (94 ms p50) and generative frontier models answering the same questions (2,792–2,896 ms). See [[arithmetic-intensity]].
+One prefill plus one forward pass, with **zero decode steps**. Generation cost normally scales with output length; here the output is a single token position per question, so latency is dominated by the prompt. That is the whole basis for the order-of-magnitude gaps against generative models answering the same questions (2,792–2,896 ms). See [[arithmetic-intensity]].
 
-Multi-step refinement on the diffusion side reuses the single prefill and rewrites only the answer slots, so extra steps cost GPU time but not prompt tokens.
+This is arithmetic, not insight — there is nothing to decode, so decoding is free.
 
 ## Limits
 
 > [!warning] Probabilities normalized over a supplied set are not correctness rates
-> Softmax over the candidate tokens forces the probabilities to sum to 1 across *the answers you supplied*. If the true answer is not among them, the model still returns a confident-looking distribution. Nimble's documentation is explicit: 0.9 does not mean right 90% of the time, and if "none of these" is possible you must add it as an option. Any threshold has to be validated on your own data.
+> Softmax over the candidate tokens forces the probabilities to sum to 1 across *the answers you supplied*. If the true answer is not among them, the model still returns a confident-looking distribution. [[nimble|Nimble]]'s documentation is explicit: 0.9 does not mean right 90% of the time, and if "none of these" is possible you must add it. Validate any threshold on your own data.
 
-Other constraints are inherent: the answer space must be small enough to enumerate and map to single tokens (Nimble caps enums at 26); no rationale is produced, so a decision cannot be explained to an auditor from its output alone; and fields scored independently cannot be mutually consistent by construction — the caller must check.
+**Confidence is not in calibratable units.** `1 − H(p)/ln K` is a *dispersion* statistic — how peaked the distribution is — not a probability of correctness. Expected Calibration Error is computed on max-probability versus empirical accuracy, so a reliability diagram cannot be drawn from normalized entropy without a mapping. This may be part of why no implementation ships a calibration curve.
+
+**The readout inherits known biases.** Remapping answers onto symbols dodges surface form competition, but swaps it for contaminants of the same shape: option-order sensitivity moves performance 13–75% by benchmark ([arXiv:2308.11483](https://arxiv.org/abs/2308.11483)); models carry a priori preferences for specific option IDs, for which PriDe-style debiasing is the standard fix ([arXiv:2309.03882](https://arxiv.org/abs/2309.03882)); and even reading `"A"` versus `" A"` moves accuracy up to 11% ([arXiv:2509.15020](https://arxiv.org/abs/2509.15020)). None of the 2026 implementations mention debiasing.
+
+**Symbol logits may not be answer logits.** MCQA appears to be two stages — pick a winner in content space, then *bind* it to a symbol near emission ([arXiv:2601.03914](https://arxiv.org/abs/2601.03914)). Confidence read off symbol logits is partly measuring binding reliability.
+
+Other constraints are structural: the answer space must be small enough to enumerate and map to single tokens (Nimble caps enums at 26); no rationale is produced, so a decision cannot be explained to an auditor from its output; and independently scored fields cannot be mutually consistent by construction.
 
 ## Related
 
-- [[system-one-model]] · [[jev]] · [[nimble]] · [[openjev]] · [[diffusiongemma]] · [[calibration]] · [[structured-outputs]] · [[constrained-decoding]] · [[logit-lens]]
+- [[cloze-scoring]] · [[system-one-model]] · [[jev]] · [[nimble]] · [[openjev]] · [[laya]] · [[diffusiongemma]] · [[calibration]] · [[structured-outputs]] · [[constrained-decoding]] · [[logit-lens]] · [[independent-jev-calibration-audits-2026]]
 
 ## References
 
-- [[structured-generation-mode-for-diffusiongemma-mastracci-2026]]
-- [[bespoke-nimble-github-2026]]
-- [[introducing-system-one-models-and-jev-typesafe-2026]]
+- [[structured-generation-mode-for-diffusiongemma-mastracci-2026]] · [[bespoke-nimble-github-2026]] · [[introducing-system-one-models-and-jev-typesafe-2026]]
+- [[independent-jev-calibration-audits-2026]] · [[constrained-canvas-vs-free-denoise]]

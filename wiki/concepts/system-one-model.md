@@ -2,12 +2,13 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - open-jev-diffusiongemma-harness-github-2026.md
+  - independent-jev-calibration-audits-2026.md
 status: complete
 importance: high
 ---
@@ -25,7 +26,11 @@ A model that returns a **typed decision with a probability** instead of text, fo
 
 ## What is actually new
 
-Little, taken piece by piece. Encoder classifiers with softmax heads have returned bounded labels with probabilities since BERT; calibration, proper scoring rules and selective prediction are decades-old statistics; [[constrained-decoding]] already guarantees schema validity from an ordinary LLM. Reviewers of Jev make this point directly: these are ideas that have been sitting in research for years.
+Little, taken piece by piece — and the prior art is more exact than "ideas sitting in research for years" suggests. The five-step readout is the [[mmlu|MMLU]] reference implementation from 2020, down to the softmax over supplied candidates; the single-token constraint is PET's 2020 *limitation*, which the field then spent two years trying to escape; training a model specifically so its one masked answer token is the output is ModernBERT-Large-Instruct, February 2025; and the diffusion version was published on LLaDA and Dream a month before Jev's announcement. [[cloze-scoring]] carries the full lineage.
+
+Of the four properties above, **three are decisively old**. Bounded output is PET plus [[constrained-decoding]]. The latency is arithmetic — one pass with zero decode steps is fast because there is nothing to decode. Distribution-as-confidence is the standard evaluation protocol. Only calibration-as-objective could distinguish a System One model from a six-year-old evaluation harness.
+
+On Hacker News, TypeSafe's founder agreed that Jev is essentially a zero-shot classifier ("exactly right!") and that "Large Classification Model rather than a Large Language Model" was "very accurate!" — conceding the framing critique directly.
 
 What is new is the *packaging*: frontier-scale world knowledge behind a bounded interface, calibration as the stated training objective, and per-decision pricing that makes it reasonable to call a model inside a loop. That combination is what a classifier fine-tuned per task never offered.
 
@@ -35,8 +40,13 @@ The week after Jev's announcement supplied unusually fast evidence for the "pack
 
 This class competes with the cheap, high-frequency decisions in a harness, the ones currently made by prompting a chat model and parsing its answer: routing, classification, scoring, extraction, and branch conditions. It does not compete with planning, coding or anything requiring a rationale. The wiki's [[programmatic-tool-calling]] and [[constrained-decoding]] pages cover the alternatives that keep a single general model.
 
-> [!note] Open questions
-> An independent harness now exists, and it answers less than it appears to. Open implementations reach near-parity on *accuracy*, but **no one has published a calibration result for any System One model** — no reliability diagram, no ECE, for Jev or its clones. Since calibration is the entire stated point (property 3), the central claim remains untested while the peripheral one is now well supported. Whether calibration-first training beats a well-tuned classifier head on the same data is also still untested in public.
+> [!warning] Correction: calibration has now been measured, and it is the weak point
+> An earlier version of this page said no calibration result had been published for any System One model. That was true on 2026-09-21 and false a day later: at least seven independent parties measured [[jev|Jev]] between 2026-09-17 and 2026-09-21. The direction is consistent — **raw probabilities are overconfident, and calibration is dataset-dependent rather than a stable property**, holding on CLINC150 (ECE 0.0204) and failing on Banking77 (ECE 0.0936) in the same pre-registered study. Removing an abstain option drives ECE to 0.793. See [[independent-jev-calibration-audits-2026]].
+>
+> So the scoreboard has inverted. The *peripheral* claims — bounded output, low latency, type safety — are well supported, with zero type errors across 8,576 responses. The *central* claim is the one that does not survive contact with measurement.
+
+> [!note] Still open
+> Nobody has separated RLCD's contribution from the architecture's; that ablation has not been run, including by TypeSafe. And whether calibration-first training beats a well-tuned classifier head on the same data remains untested — though a 2026 systematic study found calibration fine-tuning can *reduce* downstream capability, especially on arithmetic ([arXiv:2605.11845](https://arxiv.org/abs/2605.11845)).
 
 ## Instances
 
@@ -46,12 +56,18 @@ This class competes with the cheap, high-frequency decisions in a harness, the o
 | [[nimble\|Bespoke-Nimble-9B]] | [[lora\|LoRA]] on Qwen3.5-9B | yes | 90.12% on its own synthetic holdout |
 | [[open-jev-diffusiongemma-harness-github-2026\|open-jev]] | [[diffusiongemma]], read-only | **no** | 88.4% on Jev's public cases |
 | [[openjev\|OpenJev]] | [[diffusiongemma]], read-only | **no** | none published |
+| [[laya\|Laya]] | ModernBERT-large, 421M **encoder** | yes | 0.766 typed-decisions, at 32.8 ms |
 
-The two evaluations are not interchangeable — each was scored on a different set, in both open cases against model-derived references. See each page for its caveats.
+The evaluations are not interchangeable — each was scored on a different set, in the open cases against model-derived references. See each page for its caveats.
+
+> [!important] The diffusion route was a detour
+> The first clones used [[diffusiongemma|DiffusionGemma]] because a diffusion model's native masked-slot fill looked like the obvious substrate. It was not. The implementations that actually compete with Jev are **encoders** and frozen autoregressive logit-readers — [[laya]] is 7.8× faster than Jev at 421M parameters — and nobody has ported the pattern to any other diffusion LM. Bidirectional encoders have had this capability since BERT.
+>
+> What frontier scale does buy is **label-space capacity**: Laya degrades past ~20 options while Jev handles 255, and loses Banking77's 77 intents by 44 points.
 
 ## Related
 
-- [[calibration]] · [[logit-scoring]] · [[constrained-decoding]] · [[programmatic-tool-calling]] · [[verifier]] · [[llm-as-a-judge]] · [[agent-evaluation]]
+- [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[laya]] · [[constrained-decoding]] · [[programmatic-tool-calling]] · [[verifier]] · [[llm-as-a-judge]] · [[agent-evaluation]]
 
 ## References
 
@@ -59,3 +75,4 @@ The two evaluations are not interchangeable — each was scored on a different s
 - [[bespoke-nimble-github-2026]]
 - [[structured-generation-mode-for-diffusiongemma-mastracci-2026]]
 - [[open-jev-diffusiongemma-harness-github-2026]]
+- [[independent-jev-calibration-audits-2026]]

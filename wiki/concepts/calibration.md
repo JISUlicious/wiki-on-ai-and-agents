@@ -2,7 +2,7 @@
 title: Calibration
 type: concept
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - llm-as-a-verifier-kwok-2026.md
@@ -40,7 +40,7 @@ Acting requires a loss function: choose the action minimizing expected loss unde
 
 ## Related
 
-- [[logit-scoring]] · [[system-one-model]] — the model class that makes calibration the training objective.
+- [[logit-scoring]] · [[cloze-scoring]] · [[system-one-model]] · [[independent-jev-calibration-audits-2026]] · [[laya]] — the model class that makes calibration the training objective.
 - [[llm-as-a-judge]] · [[verifier]] · [[agent-evaluation]] — where miscalibration does its damage.
 - [[metacognition]] — the model's own sense of knowing, and its limits.
 - [[constrained-decoding]] — validity by construction, which is a different guarantee from correctness.

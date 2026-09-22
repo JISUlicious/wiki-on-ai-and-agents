@@ -2,13 +2,13 @@
 title: "Structured generation mode for DiffusionGemma (Jev-like) — vLLM PR #57250"
 type: source
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - https://github.com/vllm-project/vllm/pull/57250
 authors:
   - Matt Mastracci
 year: 2026
-venue: "vLLM pull request (open, unmerged)"
+venue: "vLLM pull request (approved, unmerged)"
 introduces:
   - [[logit-scoring]]
 status: complete
@@ -21,41 +21,70 @@ tags:
 
 An open pull request against [[vllm|vLLM]] by Matt Mastracci adding the machinery to serve [[diffusiongemma|DiffusionGemma]] as a typed-decision model. This is the primary technical source for the claim that [[jev|Jev]]'s capability is reproducible on open weights.
 
+**Status as of 2026-09-22**: approved by maintainer LucasWilkinson, `mergeable`, but `BLOCKED` — two Buildkite checks failing. All **five prerequisite PRs have merged** (#57414, #57416, #57417, #57462, #57589; +45/−12 in total).
+
 ## The claim
 
 > DiffusionGemma (and likely other models in vLLM) contains all of the necessary components to build a Jev-like model that provides structured answers with bounded choices.
 
-The method: fix the canvas positions dictated by the structured output format, leaving only answer slots unfixed. Ask the model for a token plus logprobs at those slots, from which the client derives entropy. If entropy fails a threshold, sample again and measure agreement across runs to get the model's actual confidence. See [[logit-scoring]].
+Fix the canvas positions dictated by the output format, leaving only answer slots free. Ask for logprobs at those slots, derive entropy, and resample if entropy is too high. See [[logit-scoring]].
 
-The PR ships a prototype server for the `/v1/systemone` endpoint — the same path [[typesafe-ai|TypeSafe]] uses — rather than a standard vLLM endpoint.
+## Size and shape
 
-## The load-bearing constraint
+13 files, +2,760/−154 — but only six non-test files touch vLLM proper, at **+518/−153**. The bulk is `examples/features/structured_diffusion/structured_server.py` (+1,528), a stdlib interposer that is explicitly *not* a vLLM endpoint.
 
-The approach works for *any* structured output subject to one limitation: **answer choices must each be a single token**, so the canvas does not shift. The author notes clients can always remap multi-token options — `moderation_spam` → `A`. Choices are laid out in a system prompt, and the model "correctly diffuses single-token-slot answers (or makes a guess and flags it with uncertainty)." Supported question shapes are yes/no — "noul in Jev parlance" — scale, and multiple choice, each returned with certainty and error bars.
+| Piece | Δ | Role |
+|---|---|---|
+| `models/diffusion_gemma.py` | +321/−146 | all sampler logic |
+| `utils/diffusion.py` | +104 (new) | request validation |
+| `v1/core/sched/diffusion_scheduler.py` | +56 (new) | `DiffusionAsyncScheduler` |
+| config + input processor | +37/−7 | auto-selection, admission |
 
-## What vLLM was missing
+## How the two key knobs work
 
-Four gaps, which is the substance of the patch:
+**`diffusion_read_only` — "skip the commit forward."** DiffusionGemma alternates denoise steps with a commit step, and normally emits only on commit. The patch adds converged read-only slots to the emit set, then clears the flag that would have scheduled the commit pass: `is_encoder_phase[decode_slots] &= ~read_only[decode_slots]`. The request simply ends on the denoise step where it converged. Read-only slots also get **temperature-1** logprobs rather than schedule-tempered ones, which is what makes softmaxing them directly valid.
 
-| Gap | Why it is needed |
-|---|---|
-| Pre-seed the canvas with fixed tokens | so only answer slots are masked |
-| Read-only requests emitting the argmax canvas on the converging step, skipping the commit forward | logprobs come from that step at temperature 1 |
-| Cap the number of steps | only the first step is wanted |
-| Bugfix: two concurrent DiffusionGemma generations in lockstep | one converging while another commits loses its stash, failing with HTTP 500 "list index out of range" |
+**`diffusion_pinned` — holding the template.** Two writes are needed, not one. The pinned positions are forced back to their seed value after accept/renoise, *and* the self-conditioning soft embed at those positions is zeroed. The code comment gives the reason: "A pinned position holds its seed token as input. Zero its soft embed too, or the model's own prediction there reaches the next step through self-conditioning." Pins are meaningless at one step — the example server returns `{}` for `steps <= 1`.
 
-Five prerequisite PRs were split out on their own merits (#57414, #57416, #57417, #57462, #57589), covering stashed-logprob handling, prefill-only logit rows, `logprob_token_ids` parity with autoregressive decoding, a dynamo eager-fallback type cast, and multimodal support.
+A related optimization skips the self-conditioning matmul entirely when every slot in a tile is capped at one step, since the soft embed would never be read: "The matmul is a full pass over the vocabulary matrix, so skip it."
+
+## How the server maps labels to single tokens
+
+Not by vocabulary lookup — **empirically**. `resolve_template()` renders the answer template with every question at label index 0, tokenizes it, then re-renders per alternative and diffs the token sequences. It demands each label change *exactly one token at the same position*, and rejects two labels colliding on one id. Question types are `noul` (yes/no), `choice` (labels `A`, `B`, `C`…) and `score` (`1`…`9` or `A`…`Z`), 2–26 alternatives.
+
+It requests `logprob_token_ids` for the union of label ids — the exact-id path added by prerequisite #57417 — because top-k alone is insufficient. The comment: "With a long option list most labels never rank in the top-k, and the model's mass sits on tokens that spell the option name instead."
+
+Re-reads are implemented as an `auto` policy: one read, then if max entropy exceeds 0.1, up to three more with different noise seeds, averaged, reporting `confidence`, `stderr` and `agreement`.
 
 ## What it does not show
 
-The PR demonstrates **mechanism, not quality**. It contains no accuracy benchmark, no comparison against Jev, and no [[calibration]] measurement — no reliability diagram, no ECE. The author's confidence procedure (resample on high entropy, measure agreement) is a reasonable proxy but is asserted rather than validated here.
+The PR demonstrates **mechanism, not quality**. No accuracy benchmark, no comparison against Jev, no [[calibration]] measurement — no reliability diagram, no ECE. Reported latency figures come from the author and community members on assorted hardware, none independently verified.
 
-It is also unmerged as of 2026-09-21, and its request fields (`vllm_xargs`) are explicitly provisional. Downstream users such as [[openjev]] pin a rebased fork carrying additional crash fixes, which indicates the path is not yet stable. Whether "likely other models in vLLM" can do the same is a conjecture in the PR body, untested.
+> [!warning] The entropy it reports is computed over an unnormalized top-set
+> `slot_distribution` computes entropy over the returned top-20 logprobs without renormalizing, which systematically **understates** true entropy and therefore biases the `auto` policy toward deciding one read was enough. A reviewer raised this; it is unchanged in the current diff. Since the re-read trigger is the mechanism that is supposed to catch low-confidence answers, this bears directly on the confidence numbers the server reports.
+
+Three other reviewer findings also remain open: `diffusion_max_steps` is silently clamped with no signal, a read-only request with `max_tokens` below canvas width truncates the canvas, and the `_read_in_flight` guard is void without a step cap.
+
+The generality claim is a hedge ("likely other models") and nothing substantiates it — see below.
+
+## Why this path exists at all
+
+> [!note] Grammar-constrained decoding does not work on diffusion models
+> [[constrained-decoding]] compiles a schema to an FSM and masks illegal tokens *at each step, given the prefix already generated*. A diffusion model has no prefix — positions commit out of order — so the FSM has nothing to advance against. vLLM currently **rejects structured outputs for diffusion models with a 400**, and issue #45572 ("canvas-aware structured outputs") remains open, with a DiffusionGemma author commenting: "Guided decoding is indeed tricky for Text Diffusion models […] It is an open problem for which we don't have a good answer yet."
+>
+> Seeding the canvas and reading the distribution sidesteps the problem entirely by never needing a grammar. That is the deeper reason this approach appeared on a diffusion model first.
+
+## How portable is it?
+
+vLLM has exactly **one** in-tree diffusion LM. The registry holds a single entry (`DiffusionGemmaForBlockDiffusion`); a LLaDA support request (#18532) was closed **not planned** — "It would introduce too much complexity in our code. Maybe in a separate repo" — with requests redirected to `vllm-omni` and a separate `dllm-plugin` project.
+
+The new code splits cleanly: validation, scheduler and config auto-selection are **model-agnostic**, keyed on a `canvas_length` field in the HF config (~190 of the 518 core lines). Every piece of actual mechanism — seed canvas, pin mask, read-only state, emit logic, self-conditioning zeroing — lives in `diffusion_gemma.py` with **no shared base class**. A second diffusion model would inherit the plumbing and reimplement the substance.
 
 ## Related
 
-- [[diffusiongemma]] · [[jev]] · [[openjev]] · [[logit-scoring]] · [[system-one-model]] · [[vllm]] · [[structured-outputs]] · [[constrained-decoding]]
+- [[diffusiongemma]] · [[jev]] · [[openjev]] · [[logit-scoring]] · [[system-one-model]] · [[vllm]] · [[constrained-decoding]] · [[structured-outputs]] · [[diffusion-language-model]] · [[constrained-canvas-vs-free-denoise]]
 
 ## References
 
-- [vllm-project/vllm#57250](https://github.com/vllm-project/vllm/pull/57250)
+- [vllm-project/vllm#57250](https://github.com/vllm-project/vllm/pull/57250) · prerequisites #57414, #57416, #57417, #57462, #57589
+- Extended server, out of tree: [github.com/mmastrac/djev](https://github.com/mmastrac/djev)

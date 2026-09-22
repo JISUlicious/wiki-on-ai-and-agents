@@ -7,6 +7,21 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-22] query | Rationale behind "DiffusionGemma as Jev"
+
+Question: "what is rational behind 'diffusiongemma as jev'?" Filed as [[rationale-behind-diffusiongemma-as-jev]], with comprehensive follow-up research that corrected several claims made during yesterday's ingest.
+
+Created: [[cloze-scoring]], [[diffusion-language-model]], [[constrained-canvas-vs-free-denoise]], [[laya]], [[independent-jev-calibration-audits-2026]], [[rationale-behind-diffusiongemma-as-jev]]. Updated: [[logit-scoring]], [[system-one-model]], [[jev]], [[openjev]], [[calibration]], [[diffusiongemma]], [[open-jev-diffusiongemma-harness-github-2026]], [[structured-generation-mode-for-diffusiongemma-mastracci-2026]].
+
+**Four corrections to yesterday's pages.**
+
+1. *"No calibration result has been published for any System One model"* — **false as of 2026-09-22**. Seven independent audits appeared between 09-17 and 09-21. Jev's probabilities are overconfident and calibration is dataset-dependent (ECE 0.0204 CLINC150 vs 0.0936 Banking77 in one pre-registered study; 0.793 with abstain removed). Type safety held perfectly: 0 type errors in 8,576 responses. Recorded on [[independent-jev-calibration-audits-2026]] and corrected on [[system-one-model]].
+2. *Cross-field attention is an advantage of the diffusion route* — contradicted twice over. dLLM-SetScore measured the first answer slot predicted positive on 99.4-100% of examples; open-jev scored 88.4% ungrouped vs 86.1% grouped. Callout added to [[logit-scoring]].
+3. *open-jev "denoises freely"* — its README understates it. The code pre-seeds the canvas with a literal JSON template and masks non-answer positions every step; values are space-padded to equal token width so the canvas cannot shift. It also returns **no per-value probability at all**. Corrected on [[open-jev-diffusiongemma-harness-github-2026]].
+4. *"Verbalized self-confidence is poorly calibrated"* — too flat. True for base models on bounded tasks; reversed for RLHF'd models on open-ended QA (arXiv:2305.14975). Scoped on [[logit-scoring]].
+
+**The larger finding.** The mechanism is not new — the five-step readout is the MMLU reference implementation from 2020, the single-token constraint is PET's 2020 limitation, and the diffusion version was published on LLaDA and Dream a month before Jev. [[cloze-scoring]] carries the lineage. And the diffusion route lost: every open implementation that competes with Jev is an encoder or a frozen autoregressive logit-reader, with [[laya]] 7.8x faster at 421M parameters. vLLM PR #57250 was approved 2026-09-22 but remains unmerged, blocked on CI.
+
 ## [2026-09-21] ingest | System One models: Jev, Nimble, DiffusionGemma-as-Jev
 
 Ingested TypeSafe AI's Jev announcement and the open reimplementations that followed it within four days.

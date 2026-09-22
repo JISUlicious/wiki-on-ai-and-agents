@@ -59,6 +59,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[bespoke-labs]] — Publishes small verifier-style open models and their data recipes
 - [[diffusiongemma]] — Google's open diffusion LM; substrate for the open Jev clones (2026-06-10)
 - [[openjev]] — Jev wire-compatible open decision server on DiffusionGemma
+- [[laya]] — ModernBERT-large 421M encoder; 7.8x faster than Jev, the route that actually won
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -498,6 +499,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[system-one-model]] — A typed decision with a probability, instead of text
 - [[logit-scoring]] — Reading a decision off the model's distribution instead of generating it
 - [[calibration]] — Whether stated probabilities match observed frequencies
+- [[cloze-scoring]] — The 2019-2025 prior art: PET, the MMLU readout, and its known pathologies
+- [[diffusion-language-model]] — Generating text by denoising a canvas instead of left-to-right
 
 ## Sources
 
@@ -1253,15 +1256,18 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[structured-generation-mode-for-diffusiongemma-mastracci-2026]] — vLLM PR #57250; Jev-like reads on DiffusionGemma
 - [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] — How DiffusionGemma actually commits tokens (arXiv:2606.14620)
 - [[how-transparent-is-diffusiongemma-engels-2026]] — Reasoning transparency and monitorability audit (arXiv:2606.20560)
+- [[independent-jev-calibration-audits-2026]] — Seven independent audits: Jev is overconfident and dataset-dependent (2026-09)
 
 ## Comparisons
 
+- [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
 - [[agent-skills-cross-vendor]] — Capability-packaging compared across Anthropic / OpenAI / Google / Microsoft / AWS (SKILL.md vs GPTs vs Gems vs Declarative Agents vs Action Groups)
 - [[harness-vs-model-attribution]] — Factorial (harness × model) studies: how much of an agent's score is the scaffold vs the model (Terminal-Bench/SWE-bench leaderboards + the "disclose the harness" thesis)
 
 ## Queries
 
+- [[rationale-behind-diffusiongemma-as-jev]] — Why reading a diffusion canvas reproduces Jev, and why the route still lost
 - [[from-transformer-to-modern-agents]] — Nine evolutionary tracks from Transformer to 2026 agents
 - [[common-features-of-modern-agents]] — The 8 universal features shared by Claude Code / opencode / pi / Hermes / OpenClaw
 - [[hooks-in-modern-agents]] — ~30 named hooks across the 5 documented 2026 agents (PreToolUse, SessionStart, Stop, PreCompact, …)

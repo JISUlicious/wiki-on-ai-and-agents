@@ -2,10 +2,11 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
-status: draft
+  - independent-jev-calibration-audits-2026.md
+status: complete
 importance: medium
 tags:
   - model
@@ -24,12 +25,20 @@ tags:
 
 **What it cannot do**: free text, code, open-ended reasoning, or any answer outside the declared space. It returns no rationale, so a decision it makes cannot be explained to an auditor from its output alone.
 
-> [!note] Draft
-> No architecture, parameter count or base model is public. Whether Jev is a distinct architecture or a small tuned model with a parallel classification head cannot be determined from published material.
+## Calibration, as measured
+
+Seven independent audits between 2026-09-17 and 2026-09-21 found Jev's raw probabilities **overconfident**, with calibration dataset-dependent rather than a stable property: ECE 0.0204 on CLINC150 and 0.0936 on Banking77 in the same pre-registered study, `noul` ECE 0.169 and `choice` ECE 0.226 across 4,995 real agent decisions, and ECE 0.793 once an abstain option is removed. Type safety held perfectly — **zero type errors across 8,576 responses**. Full detail and caveats on [[independent-jev-calibration-audits-2026]].
+
+TypeSafe's own jaggedness docs, reviewed 2026-09-17, concede that "jev-1.13's score levels are weak in numerical calibration" and that calibration is a **group-level** property, not a per-answer guarantee — which materially narrows what any single probability licenses you to do.
+
+> [!note] What it is, by the founder's own account
+> No architecture, parameter count or base model is public, and no paper exists — an arXiv search for "reinforcement learning for calibrated decisions" returns nothing. On Hacker News Diogo Almeida agreed that Jev is essentially a zero-shot classifier ("exactly right!") and that "Large Classification Model rather than a Large Language Model" was "very accurate!". He has said he will not publish ECE figures, considering public benchmarks gameable — which leaves the central claim unfalsifiable by the vendor and falsified-in-direction by everyone else.
+
+Where frontier scale does show up is **label-space capacity**: Jev handles 255 options and takes Banking77's 77 intents at 0.870, where the 421M encoder [[laya]] collapses to 0.425.
 
 ## Related
 
-- [[typesafe-ai]] · [[system-one-model]] · [[calibration]] · [[logit-scoring]] · [[nimble]] · [[openjev]] · [[introducing-system-one-models-and-jev-typesafe-2026]]
+- [[typesafe-ai]] · [[system-one-model]] · [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[nimble]] · [[openjev]] · [[laya]] · [[independent-jev-calibration-audits-2026]]
 
 ## References
 

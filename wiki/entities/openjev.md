@@ -2,7 +2,7 @@
 title: OpenJev
 type: entity
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - https://github.com/razorback16/openjev
 builds-on:
@@ -48,14 +48,21 @@ On an RTX PRO 6000 Blackwell using 38% of the GPU, 3 questions per request, cach
 
 A 94 ms p50 at concurrency 1 undercuts Jev's reported 246.7 ms median through its own API, though on different hardware and question mixes.
 
-> [!warning] It depends on an unmerged patch
-> The [[structured-generation-mode-for-diffusiongemma-mastracci-2026|vLLM PR #57250]] it needs has not merged. The request fields are provisional (`vllm_xargs`), so the project pins a rebased fork carrying the PR head plus three crash fixes: an image-request fix, a dtype mismatch when torch.compile hits its recompile limit and falls back to eager, and logprobs stashed at different steps failing to join when reads and generations share a batch. This is pre-release infrastructure.
+> [!warning] It depends on a patch that has not landed
+> The [[structured-generation-mode-for-diffusiongemma-mastracci-2026|vLLM PR #57250]] it needs is **approved but unmerged** as of 2026-09-22, blocked on CI, with its request fields still provisional (`vllm_xargs`). OpenJev therefore pins a rebased fork carrying the PR head plus three crash fixes: an image-request fix, a dtype mismatch when torch.compile exceeds its recompile limit and falls back to eager, and logprobs stashed at different steps failing to join when reads and generations share a batch.
+>
+> OpenJev's maintainer diagnosed the latter two upstream and they have since been folded into the PR itself — the eager-fallback path costs roughly 2× per self-conditioned step (4.0 vs 1.9 ms at batch 1, 14 vs 6.9 ms at batch 8). The `--attention-backend TRITON_ATTN` flag in its serve command is likewise a workaround, not a preference: FlashInfer is auto-selected on some GPUs and crashes DiffusionGemma at startup.
+
+This is pre-release infrastructure, and the pin is the honest consequence.
 
 The README also states plainly that "answer quality is the quality of DiffusionGemma 26B-A4B used in this mode" and tells users to evaluate on their own tasks. It publishes no accuracy or [[calibration]] figures of its own — for those, see [[open-jev-diffusiongemma-harness-github-2026]].
 
+> [!warning] The hosted option in its README is the author's own project
+> OpenJev's README recommends Codiv (`api.codiv.ai`) as a free host — 100M input tokens, no card. Codiv's site lists exactly one contact, `razorback16@protonmail.com`, the same handle as OpenJev's GitHub owner, and the repo's homepage field points at codiv.ai. This is self-recommendation, not third-party validation. The service discloses no legal entity, founders, location or business model; WHOIS is behind a privacy proxy and was last updated the day the repo was created. The open-source side is genuinely real and Apache-2.0; the hosted service is best read as one person's free experiment, not a vendor to point production traffic at.
+
 ## Related
 
-- [[jev]] · [[diffusiongemma]] · [[system-one-model]] · [[logit-scoring]] · [[nimble]] · [[mlx]] · [[vllm]] · [[edge-inference]] · [[calibration]]
+- [[jev]] · [[diffusiongemma]] · [[system-one-model]] · [[logit-scoring]] · [[cloze-scoring]] · [[nimble]] · [[laya]] · [[mlx]] · [[vllm]] · [[edge-inference]] · [[calibration]] · [[constrained-canvas-vs-free-denoise]]
 
 ## References
 

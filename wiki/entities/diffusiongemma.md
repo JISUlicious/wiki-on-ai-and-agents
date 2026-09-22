@@ -2,7 +2,7 @@
 title: DiffusionGemma
 type: entity
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-22
 sources:
   - https://deepmind.google/models/gemma/diffusiongemma/
   - neither-parallel-nor-sequential-diffusiongemma-asaria-2026.md
@@ -79,14 +79,14 @@ Three efforts landed within days of Jev's 2026-09-15 announcement:
 - [[openjev]] — a Jev **wire-compatible** decision server, with NVIDIA and [[mlx|MLX]] backends.
 - [[open-jev-diffusiongemma-harness-github-2026|open-jev]] — 88.4% against Jev's 90.8% on Jev's own published cases, with no fine-tuning.
 
-Google's Gemma account promoted the pattern, framing "DiffusionGemma as Jev" as a demonstration of non-autoregressive architectures evaluating structured choices in a single parallel pass.
+Google's Gemma account promoted the pattern, framing "DiffusionGemma as Jev" as a demonstration of non-autoregressive architectures evaluating structured choices in a single parallel pass. [[rationale-behind-diffusiongemma-as-jev]] sets out the full argument — and why the route nevertheless lost to encoders like [[laya]].
 
 > [!warning] Confidence is informative on reasoning, null on recall
 > Commit confidence predicts correctness on math (AUROC 0.749 [0.602, 0.879], with monotone tertiles 1.00/0.667/0.618) but is **uninformative on factual recall** (AUROC 0.471 [0.383, 0.544] — no better than chance). Since reading a decision off the canvas *is* reading commit confidence, this is a direct caveat for every DiffusionGemma-based System One server: the probabilities may be meaningful for judgment-type questions and meaningless for questions that turn on recalled facts. No one has yet measured [[calibration]] separately by question type.
 
 ## Related
 
-- [[google]] · [[jev]] · [[openjev]] · [[nimble]] · [[system-one-model]] · [[logit-scoring]] · [[mixture-of-experts]] · [[edge-inference]] · [[arithmetic-intensity]] · [[latent-reasoning]] · [[mlx]] · [[vllm]] · [[calibration]]
+- [[google]] · [[jev]] · [[openjev]] · [[nimble]] · [[laya]] · [[system-one-model]] · [[logit-scoring]] · [[cloze-scoring]] · [[diffusion-language-model]] · [[mixture-of-experts]] · [[edge-inference]] · [[arithmetic-intensity]] · [[latent-reasoning]] · [[mlx]] · [[vllm]] · [[calibration]]
 
 ## References
 
