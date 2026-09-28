@@ -2,7 +2,7 @@
 title: OpenJev
 type: entity
 created: 2026-09-21
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - https://github.com/razorback16/openjev
 builds-on:
@@ -48,12 +48,14 @@ On an RTX PRO 6000 Blackwell using 38% of the GPU, 3 questions per request, cach
 
 A 94 ms p50 at concurrency 1 undercuts Jev's reported 246.7 ms median through its own API, though on different hardware and question mixes.
 
-> [!warning] It depends on a patch that has not landed
-> The [[structured-generation-mode-for-diffusiongemma-mastracci-2026|vLLM PR #57250]] it needs is **approved but unmerged** as of 2026-09-22, blocked on CI, with its request fields still provisional (`vllm_xargs`). OpenJev therefore pins a rebased fork carrying the PR head plus three crash fixes: an image-request fix, a dtype mismatch when torch.compile exceeds its recompile limit and falls back to eager, and logprobs stashed at different steps failing to join when reads and generations share a batch.
->
-> OpenJev's maintainer diagnosed the latter two upstream and they have since been folded into the PR itself — the eager-fallback path costs roughly 2× per self-conditioned step (4.0 vs 1.9 ms at batch 1, 14 vs 6.9 ms at batch 8). The `--attention-backend TRITON_ATTN` flag in its serve command is likewise a workaround, not a preference: FlashInfer is auto-selected on some GPUs and crashes DiffusionGemma at startup.
+> [!note] The engine patch has landed
+> The [[structured-generation-mode-for-diffusiongemma-mastracci-2026|vLLM PR #57250]] it depends on **merged on 2026-09-22**, carrying the two crash fixes OpenJev's maintainer diagnosed upstream (an eager-fallback dtype mismatch that costs roughly 2× per self-conditioned step, and logprob stashes failing to join across reads and generations). The pinned fork is no longer structurally necessary. The `--attention-backend TRITON_ATTN` flag is still a workaround: FlashInfer is auto-selected on some GPUs and crashes DiffusionGemma at startup.
 
-This is pre-release infrastructure, and the pin is the honest consequence.
+## From one model to a gateway
+
+By 2026-09-27 OpenJev served five models behind the same Jev-compatible API: DiffusionGemma (`openjev-latest`), [[laya|Laya]] (`laya-1.0`), Verdict (151M encoder, up to 24 choices), CLM (contrastive heads over Qwen3-8B) and JevK5 (Qwen3.5-4B with a distilled LoRA). Recent commits are hardening work — oversize-body and fan-out limits, stream-leak fixes — typical of a project being run in production.
+
+On [[jevbench|JevBench]] the DiffusionGemma model it started with ranks **30th of 91** (36.9), below many 4B autoregressive fine-tunes. The gateway pivot is the project absorbing that result.
 
 The README also states plainly that "answer quality is the quality of DiffusionGemma 26B-A4B used in this mode" and tells users to evaluate on their own tasks. It publishes no accuracy or [[calibration]] figures of its own — for those, see [[open-jev-diffusiongemma-harness-github-2026]].
 

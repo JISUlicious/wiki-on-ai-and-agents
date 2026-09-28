@@ -2,13 +2,14 @@
 title: Laya
 type: entity
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - https://huggingface.co/convaiinnovations/laya
   - independent-jev-calibration-audits-2026.md
 builds-on:
   - [[cloze-scoring]]
 parameters: 421M (English) / 322M (multilingual)
+  - system-one-ecosystem-sweep-2026-09-28.md
 status: complete
 importance: medium
 tags:
@@ -44,15 +45,29 @@ Because each option gets its own mask position, questions are naturally isolated
 
 Its vendor page also publishes a Jev ECE of 0.246 against Laya's 0.081 after temperature scaling. That is a competitor measuring a competitor and should be weighted accordingly — see [[independent-jev-calibration-audits-2026]] for the disinterested measurements, which put Jev's ECE lower but still overconfident.
 
+## Second-week evidence
+
+A 24,114-decision paired run with a SHA-fingerprinted protocol confirmed the cardinality collapse at scale:
+
+| Dataset | Laya | [[jev\|Jev]] |
+|---|---:|---:|
+| Banking77 | 46.3% | 80.0% |
+| ArBanking77 (15,534 items) | 12.4% | 63.4% |
+| CLINC150 | 48.9% | 89.4% |
+
+On low-cardinality tasks the picture reverses. At n = 500, Laya beat Jev on AG News in both accuracy (90.6% vs 84.3%) and calibration (ECE 0.056 vs 0.112). On Banking77 its ECE was 0.511, so it is confidently wrong as well as inaccurate. **Route by option count.**
+
+Adoption outran every other open model. The upstream repository ([NandhaKishorM/laya](https://github.com/NandhaKishorM/laya)) reached about 26.8k stars and 15 releases in five days, and it is the model that open PRs in [[vllm|vLLM]], [[sglang|SGLang]] and [[llama-cpp|llama.cpp]] all target. Community GGUF, CoreML, ONNX and MLX conversions exist.
+
 ## Why it matters
 
 The first wave of open Jev clones ran on [[diffusiongemma|DiffusionGemma]], because a diffusion model's native masked-slot operation looked like the natural substrate. Laya shows the parallel-readout advantage was replicable far more cheaply with a bidirectional encoder — which has had exactly this capability since BERT. No one has ported the System One pattern to any other diffusion LM (LLaDA, Dream, Mercury, Gemini Diffusion), while encoder and frozen-autoregressive implementations proliferated.
 
 ## Related
 
-- [[jev]] · [[system-one-model]] · [[cloze-scoring]] · [[logit-scoring]] · [[nimble]] · [[openjev]] · [[calibration]] · [[masked-language-modeling]] · [[bert]]
+- [[jev]] · [[system-one-model]] · [[jevbench]] · [[system-one-ecosystem-sweep-2026-09-28]] · [[cloze-scoring]] · [[logit-scoring]] · [[nimble]] · [[openjev]] · [[calibration]] · [[masked-language-modeling]] · [[bert]]
 
 ## References
 
-- [laya.convaiinnovations.com](https://laya.convaiinnovations.com/) · [HuggingFace](https://huggingface.co/convaiinnovations/laya) · [receptron/laya](https://github.com/receptron/laya)
+- [NandhaKishorM/laya (upstream)](https://github.com/NandhaKishorM/laya) · [laya.convaiinnovations.com](https://laya.convaiinnovations.com/) · [HuggingFace](https://huggingface.co/convaiinnovations/laya) · [receptron/laya](https://github.com/receptron/laya)
 - [[independent-jev-calibration-audits-2026]]

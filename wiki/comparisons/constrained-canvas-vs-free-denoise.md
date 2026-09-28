@@ -2,7 +2,7 @@
 title: "Constrained Canvas vs. Free Denoise"
 type: comparison
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - open-jev-diffusiongemma-harness-github-2026.md
@@ -49,7 +49,7 @@ So B answers the *typed output* half of the [[system-one-model|System One]] prop
 
 ## Where A pays
 
-**It needs an engine patch.** A requires seeded canvases, pinned positions, read-only steps and exact-id logprobs — none of which existed in [[vllm|vLLM]] before PR #57250, which is approved but still unmerged. B runs on stock HuggingFace with a `LogitsProcessor` and a monkeypatched sampler.
+**It needs an engine patch.** A requires seeded canvases, pinned positions, read-only steps and exact-id logprobs — none of which existed in [[vllm|vLLM]] before PR #57250, which merged on 2026-09-22. B runs on stock HuggingFace with a `LogitsProcessor` and a monkeypatched sampler.
 
 **The 26-option ceiling**, and a translation layer the caller must maintain between codes and meanings.
 

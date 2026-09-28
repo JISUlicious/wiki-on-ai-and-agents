@@ -7,6 +7,21 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-28] ingest | System One ecosystem, week two (09-22 to 09-28)
+
+Update sweep across implementations, serving engines, TypeSafe itself, independent audits and arXiv. Created: [[system-one-ecosystem-sweep-2026-09-28]], [[jev-research-papers-september-2026]], [[jevbench]], [[kev]], [[sglang]]. Updated: [[jev]], [[typesafe-ai]], [[system-one-model]], [[logit-scoring]], [[laya]], [[openjev]], [[nimble]], [[diffusiongemma]], [[independent-jev-calibration-audits-2026]], [[structured-generation-mode-for-diffusiongemma-mastracci-2026]], [[bespoke-nimble-github-2026]], [[constrained-canvas-vs-free-denoise]], [[prompt-injection]].
+
+**Corrections.**
+
+1. *vLLM #57250 "approved but unmerged, blocked on CI"* — it merged 2026-09-22 20:51 UTC, hours after that was written. Fixed on the PR source page, [[openjev]] and the comparison page.
+2. *Nimble "no license, blocks commercial use"* — only the GitHub code is unlicensed; the HF weights (v1 and v2) are tagged Apache-2.0 (checked 09-28). Fixed on [[nimble]] and its source page.
+3. *Packing questions hurts* — true for small models only. Interference falls from 37% of answers changed at 0.6B to 3.9% at 27B. Nuance added to [[logit-scoring]].
+4. The `TypeSafeAI` GitHub org is an unofficial community org, so verification offers filed there were never addressed to TypeSafe. Noted on [[typesafe-ai]].
+
+**Headline changes.** [[sglang|SGLang]] merged a native `/v1/systemone` route (09-25) for any chat model, so a frozen open model on a stock engine is now a complete Jev-compatible service. On [[jevbench|JevBench]] three open 4B fine-tunes outrank Jev on the composite, but Jev leads on reasoning and calibration; the gap is speed and cost. Diffusion confirmed as a dead end (DiffusionGemma servers rank 11th and 30th; no ports to other diffusion LMs). Jev's `choice` saturates like a step function, and a `noul` per option cut Brier from 0.067 to 0.003. No new Jev model, signups paused 09-22, Jev Router launched 09-25.
+
+**Verification.** All 11 arXiv IDs had their titles checked against abstract pages. Paper bodies were not read: [[jev-research-papers-september-2026]] is abstract-level, status draft. Every project benchmark is self-reported unless marked.
+
 ## [2026-09-22] query | Rationale behind "DiffusionGemma as Jev"
 
 Question: "what is rational behind 'diffusiongemma as jev'?" Filed as [[rationale-behind-diffusiongemma-as-jev]], with comprehensive follow-up research that corrected several claims made during yesterday's ingest.

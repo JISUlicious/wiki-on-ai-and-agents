@@ -2,13 +2,13 @@
 title: "Nimble: open typed-decision model (GitHub)"
 type: source
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-28
 sources:
   - https://github.com/bespokelabsai/nimble
 authors:
   - Bespoke Labs
 year: 2026
-venue: "GitHub (no license declared)"
+venue: "GitHub (code unlicensed; HF weights Apache-2.0)"
 introduces:
   - [[nimble]]
   - [[bespoke-labs]]
@@ -20,7 +20,7 @@ tags:
 
 # Nimble: open typed-decision model (GitHub)
 
-Repository README for **Bespoke-Nimble-9B**, published by [[bespoke-labs|Bespoke Labs]] on 2026-09-18 — three days after [[typesafe-ai|TypeSafe AI]] announced [[jev|Jev]] — as an open alternative. 1,379 stars and 96 forks as of 2026-09-21. Python. **No license file**, which means no grant of use despite the public code.
+Repository README for **Bespoke-Nimble-9B**, published by [[bespoke-labs|Bespoke Labs]] on 2026-09-18 — three days after [[typesafe-ai|TypeSafe AI]] announced [[jev|Jev]] — as an open alternative. 1,379 stars and 96 forks as of 2026-09-21. Python. **No license file** in the repository; the Hugging Face weights are tagged Apache-2.0 (checked 2026-09-28), so the model is usable while the reference code carries no grant.
 
 ## What it claims
 

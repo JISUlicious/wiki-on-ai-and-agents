@@ -50,3 +50,4 @@ Distinguishing "instruction" from "data" requires reasoning about *intent*, *tru
 - [[stealing-reasoning-traces-panfilov-2026]] — injections hidden entirely inside encrypted reasoning blocks, invisible in the visible transcript
 - [[mind-viruses-papadopoulos-2026]] — self-propagating payloads that survive a context wipe by living in the agent's own writable instruction file
 - [[ai-enabled-cyber-operations]] — prompt injection as a route to stolen API keys: attackers compromised AI wrapper services' LiteLLM implementations and OpenClaw deployments to exfiltrate production credentials, then used the stolen access as attack compute and as cover
+- [[jev-research-papers-september-2026]] — typed-decision models narrow injection without removing it: injected state text shifts [[jev|Jev]]'s decision probabilities, and adaptive attacks doubled success from 1.8% to 3.5%

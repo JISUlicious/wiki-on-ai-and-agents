@@ -2,13 +2,13 @@
 title: "Structured generation mode for DiffusionGemma (Jev-like) — vLLM PR #57250"
 type: source
 created: 2026-09-21
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - https://github.com/vllm-project/vllm/pull/57250
 authors:
   - Matt Mastracci
 year: 2026
-venue: "vLLM pull request (approved, unmerged)"
+venue: "vLLM pull request (merged 2026-09-22)"
 introduces:
   - [[logit-scoring]]
 status: complete
@@ -21,7 +21,7 @@ tags:
 
 An open pull request against [[vllm|vLLM]] by Matt Mastracci adding the machinery to serve [[diffusiongemma|DiffusionGemma]] as a typed-decision model. This is the primary technical source for the claim that [[jev|Jev]]'s capability is reproducible on open weights.
 
-**Status as of 2026-09-22**: approved by maintainer LucasWilkinson, `mergeable`, but `BLOCKED` — two Buildkite checks failing. All **five prerequisite PRs have merged** (#57414, #57416, #57417, #57462, #57589; +45/−12 in total).
+**Status**: **merged 2026-09-22 at 20:51 UTC** by maintainer LucasWilkinson, hours after approval. All five prerequisite PRs had merged earlier (#57414, #57416, #57417, #57462, #57589; +45/−12 in total). What merged is the core sampler and scheduler work; the `/v1/systemone` server remains in `examples/`, not a built-in endpoint. [[sglang|SGLang]] shipped a native route three days later — see [[system-one-ecosystem-sweep-2026-09-28]].
 
 ## The claim
 

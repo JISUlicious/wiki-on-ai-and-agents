@@ -2,7 +2,7 @@
 title: Nimble
 type: entity
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-28
 sources:
   - bespoke-nimble-github-2026.md
 builds-on:
@@ -64,7 +64,8 @@ Trained on 2,676 examples from a few domains, it is not expected to generalize f
 > [!note] Not distilled from Jev
 > The README states the team did not distill from Jev. Saved Jev probabilities exist in their pipeline but were not used as training targets; the trainer optimizes cross-entropy over the allowed candidate logits directly. If accurate, the 90.12% is not [[illicit-distillation|distillation]] of a competitor but independent convergence on the same recipe — which is the stronger claim, since it suggests the approach is reproducible rather than proprietary.
 
-The repository carries **no license** as of 2026-09-21, which blocks commercial use regardless of the code being public.
+> [!warning] Correction: the weights are licensed
+> An earlier version of this page said the missing license blocked commercial use. The **GitHub code** still has no license as of 2026-09-28, but the **Hugging Face weights** — `Bespoke-Nimble-9B` and `Bespoke-Nimble-9B-v2` (released 2026-09-23) — are tagged **Apache-2.0**. You can use the model; the reference code is what lacks a grant. v2 applies a fitted temperature to its probabilities by default.
 
 ## The other open route
 

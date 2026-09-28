@@ -60,6 +60,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[diffusiongemma]] — Google's open diffusion LM; substrate for the open Jev clones (2026-06-10)
 - [[openjev]] — Jev wire-compatible open decision server on DiffusionGemma
 - [[laya]] — ModernBERT-large 421M encoder; 7.8x faster than Jev, the route that actually won
+- [[kev]] — Jared Palmer's open Qwen-based decision models, 0.8B-27B; most-starred Jev alternative
+- [[sglang]] — Serving engine; first with a native Jev-compatible /v1/systemone route (2026-09-25)
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -501,6 +503,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[calibration]] — Whether stated probabilities match observed frequencies
 - [[cloze-scoring]] — The 2019-2025 prior art: PET, the MMLU readout, and its known pathologies
 - [[diffusion-language-model]] — Generating text by denoising a canvas instead of left-to-right
+- [[jevbench]] — De facto System One leaderboard; equal-weight composite, so rank rewards speed and cost
 
 ## Sources
 
@@ -1257,6 +1260,8 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] — How DiffusionGemma actually commits tokens (arXiv:2606.14620)
 - [[how-transparent-is-diffusiongemma-engels-2026]] — Reasoning transparency and monitorability audit (arXiv:2606.20560)
 - [[independent-jev-calibration-audits-2026]] — Seven independent audits: Jev is overconfident and dataset-dependent (2026-09)
+- [[system-one-ecosystem-sweep-2026-09-28]] — Week two: SGLang native route, vLLM merge, JevBench, diffusion abandoned
+- [[jev-research-papers-september-2026]] — Eleven arXiv papers on Jev, incl. prompt injection and a replicated result (abstract-level)
 
 ## Comparisons
 

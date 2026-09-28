@@ -2,7 +2,7 @@
 title: "Independent calibration audits of Jev (September 2026)"
 type: source
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - https://github.com/jourdanlabs/assay-001
   - https://github.com/AnthusAI/Jev-Calibration
@@ -49,6 +49,24 @@ An aggregation page, not a single source. Between 2026-09-17 and 2026-09-21, at 
 
 **Type safety is real.** `jourdanlabs` recorded **zero type errors across all 8,576 responses**. Of TypeSafe's two claims, the one guaranteed by construction is the one that holds.
 
+## Second wave (2026-09-22 to 09-28)
+
+Audits kept arriving, several larger or better controlled than the first wave:
+
+| Audit | Sample | Finding |
+|---|---|---|
+| `sallout/laya-coreml-vs-jev-benchmark` | 24,114 paired decisions, SHA-fingerprinted protocol | Accuracy only. Jev far ahead on high-cardinality tasks: Banking77 80.0% vs [[laya\|Laya]] 46.3%, CLINC150 89.4% vs 48.9% |
+| `MohitSV/jev-calibration-audit` | exact-target probes, pre-registered per experiment | `choice` saturates like a step function; `noul` per option, normalised, cuts Brier 0.067 → 0.003 |
+| `dhruvmehra/jevbench` | n = 500 per dataset | Jev ECE 0.112 (AG News), 0.125 (Banking77), 0.026 (SST-2) |
+| `scienthoon/jev-ood-calibration` | 900 OOD + 3,721 public items | OOD ECE 0.107, about 4.4× the noise floor; choice and score **over**confident, boolean **under**confident |
+| BargLabs (cejel.dev) | 860 judgments, pre-registered | Jev as a judge of agent reports: **ECE 0.458**, against a pre-registered 0.05 gate; it passed 90% of defective reports |
+| `CodeWithMoin/system-one-reexamined` | 1,000 per task × 5 | When Jev says "100% sure" on Emotion and SST-5, it is right only 77–79% of the time |
+| Zenodo 22935043 (Meng, UCLA) | SST-2, AG News | Largest pre-registered audit with pre-run hashes; not peer-reviewed; headline ECE not extracted |
+
+Two conclusions strengthen. **Calibration depends on question type as well as dataset**: the direction of miscalibration flips between boolean and choice questions, and judge-style use is badly miscalibrated. And **Jev's real advantage over small open models is label cardinality**, now confirmed on 24,114 paired decisions.
+
+A self-published result from the Nautilus Assay author reported hosted Jev at ECE 0.041, with "zero calibration degradation" under adversarial prompts. It is far out of line with every other measurement and has not been independently confirmed. It was posted to the unofficial community `TypeSafeAI` GitHub organisation, not to TypeSafe.
+
 ## What this does not establish
 
 > [!warning] Seven unreviewed repos are not a literature
@@ -68,7 +86,7 @@ Separately, on Hacker News Almeida agreed that Jev is essentially a zero-shot cl
 
 ## Related
 
-- [[jev]] · [[calibration]] · [[system-one-model]] · [[typesafe-ai]] · [[laya]] · [[introducing-system-one-models-and-jev-typesafe-2026]] · [[nimble]] · [[openjev]]
+- [[jev]] · [[calibration]] · [[jev-research-papers-september-2026]] · [[jevbench]] · [[system-one-model]] · [[typesafe-ai]] · [[laya]] · [[introducing-system-one-models-and-jev-typesafe-2026]] · [[nimble]] · [[openjev]]
 
 ## References
 

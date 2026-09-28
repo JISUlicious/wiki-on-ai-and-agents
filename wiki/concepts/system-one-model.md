@@ -2,13 +2,15 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - open-jev-diffusiongemma-harness-github-2026.md
   - independent-jev-calibration-audits-2026.md
+  - system-one-ecosystem-sweep-2026-09-28.md
+  - jev-research-papers-september-2026.md
 status: complete
 importance: high
 ---
@@ -57,6 +59,7 @@ This class competes with the cheap, high-frequency decisions in a harness, the o
 | [[open-jev-diffusiongemma-harness-github-2026\|open-jev]] | [[diffusiongemma]], read-only | **no** | 88.4% on Jev's public cases |
 | [[openjev\|OpenJev]] | [[diffusiongemma]], read-only | **no** | none published |
 | [[laya\|Laya]] | ModernBERT-large, 421M **encoder** | yes | 0.766 typed-decisions, at 32.8 ms |
+| [[kev\|Kev]] | Qwen3.5 / 3.8, 0.8B–27B | yes | 0.848 on unseen sources (27B), self-reported |
 
 The evaluations are not interchangeable — each was scored on a different set, in the open cases against model-derived references. See each page for its caveats.
 
@@ -64,10 +67,18 @@ The evaluations are not interchangeable — each was scored on a different set, 
 > The first clones used [[diffusiongemma|DiffusionGemma]] because a diffusion model's native masked-slot fill looked like the obvious substrate. It was not. The implementations that actually compete with Jev are **encoders** and frozen autoregressive logit-readers — [[laya]] is 7.8× faster than Jev at 421M parameters — and nobody has ported the pattern to any other diffusion LM. Bidirectional encoders have had this capability since BERT.
 >
 > What frontier scale does buy is **label-space capacity**: Laya degrades past ~20 options while Jev handles 255, and loses Banking77's 77 intents by 44 points.
+>
+> The second week confirmed it. On [[jevbench|JevBench]] the two DiffusionGemma servers rank 11th and 30th of 91, below many 4B autoregressive fine-tunes, and nobody ported the pattern to any other diffusion model. A 24,114-decision paired audit reproduced the cardinality gap: Laya 46.3% vs Jev 80.0% on Banking77, 48.9% vs 89.4% on CLINC150.
+
+## Serving: the pattern moved into the engines
+
+Within ten days the interface stopped needing a bespoke server. [[sglang|SGLang]] merged a native `/v1/systemone` route on 2026-09-25 that serves **any chat model**, supports 255 options, and passes TypeSafe's own SDKs. [[vllm|vLLM]] merged the DiffusionGemma read path on 09-22 and has Laya model PRs open. llama.cpp and NVIDIA Dynamo have proposals. A frozen open model on a stock engine is now a complete Jev-compatible service; calibration is the only piece left to the operator.
+
+The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the top three [[jevbench|JevBench]] places, plus [[laya|Laya]] as the shared encoder. See [[system-one-ecosystem-sweep-2026-09-28]].
 
 ## Related
 
-- [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[laya]] · [[constrained-decoding]] · [[programmatic-tool-calling]] · [[verifier]] · [[llm-as-a-judge]] · [[agent-evaluation]]
+- [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[laya]] · [[kev]] · [[jevbench]] · [[sglang]] · [[constrained-decoding]] · [[programmatic-tool-calling]] · [[verifier]] · [[llm-as-a-judge]] · [[agent-evaluation]]
 
 ## References
 
@@ -76,3 +87,5 @@ The evaluations are not interchangeable — each was scored on a different set, 
 - [[structured-generation-mode-for-diffusiongemma-mastracci-2026]]
 - [[open-jev-diffusiongemma-harness-github-2026]]
 - [[independent-jev-calibration-audits-2026]]
+- [[system-one-ecosystem-sweep-2026-09-28]]
+- [[jev-research-papers-september-2026]]

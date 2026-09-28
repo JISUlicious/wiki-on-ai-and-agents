@@ -2,10 +2,12 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-09-22
+updated: 2026-09-28
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
+  - system-one-ecosystem-sweep-2026-09-28.md
+  - jev-research-papers-september-2026.md
 status: complete
 importance: medium
 tags:
@@ -36,9 +38,23 @@ TypeSafe's own jaggedness docs, reviewed 2026-09-17, concede that "jev-1.13's sc
 
 Where frontier scale does show up is **label-space capacity**: Jev handles 255 options and takes Banking77's 77 intents at 0.870, where the 421M encoder [[laya]] collapses to 0.425.
 
+## Since launch (to 2026-09-28)
+
+- **No new model.** `jev-1.13.0` is still the only build; `jev-preview` aliases it. OpenRouter exposes a pinnable snapshot, `typesafe/jev-1.13-20260917`. TypeSafe advises pinning the exact version if you have tuned thresholds, because aliases move.
+- **Signups paused** on 2026-09-22, citing demand. Latency incidents followed on 09-23 and 09-24.
+- **Jev Router** launched on OpenRouter on 2026-09-25: a chat-request router that picks the model and reasoning effort per request and claims to be cache-aware. Its benchmark result (237 vs 130 of 423 tasks against OpenRouter's Auto Router) is vendor-reported.
+- **Documented limits**: up to 255 options per Choice; Score takes 2–10 levels. OpenRouter's endpoint caps context at 32k tokens against 64k on TypeSafe's own.
+
+> [!warning] Choice probabilities saturate; ask Noul per option instead
+> A pre-registered audit found `choice` behaves close to a step function. With no evidence either way about a fair coin, it gives "heads" 0.83–0.93; told the base rate is 55/45, it gives 0.90–0.996. The bias follows the option *word*, not its key or position. `noul` tracked the exact targets within 0.015–0.027, and asking one `noul` per option and normalising cut Brier from 0.067 to 0.003. TypeSafe's jaggedness docs separately warn that Noul and Choice thresholds are not interchangeable. See [[independent-jev-calibration-audits-2026]].
+
+**Security.** Typed output narrows [[prompt-injection]] without removing it: injected content in the state shifts decision probabilities, and adaptive attacks doubled success from 1.8% to 3.5% in the first paper on it. See [[jev-research-papers-september-2026]].
+
+**Ranking.** On [[jevbench|JevBench]] Jev is 4th of 91 on the composite, behind three open 4B fine-tunes, but it leads the #3 system on the reasoning axis (Intelligence 53.1 vs 49.4) and on calibration. The open models win on speed and cost.
+
 ## Related
 
-- [[typesafe-ai]] · [[system-one-model]] · [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[nimble]] · [[openjev]] · [[laya]] · [[independent-jev-calibration-audits-2026]]
+- [[typesafe-ai]] · [[system-one-model]] · [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[nimble]] · [[openjev]] · [[laya]] · [[independent-jev-calibration-audits-2026]] · [[jev-research-papers-september-2026]] · [[jevbench]] · [[kev]] · [[system-one-ecosystem-sweep-2026-09-28]]
 
 ## References
 
