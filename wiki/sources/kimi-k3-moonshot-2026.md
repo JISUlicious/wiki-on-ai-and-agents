@@ -25,11 +25,11 @@ importance: high
 
 ## Summary
 
-Kimi K3 is a **2.78T-parameter** native-multimodal [[mixture-of-experts]] model with **104.2B activated parameters** and a **1M-token context window**, released open-weight by [[moonshot-ai]]. The paper's framing is that the open ecosystem has been scaling test-time compute (reasoning, agentic RL) but has stalled on the pre-training axis around the 1T-parameter class; K3 pushes both axes at once, taking the pre-trained foundation to "3T-class" scale while doing RL at 1M context.
+Kimi K3 is a **2.78T-parameter** native-multimodal [[mixture-of-experts]] model with **104.2B activated parameters** and a **1M-token context window**, released open-weight by [[moonshot-ai]]. The paper's framing is that the open ecosystem has been scaling [[test-time-compute|test-time compute]] (reasoning, [[agentic-rl|agentic RL]]) but has stalled on the pre-training axis around the 1T-parameter class; K3 pushes both axes at once, taking the pre-trained foundation to "3T-class" scale while doing RL at 1M context.
 
 The architecture scales information flow along three axes. **Sequence**: a hybrid attention stack of 3 Kimi Delta Attention (KDA) layers per 1 Gated MLA layer (69 KDA + 24 MLA layers total, plus a trailing global-attention layer), inheriting KDA from [[kimi-linear-kimi-team-2025]] — the delta rule with a channel-wise forget gate, chunkwise-parallel, and a fine-grained low-rank decay logit. **Depth**: Attention Residuals ([[attention-residuals-kimi-team-2026]]) let each module attend over the embedding and preceding block outputs via learned pseudo-queries, replacing purely sequential residual accumulation; K3 uses the *Block* AttnRes variant with 8 blocks of 12 layers (9 including the embedding), cutting overhead from O(Ld) to O(Nd). **Width**: *Stable LatentMoE*, which routes in a compact latent space (ℓ = 3584, 0.5× the 7168 hidden dim) so that expanding routing multiplicity does not blow up communication and expert-weight traffic — 896 routed experts with 16 active per token, plus 2 shared experts.
 
-Post-training is RL across coding, general-agent, reasoning and knowledge domains at multiple reasoning-effort levels (low/high/max), consolidated back into one model via multi-teacher on-policy distillation. Results: K3 is consistently ahead of the other open and proprietary models in the paper's suite (Claude Opus 4.8, GPT-5.5, GLM-5.2) while trailing Claude Fable 5 and GPT-5.6 Sol overall. The paper is candid that research-level reasoning (CritPt 23.4, HLE-Full 43.5/56.0) is the weakest area.
+Post-training is RL across coding, general-agent, reasoning and knowledge domains at multiple reasoning-effort levels (low/high/max), consolidated back into one model via multi-teacher [[on-policy-distillation|on-policy distillation]]. Results: K3 is consistently ahead of the other open and proprietary models in the paper's suite ([[claude-opus-4-8|Claude Opus 4.8]], GPT-5.5, GLM-5.2) while trailing Claude Fable 5 and GPT-5.6 Sol overall. The paper is candid that research-level reasoning (CritPt 23.4, HLE-Full 43.5/56.0) is the weakest area.
 
 ## Key points
 
@@ -56,7 +56,7 @@ Post-training is RL across coding, general-agent, reasoning and knowledge domain
 - **Sparsity**: the paper states 896 routed / 16 active = **sparsity 56** (vs. 384/8 = 48 in Kimi K2). Two shared experts are always active on top of the 16 routed ones. *Derived, not stated in the paper:* the sparsity ladder across this Moonshot line runs [[kimi-linear-kimi-team-2025]] 32 (8 of 256, one shared) → K2 48 → K3 56, and the activated **fraction** falls from Kimi Linear's 3B/48B ≈ 6.3% to K3's 104.2B/2.78T ≈ **3.7%**. K3 activates ~35× more parameters per token than Kimi Linear's 3B while being ~1.7× sparser in proportion.
 - **Stability at extreme sparsity**: the latent routed path chains ~four consecutive matmuls (W↓ → gated expert FFN → W↑), which at 2.8T scale produced exploding activations. Fixes: RMSNorm before the up-projection, **SiTU-GLU** (a bounded GLU: gate `β₁tanh(x/β₁)·σ(x)`, up `β₂tanh(x/β₂)`, with β₁=4, β₂=25 giving |f(x)| ≤ 100), and **Quantile Balancing** — expert biases set from router-score quantiles rather than auxiliary-loss-free bias updates, which break down near 10³ experts.
 - **2.5× scaling efficiency**: measured as **fitted scaling-law curves of validation loss vs. training FLOPs on held-out OOD validation data** (Fig. 7). K3's curve reaches a given loss at ~2.5× fewer FLOPs than K2's. It is attributed to the *combination* of architecture + data + training-recipe changes, not to any single component, and the scaling study retuned batch size, LR, tokens-per-parameter and model shape.
-- **Positional encoding**: NoPE — no explicit positional embedding; position is carried implicitly by KDA's recurrent gating/decay, so the model extrapolates to 1M tokens with no RoPE rescaling or interpolation.
+- **[[positional-encoding|Positional encoding]]**: NoPE — no explicit positional embedding; position is carried implicitly by KDA's recurrent gating/decay, so the model extrapolates to 1M tokens with no RoPE rescaling or interpolation.
 - **Context curriculum**: 8K → 64K during pre-training, then 256K → 1M during cooldown (four stages), concentrating expensive long-sequence compute in a small slice of the budget.
 - **Native multimodality**: vision and language jointly optimized from the start of training (interleaved visual/text tokens under one next-token objective), not a post-hoc encoder graft. MoonViT-V2 + lightweight projector.
 - **Optimizer**: Per-Head Muon, with Kimi K2's weight clipping; cosine LR (scaling study favored cosine over WSD once each schedule got its own hyperparameter search), 1% linear warmup, weight decay 0.1.
@@ -98,7 +98,7 @@ Post-training is RL across coding, general-agent, reasoning and knowledge domain
 **Serving and infrastructure**
 
 - **MXFP4 QAT**: MoE expert weights quantized to MXFP4 with MXFP8 activations; attention projections, latent-MoE projections, shared experts and routers stay in higher precision. QAT runs through the *entire* post-training stage (SFT and RL), and RL rollout and training share the quantization scheme, eliminating train/inference mismatch.
-- **Speculative decoding**: K3 is pre-trained with one MTP layer structured like a backbone block, which is reused directly as an EAGLE-3 draft model; the draft is fine-tuned under the same MXFP4/MXFP8 QAT configuration.
+- **[[speculative-decoding|Speculative decoding]]**: K3 is pre-trained with one MTP layer structured like a backbone block, which is reused directly as an EAGLE-3 draft model; the draft is fine-tuned under the same MXFP4/MXFP8 QAT configuration.
 - **Serving stack**: a KDA-aware prefix cache packs the fixed-size KDA recurrent state into the same paged pool as the MLA KV cache so a prefix is reusable only when both restore together; dedicated kernels for KDA decoding, Block AttnRes and sparse latent MoE; fleet-level cache-affinity scheduling and budget-based admission control. Training side: **MoonEP** gives perfectly balanced expert execution with static computation shapes and zero-copy communication, plus KDA Context Parallelism for million-token sequences and a memory overcommit ratio up to 6.5× in real workloads.
 - **Vision tokens**: a 2×2 pixel-shuffle downsample cuts visual tokens 4×, keeping inputs up to 3584×3584 pixels affordable inside the 1M-token budget.
 
@@ -115,7 +115,7 @@ Post-training is RL across coding, general-agent, reasoning and knowledge domain
 - [[terminal-bench]] — Terminal-Bench 2.1, 88.3.
 - [[agent-evaluation]] — large agentic suite (BrowseComp, MCPMark, OSWorld, τ³-Banking, GDPval).
 - [[distributed-training]] — MoonEP expert-parallel training with balanced expert execution.
-- [[kv-cache]] — state-aware prefix caching for KDA; external KV-cache retention in the RL rollout system.
+- [[kv-cache]] — state-aware [[prefix-caching|prefix caching]] for KDA; external KV-cache retention in the RL rollout system.
 - [[quantization-performance]] — post-training QAT with MoE expert weights in MXFP4 and their input activations in MXFP8.
 
 ## References

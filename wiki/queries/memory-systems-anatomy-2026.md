@@ -31,7 +31,7 @@ A three-part synthesis answering an evolving conversation about how modern AI ag
 
 The three parts answer:
 1. **Composition** — what every modern memory system is built from
-2. **Scope** — how user-specific and domain-specific long-term memory are managed
+2. **Scope** — how user-specific and domain-specific [[long-term-memory|long-term memory]] are managed
 3. **Beyond scope** — the other axes the wiki distinguishes (cognitive role, function, substrate, generation, temporal binding)
 
 ---
@@ -80,7 +80,7 @@ A modern memory system is **composed** of these primitives:
 - **Tiered store** — main + recall + archival ([[memgpt]])
 - **Typed compositional store** — multiple structurally distinct stores per type ([[mirix]] = 6; [[mem-alpha]] = 3)
 - **Temporal-event store** — dual calendars indexed by time ([[chronos]])
-- **Graph store** — knowledge graph with typed relations + PPR ([[hipporag-2]])
+- **Graph store** — [[knowledge-graph|knowledge graph]] with typed relations + PPR ([[hipporag-2]])
 - **Working-memory buffer** — bounded queue in active context
 
 ### B. Content representation
@@ -88,7 +88,7 @@ A modern memory system is **composed** of these primitives:
 - Atomic factual statements ([[mem-alpha]] semantic atoms)
 - Subject-verb-object event tuples with time ranges ([[chronos]])
 - Reflections / summaries ([[generative-agents]], [[memorybank]])
-- Skill / procedure with steps ([[voyager]] skill library, [[mirix]] procedural)
+- Skill / procedure with steps ([[voyager]] [[skill-library|skill library]], [[mirix]] procedural)
 - Multimodal distillations ([[mirix]] ScreenshotVQA)
 
 ### C. Indexing & retrieval
@@ -219,7 +219,7 @@ Often skipped in 2023, explicitly broken out by [[mirix]] in 2025:
 - Updated when the procedure proves successful (reinforcement) or fails (revision)
 - Closest to [[voyager]]'s skill library
 
-Domain-specific procedural memory is the closest thing modern agents have to **institutional knowledge**.
+Domain-specific [[procedural-memory|procedural memory]] is the closest thing modern agents have to **institutional knowledge**.
 
 ### Resource memory (full documents)
 

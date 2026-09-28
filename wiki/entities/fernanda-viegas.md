@@ -13,7 +13,7 @@ tags:
 
 # Fernanda Viégas
 
-Computer scientist; faculty at Harvard SEAS and Google Research. With [[martin-wattenberg|Martin Wattenberg]] co-leads the Harvard People + AI Research (PAIR) group's research. Background in visual analytics and data visualization (Wind Map, Many Eyes); has worked on neural-network interpretability for over a decade. Co-author of "[[inference-time-intervention-li-2023|Inference-Time Intervention]]" (2023).
+Computer scientist; faculty at Harvard SEAS and [[google-research|Google Research]]. With [[martin-wattenberg|Martin Wattenberg]] co-leads the Harvard People + AI Research (PAIR) group's research. Background in visual analytics and data visualization (Wind Map, Many Eyes); has worked on neural-network interpretability for over a decade. Co-author of "[[inference-time-intervention-li-2023|Inference-Time Intervention]]" (2023).
 
 ## References
 

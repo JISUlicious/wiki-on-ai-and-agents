@@ -23,7 +23,7 @@ GPT-3 is [[openai|OpenAI]]'s 175-billion-parameter [[decoder-only-transformer|de
 
 ## Architecture
 
-Standard [[gpt-2|GPT-2]]-style architecture with one tweak — **alternating dense and locally-banded sparse attention patterns** in each layer (à la Sparse Transformer, Child et al. 2019), for memory efficiency at the 2048 context length.
+Standard [[gpt-2|GPT-2]]-style architecture with one tweak — **alternating dense and locally-banded [[sparse-attention|sparse attention]] patterns** in each layer (à la Sparse Transformer, Child et al. 2019), for memory efficiency at the 2048 context length.
 
 | | Layers | dmodel | Heads | Params |
 |---|---|---|---|---|
@@ -42,7 +42,7 @@ dhead = 128 throughout. 8 model sizes between these endpoints, enabling a clean 
 
 [[in-context-learning|In-context learning]] / [[few-shot-learning|few-shot prompting]]. With sufficient scale, tasks can be specified entirely via natural-language descriptions and a handful of in-context demonstrations — no fine-tuning required. GPT-3 demonstrated that **few-shot performance scales faster than zero-shot performance** as the model grows, validating the meta-learning hypothesis.
 
-This made the **OpenAI API** (June 2020) and eventually the entire prompt-engineering paradigm viable. ChatGPT (Nov 2022) is built on a fine-tuned GPT-3.5.
+This made the **[[openai-api|OpenAI API]]** (June 2020) and eventually the entire prompt-engineering paradigm viable. ChatGPT (Nov 2022) is built on a fine-tuned GPT-3.5.
 
 ## Lineage
 

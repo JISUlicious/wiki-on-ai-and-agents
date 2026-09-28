@@ -31,7 +31,7 @@ Reference documentation for [[vllm]]'s tool-calling subsystem: how the inference
 - **Auto mode vs constrained mode**: with `tool_choice="auto"` vLLM parses raw model output without enforcing the schema — argument correctness depends on the model. With `tool_choice="function_name"` or `"required"` vLLM uses [[constrained-decoding]] to guarantee schema-valid JSON. Notably, vLLM does **not** implement OpenAI's `strict: true` mode (which would constrain even auto mode).
 - **Backends**: xgrammar (default, 2025+) achieves <40 microseconds per token and up to 100× speedup over traditional grammar-constrained methods by splitting tokens into context-independent vs context-dependent sets. Alternatives: outlines, lm-format-enforcer.
 - **Streaming interface**: parsers implement both `extract_tool_calls` (full output) and `extract_tool_calls_streaming` (incremental) — the latter enables function name completion to trigger execution before all arguments arrive.
-- **OpenAI-compatible API**: clients submit a standard `tools` array (JSON Schema) plus optional `tool_choice`; responses carry `tool_calls` with `function.name` + `function.arguments` JSON-string, identical in shape to OpenAI's chat completions.
+- **OpenAI-compatible API**: clients submit a standard `tools` array ([[json-schema|JSON Schema]]) plus optional `tool_choice`; responses carry `tool_calls` with `function.name` + `function.arguments` JSON-string, identical in shape to OpenAI's chat completions.
 - **Plugin system**: custom parsers can be registered via `ToolParserManager.register_lazy_module` without modifying core vLLM.
 
 ## Entities Mentioned

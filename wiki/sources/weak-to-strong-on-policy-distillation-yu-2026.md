@@ -26,7 +26,7 @@ importance: high
 
 ## The problem
 
-On-policy distillation (OPD) supervises a student with a teacher's token-level distribution **on the student's own rollouts**, combining RL's on-policy credit assignment with distillation's dense signal. Its premise is a teacher at least as capable as the student, and current practice satisfies that premise two ways, both of which break:
+[[on-policy-distillation|On-policy distillation]] (OPD) supervises a student with a teacher's token-level distribution **on the student's own rollouts**, combining RL's on-policy credit assignment with distillation's dense signal. Its premise is a teacher at least as capable as the student, and current practice satisfies that premise two ways, both of which break:
 
 1. **Strong-to-weak** — distill a larger model into a smaller one (Qwen3 distills 235B into 8B/14B). At the frontier there is no larger teacher, so the ceiling is capped.
 2. **Same-origin consolidation** — train several domain experts from the student's base by RL and merge them back (MOPD; DeepSeek-V4 at trillion scale). This requires training experts *at the student's scale*, which is expensive.

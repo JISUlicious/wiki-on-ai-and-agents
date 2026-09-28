@@ -50,7 +50,7 @@ The tradeoff is an **approximation**: because each module is encoded in isolatio
 - [[kv-cache]] — the baseline this extends; Prompt Cache generalizes intra-request KV reuse to inter-request, non-prefix segment reuse.
 - [[prefix-caching]] — the neighboring technique Prompt Cache explicitly goes beyond, since reused modules need not form a contiguous prefix.
 - [[attention-mechanism]] — the module-local encoding is equivalent to masking attention to each module's own span, which is the paper's central approximation.
-- [[transformer-architecture]] — reuse depends on positional encoding; the paper patches RoPE and ALiBi with position-ID lookup tables to allow discontinuous IDs.
+- [[transformer-architecture]] — reuse depends on [[positional-encoding|positional encoding]]; the paper patches RoPE and ALiBi with position-ID lookup tables to allow discontinuous IDs.
 - [[paged-attention]] — cited as prior art for simple identical-prefix sharing and as a complement for deduplicating shared modules within a batch.
 - [[flash-attention]] — named as an orthogonal kernel-level optimization that Prompt Cache stacks on top of.
 - [[long-context-llm]] — evaluated on LongBench (4K–10K contexts); the payoff scales quadratically with prompt length.

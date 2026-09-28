@@ -15,7 +15,7 @@ Pre-training is the practice of training a model on a large, generic, self-super
 
 ## Common pre-training objectives
 
-- **Autoregressive language modeling** (next-token prediction): used by [[gpt-1]], [[gpt-2]], [[gpt-3]], [[gpt-4]] and most modern decoder-only LLMs.
+- **[[autoregressive-language-modeling|Autoregressive language modeling]]** (next-token prediction): used by [[gpt-1]], [[gpt-2]], [[gpt-3]], [[gpt-4]] and most modern decoder-only LLMs.
 - **[[masked-language-modeling|Masked language modeling]] (MLM)**: used by [[bert]] and its descendants.
 - **Span corruption / denoising**: used by T5 and BART (mask out contiguous spans, predict the original).
 - **Image patch masking**: e.g., MAE for vision (related cousin of [[vit]]).

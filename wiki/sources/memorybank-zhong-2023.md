@@ -43,7 +43,7 @@ To demonstrate practicality, the authors build **SiliconFriend**, an AI-companio
 ## Key Points
 
 - **Hierarchical storage**: raw timestamped turns → per-day event summaries → global event summary; in parallel, per-day personality insights → global user portrait. Summaries are produced by prompting the underlying LLM ("Summarize the events and key information in the content [dialog/events]" and similar for personality).
-- **Retrieval**: dual-tower dense retrieval in the [[dpr|dense passage retrieval]] style. Each memory piece `m` is pre-encoded into `h_m`; current context `c` is encoded into `h_c`; FAISS does nearest-neighbor over `M = {h_m^0, ..., h_m^|M|}`. Encoder is interchangeable — MiniLM for English, Text2vec for Chinese in the released SiliconFriend.
+- **Retrieval**: dual-tower [[dense-retrieval|dense retrieval]] in the [[dpr|dense passage retrieval]] style. Each memory piece `m` is pre-encoded into `h_m`; current context `c` is encoded into `h_c`; FAISS does nearest-neighbor over `M = {h_m^0, ..., h_m^|M|}`. Encoder is interchangeable — MiniLM for English, Text2vec for Chinese in the released SiliconFriend.
 - **Forgetting formula**: `R = e^(-t/S)` (Ebbinghaus exponential decay). `S` is discretized: init 1, increment by 1 on recall, simultaneously reset `t = 0`. Authors explicitly flag this as "exploratory and highly simplified."
 - **Three Ebbinghaus principles modeled**: (1) rate of forgetting (exponential decay), (2) initial-steepness of the curve, (3) spacing effect via reinforcement on recall. Overlearning and meaningful-material effects are explicitly out of scope.
 - **Backbone-agnostic**: same mechanism plugs into closed-source ChatGPT and open-source ChatGLM/BELLE; LangChain used for retrieval glue in the released code.

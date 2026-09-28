@@ -6,7 +6,7 @@ updated: 2026-09-07
 sources:
   - 2026-agentic-coding-trends-report-anthropic.pdf
 authors:
-  - Anthropic
+  - [[anthropic]]
 year: 2026
 venue: "Anthropic (marketing/industry report, PDF)"
 introduces:

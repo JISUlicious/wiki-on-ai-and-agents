@@ -28,7 +28,7 @@ importance: high
 **Source**: `sources/kojima-zeroshot-cot-2022.md` (extracted from `kojima-zeroshot-cot-2022.pdf`)
 **arXiv**: [2205.11916](https://arxiv.org/abs/2205.11916)
 **Venue**: NeurIPS 2022
-**Authors**: Takeshi Kojima (University of Tokyo), Shixiang Shane Gu ([[google-research|Google Research]]), Machel Reid, Yutaka Matsuo, Yusuke Iwasawa (UTokyo)
+**Authors**: Takeshi Kojima ([[university-of-tokyo|University of Tokyo]]), Shixiang Shane Gu ([[google-research|Google Research]]), Machel Reid, Yutaka Matsuo, Yusuke Iwasawa (UTokyo)
 
 ## Summary
 
@@ -57,7 +57,7 @@ Zero-shot CoT became the default productionized version of chain-of-thought reas
 ## Entities Mentioned
 
 - Takeshi Kojima — first author (UTokyo PhD)
-- Shixiang Shane Gu — co-author (Google Brain at the time, later DeepMind)
+- Shixiang Shane Gu — co-author ([[google-brain|Google Brain]] at the time, later DeepMind)
 - [[google-research]] — co-author affiliation
 
 ## Concepts Discussed

@@ -35,4 +35,4 @@ Originally founded as a non-profit research lab focused on safe AGI; restructure
 
 ## Related 2026 sources
 
-- **Agents API** (product news, AI Agents Weekly 2026-09-12) — public beta of the managed Codex harness: OpenAI runs the loop, compaction near the context limit, on-demand tool search, programmatic tool calling, a `multi_agent` setting for parallel subagents, and a choice of hosted, self-hosted or partner sandboxes. The harness itself is the open-source Codex harness. Newsletter-sourced; not independently verified.
+- **Agents API** (product news, AI Agents Weekly 2026-09-12) — public beta of the managed Codex harness: OpenAI runs the loop, compaction near the context limit, on-demand tool search, [[programmatic-tool-calling|programmatic tool calling]], a `multi_agent` setting for parallel subagents, and a choice of hosted, self-hosted or partner sandboxes. The harness itself is the open-source Codex harness. Newsletter-sourced; not independently verified.

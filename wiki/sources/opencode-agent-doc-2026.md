@@ -32,7 +32,7 @@ Architecturally: a TypeScript/Bun monorepo built around a **headless HTTP/SSE se
 - Terminal-native TUI (SolidJS + OpenTUI)
 - CLI `run` mode
 - Electron desktop app
-- Agent Client Protocol (ACP) bridge for Zed
+- [[acp|Agent Client Protocol (ACP)]] bridge for Zed
 - OpenCode web/console (hosted)
 
 Built on Effect runtime (effect/Service, Layer, Schema). Uses the Vercel AI SDK (`ai`, `@ai-sdk/*`) for model calls. Drizzle/SQLite (Bun's native driver) for durable storage of sessions, messages, parts, and an event log.

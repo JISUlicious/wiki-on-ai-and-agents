@@ -27,7 +27,7 @@ Related: [[rlhf]], [[ppo]], [[grpo]], [[agentic-rl]], [[deepseek-r1]], [[search-
 
 Surfaced via newsletter ingests; see [[index]] for full grouping.
 
-- [[embarrassingly-simple-self-distillation-zhang-2026]] — Embarrassingly Simple Self Distillation Improves Code Generation
+- [[embarrassingly-simple-self-distillation-zhang-2026]] — Embarrassingly Simple Self Distillation Improves [[code-generation|Code Generation]]
 - [[pivotrl-high-accuracy-agentic-post-training-yi-2026]] — PivotRL High Accuracy Agentic Post Training at Low
 - [[primer-in-post-training-reasoning-data-li-2026]] — A Primer in Post Training Reasoning Data What
 - [[self-distilled-rlvr-yang-2026]] — Self Distilled RLVR
@@ -35,7 +35,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[policy-optimization-methods]] — Policy Optimization Methods in LLM Post Training
 - [[back-on-track-aligning-rewards-and-states-shao-2026]] — PAPO: stable RL for reasoning in diffusion LLMs
 - [[human-like-autonomy-self-play-pinch-human-data-cornelisse-2026]] — self-play driving + a pinch of human data as regularizer
-- [[beyond-scalar-rewards-z-reward-jin-2026]] — Z-Reward: reward modeling via score distributions
+- [[beyond-scalar-rewards-z-reward-jin-2026]] — Z-Reward: [[reward-modeling|reward modeling]] via score distributions
 
 > [!note] Learning without backprop
 > RL policies can be trained with [[backprop-free-learning|backpropagation-free rules]]; see [[diffusing-blame-yamada-2026]] for ED-PPO vs BP-PPO vs DFA-PPO across Brax locomotion and Craftax.

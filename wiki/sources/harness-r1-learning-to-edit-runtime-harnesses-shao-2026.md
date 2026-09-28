@@ -26,7 +26,7 @@ importance: high
 
 # Harness-R1: Learning to Edit Executable Runtime Harnesses from Agent Failure Trajectories
 
-**Shuai Shao, Kangning Zhang, Qingyao Li, Shijian Wang, Hao Wang, Wenxiang Jiao, Yuan Lu, Yi Guo, Weiwen Liu, Weinan Zhang** ([[shanghai-jiao-tong-university|Shanghai Jiao Tong University]]; Xiaohongshu Inc.; Southeast University) — [arXiv:2608.02276](https://arxiv.org/abs/2608.02276), cs.AI, 3 Aug 2026, CC BY 4.0. Code: `github.com/DeepExperience/Harness-R1`; models on Hugging Face.
+**Shuai Shao, Kangning Zhang, Qingyao Li, Shijian Wang, Hao Wang, Wenxiang Jiao, Yuan Lu, Yi Guo, Weiwen Liu, Weinan Zhang** ([[shanghai-jiao-tong-university|Shanghai Jiao Tong University]]; Xiaohongshu Inc.; Southeast University) — [arXiv:2608.02276](https://arxiv.org/abs/2608.02276), cs.AI, 3 Aug 2026, CC BY 4.0. Code: `github.com/DeepExperience/Harness-R1`; models on [[huggingface|Hugging Face]].
 
 ## Summary
 

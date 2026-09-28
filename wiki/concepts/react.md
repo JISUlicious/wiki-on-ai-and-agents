@@ -63,7 +63,7 @@ This generality is why ReAct underpins virtually every modern **[[llm-agent|LLM 
 ## Limitations
 
 - **Context length**: long trajectories accumulate observations that consume the prompt window.
-- **Brittle action parsing**: malformed `Act:` strings can derail execution. Modern tool-use APIs (OpenAI function calling, Anthropic tool use) replace text parsing with structured JSON arguments.
+- **Brittle action parsing**: malformed `Act:` strings can derail execution. Modern tool-use APIs (OpenAI [[function-calling|function calling]], Anthropic [[tool-use|tool use]]) replace text parsing with structured JSON arguments.
 - **No persistent memory beyond the current trajectory** — unless paired with external memory ([[reflexion|Reflexion]]) or vector stores.
 
 ## References

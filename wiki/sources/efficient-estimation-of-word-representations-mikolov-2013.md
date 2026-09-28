@@ -38,7 +38,7 @@ The key design choice: replace the expensive non-linear hidden layer of the stan
 
 The famous result that made word2vec a household name in NLP: the learned embeddings exhibit **linear arithmetic over semantic relationships**. `vec("King") − vec("Man") + vec("Woman") ≈ vec("Queen")`. Similar relationships hold for verb tenses, country/capital pairs, plural/singular pairs, and more. This was the empirical demonstration that distributional semantics could capture surprisingly rich structure with surprisingly simple methods.
 
-word2vec became the substrate from which every later embedding (GloVe, FastText, ELMo, BERT, dense retrieval) descended. It is the conceptual ancestor of the input-embedding layer of every modern Transformer.
+word2vec became the substrate from which every later embedding (GloVe, FastText, ELMo, BERT, [[dense-retrieval|dense retrieval]]) descended. It is the conceptual ancestor of the input-embedding layer of every modern Transformer.
 
 ## Key Points
 

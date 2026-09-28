@@ -12,7 +12,7 @@ authors:
   - Federico Cassano
   - Edward Berman
   - Ashwin Gopinath
-  - Karthik Narasimhan
+  - [[karthik-narasimhan]]
   - "[[shunyu-yao]]"
 year: 2023
 tags:
@@ -26,11 +26,11 @@ importance: high
 **Source**: `sources/reflexion-shinn-2023.md` (extracted from `Reflexion Shinn 2023 2303.11366.pdf`)
 **arXiv**: [2303.11366](https://arxiv.org/abs/2303.11366)
 **Venue**: NeurIPS 2023
-**Authors**: Noah Shinn, Federico Cassano, Edward Berman (Northeastern), Ashwin Gopinath (MIT), Karthik Narasimhan, [[shunyu-yao]] ([[princeton-university|Princeton]])
+**Authors**: Noah Shinn, Federico Cassano, Edward Berman (Northeastern), Ashwin Gopinath (MIT), [[karthik-narasimhan|Karthik Narasimhan]], [[shunyu-yao]] ([[princeton-university|Princeton]])
 
 ## Summary
 
-Reflexion is a framework for improving [[llm-agent|LLM agents]] across episodes **without updating any model weights**. After each attempt at a task, the agent generates a **natural-language reflection** on what went wrong (or right). The reflection is stored in an **episodic memory buffer** and prepended to the prompt in subsequent attempts. The result is "verbal reinforcement learning": the policy is parameterized by `(LLM weights, memory)`, and the only thing that updates between trials is the memory.
+Reflexion is a framework for improving [[llm-agent|LLM agents]] across episodes **without updating any model weights**. After each attempt at a task, the agent generates a **natural-language reflection** on what went wrong (or right). The reflection is stored in an **episodic memory buffer** and prepended to the prompt in subsequent attempts. The result is "verbal [[reinforcement-learning|reinforcement learning]]": the policy is parameterized by `(LLM weights, memory)`, and the only thing that updates between trials is the memory.
 
 This dodges the central problem of reinforcement-learning LLM agents: traditional RL (PPO, etc.) requires huge sample counts and expensive fine-tuning, which is infeasible for 100B+ models making API calls. Reflexion sidesteps weight updates entirely and instead exploits the model's **self-evaluation** capability to convert thin reward signals into rich textual feedback.
 
@@ -58,7 +58,7 @@ Reflexion exemplifies a broader pattern that became central to the agent / reaso
   - HumanEval: 91% pass@1 (vs. GPT-4 baseline 80%).
   - ALFWorld decision-making: +22% absolute over baseline in 12 trials.
   - HotpotQA: +20% over baseline.
-- **Contribution beyond Reflexion itself**: LeetcodeHardGym — 40 Leetcode "hard" problems in 19 languages, intended as an RL-style env for code generation.
+- **Contribution beyond Reflexion itself**: LeetcodeHardGym — 40 Leetcode "hard" problems in 19 languages, intended as an RL-style env for [[code-generation|code generation]].
 
 ## Entities Mentioned
 

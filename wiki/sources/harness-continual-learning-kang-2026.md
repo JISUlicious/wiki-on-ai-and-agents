@@ -2,7 +2,7 @@
 title: "Harness Continual Learning: Continual Adaptation Beyond Model Parameters"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.19013"
 year: 2026
@@ -26,7 +26,7 @@ importance: high
 
 ## Summary
 
-[[continual-learning]] has been organized around one substrate — model weights — and one failure — catastrophic forgetting. This paper moves the learning object *outside* the model. Modern agents adapt through a harness of prompts, memories, tools, skills, and routing rules that persists across interactions while the foundation model stays frozen; the authors call studying a *sequence* of such harness updates **Harness Continual Learning (HCL)**, and name the resulting failure **harness-level forgetting**: "a memory update can change the evidence retrieved for an earlier query; a skill revision can alter tool use; and a routing edit can break a previously successful workflow. An update that helps recent cases can therefore turn an earlier correct answer, valid tool call, or successful action trajectory into a failure without changing the foundation model."
+[[continual-learning]] has been organized around one substrate — model weights — and one failure — catastrophic forgetting. This paper moves the learning object *outside* the model. Modern agents adapt through a harness of prompts, memories, tools, skills, and routing rules that persists across interactions while the foundation model stays frozen; the authors call studying a *sequence* of such harness updates **Harness Continual Learning (HCL)**, and name the resulting failure **harness-level forgetting**: "a memory update can change the evidence retrieved for an earlier query; a skill revision can alter [[tool-use|tool use]]; and a routing edit can break a previously successful workflow. An update that helps recent cases can therefore turn an earlier correct answer, valid tool call, or successful action trajectory into a failure without changing the foundation model."
 
 The framework has two halves. The **state** is four jointly versioned components — Task Interface (prompts, templates, parsing rules), Experience Memory (bounded raw records plus LLM-summarized abstract entries), Capability Map (external tools plus *inner skills* consolidated from abstract memory), Adaptive Router (routing prompts, selection criteria, workflow templates) — treated as one candidate harness, so a proposal either enters whole or not at all. The **update rule** is **guarded harness evolution**: a *Continual Optimizer* (the same frozen model, prompted with the deployed harness and post-execution evidence) drafts candidates component by component, and a *Continual Evaluator* commits a candidate only if it passes three checks under identical model, decoding, tool, environment, and seed conditions — **current improvement** on the task's validation cases (Δ ≥ δ), **historical retention** on an *anchor set* of earlier cases (the count of previously solved anchors that now fail must satisfy D ≤ B), and **validity** (syntax, schema compliance, legal tool use). Anchors are used only by the Evaluator and are invisible to the Optimizer.
 
@@ -111,8 +111,10 @@ The full-vs-ablated spread is ~1.1 points, small enough that without variance it
 - **Regressions below the frozen model are invisible to Fgt.** MuSiQue and VQAv2 end below zero-shot under every HCL profile; the forgetting metric only measures decline from the harness's own best.
 - **Consolidation is asserted, not evaluated.** Raw → Abstract → inner skills is the mechanism that would keep the store from ratcheting, and it is never ablated or measured.
 
-> [!warning] Contradiction — "compounding rather than overwriting"
+> [!success] Resolved contradiction — "compounding rather than overwriting"
 > [[self-improving-agent]] states that "skills, prompts, or scaffold edits are appended; the agent's capability grows monotonically and side-steps the catastrophic forgetting of gradient-based continual learning." Two 2026 results already attack the *monotonic* half (see [[catastrophic-remembering]]). This paper attacks the *side-steps forgetting* half from a third direction: with the model frozen, committed harness edits produce **measurable loss of previously reliable behavior** — 10.94 average forgetting on ALFWorld under a permissive gate, 3.45 in the textual sweep — and the *unrestricted* gate ends with the *worst* final harness. Forgetting was not escaped by leaving the weights alone; it moved to the substrate that was supposed to be immune.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
 > [!note] Three failure modes, one substrate map
 > - **Catastrophic forgetting** — weights; a gradient step for a new task overwrites an old one ([[continual-learning]]).

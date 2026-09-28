@@ -91,7 +91,7 @@ The survey is organized into three connected layers that follow "how code become
 - **The Plan-Execute-Verify (PEV) loop unifies planning, debugging, verification, and escalation** as a single cybernetic control process operating over executable program state. Plans become contracts, execution is sandboxed and permissioned, verification uses deterministic sensors plus HITL gates.
 - **Agentic Harness Engineering (AHE) is a new discipline** that treats the harness infrastructure itself as the object of optimization (separate from prompt engineering or context engineering). An "Evolution Agent" uses deep telemetry to propose, evaluate, and promote governed mutations to harness components.
 - **Multi-agent coordination should converge on a shared code-centric substrate** — repositories, tests, traces, blackboards, execution states — rather than file-only or message-passing protocols. The shared substrate enables inspectability, collective verification, and coordination across functional roles (planner, coder, reviewer, tester).
-- **Code is the natural lingua franca across application domains**: in GUI/OS agents, code defines observations, actions, evaluators, and increasingly the world model itself; in scientific discovery, hypotheses are programs, experiments are protocols, labs are runtimes; in embodied agents, skills are reusable code modules with multimodal pre/postconditions.
+- **Code is the natural lingua franca across application domains**: in GUI/OS agents, code defines observations, actions, evaluators, and increasingly the [[world-model|world model]] itself; in scientific discovery, hypotheses are programs, experiments are protocols, labs are runtimes; in embodied agents, skills are reusable code modules with multimodal pre/postconditions.
 - **Verification through executable feedback can create false confidence**: a green test is not the full specification. The survey calls for an "evidence bundle" model in which every accepted action declares what was checked, what was not, and what residual risk remains.
 
 ## Section Overviews
@@ -101,7 +101,7 @@ The survey is organized into three connected layers that follow "how code become
 The interface layer asks the most fundamental question: *what medium connects the model to its task environment?* The argument is that code is the answer, organized around three roles.
 
 - **§2.1 Code for Reasoning** (Program-Delegated, Formal Verification, Iterative Code-Grounded). Surveys the trajectory from [[program-of-thoughts]]/PAL [[chain-of-thought-prompting]] delegation through symbolic/formal verification (Lean, Coq, Isabelle, DeepSeek-Prover, Kimina-Prover, Goedel-Prover-V2, Lean4Agent) to iterative execution-grounded reasoning (NExT, CodePRM, CYCLE, RLEF, EG-CFG, R1-Code-Interpreter). The shift is from "code as external calculator" to "execution artifacts (traces, variable states, control flow, tests) as reusable reasoning signals."
-- **§2.2 Code for Acting** (Grounded Skill Selection, Programmatic Policy Generation, Lifelong Code-Based Agents). Reviews SayCan and KnowNo (skill selection with affordance grounding and conformal uncertainty), Code-as-Policies and RoboCodeX (programmatic policy generation), Voyager and LYRA and ViReSkill (lifelong skill libraries that double as memory), and AutoHarness as the explicit harness-mediation pattern. The framing: code is "both the action to be executed and the executable boundary that connects model intent to perception, controllers, APIs, actuators, and safety constraints."
+- **§2.2 Code for Acting** (Grounded [[skill-selection|Skill Selection]], Programmatic Policy Generation, Lifelong Code-Based Agents). Reviews SayCan and KnowNo (skill selection with affordance grounding and conformal uncertainty), Code-as-Policies and RoboCodeX (programmatic policy generation), Voyager and LYRA and ViReSkill (lifelong skill libraries that double as memory), and AutoHarness as the explicit harness-mediation pattern. The framing: code is "both the action to be executed and the executable boundary that connects model intent to perception, controllers, APIs, actuators, and safety constraints."
 - **§2.3 Code for Environment** (Structured World Representations, Execution-Trace World Modeling, Code-Grounded Evaluation, Verifiable Environment Construction). Covers ViStruct, FactoredScenes, PoE-World, Code2World (structured world); SemCoder, [[code-world-model|CWM]], WorldCoder, RWML (trace-based dynamics); [[swe-bench]], [[swe-gym|SWE-Gym]], [[swe-bench-live]], InterCode, CRUXEval, LiveCodeBench, AgentBench (code-grounded evaluation); and SWE-smith + EnvScaler (programmatic environment construction). Environments themselves become harness artifacts to synthesize and validate.
 
 ### §3 Harness Mechanisms: Planning, Memory, Tool Use, Control, Optimization
@@ -150,7 +150,7 @@ The seven open problems the survey identifies for harness engineering:
 
 > "The bottleneck of autonomy is not only the reasoning ability of the base model, but also the reliability of the system that connects model outputs to long-horizon actions and persistent states."
 
-> "We use code broadly, but not metaphorically. ... raw perception, physical state, human intent, and model-internal latent reasoning are not themselves code. They may be sensed, estimated, serialized, verified, or acted upon through code, but they should not be conflated with the code interface."
+> "We use code broadly, but not metaphorically. ... raw perception, physical state, human intent, and model-internal [[latent-reasoning|latent reasoning]] are not themselves code. They may be sensed, estimated, serialized, verified, or acted upon through code, but they should not be conflated with the code interface."
 
 > "Recasting iterative debugging as the PEV loop emphasizes that reliability comes from governed state transitions, not simply from better repair prompts."
 
@@ -179,7 +179,7 @@ The survey directly cites or builds on work the wiki has already ingested:
 - [[reflexion-shinn-2023]] — verbal-feedback reflection in the PEV verify phase
 - [[voyager-wang-2023]] — the lifelong skill library archetype for code-as-acting
 - [[swe-bench-jimenez-2023]], [[swe-gym-pan-2024]], [[swe-bench-live-zhang-2025]] — repository-level code-grounded evaluation
-- [[metagpt-hong-2023]] — role-specialized MAS for code generation (§4)
+- [[metagpt-hong-2023]] — role-specialized MAS for [[code-generation|code generation]] (§4)
 - [[autogen-wu-2023]] — multi-agent orchestration framework
 - [[chain-of-thought-wei-2022]], [[zero-shot-cot-kojima-2022]] — natural-language reasoning baseline against which program-delegated reasoning is contrasted
 - [[memgpt-packer-2023]], [[mirix-wang-2025]], [[mem-alpha-wang-2025]], [[mem0-chhikara-2025]], [[a-mem-xu-2025]], [[memorybank-zhong-2023]] — memory-management lineage that §3.2 builds on
@@ -188,7 +188,7 @@ The survey directly cites or builds on work the wiki has already ingested:
 - [[darwin-godel-machine-zhang-2025]] — self-improving agent that the survey's "Evolution Agent" §3.5.2 echoes
 - [[deepseek-r1-2025]], [[search-r1-jin-2025]] — RL-based reasoning agents
 - [[ui-tars-2-wang-2025]], [[magma-yang-2025]] — VLA/GUI agent lineage feeding §5.1.2
-- [[gaia-mialon-2023]] — general AI assistant benchmark referenced in agent evaluation discussion
+- [[gaia-mialon-2023]] — general AI assistant benchmark referenced in [[agent-evaluation|agent evaluation]] discussion
 - [[generative-agents-park-2023]] — memory-stream antecedent for §3.2
 
 ## Significance for the Wiki

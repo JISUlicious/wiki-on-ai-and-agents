@@ -13,7 +13,7 @@ tags:
 
 # SGLang
 
-Open-source LLM serving engine from the LMSYS / sgl-project community, a peer of [[vllm|vLLM]]. It is referenced across the wiki for structured-output serving via xgrammar (see [[constrained-decoding]]) and for RadixAttention prefix caching (see [[kv-cache]]).
+Open-source LLM serving engine from the LMSYS / sgl-project community, a peer of [[vllm|vLLM]]. It is referenced across the wiki for structured-output serving via xgrammar (see [[constrained-decoding]]) and for RadixAttention [[prefix-caching|prefix caching]] (see [[kv-cache]]).
 
 ## First engine with a native System One endpoint
 

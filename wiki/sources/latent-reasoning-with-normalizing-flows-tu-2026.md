@@ -40,7 +40,7 @@ NF-CoT instantiates a TARFlow-style normalizing flow inside the LLM backbone, de
 
 - [[latent-reasoning]] — NF-CoT is a latent reasoning framework
 - [[chain-of-thought]] — the explicit-CoT baseline that NF-CoT compresses into continuous thoughts
-- Related: normalizing flows, TARFlow, knowledge distillation, diffusion-based latent reasoning (plain text — no dedicated pages); affiliations UPenn / UC San Diego / Meta
+- Related: normalizing flows, TARFlow, [[knowledge-distillation|knowledge distillation]], diffusion-based latent reasoning (plain text — no dedicated pages); affiliations UPenn / UC San Diego / Meta
 
 ## References
 

@@ -11,7 +11,6 @@ authors:
 tags:
   - 2026
   - paper
-  - benchmark
 status: complete
 importance: high
 ---
@@ -162,7 +161,7 @@ Two smaller tensions worth wiring:
 
 - [[self-consistency]] — the baseline, used here as a *control* rather than a proposal, and evaluated as a full cost curve rather than a single N.
 - [[reflexion]] / [[self-reflection]] — the primary targets; see the contradiction callout above.
-- [[reflection-mechanism]] — distinct sense of "reflection" (memory consolidation in generative agents), unaffected by this result; noted to prevent conflation.
+- [[reflection-mechanism]] — distinct sense of "reflection" ([[memory-consolidation|memory consolidation]] in [[generative-agents|generative agents]]), unaffected by this result; noted to prevent conflation.
 - [[test-time-compute]] / [[inference-time-compute]] — the paper's real subject: not whether extra test-time compute helps, but *which use of it* helps per token.
 - [[chain-of-thought]] / [[chain-of-thought-prompting]] — the single-sample reference point that method papers usually compare against, which is exactly what the paper says is the unfair comparison.
 - [[verifier]] — the central mechanistic finding: an untrained verifier only reaches parity with a tally at 7B, and the useful ingredient is in the *training*, not the verifying.

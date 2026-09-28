@@ -66,7 +66,7 @@ This paper is a watershed: it shifted the field's center of gravity from fine-tu
 ## Key Points
 
 - **Scale**: 175B parameters; 8 model sizes from 125M up to 175B trained for direct scaling analysis.
-- **Architecture**: standard GPT-style [[decoder-only-transformer|decoder-only Transformer]] (same as [[gpt-2]] but with alternating dense and locally-banded sparse attention patterns, à la Sparse Transformer). 96 layers, dmodel = 12288, 96 heads, dhead = 128. Context length 2048.
+- **Architecture**: standard GPT-style [[decoder-only-transformer|decoder-only Transformer]] (same as [[gpt-2]] but with alternating dense and locally-banded [[sparse-attention|sparse attention]] patterns, à la Sparse Transformer). 96 layers, dmodel = 12288, 96 heads, dhead = 128. Context length 2048.
 - **Training corpus**: ~300B tokens. Common Crawl (filtered + dedup + classifier-curated, ~410B tokens, sampled at 60%), WebText2 (22%), Books1 (8%), Books2 (8%), Wikipedia (3%).
 - **Compute**: largest model trained on ~3640 PetaFLOP/s-days. Largest training run to that point in NLP.
 - **[[in-context-learning|In-context learning]]**: tasks specified in the prompt with zero, one, or "few" (typically 10–100) demonstrations.
@@ -75,7 +75,7 @@ This paper is a watershed: it shifted the field's center of gravity from fine-tu
   - SOTA or near-SOTA on translation (especially X→English), Cloze, completion, common-sense reasoning, reading comprehension, [[squad|SQuAD]], LAMBADA.
   - **3-digit arithmetic emerges around 13B** — a striking demonstration of capability emergence with scale.
   - Struggles on natural language inference, some reading comprehension (RTE-like), bidirectional tasks (where masking helps).
-- **Limitations explicit**: methodological issues with benchmark contamination via Common Crawl; weaknesses in NLI; unidirectional context limitations; the model "loses coherence" on long generations; world-knowledge biases.
+- **Limitations explicit**: methodological issues with [[benchmark-contamination|benchmark contamination]] via Common Crawl; weaknesses in NLI; unidirectional context limitations; the model "loses coherence" on long generations; world-knowledge biases.
 - **Broader impacts section**: misuse potential (disinformation, spam, fraud), bias (gender, race, religion), energy footprint. First major LM paper to discuss this at length.
 
 ## Entities Mentioned
@@ -106,4 +106,4 @@ This paper is a watershed: it shifted the field's center of gravity from fine-tu
 ## References
 
 _Original source: `sources/gpt-3-brown-2020.md`_
-_OpenAI blog: https://openai.com/blog/gpt-3-apps/ (the paper effectively launched the OpenAI API)_
+_OpenAI blog: https://openai.com/blog/gpt-3-apps/ (the paper effectively launched the [[openai-api|OpenAI API]])_

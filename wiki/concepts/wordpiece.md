@@ -13,7 +13,7 @@ importance: medium
 
 WordPiece (Schuster & Nakajima 2012; Wu et al. 2016) is a subword tokenization algorithm. Like [[byte-pair-encoding|BPE]], it builds a subword vocabulary by iteratively merging frequent units, but where BPE picks merges by frequency, WordPiece picks merges that **maximize the likelihood of the training data** under a unigram language model.
 
-In practice WordPiece and BPE produce similar tokenizations and similar downstream results. WordPiece is used by [[bert]] (30k vocabulary) and by some Google translation systems. The GPT family uses byte-level BPE.
+In practice WordPiece and BPE produce similar tokenizations and similar downstream results. WordPiece is used by [[bert]] (30k vocabulary) and by some Google translation systems. The [[gpt-family|GPT family]] uses byte-level BPE.
 
 WordPiece typically marks non-initial subwords with a prefix (`##`) — e.g., the word "playing" might tokenize as `play ##ing`.
 

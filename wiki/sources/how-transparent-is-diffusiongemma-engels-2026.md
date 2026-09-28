@@ -2,7 +2,7 @@
 title: "How Transparent is DiffusionGemma?"
 type: source
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-29
 sources: []
 arxiv_id: "2606.20560"
 authors:
@@ -66,8 +66,10 @@ All three ratios recompute exactly: 608,016 / 21,235 = 28.63; 23,571 / 21,235 = 
 
 The headline 1.1× rests on an *assumption* the paper argues for but cannot prove: that the mapped intermediate tokens are interpretable. The authors say so themselves — "applying the label 'interpretable' to mapped latent vectors carries an even higher risk of mislabeling deceptive or opaque reasoning as benign" than for natural-language CoT, which is already sometimes unfaithful. The capability-parity result behind that assumption (k=8, p=0.03) is presented **only as a figure**, with no tabulated per-benchmark scores. The monitorability evaluations all span **multiple canvases**, and reasoning *between* canvases is autoregressive, so single-canvas monitorability — the regime that matters as canvases grow — is untested; the paper lists it as an open problem. No production monitor was deployed, and the proposed fix (extracting intermediate logits at every denoising step) would make monitor prompts far longer and more expensive. The §5 phenomena are single hand-picked examples with **no frequency data** and no claim about how often they occur or what triggers them. The serial-depth denominators are empirical *upper bounds* from a compiler-based analyzer, and Appendix B notes MoE models pick up a spurious L·log²(N²K) sort factor the compiler cannot optimize away — which is why Gemma 4 31B (13,750) scores *below* the smaller-active 26B A4B (21,235). Finally, and centrally: this is one checkpoint from one lab, and the authors say plainly they cannot tell whether the transparency they measure is architectural or an artifact of current, nascent text-diffusion training.
 
-> [!warning] Contradiction
+> [!success] Resolved contradiction
 > §2.2 asserts that "in practice adaptive stopping means that we use only **12 to 16** steps" (out of 48) — an unsourced restatement of the vendor model card, with no measurement in this paper. [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] instruments the sampler directly and measures **3.3–17.1** accept-calls per generation, with short-output regimes far below 12. If the true step count is lower than 12–16, this paper's "about a third as large" correction to the worst-case serial depth is *conservative* — the real-world opaque serial depth is smaller still, which strengthens rather than weakens its conclusion.
+>
+> **Resolved 2026-09-29:** the 12–16 figure is superseded by [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]]'s direct measurement (3.3–17.1 accept-calls). As noted above, this makes the serial-depth correction here conservative, not wrong.
 
 ## Related
 

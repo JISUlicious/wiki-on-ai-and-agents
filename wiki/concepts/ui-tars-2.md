@@ -13,7 +13,7 @@ tags:
 
 # UI-TARS-2
 
-**UI-TARS-2** is [[bytedance]] Seed's open-source [[computer-use-agent]], a native end-to-end GUI agent that unifies perception, reasoning, action, and memory in one policy and is trained with stabilized multi-turn reinforcement learning. At release (September 2025) it was the strongest open / non-Anthropic computer-use agent, beating Claude Computer Use and OpenAI CUA on several head-to-head benchmarks.
+**UI-TARS-2** is [[bytedance]] Seed's open-source [[computer-use-agent]], a native end-to-end GUI agent that unifies perception, reasoning, action, and memory in one policy and is trained with stabilized multi-turn [[reinforcement-learning|reinforcement learning]]. At release (September 2025) it was the strongest open / non-Anthropic computer-use agent, beating Claude Computer Use and OpenAI CUA on several head-to-head benchmarks.
 
 ## Core mechanism
 
@@ -25,7 +25,7 @@ tags:
 
 ## What it advances
 
-UI-TARS-2 supersedes UI-TARS-1 (arXiv:2501.12326) and is the clearest public account of what large-scale [[multi-turn-rl]] actually looks like in production for [[computer-use-agent]]s. It demonstrates that the "native agent model" thesis — unified perception/reasoning/action/memory in one policy — scales, and that the agentic-RL stabilization tricks (Decoupled-GAE, value pretraining, async rollouts) are necessary at long horizons.
+UI-TARS-2 supersedes UI-TARS-1 (arXiv:2501.12326) and is the clearest public account of what large-scale [[agentic-rl|multi-turn RL]] actually looks like in production for [[computer-use-agent]]s. It demonstrates that the "native agent model" thesis — unified perception/reasoning/action/memory in one policy — scales, and that the agentic-RL stabilization tricks (Decoupled-GAE, value pretraining, async rollouts) are necessary at long horizons.
 
 ## Relation to other concepts
 
@@ -34,7 +34,7 @@ UI-TARS-2 supersedes UI-TARS-1 (arXiv:2501.12326) and is the clearest public acc
 - Trains on and benchmarks against [[osworld]], Online-Mind2Web, WindowsAgentArena, AndroidWorld.
 - Async rollout design is conceptually similar to Kimi-Researcher.
 - Contrasts with cross-domain [[magma]] (pretraining-heavy, GUI + robotics) — UI-TARS-2 is GUI-specialist and RL-heavy.
-- Produced by [[bytedance]] / ByteDance Seed.
+- Produced by [[bytedance]] / [[bytedance-seed|ByteDance Seed]].
 
 ## References
 

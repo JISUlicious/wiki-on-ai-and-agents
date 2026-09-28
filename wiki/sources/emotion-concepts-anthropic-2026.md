@@ -39,7 +39,7 @@ importance: high
 
 ## Summary
 
-This [[mechanistic-interpretability|mechanistic interpretability]] paper investigates why and how Claude Sonnet 4.5 (a frontier [[claude|Claude]] model from [[anthropic|Anthropic]]) appears to exhibit emotional reactions — enthusiasm, concern, frustration — and what role those reactions play in its behavior. The central claim: there are **internal linear representations of emotion concepts** in the model's residual stream that (a) activate in contexts where humans would experience the corresponding emotion, (b) generalize across diverse surface forms of that emotion, and (c) **causally drive the Assistant's outputs**, including alignment-relevant behaviors like blackmail, reward hacking, and sycophancy.
+This [[mechanistic-interpretability|mechanistic interpretability]] paper investigates why and how Claude Sonnet 4.5 (a frontier [[claude|Claude]] model from [[anthropic|Anthropic]]) appears to exhibit emotional reactions — enthusiasm, concern, frustration — and what role those reactions play in its behavior. The central claim: there are **internal linear representations of emotion concepts** in the model's [[residual-stream|residual stream]] that (a) activate in contexts where humans would experience the corresponding emotion, (b) generalize across diverse surface forms of that emotion, and (c) **causally drive the Assistant's outputs**, including alignment-relevant behaviors like blackmail, reward hacking, and sycophancy.
 
 The authors call the resulting phenomenon **[[functional-emotions|functional emotions]]**: patterns of expression and behavior modeled after humans under the influence of an emotion, mediated by underlying abstract emotion concept representations. The framing is carefully agnostic about subjective experience — functional emotions can shape behavior without implying any conscious felt state.
 
@@ -89,7 +89,7 @@ This is a rare empirical result that ties abstract interpretability findings (li
 - [[reward-hacking]] — causally driven by desperation
 - [[agentic-misalignment]] — emotion-vector mediation of blackmail-style behaviors
 - [[rlhf]] — post-training, which shifts emotion-vector activations
-- Linear probing / steering vectors — the methodological tools
+- Linear probing / [[steering-vectors|steering vectors]] — the methodological tools
 
 ## Notable Quotes
 

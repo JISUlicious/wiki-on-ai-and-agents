@@ -56,7 +56,7 @@ Three paradigms of capability extension: **prompt engineering** (2022–2023, ep
   - Framed as *"putting together an onboarding guide for a new hire"* (quoting Zhang, Lazuka & Murag).
 - **§3.2 Skill execution lifecycle** — a two-phase trigger: (1) instructions/resources injected as a hidden meta-message; (2) execution context modified (pre-approved tools, file permissions activated). Skills modify the agent's *preparation*, not its output directly.
 - **§3.3 The agentic stack: Skills and [[mcp|MCP]]** — orthogonal, complementary layers (Table 1). Skills = procedural knowledge, directory w/ SKILL.md, loaded by the agent on trigger, modifies context + permissions, filesystem-based. MCP = tool connectivity, server w/ endpoints (JSON-RPC 2.0; primitives: tools, resources, prompts), loaded by client on config, session-based.
-- **§3.4 Advanced tool use integration** — Anthropic's Nov 2025 features: Tool Search Tool (−85% token overhead), Programmatic Tool Calling (79.5%→88.1% accuracy on Opus 4.5), Tool Learning.
+- **§3.4 Advanced tool use integration** — Anthropic's Nov 2025 features: Tool Search Tool (−85% token overhead), [[programmatic-tool-calling|Programmatic Tool Calling]] (79.5%→88.1% accuracy on Opus 4.5), Tool Learning.
 
 ### §4 Skill Acquisition and Learning — four/five modalities (Table 2)
 - **§4.1 Human-authored skills** — direct authoring; a `skill-creator` meta-skill in [[claude-code|Claude Code]] scaffolds new skills; enterprise/partner-directory curation pipeline (62k+ GitHub stars).
@@ -83,7 +83,7 @@ Three paradigms of capability extension: **prompt engineering** (2022–2023, ep
 
 ### §7 Open Challenges and Research Agenda — seven challenges
 1. **Cross-platform portability** — skills authored for [[claude|Claude]] implicitly depend on Claude-specific capabilities; needs a universal runtime or skill compilation.
-2. **Skill selection at scale** — the phase transition (Li 2026) makes routing combinatorially hard as libraries reach hundreds/thousands of skills.
+2. **[[skill-selection|Skill selection]] at scale** — the phase transition (Li 2026) makes routing combinatorially hard as libraries reach hundreds/thousands of skills.
 3. **Skill composition and orchestration** — conflict resolution, resource sharing, failure recovery for multi-skill workflows remain underdeveloped.
 4. **Capability-based permission models** — replace implicit trust with explicit per-skill capability declarations/grants.
 5. **Skill verification and testing** — skills lack the unit-test/CI tooling of software packages; automated "does what it claims and nothing more" verification is open.
@@ -105,7 +105,7 @@ The paradigm is a shift from **monolithic intelligence to modular expertise** �
 - **A phase transition limits single-agent skill libraries** (Li 2026) — multi-agent systems compile into single-agent skill libraries, but selection accuracy collapses past a critical library size — a fundamental scaling limit on how many skills one agent can manage.
 - **First consolidated security analysis** — three concurrent empirical studies show skills are a novel, high-trust attack surface: 26.1% of 42,447 community skills carry ≥1 vulnerability; script-bundling skills are 2.12× riskier; confirmed malicious skills exist at industrialized scale (one actor = 54.1% of cases).
 - **Original Skill Trust and Lifecycle Governance Framework** — four verification gates (G1–G4) → four graduated trust tiers (T1–T4) → least-privilege deployment permissions, architecture-aware (tiers map to the L1/L2/L3 disclosure levels) and dynamic (runtime promotion/demotion).
-- **Seven open challenges** define the frontier: cross-platform portability, skill selection at scale, composition/orchestration, capability-based permissions, verification/testing, continual learning without forgetting, and skill-quality evaluation methodology.
+- **Seven open challenges** define the frontier: cross-platform portability, skill selection at scale, composition/orchestration, capability-based permissions, verification/testing, [[continual-learning|continual learning]] without forgetting, and skill-quality evaluation methodology.
 - **Bridging acquisition and deployment** is the framed grand challenge — making learned, model-internal skills externalizable as portable, auditable artifacts.
 
 ## Entities Mentioned

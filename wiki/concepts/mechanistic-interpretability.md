@@ -18,7 +18,7 @@ The field is closely associated with [[chris-olah|Chris Olah]] and the [[anthrop
 ## Core methods
 
 - **Activation analysis**: examine what features are encoded in intermediate activations, where, and how they compose.
-- **Linear probing / steering vectors**: extract a direction in activation space corresponding to a concept (e.g., [[functional-emotions|"happy"]], "truthfulness," "code"); read out by inner product or write in by adding the vector to activations.
+- **Linear probing / [[steering-vectors|steering vectors]]**: extract a direction in activation space corresponding to a concept (e.g., [[functional-emotions|"happy"]], "truthfulness," "code"); read out by inner product or write in by adding the vector to activations.
 - **Logit lens**: project intermediate-layer activations through the unembedding matrix to see which output tokens they "promote."
 - **Attention pattern analysis**: examine where heads attend on specific examples.
 - **Circuit discovery**: identify subgraphs of (head, MLP, feature) components that jointly implement an algorithm (e.g., indirect-object identification, modular arithmetic).
@@ -28,7 +28,7 @@ The field is closely associated with [[chris-olah|Chris Olah]] and the [[anthrop
 ## Why it matters
 
 - **Trust and safety**: a model whose internal computation we understand is one we can debug, audit, and predict.
-- **Alignment**: many alignment failure modes (deception, reward hacking, sandbagging) may be detectable only by inspecting internals.
+- **Alignment**: many alignment failure modes (deception, [[reward-hacking|reward hacking]], sandbagging) may be detectable only by inspecting internals.
 - **Capability research**: understanding *how* models do what they do informs how to make them do it better — or differently.
 
 ## Notable findings

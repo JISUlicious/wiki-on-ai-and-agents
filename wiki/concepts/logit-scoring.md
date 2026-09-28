@@ -2,7 +2,7 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
@@ -47,12 +47,14 @@ The pattern is architecture-agnostic, which is why it appeared in three model fa
 
 The encoder route won on the merits. A 421M ModernBERT is 7.8× faster than Jev and competitive on accuracy, which is why the diffusion route looks in hindsight like a launch-week artifact rather than the destination.
 
-> [!warning] Contradiction: "all slots in one pass" is a liability, not an advantage
+> [!success] Resolved contradiction: "all slots in one pass" is a liability, not an advantage
 > The diffusion route's apparent edge — every answer slot attends to the full context and to the other slots in a single bidirectional pass — is contradicted by every measurement available.
 >
 > dLLM-SetScore ([arXiv:2608.14649](https://arxiv.org/abs/2608.14649), a month *before* Jev) found that putting all labels on one canvas produces severe **slot-position asymmetry**: the first answer slot is predicted positive on **99.4%** of GoEmotions and **100%** of Reuters examples. Its fix is per-label scoring, one slot per pass — the configuration this table lists as the autoregressive route's handicap. Independently, [[open-jev-diffusiongemma-harness-github-2026|open-jev]] scored **88.4% with one question per canvas and 86.1% grouped**, on the same 337 questions with the same model.
 >
 > Two unrelated lines of evidence, same direction. [[jev|Jev]] and [[nimble]] both isolate questions by construction.
+>
+> **Resolved 2026-09-29:** the claimed advantage is withdrawn. Two independent measurements agree, and the size-dependence below explains when the cost matters: for large models it is small.
 
 **The cost shrinks with scale.** On the autoregressive side, packing several questions into one sequence changed **37% of answers for a 0.6B model but only 3.9% for a 27B model**, with packed and unpacked accuracy statistically indistinguishable at 27B (open-alternative-jev, 2026-09-22). Cross-question interference is a small-model problem. Large readers can pack questions to share the state's prefill; small ones should read one question per pass.
 

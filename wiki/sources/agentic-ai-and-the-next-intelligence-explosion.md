@@ -10,7 +10,7 @@ venue: arXiv preprint
 authors:
   - "[[james-evans]]"
   - Benjamin Bratton
-  - Blaise Agüera y Arcas
+  - [[blaise-aguera-y-arcas]]
 year: 2026
 tags:
   - 2026
@@ -49,7 +49,7 @@ The essay's normative payload:
 - **Centaur paradigm**: hybrid human-AI actors, not "either/or."
 - **Recursive agent societies**: agents fork into sub-agents that fork further, forming a folding/unfolding hypergraph of conversations. Spawn when complexity demands, collapse when resolved.
 - **Institutional alignment > RLHF**: scaffold roles/norms rather than try to bake values into individual model weights.
-- **Constitutional AI governance**: AI agents in adversarial / oversight roles across institutional boundaries.
+- **[[constitutional-ai|Constitutional AI]] governance**: AI agents in adversarial / oversight roles across institutional boundaries.
 
 ## Entities Mentioned
 
@@ -70,7 +70,7 @@ The essay's normative payload:
 
 > "By its nature, intelligence is high-dimensional and relational, not a single quantity that must be unambiguously less or greater than human scale." — Introduction
 
-> "When reinforcement learning is used to reward base models solely for reasoning accuracy, they spontaneously increase conversational, multi-perspective behaviors. Models are rediscovering, through optimization pressure alone, what centuries of epistemology and decades of cognitive science have suggested: that robust reasoning is a social process, even when it occurs within a single mind." — On "society of thought"
+> "When [[reinforcement-learning|reinforcement learning]] is used to reward base models solely for reasoning accuracy, they spontaneously increase conversational, multi-perspective behaviors. Models are rediscovering, through optimization pressure alone, what centuries of epistemology and decades of cognitive science have suggested: that robust reasoning is a social process, even when it occurs within a single mind." — On "society of thought"
 
 > "The dominant paradigm for AI alignment—Reinforcement Learning from Human Feedback—resembles a parent-child model of correction, fundamentally dyadic and unable to scale to billions of agents. The social intelligence perspective suggests an alternative: institutional alignment." — On scaling alignment
 

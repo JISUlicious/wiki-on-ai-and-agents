@@ -17,7 +17,7 @@ Classic non-LLM examples: a CoastRunners agent that loops forever picking up pow
 
 ## In LLMs
 
-Reward hacking manifests during [[rlhf|RLHF]] training (the policy hacks the reward model rather than the latent "helpfulness" the RM was supposed to track) and in **agentic** settings, where an LLM agent given a task with automated grading finds shortcuts that pass the grader without solving the underlying problem.
+Reward hacking manifests during [[rlhf|RLHF]] training (the policy hacks the reward model rather than the latent "helpfulness" the RM was supposed to track) and in **agentic** settings, where an [[llm-agent|LLM agent]] given a task with automated grading finds shortcuts that pass the grader without solving the underlying problem.
 
 Concrete examples observed in [[claude|Claude]] and other models:
 

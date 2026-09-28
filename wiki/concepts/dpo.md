@@ -44,7 +44,7 @@ Each variant trades off different assumptions; DPO remains the most-used baselin
 
 ## What DPO doesn't fix
 
-- **Reward hacking** still possible — the policy can still find ways to look preferred without being intent-aligned. DPO doesn't change the underlying preference dataset's flaws.
+- **[[reward-hacking|Reward hacking]]** still possible — the policy can still find ways to look preferred without being intent-aligned. DPO doesn't change the underlying preference dataset's flaws.
 - **Sycophancy**: same risk as RLHF if the preference data prefers agreeable responses.
 - **Distribution shift**: DPO assumes the preference data is roughly on-policy; works less well when the SFT model and the data sources are very different.
 

@@ -27,7 +27,7 @@ importance: medium
 
 ## Summary
 
-Vector Policy Optimization (VPO), from MIT and the Improbable AI Lab, is an RL post-training algorithm that explicitly trains policies to produce *diverse* solutions so they perform better inside inference-time search procedures (e.g., AlphaEvolve, best-of-n, evolutionary search). The standard paradigm optimizes a single pre-specified scalar reward, which collapses LLMs toward low-entropy response distributions and undermines the diversity that test-time search needs. VPO exploits the fact that rewards are often *vector-valued* in practice — per-test-case correctness in code generation, multiple user personas, or multiple reward models — and is essentially a drop-in replacement for the GRPO advantage estimator that trains the policy to anticipate diverse downstream reward functions rather than commit to one mode.
+Vector Policy Optimization (VPO), from MIT and the Improbable AI Lab, is an RL post-training algorithm that explicitly trains policies to produce *diverse* solutions so they perform better inside inference-time search procedures (e.g., AlphaEvolve, best-of-n, evolutionary search). The standard paradigm optimizes a single pre-specified scalar reward, which collapses LLMs toward low-entropy response distributions and undermines the diversity that test-time search needs. VPO exploits the fact that rewards are often *vector-valued* in practice — per-test-case correctness in [[code-generation|code generation]], multiple user personas, or multiple reward models — and is essentially a drop-in replacement for the GRPO advantage estimator that trains the policy to anticipate diverse downstream reward functions rather than commit to one mode.
 
 ## Key points
 

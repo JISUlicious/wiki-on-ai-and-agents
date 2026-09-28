@@ -14,7 +14,7 @@ importance: high
 
 Word embeddings are dense, low-dimensional vector representations of words learned from text data. Each word is mapped to a vector in some `d`-dimensional real-valued space (typically `d = 50–300` historically, much larger in modern transformer embeddings). Words with similar distributional behavior end up near each other in the embedding space.
 
-The breakthrough in 2013 was demonstrating that **distributional semantics** — Firth's "you shall know a word by the company it keeps" — could be operationalized as a tractable learning problem. [[efficient-estimation-of-word-representations-mikolov-2013|Mikolov et al. (2013)]] showed dense embeddings could be learned from billions of words on a single machine and would exhibit surprisingly rich structure: linear analogies (`king − man + woman ≈ queen`), clustering by part of speech, robust transfer to downstream tasks.
+The breakthrough in 2013 was demonstrating that **[[distributional-semantics|distributional semantics]]** — Firth's "you shall know a word by the company it keeps" — could be operationalized as a tractable learning problem. [[efficient-estimation-of-word-representations-mikolov-2013|Mikolov et al. (2013)]] showed dense embeddings could be learned from billions of words on a single machine and would exhibit surprisingly rich structure: linear analogies (`king − man + woman ≈ queen`), clustering by part of speech, robust transfer to downstream tasks.
 
 ## Canonical families
 

@@ -80,9 +80,9 @@ The contextual/token-modulus dependence reveals an **intrinsic structural limita
 - Yun et al. (2020) — universality of standard Transformers for permutation-equivariant seq-to-seq functions.
 - Kim et al. (2023) — contextual-mapping construction with `N` parameters.
 - Kajitsuka & Sato (2024) — single-layer Transformer universality.
-- Dehghani et al. (2019) — Universal Transformer (original recursive/adaptive-depth design).
+- Dehghani et al. (2019) — [[universal-transformer|Universal Transformer]] (original recursive/adaptive-depth design).
 - Giannou et al. (2023) — Looped Transformers as programmable computers.
-- Yang et al. (2024) — Looped Transformers for in-context learning (uses timestep encoding empirically).
+- Yang et al. (2024) — Looped Transformers for [[in-context-learning|in-context learning]] (uses timestep encoding empirically).
 - Saunshi et al. (2025) — inductive bias of Looped Transformers for reasoning.
 - Peebles & Xie (2023) — DiT, source of the adaLN/adaptive-instance-norm conditioning idea.
 - Vaswani et al. (2017) — original Transformer.

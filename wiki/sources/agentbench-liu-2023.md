@@ -22,7 +22,7 @@ importance: high
 
 # AgentBench: Evaluating LLMs as Agents
 
-**Liu et al.** (Tsinghua/THUDM, Ohio State, UC Berkeley) — [arXiv:2308.03688](https://arxiv.org/abs/2308.03688), **ICLR 2024**.
+**Liu et al.** (Tsinghua/THUDM, Ohio State, [[uc-berkeley|UC Berkeley]]) — [arXiv:2308.03688](https://arxiv.org/abs/2308.03688), **ICLR 2024**.
 
 The first broad multi-environment benchmark for LLMs *as agents*, and still one of the most-cited reference points in [[agent-evaluation]].
 
@@ -64,7 +64,7 @@ Two secondary findings: alignment data matters (Vicuna-13b beats llama-2-13b, re
 
 ## Limitations
 
-Uses **primitive CoT prompting only** — no scaffolds, no multiple trials — so it measures the *base model*, not the best achievable agent. This is the key caveat for anyone reading it as an agent benchmark: it is closer to a model benchmark under an agentic interface. Open models capped at 70B, so the commercial gap is partly a scale gap. The composite score is normalized against the model pool, so it is only comparable within a fixed pool.
+Uses **primitive CoT prompting only** — no scaffolds, no multiple trials — so it measures the *base model*, not the best achievable agent. This is the key caveat for anyone reading it as an [[agent-benchmark|agent benchmark]]: it is closer to a model benchmark under an agentic interface. Open models capped at 70B, so the commercial gap is partly a scale gap. The composite score is normalized against the model pool, so it is only comparable within a fixed pool.
 
 ## Concepts
 

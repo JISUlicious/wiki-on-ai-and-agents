@@ -37,7 +37,7 @@ Features layered on function calling:
 
 ## Structured Outputs
 
-Strict-mode JSON schemas (`strict: true`) trigger **[[structured-outputs]]** — constrained decoding that guarantees the model's output matches the schema. Requires `additionalProperties: false` and that all fields are `required` (optional fields modeled as `["type", "null"]` unions).
+Strict-mode JSON schemas (`strict: true`) trigger **[[structured-outputs]]** — [[constrained-decoding|constrained decoding]] that guarantees the model's output matches the schema. Requires `additionalProperties: false` and that all fields are `required` (optional fields modeled as `["type", "null"]` unions).
 
 ## Built-in Tools
 

@@ -11,7 +11,7 @@ tags: []
 
 # ADAS — Automated Design of Agentic Systems
 
-ADAS (Hu, Lu, Clune 2024) frames agent construction itself as an open-ended search problem: a "meta agent" proposes new agent designs as code, evaluates them on tasks, and iterates. It treats the space of agent architectures (prompts, control flow, tool use, multi-agent topologies) as a programmable search space rather than a fixed template, and is a direct precursor to fully self-modifying systems like [[darwin-godel-machine]].
+ADAS (Hu, Lu, Clune 2024) frames agent construction itself as an open-ended search problem: a "meta agent" proposes new agent designs as code, evaluates them on tasks, and iterates. It treats the space of agent architectures (prompts, control flow, [[tool-use|tool use]], multi-agent topologies) as a programmable search space rather than a fixed template, and is a direct precursor to fully self-modifying systems like [[darwin-godel-machine]].
 
 - Search is performed over executable code that defines an agent.
 - A meta-agent reads prior designs + benchmark scores and proposes the next candidate.

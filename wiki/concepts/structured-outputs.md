@@ -49,7 +49,7 @@ With `strict: true`, OpenAI applies constrained decoding so the returned JSON is
 
 - **[[function-calling]] / tool calling** — the canonical use; arguments must validate against the function's parameter schema. See [[tool-call-parser]] for the extraction half of the loop.
 - **API extraction** — pulling structured records out of unstructured text.
-- **Code generation** — constraining to a target language grammar.
+- **[[code-generation|Code generation]]** — constraining to a target language grammar.
 - **Agent state** — forcing the model's "next action" emission into a finite vocabulary of action tags.
 
 ## Cross-references

@@ -89,7 +89,7 @@ The Llama-2-7B row is the headline: **at 32k the KV cache exceeds the FP16 weigh
 
 ## 4. Inference — compute
 
-Per-sub-step arithmetic intensity, Llama-2-7B on A6000, ridge point ~200 OPs/byte ([[llm-inference-roofline-yuan-2024]]):
+Per-sub-step [[arithmetic-intensity|arithmetic intensity]], Llama-2-7B on A6000, ridge point ~200 OPs/byte ([[llm-inference-roofline-yuan-2024]]):
 
 | Phase | Sub-step | Intensity | Bound |
 |---|---|---|---|
@@ -117,7 +117,7 @@ Two sub-step observations: **FFN outranks attention projections even in prefill*
 
 ## Cross-cutting note
 
-The same quadratic term — attention over sequence length — is the binding constraint in **three of the four quadrants**: training activation memory (`5as²b`), training compute (`s/6h`), and inference memory (KV cache). Only inference compute escapes it, and only because decode is bandwidth-bound instead. That is why [[flash-attention]], [[linear-attention]] and sparse attention show up as answers to superficially unrelated problems.
+The same quadratic term — attention over sequence length — is the binding constraint in **three of the four quadrants**: training activation memory (`5as²b`), training compute (`s/6h`), and inference memory (KV cache). Only inference compute escapes it, and only because decode is bandwidth-bound instead. That is why [[flash-attention]], [[linear-attention]] and [[sparse-attention|sparse attention]] show up as answers to superficially unrelated problems.
 
 ## References
 

@@ -29,7 +29,7 @@ After training, the model autonomously inserts tool calls into its generation wh
 Two architectural approaches diverged after Toolformer:
 
 - **Toolformer-style**: tool use baked into model weights via self-supervised fine-tuning. Toolbox is fixed at training time. Inference is just standard next-token generation; tool calls happen via special tokens the model emits.
-- **[[react]]-style**: tool use via in-context prompting at inference. Toolbox is swappable at runtime. Currently dominant in production (OpenAI function calling, Anthropic tool use, MCP) because of the flexibility — you can add new tools without retraining the model.
+- **[[react]]-style**: tool use via in-context prompting at inference. Toolbox is swappable at runtime. Currently dominant in production (OpenAI [[function-calling|function calling]], Anthropic tool use, MCP) because of the flexibility — you can add new tools without retraining the model.
 
 Modern production tool use is mostly ReAct-flavored, but Toolformer's self-supervised data-generation insight is widely reused: many open-weight tool-using models (e.g., Gorilla, ToolLLM) build training data by some variant of "have the LM propose tool calls, execute them, filter by quality."
 

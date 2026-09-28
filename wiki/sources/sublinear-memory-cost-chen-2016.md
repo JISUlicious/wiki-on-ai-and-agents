@@ -21,7 +21,7 @@ importance: high
 
 # Training Deep Nets with Sublinear Memory Cost
 
-**Chen, Xu, Zhang, Guestrin** (University of Washington; Dato Inc.; MIT) — [arXiv:1604.06174](https://arxiv.org/abs/1604.06174).
+**Chen, Xu, Zhang, Guestrin** ([[university-of-washington|University of Washington]]; Dato Inc.; MIT) — [arXiv:1604.06174](https://arxiv.org/abs/1604.06174).
 
 ## Summary
 

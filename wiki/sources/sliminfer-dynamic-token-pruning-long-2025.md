@@ -98,7 +98,7 @@ FlexPrefill and MInference save nothing here (full cache at every layer); LazyLL
 | 28K | 113.35 → 59.29 | 1.91× | 138.62 → 86.58 | 1.60× |
 | 32K | 134.73 → 69.57 | 1.94× | 163.10 → 96.06 | 1.69× |
 
-**Needle in a Haystack (LLaMA 3.1 8B, 50% pruning at layers 10/20/30)**: 0.986 vs. 0.984 for full KV — essentially unchanged.
+**[[needle-in-a-haystack|Needle in a Haystack]] (LLaMA 3.1 8B, 50% pruning at layers 10/20/30)**: 0.986 vs. 0.984 for full KV — essentially unchanged.
 
 **Ablations (LLaMA 3.1 8B)**
 - *Pruning depth* (single prune, fixed total retention; Fig. 7): accuracy rises as the prune is delayed to middle layers, then MultiFieldQA and Qasper fall sharply if it is delayed further (too few tokens left for late-layer reasoning), while PassageRetrieval stays flat. Same shape as LazyLLM's Sec. 5.4 and GemFilter's layer sweep — early pruning breaks diffusion, late pruning starves the answer.

@@ -19,7 +19,7 @@ AI researcher. Was VP of Research at [[openai|OpenAI]] during the [[gpt-2]] and 
 
 - [[anthropic]] (co-founder & CEO, 2021–)
 - [[openai]] (VP of Research, 2016–2020)
-- Previously: Google Brain, Baidu Research
+- Previously: [[google-brain|Google Brain]], Baidu Research
 
 ## Notable publications in this wiki
 

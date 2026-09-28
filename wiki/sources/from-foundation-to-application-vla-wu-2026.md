@@ -28,7 +28,7 @@ importance: low
 
 ## Summary
 
-Released as **LingBot-VLA 2.0**, this is a vision-language-action model aimed squarely at closing the lab-to-deployment gap rather than at a new architecture. Three changes: a revamped data pipeline for cross-embodiment generalization, an action space extended past the standard dual-arm setup, and predictive dynamics modeling as an auxiliary objective. The last of these formulates future prediction as a proxy task, drawing semantic priors from a video representation model and geometric cues from a depth estimation model.
+Released as **LingBot-VLA 2.0**, this is a [[vision-language-action-model|vision-language-action model]] aimed squarely at closing the lab-to-deployment gap rather than at a new architecture. Three changes: a revamped data pipeline for cross-embodiment generalization, an action space extended past the standard dual-arm setup, and predictive dynamics modeling as an auxiliary objective. The last of these formulates future prediction as a proxy task, drawing semantic priors from a video representation model and geometric cues from a depth estimation model.
 
 Peripheral to this wiki's LLM/agent focus, but notable as an open-weights embodied model release with a large disclosed data budget.
 

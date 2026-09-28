@@ -38,7 +38,7 @@ importance: high
 **arXiv**: [2307.07924](https://arxiv.org/abs/2307.07924)
 **Venue**: ACL 2024 (long paper)
 **Authors**: Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, Jiahao Li, Cheng Yang, Weize Chen, Yusheng Su, Xin Cong, Juyuan Xu, Dahai Li, Zhiyuan Liu, Maosong Sun
-**Affiliations**: Tsinghua University (most authors), University of Sydney (H. Liu), BUPT (C. Yang), Modelbest Inc. (D. Li)
+**Affiliations**: [[tsinghua-university|Tsinghua University]] (most authors), University of Sydney (H. Liu), BUPT (C. Yang), Modelbest Inc. (D. Li)
 
 ## Summary
 
@@ -51,7 +51,7 @@ ChatDev was the **multi-agent-coding prototype** that, together with [[metagpt-h
 - **Waterfall pipeline**: 3 phases (Design, Coding, Testing) decomposed into 5 subtasks (design, code writing, code completion, code review, system testing). The waterfall structure is borrowed from classical software engineering and used as the agentic backbone.
 - **Role-specialized agents**: CEO, CTO, programmer, reviewer, tester — plus an instructor/assistant role pair instantiated per subtask via the **inception prompting** mechanism (system prompts that cover overview, role, tools, protocol, termination, and forbidden behaviors).
 - **Chat chain**: formally, `C = ⟨P¹, P², …⟩`, each phase `Pⁱ = ⟨T¹, T², …⟩`, each subtask `Tʲ = τ·C(I, A)` extracted from a multi-turn dialogue between instructor `I` and assistant `A` until consensus. The chain bridges natural- and programming-language subtasks and gives a transparent intermediate view of the development process.
-- **Two-tier memory**: short-term memory carries full dialogue within a single phase; long-term memory carries **only the distilled solutions** across phases — avoiding context blow-up while preserving cross-phase continuity.
+- **Two-tier memory**: short-term memory carries full dialogue within a single phase; [[long-term-memory|long-term memory]] carries **only the distilled solutions** across phases — avoiding context blow-up while preserving cross-phase continuity.
 - **Communicative dehallucination (CDH)**: a deliberate role reversal where the assistant takes an instructor-like turn — proactively asking for the precise dependency name, class, or detail — before committing to a final answer. Pattern: `⟨I → A, ⟨A → I, I ⇝ A⟩↻, A ⇝ I⟩↻`. Ablation removing CDH drops Quality from 0.3953 to 0.3094.
 - **Collaboration over shared program state**: agents cooperate by *talking about* (and revising) the code artifact, not by sharing arbitrary state — the chat-chain's distilled solutions are the bridge between phases.
 - **Cost profile**: ChatDev runs ~148s per task on average (vs. 15.6s for single-agent GPT-Engineer, 154s for MetaGPT) using ~23K tokens — slower and pricier than single-agent baselines but still cheaper than MetaGPT while producing more files and a larger codebase.
@@ -77,7 +77,7 @@ ChatDev was the **multi-agent-coding prototype** that, together with [[metagpt-h
 - [[autogen]] — sibling multi-agent framework, contemporaneous
 - [[code-as-harness]] — broader category this work fits into
 - multi-agent orchestration; chat-chain workflow
-- code generation; software engineering with LLMs
+- [[code-generation|code generation]]; software engineering with LLMs
 - agentic hallucination / coding hallucination and dehallucination via structured communication
 - role-playing LLM agents; inception prompting
 

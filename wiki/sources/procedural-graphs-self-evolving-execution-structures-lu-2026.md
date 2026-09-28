@@ -21,7 +21,7 @@ tags:
 
 # Procedural Graphs: Self-Evolving Execution Structures for LLM Agents
 
-**Yuxing Lu, Yicheng Chen, Shanchan Wu, Sercan Ö. Arık** (all [[google]]; Lu also Georgia Tech and Peking University; Arık corresponding). [arXiv:2609.09153](https://arxiv.org/abs/2609.09153), cs.AI, v1 8 Sep 2026, 36 pp. No venue stated; no code link.
+**Yuxing Lu, Yicheng Chen, Shanchan Wu, Sercan Ö. Arık** (all [[google]]; Lu also Georgia Tech and [[peking-university|Peking University]]; Arık corresponding). [arXiv:2609.09153](https://arxiv.org/abs/2609.09153), cs.AI, v1 8 Sep 2026, 36 pp. No venue stated; no code link.
 
 ## Summary
 

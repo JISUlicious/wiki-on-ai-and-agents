@@ -68,7 +68,7 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 - [[multi-agent]] — three-agent collaboration pattern.
 - [[verification-driven-tool-use]] — executor-as-verifier loop.
 - [[chain-of-thought]] — used inside the Programmer Agent.
-- [[plan-execute-verify]] — the higher-level pattern AgentCoder instantiates.
+- [[plan-execute-verify-loop]] — the higher-level pattern AgentCoder instantiates.
 - [[self-refinement]] — what AgentCoder's loop generalises beyond.
 - [[test-driven-development]] — the software-engineering analogue the paper draws from.
 

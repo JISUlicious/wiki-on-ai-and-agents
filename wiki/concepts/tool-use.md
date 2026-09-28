@@ -34,7 +34,7 @@ Tool use (sometimes "tool-augmented LLMs" or "function calling") is the practice
 
 - **Latency**: every tool call adds round-trip time.
 - **Reliability**: errors (bad parameters, tool timeouts) require careful handling.
-- **Security**: a tool-using LLM is an attack surface — prompt injection, data exfiltration, unauthorized actions.
+- **Security**: a tool-using LLM is an attack surface — [[prompt-injection|prompt injection]], data exfiltration, unauthorized actions.
 - **Agency limits**: how much autonomy to grant (read-only tools vs. arbitrary actuation) is a design and safety question.
 
 ## Function calling as the dominant mechanism (2024-2026)

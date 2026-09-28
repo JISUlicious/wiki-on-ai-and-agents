@@ -26,7 +26,7 @@ Surfaced via the alphaXiv / NLP-newsletter digest.
 
 ## Summary
 
-A large survey arguing that as AI moves from generating text to accomplishing goals through sustained interaction, modeling environment dynamics becomes the central bottleneck. The authors introduce a **"levels × laws" taxonomy**. The capability axis has three levels: **L1 Predictor** (one-step local transition operators), **L2 Simulator** (multi-step, action-conditioned rollouts respecting domain laws), and **L3 Evolver** (autonomously revises its own model when predictions fail). The second axis identifies four governing-law regimes — physical, digital, social, and scientific — that determine which constraints a world model must satisfy and where it is most likely to fail. The framework is used to synthesize 400+ works and 100+ representative systems.
+A large survey arguing that as AI moves from generating text to accomplishing goals through sustained interaction, modeling environment dynamics becomes the central bottleneck. The authors introduce a **"levels × laws" taxonomy**. The capability axis has three levels: **L1 Predictor** (one-step local transition operators), **L2 Simulator** (multi-step, action-conditioned rollouts respecting domain laws), and **L3 Evolver** (autonomously revises its own model when predictions fail). The second axis identifies four governing-law regimes — physical, digital, social, and scientific — that determine which constraints a [[world-model|world model]] must satisfy and where it is most likely to fail. The framework is used to synthesize 400+ works and 100+ representative systems.
 
 ## Key points
 

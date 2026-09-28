@@ -60,7 +60,7 @@ The card's layout line: `12 × (3 × (Gated DeltaNet → MoE) → 1 × (Qwen Spa
 
 ## Architecture and reported results
 
-125B total / **6B activated**, plus **51B n-gram embedding** and 4B MTP. 48 layers, hidden 2560, 512 experts (10 routed + 1 shared, intermediate 640), vocab 248,320. Gated Residual (4 branches, bottleneck rank 320). A 20M-entry bigram/trigram embedding table at layer 2. Vision encoder: depth 27, hidden 1152, patch 16. Trained with Muon and AdamW split by weight category, with batch-size warmup eliminated under refitted scaling laws.
+125B total / **6B activated**, plus **51B n-gram embedding** and 4B MTP. 48 layers, hidden 2560, 512 experts (10 routed + 1 shared, intermediate 640), vocab 248,320. Gated Residual (4 branches, bottleneck rank 320). A 20M-entry bigram/trigram embedding table at layer 2. Vision encoder: depth 27, hidden 1152, patch 16. Trained with Muon and AdamW split by weight category, with batch-size warmup eliminated under refitted [[scaling-laws|scaling laws]].
 
 Selected scores (vs Qwen3.8-27B / DeepSeek-V4-Flash-0731 / Claude-Opus-4.6 Max): SWE-bench Multilingual **81.0**, LiveCodeBench v6 **91.9**, GPQA Diamond **91.7**, CoWorkBench **73.9**, JobBench **55.7**, HLE 35.9, AndroidWorld 84.5, LVBench 76.6.
 

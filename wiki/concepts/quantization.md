@@ -59,7 +59,7 @@ This is the through-line of the entire field.
 | **Rotate them away** | orthogonal/Hadamard transform makes the hidden state *incoherent*, spreading outlier energy evenly so no channel is special | QuIP → [[quarot-ashkboos-2024\|QuaRot]] → SpinQuant |
 | **Never create them** | architectural fix, or train natively low-precision | Quantizable Transformers, [[bitnet-b158-ma-2024\|BitNet b1.58]], MXFP4 QAT |
 
-The **rotation family** is arguably the key conceptual advance: rather than special-casing outliers, change the basis so they *cannot exist* — a random orthogonal transform spreads a vector's energy evenly with high probability. Both QuaRot and SpinQuant exploit the **computational invariance** of the residual stream (rotate it, fold the inverse into adjacent weight matrices, output unchanged). This is what finally made W4A4 work with *no* retained-precision channels.
+The **rotation family** is arguably the key conceptual advance: rather than special-casing outliers, change the basis so they *cannot exist* — a random orthogonal transform spreads a vector's energy evenly with high probability. Both QuaRot and SpinQuant exploit the **computational invariance** of the [[residual-stream|residual stream]] (rotate it, fold the inverse into adjacent weight matrices, output unchanged). This is what finally made W4A4 work with *no* retained-precision channels.
 
 ## Methods
 
@@ -107,7 +107,7 @@ The **rotation family** is arguably the key conceptual advance: rather than spec
 
 ## The 4-bit consensus
 
-Dettmers & Zettlemoyer's **k-bit inference scaling laws** ([arXiv:2212.09720](https://arxiv.org/abs/2212.09720), ICML 2023) established **4-bit as the near-universal accuracy-per-bit optimum** — the empirical basis for why Q4_K_M and INT4 are the defaults everywhere. See [[quantization-quality]] for where that breaks down.
+Dettmers & Zettlemoyer's **k-bit inference [[scaling-laws|scaling laws]]** ([arXiv:2212.09720](https://arxiv.org/abs/2212.09720), ICML 2023) established **4-bit as the near-universal accuracy-per-bit optimum** — the empirical basis for why Q4_K_M and INT4 are the defaults everywhere. See [[quantization-quality]] for where that breaks down.
 
 > [!note] Cross-paper numbers are not comparable
 > Calibration corpora differ (GPTQ→C4, AWQ/SmoothQuant→Pile, AQLM/QuIP#→RedPajama, QuaRot/SpinQuant→WikiText-2), and QuaRot/SpinQuant **calibrate on WikiText-2 train while evaluating WikiText-2 perplexity** — a same-distribution setup the others avoid. AQLM's table also cites QuIP#'s *no-fine-tuning* number against its own fine-tuned result. Treat leaderboard-style PPL comparisons across papers with suspicion.

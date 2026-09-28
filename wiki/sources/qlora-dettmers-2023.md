@@ -11,7 +11,7 @@ authors:
   - Tim Dettmers
   - Artidoro Pagnoni
   - Ari Holtzman
-  - Luke Zettlemoyer
+  - [[luke-zettlemoyer]]
 introduces:
   - [[quantization]]
 tags:

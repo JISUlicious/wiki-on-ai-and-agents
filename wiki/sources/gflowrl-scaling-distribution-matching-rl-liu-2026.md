@@ -24,7 +24,7 @@ importance: medium
 
 # GFlowRL: Scaling Distribution-Matching RL to Large Language Models
 
-**Xiaodong Liu, Michael Xu, Jack W. Stokes, Paul Smolensky, Doug Burger, Jianfeng Gao** (Microsoft Research) — [arXiv:2607.13394](https://arxiv.org/abs/2607.13394) (v1, 15 Jul 2026, cs.CL). Preprint; no venue listed. Code promised at `github.com/microsoft/gflowrl`.
+**Xiaodong Liu, Michael Xu, Jack W. Stokes, Paul Smolensky, Doug Burger, Jianfeng Gao** ([[microsoft-research|Microsoft Research]]) — [arXiv:2607.13394](https://arxiv.org/abs/2607.13394) (v1, 15 Jul 2026, cs.CL). Preprint; no venue listed. Code promised at `github.com/microsoft/gflowrl`.
 
 ## Summary
 

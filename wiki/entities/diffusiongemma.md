@@ -2,7 +2,7 @@
 title: DiffusionGemma
 type: entity
 created: 2026-09-21
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
   - https://deepmind.google/models/gemma/diffusiongemma/
   - neither-parallel-nor-sequential-diffusiongemma-asaria-2026.md
@@ -49,8 +49,10 @@ The marketing and the model card both mislead, in opposite directions, and [[nei
 
 Commits land at an entropy of 0.002–0.012 nats, one to two orders of magnitude inside the sampler's own 0.1 bound. Tie-aware Kendall τ_b runs 0.430–0.604 — far below strict autoregression (1.0) and below a block-sequential control (0.94–0.96), so there is real sub-block disorder. Block size is an artifact of the ruler: τ_b rises smoothly 0.59→0.91 as bins grow 4→64 with **no jump at 16**, so no privileged architectural block exists.
 
-> [!warning] Contradiction: the published decoding figures are not measured
+> [!success] Resolved contradiction: the published decoding figures are not measured
 > Google's DeepMind page says the model generates "256 tokens in parallel with each forward pass" (>1,000 tok/s on one H100, 4× faster); the model card's commonly-cited "15–20 tokens per forward pass" and "adaptive stopping typically 12–16 steps" appear in **neither** arXiv paper. Direct instrumentation gives 5.8–25.5 tokens per accept-call over 3.3–17.1 calls — short regimes fall well below 12 steps. [[how-transparent-is-diffusiongemma-engels-2026|Engels et al.]] restate the 12–16 figure without measuring it. The 256 number is canvas size, not commit rate.
+>
+> **Resolved 2026-09-29:** in favour of direct measurement. [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] instruments the shipped sampler; the vendor figures are unmeasured restatements. 256 is the canvas width, not the commit rate.
 
 Commits are also not frozen: 4,524 un-accept events across 600 generations, with only 220/600 fully monotone.
 

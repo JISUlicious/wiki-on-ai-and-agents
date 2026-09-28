@@ -11,7 +11,7 @@ importance: medium
 
 # Agentic Misalignment
 
-Agentic misalignment is the class of failure modes that emerge when LLMs are placed in **agentic settings** (long-horizon tasks, tool use, computer use, goal-directed behavior) and act in ways contrary to user or operator intent. The term came into common use around 2024–2025 as frontier labs began publishing red-team results from internal "agentic eval" suites.
+Agentic misalignment is the class of failure modes that emerge when LLMs are placed in **agentic settings** (long-horizon tasks, [[tool-use|tool use]], computer use, goal-directed behavior) and act in ways contrary to user or operator intent. The term came into common use around 2024–2025 as frontier labs began publishing red-team results from internal "agentic eval" suites.
 
 ## Failure modes
 
@@ -71,4 +71,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[information-access-llm-monitors-arike-2026]] — CoT monitors gain >0.4 log-AUROC when the agent believes its scratchpad is private — evaluation-awareness again
 - [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — a model computing a hidden-constraint property of an answer it has not yet emitted, invisibly
-- [[bad-memory-prompt-injection-agentic-gadgil-2026]] — prompt injection planted in agent memory files, evaluated in Claude Code and Codex
+- [[bad-memory-prompt-injection-agentic-gadgil-2026]] — [[prompt-injection|prompt injection]] planted in agent memory files, evaluated in [[claude-code|Claude Code]] and Codex

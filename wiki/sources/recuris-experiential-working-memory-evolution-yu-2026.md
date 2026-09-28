@@ -121,7 +121,7 @@ The 60.9% headline is **almost entirely the retry budget**: retrying the *seed* 
 
 ## Does state-grounded invocation answer the routing-precision collapse?
 
-The question is whether grounding skill selection in explicit task state answers what [[demystifying-agent-skills-jiang-2026]] measures: **actual-use precision falling from 29.6% at pool size 5 to 3.3% at 100**, while recall stays at 54.3–73.6% and downstream success barely moves (36.4% → 39.3%).
+The question is whether grounding [[skill-selection|skill selection]] in explicit task state answers what [[demystifying-agent-skills-jiang-2026]] measures: **actual-use precision falling from 29.6% at pool size 5 to 3.3% at 100**, while recall stays at 54.3–73.6% and downstream success barely moves (36.4% → 39.3%).
 
 **Yes in mechanism, and Recuris hits the exact failure Jiang isolates.** Jiang's diagnosis is that the collapse is *over-browsing*, not missing — the right skill is found, the agent just also touches many wrong ones and does not restrict use to it — and that "semantic confusability, not pool size, is the dominant offline stressor." Both of those are failures of *when-to-invoke*, not of what-is-stored. Recuris removes the decision from the model entirely: `ρ` fires on an execution event (a drafted state-changing call) with the *named tool* as the retrieval key, so there is no browsing step to over-browse in. The measured contrast is the closest thing in the literature to a controlled version of Jiang's Arm 3: **the same ten skills, byte-identical bodies, all resident vs state-selected — 65.6 vs 83.6, an 18.0-point gap [+11.6, +24.6]**, with the all-resident variant scoring *below* carrying no skills at all. Availability is not the mechanism. And uniquely, `ρ` is itself an evolvable component: both the trigger predicate and the retrieval key are patch targets, so a "missed, late, or irrelevant skill invocation" is a diagnosable, repairable fault class rather than a property of the model.
 
@@ -170,7 +170,7 @@ The question is whether grounding skill selection in explicit task state answers
 - [[llm-agent]] · [[tool-use]] · [[function-calling]] — the deployment setting; τ² tasks succeed only on full environment reward, so verbal agreement with the user without the database write is a failure.
 
 > [!note] Concept gaps this page could not link
-> The wiki has no **working memory** page (the paper's central construct; nearest existing pages are [[long-term-memory]], [[episodic-memory-llm]] and [[memory-stream]]), no **experiential memory** page distinct from [[experiential-learning]], and no **skill routing / skill invocation** page (already flagged as needed on the [[demystifying-agent-skills-jiang-2026]] page — this paper strengthens the case, since it names invocation a first-class evolvable component). No pages for **τ²-Bench** or **SkillFlow**.
+> The wiki has no **working memory** page (the paper's central construct; nearest existing pages are [[long-term-memory]], [[episodic-memory-llm]] and [[memory-stream]]), no **experiential memory** page distinct from [[experiential-learning]], and no **[[skill-routing|skill routing]] / skill invocation** page (already flagged as needed on the [[demystifying-agent-skills-jiang-2026]] page — this paper strengthens the case, since it names invocation a first-class evolvable component). No pages for **τ²-Bench** or **SkillFlow**.
 
 ## References
 

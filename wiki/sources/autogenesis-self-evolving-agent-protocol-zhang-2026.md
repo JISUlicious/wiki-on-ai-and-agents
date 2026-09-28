@@ -37,7 +37,7 @@ Autogenesis introduces the **Autogenesis Protocol (AGP)**, a self-evolution prot
 - **RSPL** treats five entity types (prompt, agent, tool/MCP/skill, environment, memory) as versioned, registered resources with explicit state.
 - **SEPL** provides a closed-loop operator interface for proposing → assessing → committing improvements, with auditable lineage and rollback.
 - **AGS** dynamically instantiates, retrieves, and refines protocol-registered resources during execution.
-- Consistent improvements over strong baselines on benchmarks requiring long-horizon planning and tool use across heterogeneous resources. Multi-institution effort (NTU, Stanford, Princeton, CityU HK, USTC).
+- Consistent improvements over strong baselines on benchmarks requiring long-horizon planning and [[tool-use|tool use]] across heterogeneous resources. Multi-institution effort (NTU, Stanford, Princeton, CityU HK, USTC).
 
 ## Concepts & entities
 

@@ -27,7 +27,7 @@ importance: high
 
 **Source**: `sources/skillopt-yang-2026.md`
 **Authors**: Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou, Zisu Huang, Yan Li, Xuemei Gao, Qi Dai, Bei Liu, Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo. Equal-contribution first authors: Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou, Zisu Huang. Corresponding authors: **Yifan Yang** ([[microsoft|Microsoft]]) and **Xue Yang** ([[shanghai-jiao-tong-university|SJTU]]).
-**Affiliations**: Microsoft (1), [[shanghai-jiao-tong-university|Shanghai Jiao Tong University]] (2), Tongji University (3), Fudan University (4).
+**Affiliations**: Microsoft (1), [[shanghai-jiao-tong-university|Shanghai Jiao Tong University]] (2), Tongji University (3), [[fudan-university|Fudan University]] (4).
 **arXiv**: [arXiv:2605.23904](https://arxiv.org/abs/2605.23904) (v2, 2026-05-25) · cs.AI · Code: `https://aka.ms/SkillOpt`
 
 ## Summary
@@ -82,7 +82,7 @@ Empirically the results are near-universal. Across **six benchmarks, seven targe
 > All three of these systems evolve a natural-language artifact via LLM-proposed edits gated on execution feedback, but they differ in *what* is optimized and *under what objective*.
 
 - **vs. [[agentic-context-engineering|Agentic Context Engineering (ACE)]]** (Zhang et al., [[stanford-university]]/[[sambanova]]): Both evolve a text artifact through LLM edits, and SkillOpt cites ACE's siblings (GEPA, TextGrad) as baselines. The distinction: **ACE evolves a structured prompt *playbook*** — an itemized list of bullets with helpful/harmful counters, merged by *deterministic non-LLM* rules, designed to fight brevity bias and context collapse during in-context adaptation. **SkillOpt optimizes a single *skill document* as a trainable parameter** under an explicit deep-learning discipline: a textual learning-rate budget, a *strict held-out validation gate* (ACE's merge is deterministic, not validation-gated), a rejected-edit buffer, and epoch-wise meta updates. ACE's artifact tends to grow as an append-mostly playbook; SkillOpt's stays deliberately compact (300–2,000 tokens, 1–4 edits) and ships with zero deployment-time optimizer calls. In short: ACE = playbook-with-counters that accumulates; SkillOpt = single-objective text-space optimizer that gates every edit on held-out improvement.
-- **vs. [[skillmoo-gong-2026|SkillMOO]]** (Gong et al., King's College London et al.): SkillMOO is the **multi-objective** sibling — it Pareto-optimizes agent skills for software engineering across competing objectives. SkillOpt is **single-objective** (one scalar held-out score gates each edit). They share the "skill-as-optimizable-artifact" premise but differ on objective cardinality.
+- **vs. [[skillmoo-gong-2026|SkillMOO]]** (Gong et al., [[kings-college-london|King's College London]] et al.): SkillMOO is the **multi-objective** sibling — it Pareto-optimizes agent skills for software engineering across competing objectives. SkillOpt is **single-objective** (one scalar held-out score gates each edit). They share the "skill-as-optimizable-artifact" premise but differ on objective cardinality.
 - **vs. [[agentic-harness-engineering|Agentic Harness Engineering]]** (Lin et al., Fudan): the **harness-evolution** sibling. It self-evolves the agent *harness* (tools, scaffolding, observability) via telemetry; SkillOpt holds the harness fixed and evolves only the *skill document* the harness loads.
 
 ## References

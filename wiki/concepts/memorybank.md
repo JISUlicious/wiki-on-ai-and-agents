@@ -13,12 +13,12 @@ tags:
 
 # MemoryBank
 
-MemoryBank is a long-term memory mechanism for [[llm-agent|LLM agents]] proposed by Zhong et al. (2023, AAAI 2024), motivated by the inability of base ChatGPT/ChatGLM to sustain state across the kinds of extended interactions required by AI companions or counselors. Its distinctive contribution is the first principled, time-dependent **forgetting policy** for LLM memory, drawn from the [[ebbinghaus-forgetting]] curve.
+MemoryBank is a [[long-term-memory|long-term memory]] mechanism for [[llm-agent|LLM agents]] proposed by Zhong et al. (2023, AAAI 2024), motivated by the inability of base ChatGPT/ChatGLM to sustain state across the kinds of extended interactions required by AI companions or counselors. Its distinctive contribution is the first principled, time-dependent **forgetting policy** for LLM memory, drawn from the [[ebbinghaus-forgetting]] curve.
 
 ## Core mechanism
 
 - **Hierarchical storage**: raw timestamped turns → per-day event summaries → global event summary; in parallel, per-day personality insights → an evolving global user portrait. Summaries are produced by prompting the underlying LLM.
-- **Dual-tower dense retrieval**: each memory piece is pre-encoded; current context is encoded into `h_c`; FAISS does nearest-neighbor search ([[dpr|dense passage retrieval]] style). Encoder is interchangeable (MiniLM for English, Text2vec for Chinese).
+- **Dual-tower [[dense-retrieval|dense retrieval]]**: each memory piece is pre-encoded; current context is encoded into `h_c`; FAISS does nearest-neighbor search ([[dpr|dense passage retrieval]] style). Encoder is interchangeable (MiniLM for English, Text2vec for Chinese).
 - **Ebbinghaus forgetting formula**: `R = e^(-t/S)` where `S` is a discretized strength initialized to 1; `t` is time since last interaction.
 - **Recall reinforces**: when the retriever surfaces a memory, the system increments `S` by 1 and resets `t = 0` — recalled items decay more slowly, mirroring the spacing effect.
 - **Backbone-agnostic**: same mechanism plugs into ChatGPT, ChatGLM-6B, BELLE-7B; demonstrated in the SiliconFriend chatbot (English + Chinese).

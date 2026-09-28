@@ -17,7 +17,7 @@ Clune is senior author on the [[darwin-godel-machine]] paper, which combines his
 
 ## Notable work
 
-- [[darwin-godel-machine]] — senior-authored open-ended self-improving agent ([[darwin-godel-machine-zhang-2025]]).
+- [[darwin-godel-machine]] — senior-authored open-ended [[self-improving-agent|self-improving agent]] ([[darwin-godel-machine-zhang-2025]]).
 - Earlier work on POET, quality-diversity, MAP-Elites, and novelty search.
 - AI-GAs (AI-Generating Algorithms) research agenda.
 

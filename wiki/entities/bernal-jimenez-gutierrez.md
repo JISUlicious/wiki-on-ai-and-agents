@@ -19,7 +19,7 @@ First author of HippoRAG and HippoRAG 2, which introduced a personalized-PageRan
 
 ## Notable work
 
-- [[hipporag2-jimenez-gutierrez-2025]] — HippoRAG 2: neurobiologically plausible long-term memory for LLMs.
+- [[hipporag2-jimenez-gutierrez-2025]] — HippoRAG 2: neurobiologically plausible [[long-term-memory|long-term memory]] for LLMs.
 - [[hipporag-2]] — successor system / model entity.
 
 ## References

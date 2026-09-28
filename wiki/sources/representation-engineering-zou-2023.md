@@ -31,7 +31,7 @@ importance: high
 **Source**: `sources/zou-representation-engineering-2023.md`
 **arXiv**: [2310.01405](https://arxiv.org/abs/2310.01405)
 **Venue**: arxiv preprint (Oct 2023; updated through Mar 2025)
-**Authors**: [[andy-zou]] (first), Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, Alexander Pan, ..., [[dan-hendrycks]] (senior) — [[center-for-ai-safety]] + CMU + UC Berkeley + Stanford + EleutherAI + others
+**Authors**: [[andy-zou]] (first), Long Phan, Sarah Chen, James Campbell, Phillip Guo, Richard Ren, Alexander Pan, ..., [[dan-hendrycks]] (senior) — [[center-for-ai-safety]] + CMU + [[uc-berkeley|UC Berkeley]] + Stanford + EleutherAI + others
 
 ## Summary
 

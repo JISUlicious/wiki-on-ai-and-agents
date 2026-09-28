@@ -2,7 +2,7 @@
 title: "Gated Sparse Attention: Combining Computational Efficiency with Training Stability for Long-Context Language Models"
 type: source
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-09-29
 sources: []
 arxiv_id: "2601.15305"
 authors:
@@ -128,8 +128,10 @@ GSA prefill 0.09× is 11.1×; decode 0.13× is **7.7×** — the text's "decode 
 
 The authors': below ~4K the indexer's overhead exceeds the sparse saving, so a deployment would switch to dense there (the same crossover as every method on [[sparse-prefill]]); the indexer's O(L²) "will eventually dominate at extreme lengths (beyond 1M tokens)"; the two-phase schedule adds complexity; k_base, d^I and gate initialisation are new hyperparameters.
 
-> [!warning] Contradiction — how many indexer heads does DSA use?
+> [!success] Resolved contradiction — how many indexer heads does DSA use?
 > §2.2 says DSA's lightning indexer has "H^I indexer heads (typically 4)", and every theoretical number in the paper (Corollary 2, Appendix A, Table 1) assumes H^I = 4. The released DeepSeek-V3.2 and V3.2-Exp configurations set `index_n_heads: 64` (`index_head_dim: 128`, `index_topk: 2048`), and [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] builds its entire argument on the indexer's 64 heads being the dominant long-context cost. GSA's "the indexer's cost is modest" and its 12.8× estimate rest on a 16× smaller indexer than the model it cites. This does not affect GSA's own trained model, whose indexer width is not stated, but it does mean the paper's account of DSA is wrong on its central parameter.
+>
+> **Resolved 2026-09-29:** checked against the released `config.json` for both DeepSeek-V3.2 and V3.2-Exp on [[huggingface|Hugging Face]]: `index_n_heads: 64`. The paper's H^I = 4 is wrong, so its DSA cost figures are understated by 16×.
 
 > [!warning] What the paper does not establish
 > That sparse attention needs a stability fix: its own sparse-only baseline is more stable than dense. That GSA beats trained sparse attention: NSA, MoBA and a long-context-trained DSA are absent; the only sparse baseline is the authors' DSA-style model trained at 4K. That the throughput is end-to-end: scope unstated, no milliseconds. That removing sinks helps long context by itself: [[cracks-in-the-foundation-long-context-extension-bertsch-2026|Bertsch et al.]] find sinks correlate *positively* with long-context performance across a 26-model sweep (see [[attention-sink]]), so GSA's 46.7% → 3.9% should be read alongside its RULER numbers, not as an independent good. Add that the paper is two same-surname authors with no affiliation line and no venue, and the numbers should be weighted accordingly until reproduced.

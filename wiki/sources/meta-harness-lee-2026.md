@@ -11,8 +11,8 @@ authors:
   - Roshen Nair
   - Qizheng Zhang
   - Omar Khattab
-  - Kangwook Lee
-  - Chelsea Finn
+  - [[kangwook-lee]]
+  - [[chelsea-finn]]
 first_author: Yoonho Lee
 year: 2026
 tags:

@@ -97,7 +97,7 @@ Because Skills can ship executable code (L3), Anthropic emphasizes a trust model
 
 ## Academic grounding
 
-The concept now has dedicated academic treatment. [[agent-skills-survey-xu-2026|Xu & Yan 2026]] (Zhejiang University) is the **first survey dedicated to agent skills**, defining a skill as "composable packages of instructions, code, and resources that agents load on demand" — congruent with Anthropic's operational definition but generalized into a paradigm-level abstraction positioned beyond prompt engineering and tool use. The survey organizes the field across **architecture / acquisition / deployment / security** and traces the lineage through [[voyager]]'s executable [[skill-library]], the program-synthesis [[library-learning]] thread ([[dreamcoder]] → [[lilo-grand-2023|LILO]]), the self-authored [[tool-creation]] thread ([[llm-as-tool-makers-cai-2023|LATM]], [[craft-yuan-2023|CRAFT]]), and the natural-language [[experiential-learning]] counterpoint ([[expel-zhao-2023|ExpeL]]). See [[skill-acquisition]] for the acquisition taxonomy.
+The concept now has dedicated academic treatment. [[agent-skills-survey-xu-2026|Xu & Yan 2026]] ([[zhejiang-university|Zhejiang University]]) is the **first survey dedicated to agent skills**, defining a skill as "composable packages of instructions, code, and resources that agents load on demand" — congruent with Anthropic's operational definition but generalized into a paradigm-level abstraction positioned beyond prompt engineering and tool use. The survey organizes the field across **architecture / acquisition / deployment / security** and traces the lineage through [[voyager]]'s executable [[skill-library]], the program-synthesis [[library-learning]] thread ([[dreamcoder]] → [[lilo-grand-2023|LILO]]), the self-authored [[tool-creation]] thread ([[llm-as-tool-makers-cai-2023|LATM]], [[craft-yuan-2023|CRAFT]]), and the natural-language [[experiential-learning]] counterpoint ([[expel-zhao-2023|ExpeL]]). See [[skill-acquisition]] for the acquisition taxonomy.
 
 ## Cross-vendor convergence
 
@@ -160,7 +160,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[memento-skills-let-agents-design-agents-memento-team-2026]] — Memento Skills Let Agents Design Agents
 - [[scaling-coding-agents-via-atomic-skills-ma-2026]] — Scaling Coding Agents via Atomic Skills
 - [[skill-rag-failure-state-aware-retrieval-wei-2026]] — Skill RAG Failure State Aware Retrieval Augmentation via
-- [[skill-zero-lu-2026]] — SKILL0 In Context Agentic Reinforcement Learning for Skill
+- [[skill-zero-lu-2026]] — SKILL0 In Context Agentic [[reinforcement-learning|Reinforcement Learning]] for Skill
 - [[skillnet-liang-2026]] — SkillNet Create, Evaluate, and Connect AI Skills
 - [[skillos-learning-skill-curation-self-evolving-agents-ouyang-2026]] — SkillOS Learning Skill Curation for Self Evolving Agents
 - [[webxskill-skill-learning-web-agents-wang-2026]] — WebXSkill Skill Learning for Autonomous Web Agents
@@ -172,7 +172,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[prefix-caching]] — progressive disclosure and stable skill preambles are prefill optimizations — invariant content placed first stays cacheable across turns
 - [[is-progressive-disclosure-all-you-need-he-2026]] — the first controlled study of progressive disclosure — see the Contradiction callout above
 - [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] — ecosystem-scale audit of **138,133 public skills**: 89.3% violate the spec, 91.8% carry ≥1 defect, 67.0% have a routing defect. A 3-rule linter covers 71.9% of instances; LLM repair fixes 58.4% overall but **0% of bypass/injection defects**
-- [[continualskillbench-guan-2026]] — maintaining an explicit skill library scores **0.602 vs 0.605 for plain in-context learning** — no aggregate advantage; weaker models accumulate larger, more fragmented libraries
+- [[continualskillbench-guan-2026]] — maintaining an explicit skill library scores **0.602 vs 0.605 for plain [[in-context-learning|in-context learning]]** — no aggregate advantage; weaker models accumulate larger, more fragmented libraries
 - [[reason-wide-not-deep-singh-2026]] — a 40–130 line distilled skill recovers 55–100%+ of the reasoning gap at zero reasoning tokens, for $1.28–$2.44 per domain
 - [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — **skill descriptions rank last in precedence** — system prompts, project files and user instructions all outrank tool and skill descriptions when they conflict
 - [[catastrophic-remembering]] — why appended skills stop compounding

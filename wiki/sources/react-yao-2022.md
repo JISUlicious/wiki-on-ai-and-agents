@@ -13,7 +13,7 @@ authors:
   - Dian Yu
   - Nan Du
   - Izhak Shafran
-  - Karthik Narasimhan
+  - [[karthik-narasimhan]]
   - Yuan Cao
 year: 2022
 tags:
@@ -27,7 +27,7 @@ importance: high
 **Source**: `sources/react-yao-2022.md` (extracted from `ReAct Yao 2022 2210.03629.pdf`)
 **arXiv**: [2210.03629](https://arxiv.org/abs/2210.03629)
 **Venue**: ICLR 2023
-**Authors**: [[shunyu-yao]] (first), Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan ([[princeton-university|Princeton]]; also a co-author on [[gpt-1-radford-2018|GPT-1]]), Yuan Cao ([[google-research|Google Brain]])
+**Authors**: [[shunyu-yao]] (first), Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, [[karthik-narasimhan|Karthik Narasimhan]] ([[princeton-university|Princeton]]; also a co-author on [[gpt-1-radford-2018|GPT-1]]), Yuan Cao ([[google-research|Google Brain]])
 
 ## Summary
 
@@ -73,7 +73,7 @@ ReAct is a foundational paper for the **LLM-agent paradigm**: the framework of L
 
 > "In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with and gather additional information from external sources such as knowledge bases or environments." — Abstract
 
-> "On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples." — Abstract
+> "On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and [[reinforcement-learning|reinforcement learning]] methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples." — Abstract
 
 ## References
 

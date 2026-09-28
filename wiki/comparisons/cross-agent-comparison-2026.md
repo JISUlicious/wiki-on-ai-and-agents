@@ -11,12 +11,12 @@ importance: high
 
 # Cross-Agent Comparison (2026)
 
-A structured comparison across five 2026-era LLM agent systems:
+A structured comparison across five 2026-era [[llm-agent|LLM agent]] systems:
 
 - **[[claude-code]]** — Anthropic's official terminal coding agent (TS/Ink)
 - **[[opencode]]** — sst/opencode (TS/Bun, HTTP/SSE server + many clients)
 - **[[pi-mono|pi]]** — badlogic's minimalist coding agent (TS/Node, 7 tools, "no X" manifesto)
-- **[[hermes-agent]]** — Nous Research's self-improving multi-surface agent (Python)
+- **[[hermes-agent]]** — [[nous-research|Nous Research]]'s self-improving multi-surface agent (Python)
 - **[[openclaw]]** — single-operator personal assistant gateway (TS/Node, embeds pi-mono)
 
 Synthesizing [[cross-agent-comparison-doc-2026|the source comparison document]].

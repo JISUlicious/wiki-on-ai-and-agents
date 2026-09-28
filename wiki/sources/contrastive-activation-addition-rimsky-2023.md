@@ -69,7 +69,7 @@ CAA is the most-cited *production* steering method — it's the technique that m
 
 ## Notable Quotes
 
-> "We introduce Contrastive Activation Addition (CAA), a method for steering language models by modifying their activations during forward passes. CAA computes 'steering vectors' by averaging the difference in residual stream activations between pairs of positive and negative examples of a particular behavior." — Abstract
+> "We introduce Contrastive Activation Addition (CAA), a method for steering language models by modifying their activations during forward passes. CAA computes 'steering vectors' by averaging the difference in [[residual-stream|residual stream]] activations between pairs of positive and negative examples of a particular behavior." — Abstract
 
 > "CAA significantly alters model behavior, is effective over and on top of traditional methods like finetuning and system prompt design, and minimally reduces capabilities." — Abstract
 

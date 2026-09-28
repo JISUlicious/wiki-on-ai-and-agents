@@ -22,7 +22,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-28–07-05).
 
 ## Summary
 
-A position-and-experiments paper from the Qwen Team arguing that for modern coding agents the classical asymmetry — verifying a solution is easier than producing one — has inverted. As foundation models reason better and harnesses grow more sophisticated, generating candidate solutions is cheap; reliably *verifying* them against human intent is now the hard problem. Every verifier is only a proxy for intent, and under optimization pressure the gap between proxy and intent widens (Goodhart's law), making reward hacking an inevitable consequence rather than a patchable bug. The central claim: no fixed reward function stays effective as policy capability grows, so verification must **co-evolve** with the generator it scores.
+A position-and-experiments paper from the Qwen Team arguing that for modern coding agents the classical asymmetry — verifying a solution is easier than producing one — has inverted. As foundation models reason better and harnesses grow more sophisticated, generating candidate solutions is cheap; reliably *verifying* them against human intent is now the hard problem. Every verifier is only a proxy for intent, and under optimization pressure the gap between proxy and intent widens (Goodhart's law), making [[reward-hacking|reward hacking]] an inevitable consequence rather than a patchable bug. The central claim: no fixed reward function stays effective as policy capability grows, so verification must **co-evolve** with the generator it scores.
 
 ## Key points
 

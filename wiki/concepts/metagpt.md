@@ -28,7 +28,7 @@ Each role has a system prompt defining its responsibilities and required output 
 
 The MetaGPT paper's core argument: when LLM agents are naively chained in free-form chat, errors compound. Agent A makes a small mistake; agent B can't tell it's wrong; agent C makes a bigger mistake building on it. The structured-handoff approach gives each downstream agent a typed schema to verify upstream output against, catching errors locally before they propagate.
 
-This is a recurring pattern in multi-agent design: the more structure you impose on inter-agent communication, the less you suffer from cascading hallucinations. MetaGPT is the most-cited concrete instantiation; [[autogen|AutoGen]] takes a more general approach (free-form chat with optional structure); production agents like Devin, SWE-agent, and Claude Code mix both depending on the workflow.
+This is a recurring pattern in multi-agent design: the more structure you impose on inter-agent communication, the less you suffer from cascading hallucinations. MetaGPT is the most-cited concrete instantiation; [[autogen|AutoGen]] takes a more general approach (free-form chat with optional structure); production agents like Devin, SWE-agent, and [[claude-code|Claude Code]] mix both depending on the workflow.
 
 ## References
 

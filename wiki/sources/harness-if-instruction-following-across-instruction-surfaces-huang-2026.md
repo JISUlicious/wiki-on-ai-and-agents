@@ -20,7 +20,6 @@ authors:
   - Wenhao Huang
 tags:
   - 2026
-  - benchmark
 status: complete
 importance: high
 ---

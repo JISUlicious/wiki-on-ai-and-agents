@@ -12,7 +12,7 @@ authors:
   - Minsu Kim
   - Mengye Ren
   - Sungjin Ahn
-  - Yoshua Bengio
+  - [[yoshua-bengio]]
 first_author: Junyeob Baek
 year: 2026
 tags: [2026]

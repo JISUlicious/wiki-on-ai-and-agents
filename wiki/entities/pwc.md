@@ -17,7 +17,7 @@ Global professional-services firm with an applied-AI / agent-systems research th
 
 ## Notable work
 
-- [[chronos]] — temporal-aware conversational agent with structured event retrieval for long-term memory (Sen et al. 2026).
+- [[chronos]] — temporal-aware conversational agent with structured event retrieval for [[long-term-memory|long-term memory]] (Sen et al. 2026).
 - [[grep-all-you-need-sen-2026]] — "Is Grep All You Need? How Agent Harnesses Reshape Agentic Search" (Sen et al. 2026); systematic measurement of retriever × harness × tool-delivery on [[longmemeval]].
 
 ## People

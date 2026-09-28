@@ -22,7 +22,6 @@ status: complete
 importance: high
 tags:
   - 2026
-  - benchmark
 ---
 
 # E-Commerce Bench: Evaluating LLM Agents on Long-Horizon Autonomous Business Operation

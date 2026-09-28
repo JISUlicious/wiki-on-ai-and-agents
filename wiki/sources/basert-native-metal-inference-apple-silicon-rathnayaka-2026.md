@@ -26,7 +26,7 @@ Ingested 2026-09-10 from the arXiv HTML full text. Every number below was re-der
 
 ## Problem: framework overhead on Metal
 
-The paper's thesis is that the two dominant Apple Silicon runtimes carry overhead that a purpose-built [[metal|Metal]] runtime does not. It names the overheads only at the level of design principles, not measurements:
+The paper's thesis is that the two dominant [[apple-silicon|Apple Silicon]] runtimes carry overhead that a purpose-built [[metal|Metal]] runtime does not. It names the overheads only at the level of design principles, not measurements:
 
 - **[[llama-cpp|llama.cpp]]** — *"originally developed as a cross-platform, CPU-first codebase and subsequently extended with a Metal backend. Its architecture reflects these origins."* No specific mechanism is identified.
 - **[[mlx|MLX]]** — *"a general-purpose array framework whose lazy evaluation and framework-level scheduling introduce overhead not present in a dedicated inference runtime."*

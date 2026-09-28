@@ -31,7 +31,7 @@ importance: medium
 
 ## Summary
 
-The paper argues that most "self-evolving" agents are an illusion: they depend on human-defined workflows and verified reward signals, so improvement halts the moment external supervision is removed. The authors instead grant agents **Native Agency** — an intrinsic meta-evolution capability to spontaneously explore and learn about an unseen environment *before* task execution, mirroring how humans build an internal map of a new city or app without being told to. An outcome-based reward — measuring how much an agent's self-generated world knowledge raises downstream success — is used **only during training** to teach exploration and summarization. At inference time the agent needs no external rewards or instructions and self-evolves from its internal parameters alone.
+The paper argues that most "self-evolving" agents are an illusion: they depend on human-defined workflows and verified reward signals, so improvement halts the moment external supervision is removed. The authors instead grant agents **Native Agency** — an intrinsic meta-evolution capability to spontaneously explore and learn about an unseen environment *before* task execution, mirroring how humans build an internal map of a new city or app without being told to. An [[outcome-based-reward|outcome-based reward]] — measuring how much an agent's self-generated world knowledge raises downstream success — is used **only during training** to teach exploration and summarization. At inference time the agent needs no external rewards or instructions and self-evolves from its internal parameters alone.
 
 ## Key points
 

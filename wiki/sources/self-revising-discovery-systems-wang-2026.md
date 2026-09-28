@@ -30,7 +30,7 @@ A key engineering ingredient is a **description-length gate**: a candidate revis
 
 - Reframes discovery as **regime transition**, not in-regime update; uses copresheaves over a schema category and Kan-extension transport to compare pre/post states.
 - **Description-length (MDL) gate** accepts only revisions that reduce total DL, giving an objective acceptance criterion in place of subjective novelty.
-- **Builder/Breaker** instantiation: a protein-mechanics world model is revised under an MDL gate; the accepted law expresses within-chain flexibility as mode-conditioned elastic compliance.
+- **Builder/Breaker** instantiation: a protein-mechanics [[world-model|world model]] is revised under an MDL gate; the accepted law expresses within-chain flexibility as mode-conditioned elastic compliance.
 - **CategoryScienceClaw** instantiation: typed skills, artifacts, open needs, workflow mutations, gates, stress tests, and discourse form a proof-carrying knowledge–computation graph; a fiber-network case records candidate models, rejected alternatives, an AIC gate, and an accepted anisotropic-stiffness surrogate.
 - Targets the autonomous "AI scientist" setting: the system itself detects when its representational regime should change and revises it under verification.
 

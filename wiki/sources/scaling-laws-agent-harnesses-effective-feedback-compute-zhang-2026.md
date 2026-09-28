@@ -39,7 +39,7 @@ Across synthetic controllable tasks, executable code tasks, real benchmark trace
 ## Concepts & entities
 
 - [[scaling-laws]] — a feedback-quality scaling coordinate for agent harnesses (test-time scaling)
-- [[code-as-harness]] — harness decides tool use, feedback, memory, verification, stopping
+- [[code-as-harness]] — harness decides [[tool-use|tool use]], feedback, memory, verification, stopping
 - [[agentic-harness-engineering]] — EFC as a design objective for engineering harnesses
 - [[reasoning-effort]] — converting inference-time budget into effective feedback
 

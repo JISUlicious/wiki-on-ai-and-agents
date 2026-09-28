@@ -25,7 +25,7 @@ Surfaced via the alphaXiv weekly digest (2026-06-24).
 
 ## Summary
 
-VibeThinker-3B is a compact 3B-parameter dense model from Sina Weibo built to test how far verifiable reasoning can be pushed in a strictly small-model regime. It extends the team's prior 1.5B work, applying a Spectrum-to-Signal post-training pipeline: curriculum-based supervised fine-tuning, multi-domain reinforcement learning, and offline self-distillation. On hard, verifiable math and coding tasks it reaches frontier-level scores, claiming parity with or wins over flagship models orders of magnitude larger (DeepSeek V3.2, GLM-5, Gemini 3 Pro). The authors generalize the result into a Parametric Compression-Coverage Hypothesis: verifiable reasoning compresses into compact "reasoning cores," whereas broad open-domain knowledge still needs wide parameter coverage — so small models are a complementary path to frontier capability, not just cheaper substitutes.
+VibeThinker-3B is a compact 3B-parameter dense model from Sina Weibo built to test how far verifiable reasoning can be pushed in a strictly small-model regime. It extends the team's prior 1.5B work, applying a Spectrum-to-Signal post-training pipeline: curriculum-based supervised fine-tuning, multi-domain [[reinforcement-learning|reinforcement learning]], and offline self-distillation. On hard, verifiable math and coding tasks it reaches frontier-level scores, claiming parity with or wins over flagship models orders of magnitude larger (DeepSeek V3.2, GLM-5, Gemini 3 Pro). The authors generalize the result into a Parametric Compression-Coverage Hypothesis: verifiable reasoning compresses into compact "reasoning cores," whereas broad open-domain knowledge still needs wide parameter coverage — so small models are a complementary path to frontier capability, not just cheaper substitutes.
 
 ## Key points
 
@@ -45,5 +45,5 @@ VibeThinker-3B is a compact 3B-parameter dense model from Sina Weibo built to te
 
 - arXiv: [arXiv:2606.16140](https://arxiv.org/abs/2606.16140)
 - GitHub: https://github.com/WeiboAI/VibeThinker
-- Hugging Face: https://huggingface.co/WeiboAI/VibeThinker-3B
+- [[huggingface|Hugging Face]]: https://huggingface.co/WeiboAI/VibeThinker-3B
 - Local source: `vibethinker-3b-verifiable-reasoning-xu-2026.pdf`

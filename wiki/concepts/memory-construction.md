@@ -21,4 +21,4 @@ Memory construction is the problem of *building* a structured memory store from 
 
 ## References
 
-- [[mem-alpha-wang-2025]] — MEM-α: Learning to Construct Memory from Streams via Reinforcement Learning (Wang 2025).
+- [[mem-alpha-wang-2025]] — MEM-α: Learning to Construct Memory from Streams via [[reinforcement-learning|Reinforcement Learning]] (Wang 2025).

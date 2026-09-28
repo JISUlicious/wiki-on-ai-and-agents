@@ -32,4 +32,4 @@ tags:
 
 ## Related 2026 sources
 
-- **2026-09: NVIDIA agreed to acquire Hugging Face.** Reported via newsletter digest (AI Agents Weekly, 2026-09-05), not a first-party filing, and unverified here. If it closes it is a material change to the open-weights distribution layer that most of this wiki's sources depend on — the Hub is where nearly every model card, dataset and checkpoint referenced here is hosted.
+- **2026-09: NVIDIA agreed to acquire [[huggingface|Hugging Face]].** Reported via newsletter digest (AI Agents Weekly, 2026-09-05), not a first-party filing, and unverified here. If it closes it is a material change to the open-weights distribution layer that most of this wiki's sources depend on — the Hub is where nearly every model card, dataset and checkpoint referenced here is hosted.

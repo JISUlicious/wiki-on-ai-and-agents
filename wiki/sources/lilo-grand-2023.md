@@ -67,7 +67,7 @@ LILO's central methodological contribution to the wiki's "skill" vocabulary is t
 
 ## Quotes
 
-> "While large language models (LLMs) now excel at code generation, a key aspect of software development is the art of refactoring: consolidating code into libraries of reusable and readable programs." — Abstract
+> "While large language models (LLMs) now excel at [[code-generation|code generation]], a key aspect of software development is the art of refactoring: consolidating code into libraries of reusable and readable programs." — Abstract
 
 > "To make these abstractions interpretable, we introduce an auto-documentation (AutoDoc) procedure that infers natural language names and docstrings based on contextual examples of usage. In addition to improving human readability, we find that AutoDoc boosts performance by helping LILO's synthesizer to interpret and deploy learned abstractions." — Abstract
 

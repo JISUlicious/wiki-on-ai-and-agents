@@ -18,7 +18,7 @@ Self-reflection in the LLM context means **prompting a model to critique, evalua
 - **Self-Refine** (Madaan et al. 2023): single-task iterative refinement. Generate → critique → revise → repeat.
 - **[[reflexion|Reflexion]]** (Shinn et al. 2023): episodic memory of reflections across attempts.
 - **Self-consistency** (Wang et al. 2022): sample many reasoning paths, vote on the answer — implicit reflection via majority.
-- **Constitutional AI** (Bai et al. 2022, Anthropic): the model critiques itself against a written constitution during training, used to generate preference data without human labels.
+- **[[constitutional-ai|Constitutional AI]]** (Bai et al. 2022, Anthropic): the model critiques itself against a written constitution during training, used to generate preference data without human labels.
 - **Reasoning models** (OpenAI o1+, 2024): self-reflection is internalized during post-training, so the model naturally produces hidden chains-of-thought with self-correction baked in.
 
 ## Caveat

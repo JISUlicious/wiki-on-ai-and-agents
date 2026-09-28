@@ -38,7 +38,7 @@ OpenClaw is a single-operator, multi-channel personal AI assistant. Runs as a lo
 - **Tiered Docker sandbox**: `sandbox` / `sandbox-common` / `sandbox-browser` + Podman/Quadlet.
 - **Permissions**: per-session approval + `/elevated` break-glass + sandbox-level deny.
 - **MCP**: refused in core; uses `mcporter` bridge if you want it.
-- **ACP**: server-side yes; client-side via `acpx` — can *embed* Codex, Claude Code, Gemini, pi from inside OpenClaw.
+- **ACP**: server-side yes; client-side via `acpx` — can *embed* Codex, [[claude-code|Claude Code]], Gemini, pi from inside OpenClaw.
 
 ## Distinguishing features
 

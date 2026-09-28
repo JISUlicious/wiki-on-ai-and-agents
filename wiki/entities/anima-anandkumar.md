@@ -16,7 +16,7 @@ tags:
 Bren Professor of Computing & Mathematical Sciences at Caltech; previously Senior Director of AI Research at NVIDIA until 2024. Senior author of Voyager (Wang et al. 2023). Research spans tensor methods, scientific ML, and embodied AI.
 
 ## Notable work
-- [[voyager-wang-2023]] — senior author; introduced [[voyager]], an open-ended embodied LLM agent in Minecraft.
+- [[voyager-wang-2023]] — senior author; introduced [[voyager]], an open-ended embodied [[llm-agent|LLM agent]] in Minecraft.
 
 ## Affiliations
 - [[caltech]] — Bren Professor

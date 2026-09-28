@@ -9,7 +9,7 @@ introduces:
   - [[speculative-decoding]]
 authors:
   - DeepSeek-AI
-  - Peking University
+  - [[peking-university]]
 first_author: DeepSeek-AI
 year: 2026
 venue: "alphaXiv (2026.dspark); open-sourced by DeepSeek"

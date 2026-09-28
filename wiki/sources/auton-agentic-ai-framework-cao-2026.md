@@ -35,7 +35,7 @@ Auton answers this with a strict separation between a Cognitive Blueprint (a dec
 - Execution model: agent formalized as an augmented POMDP with a latent reasoning space.
 - Memory: hierarchical consolidation architecture inspired by biological episodic memory.
 - Safety: constraint-manifold formalism enforcing safety by policy projection, not post-hoc filtering.
-- Self-evolution: three levels spanning in-context adaptation through reinforcement learning.
+- Self-evolution: three levels spanning in-context adaptation through [[reinforcement-learning|reinforcement learning]].
 - Runtime optimizations: parallel graph execution, speculative inference, dynamic context pruning to cut end-to-end latency.
 
 ## Concepts & entities

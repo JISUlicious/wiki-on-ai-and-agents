@@ -17,7 +17,6 @@ importance: high
 tags:
   - 2026
   - paper
-  - hardware
 ---
 
 # A Persistent-State Dataflow Accelerator for Memory-Bound Linear Attention Decode on FPGA
@@ -29,7 +28,7 @@ tags:
 
 ## Problem
 
-This is the decode-side mirror of [[fast-prefill-fpga-sparse-attention-jayanth-2026]], and it lands directly on the architecture family this wiki already tracks closely. [[linear-attention|Gated DeltaNet]] replaces the growing [[kv-cache]] with a fixed-size recurrent state matrix S ∈ ℝ^(d×d). The paper's framing claim — **"Hybrid LLMs like Qwen3-Next use 75% GDN layers"** — checks out and matches this wiki independently: [[qwen3.8-flash-next]] is 48 layers laid out as 12 × (3 × Gated DeltaNet → 1 sparse attention), i.e. **36 of 48 = 75%**, the same 3:1 ratio [[kimi-linear-kimi-team-2025|Kimi Linear]] reached separately. So GDN decode is the *dominant per-token primitive* in this model class, and accelerating it is not a niche exercise.
+This is the decode-side mirror of [[fast-prefill-fpga-sparse-attention-jayanth-2026]], and it lands directly on the architecture family this wiki already tracks closely. [[linear-attention|Gated DeltaNet]] replaces the growing [[kv-cache]] with a fixed-size recurrent state matrix S ∈ ℝ^(d×d). The paper's framing claim — **"Hybrid LLMs like Qwen3-Next use 75% GDN layers"** — checks out and matches this wiki independently: [[qwen3.8-flash-next]] is 48 layers laid out as 12 × (3 × Gated DeltaNet → 1 [[sparse-attention|sparse attention]]), i.e. **36 of 48 = 75%**, the same 3:1 ratio [[kimi-linear-kimi-team-2025|Kimi Linear]] reached separately. So GDN decode is the *dominant per-token primitive* in this model class, and accelerating it is not a niche exercise.
 
 The sharp observation is about **[[arithmetic-intensity]]**, and it inverts the usual reading of linear attention. Fixed-size state is a memory-*capacity* win but an [[arithmetic-intensity|intensity]] loss: every layer must read and write its **entire** state matrix every single token, no matter how short the sequence. At batch 1 that gives:
 

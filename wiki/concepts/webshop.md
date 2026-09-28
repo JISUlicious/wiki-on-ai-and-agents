@@ -9,8 +9,7 @@ sources:
   - harness-r1-learning-to-edit-runtime-harnesses-shao-2026.md
 status: draft
 importance: medium
-tags:
-  - benchmark
+tags: []
 ---
 
 **WebShop** is a simulated e-commerce environment in which an agent must satisfy a natural-language shopping instruction ("I want a long-sleeve blue shirt under $40") by searching, filtering, and navigating product pages to a purchase. It is the standard web-navigation counterpart to [[alfworld]] and the two are almost always reported together.

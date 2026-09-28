@@ -21,7 +21,7 @@ importance: medium
 
 Surfaced while researching [[agentic-harness-engineering]].
 
-[arXiv:2605.22166](https://arxiv.org/abs/2605.22166) — Tianshi Xu, Huifeng Wen, Meng Li (Peking University), May 2026.
+[arXiv:2605.22166](https://arxiv.org/abs/2605.22166) — Tianshi Xu, Huifeng Wen, Meng Li ([[peking-university|Peking University]]), May 2026.
 
 ## Summary
 

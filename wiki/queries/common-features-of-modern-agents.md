@@ -81,7 +81,7 @@ graph TB
 
 ## Related queries
 
-- [[from-transformer-to-modern-agents]] — the 9 evolutionary tracks (architecture, scaling, pre-training, alignment, reasoning, retrieval, tool use, orchestration, steering+guardrailing) that compose into modern agents.
+- [[from-transformer-to-modern-agents]] — the 9 evolutionary tracks (architecture, scaling, pre-training, alignment, reasoning, retrieval, [[tool-use|tool use]], orchestration, steering+guardrailing) that compose into modern agents.
 
 ## References
 

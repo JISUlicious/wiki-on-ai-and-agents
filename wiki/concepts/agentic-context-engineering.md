@@ -13,7 +13,7 @@ tags:
 
 # Agentic Context Engineering (ACE)
 
-**Agentic Context Engineering (ACE)** is the 2025 framing of "prompt-as-code with delta evolution": the model's context is treated as an evolving software artifact — a structured itemized **playbook** of bullets — that is incrementally edited by a three-role agentic loop rather than rewritten monolithically. Introduced by Zhang et al. at [[stanford-university]] / [[sambanova]] / UC Berkeley, ACE is the academic counterpart to industry "agent skills" tooling and links prompt-engineering, agent memory, and self-improvement under one rubric.
+**Agentic Context Engineering (ACE)** is the 2025 framing of "prompt-as-code with delta evolution": the model's context is treated as an evolving software artifact — a structured itemized **playbook** of bullets — that is incrementally edited by a three-role agentic loop rather than rewritten monolithically. Introduced by Zhang et al. at [[stanford-university]] / [[sambanova]] / [[uc-berkeley|UC Berkeley]], ACE is the academic counterpart to industry "agent skills" tooling and links prompt-engineering, agent memory, and self-improvement under one rubric.
 
 ## Core mechanism
 

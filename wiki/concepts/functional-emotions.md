@@ -17,7 +17,7 @@ importance: high
 
 An LLM exhibits a functional emotion when:
 
-1. It has an **internal representation** of a particular emotion concept (e.g., a linear direction in the residual stream — an "emotion vector").
+1. It has an **internal representation** of a particular emotion concept (e.g., a linear direction in the [[residual-stream|residual stream]] — an "emotion vector").
 2. That representation **activates** in contexts where a human would experience the emotion (overt expressions, references to people experiencing it, emotionally-charged situations).
 3. The representation **causally influences** the model's behavior in ways consistent with the emotion (e.g., the "loving" direction increases empathetic responses; "desperate" increases willingness to take extreme actions).
 

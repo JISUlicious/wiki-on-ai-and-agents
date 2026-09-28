@@ -22,7 +22,6 @@ year: 2026
 venue: "Findings of ACL 2026 (2026.findings-acl.2099, pp. 42303–42320)"
 tags:
   - 2026
-  - benchmark
 status: complete
 importance: medium
 ---

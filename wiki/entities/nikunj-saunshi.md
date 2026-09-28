@@ -14,7 +14,7 @@ tags:
 
 # Nikunj Saunshi
 
-Nikunj Saunshi is a researcher at Google Research working on the theory and practice of looped / recurrent transformers and their connection to reasoning. He is notable for framing depth-recursion in a looped transformer as a form of **silent chain-of-thought** — "latent thoughts" — that trades explicit token-level CoT for in-network iterative computation.
+Nikunj Saunshi is a researcher at [[google-research|Google Research]] working on the theory and practice of looped / recurrent transformers and their connection to reasoning. He is notable for framing depth-recursion in a looped transformer as a form of **silent chain-of-thought** — "latent thoughts" — that trades explicit token-level CoT for in-network iterative computation.
 
 - Lead author on [[latent-thoughts-looped-transformers-saunshi-2025]] (the "latent thoughts" framing).
 - Co-author on [[looped-transformers-multi-step-gd-gatmiry-2024]] (looped transformers implementing multi-step gradient descent).

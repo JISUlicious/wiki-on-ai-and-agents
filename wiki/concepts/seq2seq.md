@@ -20,12 +20,12 @@ The framework absorbs an enormous range of tasks:
 - **Summarization** (long doc → short doc)
 - **Question answering** (question → answer)
 - **Dialogue** (turn → response)
-- **Code generation** (description → code)
+- **[[code-generation|Code generation]]** (description → code)
 - **Speech recognition / synthesis** (waveform → text, text → waveform)
 - **Image captioning** (image → text, with the encoder swapped for a CNN/ViT)
 - **Instruction following** (instruction → response — what every modern chat LLM does)
 
-The conceptual generality is the contribution. Specific architectures evolved — LSTM seq2seq (2014) → LSTM + [[attention-mechanism|attention]] (Bahdanau 2014) → [[transformer|Transformer]] seq2seq (Vaswani 2017) → [[decoder-only-transformer|decoder-only]] LLMs (GPT family, 2018–) which collapse encoder and decoder into a single autoregressive stream.
+The conceptual generality is the contribution. Specific architectures evolved — LSTM seq2seq (2014) → LSTM + [[attention-mechanism|attention]] (Bahdanau 2014) → [[transformer|Transformer]] seq2seq (Vaswani 2017) → [[decoder-only-transformer|decoder-only]] LLMs ([[gpt-family|GPT family]], 2018–) which collapse encoder and decoder into a single autoregressive stream.
 
 ## The fixed-dim bottleneck (and how attention solved it)
 

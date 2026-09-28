@@ -22,7 +22,7 @@ importance: high
 
 # FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision
 
-**Jay Shah, Ganesh Bikshandi (equal contribution), Ying Zhang, Vijay Thakkar, Pradeep Ramani, Tri Dao** (Colfax Research; Meta; NVIDIA; Georgia Tech; Princeton University; Together AI) — [arXiv:2407.08608](https://arxiv.org/abs/2407.08608), submitted 11 Jul 2024 (v2 12 Jul 2024). *No venue is stated in the arXiv comments field.*
+**Jay Shah, Ganesh Bikshandi (equal contribution), Ying Zhang, Vijay Thakkar, Pradeep Ramani, Tri Dao** (Colfax Research; Meta; NVIDIA; Georgia Tech; [[princeton-university|Princeton University]]; Together AI) — [arXiv:2407.08608](https://arxiv.org/abs/2407.08608), submitted 11 Jul 2024 (v2 12 Jul 2024). *No venue is stated in the arXiv comments field.*
 
 ## Summary
 

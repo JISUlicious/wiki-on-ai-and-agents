@@ -2,7 +2,7 @@
 title: "Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.11095"
 year: 2026
@@ -38,7 +38,7 @@ Nobody had identified the root cause because line diffs and file sizes cannot re
 
 ## The mechanism — get this part exactly right
 
-The asymmetry is the whole paper. **Recording an instruction's latent reasoning at write time costs O(1). Reconstructing it later costs O(2^|D|) in a prompt of |D| instructions.**
+The asymmetry is the whole paper. **Recording an instruction's [[latent-reasoning|latent reasoning]] at write time costs O(1). Reconstructing it later costs O(2^|D|) in a prompt of |D| instructions.**
 
 Formally: prompt maintenance is online estimation of an unobservable constraint set from censored, noisy feedback. A task pairs a stated objective `o_j` with unobservable constraints `C_j ⊆ C`; the prompt `D_t` is a set of instructions; the maintainer's target is the **minimum cover** `D_*` — the smallest instruction set that maximizes expected constraint satisfaction. Every experiment scores `D_t` against `D_*` on two axes: **correctness** (expected satisfaction) and **excess size** (`|D_t|/|D_*| − 1`). A regime wins only by improving one without degrading the other.
 
@@ -62,7 +62,7 @@ The closed form. Define **imperfect recall** as the decay `ρ(d,a) = Pr(r_d reco
 
 **This is the key result and it is easy to misstate.** Excess size diverges *even with additions arriving at a constant rate and the constraint set completely fixed*. The task does not have to change. The requirements do not have to go stale. The decaying memory of *why* each instruction was written is by itself sufficient to drive unbounded growth.
 
-The name: **catastrophic remembering**, the inverse of catastrophic forgetting. "Under catastrophic forgetting, a gradient learner overwrites what it should have kept; under catastrophic remembering, a maintainer keeps what they should have overwritten. Both fail for the same reason: whatever would license the update is gone."
+The name: **[[catastrophic-remembering|catastrophic remembering]]**, the inverse of catastrophic forgetting. "Under catastrophic forgetting, a gradient learner overwrites what it should have kept; under catastrophic remembering, a maintainer keeps what they should have overwritten. Both fail for the same reason: whatever would license the update is gone."
 
 ## Field measurement (1,867 repositories)
 
@@ -165,8 +165,10 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 >
 > The sharpest reconciliation: ACE's **brevity bias** (optimizers like GEPA collapsing to short generic instructions) and this paper's ratchet are *opposite* biases acting on the same artifact. ACE describes machine-optimizer pressure toward too-short; Chakrabarti describes human-and-agent maintainer pressure toward too-long. Both are deviations from the same `D_*`, and the minimum-cover framing here is the first formal target that names what both are missing.
 
-> [!warning] Contradiction — "capability grows monotonically"
+> [!success] Resolved contradiction — "capability grows monotonically"
 > [[self-improving-agent]] claims that **"skills, prompts, or scaffold edits are appended; the agent's capability grows monotonically and side-steps the catastrophic forgetting of gradient-based continual learning."** This paper is precisely the rebuttal: side-stepping catastrophic forgetting by appending buys you **catastrophic remembering** instead, and the paper's whole framing is that these are duals, not an escape. Growth is not monotone in capability once instruction-following degrades with constraint count.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
 > [!note] Horizon extension, not contradiction — memory stores that improve as they grow
 > [[filesystem-based-memory-for-llm-agents-zhou-2026]] reports that **"stores get more useful as they grow at every model tested, nothing degrades within 140 tasks, early memories overwhelmingly survive."** That page already carries the caveat that **"nothing here measures months-long accumulation."** Chakrabarti's +226%-over-lifetime trajectory is exactly that missing horizon, so the two are best read as sequential rather than opposed: growth pays early and ratchets late. Zhou et al.'s finding that curation never gets cheaper (6–12 rounds per episode, maintenance replacing creation) is independently consistent with `ρ̄` decay.

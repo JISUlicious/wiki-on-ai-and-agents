@@ -16,7 +16,7 @@ Online learning is a classical ML setting where the model's parameters (or polic
 - Updates happen per-example or per-small-batch, often under regret-minimization guarantees.
 - Closely related to [[reinforcement-learning]] when feedback is reward rather than label.
 - A core ingredient for any [[self-improving-agent]] that wants to incorporate experience without full retraining.
-- Distinct from in-context learning: online learning changes weights, in-context learning does not.
+- Distinct from [[in-context-learning|in-context learning]]: online learning changes weights, in-context learning does not.
 
 ## Related
 

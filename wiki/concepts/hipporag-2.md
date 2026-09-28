@@ -13,7 +13,7 @@ tags:
 
 # HippoRAG 2
 
-**HippoRAG 2** is a graph-indexed memory system that frames [[retrieval-augmented-generation|RAG]] as the most viable path to non-parametric continual learning for LLMs. An LLM plays the **artificial neocortex** (extraction, filtering, generation); an OpenIE-extracted [[knowledge-graph]] traversed by **Personalized PageRank** plays the **hippocampus** (associative index); an embedding model bridges them like the parahippocampal regions. The system is the first structure-augmented RAG variant to dominate flat-embedding retrieval across factual, sense-making, *and* associative QA simultaneously.
+**HippoRAG 2** is a graph-indexed memory system that frames [[retrieval-augmented-generation|RAG]] as the most viable path to non-parametric [[continual-learning|continual learning]] for LLMs. An LLM plays the **artificial neocortex** (extraction, filtering, generation); an OpenIE-extracted [[knowledge-graph]] traversed by **Personalized PageRank** plays the **hippocampus** (associative index); an embedding model bridges them like the parahippocampal regions. The system is the first structure-augmented RAG variant to dominate flat-embedding retrieval across factual, sense-making, *and* associative QA simultaneously.
 
 ## Core mechanism
 

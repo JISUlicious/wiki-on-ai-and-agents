@@ -30,7 +30,7 @@ FlashAttention does **more arithmetic, and is dramatically faster.** On GPT-2-me
 The extra FLOPs come from **recomputing** attention in the backward pass rather than storing it. The win is entirely **memory traffic**: tiling the computation so blocks stay in fast on-chip SRAM, with online softmax so no full row must exist at once.
 
 > [!important] This refines the prefill story
-> At the *roofline/system* level prefill is compute-bound ([[llm-inference-roofline-yuan-2024]] measures arithmetic intensity 1,024–1,215 for prefill projections). But the **attention kernel specifically** is memory-bound, because standard attention materializes an N×N matrix. FlashAttention removes that bottleneck, which is why it speeds up prefill even though prefill is "compute-bound" overall. Both statements are true at different levels of the stack.
+> At the *roofline/system* level prefill is compute-bound ([[llm-inference-roofline-yuan-2024]] measures [[arithmetic-intensity|arithmetic intensity]] 1,024–1,215 for prefill projections). But the **attention kernel specifically** is memory-bound, because standard attention materializes an N×N matrix. FlashAttention removes that bottleneck, which is why it speeds up prefill even though prefill is "compute-bound" overall. Both statements are true at different levels of the stack.
 
 Memory also goes **quadratic → linear** in sequence length (up to 20× more memory-efficient), which is what makes long contexts fit. The paper proves an IO lower bound showing no exact algorithm can beat it asymptotically.
 

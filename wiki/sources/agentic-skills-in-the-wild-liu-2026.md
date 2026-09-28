@@ -48,7 +48,7 @@ The headline finding is that **the benefits of skills are fragile**: performance
 - This is the central methodological move: it replaces the idealized "curated skills placed directly in context" assumption with a large, noisy, realistic pool the agent must search.
 
 ### Three challenges the realistic setting reintroduces
-1. **Skill selection** — even when relevant skills are available, the agent must recognize and decide to load them, especially amid many irrelevant ones.
+1. **[[skill-selection|Skill selection]]** — even when relevant skills are available, the agent must recognize and decide to load them, especially amid many irrelevant ones.
 2. **Skill retrieval** — users rarely pre-select skills; the agent must search a large repository on its own.
 3. **Skill adaptation** — when no skill was authored for the task, the agent must extract useful information from partially-relevant, general-purpose content.
 

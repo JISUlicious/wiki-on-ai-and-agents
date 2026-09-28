@@ -18,7 +18,7 @@ importance: high
 
 # FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning
 
-**Tri Dao** (Princeton University; Stanford University — sole author) — [arXiv:2307.08691](https://arxiv.org/abs/2307.08691), submitted 17 Jul 2023. *No venue is stated in the arXiv comments field.*
+**Tri Dao** ([[princeton-university|Princeton University]]; [[stanford-university|Stanford University]] — sole author) — [arXiv:2307.08691](https://arxiv.org/abs/2307.08691), submitted 17 Jul 2023. *No venue is stated in the arXiv comments field.*
 
 ## Summary
 

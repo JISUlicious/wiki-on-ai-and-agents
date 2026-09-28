@@ -74,7 +74,7 @@ A-MEM is positioned as a 2026-era reference design for self-organizing agent mem
 - [[retrieval-augmented-generation]]
 - [[agentic-rag]]
 - [[long-term-memory]]
-- [[embedding-retrieval]]
+- [[dense-retrieval|embedding retrieval]]
 
 ## Notable Quotes
 

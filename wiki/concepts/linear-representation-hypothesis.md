@@ -15,7 +15,7 @@ importance: high
 
 The hypothesis that **concepts in trained neural networks (especially Transformers) are encoded as approximately linear directions in activation space**, such that vector arithmetic over those directions produces predictable changes in the network's behavior.
 
-The LRH is the theoretical bedrock of the modern [[steering]] toolkit. It's implicit in [[word-embeddings|word2vec]] (`king − man + woman ≈ queen`), explicit in [[activation-engineering-turner-2023|ActAdd]] (steering vectors as concept directions), foundational to [[representation-engineering|RepE]] ("linear artificial tomography"), justifies [[sparse-autoencoder|SAEs]] (decompose into a linear feature basis), and is the operating assumption of [[contrastive-activation-addition|CAA]], [[inference-time-intervention|ITI]], and the [[emotion-concepts-anthropic-2026|emotion-vectors paper]].
+The LRH is the theoretical bedrock of the modern [[steering]] toolkit. It's implicit in [[word-embeddings|word2vec]] (`king − man + woman ≈ queen`), explicit in [[activation-engineering-turner-2023|ActAdd]] ([[steering-vectors|steering vectors]] as concept directions), foundational to [[representation-engineering|RepE]] ("linear artificial tomography"), justifies [[sparse-autoencoder|SAEs]] (decompose into a linear feature basis), and is the operating assumption of [[contrastive-activation-addition|CAA]], [[inference-time-intervention|ITI]], and the [[emotion-concepts-anthropic-2026|emotion-vectors paper]].
 
 ## What the LRH claims
 

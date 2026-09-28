@@ -43,4 +43,4 @@ As LLM-based [[multi-agent]] systems proliferate, communication protocols become
 
 ## References
 
-- [arXiv:2606.19135](https://arxiv.org/abs/2606.19135) — Sander, Gidey, Lenz, Knoll. "A Technical Taxonomy of LLM Agent Communication Protocols" (2026). Technische Universität München.
+- [arXiv:2606.19135](https://arxiv.org/abs/2606.19135) — Sander, Gidey, Lenz, Knoll. "A Technical Taxonomy of [[llm-agent|LLM Agent]] Communication Protocols" (2026). Technische Universität München.

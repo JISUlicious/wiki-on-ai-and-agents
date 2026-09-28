@@ -22,11 +22,11 @@ RETRO is the retrieval-augmented autoregressive language model introduced in "[[
 
 ## Architecture
 
-- **Base**: standard decoder-only Transformer LM (with prepended RETRO blocks).
+- **Base**: standard [[decoder-only-transformer|decoder-only Transformer]] LM (with prepended RETRO blocks).
 - **Chunking**: input sequence split into chunks of 64 tokens.
 - **Retriever**: frozen pre-trained [[bert|BERT]]-base encoder. Each chunk's BERT embedding is used as a query into a [[maximum-inner-product-search|MIPS]] index over the database; top-`k` (default k=2) neighbor chunks of ~5 tokens each are retrieved.
 - **Neighbor encoder**: a small Transformer encoder embeds the retrieved chunks.
-- **Chunked cross-attention (CCA)**: a new attention layer interleaved with standard self-attention. For each input chunk, attends to its retrieved neighbors. Causality is preserved by having chunk `i`'s neighbors only affect chunk `i+1`'s tokens.
+- **[[chunked-cross-attention|Chunked cross-attention]] (CCA)**: a new attention layer interleaved with standard self-attention. For each input chunk, attends to its retrieved neighbors. Causality is preserved by having chunk `i`'s neighbors only affect chunk `i+1`'s tokens.
 
 | Variant | Params (non-embed) | Layers |
 |---|---|---|

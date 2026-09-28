@@ -13,7 +13,7 @@ tags:
 
 # Google
 
-American technology company whose AI research spans Google Research, Google DeepMind, and Google Brain (now merged). It is the parent organization of those labs.
+American technology company whose AI research spans [[google-research|Google Research]], Google DeepMind, and [[google-brain|Google Brain]] (now merged). It is the parent organization of those labs.
 
 ## References
 

@@ -17,11 +17,11 @@ tags:
 
 # Hermes Agent
 
-Hermes Agent (`NousResearch/hermes-agent`) is **Nous Research**'s open-source, self-improving AI agent. Python-based. Runs as either an interactive terminal (`hermes`) or a persistent multi-platform messaging daemon (`hermes gateway`). Tagline from its README:
+Hermes Agent (`NousResearch/hermes-agent`) is **[[nous-research|Nous Research]]**'s open-source, self-improving AI agent. Python-based. Runs as either an interactive terminal (`hermes`) or a persistent multi-platform messaging daemon (`hermes gateway`). Tagline from its README:
 
 > "The self-improving AI agent built by Nous Research. It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions."
 
-Provider-agnostic via OpenAI-compatible chat completions. Works with: OpenRouter, Nous Portal, [[anthropic|Anthropic]], NVIDIA NIM, Hugging Face, Ollama, vLLM, llama.cpp, LM Studio.
+Provider-agnostic via OpenAI-compatible chat completions. Works with: OpenRouter, Nous Portal, [[anthropic|Anthropic]], NVIDIA NIM, [[huggingface|Hugging Face]], Ollama, vLLM, llama.cpp, LM Studio.
 
 ## Distinguishing feature: self-modifying runtime
 

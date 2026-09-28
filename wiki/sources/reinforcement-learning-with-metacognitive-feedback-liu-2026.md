@@ -25,7 +25,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-28–07-05).
 
 ## Summary
 
-LLMs exhibit systemic metacognitive deficiencies: they hallucinate with high confidence, fail to recognize knowledge boundaries, and misrepresent their internal uncertainty. This Yale + Google Research paper posits that models capable of accurately judging their own performance are better positioned to improve it, so it turns **metacognition into the training signal**. It introduces **RLMF (reinforcement learning with metacognitive feedback)**, which refines completion rankings during preference optimization based on the quality of the model's self-judgments of performance, plus **metacognitive data selection** for identifying high-value training examples. The target task is **faithful calibration (FC)** — aligning expressed uncertainty with intrinsic uncertainty, distinct from factual calibration.
+LLMs exhibit systemic metacognitive deficiencies: they hallucinate with high confidence, fail to recognize knowledge boundaries, and misrepresent their internal uncertainty. This Yale + [[google-research|Google Research]] paper posits that models capable of accurately judging their own performance are better positioned to improve it, so it turns **metacognition into the training signal**. It introduces **RLMF (reinforcement learning with metacognitive feedback)**, which refines completion rankings during preference optimization based on the quality of the model's self-judgments of performance, plus **metacognitive data selection** for identifying high-value training examples. The target task is **faithful calibration (FC)** — aligning expressed uncertainty with intrinsic uncertainty, distinct from factual calibration.
 
 ## Key points
 

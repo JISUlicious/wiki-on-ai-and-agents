@@ -5,7 +5,7 @@ created: 2026-09-21
 updated: 2026-09-21
 sources: []
 authors:
-  - TypeSafe AI
+  - [[typesafe-ai]]
 year: 2026
 venue: "TypeSafe AI company blog and product docs"
 status: complete
@@ -36,7 +36,7 @@ Third-party guides describe three question forms: a choice among declared option
 
 ## Training
 
-**RLCD**, "Reinforcement Learning for Calibrated Decisions," which the company frames against RLHF (trained on what humans prefer) and RLVR (trained on what a checker can verify). RLCD is described as optimizing for "epistemically honest probabilities." No objective, architecture, parameter count, base model or data description is published.
+**RLCD**, "[[reinforcement-learning|Reinforcement Learning]] for Calibrated Decisions," which the company frames against RLHF (trained on what humans prefer) and RLVR (trained on what a checker can verify). RLCD is described as optimizing for "epistemically honest probabilities." No objective, architecture, parameter count, base model or data description is published.
 
 ## The numbers, all vendor-reported
 

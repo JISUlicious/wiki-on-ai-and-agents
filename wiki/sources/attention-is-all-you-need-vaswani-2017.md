@@ -28,7 +28,7 @@ importance: high
 **Source**: `sources/transformer-vaswani-2017.md` (extracted from `Transformar Vaswani 1706.03762.pdf`)
 **arXiv**: [1706.03762](https://arxiv.org/abs/1706.03762)
 **Venue**: NeurIPS 2017
-**Authors**: [[ashish-vaswani]], [[noam-shazeer]], Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin (Google Brain / Google Research / [[university-of-toronto]])
+**Authors**: [[ashish-vaswani]], [[noam-shazeer]], Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin (Google Brain / [[google-research|Google Research]] / [[university-of-toronto]])
 
 ## Summary
 

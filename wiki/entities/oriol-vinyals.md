@@ -14,7 +14,7 @@ tags:
 
 # Oriol Vinyals
 
-Long-time [[deepmind|DeepMind]] researcher (joined ~2016). Co-author of "[[sequence-to-sequence-learning-sutskever-2014|seq2seq]]" (2014, while at Google Brain), [[chinchilla-hoffmann-2022|Chinchilla]] (2022), and many other foundational deep learning papers. Led AlphaStar (StarCraft II), Gato, and Gemini-era multimodal work at DeepMind.
+Long-time [[deepmind|DeepMind]] researcher (joined ~2016). Co-author of "[[sequence-to-sequence-learning-sutskever-2014|seq2seq]]" (2014, while at [[google-brain|Google Brain]]), [[chinchilla-hoffmann-2022|Chinchilla]] (2022), and many other foundational deep learning papers. Led AlphaStar (StarCraft II), Gato, and Gemini-era multimodal work at DeepMind.
 
 ## References
 

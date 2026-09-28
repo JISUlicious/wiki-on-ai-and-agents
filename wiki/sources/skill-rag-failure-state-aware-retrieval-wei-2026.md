@@ -33,7 +33,7 @@ Skill-RAG is a **failure-aware RAG** framework that diagnoses, rather than merel
 
 - Reframes post-retrieval recovery: prior adaptive-retrieval work decides *whether/how often* to retrieve; Skill-RAG diagnoses *why* retrieval failed.
 - Core insight: persistent failures often reflect a query–evidence alignment gap, which is **typed rather than monolithic** and shows separable geometric structure in hidden-state space.
-- **Hidden-state prober**: lightweight probe over model hidden layers that detects stalled retrieval ("failure states") and gates entry into skill routing at two stages.
+- **Hidden-state prober**: lightweight probe over model hidden layers that detects stalled retrieval ("failure states") and gates entry into [[skill-routing|skill routing]] at two stages.
 - **Skill router** (prompt-based) selects among four retrieval skills: query rewriting, question decomposition, evidence focusing, and an exit skill for truly irreducible cases.
 - Evaluated across multiple open-domain QA and complex-reasoning benchmarks; strong gains on hard, multi-turn-resistant and OOD cases.
 - Representation-space analysis confirms the four skills occupy structured, separable regions of the failure-state space. Multi-institution effort (Michigan, UBC, Rutgers, Penn, NJIT, TU Darmstadt, Wake Forest).

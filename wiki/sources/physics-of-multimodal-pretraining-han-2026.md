@@ -31,7 +31,7 @@ Natively unified multimodal models train three abilities in one loop: language, 
 
 ## The method
 
-**Backbone.** Default probe model is a 1.5B [[llama|Llama-3]]-style decoder-only transformer (2.3B total including modality-specific parts): 16 layers, d=2048, [[grouped-query-attention|GQA]] with 32 query / 8 KV heads, FFN multiplier 1.5, context 4096, bf16, FSDP-2, AdamW. It follows the **Transfusion** recipe — discrete next-token prediction for text, continuous **flow matching** for image generation — with the diffusion loss upweighted 3.0× against text cross-entropy.
+**Backbone.** Default probe model is a 1.5B [[llama|Llama-3]]-style [[decoder-only-transformer|decoder-only transformer]] (2.3B total including modality-specific parts): 16 layers, d=2048, [[grouped-query-attention|GQA]] with 32 query / 8 KV heads, FFN multiplier 1.5, context 4096, bf16, FSDP-2, AdamW. It follows the **Transfusion** recipe — discrete next-token prediction for text, continuous **flow matching** for image generation — with the diffusion loss upweighted 3.0× against text cross-entropy.
 
 **Visual tokenization, four variants:** RAE (default; frozen SigLIP-2 [[vit|ViT]]-400m/14, 224², 16×16 = 256 semantic tokens), raw pixels (14×14 conv patchify), CLIP+VAE (SigLIP-2 for understanding + SD3 VAE for generation), and AR/UniTok (discrete codes).
 

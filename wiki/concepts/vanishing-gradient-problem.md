@@ -11,7 +11,7 @@ importance: medium
 
 # Vanishing-Gradient Problem
 
-In a deep or recurrent neural network, gradients computed by backpropagation can shrink (or explode) exponentially in depth or sequence length. **Vanishing** gradients prevent the network from learning long-range dependencies; **exploding** gradients cause unstable, oscillating weights. The problem was analyzed in detail in Sepp Hochreiter's 1991 diploma thesis and is the foundational obstacle the [[lstm|LSTM]] was designed to address.
+In a deep or recurrent neural network, gradients computed by backpropagation can shrink (or explode) exponentially in depth or sequence length. **Vanishing** gradients prevent the network from learning long-range dependencies; **exploding** gradients cause unstable, oscillating weights. The problem was analyzed in detail in [[sepp-hochreiter|Sepp Hochreiter]]'s 1991 diploma thesis and is the foundational obstacle the [[lstm|LSTM]] was designed to address.
 
 For a recurrent network, the gradient of the loss at time T with respect to the recurrent weights at time t involves a product of T−t Jacobian matrices. If the largest singular value of these Jacobians is consistently < 1, the gradient decays exponentially toward 0; if > 1, it grows without bound. In practice, both regimes are common with standard activations and initialization.
 

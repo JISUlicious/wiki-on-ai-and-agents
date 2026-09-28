@@ -24,7 +24,7 @@ Surfaced via the alphaXiv weekly digest (2026-06-17).
 
 ## Summary
 
-MiniMax Sparse Attention (MSA) is a blockwise sparse attention mechanism built on Grouped Query Attention (GQA), aimed at making ultra-long-context LLMs (hundreds of thousands to millions of tokens) tractable at deployment scale, where quadratic softmax attention becomes the dominant cost. MSA splits attention into a lightweight **Index Branch** that scores key–value blocks and independently selects a Top-k subset for each GQA group, and a **Main Branch** that performs exact block-sparse attention over only the selected blocks (the local block is always included). During training a KL loss aligns the Index Branch distribution with the group-averaged Main Branch distribution, with the index gradient detached from the main branch.
+MiniMax Sparse Attention (MSA) is a blockwise sparse [[attention-mechanism|attention mechanism]] built on Grouped Query Attention (GQA), aimed at making ultra-long-context LLMs (hundreds of thousands to millions of tokens) tractable at deployment scale, where quadratic softmax attention becomes the dominant cost. MSA splits attention into a lightweight **Index Branch** that scores key–value blocks and independently selects a Top-k subset for each GQA group, and a **Main Branch** that performs exact block-sparse attention over only the selected blocks (the local block is always included). During training a KL loss aligns the Index Branch distribution with the group-averaged Main Branch distribution, with the index gradient detached from the main branch.
 
 The design follows a simplicity/scalability principle (Occam's razor over ablated components) and is co-designed with a GPU execution path using exp-free Top-k selection and KV-outer sparse attention to keep tensor cores well utilized under block-granular access. On a 109B-parameter natively-multimodal model, MSA matches dense GQA quality while cutting per-token attention compute by 28.4x at 1M context, and the co-designed kernel delivers 14.2x prefill and 7.6x decoding wall-clock speedups on H800. The inference kernel is open-sourced, and a production model (MiniMax-M3) powered by MSA was released.
 
@@ -53,4 +53,4 @@ The design follows a simplicity/scalability principle (Occam's razor over ablate
 
 ## Related 2026 sources
 
-- [[sparse-attention]] — the concept page: trained sparse attention (this, QSA) vs offline-assigned (MInference) vs online (FlexPrefill, Token Sparse Attention), and the attention-share bound they all live under
+- [[sparse-attention]] — the concept page: [[trained-sparse-attention|trained sparse attention]] (this, QSA) vs offline-assigned (MInference) vs online (FlexPrefill, Token Sparse Attention), and the attention-share bound they all live under

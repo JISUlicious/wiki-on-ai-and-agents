@@ -20,7 +20,7 @@ tags:
 
 The Transformer-Decoder (sometimes called "T-DMCA", Transformer-Decoder with Memory-Compressed Attention) is the decoder-only variant of the [[transformer]] introduced in [[transformer-decoder-liu-2018|"Generating Wikipedia by Summarizing Long Sequences"]] (Liu et al., ICLR 2018) for long-input multi-document summarization.
 
-Its primary significance for this wiki is **architectural lineage**: this paper is the cited inspiration for the decoder-only Transformer architecture used by [[gpt-1]] and, by extension, the entire [[gpt-family|GPT family]] of language models.
+Its primary significance for this wiki is **architectural lineage**: this paper is the cited inspiration for the decoder-only [[transformer-architecture|Transformer architecture]] used by [[gpt-1]] and, by extension, the entire [[gpt-family|GPT family]] of language models.
 
 ## Key idea
 

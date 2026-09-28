@@ -30,7 +30,7 @@ A structured comparison across five 2026-era LLM agent systems:
 - **[[claude-code]]** — Anthropic's official terminal coding agent (TS/Ink)
 - **[[opencode]]** — sst/opencode (TS/Bun, HTTP/SSE server + multiple clients)
 - **[[pi-mono]]** — badlogic's minimalist coding agent (TS/Node, 7 tools, "no X" manifesto)
-- **[[hermes-agent]]** — Nous Research's self-improving multi-surface agent (Python)
+- **[[hermes-agent]]** — [[nous-research|Nous Research]]'s self-improving multi-surface agent (Python)
 - **[[openclaw]]** — single-operator personal assistant gateway (TS/Node, embeds pi-mono)
 
 Compared along axes including: maker, language, runtime, process model, primary surface, provider support, tool count, MCP support, ACP support, sub-agents, sandbox, permissions, memory, and skills format. The full source is a 29KB document with detailed comparison tables and prose contrasts — see `sources/comparison.md` for full evidence.

@@ -16,7 +16,7 @@ authors:
 first_author: Yuru Wang
 year: 2026
 venue: arXiv preprint
-tags: [2026, benchmark]
+tags: [2026]
 status: complete
 importance: medium
 ---
@@ -27,7 +27,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-21–06-28).
 
 ## Summary
 
-NatureBench (Horizon Research / Frontis.AI, Tsinghua University, Peking University) is a cross-discipline benchmark of **90 tasks** distilled from peer-reviewed Nature-family publications, designed to test whether AI coding agents can move beyond *reproduction* toward genuine *discovery* on real scientific problems. It is built on **NatureGym**, an automated pipeline that constructs a standardized, per-task **containerized environment** from each source paper — directly addressing the environment-fragmentation problem that has undermined the credibility of prior agent-on-research benchmarks. Agents are evaluated under a strict **web-search-disabled** protocol so they cannot simply retrieve the original method.
+NatureBench (Horizon Research / Frontis.AI, [[tsinghua-university|Tsinghua University]], [[peking-university|Peking University]]) is a cross-discipline benchmark of **90 tasks** distilled from peer-reviewed Nature-family publications, designed to test whether AI coding agents can move beyond *reproduction* toward genuine *discovery* on real scientific problems. It is built on **NatureGym**, an automated pipeline that constructs a standardized, per-task **containerized environment** from each source paper — directly addressing the environment-fragmentation problem that has undermined the credibility of prior agent-on-research benchmarks. Agents are evaluated under a strict **web-search-disabled** protocol so they cannot simply retrieve the original method.
 
 ## Key points
 

@@ -23,7 +23,7 @@ importance: high
 
 # LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression
 
-**Zhuoshi Pan, Qianhui Wu, Huiqiang Jiang, et al.** (Tsinghua University and Microsoft Corporation; Pan interned at Microsoft) — [arXiv:2403.12968](https://arxiv.org/abs/2403.12968), Findings of ACL 2024.
+**Zhuoshi Pan, Qianhui Wu, Huiqiang Jiang, et al.** ([[tsinghua-university|Tsinghua University]] and Microsoft Corporation; Pan interned at Microsoft) — [arXiv:2403.12968](https://arxiv.org/abs/2403.12968), Findings of ACL 2024.
 
 ## Summary
 

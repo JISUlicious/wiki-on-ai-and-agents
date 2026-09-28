@@ -11,7 +11,7 @@ authors:
   - Bingchen Zhao
   - Wannan Yang
   - Jakob Foerster
-  - Jeff Clune
+  - [[jeff-clune]]
   - Minqi Jiang
   - Sam Devlin
   - Tatiana Shavrina
@@ -30,7 +30,7 @@ Surfaced via the alphaXiv / NLP-newsletter digest.
 
 HyperAgents introduces *self-referential* agents for open-ended recursive self-improvement. Prior self-improving systems rely on a fixed, handcrafted meta-level mechanism that bounds how the base system can be improved; adding a meta-meta layer just shifts the problem upward into infinite regress. A hyperagent instead integrates a **task agent** (solves the target task) and a **meta agent** (modifies itself and the task agent) into a single editable program — and crucially the meta-level modification procedure is itself editable, enabling *metacognitive self-modification* that improves not only task behavior but the very mechanism generating future improvements.
 
-The framework is instantiated by extending the Darwin Gödel Machine (DGM) into **DGM-Hyperagents (DGM-H)**. The original DGM achieved open-ended self-improvement in coding by repeatedly generating and evaluating self-modified variants, but it depended on coding-domain alignment (coding ability ≈ self-modification ability). By letting the improvement procedure evolve, DGM-H removes that domain-specific assumption and can in principle self-accelerate on any computable task. Across coding, paper review, robotics reward design, and Olympiad-level math-solution grading, DGM-H improves over time and beats both non-self-improving baselines and prior systems like DGM; meta-level improvements (e.g., persistent memory, performance tracking) transfer across domains and accumulate across runs. Experiments used sandboxing and human oversight; the paper discusses safety implications.
+The framework is instantiated by extending the Darwin [[godel-machine|Gödel Machine]] (DGM) into **DGM-Hyperagents (DGM-H)**. The original DGM achieved open-ended self-improvement in coding by repeatedly generating and evaluating self-modified variants, but it depended on coding-domain alignment (coding ability ≈ self-modification ability). By letting the improvement procedure evolve, DGM-H removes that domain-specific assumption and can in principle self-accelerate on any computable task. Across coding, paper review, robotics reward design, and Olympiad-level math-solution grading, DGM-H improves over time and beats both non-self-improving baselines and prior systems like DGM; meta-level improvements (e.g., persistent memory, performance tracking) transfer across domains and accumulate across runs. Experiments used sandboxing and human oversight; the paper discusses safety implications.
 
 ## Key points
 

@@ -20,7 +20,7 @@ importance: high
 
 # Methods to Speed Up Prompt Processing (prefill / `pp`)
 
-Prefill and decode have **opposite bottlenecks**, so most "make the LLM faster" advice is decode advice and does nothing here. Measured per-layer arithmetic intensity on Llama-2-7B ([[llm-inference-roofline-yuan-2024]]):
+Prefill and decode have **opposite bottlenecks**, so most "make the LLM faster" advice is decode advice and does nothing here. Measured per-layer [[arithmetic-intensity|arithmetic intensity]] on Llama-2-7B ([[llm-inference-roofline-yuan-2024]]):
 
 | Phase | Arithmetic intensity | Bound |
 |---|---|---|
@@ -55,7 +55,7 @@ End to end with vLLM: **median TTFT −16% to −34%, P99 −23%** under load.
 >
 > One caveat on the headline: the 10%→64% band corresponds to hit rates approaching **0.99**, not to the separately-reported 94.1% fleet aggregate — three different measurements the summary literature tends to conflate.
 
-Useful corollary for the cache-hygiene rule above: token state costs **~16 bytes/token** against gigabytes for KV, and **55% of Claude Code / 42% of Codex inter-turn gaps exceed the 5-minute cache TTL** — so token state can profitably outlive KV state.
+Useful corollary for the cache-hygiene rule above: token state costs **~16 bytes/token** against gigabytes for KV, and **55% of [[claude-code|Claude Code]] / 42% of Codex inter-turn gaps exceed the 5-minute cache TTL** — so token state can profitably outlive KV state.
 
 ## Tier 2 — Shrink it
 
@@ -82,7 +82,7 @@ The compressor in Tier 2 is a separate model reading text. **Sparse prefill** us
 
 The numbers that matter: [[speculative-prefill-liu-2025|SpecPrefill]] at 10% keep gives **7.66× TTFT on a 405B target** with the draft costing 2.96% of its FLOPs, retaining 98.5% of LongBench — but RULER *aggregation* collapses 99.7 → 77.9 and summarization loses ~16%. [[probe-and-skip-self-predictive-token-skipping-wu-2026|SPTS]] reaches 2.46× TTFT at 32K on an 8B with 47.80 vs 47.98 dense. Every token-dropping method shares one hazard: **dropped tokens never get KV**, so a later turn asking about them cannot be answered without re-prefilling.
 
-> [!note] On Apple Silicon
+> [!note] On [[apple-silicon|Apple Silicon]]
 > [[omlx-specprefill-github-2026|oMLX]] ships positional SpecPrefill: a Qwen3.5-0.8B draft scoring for a Qwen3.8-27B target at default keep 20% above 8,192 tokens, system prompt always full, 512-token tail always kept. Ceiling ≈ 4× on the conversation portion. **Nothing in the repo measures it** — treat community throughput figures as one machine's report.
 
 ## Tier 3 — Cut the quadratic term
@@ -181,7 +181,7 @@ Eleven sources ingested in one pass; the numbers below are body-verified unless 
 > [!note] 2026 amendments to this list
 > - **Step 3 (FP8/INT8)**: not on M4-generation Macs — no low-precision datapath; on M5 the Neural Accelerators are the win and need no format change.
 > - **Steps 4–5**: on a hybrid linear/full-attention model (Qwen3-Next, Qwen3.6/3.8 hybrids, Gemma-3, Kimi), skip sparse attention entirely and use the token-pruning family — but only from ~16–32K up; below that it is a net loss.
-> - **New step 5b**: on a dense full-attention model at ≥2K prompts, POP's prefill-only layer skipping is training-free and worth ~1.3×, and composes with everything above.
+> - **New step 5b**: on a dense full-attention model at ≥2K prompts, POP's prefill-only [[layer-skipping|layer skipping]] is training-free and worth ~1.3×, and composes with everything above.
 > - **Step 5, speculative prefill**: only when the draft is cheap relative to the target's *active* parameters. A dense 4B draft against a 3B-active MoE is measured at 0.75–1.06× — a loss or a wash at every length.
 > - **Step 1, prefix caching**: it is also the thing that will corrupt your prefill benchmarks if any two prompts share a prefix. Put the nonce first and assert `cached_tokens == 0`.
 

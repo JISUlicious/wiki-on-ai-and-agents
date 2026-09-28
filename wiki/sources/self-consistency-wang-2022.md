@@ -60,7 +60,7 @@ Crucially, self-consistency doesn't require any model changes, fine-tuning, or a
 - **Marginalize** by majority-voting the final answers.
 - **Self-consistent**: the answer is the one that most paths agree on, regardless of which intermediate steps got there.
 - **Plug-in compatible**: wraps any CoT prompt; no model changes needed.
-- **Test-time compute trade-off**: roughly N× the inference cost of greedy CoT, with substantial accuracy gains for hard reasoning tasks.
+- **[[test-time-compute|Test-time compute]] trade-off**: roughly N× the inference cost of greedy CoT, with substantial accuracy gains for hard reasoning tasks.
 - **Stronger at scale**: gains grow with both N (samples) and model size. On GSM8K, PaLM 540B + self-consistency exceeds the model's previously-reported few-shot greedy CoT score by ~18 points.
 
 ## Entities Mentioned

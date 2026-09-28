@@ -12,7 +12,7 @@ importance: medium
 
 # AutoGen
 
-AutoGen is the open-source multi-agent LLM framework introduced by [[autogen-wu-2023|Wu et al. (2023)]] at Microsoft Research. It treats LLM applications as **conversations between customizable agents** — where each agent can be powered by an LLM, a human, or a tool (or any combination) — and provides the message-routing, turn-taking, and termination infrastructure to make those conversations programmable.
+AutoGen is the open-source multi-agent LLM framework introduced by [[autogen-wu-2023|Wu et al. (2023)]] at [[microsoft-research|Microsoft Research]]. It treats LLM applications as **conversations between customizable agents** — where each agent can be powered by an LLM, a human, or a tool (or any combination) — and provides the message-routing, turn-taking, and termination infrastructure to make those conversations programmable.
 
 ## Core abstractions
 

@@ -21,7 +21,7 @@ Frequently cited as a baseline in 2025 agent-memory papers — comparison rows f
 ## Notable work
 
 - Graphiti — temporal knowledge-graph memory engine (open source).
-- Zep Cloud — hosted long-term memory API for agents.
+- Zep Cloud — hosted [[long-term-memory|long-term memory]] API for agents.
 
 ## References
 

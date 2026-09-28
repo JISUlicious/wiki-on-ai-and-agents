@@ -34,7 +34,7 @@ The central finding: performance does **not** scale monotonically with agent cou
 - Performance is non-monotonic in agent count: diminishing returns, then degradation.
 - Driven by a synergy-vs-coordination-overhead trade-off; optimal agent count is task-dependent.
 - Degradation attributed to coordination overhead (fragmentation, compounding hallucinations, cascading errors), not just long-context failure.
-- Practical message: design the interaction structure rather than naively adding agents; authors at Fudan University.
+- Practical message: design the interaction structure rather than naively adding agents; authors at [[fudan-university|Fudan University]].
 
 ## Concepts & entities
 

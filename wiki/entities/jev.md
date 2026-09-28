@@ -20,7 +20,7 @@ tags:
 
 - **Interface**: program state plus schema-defined questions in one request; all questions answered in a single parallel pass. `POST /v1/systemone`, currently `jev-1.13.0`.
 - **Limits**: 64k tokens per request, 32k for the state plus the longest question; text input only.
-- **Training**: RLCD, Reinforcement Learning for Calibrated Decisions. No details published.
+- **Training**: RLCD, [[reinforcement-learning|Reinforcement Learning]] for Calibrated Decisions. No details published.
 - **Reported performance**: 70–500 ms per call and 67.8% accuracy on a four-workflow benchmark against 67.9% for GPT-5.6 Terra and 74.1% for Sol. All vendor-reported; see the source page for the caveats, which are substantial.
 
 **Open reimplementations**: within four days of the announcement, [[nimble|Bespoke-Nimble-9B]] (a fine-tune) and [[openjev|OpenJev]] (reading [[diffusiongemma|DiffusionGemma]] untrained) reproduced the interface, the latter wire-compatible enough that TypeSafe's own SDK runs against it unchanged. Measured agreement landed within ~3 points of Jev on Jev's own public cases. See [[logit-scoring]].

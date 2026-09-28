@@ -9,7 +9,6 @@ status: draft
 importance: high
 tags:
   - 2023
-  - benchmark
 ---
 
 **SWE-bench** is the foundational coding-agent benchmark introduced by Jimenez et al. (2023). It contains 2,294 real GitHub issues drawn from 12 popular Python repositories, paired with the corresponding fix commits and passing unit tests, so an agent's patch can be graded by executing the test suite.

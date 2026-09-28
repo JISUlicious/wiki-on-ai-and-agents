@@ -46,7 +46,7 @@ The [[transformer|Transformer]] eliminated recurrence and convolution, replacing
 [[scaling-laws|Power-law scaling]] of loss with parameters, data, and compute (Kaplan 2020) made capability planning a budget problem. [[gpt-3|GPT-3 (175B)]] confirmed [[in-context-learning]] emerged at scale. [[chinchilla-hoffmann-2022|Chinchilla (2022)]] corrected the recipe — scale params and tokens equally — reshaping every post-2022 training run.
 
 ### Track 3 — Pre-training paradigms
-[[pre-training]] + [[fine-tuning]] (GPT-1, BERT) → unified text-to-text framing ([[t5]]) → instruction tuning ([[flan-wei-2021|FLAN]]) → SFT-on-instructions ([[instructgpt-ouyang-2022|InstructGPT]]). The shift: one base model, many tasks via natural-language interface.
+[[pre-training]] + [[fine-tuning]] (GPT-1, BERT) → unified text-to-text framing ([[t5]]) → [[instruction-tuning|instruction tuning]] ([[flan-wei-2021|FLAN]]) → SFT-on-instructions ([[instructgpt-ouyang-2022|InstructGPT]]). The shift: one base model, many tasks via natural-language interface.
 
 ### Track 4 — Alignment / RLHF
 [[rlhf-christiano-2017|Christiano (2017)]] established the preference-learning recipe (preferences → reward model → PPO). [[instructgpt-ouyang-2022|InstructGPT (2022)]] applied it to LLMs; ChatGPT shipped the result. [[constitutional-ai-bai-2022|Constitutional AI]] generalized to [[rlaif|AI-feedback]] preferences. [[dpo-rafailov-2023|DPO]] collapsed the pipeline into a single supervised loss.
@@ -68,13 +68,13 @@ The [[transformer|Transformer]] eliminated recurrence and convolution, replacing
 This track is the *internal* + *external* shaping of model behavior:
 
 - **External ([[guardrailing]])**: [[rlhf]] post-training, [[constitutional-ai|CAI]], [[red-teaming-ganguli-2022|red-teaming]], [[prompt-injection]] defenses, sandboxing.
-- **Internal ([[steering]])**: intervene in activations at inference time. [[activation-engineering-turner-2023|ActAdd]] (Turner 2023) → [[contrastive-activation-addition-rimsky-2023|CAA]] (Rimsky) → [[representation-engineering-zou-2023|RepE]] (Zou) → [[sparse-autoencoders-cunningham-2023|SAEs]] (Cunningham) → [[inference-time-intervention-li-2023|ITI]] (Li) — read concepts as linear directions, write to them as steering vectors. The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] applies the toolkit to Claude Sonnet 4.5 with causal effects on real misalignment behaviors (blackmail, reward-hacking, sycophancy).
+- **Internal ([[steering]])**: intervene in activations at inference time. [[activation-engineering-turner-2023|ActAdd]] (Turner 2023) → [[contrastive-activation-addition-rimsky-2023|CAA]] (Rimsky) → [[representation-engineering-zou-2023|RepE]] (Zou) → [[sparse-autoencoders-cunningham-2023|SAEs]] (Cunningham) → [[inference-time-intervention-li-2023|ITI]] (Li) — read concepts as linear directions, write to them as [[steering-vectors|steering vectors]]. The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] applies the toolkit to Claude Sonnet 4.5 with causal effects on real misalignment behaviors (blackmail, reward-hacking, sycophancy).
 
 The two surfaces are complementary: guardrails at the boundaries, steering at the substrate. Anthropic's [[claude|Claude]] uses both — [[constitutional-ai|CAI]] training (guardrail) + [[functional-emotions|emotion-vector]] interventions (steering).
 
 ## Convergence: how the tracks compose in 2026 agents
 
-Every 2026 agent (Claude Code, opencode, pi-mono, Hermes Agent, OpenClaw) picks up:
+Every 2026 agent (Claude Code, opencode, pi-mono, [[hermes-agent|Hermes Agent]], OpenClaw) picks up:
 
 1. A [[transformer-architecture|Transformer]]-substrate model (Track 1) trained at compute-optimal scale (Track 2) under a [[pre-training|pre-training]] objective (Track 3).
 2. [[rlhf|RLHF]] / [[constitutional-ai|CAI]] post-training for usefulness + safety (Track 4 + Track 9-external).

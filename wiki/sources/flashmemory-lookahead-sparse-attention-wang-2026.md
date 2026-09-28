@@ -27,7 +27,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-07–06-14).
 
 ## Summary
 
-A technical report (branded around the DeepSeek-V4 architecture) tackling the KV-cache memory bottleneck that dominates ultra-long-context decoding. Conventional LLMs keep the full KV cache resident during decoding, causing severe GPU-memory pressure at long context. **Lookahead Sparse Attention (LSA)** instead *proactively predicts which context future decoding will need* and retains only the query-critical KV chunks, discarding the rest — a "less is more" paradigm that also acts as an attention denoiser. The prediction is driven by a **Neural Memory Indexer**, trained via a backbone-free, decoupled strategy: the indexer is cast as a standard dual-encoder and trained with off-the-shelf retrieval frameworks without ever loading the massive backbone into GPU memory.
+A technical report (branded around the DeepSeek-V4 architecture) tackling the KV-cache memory bottleneck that dominates ultra-long-context decoding. Conventional LLMs keep the full KV cache resident during decoding, causing severe GPU-memory pressure at long context. **Lookahead [[sparse-attention|Sparse Attention]] (LSA)** instead *proactively predicts which context future decoding will need* and retains only the query-critical KV chunks, discarding the rest — a "less is more" paradigm that also acts as an attention denoiser. The prediction is driven by a **Neural Memory Indexer**, trained via a backbone-free, decoupled strategy: the indexer is cast as a standard dual-encoder and trained with off-the-shelf retrieval frameworks without ever loading the massive backbone into GPU memory.
 
 ## Key points
 

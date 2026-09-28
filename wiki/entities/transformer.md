@@ -44,8 +44,8 @@ Base config (h=8 heads, dmodel=512, dff=2048, dropout=0.1) has ~65M parameters. 
 
 The Transformer has no predecessor as a *family* (it inherited from RNN-based encoder-decoder + attention work like Bahdanau et al. 2014, but is the first attention-only model). Its successors include essentially all modern language and multimodal models:
 
-- [[bert]] — encoder-only Transformer for masked language modeling.
-- [[gpt-1]], [[gpt-2]], [[gpt-3]], [[gpt-4]] — decoder-only Transformer family for autoregressive language modeling.
+- [[bert]] — encoder-only Transformer for [[masked-language-modeling|masked language modeling]].
+- [[gpt-1]], [[gpt-2]], [[gpt-3]], [[gpt-4]] — [[decoder-only-transformer|decoder-only Transformer]] family for [[autoregressive-language-modeling|autoregressive language modeling]].
 - [[transformer-decoder]] — Liu et al. 2018's decoder-only variant for Wikipedia summarization, a direct architectural ancestor of GPT-1.
 - [[vit]] — Transformer applied to image patches.
 - [[retro]] — Transformer + retrieval at scale.

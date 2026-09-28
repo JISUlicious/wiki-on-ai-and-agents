@@ -9,7 +9,7 @@ arxiv_id: null
 venue: OpenAI preprint
 authors:
   - "[[alec-radford]]"
-  - Karthik Narasimhan
+  - [[karthik-narasimhan]]
   - Tim Salimans
   - "[[ilya-sutskever]]"
 year: 2018
@@ -23,7 +23,7 @@ importance: high
 
 **Source**: `sources/gpt-1-radford-2018.md` (extracted from `GPT_1_OpenAI_2018.pdf.pdf`)
 **Venue**: [[openai|OpenAI]] technical report, 2018 (no arXiv version; cdn.openai.com)
-**Authors**: [[alec-radford]], Karthik Narasimhan, Tim Salimans, [[ilya-sutskever]] ([[openai|OpenAI]])
+**Authors**: [[alec-radford]], [[karthik-narasimhan|Karthik Narasimhan]], Tim Salimans, [[ilya-sutskever]] ([[openai|OpenAI]])
 
 ## Summary
 

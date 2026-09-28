@@ -13,7 +13,7 @@ authors:
   - Wonjun Kang
   - Minjae Lee
   - Hyung Il Koo
-  - Kangwook Lee
+  - [[kangwook-lee]]
 tags:
   - 2025
   - paper
@@ -30,7 +30,7 @@ importance: high
 
 ## Summary
 
-Every approximate-inference method — KV-cache dropping (SnapKV, H2O, PyramidKV), sparse prefill (MInference, FlexPrefill), prompt compression (LLMLingua-2, CPC, R2C) — needs an estimate of which input tokens future outputs will attend to. Most estimate it from the *input's own* attention, because the outputs do not exist yet. The authors' framing, **Draft-based Approximate Inference**, is that a cheap draft model can manufacture an *approximate future*: generate a look-ahead, and use attention toward (or from) those draft tokens as the importance signal. This unifies [[speculative-prefill-liu-2025]] (draft attention → prompt compression) and Lookahead Q-Cache/LAQ++ (draft queries → KV dropping), and two theorems bound the importance-score error by the draft's output error (Theorem 1 for KV importance; Theorem 2, via a Restricted-Isometry-Property argument borrowed from compressed sensing, for attention approximation).
+Every approximate-inference method — KV-cache dropping (SnapKV, H2O, PyramidKV), [[sparse-prefill|sparse prefill]] (MInference, FlexPrefill), prompt compression (LLMLingua-2, CPC, R2C) — needs an estimate of which input tokens future outputs will attend to. Most estimate it from the *input's own* attention, because the outputs do not exist yet. The authors' framing, **Draft-based Approximate Inference**, is that a cheap draft model can manufacture an *approximate future*: generate a look-ahead, and use attention toward (or from) those draft tokens as the importance signal. This unifies [[speculative-prefill-liu-2025]] (draft attention → prompt compression) and Lookahead Q-Cache/LAQ++ (draft queries → KV dropping), and two theorems bound the importance-score error by the draft's output error (Theorem 1 for KV importance; Theorem 2, via a Restricted-Isometry-Property argument borrowed from compressed sensing, for attention approximation).
 
 Three concrete methods: **SpecKV** — the target prefills the full prompt *plus* the draft's look-ahead tokens, scores each KV pair per head by the max attention it receives from a 32-token window of late prompt queries and the draft-token queries, uses those scores both for Vertical-Slash sparse prefill and to keep only C_max = 256 KV pairs per head after prefill. **SpecPC** — an extension of SpecPrefill that reads the draft's attention directly (skipping the first 8 layers, weighting a 64-query window toward the end, max over layers/heads/queries, avg- then max-pooling to keep neighbourhoods) and passes the top-C_max tokens to the target **with contiguous re-indexed position IDs**. **SpecKV-PC** — cascade: SpecPC to 2,048 tokens, then SpecKV to 256 KV entries.
 

@@ -34,8 +34,8 @@ Tree of Thoughts generalizes [[chain-of-thought-prompting|chain-of-thought promp
 
 ToT makes the implicit "search" inside an LLM's forward pass **explicit, controllable, and inspectable**. It's the conceptual bridge from linear reasoning to agent-style planning:
 
-- **LATS** (LLM Agent Tree Search, Zhou et al. 2023) combines ToT with [[react|ReAct]] for tool-using agents.
-- **Reasoning with Language Model is Planning with World Model** (Hao et al. 2023): related; LM-as-world-model + MCTS.
+- **LATS** ([[llm-agent|LLM Agent]] Tree Search, Zhou et al. 2023) combines ToT with [[react|ReAct]] for tool-using agents.
+- **Reasoning with Language Model is Planning with [[world-model|World Model]]** (Hao et al. 2023): related; LM-as-world-model + MCTS.
 - **Reasoning models** (OpenAI o1, Sep 2024; Anthropic reasoning Claude; DeepSeek R1, 2025): internalize tree-of-thoughts-style deliberation via RL training on long-form reasoning traces. The user sees a single answer; the model has done extensive internal search.
 
 ## Cost

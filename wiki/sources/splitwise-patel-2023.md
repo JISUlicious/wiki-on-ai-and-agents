@@ -22,7 +22,7 @@ importance: high
 
 # Splitwise: Efficient generative LLM inference using phase splitting
 
-**Pratyush Patel, Esha Choukse, Chaojie Zhang, Aashaka Shah, Inigo Goiri, Saeed Maleki, Ricardo Bianchini** (University of Washington; Microsoft) — [arXiv:2311.18677](https://arxiv.org/abs/2311.18677). No venue in the arXiv comments ("12 pages, 19 figures"; v1 Nov 2023, v2 May 2024).
+**Pratyush Patel, Esha Choukse, Chaojie Zhang, Aashaka Shah, Inigo Goiri, Saeed Maleki, Ricardo Bianchini** ([[university-of-washington|University of Washington]]; Microsoft) — [arXiv:2311.18677](https://arxiv.org/abs/2311.18677). No venue in the arXiv comments ("12 pages, 19 figures"; v1 Nov 2023, v2 May 2024).
 
 ## Summary
 

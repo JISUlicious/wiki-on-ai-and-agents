@@ -44,7 +44,7 @@ Latent reasoning legitimizes reasoning in continuous space as a first-class alte
 Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[bayesian-teaching-probabilistic-reasoning-qiu-2025]] — Bayesian Teaching Enables Probabilistic Reasoning in Large Language
-- [[cola-continuous-latent-diffusion-language-model-guo-2026]] — Cola Continuous Latent Diffusion Language Model
+- [[cola-continuous-latent-diffusion-language-model-guo-2026]] — Cola Continuous Latent [[diffusion-language-model|Diffusion Language Model]]
 - [[elf-embedded-language-flows-hu-2026]] — ELF Embedded Language Flows
 - [[generative-recursive-reasoning-baek-2026]] — Generative Recursive Reasoning
 - [[latent-reasoning-with-normalizing-flows-tu-2026]] — Latent Reasoning with Normalizing Flows (NF CoT)

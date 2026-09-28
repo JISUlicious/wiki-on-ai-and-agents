@@ -17,14 +17,14 @@ tags:
 
 # pi (pi-mono coding agent)
 
-pi (`@earendil-works/pi-coding-agent`, binary `pi`) is a hand-crafted minimal terminal coding agent by **Mario Zechner ("badlogic")**, distributed from the `earendil-works/pi-mono` monorepo. Among the documented 2026 agents, pi is the **minimalist** — it ships only what's strictly needed and pushes everything else into extensions.
+pi (`@earendil-works/pi-coding-agent`, binary `pi`) is a hand-crafted minimal terminal coding agent by **[[mario-zechner|Mario Zechner]] ("badlogic")**, distributed from the `earendil-works/pi-mono` monorepo. Among the documented 2026 agents, pi is the **minimalist** — it ships only what's strictly needed and pushes everything else into extensions.
 
 ## What pi ships
 
 **Core tools (4)**: `read`, `write`, `edit`, `bash`
 **Read-only tools (3)**: `grep`, `find`, `ls`
 
-Total: **7 built-in tools**. Compare to Claude Code's ~40.
+Total: **7 built-in tools**. Compare to [[claude-code|Claude Code]]'s ~40.
 
 ## What pi explicitly refuses (in core)
 

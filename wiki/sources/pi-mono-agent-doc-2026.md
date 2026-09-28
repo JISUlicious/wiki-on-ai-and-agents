@@ -38,7 +38,7 @@ And explicitly **refuses** to ship:
 - Permission popups
 - MCP
 
-Everything else (including the refused features) is expected to be built as a TypeScript Extension or installed as a Pi Package. pi-skills, a sibling repo, interoperates with Claude Code, Codex CLI, Amp, and Droid by reusing the [[skill-md-format|Agent Skills `SKILL.md` format]].
+Everything else (including the refused features) is expected to be built as a TypeScript Extension or installed as a Pi Package. pi-skills, a sibling repo, interoperates with [[claude-code|Claude Code]], Codex CLI, Amp, and Droid by reusing the [[skill-md-format|Agent Skills `SKILL.md` format]].
 
 The implicit thesis: most "agent features" are agent-side wrappers that should be configurable per user, not baked into the core. The core should be small, predictable, and a stable substrate.
 

@@ -11,7 +11,7 @@ authors:
   - Changsheng Zhao
   - Yuandong Tian
   - Vikas Chandra
-  - Jurgen Schmidhuber
+  - [[jurgen-schmidhuber]]
 introduces:
   - [[agent-as-a-judge]]
 tags:

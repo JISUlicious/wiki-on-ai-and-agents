@@ -122,7 +122,7 @@ Read this table carefully: the "full prompt" row is *not* a clean dense baseline
 - [[speculative-prefill-liu-2025]] — the original SpecPrefill; identical scoring, different positional handling and draft-family assumption.
 - [[speculative-decoding]] — decode-phase draft/verify; not what this is.
 - [[methods-to-speed-up-prompt-processing]] — where cross-family speculative prefill slots into the wiki's prefill-speedup synthesis.
-- [[prompt-compression]] — this variant is literally text-level compression (spans + delimiters + re-tokenize), closer in interface to [[llmlingua-jiang-2023]] than Liu et al.'s positional sparse prefill.
+- [[prompt-compression]] — this variant is literally text-level compression (spans + delimiters + re-tokenize), closer in interface to [[llmlingua-jiang-2023]] than Liu et al.'s positional [[sparse-prefill|sparse prefill]].
 - [[kv-cache]] / [[paged-attention]] — 4K-token KV blocks on the RDU dictate the 8K/16K/24K/32K compressed lengths; SnapStream cache compression is the baseline's handicap.
 - [[positional-encoding]] — contiguous re-indexing vs. original-ID restoration is the open question between the two papers.
 - [[long-context-llm]] — LongBench v1/v2, RULER, InfiniteBench Code Debug; the context-extension reading (32K target consuming 128K inputs).

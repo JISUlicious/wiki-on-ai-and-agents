@@ -14,7 +14,7 @@ tags:
 
 # Apple
 
-Hardware and platform company whose relevance to this wiki is the **Apple Silicon** inference platform rather than frontier models. Two properties of the M-series chips shape every local-inference page here: **unified memory** shared by CPU and GPU with no host↔device copy, and memory bandwidth that ranges from ~120 GB/s on a base M4 to ~800 GB/s on an M2 Ultra — which makes the decode phase bandwidth-bound in a way the [[arithmetic-intensity]] and [[quantization-performance]] pages measure directly.
+Hardware and platform company whose relevance to this wiki is the **[[apple-silicon|Apple Silicon]]** inference platform rather than frontier models. Two properties of the M-series chips shape every local-inference page here: **unified memory** shared by CPU and GPU with no host↔device copy, and memory bandwidth that ranges from ~120 GB/s on a base M4 to ~800 GB/s on an M2 Ultra — which makes the decode phase bandwidth-bound in a way the [[arithmetic-intensity]] and [[quantization-performance]] pages measure directly.
 
 ## Contributions this wiki tracks
 

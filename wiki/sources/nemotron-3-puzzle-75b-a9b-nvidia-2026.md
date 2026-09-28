@@ -22,7 +22,7 @@ importance: medium
 
 # Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs
 
-**Akhiad Bercovich et al.** (NVIDIA; ~70 authors, last author Ran El-Yaniv) — [arXiv:2607.04371](https://arxiv.org/abs/2607.04371), cs.AI, v2 dated 7 Jul 2026. Checkpoints released on Hugging Face in BF16, NVFP4, and FP8.
+**Akhiad Bercovich et al.** (NVIDIA; ~70 authors, last author Ran El-Yaniv) — [arXiv:2607.04371](https://arxiv.org/abs/2607.04371), cs.AI, v2 dated 7 Jul 2026. Checkpoints released on [[huggingface|Hugging Face]] in BF16, NVFP4, and FP8.
 
 ## Summary
 

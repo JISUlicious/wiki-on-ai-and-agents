@@ -11,9 +11,9 @@ authors:
   - Angeliki Giannou
   - Shashank Rajput
   - Jy-yong Sohn
-  - Kangwook Lee
+  - [[kangwook-lee]]
   - Jason D. Lee
-  - Dimitris Papailiopoulos
+  - [[dimitris-papailiopoulos]]
 first_author: Angeliki Giannou
 year: 2023
 introduces:
@@ -58,7 +58,7 @@ The authors are careful to note the gap to practice: these constructions are *ha
   - **In-context learning via SGD** — forward + backward pass + parameter update on an implicit fully-connected net, executed entirely by the loop.
 - **Universality by simulation**: because SUBLEQ is a universal OISC and the looped transformer can emulate it, the looped transformer is itself a universal computer (modulo precision).
 - **Distinction from prior expressivity results**:
-  - Pérez et al. (Turing completeness): requires high/infinite precision and recursion around attention; non-constructive for specific algorithms.
+  - Pérez et al. ([[turing-completeness|Turing completeness]]): requires high/infinite precision and recursion around attention; non-constructive for specific algorithms.
   - RASP (Weiss et al. 2021): transformer size scales with program size.
   - Akyürek / von Oswald (transformers-as-optimizers for linear regression ICL): depth scales with iteration count; restricted loss/model classes.
   - This work: **constant depth** and *constructive* programs for general algorithms.
@@ -68,7 +68,7 @@ The authors are careful to note the gap to practice: these constructions are *ha
 
 - [[princeton-university]] — Jason D. Lee's institution.
 - [[university-of-washington]] — note: the paper's "w" superscript is UW-**Madison**, not UW-Seattle. (If a `uw-madison` entity is created later, retarget this link.)
-- Authors not yet covered as entity pages: Angeliki Giannou, Shashank Rajput, Jy-yong Sohn, Kangwook Lee, Dimitris Papailiopoulos. Create as needed if they recur.
+- Authors not yet covered as entity pages: Angeliki Giannou, Shashank Rajput, Jy-yong Sohn. Create as needed if they recur. [[kangwook-lee]] and [[dimitris-papailiopoulos]] have pages.
 
 ## Concepts
 

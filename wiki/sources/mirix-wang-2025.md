@@ -55,7 +55,7 @@ The paper also proposes an **Active Retrieval** mechanism: rather than waiting f
   - SigLIP@50 RAG: 44.10%, 15.07 GB
   - **MIRIX: 59.50%, 15.89 MB** (smallest storage by 3 orders of magnitude vs SigLIP).
 - **LOCOMO results** (LLM-as-a-Judge, gpt-4.1-mini backbone): MIRIX 85.38% overall — Single-Hop 85.11, Multi-Hop **83.70 (+24 points over next-best)**, Open-Domain 65.62, Temporal 88.39. Full-Context upper bound: 87.52%.
-- **Storage backend**: SQLite for local persistence. Backbone models: `gemini-2.5-flash-preview-04-17` for screenshots, `gpt-4.1-mini` for LOCOMO (chosen for stronger function-calling than `gpt-4o-mini`, per Berkeley Function Calling Benchmark).
+- **Storage backend**: SQLite for local persistence. Backbone models: `gemini-2.5-flash-preview-04-17` for screenshots, `gpt-4.1-mini` for LOCOMO (chosen for stronger function-calling than `gpt-4o-mini`, per Berkeley [[function-calling|Function Calling]] Benchmark).
 - **Motivation against flat memory**: paper criticizes [[mem0]], [[memgpt]], LangMem, [[zep]], and Cognee for lacking compositional memory structure, poor multi-modal support, and no abstraction layer above raw inputs.
 - **Forward-looking framing**: paper proposes an "Agent Memory Marketplace" vision with privacy-preserving, decentralized memory sharing — speculative, but signals product/business ambitions of the MIRIX AI startup.
 

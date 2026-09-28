@@ -34,7 +34,7 @@ The central reframing is that a reasoning-data item is not just a prompt–respo
 - Reframes a reasoning-data item as packaging: problem/state + model behavior + judging feedback + attribution metadata.
 - Debunks intuitive-but-misleading assumptions (long CoT ≠ faithful; harder data is base/verifier-relative; bigger ≠ better coverage).
 - Notes agentic pitfall: over-cleaned success trajectories remove the failures/retries needed for credit assignment.
-- Ships a companion repo (Awesome-LLM-Reasoning-Data); authors at Peking University, Tsinghua, and Qiyuan Tech.
+- Ships a companion repo (Awesome-LLM-Reasoning-Data); authors at [[peking-university|Peking University]], Tsinghua, and Qiyuan Tech.
 
 ## Concepts & entities
 

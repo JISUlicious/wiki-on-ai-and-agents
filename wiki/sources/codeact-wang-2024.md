@@ -8,13 +8,13 @@ sources:
 arxiv_id: "2402.01030"
 venue: ICML 2024
 authors:
-  - Xingyao Wang
+  - [[xingyao-wang]]
   - Yangyi Chen
   - Lifan Yuan
   - Yizhe Zhang
   - Yunzhu Li
-  - Hao Peng
-  - Heng Ji
+  - [[hao-peng]]
+  - [[heng-ji]]
 first_author: Xingyao Wang
 year: 2024
 introduces:

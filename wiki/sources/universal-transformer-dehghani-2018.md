@@ -10,7 +10,7 @@ venue: ICLR 2019
 authors:
   - Mostafa Dehghani
   - Stephan Gouws
-  - Oriol Vinyals
+  - [[oriol-vinyals]]
   - Jakob Uszkoreit
   - Łukasz Kaiser
 first_author: Mostafa Dehghani
@@ -42,7 +42,7 @@ Theoretically, the authors argue the UT is **Turing-complete** under mild assump
 ## Key Points
 
 - **Recursive transformer block.** A single self-attention + transition block is applied repeatedly; depth = number of recurrent steps `T`. Equivalent to a multi-layer Transformer with all layers' weights tied.
-- **Two-dimensional positional encoding.** Sinusoidal embeddings indexed by both position `i` and time-step `t` are summed into the state at every step, so the model knows where it is in space *and* depth.
+- **Two-dimensional [[positional-encoding|positional encoding]].** Sinusoidal embeddings indexed by both position `i` and time-step `t` are summed into the state at every step, so the model knows where it is in space *and* depth.
 - **Per-position ACT halting.** Each symbol's recurrent column maintains its own halting probability; once a position halts, its state is copied forward until all positions halt or `T_max` is reached. Dynamic halting acts as a regularizer that lets the model spend more compute on "harder" symbols.
 - **bAbI.** UT with dynamic halting solves 20/20 tasks in the 10K joint setting (avg error 0.29%) vs. the vanilla Transformer's 8/20 (22.1% avg error). The model learns to spend more ponder steps on questions requiring more supporting facts (~3.8 steps for 3-fact tasks vs. ~2.3 for 1-fact tasks).
 - **LAMBADA.** UT with dynamic halting achieves SOTA perplexity 142 and accuracy 0.19 on test; the vanilla Transformer fails catastrophically (perplexity 7321).

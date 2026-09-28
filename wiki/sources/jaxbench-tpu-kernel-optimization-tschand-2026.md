@@ -22,7 +22,7 @@ importance: medium
 
 # JAXBench: Benchmarking Autonomous TPU Kernel Optimization
 
-**Arya Tschand, Charles Hong, Julian Walker, Nina Cai et al.** (Harvard University, UC Berkeley, Google DeepMind, Google) — [arXiv:2607.20466](https://arxiv.org/abs/2607.20466).
+**Arya Tschand, Charles Hong, Julian Walker, Nina Cai et al.** (Harvard University, [[uc-berkeley|UC Berkeley]], Google DeepMind, Google) — [arXiv:2607.20466](https://arxiv.org/abs/2607.20466).
 
 ## Summary
 
@@ -73,7 +73,7 @@ Autocomp reaches roughly **77% of the hand-tuned geomean**, exceeding Tokamax on
 
 ## Concepts & entities
 
-- [[agent-evaluation]] — JAXBench is an agent benchmark: it evaluates LLM-driven optimization *methods* (best-of-N, iterative loops, beam search), not just single completions.
+- [[agent-evaluation]] — JAXBench is an [[agent-benchmark|agent benchmark]]: it evaluates LLM-driven optimization *methods* (best-of-N, iterative loops, beam search), not just single completions.
 - [[agentic-harness-engineering]] — the context-vs-search-structure separation is a harness-design result: identical model, identical task, method structure determines outcome.
 - [[flash-attention]] — Flash Attention is one of the 8 hand-tuned reference kernels (3.91× hand-tuned vs. 2.67× for the best agent).
 - [[humaneval]] — JAXBench's correctness-plus-speedup protocol descends from the pass@k tradition, extended with `fast1@N` for performance breadth.

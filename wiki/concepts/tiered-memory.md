@@ -19,7 +19,7 @@ The pattern is explicit in [[memgpt]]'s [[virtual-context]] design and implicit 
 
 ## Where it appears
 
-- [[memgpt]] — first formalization in an LLM agent setting.
+- [[memgpt]] — first formalization in an [[llm-agent|LLM agent]] setting.
 - [[virtual-context]] — the OS-flavored framing of the same tier structure.
 - [[memory-management]] — tiering is one axis of the broader memory-management design space (alongside [[ebbinghaus-forgetting|forgetting policy]], consolidation, indexing).
 

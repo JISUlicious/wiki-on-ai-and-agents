@@ -12,11 +12,11 @@ tags:
   - 2025
 ---
 
-**Agentic RL** is the umbrella term for training LLM-based agents end-to-end with reinforcement learning over **multi-step reasoning and tool-use trajectories**, optimizing for the final outcome of a long-horizon task rather than for single-turn preferences. Where classic [[rlhf]] elicits chat behaviors by fitting a reward model to human preference pairs over short completions, and where supervised tool-use fine-tuning imitates curated demonstrations, agentic RL lets the agent generate its own rollouts in an environment (a search engine, a shell, a browser, a code sandbox, a GUI), assigns reward only at the trace level (correctness, test-pass, task-success), and propagates that signal through the entire interleaved think-act-observe sequence. The 2025 inflection was [[deepseek-r1]] demonstrating that this works on pure parametric reasoning with rule-based outcome rewards; [[search-r1]] then established the canonical recipe for tool-use, and a wave of follow-ups extended it to coding, computer use, memory, and research agents.
+**Agentic RL** is the umbrella term for training LLM-based agents end-to-end with [[reinforcement-learning|reinforcement learning]] over **multi-step reasoning and tool-use trajectories**, optimizing for the final outcome of a long-horizon task rather than for single-turn preferences. Where classic [[rlhf]] elicits chat behaviors by fitting a reward model to human preference pairs over short completions, and where supervised tool-use fine-tuning imitates curated demonstrations, agentic RL lets the agent generate its own rollouts in an environment (a search engine, a shell, a browser, a code sandbox, a GUI), assigns reward only at the trace level (correctness, test-pass, task-success), and propagates that signal through the entire interleaved think-act-observe sequence. The 2025 inflection was [[deepseek-r1]] demonstrating that this works on pure parametric reasoning with rule-based outcome rewards; [[search-r1]] then established the canonical recipe for tool-use, and a wave of follow-ups extended it to coding, computer use, memory, and research agents.
 
 ## Core mechanism
 
-- **Outcome-based reward**: terminal scalar from the environment (exact-match answer, unit-test pass, benchmark resolved-rate) replaces learned preference models; this is the load-bearing simplification inherited from [[deepseek-r1]]-Zero and is explicitly chosen to avoid reward hacking on long traces.
+- **[[outcome-based-reward|Outcome-based reward]]**: terminal scalar from the environment (exact-match answer, unit-test pass, benchmark resolved-rate) replaces learned preference models; this is the load-bearing simplification inherited from [[deepseek-r1]]-Zero and is explicitly chosen to avoid [[reward-hacking|reward hacking]] on long traces.
 - **GRPO over PPO**: [[grpo]] (Group Relative Policy Optimization) drops the value network and computes advantages by normalizing rewards within a group of sampled rollouts, making long-rollout RL tractable at scale. Both [[ppo]] and GRPO remain in use; UI-TARS-2 stabilizes PPO with Decoupled-GAE for very long horizons.
 - **Retrieved/observation token masking**: policy-gradient losses are computed only over LLM-generated tokens, never over tool outputs spliced back into the context — without this masking, gradient flow through retrieved or observed content destabilizes training ([[search-r1]] §3.1).
 - **Environment-in-the-loop rollouts**: the rollout alternates `<think>` generation with action calls (`<search>`, click, edit, shell) until an answer block is emitted or a budget is exhausted; the environment is part of the MDP rather than a differentiable layer.
@@ -35,7 +35,7 @@ Sits adjacent to [[rlhf]] (preference-fitting on short chats) and [[constitution
 - [[deepseek-r1-2025]] — open-weights inflection point; R1-Zero pure-RL recipe.
 - [[search-r1-jin-2025]] — canonical tool-use-RL formulation with retrieved-token masking.
 - [[ui-tars-2-wang-2025]] — multi-turn agentic RL for computer-use at scale.
-- [[memory-r1-yan-2025]], [[mem-alpha-wang-2025]] — agentic RL applied to memory management.
+- [[memory-r1-yan-2025]], [[mem-alpha-wang-2025]] — agentic RL applied to [[memory-management|memory management]].
 
 ## Related 2026 sources
 

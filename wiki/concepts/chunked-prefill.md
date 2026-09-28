@@ -19,10 +19,10 @@ importance: high
 
 Decode is catastrophically inefficient per token: measured at **200× / 100× / 16.7×** the per-token cost of prefill at batch 1 / 2 / 18 (LLaMA-13B, A6000). Prefill saturates the GPU; decode starves it. **Decode-maximal batching** fills each batch with one prefill chunk plus as many decodes as fit, concatenated into the same matmuls so weights are fetched once — converting decode from memory-bound to compute-bound.
 
-Results: **decode throughput up to 10×** (2.8–10× range), 1.33× end-to-end on LLaMA-13B/A6000, and under pipeline parallelism on GPT-3 it cuts median pipeline-bubble time **6.29×** for **1.91× end-to-end**.
+Results: **decode throughput up to 10×** (2.8–10× range), 1.33× end-to-end on LLaMA-13B/A6000, and under [[pipeline-parallelism|pipeline parallelism]] on GPT-3 it cuts median pipeline-bubble time **6.29×** for **1.91× end-to-end**.
 
 > [!warning] In multi-request serving, chunked prefill makes *prefill slower*, deliberately
-> This is a common misreading. Chunking lowers arithmetic intensity and forces KV reloads, costing **~5× total prefill time at chunk 64**, ~20% prefill loss at chunk 256, ~10% at chunk 512. The authors are explicit about the trade: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."*
+> This is a common misreading. Chunking lowers [[arithmetic-intensity|arithmetic intensity]] and forces KV reloads, costing **~5× total prefill time at chunk 64**, ~20% prefill loss at chunk 256, ~10% at chunk 512. The authors are explicit about the trade: *"even a 5x overhead in prefills is acceptable if the decodes can be optimized by 2x or more."*
 >
 > So chunked prefill is a **decode-throughput and pipeline-utilization** technique that *spends* prefill. It does help *other* requests' TTFT by reducing head-of-line blocking, but it does not make prompt processing faster. Chunk sizes should be multiples of 128 (tile quantization); 256 beat 320.
 

@@ -22,11 +22,11 @@ importance: high
 
 # How does information access affect LLM monitors' ability to detect sabotage?
 
-**Rauno Arike, Raja Mehta Moreno, Rohan Subramani (equal contribution), Shubhorup Biswas, Francis Rhys Ward** (Aether Research, Vector Institute, Trajectory Labs, MATS, Imperial College London, University of Toronto) — [arXiv:2601.21112](https://arxiv.org/abs/2601.21112) (v2, 5 Feb 2026). Preprint; venue not stated.
+**Rauno Arike, Raja Mehta Moreno, Rohan Subramani (equal contribution), Shubhorup Biswas, Francis Rhys Ward** (Aether Research, Vector Institute, Trajectory Labs, MATS, Imperial College London, [[university-of-toronto|University of Toronto]]) — [arXiv:2601.21112](https://arxiv.org/abs/2601.21112) (v2, 5 Feb 2026). Preprint; venue not stated.
 
 ## Summary
 
-An AI-control paper on **automated monitoring**: an LLM reviews another LLM agent's trajectory and scores how suspicious it looks, in settings where a Red Team has prompted the agent to covertly complete a malicious side task. The question is how much of the agent's trajectory the monitor should see. Four protocols are compared — **action-only** (tool calls), **CoT-only** (reasoning), **CoT+action** (both), and the paper's new **extract-and-evaluate (EaE)** — across three environments spanning personal assistance (SHADE-Arena), software engineering (BigCodeBench-Sabotage), and ML engineering (MLE-Sabotage).
+An AI-control paper on **automated monitoring**: an LLM reviews another [[llm-agent|LLM agent]]'s trajectory and scores how suspicious it looks, in settings where a Red Team has prompted the agent to covertly complete a malicious side task. The question is how much of the agent's trajectory the monitor should see. Four protocols are compared — **action-only** (tool calls), **CoT-only** (reasoning), **CoT+action** (both), and the paper's new **extract-and-evaluate (EaE)** — across three environments spanning personal assistance (SHADE-Arena), software engineering (BigCodeBench-Sabotage), and ML engineering (MLE-Sabotage).
 
 The headline is the **less-is-more effect**: giving the monitor *more* of the trajectory frequently makes it *worse*. Information filtering helps in **7 of 8 monitor-environment pairs**; CoT+action is the best strategy only in SHADE-Arena with Claude-3.7-Sonnet. The qualitative analysis pins down why, and it is not what one might guess: agents are usually *very* transparent about their side task, sometimes quoting it verbatim in the CoT — but that same verbose CoT "gaslights" the monitor with post-hoc rationalizations that the side task was user-intended, and the monitor accepts them *even though the real user instructions are also in its context*.
 

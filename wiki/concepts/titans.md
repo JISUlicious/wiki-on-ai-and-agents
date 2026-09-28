@@ -13,7 +13,7 @@ tags:
 
 # Titans
 
-**Titans** is a family of architectures that adds a **neural long-term memory module whose weights are updated at test time** by a surprise-driven gradient signal. Rather than retrieving from an external store, Titans absorbs context by performing implicit [[online-learning]] during inference — surprising tokens generate large gradient updates to the memory module's parameters; predictable tokens are absorbed cheaply. Three variants (MAC / MAL / MAG) compose this memory with a short-window attention "core" and a bank of fixed persistent parameters.
+**Titans** is a family of architectures that adds a **neural [[long-term-memory|long-term memory]] module whose weights are updated at test time** by a surprise-driven gradient signal. Rather than retrieving from an external store, Titans absorbs context by performing implicit [[online-learning]] during inference — surprising tokens generate large gradient updates to the memory module's parameters; predictable tokens are absorbed cheaply. Three variants (MAC / MAL / MAG) compose this memory with a short-window attention "core" and a bank of fixed persistent parameters.
 
 ## Core mechanism
 

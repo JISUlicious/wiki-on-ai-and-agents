@@ -13,12 +13,12 @@ tags:
 
 # Jason Wei
 
-AI researcher; first author of "[[chain-of-thought-wei-2022|Chain-of-Thought Prompting]]" (2022) and of "Emergent Abilities of Large Language Models" (2022). At [[google-research|Google Brain]] during this work; later moved to [[openai|OpenAI]] (2023). Prolific writer on LLM capabilities and scaling.
+AI researcher; first author of "[[chain-of-thought-wei-2022|Chain-of-Thought Prompting]]" (2022) and of "[[emergent-abilities|Emergent Abilities]] of Large Language Models" (2022). At [[google-research|Google Brain]] during this work; later moved to [[openai|OpenAI]] (2023). Prolific writer on LLM capabilities and scaling.
 
 ## Affiliations
 
 - [[openai]] (2023–)
-- [[google-research]] (Google Brain, until 2023)
+- [[google-research]] ([[google-brain|Google Brain]], until 2023)
 
 ## References
 

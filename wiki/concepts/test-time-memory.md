@@ -11,7 +11,7 @@ tags:
   - 2025
 ---
 
-Test-time memory refers to memory whose parameters are updated at *inference* time rather than only during training. In a conventional transformer, the model's weights are frozen at deployment and any per-conversation state lives in the KV-cache or in external retrieval stores. Test-time memory instead exposes a small memory module whose weights are mutated during the forward pass — typically driven by a *surprise* signal (a gradient on the prediction loss for the current input). This blurs the traditional train/inference boundary and gives the model a continual-learning substrate. Introduced by [[titans]] (Behrouz, Google 2025) as the "neural long-term memory" branch alongside short-term attention.
+Test-time memory refers to memory whose parameters are updated at *inference* time rather than only during training. In a conventional transformer, the model's weights are frozen at deployment and any per-conversation state lives in the KV-cache or in external retrieval stores. Test-time memory instead exposes a small memory module whose weights are mutated during the forward pass — typically driven by a *surprise* signal (a gradient on the prediction loss for the current input). This blurs the traditional train/inference boundary and gives the model a continual-learning substrate. Introduced by [[titans]] (Behrouz, Google 2025) as the "neural [[long-term-memory|long-term memory]]" branch alongside short-term attention.
 
 ## Where it appears
 

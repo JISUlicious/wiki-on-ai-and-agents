@@ -15,7 +15,7 @@ An attention mechanism maps a *query* and a set of *key-value* pairs to an outpu
 
 ## Forms
 
-- **Additive attention** (Bahdanau): compatibility via a small feed-forward network with one hidden layer.
+- **[[additive-attention|Additive attention]]** (Bahdanau): compatibility via a small feed-forward network with one hidden layer.
 - **Dot-product attention**: compatibility is just `qᵀk`.
 - **[[scaled-dot-product-attention|Scaled dot-product attention]]** (Vaswani et al.): `qᵀk / √dₖ`, then softmax. This is the form used in the [[transformer]].
 - **[[multi-head-attention|Multi-head attention]]**: parallel attention in multiple projected subspaces, concatenated.

@@ -42,7 +42,7 @@ The **memory stream** is an append-only, timestamped log of natural-language obs
 
 The **reflection mechanism** synthesizes higher-level memories from lower-level ones. Periodically (when summed importance of recent memories crosses a threshold), the agent generates salient questions about its recent experience, retrieves memories relevant to each, and prompts the LLM to produce abstract inferences ("Klaus is passionate about research"). Reflections are written back into the memory stream and can themselves be reflected on, yielding **reflection trees** with observations as leaves and progressively more abstract conclusions as inner nodes. Together with a top-down **planning hierarchy** (daily plan → hour blocks → 5–15-minute actions, with re-planning on perceived disruption), this gives the agent both long-term coherence and moment-to-moment responsiveness.
 
-The architecture is instantiated in **Smallville**, a Sims-like sandbox with 25 agents. The authors report emergent social behavior (information diffusion, relationship formation, party coordination from a single seed prompt) and run a controlled "interview" evaluation plus an end-to-end evaluation. **Ablations show all three components — observation memory, reflection, and planning — contribute critically**; removing any one degrades believability. This paper is the canonical reference for the recency × importance × relevance retrieval triad and for reflection as an LLM-driven memory consolidation primitive, and it has become a touchstone for downstream work on long-term LLM agent memory.
+The architecture is instantiated in **Smallville**, a Sims-like sandbox with 25 agents. The authors report emergent social behavior (information diffusion, relationship formation, party coordination from a single seed prompt) and run a controlled "interview" evaluation plus an end-to-end evaluation. **Ablations show all three components — observation memory, reflection, and planning — contribute critically**; removing any one degrades believability. This paper is the canonical reference for the recency × importance × relevance retrieval triad and for reflection as an LLM-driven [[memory-consolidation|memory consolidation]] primitive, and it has become a touchstone for downstream work on long-term LLM agent memory.
 
 ## Key Points
 
@@ -68,7 +68,7 @@ The architecture is instantiated in **Smallville**, a Sims-like sandbox with 25 
 ## Concepts Discussed
 
 - [[generative-agents]] — the paper's central construct: LLM-driven agents with persistent memory that simulate believable human behavior.
-- [[memory-stream]] — append-only NL observation log that serves as the agent's long-term memory substrate.
+- [[memory-stream]] — append-only NL observation log that serves as the agent's [[long-term-memory|long-term memory]] substrate.
 - [[reflection-mechanism]] — periodic LLM synthesis of higher-level inferences over recent memories; the paper's signature memory-consolidation primitive.
 - [[memory-management]] — broader family of techniques for handling LLM agent memory across context-window limits; this paper is a foundational reference.
 - [[llm-agent]] — the general paradigm of LLM-backed autonomous agents that this paper helped concretize for long-horizon settings.

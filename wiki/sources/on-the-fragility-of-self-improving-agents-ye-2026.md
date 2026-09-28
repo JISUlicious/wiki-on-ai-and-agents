@@ -2,7 +2,7 @@
 title: "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.18066"
 year: 2026
@@ -92,14 +92,20 @@ Each addition helps modestly on its own; combined they are "beneficial and non-d
 
 This paper is the most direct empirical test in the wiki of the [[self-improving-agent]] page's core-mechanism bullets, and it refutes three of them for the memory-based end of the spectrum:
 
-> [!warning] Contradiction — "compounding rather than overwriting … capability grows monotonically"
+> [!success] Resolved contradiction — "compounding rather than overwriting … capability grows monotonically"
 > [[self-improving-agent]] states that appended skills/prompts make "the agent's capability grow monotonically." Here the same class of system, under a stronger initialization and a randomized order, goes **below** the agent with no memory at all (WebArena 54.8 → 49.1 AWM / 49.8 RBank under Shuffle-1), and the shuffled-order gap survives every fix tried. This is the same conclusion [[continualskillbench-guan-2026]] and [[catastrophic-remembering]] reached from library size and instruction-file growth, now reached from run variance and task order.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
-> [!warning] Contradiction — "every proposed modification is trialed … and accepted only if it passes"
+> [!success] Resolved contradiction — "every proposed modification is trialed … and accepted only if it passes"
 > The page's "empirical validation loop" bullet describes DGM-style scaffold evolution, but memory-based methods have **no such gate**: AWM dedups workflows and RBank retrieves by relevance; neither validates a memory item before it is written. The paper's Haversine case shows an unvalidated item entering memory on a lucky pass and propagating. This is the write-side counterpart to [[rehearse-confidence-cliff-autoresearch-ji-2026]]'s finding that the *select* gate degrades along the trajectory: Rehearse shows the gate gets worse; this paper shows the common memory systems have no gate at all.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
-> [!warning] Contradiction — "memory of past attempts … preserves stepping stones"
+> [!success] Resolved contradiction — "memory of past attempts … preserves stepping stones"
 > The stepping-stone framing assumes memory contents are correct. §4.1 shows a materially different object: memories reflecting evaluator bugs, misread task intent, and environment-inapplicable strategies, which are "contagious" and seed run-to-run divergence. The [[memory-management]] lifecycle's *Write* step ("what should be recorded at all?") and the [[memory-construction]] framing both treat construction as an extraction problem; this paper shows that with a generic constructor prompt the answer to "what gets recorded" includes whatever the agent happened to try.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
 Consistent with, and sharpening, three other pages: [[frontis-ma1-ai4ai-recursive-self-improvement-yang-2026]] reported **71.21% ± 8.57 pp** over three epochs on [[mle-bench]] and the wiki already reads the ranking through that variance — this paper generalizes the point (variance rises in 71% of cases *because* the loop is stateful) and makes the single-run reporting norm the target. [[rethinking-evaluation-harness-evolution-wang-2026]] demanded a matched-compute search baseline before attributing scaffold gains to the mechanism; this paper's analogue is a **matched-model, multi-run, shuffled-order** baseline before attributing memory gains. And [[agent-evaluation]]'s "benchmark scores are claims about the benchmark as much as the agent" gets a concrete instance: the `0.00` vs `0` evaluator bug not only miscounts a pass but *teaches the agent a wrong lesson*.
 

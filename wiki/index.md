@@ -39,6 +39,13 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[dpr]] — Dense Passage Retriever (Karpukhin 2020)
 - [[rag]] — Original RAG system (Lewis 2020)
 - [[retro]] — Retrieval-Enhanced Transformer at trillion-token scale (Borgeaud 2021)
+- [[qwen]] · [[alibaba]] — the family and org, closing a 110-page reference gap
+- [[qwen3.8-flash-next]] — **entity**: 125B/6B-activated multimodal MoE; 36 of 48 layers linear, sparse attention with a 2K budget, 256K native → 1M by opt-in YaRN
+- [[qwen-2-5]] — Alibaba's Sep-2024 open model generation (0.5B–72B); default backbone for agentic-RL and memory work
+- [[llama-3]] — Meta's third open-weights generation; Llama-3.1-8B is the standard long-context/inference test bed
+- [[deepseek-v3]] — DeepSeek's 671B/37B-active MoE; base model of DeepSeek-R1
+- [[claude-3-5-sonnet]] — Anthropic's June-2024 Sonnet; default closed coding-agent backbone and expert-trajectory source
+- [[glm-5]] — Z.ai's 744B/40B-active MoE with DSA; SkillMOO backbone, MISA retrofit target, precedes GLM-5.2
 
 ### Agent products (2026 era)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -62,6 +69,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[laya]] — ModernBERT-large 421M encoder; 7.8x faster than Jev, the route that actually won
 - [[kev]] — Jared Palmer's open Qwen-based decision models, 0.8B-27B; most-starred Jev alternative
 - [[sglang]] — Serving engine; first with a native Jev-compatible /v1/systemone route (2026-09-25)
+
+### Software, libraries, and hardware platforms
+- [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
+- [[j-space-cognition-suite]] — **entity**: an Agent Skill package turning the J-space findings into an inference-time protocol; careful research digest, unmatched benchmark comparison
+- [[nanochat]] — Karpathy's minimal LLM training harness; Parcae baseline and reference autoresearch loop
+- [[apple-silicon]] — Apple M-series SoCs; the wiki's local-inference platform (GPU/Metal, AMX/SME, no eGPU path)
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -101,6 +114,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[rafael-rafailov]] — DPO; Stanford
 - [[chelsea-finn]] — DPO advisor; Stanford; Physical Intelligence co-founder
 - [[luke-zettlemoyer]] — Toolformer senior author; UW / Meta AI
+- [[karthik-narasimhan]] — Princeton NLP PI; GPT-1 co-author, then ReAct, ToT, Reflexion, SWE-bench, SWE-agent
+- [[ofir-press]] — Princeton NLP researcher; co-author of SWE-bench and SWE-agent; first author of ALiBi
+- [[carlos-jimenez]] — Princeton; first author of SWE-bench, equal-contribution co-author of SWE-agent
 
 ### People — Retrieval / RAG
 - [[patrick-lewis]] — RAG first author; DPR co-author
@@ -166,6 +182,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[openmythos]] — Open-source reference implementation of recurrent-depth / looped transformers (kyegomez)
 - [[microsoft]] — Tech giant; parent of [[microsoft-research]]
 - [[bytedance-seed]] — ByteDance's foundation-model research division (UI-TARS-1/2)
+- [[minimax]] — **entity (org, draft)**: Chinese lab; M2 series and sparse attention in this wiki; named in Anthropic's distillation allegations
+- [[xiaomi]] — **entity (org, draft)**: MiMo models; named in Anthropic's distillation allegations
+- [[alibaba]] — Chinese technology company whose research arm produces the Qwen model family
+- [[apple]] — **entity (org)**: the Apple Silicon platform, MLX, LLM in a flash, TinyGPU approval
+- [[amazon]] — AWS Agentic AI hosted SAGE; email-domain affiliation on Gated Sparse Attention
+- [[groq]] — SRAM-based LPU accelerator; wins decode latency ~4×, loses prefill up to 39× vs A100 (one build)
 
 ### Universities
 - [[university-of-toronto]] — Hinton's institutional home
@@ -186,6 +208,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[tsinghua-university]] — ExpeL (Gao Huang's group); ChatDev
 - [[shanghai-jiao-tong-university]] — SJTU; co-corresponding institution on SkillOpt (skill optimization)
 - [[uc-santa-barbara]] — UCSB; led the realistic agent-skills benchmark (with MIT)
+- [[purdue-university]] — affiliation entity, resolving a link from the SKILL.state page
+- [[university-of-british-columbia]] — Canadian university; Jeff Clune's home and Darwin Gödel Machine's primary affiliation
+- [[kings-college-london]] — UK university; Jie M. Zhang's SE group behind SkillMOO and AgentCoder
+- [[university-of-tokyo]] — Japanese university; looped-transformer approximation theory and Screening Is Enough
 
 ### People — Agent skills / tool creation
 - [[josh-tenenbaum]] — MIT; computational cognitive science, program synthesis (DreamCoder/LILO)
@@ -217,6 +243,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[recurrent-neural-network]] — RNN family
 - [[vanishing-gradient-problem]] — The training pathology LSTMs/Transformers fix
 - [[seq2seq]] — Sequence-to-sequence framework (Sutskever 2014)
+- [[multi-head-latent-attention]] — DeepSeek's latent-compressed KV attention (MLA); substrate for DSA sparse attention and the Kimi Linear baseline
 
 ### Tokenization and embeddings
 - [[byte-pair-encoding]] — BPE subword tokenization
@@ -250,6 +277,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[reward-modeling]] — Learning reward signals from preferences
 - [[constitutional-ai]] — Anthropic's harmlessness training method
 - [[negative-sampling]] — Contrastive learning objective from word2vec
+- [[catastrophic-remembering]] — the cross-cutting concept: accumulation is not compounding
+- [[continual-learning]] — the classical dual, and why the inversion is the point
+- [[on-policy-distillation]] · [[attention-sink]] — supporting concepts
+- [[supervised-fine-tuning]] — SFT: imitation on demonstrations; the supervised branch of fine-tuning, before RLHF/RL
+- [[harnessed-agentic-rl]] — RL through the deployment harness via an endpoint proxy (Agent Lightning, ClawGym II, LEGO-RL)
 
 ### Capabilities and prompting
 - [[in-context-learning]] — Learning from prompt examples (GPT-3)
@@ -266,6 +298,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[tree-of-thoughts]] — Explicit search over reasoning paths
 - [[emergent-abilities]] — Capabilities that appear with scale
 - [[scaling-laws]] — Power-law relationships between loss and resources
+- [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
+- [[program-of-thoughts]] — PoT (Chen 2022): reasoning written as a program, run by an interpreter; co-origin with PAL
+- [[large-reasoning-model]] — RL-trained long-CoT models (o1, R1, QwQ); how the model class relates to reasoning as a capability
 
 ### Agents, tools, and orchestration
 - [[llm-agent]] — LLM in a perception-action loop with tools
@@ -288,6 +323,14 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[constrained-decoding]] — Logit-mask grammar enforcement (xgrammar, outlines, lm-format-enforcer)
 - [[json-schema]] — IETF spec for describing JSON data; the format every tool definition uses
 - [[json-rpc]] — Stateless RPC protocol over JSON; transport substrate for MCP and ACP
+- [[ai-native-sdlc]] — **concept**: writing code stops being the bottleneck, so the constraint inverts onto plan/review/test/deploy. Practical shape is throughput under supervision, not autonomy
+- [[skill-routing]] — **concept**: the binding constraint on skill libraries, measured four ways — 67% defect prevalence, precision collapse 29.6% → 3.3%, a *routing premium* metric, and routing as a security property
+- [[skill-selection]] — **concept**: retrieved vs selected vs actually used diverge by ~70 points at pool size 100
+- [[programmatic-tool-calling]] — the concept, and where the aggregate goes the other way
+- [[cognitive-architectures-for-language-agents]] — CoALA (Sumers et al. 2023): modular memory, action space, decisions; MIRIX's source
+- [[planning]] — Agent planning in the loop, as harness control (PEV), and across multiple agents; its limits and failure rates
+- [[quality-diversity]] — Search for many good, diverse solutions (MAP-Elites); the ancestor of the Darwin Gödel Machine's archive
+- [[universal-search]] — Levin's asymptotically optimal but hardwired program search; the predecessor of the Gödel machine's BIOPS
 
 ### Agentic capabilities (2025)
 - [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
@@ -338,6 +381,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[reasoning-effort]] — the `effort` parameter (low/medium/high/xhigh/max); behavioral signal over all token spend
 - [[ultracode]] — official Claude Code `/effort` mode: `xhigh` + standing permission to auto-launch workflows
 - [[ultrawork]] — unofficial community trend/keyword (e.g. oh-my-claude) for max parallel autonomous execution
+- [[plan-execute-verify-loop]] — PEV (Ning 2026 §3.4): plans as contracts, sandboxed execution, deterministic-sensor checks
+- [[ralph-loop]] — Coding agent run in a bare shell loop on one prompt file; the grassroots ancestor of ultrawork
 
 ### Looped Transformers (depth-recursion)
 - [[gradient-descent-as-icl]] — The hypothesis that a forward pass approximates gradient descent on in-context examples — the motivation for depth-recursion
@@ -363,6 +408,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[autogen]] — Microsoft's open-source multi-agent framework
 - [[standardized-operating-procedures]] — Multi-agent design pattern
 - [[skill-md-format]] — Cross-agent skill packaging format
+- [[recurrence]] — Re-applying the same weights: over time (RNN sense) or over depth (UT, looped and recurrent-depth models)
+- [[turing-completeness]] — Expressivity claim for UT and looped transformers; depends on precision and unbounded steps
 
 ### Retrieval
 - [[retrieval-augmented-generation]] — RAG paradigm: condition generation on retrieved text
@@ -374,6 +421,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[open-domain-qa]] — Retriever + reader QA from a corpus
 
 ### Memory management (2023–2026)
+- [[semantic-memory]] — Store of decontextualized facts in agents (MIRIX, Mem-α); sits beside episodic and procedural memory
 
 **Umbrella + memory-primitive concepts:**
 - [[memory-management]] — Umbrella: write/store/retrieve/compact/consolidate/evict/curate lifecycle
@@ -430,6 +478,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[zero-redundancy-optimizer]] — ZeRO's three stages (4×/8×/N_d×), ZeRO-Offload, and PyTorch FSDP
 - [[activation-recomputation]] — Gradient checkpointing and selective recomputation (70% of activation memory for 2.7% FLOPs)
 - [[mixed-precision-training]] — fp32 master weights, loss scaling, fp32 accumulation — and why the master copy *raises* weight memory 50%
+- [[tensor-parallelism]] — Intra-layer weight sharding (Megatron-LM); kept within a node, composed with pipeline and data parallelism
+- [[pipeline-parallelism]] — Inter-layer stages with micro-batches (GPipe); bubble (p−1)/m, 1F1B and interleaved schedules (PTD-P)
 
 ### Inference efficiency (attention kernels, caching, serving)
 - [[linear-attention]] — Fixed-size recurrent state vs growing KV cache; KDA, the 3:1 hybrid, and why nobody ships pure linear attention
@@ -440,6 +490,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
 - [[prompt-compression]] — fewer tokens into prefill; LLMLingua 20× on GSM8K but −13 pts on BBH
 - [[chunked-prefill]] — piggyback decodes onto prefill chunks; *spends* prefill for decode throughput, and DistServe disputes the trade
+- [[trained-sparse-attention]] — **concept**: NSA, MoBA, DSA — the selector in the training loop; why retrofits must be conservative; kernel numbers are not TTFT numbers
+- [[sparse-prefill]] — **concept**: the umbrella — three orthogonal families, and the decision rule that attention's share of prefill grows from ~¼ at 10K to >90% past 300K
+- [[speculative-prefill]] — **concept**: a small draft's lookahead attention picks which tokens the target prefills; 7.66× TTFT on 405B at 10% keep; dropped tokens never get KV
+- [[token-pruning]] — **concept**: the target's own layer-~13 attention as selector; static (GemFilter) vs dynamic-with-revival (LazyLLM, SlimInfer) vs skipping (SPTS)
+- [[sparse-attention]] — **concept**: keep every token, skip attention entries; 10× at 1M, slower than dense at 8K
+- [[attention-sink]] — Transformers devote near-constant attention mass to a few early tokens; why StreamingLLM keeps them
+- [[rope-scaling]] — **concept**: PI → NTK-aware → YaRN, why static scaling taxes short context, and what extension does *not* give you
+- [[activation-sparsity]] — **concept (draft)**: three sources — ReLU zeros (exact), magnitude thresholding (lossy), MoE routing (exact, no predictor) — and the 1–3 MMLU-point cost of relufying a SiLU model
+- [[weight-streaming]] — **concept**: running a model larger than DRAM by reading only the per-token slice from flash; three sparsity sources (ReLU 2023, lossy thresholding 2026, MoE routing 2026) and the Apple Silicon implementation survey
+- [[edge-inference]] — **concept (draft)**: the single-device regime where "does not fit" is the baseline; hub for the streaming, FPGA and Apple Silicon pages
+- [[arithmetic-intensity]] — **concept**: `FLOPs / bytes moved` and the ridge point; the number that decides which optimizations can possibly help a phase
+- [[hardware-accelerator]] — **concept**: non-GPU silicon, and how to read its claims — scope and host-transfer accounting are where the headlines break
+- [[fpga]] — Reprogrammable silicon with a memory hierarchy you can program; the USC prefill and linear-attention decode accelerators
+- [[layer-skipping]] — Skipping layers per phase or per input; POP's prefill-only skip vs ShortGPT's stage-agnostic pruning
 
 ### Efficiency and inference (quantization, serving)
 - [[quantization]] — Hub: methods (GPTQ/AWQ/SmoothQuant/QuIP#/rotation), the four axes, and why outliers are the central obstacle
@@ -459,6 +523,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[mmlu]] — Multi-subject multiple-choice
 - [[humaneval]] — Python function-completion code benchmark
 - [[terminal-bench]] — Terminal/shell agent benchmark; the de-facto yardstick for harness engineering
+- [[tau-bench]] — the benchmark, and why Retail and Airline numbers are not interchangeable
+- [[longbench]] — the benchmark, and why its prompt lengths flatter token-dropping and punish sparse attention
+- [[alfworld]] — Text-based household-task environment; the default proving ground for embodied and long-horizon agents
+- [[webshop]] — Simulated e-commerce environment for language agents; its two headline metrics are often confused
+- [[mle-bench]] — Benchmark of real Kaggle competitions for machine-learning-engineering agents
+- [[benchmark]] — Hub: every benchmark page in the wiki, grouped, plus sources that introduce one (replaces the `benchmark` tag)
+- [[ruler]] — NVIDIA synthetic long-context suite extending NIAH; sparse-prefill papers show aggregation tasks collapsing
+- [[needle-in-a-haystack]] — Single-fact retrieval probe (and passkey); a sanity check for sparse attention, weak evidence alone
+- [[appworld]] — Multi-app interactive coding-agent benchmark (9 apps, 457 APIs, 750 tasks); used by SAGE and ACE
+- [[livecodebench]] — Contest problems collected continuously so scores can avoid contamination; v6 is the standard coding metric for reasoning models
+- [[swe-smith]] — Pipeline that makes SWE-agent training tasks by breaking tests (50K instances); RL corpus for Agent Lightning
+- [[benchmark-contamination]] — Test data leaking into training; SWE-bench-Live's 43% → 19% drop, refresh and n-gram filter remedies
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
@@ -472,6 +548,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[red-teaming]] — Adversarial probing of LLMs
 - [[prompt-injection]] — LLM applications hijacked by attacker text
 - [[indirect-prompt-injection]] — Prompt injection via third-party content
+- [[ai-enabled-cyber-operations]] — **concept**: uplift as speed, scale and depth; "vibe hacking"; autonomy is not severity; breaches in 2–3 hours; attackers using ordinary agent skills and memory files
+- [[illicit-distillation]] — **concept**: covert capability extraction through fraud; seven China-based labs named by Anthropic, largest >151M exchanges; thinking-signature replay; defenses — a vendor's allegations, flagged as such
+- [[influence-operations]] — **concept**: nine operations, Breakout Scale, influence-as-a-service, laundering of attribution and certainty; most reached almost no one
+- [[ai-safety]] — Umbrella hub mapping the wiki's alignment, misuse, interpretability and agentic-failure pages
 
 ### Steering and interpretability (internal-mechanism safety)
 - [[steering]] — Umbrella: inference-time activation interventions
@@ -637,9 +717,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[reducing-activation-recomputation-korthikanti-2022]] — Selective recomputation + sequence parallelism; `sbh(34 + 5as/h)` per layer, ~5× activation memory, 36% → 2% overhead at 530B/1T
 
 ### Applied J-space (2026)
-- [[j-space-cognition-suite]] — **entity**: an Agent Skill package turning the J-space findings into an inference-time protocol; careful research digest, unmatched benchmark comparison
 - [[j-space-cognition-suite-v3.6-github]] — the repository as ingested: contents, the verified citation table, and why the reported gains cannot be read causally
-- [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[llms-know-when-they-know-cao-2026]] — the monitoring-to-control result the suite's central design argument rests on: 48.3 → 56.9 on a fixed model by wiring FOK/JOL as an interface
 
 ### Long-context recall (2026-09-15)
@@ -665,14 +743,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### AI misuse and security (2026)
 - [[anthropic-threat-intelligence-report-september-2026]] — Anthropic, 2026-09-10, 154 pp: misuse of Claude disrupted Dec 2025–Aug 2026 across seven harm areas; Haiku/Sonnet/Opus misused, Fable and Mythos not (bar one distillation attempt that gave up on Fable)
-- [[ai-enabled-cyber-operations]] — **concept**: uplift as speed, scale and depth; "vibe hacking"; autonomy is not severity; breaches in 2–3 hours; attackers using ordinary agent skills and memory files
-- [[illicit-distillation]] — **concept**: covert capability extraction through fraud; seven China-based labs named by Anthropic, largest >151M exchanges; thinking-signature replay; defenses — a vendor's allegations, flagged as such
-- [[influence-operations]] — **concept**: nine operations, Breakout Scale, influence-as-a-service, laundering of attribution and certainty; most reached almost no one
-- [[minimax]] — **entity (org, draft)**: Chinese lab; M2 series and sparse attention in this wiki; named in Anthropic's distillation allegations
-- [[xiaomi]] — **entity (org, draft)**: MiMo models; named in Anthropic's distillation allegations
 
 ### Prefill acceleration — 2026 sweep
-- [[trained-sparse-attention]] — **concept**: NSA, MoBA, DSA — the selector in the training loop; why retrofits must be conservative; kernel numbers are not TTFT numbers
 - [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — cascading token pruning; the hybrid-architecture rule (sparse attention ≤1.11× on hybrids); 1.21–2.26× LLaMA, 1.08–1.68× Qwen3-Next, negative below 16K on hybrids
 - [[trianglemix-decoding-time-contribution-sparsity-he-2025]] — MInference group: blocks that score high at prefill but contribute nothing to decoding; 15.3× kernel, **1.14× end-to-end at 32K**
 - [[pop-prefill-only-pruning-he-2026]] — training-free: skip the last third of layers for prompt tokens at prefill only; 1.36× at 2K, 1.02× at 32
@@ -691,27 +763,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gated-sparse-attention-shen-2026]] — 1.7B from scratch with DSA-style indexer + G1/G2 gates; RULER-128K 62.2 vs 31.7, but gated-only dense gets 58.8; assumes 4 indexer heads vs 64 in the released config
 
 ### Weight streaming from SSD (2026)
-- [[weight-streaming]] — **concept**: running a model larger than DRAM by reading only the per-token slice from flash; three sparsity sources (ReLU 2023, lossy thresholding 2026, MoE routing 2026) and the Apple Silicon implementation survey
 - [[llm-in-a-flash-alizadeh-2023]] — Apple, ACL 2024: windowing + row-column bundling; 4.8× CPU / 26× GPU vs naive reload on OPT-6.7B; needs ReLU, and relufying costs 1–3 MMLU points
 - [[neuroprefetcher-delta-prefetching-dhar-2026]] — ICPP 2026, Jetson Orin: delta prefetching on 82–85% neuron persistence; 3.22 vs 0.34 tok/s over llama.cpp mmap — at ~88–90% of dense HellaSwag
 - [[ssd-offloading-moe-weights-considered-harmful-kyung-2025]] — IEEE CAL: analytical model; SSD experts cost 3.8–12.5× HBM energy per token, but 1.14× vs dense at batch 1 and no caching modelled
 - [[flash-moe-ssd-expert-streaming-woods-2026]] — the catalyst: C/Metal engine running Qwen3.5-397B-A17B on a 48 GB M3 Max at 4.36 tok/s, built in 24 h of Claude Code autoresearch; top-k cut 10→4, no accuracy delta reported
-- [[activation-sparsity]] — **concept (draft)**: three sources — ReLU zeros (exact), magnitude thresholding (lossy), MoE routing (exact, no predictor) — and the 1–3 MMLU-point cost of relufying a SiLU model
-- [[edge-inference]] — **concept (draft)**: the single-device regime where "does not fit" is the baseline; hub for the streaming, FPGA and Apple Silicon pages
-- [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
-- [[apple]] — **entity (org)**: the Apple Silicon platform, MLX, LLM in a flash, TinyGPU approval
 
 ### Hardware acceleration (2026)
-- [[arithmetic-intensity]] — **concept**: `FLOPs / bytes moved` and the ridge point; the number that decides which optimizations can possibly help a phase
-- [[hardware-accelerator]] — **concept**: non-GPU silicon, and how to read its claims — scope and host-transfer accounting are where the headlines break
 - [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — Gated DeltaNet decode on an Alveo U55C; holds a 2 MB recurrent state for **one layer** and no weights. Also measures GDN at 0.87 FLOP/B — subquadratic is *more* memory-bound than what it replaces
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse-attention prefill on an FPGA; a 5.4 TOPS part beating a 222 TOPS GPU, with four inconsistent statements of its own headline
 - [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] — GPUs win prefill by up to 39×; GroqRack wins decode by ~4× TPOT, crossing over at batch > 4
 - [[hbm-is-not-all-you-need-wei-2026]] — disaggregation across *memory technologies*: GDDR for prefill, HBM for decode, 4.8× goodput-per-dollar at 14B
 
 ### AI-native software development (2026)
-- [[building-an-ai-native-sdlc-plugin]] — **query (guide)**: a Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook — which play goes in a skill, hook, agent or managed setting; interviewed intent and spec; portable vs Claude-Code-only skills checked against the Agent Skills spec; a skeleton that passes `claude plugin validate --strict`; evals with a no-plugin baseline
-- [[ai-native-sdlc]] — **concept**: writing code stops being the bottleneck, so the constraint inverts onto plan/review/test/deploy. Practical shape is throughput under supervision, not autonomy
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the operational anchor: six stages, the `intent.md → spec.md → plan.md → PR → deploy → incident` artifact chain as audit trail, three unequal enforcement layers, and leading/lagging measures per play
 - [[agentic-coding-trends-report-anthropic-2026]] — the forecast companion, and the source of the 60% / 0–20% delegation figures. No methodology section; every case study is a customer
 
@@ -726,13 +789,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[selective-forgetting-graph-based-memory-rusu-2026]] — graph *retrieval* loses to flat vectors at matched budget; graph *forgetting* works
 - [[e-commerce-bench-autonomous-business-operation-fan-2026]] — 365 simulated days, 18 models; the top earner ranks 16th of 18 on fraud avoidance
 - [[emergent-cheating-and-whistleblowing-paglieri-2026]] — DeepMind: 100 identical agents; a verifier exploit clears 34 conjectures in 27 minutes, and 24 agents spontaneously blow the whistle
-- [[tau-bench]] — the benchmark, and why Retail and Airline numbers are not interchangeable
-- [[purdue-university]] — affiliation entity, resolving a link from the SKILL.state page
 
 ### Newsletter sweep 2026-09-05 — part 2
 *Skills: routing, evaluation, evolution, poisoning*
-- [[skill-routing]] — **concept**: the binding constraint on skill libraries, measured four ways — 67% defect prevalence, precision collapse 29.6% → 3.3%, a *routing premium* metric, and routing as a security property
-- [[skill-selection]] — **concept**: retrieved vs selected vs actually used diverge by ~70 points at pool size 100
 - [[evaluating-skills-not-just-agents-kevin-2026]] — NVIDIA ACES: measure the *delta* from a paired run, not the document; structural scan predicts live lift at ρ = −0.018
 - [[wikiskill-compiling-agent-experience-tang-2026]] — Google: compile agent experience into a persistent wiki; separates an unbounded store from a bounded context surface
 - [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026]] — a planted skill is never invoked but retrieved as an *authoring template*; self-poisoning 20.3–41.8%
@@ -787,11 +846,6 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[recirculation-mozer-2026]] — training-free inference-time architectural change for deep-layer contextualized representations
 
 ### Sparse prefill (2024–2026)
-- [[sparse-prefill]] — **concept**: the umbrella — three orthogonal families, and the decision rule that attention's share of prefill grows from ~¼ at 10K to >90% past 300K
-- [[speculative-prefill]] — **concept**: a small draft's lookahead attention picks which tokens the target prefills; 7.66× TTFT on 405B at 10% keep; dropped tokens never get KV
-- [[token-pruning]] — **concept**: the target's own layer-~13 attention as selector; static (GemFilter) vs dynamic-with-revival (LazyLLM, SlimInfer) vs skipping (SPTS)
-- [[sparse-attention]] — **concept**: keep every token, skip attention entries; 10× at 1M, slower than dense at 8K
-- [[longbench]] — the benchmark, and why its prompt lengths flatter token-dropping and punish sparse attention
 - [[speculative-prefill-liu-2025]] — SpecPrefill (ICML 2025): draft costs 2.96% of a 405B target; retrieval/QA free at 10% keep, aggregation collapses 99.7 → 77.9
 - [[cross-family-speculative-prefill-upasani-2026]] — Qwen3 ↔ Llama-3 drafts within 0–1 pt of in-family; what matters is the draft's native context length
 - [[draft-based-approximate-inference-galim-2025]] — SpecKV / SpecPC / SpecKV-PC (ICLR 2026): a unifying frame with error bounds, and a Contradiction on cross-family drafts
@@ -805,10 +859,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[omlx-specprefill-github-2026]] — the Apple-Silicon implementation read from source: 8 lookahead steps, 32-token chunks, 512-token tail, keep 20%, triggers above 8,192 tokens; nothing measured in-repo
 
 ### Context extension (2026)
-- [[rope-scaling]] — **concept**: PI → NTK-aware → YaRN, why static scaling taxes short context, and what extension does *not* give you
-- [[qwen3.8-flash-next]] — **entity**: 125B/6B-activated multimodal MoE; 36 of 48 layers linear, sparse attention with a 2K budget, 256K native → 1M by opt-in YaRN
 - [[qwen3.8-flash-next-model-card-2026]] — the card read against its own config: the 1M is documented but no published number was measured with scaling on
-- [[qwen]] · [[alibaba]] — the family and org, closing a 110-page reference gap
 
 ### Agent harness engineering (2026)
 - [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — every agent failure as an edge between two components plus a fault side, so a symptom maps to a repair; 41 role-specific modes, judge κ=0.76
@@ -821,8 +872,6 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[continualskillbench-guan-2026]] — an explicit skill library scores 0.602 against 0.605 for just keeping the transcript
 - [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] — 138,133 public skills: 89.3% violate the spec, 91.8% carry a defect
 - [[reason-wide-not-deep-singh-2026]] — a 40–130 line distilled skill recovers 55–100%+ of the reasoning gap at zero reasoning tokens
-- [[catastrophic-remembering]] — the cross-cutting concept: accumulation is not compounding
-- [[continual-learning]] — the classical dual, and why the inversion is the point
 
 ### Agent memory and compaction (2026)
 - [[zero-mem-zero-token-memory-operations-xiao-2026]] — zero LLM tokens outside the final answer; 57.6% less memory-operation time while scoring highest
@@ -832,7 +881,6 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Agent cost and serving (2026)
 - [[the-bitter-lesson-of-tool-calling-patel-2026]] — code stubs vs JSON schemas; wins on capable models and under fan-out, loses on the 14-model mean
-- [[programmatic-tool-calling]] — the concept, and where the aggregate goes the other way
 - [[sample-more-reflect-less-mirzaei-2026]] — at equal token cost, all 18 self-inspection comparisons are negative
 - [[toktier-exact-stateful-tokenization-zhang-2026]] — once prefix caching works, tokenization becomes 64% of TTFT; exact stateful repair cuts median TTFT 16–34%
 
@@ -840,7 +888,6 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[dataspace-benchmarking-data-agents-li-2026]] — 15 GB heterogeneous workspaces, deterministic scoring; swapping the harness alone moves accuracy 15.36 points
 - [[merchantbench-long-term-coherence-shi-2026]] — 365 simulated days; best agent reaches 27.3% of human net assets, and a rule-based baseline beats 6 of 16 configs
 - [[why-does-claude-md-keep-growing-chakrabarti-2026]] — 1,867 repos: agentic instruction files grow +226% because deletion costs O(2^|D|)
-- [[alfworld]] · [[webshop]] · [[mle-bench]] — the recurring evaluation environments, now with pages
 
 ### Agent safety (2026)
 - [[stealing-reasoning-traces-panfilov-2026]] — encrypted reasoning blocks are portable across sessions, users and models, so a weaker sibling decodes a stronger model's hidden trace; disclosed and mitigated
@@ -853,13 +900,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cedar-agent-orchestrated-tree-search-complex-systems-tian-2026]] — Sakana AI: MCTS over feedback *structures* rather than parameters
 
 ### Pretraining and distillation (2026)
-- [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 - [[skaling-chinchilla-exponents-kaplan-coupling-videau-2026]] — one coupling exponent restores the N–D interaction Chinchilla's additive form discards; 1.5–3× lower error
 - [[cracks-in-the-foundation-long-context-extension-bertsch-2026]] — four minor architectural choices compound to −47% relative long-context performance, invisible in loss
 - [[physics-of-multimodal-pretraining-han-2026]] — knowledge flows language→vision and understanding→generation, but not back
 - [[weak-to-strong-on-policy-distillation-yu-2026]] — a student surpassing the weaker models that supply its signal
 - [[on-policy-self-distillation-without-supervision-li-2026]] — beats gold supervision with pseudo-labels that are 13.3% wrong
-- [[on-policy-distillation]] · [[attention-sink]] — supporting concepts
 
 ### Cross-model KV reuse (2024–2026)
 - [[cross-model-kv-cache-transfer-heo-2026]] — NVIDIA: closed-form ridge map between matched-KV models; 4–25× vs re-prefill, and error *placement* beats error magnitude (R² anti-correlated with retention)
@@ -1269,6 +1314,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
 - [[agent-skills-cross-vendor]] — Capability-packaging compared across Anthropic / OpenAI / Google / Microsoft / AWS (SKILL.md vs GPTs vs Gems vs Declarative Agents vs Action Groups)
 - [[harness-vs-model-attribution]] — Factorial (harness × model) studies: how much of an agent's score is the scaffold vs the model (Terminal-Bench/SWE-bench leaderboards + the "disclose the harness" thesis)
+- [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 
 ## Queries
 
@@ -1286,3 +1332,4 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[in-house-data-agent-eval-test-set]] — A worked 35-task evaluation suite for an internal data-search-and-analysis agent: five graded dimensions, dataset schema, an 8-grader stack, and a build order — operationalizing agent-evaluation + verifier.
 - [[methods-to-speed-up-prompt-processing]] — Prefill levers ranked (skip / shrink / cheapen), plus the three things that help decode but *not* prompt processing: weight-only quantization, GQA, and chunked prefill
 - [[llm-memory-and-compute-bottlenecks]] — Four-quadrant sub-step breakdown (training/inference × memory/compute); the 16Ψ accounting, `sbh(34+5as/h)`, and the roofline table
+- [[building-an-ai-native-sdlc-plugin]] — **query (guide)**: a Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook — which play goes in a skill, hook, agent or managed setting; interviewed intent and spec; portable vs Claude-Code-only skills checked against the Agent Skills spec; a skeleton that passes `claude plugin validate --strict`; evals with a no-plugin baseline

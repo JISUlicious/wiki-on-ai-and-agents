@@ -136,7 +136,7 @@ The Craigslist concession curve verifies the headline claim exactly:
 - **Six synthetic negotiation environments, one base model, one size.** No ablation on model scale, so "4B suffices" is a demonstration on these six games, not a scaling claim.
 - **Opponents are the same frontier family used as the comparison baseline.** Evaluation is 10 scenarios × 3 opponents × 5 trials; a policy trained against GPT-family counterparts and then scored against them risks measuring exploitation of one opponent distribution. No held-out opponent family is reported.
 - **Utility is the only axis.** There is no measure of whether the trained delegate's behaviour would be acceptable to the principal on any other dimension — truthfulness, reputation cost, willingness to walk away from a deal the principal would have wanted. The Calendar result (fewer meetings scheduled, better ones) is the closest the paper comes, and it is scored by the same private utility function.
-- **The ToM arm is SFT-only by design** ("no reinforcement learning, allowing us to isolate the effect"), so whether explicit ToM traces compose with the PPO recipe that produces the headline numbers is untested.
+- **The ToM arm is SFT-only by design** ("no [[reinforcement-learning|reinforcement learning]], allowing us to isolate the effect"), so whether explicit ToM traces compose with the PPO recipe that produces the headline numbers is untested.
 - **CaSiNo is a degenerate teacher** (teacher–initialization gap 0.001) and is excluded from MOPD; the strongest MOPD configuration is therefore a five-teacher one, reported as six-domain.
 
 ## Related

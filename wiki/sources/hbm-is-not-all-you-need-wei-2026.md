@@ -18,7 +18,6 @@ importance: high
 tags:
   - 2026
   - paper
-  - hardware
 ---
 
 # HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators

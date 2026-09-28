@@ -11,7 +11,7 @@ authors:
   - Jacky Kwok
   - Shulu Li
   - Pranav Atreya
-  - Chelsea Finn
+  - [[chelsea-finn]]
   - Azalia Mirhoseini
 tags:
   - 2026
@@ -22,15 +22,15 @@ importance: high
 
 # LLM-as-a-Verifier: A General-Purpose Verification Framework
 
-**Jacky Kwok, Shulu Li, Pranav Atreya, Yuejiang Liu, Yixing Jiang, Chelsea Finn, Marco Pavone, Ion Stoica, Azalia Mirhoseini** (Stanford University, UC Berkeley, NVIDIA Research) — [arXiv:2607.05391](https://arxiv.org/abs/2607.05391) (v2, 7 Jul 2026). Venue not stated.
+**Jacky Kwok, Shulu Li, Pranav Atreya, Yuejiang Liu, Yixing Jiang, Chelsea Finn, Marco Pavone, [[ion-stoica|Ion Stoica]], Azalia Mirhoseini** ([[stanford-university|Stanford University]], [[uc-berkeley|UC Berkeley]], NVIDIA Research) — [arXiv:2607.05391](https://arxiv.org/abs/2607.05391) (v2, 7 Jul 2026). Venue not stated.
 
 ## Summary
 
-The paper's framing claim is that **verification is a distinct scaling axis**, alongside pre-training, post-training, and test-time compute. Generation has well-established scaling laws; verification does not — standard LM judges collapse a scoring distribution into one discrete token, and trained reward models are bounded by their training data and generalize poorly across domains. The motivating measurement is stark: pooling trajectories across the full Terminal-Bench V2 leaderboard, oracle pass@K reaches **98.9%**, so nearly the entire benchmark is already solved by *some* sample. The bottleneck is a selector good enough to find it.
+The paper's framing claim is that **verification is a distinct scaling axis**, alongside pre-training, post-training, and [[test-time-compute|test-time compute]]. Generation has well-established [[scaling-laws|scaling laws]]; verification does not — standard LM judges collapse a scoring distribution into one discrete token, and trained reward models are bounded by their training data and generalize poorly across domains. The motivating measurement is stark: pooling trajectories across the full Terminal-Bench V2 leaderboard, oracle pass@K reaches **98.9%**, so nearly the entire benchmark is already solved by *some* sample. The bottleneck is a selector good enough to find it.
 
 LLM-as-a-Verifier is **training-free**. Instead of reading off the argmax score token, it extracts the logprobs of `<score_A>` / `<score_B>` tags and computes the **expectation over the distribution of scoring-token logits**, producing a continuous reward. (A detail worth noting: the scale is *letter*-based rather than digits, specifically so the ordered token set is cleanly logprob-extractable.) This probabilistic formulation opens three scaling knobs, each attacking a different error source: score granularity `G` (separation), repeated evaluation `K` (variance), and criteria decomposition `C` (prompt bias). To make it affordable at inference time, they add a **Probabilistic Pivot Tournament (PPT)** — a random Hamiltonian ring pass (which cancels A/B position bias in expectation, since every candidate sits in each slot exactly once), then pivot selection and pivot rounds — costing `N + k(N−k) + C(k,2)` comparisons, i.e. O(Nk) rather than O(N²).
 
-Used as a trajectory reward model for test-time scaling, the same framework with no per-domain tuning sets state of the art on four benchmarks across three modalities: text, video, and clinical tool use. Beyond ranking, the fine-grained score correlates with chronological step index (a task-progress proxy), and works as a dense RL reward, improving sample efficiency of both off-policy SAC and on-policy GRPO.
+Used as a trajectory reward model for test-time scaling, the same framework with no per-domain tuning sets state of the art on four benchmarks across three modalities: text, video, and clinical [[tool-use|tool use]]. Beyond ranking, the fine-grained score correlates with chronological step index (a task-progress proxy), and works as a dense RL reward, improving sample efficiency of both off-policy SAC and on-policy GRPO.
 
 ## Key points
 
@@ -47,7 +47,7 @@ Used as a trajectory reward model for test-time scaling, the same framework with
 - **Progress tracking.** On Terminal-Bench V2, Gemini 2.5 Flash at `G=20` attains Spearman VOC 0.848 on successful trajectories and 0.769 on failed ones.
 - **Dense RL reward.** LIBERO with a π0 policy + DSRL-SAC: ~1.8× sample efficiency and higher final success (0.76 vs. 0.69 sparse). MATH with Qwen3-8B + GRPO: only ~1.1×. The GRPO motivation is specific — early in training all sampled responses are wrong, group-relative advantage collapses to zero, and the verifier score restores gradient by discriminating reasoning quality among equally-wrong answers.
 - **Harness-independent.** Swapping scaffolds: Terminus-Kira (Opus 4.6 proposals) 79.4% and Terminus-2 (GPT-5.3-Codex) 71.2%, vs. 74.7% / 62.9% for Opus 4.6 alone — evidence the verifier reasons about terminal state rather than scaffold-specific syntax.
-- Shipped as **TurboAgent**, an inference-time proxy extension for Claude Code and OpenAI-API-compatible clients requiring no harness or model changes.
+- Shipped as **TurboAgent**, an inference-time proxy extension for [[claude-code|Claude Code]] and OpenAI-API-compatible clients requiring no harness or model changes.
 - **Limitations (stated by the authors):** requires access to scoring-token logits, which excludes several restricted frontier APIs (Appendix B.6 offers a two-stage workaround routing a closed model's reasoning through an open verifier); criteria are hand-designed rather than learned; RL experiments are single-turn only.
 
 ## Concepts & entities

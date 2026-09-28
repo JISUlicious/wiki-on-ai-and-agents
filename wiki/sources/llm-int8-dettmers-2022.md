@@ -11,7 +11,7 @@ authors:
   - Tim Dettmers
   - Mike Lewis
   - Younes Belkada
-  - Luke Zettlemoyer
+  - [[luke-zettlemoyer]]
 tags:
   - 2022
   - paper

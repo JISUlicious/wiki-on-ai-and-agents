@@ -91,4 +91,4 @@ Part of the [[qwen|Qwen]] family; the architecture line (`qwen4_exp`) is new rat
 - [[sparse-attention]] — Qwen Sparse Attention's 2,048-token indexer budget is the *trained* form of what MInference assigns offline and Token Sparse Attention selects online
 - [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — an FPGA accelerator targeting this architecture's GDN layers specifically — it cites 'Qwen3-Next uses 75% GDN layers', matching this page's 36-of-48 split
 - [[trained-sparse-attention]] — what the sparse-attention layers in this hybrid are, and why token-axis retrofits fit it better than attention-axis ones
-- [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — the hybrid-architecture rule, measured on the sibling Qwen3-Next-80B-A3B: sparse attention ≤1.11×, token pruning 1.08–1.68× and negative below 16K
+- [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — the hybrid-architecture rule, measured on the sibling Qwen3-Next-80B-A3B: sparse attention ≤1.11×, [[token-pruning|token pruning]] 1.08–1.68× and negative below 16K

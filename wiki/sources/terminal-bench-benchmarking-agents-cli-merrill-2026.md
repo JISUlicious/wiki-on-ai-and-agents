@@ -26,7 +26,7 @@ importance: high
 
 This is the canonical source for the [[terminal-bench]] benchmark (Merrill, Shaw, et al., 2026; Stanford / Laude Institute / Anthropic and a large multi-institution author list). Terminal-Bench is a framework for evaluating [[llm-agent]]s on realistic, hard work in command-line environments — the terminal being the standard interface for software engineering, scientific computing, cybersecurity, and ML. The released **Terminal-Bench 2.0** dataset is 89 carefully curated tasks, each with a unique containerized (Docker) environment, a human-written reference solution, and outcome-based tests that check the final container state rather than the agent's commands.
 
-Crucially, the benchmark is harness-aware: tasks use the **Harbor** format/harness, which runs many agent scaffolds (Claude Code, Codex CLI, OpenHands, Mini-SWE-Agent) plus the authors' own neutral testbed scaffold **Terminus 2**. The leaderboard therefore reports **(agent-harness × model)** pairs, making scaffold quality visible rather than conflated into a single model number — directly addressing the misattribution concern of [[agentic-harness-engineering]].
+Crucially, the benchmark is harness-aware: tasks use the **Harbor** format/harness, which runs many agent scaffolds ([[claude-code|Claude Code]], Codex CLI, OpenHands, Mini-SWE-Agent) plus the authors' own neutral testbed scaffold **Terminus 2**. The leaderboard therefore reports **(agent-harness × model)** pairs, making scaffold quality visible rather than conflated into a single model number — directly addressing the misattribution concern of [[agentic-harness-engineering]].
 
 ## Key points
 

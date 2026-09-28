@@ -16,7 +16,7 @@ tags:
 
 Chinese technology company whose research arm (Alibaba Cloud / Tongyi Lab) produces the **[[qwen|Qwen]]** model family and serves it through **Qwen Cloud**. Within this wiki it matters almost entirely through Qwen: the open-weight checkpoints are the most common experimental substrate across the 2026 corpus.
 
-Alibaba also appears as the affiliation behind [[merchantbench-long-term-coherence-shi-2026|MerchantBench]], the 365-day e-commerce agent benchmark grounded in 98,843 real 1688 product records.
+Alibaba also appears as the affiliation behind [[merchantbench-long-term-coherence-shi-2026|MerchantBench]], the 365-day e-commerce [[agent-benchmark|agent benchmark]] grounded in 98,843 real 1688 product records.
 
 > [!note] Draft
 > Created alongside [[qwen]] to give the family an organizational anchor. Corporate structure, Tongyi Lab's relationship to Alibaba Cloud, funding, and non-Qwen research are not yet recorded.

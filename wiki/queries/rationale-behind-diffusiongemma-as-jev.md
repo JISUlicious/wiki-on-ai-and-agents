@@ -69,7 +69,7 @@ The canvas is normally initialized **uniformly at random**, with state passing b
 The server maps labels to single tokens **empirically**: render the template with each label, diff the token sequences, and require that each label changes exactly one token at the same position. Answer codes must be single tokens so the canvas cannot shift; the client translates `moderation_spam` → `A` and back.
 
 > [!note] Why this path existed at all
-> [[constrained-decoding]] compiles a schema to an FSM and masks illegal tokens *given the prefix so far*. A diffusion model has no prefix, so there is nothing for the FSM to advance against — vLLM rejects structured outputs for diffusion models with a 400, and canvas-aware guided decoding is an acknowledged open problem. Seeding a canvas and reading it needs no grammar. That is the deeper reason the technique appeared on a diffusion model first.
+> [[constrained-decoding]] compiles a schema to an FSM and masks illegal tokens *given the prefix so far*. A diffusion model has no prefix, so there is nothing for the FSM to advance against — vLLM rejects [[structured-outputs|structured outputs]] for diffusion models with a 400, and canvas-aware guided decoding is an acknowledged open problem. Seeding a canvas and reading it needs no grammar. That is the deeper reason the technique appeared on a diffusion model first.
 
 ## Where the rationale breaks down
 

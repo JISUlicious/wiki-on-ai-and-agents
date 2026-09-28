@@ -29,7 +29,7 @@ tags:
 
 The paper's framing is **agentic serving**: long initial prefills, "prefill-after-decode" of tool output, multi-turn sessions whose KV caches persist and often must be offloaded to CPU while the agent waits on the environment. It sorts attention approximations into three bins (Fig. 1, Table 1):
 
-- **Linear attention** (Linformer, Performer, Reformer, Mamba) — lossy, needs retraining.
+- **[[linear-attention|Linear attention]]** (Linformer, Performer, Reformer, Mamba) — lossy, needs retraining.
 - **[[token-pruning|Token pruning]] / KV eviction** (H2O, Scissorhands, StreamingLLM, SnapKV, PyramidInfer) — lossy and *irreversible*; "catastrophic for agentic workflows" because a token irrelevant now may be needed later, and the long tail of the attention distribution is where that information lives.
 - **Token sparsity** (Quest, TidalDecode, NSA) — keep the full [[kv-cache]], attend to a dynamically chosen subset per query. This is the bin STS is in.
 

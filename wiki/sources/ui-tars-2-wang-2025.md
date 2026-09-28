@@ -26,7 +26,7 @@ Authors are listed alphabetically in the paper; correspondence is to **Yujia Qin
 
 ## Summary
 
-UI-TARS-2 is an **end-to-end native GUI agent** from [[bytedance-seed]] that unifies perception, reasoning, action, and memory inside a single policy, and is trained with a **stabilized multi-turn reinforcement learning** pipeline rather than a modular planner+executor stack. It is the direct successor to UI-TARS-1 / UI-TARS-1.5 ([[ui-tars-1]], arXiv:2501.12326), and is positioned as the strongest open computer-use agent at release time, outperforming Anthropic's Claude Computer Use and OpenAI's CUA on several head-to-head benchmarks.
+UI-TARS-2 is an **end-to-end native GUI agent** from [[bytedance-seed]] that unifies perception, reasoning, action, and memory inside a single policy, and is trained with a **stabilized multi-turn [[reinforcement-learning|reinforcement learning]]** pipeline rather than a modular planner+executor stack. It is the direct successor to UI-TARS-1 / UI-TARS-1.5 ([[ui-tars-1]], arXiv:2501.12326), and is positioned as the strongest open computer-use agent at release time, outperforming Anthropic's Claude Computer Use and OpenAI's CUA on several head-to-head benchmarks.
 
 The methodology rests on four pillars: (1) a **data flywheel** that co-evolves model and corpus through continual pre-training, SFT, rejection sampling, and RL, producing a steady stream of long-horizon trajectories that would otherwise be prohibitively expensive to collect; (2) a **stabilized multi-turn RL framework** built on PPO with Decoupled-GAE (from VAPO / VC-PPO), reward shaping, value pretraining, asynchronous server-mode rollouts, and streaming updates from a partially-filled rollout pool to absorb long-tail trajectories; (3) a **hybrid GUI-centered environment** where pixel-level mouse/keyboard actions interoperate with file-system access and a terminal, broadening the task space beyond pure click-and-type; and (4) a **unified sandbox platform** orchestrating cloud VMs, browsers, mobile, and game sandboxes behind a single API for million-scale reproducible rollouts.
 
@@ -55,8 +55,8 @@ Empirically, UI-TARS-2 reaches **88.2 on Online-Mind2Web**, **47.5 on OSWorld**,
 - [[computer-use-agent]] — the broader category UI-TARS-2 belongs to.
 - [[gui-agent]] — narrower framing focused on screen-driven control.
 - [[agentic-rl]] — RL applied to long-horizon tool-using agents; UI-TARS-2 is a flagship example.
-- [[multi-turn-rl]] — the specific training paradigm; the paper's core technical contribution is making this stable at scale.
-- [[osworld]] — primary GUI agent benchmark; UI-TARS-2 scores 47.5.
+- [[agentic-rl|multi-turn RL]] — the specific training paradigm; the paper's core technical contribution is making this stable at scale.
+- [[osworld]] — primary GUI [[agent-benchmark|agent benchmark]]; UI-TARS-2 scores 47.5.
 
 ## Quotes
 

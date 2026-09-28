@@ -27,7 +27,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-07–06-14).
 
 ## Summary
 
-A parameter-geometry study of **on-policy distillation (OPD)**, the increasingly popular recipe for improving LLM reasoning under dense token-level guidance from a stronger teacher. Rather than treating OPD as a midpoint between supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR), the paper argues OPD is its **own distinct kind of weight update**. Using a suite of parameter-space diagnostics, it locates OPD in a "relaxed off-principal regime" and shows the trajectory rapidly collapses into a narrow low-dimensional subspace ("subspace locking"). The work answers three research questions: where OPD lies in the SFT↔RLVR spectrum (RQ1), what intrinsic update trajectory it follows (RQ2), and which component drives that trajectory (RQ3).
+A parameter-geometry study of **[[on-policy-distillation|on-policy distillation]] (OPD)**, the increasingly popular recipe for improving LLM reasoning under dense token-level guidance from a stronger teacher. Rather than treating OPD as a midpoint between supervised fine-tuning (SFT) and [[reinforcement-learning|reinforcement learning]] with verifiable rewards (RLVR), the paper argues OPD is its **own distinct kind of weight update**. Using a suite of parameter-space diagnostics, it locates OPD in a "relaxed off-principal regime" and shows the trajectory rapidly collapses into a narrow low-dimensional subspace ("subspace locking"). The work answers three research questions: where OPD lies in the SFT↔RLVR spectrum (RQ1), what intrinsic update trajectory it follows (RQ2), and which component drives that trajectory (RQ3).
 
 ## Key points
 

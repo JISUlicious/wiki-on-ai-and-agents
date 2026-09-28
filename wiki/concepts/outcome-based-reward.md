@@ -14,7 +14,7 @@ importance: medium
 
 An **outcome-based reward** (or outcome-supervised reward model, ORM) scores a trajectory by **whether it ultimately succeeded**, not by the quality of its intermediate steps. The training signal is a single terminal label — did the tests pass, was the task solved — propagated back over the whole rollout.
 
-It is the simpler half of a standing dichotomy in [[verifier|verification]] and reward modeling:
+It is the simpler half of a standing dichotomy in [[verifier|verification]] and [[reward-modeling|reward modeling]]:
 
 | | **Outcome supervision** | **Process supervision** |
 |---|---|---|

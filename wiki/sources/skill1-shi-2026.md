@@ -30,7 +30,7 @@ importance: medium
 
 - **Source**: `sources/skill1-shi-2026.md`
 - **arXiv**: [arXiv:2605.06130](https://arxiv.org/abs/2605.06130) (v3, 2026-05-12)
-- **Authors**: Yaorui Shi, Yuxin Chen, Zhengxi Lu, Yuchun Miao, Shugui Liu, Qi Gu, Xunliang Cai, Xiang Wang, An Zhang (University of Science and Technology of China; Meituan; National University of Singapore; Zhejiang University; Wuhan University). Shi and Chen contributed equally; Gu and Zhang are corresponding authors.
+- **Authors**: Yaorui Shi, Yuxin Chen, Zhengxi Lu, Yuchun Miao, Shugui Liu, Qi Gu, Xunliang Cai, Xiang Wang, An Zhang (University of Science and Technology of China; Meituan; National University of Singapore; [[zhejiang-university|Zhejiang University]]; Wuhan University). Shi and Chen contributed equally; Gu and Zhang are corresponding authors.
 - **Year**: 2026
 - **Code**: https://github.com/AlphaLab-USTC/Skill1
 
@@ -87,12 +87,12 @@ The technical core is **credit assignment that splits one terminal reward `r(τ)
 ### RL-trained-policy siblings (cross-links)
 
 - [[memory-r1]] — the analogous move for the *memory* lifecycle: ADD/UPDATE/DELETE/NOOP learned as an RL policy from downstream reward. Skill1 is the *skill* lifecycle counterpart (select/utilize/distill).
-- [[mem-alpha]] — RL-trained memory management; sibling in the "make the agent's own bookkeeping a learned policy" family.
+- [[mem-alpha]] — RL-trained [[memory-management|memory management]]; sibling in the "make the agent's own bookkeeping a learned policy" family.
 - [[voyager]] — the foundational skill-library agent; accumulates reusable code skills but selects/distills via prompting (LLM-as-controller), not weight-trained RL. Skill1 closes that gap by training the controller.
 
 ## Notable Quotes
 
-> "We propose Skill1, a framework that trains a single policy to co-evolve skill selection, utilization, and distillation toward a shared task-outcome objective."
+> "We propose Skill1, a framework that trains a single policy to co-evolve [[skill-selection|skill selection]], utilization, and distillation toward a shared task-outcome objective."
 
 > "All learning derives from a single task-outcome signal. Its low-frequency trend credits selection and its high-frequency variation credits distillation."
 

@@ -58,7 +58,7 @@ Function calling rests on a **contract** between the model and the application. 
 }
 ```
 
-The model is expected to emit a response that conforms to this schema (e.g., `{"name": "get_current_weather", "arguments": {"location": "London", "unit": "celsius"}}`). The schema is the interface; everything downstream — parsers, executors, type-checked dispatch — assumes the model honored it. Validation libraries and constrained decoding (see [[structured-outputs]] and [[tool-call-parser]]) exist precisely to enforce this contract when the model drifts.
+The model is expected to emit a response that conforms to this schema (e.g., `{"name": "get_current_weather", "arguments": {"location": "London", "unit": "celsius"}}`). The schema is the interface; everything downstream — parsers, executors, type-checked dispatch — assumes the model honored it. Validation libraries and [[constrained-decoding|constrained decoding]] (see [[structured-outputs]] and [[tool-call-parser]]) exist precisely to enforce this contract when the model drifts.
 
 ## Tool Selection and Routing
 

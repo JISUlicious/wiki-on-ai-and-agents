@@ -21,7 +21,7 @@ introduces:
 # Hermes Agent — Architecture & Implementation Notes
 
 **Source**: `sources/hermes-agent.md` (50KB technical document)
-**Origin**: Architectural writeup of `NousResearch/hermes-agent`, Nous Research's open-source self-improving agent (as of May 2026).
+**Origin**: Architectural writeup of `NousResearch/hermes-agent`, Nous Research's open-source [[self-improving-agent|self-improving agent]] (as of May 2026).
 
 ## Summary
 
@@ -32,7 +32,7 @@ introduces:
 Architecturally:
 
 - Two entry surfaces: interactive terminal (`hermes`) and persistent messaging daemon (`hermes gateway`)
-- Provider-agnostic via OpenAI-compatible chat completions: works with OpenRouter, Nous Portal, Anthropic, NVIDIA NIM, Hugging Face, Ollama, vLLM, llama.cpp, LM Studio
+- Provider-agnostic via OpenAI-compatible chat completions: works with OpenRouter, Nous Portal, Anthropic, NVIDIA NIM, [[huggingface|Hugging Face]], Ollama, vLLM, llama.cpp, LM Studio
 - ~17k tests across ~900 files
 - Heavily plugin-oriented; runtime + persistence layer (skills, memory, sessions, cron jobs) are themselves editable by the agent during use
 

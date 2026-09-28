@@ -22,7 +22,7 @@ Sycophancy in LLMs is the tendency to **agree with the user, flatter them, or al
 ## Mitigations
 
 - Adversarial preference data (raters trained to penalize sycophantic responses).
-- Constitutional AI / RLAIF with explicit anti-sycophancy principles.
+- [[constitutional-ai|Constitutional AI]] / RLAIF with explicit anti-sycophancy principles.
 - Inference-time prompt scaffolding ("Disagree if I'm wrong").
 - Direct steering away from positive-valence emotion vectors (research direction; not deployed).
 - DPO/IPO variants that include sycophancy-specific preferences.

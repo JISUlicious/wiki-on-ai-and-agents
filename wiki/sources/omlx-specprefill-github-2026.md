@@ -20,7 +20,7 @@ tags:
 
 # oMLX SpecPrefill implementation (GitHub)
 
-**Repository**: [jundot/omlx](https://github.com/jundot/omlx) — *"LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar."* Apache-2.0 · ~21.3k stars / 1.8k forks at ingest · created 2026-02-13, last push 2026-09-02.
+**Repository**: [jundot/omlx](https://github.com/jundot/omlx) — *"LLM inference server with continuous batching & SSD caching for [[apple-silicon|Apple Silicon]] — managed from the macOS menu bar."* Apache-2.0 · ~21.3k stars / 1.8k forks at ingest · created 2026-02-13, last push 2026-09-02.
 
 Ingested 2026-09-03 by reading the source tree (`omlx/patches/specprefill.py`, `omlx/specprefill/{policy,draft,target,planning}.py`, `omlx/model_settings.py`) and the release notes. This is the production implementation behind community advice to run a small Qwen draft alongside a large Qwen target for faster prompt processing on Apple Silicon.
 

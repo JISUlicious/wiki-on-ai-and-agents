@@ -37,7 +37,7 @@ The important structural fact for this wiki: the base model **never computes KV 
 
 **Mechanism (Algorithm 1)** — enough to implement:
 
-1. **Speculator forward.** Run the small model over the full prompt of length M. With look-ahead N > 0, greedily decode N more tokens from the speculator (the paper uses **N = 8**; gains beyond 16 are minimal). Store the *queries* of the last prompt token and each decoded token (`store_q=True`). If N = 0 the speculator needs no KV cache at all, which saves memory. Under tensor parallelism, gather Q/K across ranks before scoring.
+1. **Speculator forward.** Run the small model over the full prompt of length M. With look-ahead N > 0, greedily decode N more tokens from the speculator (the paper uses **N = 8**; gains beyond 16 are minimal). Store the *queries* of the last prompt token and each decoded token (`store_q=True`). If N = 0 the speculator needs no KV cache at all, which saves memory. Under [[tensor-parallelism|tensor parallelism]], gather Q/K across ranks before scoring.
 2. **Raw importance.** For every layer and head, compute the attention of each look-ahead query against every context key: a_ij = Softmax(Q_{M+j} K^T)_i for 0 ≤ i < M, 0 ≤ j < N. Using several look-ahead tokens instead of only the last prompt token is the paper's mitigation for [[attention-sink]] and proximity (recency) bias; it matters most on short prompts.
 3. **Aggregate.** From the tensor of shape [N, L, S, H] take the **max over heads H and layers L** (so salient tokens stand out) and the **mean over the N look-ahead tokens**. All layers of the speculator are used; no specific layer is selected.
 4. **Denoise and select.** Apply a 1D average pool over the sequence to smooth scores, split the context into contiguous chunks, average within each chunk, and keep the **top-K chunks**. The keep rate is the fraction of chunks retained; it is a fixed per-task hyperparameter in all experiments (adaptive selection is left as future work).
@@ -45,7 +45,7 @@ The important structural fact for this wiki: the base model **never computes KV 
    - original: `[0,1,2,3,4,5,6,7,8,9]`
    - speculated: `[0,1,3,6,7]`
    - decoding: `[0,1,3,6,7, 10,11,12, ...]`
-   The authors call this "crucially essential", especially for position-sensitive retrieval and counting tasks. In RoPE terms this is **positional sparse prefill**: the target's rotary embedding sees the true positions, not a re-indexed contiguous sequence.
+   The authors call this "crucially essential", especially for position-sensitive retrieval and counting tasks. In RoPE terms this is **positional [[sparse-prefill|sparse prefill]]**: the target's rotary embedding sees the true positions, not a re-indexed contiguous sequence.
 6. **Base forward.** The base model prefills the subset with those position IDs, then decodes normally. Its KV cache contains only the kept tokens.
 
 Three variants are evaluated: plain **SpecPrefill** (raw last-token attention, no smoothing), **SpecPrefill Full** (all techniques, no look-ahead), **SpecPrefill Full LAH** (all techniques + 8-step look-ahead).
@@ -127,4 +127,4 @@ Maximum QPS under a fixed timeout scales as O(1/TTFT), which is why a TTFT cut c
 ## References
 
 - [arXiv:2502.02789](https://arxiv.org/abs/2502.02789) — v2, 19 May 2025; ICML 2025.
-- Follow-ups: [[cross-family-speculative-prefill-upasani-2026]] (cross-family drafts), [[draft-based-approximate-inference-galim-2025]] (generalizes draft-based importance to KV dropping and sparse attention).
+- Follow-ups: [[cross-family-speculative-prefill-upasani-2026]] (cross-family drafts), [[draft-based-approximate-inference-galim-2025]] (generalizes draft-based importance to KV dropping and [[sparse-attention|sparse attention]]).

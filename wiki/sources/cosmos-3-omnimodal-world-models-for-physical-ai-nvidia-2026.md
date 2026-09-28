@@ -7,7 +7,7 @@ sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
 arxiv_id: "2606.02800"
 authors:
-  - NVIDIA
+  - [[nvidia]]
   - et al.
 first_author: NVIDIA
 year: 2026

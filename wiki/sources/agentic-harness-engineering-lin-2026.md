@@ -97,7 +97,7 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 
 - **Survey context**: [[code-as-agent-harness-ning-2026]] — the 2026 survey of code-as-harness systems whose entire §3.5 chapter is built on this paper, positioning AHE as the canonical reference for harness-level self-evolution.
 - **Direct intellectual ancestor**: [[darwin-godel-machine]] — Zhang et al.'s DGM evolves agents themselves; AHE narrows the same closed-loop-evolution principle to the harness substrate.
-- **Sibling self-evolution methods (baselines beaten in the paper)**: ACE (Agentic Context Engineering, [[agentic-context-engineering-zhang-2025]]) — prompt/playbook-only evolution; Training-Free GRPO — trajectory-feedback variant. AHE's gain over both is attributed to evolving tools/middleware/memory, the layers ACE and TF-GRPO leave untouched.
+- **Sibling self-evolution methods (baselines beaten in the paper)**: ACE ([[agentic-context-engineering|Agentic Context Engineering]], [[agentic-context-engineering-zhang-2025]]) — prompt/playbook-only evolution; Training-Free GRPO — trajectory-feedback variant. AHE's gain over both is attributed to evolving tools/middleware/memory, the layers ACE and TF-GRPO leave untouched.
 - **Benchmarks**: Terminal-Bench 2 (primary), SWE-bench-verified (transfer).
 - **Substrate**: NexAU harness framework (refs [23, 37] in the paper) — the file-level, decoupled component substrate that makes component observability possible.
 - **Trajectory analysis**: Agent Debugger (ref [17]) — the framework AHE uses to turn raw rollouts into the layered evidence corpus.

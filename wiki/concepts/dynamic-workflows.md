@@ -17,7 +17,7 @@ tags:
 
 # Dynamic Workflows (Claude Code)
 
-**Dynamic workflows** are [[claude-code|Claude Code]]'s mechanism for letting [[claude|Claude]] **write and orchestrate its own multi-agent harness on the fly**. Given a task description, Claude authors a **JavaScript orchestration script** that spawns and coordinates tens to hundreds of parallel [[multi-agent|subagents]] in a single session; a runtime executes it in the background while the session stays responsive, and results are verified before they reach the user. Introduced by [[anthropic|Anthropic]] in a [[claude-code-dynamic-workflows-2026|May 28 2026 announcement]] and detailed in a [[claude-code-dynamic-workflows-harness-2026|June 2 2026 engineering post]] (Thariq Shihipar & Sid Bidasaria), and enabled by [[claude-opus-4-8|Claude Opus 4.8]]. Available in research preview across the Claude Code CLI, Desktop, and VS Code extension (Max / Team / Enterprise) and via the Claude API, Amazon Bedrock, Vertex AI, and Microsoft Foundry.
+**Dynamic workflows** are [[claude-code|Claude Code]]'s mechanism for letting [[claude|Claude]] **write and orchestrate its own multi-agent harness on the fly**. Given a task description, Claude authors a **JavaScript orchestration script** that spawns and coordinates tens to hundreds of parallel [[multi-agent|subagents]] in a single session; a runtime executes it in the background while the session stays responsive, and results are verified before they reach the user. Introduced by [[anthropic|Anthropic]] in a [[claude-code-dynamic-workflows-2026|May 28 2026 announcement]] and detailed in a [[claude-code-dynamic-workflows-harness-2026|June 2 2026 engineering post]] ([[thariq-shihipar|Thariq Shihipar]] & [[sid-bidasaria|Sid Bidasaria]]), and enabled by [[claude-opus-4-8|Claude Opus 4.8]]. Available in research preview across the Claude Code CLI, Desktop, and VS Code extension (Max / Team / Enterprise) and via the Claude API, Amazon Bedrock, Vertex AI, and Microsoft Foundry.
 
 This is the **self-authored** point on the [[code-as-harness]] axis: rather than choosing a fixed harness, Claude writes a custom harness — in code — tailored to the task at hand.
 
@@ -53,7 +53,7 @@ A workflow is a JavaScript file with special functions for spawning and coordina
 The engineering post catalogs reusable patterns the script encodes:
 
 - **Classify-and-act** — a classifier agent determines task type and routes to different agents/behaviors (and can decide the final output).
-- **Fan-out-and-synthesize** — split into small steps, run an agent per step, then a *barrier* synthesize step merges the structured outputs. Good when steps are many or each needs a clean context.
+- **Fan-out-and-synthesize** — split into small steps, run an agent per step, then a *barrier* synthesize step merges the [[structured-outputs|structured outputs]]. Good when steps are many or each needs a clean context.
 - **Adversarial verification** — for each producing agent, a separate agent verifies its output against a rubric. The core antidote to self-preferential bias.
 - **Generate-and-filter** — generate many candidates, filter by rubric/verification, dedupe, return only the highest-quality survivors.
 - **Tournament** — agents attempt the same task via different approaches; a judging agent compares pairwise until a winner emerges. Also used to rank/sort large lists qualitatively.

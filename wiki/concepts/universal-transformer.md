@@ -16,14 +16,14 @@ The **Universal Transformer (UT)** is the 2018 Dehghani et al. model that first 
 ## Core mechanism
 
 - Recurrent in *depth*, parallel in *time*: one self-attention + transition block is applied repeatedly to a sequence; depth = number of recurrent steps `T`, equivalent to a fixed transformer with all layers' weights tied.
-- Two-dimensional positional encoding (position `i` and time-step `t`) is added at every step, so the model knows where it is in both space and depth.
+- Two-dimensional [[positional-encoding|positional encoding]] (position `i` and time-step `t`) is added at every step, so the model knows where it is in both space and depth.
 - [[adaptive-computation-time|Adaptive Computation Time]] halts each position independently: each symbol predicts its own halting probability; once a position halts, its state is copied forward until all positions halt or `T_max` is reached.
 - Turing-complete under mild assumptions — given sufficient memory, the UT can simulate the Neural GPU, the Neural Turing Machine, and by extension any Turing machine; this closes the expressivity gap left by the fixed-depth vanilla Transformer.
 - The spiritual ancestor of the modern looped-transformer thread (Giannou 2023; Yang 2023; Saunshi 2025; Parcae 2026) — but it predates the "looped" terminology and is framed as a recurrent rather than iterated architecture.
 
 ## What it advances
 
-UT establishes weight-tied depth recurrence as a viable transformer prior — combining the parallelism and global receptive field of attention with the iterative inductive bias of an RNN. Empirically it solves 20/20 bAbI tasks where vanilla Transformer solves 8/20, achieves SOTA on LAMBADA, dominates on algorithmic Copy/Reverse/Addition with length generalization to 10× train length, and still gains +0.9 BLEU on WMT14 En-De translation. It also legitimizes per-token conditional compute by showing that ACT *helps* on structured reasoning tasks rather than just trading off speed.
+UT establishes weight-tied depth recurrence as a viable transformer prior — combining the parallelism and global receptive field of attention with the iterative inductive bias of an RNN. Empirically it solves 20/20 bAbI tasks where vanilla Transformer solves 8/20, achieves SOTA on LAMBADA, dominates on algorithmic Copy/Reverse/Addition with [[length-generalization|length generalization]] to 10× train length, and still gains +0.9 BLEU on WMT14 En-De translation. It also legitimizes per-token conditional compute by showing that ACT *helps* on structured reasoning tasks rather than just trading off speed.
 
 ## Relation to other concepts
 

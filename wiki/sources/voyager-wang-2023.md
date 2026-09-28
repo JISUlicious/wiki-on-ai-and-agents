@@ -81,7 +81,7 @@ Empirically, Voyager dominates prior LLM-agent baselines ([[react]], [[reflexion
 
 > "VOYAGER consists of three key components: 1) an automatic curriculum that maximizes exploration, 2) an ever-growing skill library of executable code for storing and retrieving complex behaviors, and 3) a new iterative prompting mechanism that incorporates environment feedback, execution errors, and self-verification for program improvement." — Abstract
 
-> "Complex skills can be synthesized by composing simpler programs, which compounds VOYAGER's capabilities rapidly over time and alleviates catastrophic forgetting in other continual learning methods." — §1
+> "Complex skills can be synthesized by composing simpler programs, which compounds VOYAGER's capabilities rapidly over time and alleviates catastrophic forgetting in other [[continual-learning|continual learning]] methods." — §1
 
 > "The skills developed by VOYAGER are temporally extended, interpretable, and compositional, which compounds the agent's abilities rapidly and alleviates catastrophic forgetting." — Abstract
 

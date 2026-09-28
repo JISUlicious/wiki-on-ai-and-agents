@@ -6,7 +6,7 @@ updated: 2026-09-07
 sources:
   - https://claude.com/blog/the-ai-native-sdlc-playbook
 authors:
-  - Anthropic
+  - [[anthropic]]
 year: 2026
 venue: "Anthropic (claude.com blog)"
 introduces:

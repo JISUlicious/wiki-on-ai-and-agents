@@ -19,7 +19,7 @@ importance: medium
 
 # Hilbert Operator for Progressive Encoding (HOPE): A Mathematical Framework for Deconstructing Learned Representations in Deep Networks
 
-**Hossein Mobahi, Peter L. Bartlett** (Google DeepMind; Bartlett also UC Berkeley) — [arXiv:2607.21366](https://arxiv.org/abs/2607.21366), cs.LG, 23 Jul 2026. Preprint; no venue listed in the arXiv comments.
+**Hossein Mobahi, Peter L. Bartlett** (Google DeepMind; Bartlett also [[uc-berkeley|UC Berkeley]]) — [arXiv:2607.21366](https://arxiv.org/abs/2607.21366), cs.LG, 23 Jul 2026. Preprint; no venue listed in the arXiv comments.
 
 ## Summary
 

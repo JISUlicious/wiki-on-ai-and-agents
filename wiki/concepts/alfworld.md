@@ -10,8 +10,7 @@ sources:
   - reason-wide-not-deep-singh-2026.md
 status: draft
 importance: high
-tags:
-  - benchmark
+tags: []
 ---
 
 **ALFWorld** is a text-based household-task environment that has become the default proving ground for [[embodied-agent|embodied]] and long-horizon [[llm-agent|LLM agents]]. An agent receives a natural-language goal ("put a clean mug in the coffee machine") and interacts with a simulated home through text commands, succeeding only if the final world state matches the goal.
@@ -34,7 +33,7 @@ ALFWorld is referenced by more than twenty pages here. It is the shared axis alo
 | A distilled 40–130 line skill beats reasoning mode outright (0.787 vs 0.713) | [[reason-wide-not-deep-singh-2026]] |
 
 > [!warning] Saturation and the memory trap
-> Two independent results here should temper ALFWorld numbers. [[memharness-memory-is-reconstructed-not-replayed-wu-2026|MemHarness]] found that *disabling test-time memory entirely* still scored 83.0 against 76.4 for RL-only — so most of the reported "memory" gain was a training-time effect — and that verbatim memory replay ([[mem0]]-style) landed **22–24 points below plain GRPO**. Per-task-family scores also diverge sharply from the average; Pick is close to saturated while composite tasks are not.
+> Two independent results here should temper ALFWorld numbers. [[memharness-memory-is-reconstructed-not-replayed-wu-2026|MemHarness]] found that *disabling [[test-time-memory|test-time memory]] entirely* still scored 83.0 against 76.4 for RL-only — so most of the reported "memory" gain was a training-time effect — and that verbatim memory replay ([[mem0]]-style) landed **22–24 points below plain GRPO**. Per-task-family scores also diverge sharply from the average; Pick is close to saturated while composite tasks are not.
 
 ## Related
 

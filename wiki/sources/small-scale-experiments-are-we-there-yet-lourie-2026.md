@@ -8,7 +8,7 @@ arxiv_id: "2608.11859"
 year: 2026
 authors:
   - Nicholas Lourie
-  - Kyunghyun Cho
+  - [[kyunghyun-cho]]
   - Karen Ullrich
   - Sanae Lotfi
 tags:

@@ -15,7 +15,6 @@ importance: medium
 tags:
   - 2026
   - paper
-  - hardware
 ---
 
 # FAST-Prefill: FPGA Accelerated Sparse Attention for Long Context LLM Prefill
@@ -124,6 +123,6 @@ Related and also unstated: **where the model weights live**. The text says compu
 ## References
 
 - [arXiv:2602.20515](https://arxiv.org/abs/2602.20515)
-- FlexPrefill: Lai et al., *FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference*, ICLR 2025 — the algorithm implemented here.
+- FlexPrefill: Lai et al., *FlexPrefill: A Context-Aware Sparse [[attention-mechanism|Attention Mechanism]] for Efficient Long-Sequence Inference*, ICLR 2025 — the algorithm implemented here.
 - RULER: Hsieh et al., [arXiv:2404.06654](https://arxiv.org/abs/2404.06654) — the accuracy benchmark.
 - SARATHI: Agrawal et al., [arXiv:2308.16369](https://arxiv.org/abs/2308.16369) — source of the chunked-prefill scheme.

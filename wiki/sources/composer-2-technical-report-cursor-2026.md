@@ -24,7 +24,7 @@ Surfaced via the alphaXiv / NLP-newsletter digest.
 
 ## Summary
 
-Composer 2 is a model specialized for **agentic software engineering**, built by the Cursor Research Team to combine strong long-horizon planning and coding intelligence with fast, interactive use. It is trained in two phases on a 1.04T-parameter / 32B-active **Mixture-of-Experts** base: continued pretraining to improve latent coding ability, followed by large-scale **asynchronous reinforcement learning** to improve end-to-end coding through stronger reasoning, accurate multi-step execution, and long-horizon coherence.
+Composer 2 is a model specialized for **agentic software engineering**, built by the Cursor Research Team to combine strong long-horizon planning and coding intelligence with fast, interactive use. It is trained in two phases on a 1.04T-parameter / 32B-active **Mixture-of-Experts** base: continued pretraining to improve latent coding ability, followed by large-scale **asynchronous [[reinforcement-learning|reinforcement learning]]** to improve end-to-end coding through stronger reasoning, accurate multi-step execution, and long-horizon coherence.
 
 A core tenet is minimizing train-test mismatch by training the model **inside the same Cursor harness** used in deployment — equivalent tools, structure, and environments matched to real problems. The team introduces **CursorBench**, a benchmark derived from real software-engineering problems in large codebases (including their own), and reports frontier-level results: 61.3 on CursorBench (a large jump over prior Composer models), 61.7 on Terminal-Bench, and 73.7 on SWE-bench Multilingual in their harness — competitive with state of the art while cheaper to serve due to coding specialization.
 

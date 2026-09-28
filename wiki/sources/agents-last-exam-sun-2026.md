@@ -38,7 +38,7 @@ Tasks run in remote VM environments with a load/start/evaluate lifecycle that pr
 
 ## Concepts & entities
 
-- [[agent-benchmark]] — ALE is a long-horizon agent evaluation benchmark
+- [[agent-benchmark]] — ALE is a long-horizon [[agent-evaluation|agent evaluation]] benchmark
 - [[uc-berkeley]] — leading institution
 - Related: [[gaia]] — adjacent agent benchmark
 - Related: economically valuable work, verifiable outcomes, long-horizon tasks (plain text — no dedicated pages)

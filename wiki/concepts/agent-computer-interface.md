@@ -13,7 +13,7 @@ tags:
 
 # Agent-Computer Interface (ACI)
 
-The Agent-Computer Interface (ACI) is the abstraction of a purpose-built tool and observation surface designed for an LLM agent rather than for a human operator. Carefully shaping the available commands and the feedback they return lets the agent act more reliably and with fewer mistakes. The concept was introduced and demonstrated by [[swe-agent]] as a core part of [[code-as-harness]] design.
+The Agent-Computer Interface (ACI) is the abstraction of a purpose-built tool and observation surface designed for an [[llm-agent|LLM agent]] rather than for a human operator. Carefully shaping the available commands and the feedback they return lets the agent act more reliably and with fewer mistakes. The concept was introduced and demonstrated by [[swe-agent]] as a core part of [[code-as-harness]] design.
 
 ## References
 

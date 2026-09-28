@@ -41,7 +41,7 @@ The fix: train an autoencoder on the LM's residual-stream activations with a spa
 
 The paper demonstrates: (a) SAE features are more interpretable than neurons or PCA-based decompositions by automated interpretability metrics; (b) SAE features identify causally important directions — ablating an SAE feature predicts behavior changes on the indirect-object-identification task more precisely than ablating neurons does.
 
-This paper is the **foundation of the SAE-based interpretability program** that Anthropic later scaled dramatically with Towards Monosemanticity (Bricken et al. 2023) and Scaling Monosemanticity (Templeton et al. 2024, on Claude 3 Sonnet). The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] is in this lineage — though it uses linear-probe-style steering vectors rather than SAE features.
+This paper is the **foundation of the SAE-based interpretability program** that Anthropic later scaled dramatically with Towards Monosemanticity (Bricken et al. 2023) and Scaling Monosemanticity (Templeton et al. 2024, on Claude 3 Sonnet). The [[emotion-concepts-anthropic-2026|2026 emotion-concepts paper]] is in this lineage — though it uses linear-probe-style [[steering-vectors|steering vectors]] rather than SAE features.
 
 ## Key Points
 

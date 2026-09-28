@@ -13,7 +13,7 @@ tags:
 
 # Google Brain
 
-Google's deep learning research division, founded in 2011. Many of the foundational large-language-model and Transformer-era papers came out of Google Brain (and its sister org Google Research). In 2023 Google Brain merged with DeepMind to form Google DeepMind.
+Google's deep learning research division, founded in 2011. Many of the foundational large-language-model and Transformer-era papers came out of Google Brain (and its sister org [[google-research|Google Research]]). In 2023 Google Brain merged with DeepMind to form Google DeepMind.
 
 ## Notable affiliations / publications in this wiki
 

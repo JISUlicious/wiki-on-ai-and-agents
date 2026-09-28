@@ -20,7 +20,7 @@ The wiki's existing guardrailing literature spans several layers:
 
 ## Training-time guardrails (post-training)
 
-- **[[rlhf]]** — Reinforcement Learning from Human Feedback ([[rlhf-christiano-2017|Christiano et al. 2017]] → [[instructgpt-ouyang-2022|InstructGPT 2022]]). Bake in helpfulness, harmlessness, honesty via preference optimization. The dominant mainstream alignment recipe.
+- **[[rlhf]]** — [[reinforcement-learning|Reinforcement Learning]] from Human Feedback ([[rlhf-christiano-2017|Christiano et al. 2017]] → [[instructgpt-ouyang-2022|InstructGPT 2022]]). Bake in helpfulness, harmlessness, honesty via preference optimization. The dominant mainstream alignment recipe.
 - **[[constitutional-ai]]** — RLHF with AI-generated preferences against a written constitution ([[constitutional-ai-bai-2022|Bai et al. 2022]]). Anthropic's variant.
 - **[[rlaif]]** — Generalized AI-feedback alignment training.
 - **[[dpo]]** — Simplified preference-optimization loss ([[dpo-rafailov-2023|Rafailov 2023]]).
@@ -31,11 +31,11 @@ The wiki's existing guardrailing literature spans several layers:
 - **Input filtering / sanitization** — strip or modify prompts before they reach the model.
 - **Output classifiers** — separate models inspect generations and block or redact.
 - **System-prompt boundaries** — `<system>` vs. `<user>` tag separation, with the model trained to respect the boundary. Partial mitigation against [[prompt-injection]].
-- **Structured tool-use APIs** — restrict tool calls to a declared JSON schema; reject malformed actions. (OpenAI function calling, Anthropic tool use, MCP.)
+- **Structured tool-use APIs** — restrict tool calls to a declared [[json-schema|JSON schema]]; reject malformed actions. (OpenAI [[function-calling|function calling]], Anthropic [[tool-use|tool use]], MCP.)
 
 ## Capability / deployment guardrails
 
-- **Sandboxing** — restrict file-system, network, process access for code the agent runs. (Claude Code's `@anthropic-ai/sandbox-runtime`, OpenClaw's tiered Docker, Hermes Agent's 7 backends.)
+- **Sandboxing** — restrict file-system, network, process access for code the agent runs. (Claude Code's `@anthropic-ai/sandbox-runtime`, OpenClaw's tiered Docker, [[hermes-agent|Hermes Agent]]'s 7 backends.)
 - **Permission systems** — rules + classifiers + hooks that decide what the agent can do. ([[claude-code|Claude Code]]'s layered permission stack.)
 - **Capability containment** — narrow the toolbox; require human-in-the-loop for sensitive actions.
 

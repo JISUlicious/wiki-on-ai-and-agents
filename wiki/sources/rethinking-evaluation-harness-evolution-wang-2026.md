@@ -22,7 +22,7 @@ importance: high
 
 # Rethinking the Evaluation of Harness Evolution for Agents
 
-**Yike Wang\*, Huaisheng Zhu\*, Zhengyu Hu, Yige Yuan, Zhengyu Chen, Shakti Senthil, Hannaneh Hajishirzi, Yulia Tsvetkov, Pradeep Dasigi, Teng Xiao\*** (Allen Institute for AI; University of Washington; \*equal contribution) — [arXiv:2607.12227](https://arxiv.org/abs/2607.12227), v1, 14 Jul 2026 (cs.AI). Preprint; no venue. Code: `github.com/rethinking-harness-evolution`.
+**Yike Wang\*, Huaisheng Zhu\*, Zhengyu Hu, Yige Yuan, Zhengyu Chen, Shakti Senthil, Hannaneh Hajishirzi, Yulia Tsvetkov, Pradeep Dasigi, Teng Xiao\*** (Allen Institute for AI; [[university-of-washington|University of Washington]]; \*equal contribution) — [arXiv:2607.12227](https://arxiv.org/abs/2607.12227), v1, 14 Jul 2026 (cs.AI). Preprint; no venue. Code: `github.com/rethinking-harness-evolution`.
 
 ## Summary
 

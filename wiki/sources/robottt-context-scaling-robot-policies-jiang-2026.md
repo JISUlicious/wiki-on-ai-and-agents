@@ -22,7 +22,7 @@ importance: low
 
 # RoboTTT: Context Scaling for Robot Policies
 
-**Yunfan Jiang, Yevgen Chebotar, Ruijie Zheng, … Li Fei-Fei, Yuke Zhu, Linxi "Jim" Fan** (NVIDIA; Stanford University; The University of Texas at Austin) — [arXiv:2607.15275](https://arxiv.org/abs/2607.15275), cs.RO, 16 Jul 2026. Preprint; no venue listed in the arXiv comments.
+**Yunfan Jiang, Yevgen Chebotar, Ruijie Zheng, … Li Fei-Fei, Yuke Zhu, Linxi "Jim" Fan** (NVIDIA; [[stanford-university|Stanford University]]; The University of Texas at Austin) — [arXiv:2607.15275](https://arxiv.org/abs/2607.15275), cs.RO, 16 Jul 2026. Preprint; no venue listed in the arXiv comments.
 
 ## Summary
 

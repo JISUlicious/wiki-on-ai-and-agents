@@ -88,7 +88,7 @@ ED-PPO shows higher variance than BP-PPO, suggesting coarse modular routing is l
 
 - **Neuromorphic hardware** — non-negative synaptic magnitudes with fixed-sign routing may suit analog, photonic, and synapse-device substrates where physical elements naturally encode non-negative quantities.
 - **Free model compression** — the weight floor acts as a natural pruning mechanism.
-- **Continual learning conjecture** — a dedicated inhibitory stream structurally dampens large gradient excursions and the sign constraint prevents weight-sign flips, both implicated in catastrophic forgetting.
+- **[[continual-learning|Continual learning]] conjecture** — a dedicated inhibitory stream structurally dampens large gradient excursions and the sign constraint prevents weight-sign flips, both implicated in catastrophic forgetting.
 
 Fits [[sakana-ai|Sakana]]'s house style: nature-inspired, ALife-adjacent, emergence-over-engineering (cf. [[darwin-godel-machine]], [[sakana-fugu-sakana-ai-2026|Sakana Fugu]]).
 

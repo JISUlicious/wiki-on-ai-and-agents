@@ -29,7 +29,7 @@ importance: medium
 **Source file**: [[are-we-ready-for-an-agent-native-memory-system-zhou-2026]]
 **arXiv**: [arXiv:2606.24775](https://arxiv.org/abs/2606.24775) (v1, 23 Jun 2026, cs.CL)
 **Authors**: Wei Zhou, Xuanhe Zhou, Shaokun Han, Hongming Xu, Guoliang Li, Zhiyu Li, Feiyu Xiong, Fan Wu
-**Affiliations**: Shanghai Jiao Tong University; Tsinghua University; MemTensor (Shanghai) Technology
+**Affiliations**: [[shanghai-jiao-tong-university|Shanghai Jiao Tong University]]; [[tsinghua-university|Tsinghua University]]; MemTensor (Shanghai) Technology
 
 _Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-21–06-28)._
 

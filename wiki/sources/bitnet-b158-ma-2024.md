@@ -19,7 +19,7 @@ importance: medium
 
 # The Era of 1-bit LLMs: BitNet b1.58
 
-**Ma, Wang, ..., Wei** (Microsoft Research) — [arXiv:2402.17764](https://arxiv.org/abs/2402.17764), 2024. Follows **BitNet** ([arXiv:2310.11453](https://arxiv.org/abs/2310.11453)).
+**Ma, Wang, ..., Wei** ([[microsoft-research|Microsoft Research]]) — [arXiv:2402.17764](https://arxiv.org/abs/2402.17764), 2024. Follows **BitNet** ([arXiv:2310.11453](https://arxiv.org/abs/2310.11453)).
 
 ## Mechanism
 

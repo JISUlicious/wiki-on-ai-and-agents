@@ -14,7 +14,6 @@ authors:
 tags:
   - 2026
   - paper
-  - benchmark
 status: complete
 importance: high
 ---
@@ -25,7 +24,7 @@ importance: high
 
 ## Summary
 
-The theoretical case for replacing JSON tool calls with executable code was already made ([[codeact]], "code mode" frameworks, Cloudflare Agents) — what was missing was a head-to-head measurement on a *standardized* tool-calling benchmark, across model families and generations, with LLM-call parity enforced. This paper supplies exactly that: **programmatic tool calling (PTC)** vs. native JSON [[function-calling]] across **14 models on a 309-entry BFCL v4 subset**, plus three ablations (sequential chaining, parallel fan-out, context rot).
+The theoretical case for replacing JSON tool calls with executable code was already made ([[codeact]], "code mode" frameworks, Cloudflare Agents) — what was missing was a head-to-head measurement on a *standardized* tool-calling benchmark, across model families and generations, with LLM-call parity enforced. This paper supplies exactly that: **[[programmatic-tool-calling|programmatic tool calling]] (PTC)** vs. native JSON [[function-calling]] across **14 models on a 309-entry BFCL v4 subset**, plus three ablations (sequential chaining, parallel fan-out, context rot).
 
 In PTC the model receives a system prompt embedding the source of a **typed Python stub module** whose functions map one-to-one onto the benchmark's function schemas. Each stub captures its arguments and returns them as a structured dict (no external service is contacted). The model writes a Python script that imports the module; the agent loop executes it in a native shell subprocess, captures stdout, and the scorer extracts function names and argument values from the printed output. Crucially, **no additional inference turns occur after the subprocess returns** — a *stop middleware* intercepts the next model call and terminates the loop, so PTC and JSON consume **the same number of LLM calls per entry**. That parity is what makes the accuracy comparison clean.
 

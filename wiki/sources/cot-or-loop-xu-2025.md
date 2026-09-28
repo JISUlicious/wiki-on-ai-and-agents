@@ -21,7 +21,7 @@ importance: high
 
 # To CoT or To Loop? A Formal Comparison Between Chain-of-Thought and Looped Transformers
 
-[arXiv:2505.19245](https://arxiv.org/abs/2505.19245) — Kevin Xu, Issei Sato (University of Tokyo), 2025.
+[arXiv:2505.19245](https://arxiv.org/abs/2505.19245) — Kevin Xu, Issei Sato ([[university-of-tokyo|University of Tokyo]]), 2025.
 
 ## Summary
 
@@ -73,7 +73,7 @@ The central result is a two-sided separation that resolves what looks at first l
 - Vaswani et al. 2017 — Transformer ([[attention-is-all-you-need-vaswani-2017]]).
 - Wei et al. 2022 — Chain-of-Thought prompting.
 - Dehghani et al. 2019 — Universal Transformers (original looped formulation).
-- Giannou et al. 2023 — Looped Transformers as Programmable Computers (Turing completeness).
+- Giannou et al. 2023 — Looped Transformers as Programmable Computers ([[turing-completeness|Turing completeness]]).
 - Saunshi et al. 2025 — Reasoning with Latent Thoughts: the power of looped transformers.
 - Merrill & Sabharwal 2024, 2025 — Expressive power of transformers / log-depth transformers.
 - Feng et al. 2023 — CoT theoretical perspective; DAG/DP simulations.
@@ -83,5 +83,5 @@ The central result is a two-sided separation that resolves what looks at first l
 - Jerrum, Valiant & Vazirani 1986 — Random generation from a uniform distribution; FPAUS / FPRAS framework.
 - Schnorr 1976 — Self-reducibility.
 - Wang et al. 2023 — Self-consistency improves CoT reasoning.
-- Xu & Sato 2025 — Expressive power of looped transformers with timestep encoding.
+- Xu & Sato 2025 — Expressive power of looped transformers with [[timestep-encoding|timestep encoding]].
 - Welleck et al. 2024 — From decoding to meta-generation (inference-time algorithms survey).

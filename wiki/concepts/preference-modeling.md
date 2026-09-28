@@ -30,7 +30,7 @@ The Bradley-Terry parametrization assumes underlying scalar utilities exist that
 
 - [[rlhf]] — the canonical use case; reward model is trained from preferences, then policy is optimized against the reward via PPO.
 - **DPO** ([[dpo-rafailov-2023|Rafailov et al. 2023]]): reformulates the same preference objective so it can be optimized directly on the policy without an explicit reward model. Same preference data, same Bradley-Terry assumption.
-- **Constitutional AI** ([[constitutional-ai-bai-2022|Bai et al. 2022]]): AI-generated preferences (RLAIF) substitute for human ones.
+- **[[constitutional-ai|Constitutional AI]]** ([[constitutional-ai-bai-2022|Bai et al. 2022]]): AI-generated preferences (RLAIF) substitute for human ones.
 - **AlphaGo Zero** and its descendants use a related "value head" trained on game outcomes — a degenerate preference (game win/loss) signal.
 
 ## Limitations

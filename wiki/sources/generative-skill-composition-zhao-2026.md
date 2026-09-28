@@ -29,11 +29,11 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-28–07-05).
 
 ## Summary
 
-As LLM agents accumulate large libraries of reusable skills (modular packages of procedural knowledge — e.g., setting up a sandbox, running a test suite, refactoring across files), *selecting* the right skills becomes the central bottleneck. The paper argues existing approaches — exposing the agent to the whole collection, or embedding/LLM-reranker retrieval — miss the structural nature of the problem. It reframes skill selection as **structured skill composition**: a joint decision over *which* skills, *how many*, and *in what order*, three dimensions that cannot be decoupled. Their method, **SkillComposer**, casts this as task-conditioned skill-sequence prediction via a constrained autoregressive decoder over skill identifiers, so subset, count, and order emerge jointly from a single decoding pass.
+As LLM agents accumulate large libraries of reusable skills (modular packages of procedural knowledge — e.g., setting up a sandbox, running a test suite, refactoring across files), *selecting* the right skills becomes the central bottleneck. The paper argues existing approaches — exposing the agent to the whole collection, or embedding/LLM-reranker retrieval — miss the structural nature of the problem. It reframes [[skill-selection|skill selection]] as **structured skill composition**: a joint decision over *which* skills, *how many*, and *in what order*, three dimensions that cannot be decoupled. Their method, **SkillComposer**, casts this as task-conditioned skill-sequence prediction via a constrained autoregressive decoder over skill identifiers, so subset, count, and order emerge jointly from a single decoding pass.
 
 ## Key points
 
-- Formalizes **structured skill composition**: given a task and skill library, predict an executable skill *plan* that jointly specifies activated subset, count, and execution order — versus treating selection as embedding-retrieval ranking.
+- Formalizes **structured skill composition**: given a task and [[skill-library|skill library]], predict an executable skill *plan* that jointly specifies activated subset, count, and execution order — versus treating selection as embedding-retrieval ranking.
 - **SkillComposer** uses a constrained autoregressive decoder over skill IDs; dependencies between successive skills are captured naturally as a sequence-generation problem rather than independent scoring.
 - Training set of task–composition pairs is built from a real, human-curated skill library.
 - Evaluated on composition quality (held-out set) and downstream task success on **SkillsBench** across two production coding agents.

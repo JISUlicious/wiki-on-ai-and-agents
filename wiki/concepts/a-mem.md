@@ -18,8 +18,8 @@ A-MEM ("Agentic Memory") is a self-organizing memory system for [[llm-agent|LLM 
 ## Core mechanism
 
 - **Structured note schema**: each memory `m_i = {c_i, t_i, K_i, G_i, X_i, e_i, L_i}` — original content, timestamp, LLM-generated keywords, tags, contextual description, dense embedding, and link set. Atomic and self-contained.
-- **Link generation**: a new note's embedding retrieves top-k semantic neighbors via [[embedding-retrieval]]; the LLM then judges which connections to actually establish based on shared attributes, not raw similarity alone.
-- **Memory evolution** (the novel contribution): for each retrieved neighbor `m_j`, the LLM is prompted with the new memory and the neighborhood and decides whether to rewrite `m_j`'s context, keywords, and tags. The evolved `m_j*` replaces the original. This breaks the append-only assumption of nearly all prior agent-memory systems.
+- **Link generation**: a new note's embedding retrieves top-k semantic neighbors via [[dense-retrieval|embedding retrieval]]; the LLM then judges which connections to actually establish based on shared attributes, not raw similarity alone.
+- **[[memory-evolution|Memory evolution]]** (the novel contribution): for each retrieved neighbor `m_j`, the LLM is prompted with the new memory and the neighborhood and decides whether to rewrite `m_j`'s context, keywords, and tags. The evolved `m_j*` replaces the original. This breaks the append-only assumption of nearly all prior agent-memory systems.
 - **Multi-box membership**: linked notes form Zettelkasten-style "boxes" of related ideas, but a single memory can belong to multiple boxes simultaneously — no predefined schema.
 - **Implementation**: `all-MiniLM-L6-v2` encoder, default top-k = 10; structured-output prompting via LiteLLM/native APIs.
 

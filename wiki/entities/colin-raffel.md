@@ -13,7 +13,7 @@ tags:
 
 # Colin Raffel
 
-Co-first author of "[[t5-raffel-2019|T5]]" (2019). At [[google-brain|Google]] during the T5 work; later faculty at UNC Chapel Hill, then Mila (University of Toronto).
+Co-first author of "[[t5-raffel-2019|T5]]" (2019). At [[google-brain|Google]] during the T5 work; later faculty at UNC Chapel Hill, then Mila ([[university-of-toronto|University of Toronto]]).
 
 ## References
 

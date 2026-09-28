@@ -71,7 +71,7 @@ The named modes number 39; the paper's **41** counts `model — model` modes onc
 
 **Root-cause rule.** A single trajectory contains cascading failures, so labels would be inconsistent without a fixed selection rule: start at the observed system-level failure, trace backward, and label **the earliest failure from which execution does not recover** — not its downstream symptoms. This is the same "critical failure / first unrecoverable event" convention used in the trajectory-localization literature (cf. `t_lock` in [[failure-as-a-process-cli-agent-trajectories-zhao-2026]]).
 
-**Validation protocol.** Each judge gets the frozen taxonomy definitions plus a *reference to the original source* (GitHub issue, blog post, system-card section, arXiv paper, or a logged trajectory on Hugging Face / Docent) — **never the human label**. Judgment runs in three turns in one session: (1) evidence reconstruction into a neutral chronology, (2) classification of edge + fault side + mode, (3) reflection against disambiguation rules. Human labels came from a single annotator against the frozen definitions.
+**Validation protocol.** Each judge gets the frozen taxonomy definitions plus a *reference to the original source* (GitHub issue, blog post, system-card section, arXiv paper, or a logged trajectory on [[huggingface|Hugging Face]] / Docent) — **never the human label**. Judgment runs in three turns in one session: (1) evidence reconstruction into a neutral chronology, (2) classification of edge + fault side + mode, (3) reflection against disambiguation rules. Human labels came from a single annotator against the frozen definitions.
 
 **Table 2 — agreement with human labels (40 worked examples):**
 

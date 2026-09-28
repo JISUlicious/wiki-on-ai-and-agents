@@ -60,7 +60,7 @@ with recency an exponential decay on last-access with a **90-day half-life**, fr
 - **Experiment 2** ingests all 500 haystacks into **one persistent graph**, simulating a long-running deployment, then compares no-forgetting against forgetting-applied-once.
 - Metrics: token precision/recall/F1 plus a binary LLM-as-judge correctness score ([[llm-as-a-judge]]). GPT-4o-mini serves as extractor, generator, *and* judge. Temperature 0.
 - Statistics: nonparametric bootstrap, 10,000 resamples over questions, percentile method; paired bootstrap matched by question ID; Wilson intervals additionally reported for the bounded judge proportion.
-- Hardware is modest and disclosed: an AMD Radeon RX 7800 XT, 16 GB system RAM, Intel Core i5-9400F, with OpenAI API for GPT-4o-mini. Budget admitted **four complete runs total** (two per experiment).
+- Hardware is modest and disclosed: an AMD Radeon RX 7800 XT, 16 GB system RAM, Intel Core i5-9400F, with [[openai-api|OpenAI API]] for GPT-4o-mini. Budget admitted **four complete runs total** (two per experiment).
 
 ## Results
 

@@ -7,6 +7,27 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-29] lint | Auto-fix: errors, warnings and suggestions (option 3)
+
+**Errors.** Broken link targets fell from 221 to 176. 40 draft stubs were created for targets linked from 2+ pages, 3 true synonyms were repointed (`react-prompting` → [[react]], `embedding-retrieval` → [[dense-retrieval]], `multi-turn-rl` → [[agentic-rl]]), and 2 typos fixed. The other 8 "synonyms" proposed in the lint report were wrong: they name specific models or sibling topics, so they became their own pages instead. Index: 35 entries moved out of topic subsections under `## Sources`, 4 pages given their first real entry, 1 duplicate removed, and a new "Software, libraries, and hardware platforms" entity subsection. 57 `authors` / `first_author` strings linked to existing person and org pages. One was reverted: the Hao Peng on [[what-is-missing-from-ai-post-training-ai-lim-2026]] is the Tsinghua researcher, not the UIUC [[hao-peng]].
+
+**Warnings.** 13 contradiction callouts resolved, leaving 22 genuinely open ones. [[self-improving-agent]]'s mechanism section was rewritten from the six sources that measured against "monotonic compounding". DSA's indexer heads were settled from DeepSeek's released `config.json` (`index_n_heads: 64`). The DiffusionGemma decoding figures were settled in favour of direct measurement, and [[logit-scoring]]'s correction was closed. Resolved callouts are kept as `[!success] Resolved contradiction` so their history stays visible.
+
+**Suggestions.** 701 cross-reference links added on 431 pages (first unlinked mention of a page title per page; no headings, tables or code). The `benchmark` tag was promoted to a [[benchmark]] hub page and removed from 21 pages. The `hardware` tag was dropped from 5 pages, all of which already link [[hardware-accelerator]].
+
+**Process.** The integrity gate had two blind spots. "Ghosts" counted only index entries, and its dangling-link and tag checks ran on a hard-coded list of six pages from an earlier ingest. It now takes changed and new pages from git, reports wiki-wide broken links, and fails on any newly introduced one.
+
+**Remaining.** 176 broken targets each linked from a single page; 22 open contradictions; 294 draft pages; 7 source PDFs named in frontmatter but absent from `sources/`; the `ai-for-science` tag (3 pages).
+
+## [2026-09-28] lint | Wiki health check
+
+Found: 307 errors, 35 warnings, ~560 suggestions across 984 pages. No auto-fix applied yet.
+
+- **Errors**: 221 broken link targets (272 page-links) outside the log, plus 13 in log history left as-is; 40 index entries filed under the wrong section (39 appear only there, all in topic subsections added under `## Sources`); 46 relation errors (2 frontmatter targets missing, 44 `authors` strings whose person/org page exists but isn't linked).
+- **Warnings**: 35 unresolved `Contradiction` callouts on 29 pages. Five of them independently contradict [[self-improving-agent]]'s "capability grows monotonically" claim. Frontmatter, orphans, tag rules and table rendering: all clean.
+- **Suggestions**: 42 missing pages linked from 2+ pages (11 have a synonym page already); 60 multi-word page titles mentioned unlinked on 4+ pages; 253 draft pages, led by [[kv-cache]] (100 inbound links) and [[long-context-llm]] (97); 194 single-source concepts; 7 source PDFs named in frontmatter but absent from `sources/`.
+- **Process note**: the ingest integrity gate's "ghosts" count covered only index entries, and its dangling-link check only new pages. Earlier "ghosts 0" results therefore never meant the whole wiki had no broken links.
+
 ## [2026-09-28] ingest | System One ecosystem, week two (09-22 to 09-28)
 
 Update sweep across implementations, serving engines, TypeSafe itself, independent audits and arXiv. Created: [[system-one-ecosystem-sweep-2026-09-28]], [[jev-research-papers-september-2026]], [[jevbench]], [[kev]], [[sglang]]. Updated: [[jev]], [[typesafe-ai]], [[system-one-model]], [[logit-scoring]], [[laya]], [[openjev]], [[nimble]], [[diffusiongemma]], [[independent-jev-calibration-audits-2026]], [[structured-generation-mode-for-diffusiongemma-mastracci-2026]], [[bespoke-nimble-github-2026]], [[constrained-canvas-vs-free-denoise]], [[prompt-injection]].

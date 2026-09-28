@@ -32,7 +32,7 @@ importance: medium
 
 Note the deliberate split: the tool-calling metrics **ignore order** (to support parallel tool calls), while Trajectory Evaluation explicitly checks it. Trajectory Evaluation also requires a genuine execution trace in NeMo Agent Toolkit format, consuming `intermediate_steps` events.
 
-NVIDIA organizes these into a three-stage workflow: **Intermediate Steps Evaluation** (tool use, retrieval) → **Final-Step Evaluation** (goal accuracy, topic adherence, answer accuracy) → **Trajectory Evaluation** (whole action sequence). The companion benchmarks page runs **BFCL** (Berkeley Function Calling Leaderboard) tasks.
+NVIDIA organizes these into a three-stage workflow: **Intermediate Steps Evaluation** ([[tool-use|tool use]], retrieval) → **Final-Step Evaluation** (goal accuracy, topic adherence, answer accuracy) → **Trajectory Evaluation** (whole action sequence). The companion benchmarks page runs **BFCL** (Berkeley [[function-calling|Function Calling]] Leaderboard) tasks.
 
 > [!warning] "Online" here does not mean production traffic
 > NVIDIA's `MetricOnlineJob` means *the platform generates the responses for you* from a prompt template; `MetricOfflineJob` means the dataset already contains responses. Neither describes scoring live production traffic the way [[langfuse-agent-evaluation-guide|Langfuse]] or Confident AI do. A separate axis distinguishes **Live** evaluation (immediate, <=10 rows) from **Job** evaluation (async, large datasets).

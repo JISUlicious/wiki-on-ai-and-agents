@@ -20,7 +20,6 @@ authors:
 tags:
   - 2026
   - paper
-  - benchmark
 status: complete
 importance: high
 ---

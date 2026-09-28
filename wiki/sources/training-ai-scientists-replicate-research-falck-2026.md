@@ -36,7 +36,7 @@ The thesis is that paper replication is the right *training* task for an [[llm-a
 
 Three artifacts carry the work. **Replica** is an auto-generated task space: 310 figure-replication tasks (242 train / 68 test) mined from 100 well-known ML and AI-for-science papers spanning 1990–2026. **The rubric judge** is the reward: a per-task rubric auto-written by Claude Opus 4.7, applied by Codex GPT-5.5 running *inside the agent's own container* with permission to re-execute the agent's code. **The recipe** is a modified [[grpo]] with three stability devices — multi-sample judge aggregation, judge-emitted turn-level credit weights, and a staged curriculum — applied as [[lora]] adapters on Qwen3.6-27B.
 
-The headline is that Faraday beats both Claude Opus 4.8 and Codex GPT-5.5 on **73% of in-distribution ML tasks and 60% of held-out AI-for-science tasks**, for a mean **+6% over Claude and +8% over Codex on the test split**. The qualitative claim is more interesting than the quantitative one: across hand-inspected high-margin rollouts, Faraday *implements the mechanism the figure is designed to test* where baselines hard-code the expected output — it runs the Darwin-Gödel evolutionary search instead of pasting in a "discovered" agent, runs a real skill-acquisition phase for [[voyager]] instead of pre-populating the skill library, and refuses its own coding agent's attempt to hand-craft an LSTM in place of training one.
+The headline is that Faraday beats both Claude Opus 4.8 and Codex GPT-5.5 on **73% of in-distribution ML tasks and 60% of held-out AI-for-science tasks**, for a mean **+6% over Claude and +8% over Codex on the test split**. The qualitative claim is more interesting than the quantitative one: across hand-inspected high-margin rollouts, Faraday *implements the mechanism the figure is designed to test* where baselines hard-code the expected output — it runs the Darwin-Gödel evolutionary search instead of pasting in a "discovered" agent, runs a real skill-acquisition phase for [[voyager]] instead of pre-populating the [[skill-library|skill library]], and refuses its own coding agent's attempt to hand-craft an LSTM in place of training one.
 
 > The comparison against the frontier is **not matched-harness**. See [Is the frontier comparison fair?](#is-the-frontier-comparison-fair) — this is the single most load-bearing caveat on the headline number.
 
@@ -116,7 +116,7 @@ The striking part is the size inversion: a **27B** model directing one with **an
 
 ## Results
 
-**Main comparison** (mean over 8 rollouts per task per agent; baselines are Claude Opus 4.8 in Claude Code, GPT-5.5 in Codex, GLM-5.2 in Claude Code, all at max/extra-high thinking effort):
+**Main comparison** (mean over 8 rollouts per task per agent; baselines are Claude Opus 4.8 in [[claude-code|Claude Code]], GPT-5.5 in Codex, GLM-5.2 in Claude Code, all at max/extra-high thinking effort):
 
 | Claim | Value |
 |---|---|

@@ -62,7 +62,7 @@ The delta-update mechanism is the load-bearing idea: by replacing monolithic LLM
 - [[agent-skills]] — industry-side counterpart (Anthropic) to ACE's playbook idea.
 - [[memory-management]] — closely related: bullets-with-counters resemble structured agent memory entries.
 - [[in-context-learning]] — ACE pushes ICL into a long-horizon, accumulating regime.
-- [[appworld]] — primary agent benchmark used; ACE's headline result is on the AppWorld leaderboard.
+- [[appworld]] — primary [[agent-benchmark|agent benchmark]] used; ACE's headline result is on the AppWorld leaderboard.
 
 ## Quotes
 

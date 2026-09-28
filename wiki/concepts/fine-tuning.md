@@ -22,8 +22,8 @@ Fine-tuning takes a [[pre-training|pre-trained]] model and continues training it
 The general "fine-tuning" terminology has expanded considerably:
 
 - **Supervised fine-tuning (SFT)**: the original meaning — labeled task data, full backprop.
-- **Instruction tuning**: fine-tuning on (instruction, response) pairs to make the base model follow natural-language instructions (FLAN, T0, Alpaca, etc.).
-- **RLHF**: reinforcement learning from human feedback, used to align models to human preferences after SFT (InstructGPT, [[gpt-4]], Claude).
+- **[[instruction-tuning|Instruction tuning]]**: fine-tuning on (instruction, response) pairs to make the base model follow natural-language instructions (FLAN, T0, Alpaca, etc.).
+- **RLHF**: [[reinforcement-learning|reinforcement learning]] from human feedback, used to align models to human preferences after SFT (InstructGPT, [[gpt-4]], Claude).
 - **Parameter-efficient fine-tuning (PEFT)**: LoRA, adapters, prefix tuning — update only a small fraction of parameters or add small auxiliary modules.
 
 ## Fine-tuning vs. in-context learning

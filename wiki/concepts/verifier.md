@@ -13,7 +13,7 @@ importance: high
 
 # Verifier
 
-A **verifier** is any component that judges whether some output, action, or trajectory is *correct* — as distinct from the **generator** that produced it. The generator/verifier split is one of the load-bearing structures in modern LLM systems: it powers test-time selection, reward modeling, agentic self-correction, and safety gating.
+A **verifier** is any component that judges whether some output, action, or trajectory is *correct* — as distinct from the **generator** that produced it. The generator/verifier split is one of the load-bearing structures in modern LLM systems: it powers test-time selection, [[reward-modeling|reward modeling]], agentic self-correction, and safety gating.
 
 The organizing question for any verifier is **what reference it checks against**, because that determines both the method available and the ceiling on what it can catch.
 
@@ -80,7 +80,7 @@ Different targets demand different machinery — using one LLM judge for everyth
 Surfaced via newsletter ingests; see [[index]].
 
 - [[llm-as-a-verifier-kwok-2026]] — training-free general-purpose verifier reading a *continuous* score off scoring-token logits; +16.6 pts over a discrete judge on the same base model
-- [[right-in-the-right-way-damani-2026]] — multiplying verifiable reward by a human-likeness discriminator cuts reward hacking to 1.0% from 96.9–99.3% — a direct attack on the proxy-reward problem
+- [[right-in-the-right-way-damani-2026]] — multiplying verifiable reward by a human-likeness discriminator cuts [[reward-hacking|reward hacking]] to 1.0% from 96.9–99.3% — a direct attack on the proxy-reward problem
 - [[coding-agents-replicate-sciml-papers-hans-2026]] — gates task completion on *workspace evidence* rather than the agent's final message — outcome verification in practice
 - [[information-access-llm-monitors-arike-2026]] — extract-then-evaluate monitoring: filtering the trajectory beats dumping it into the monitor's context (+16.8 pp)
 - [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — **invisible reasoning**: filler tokens lift accuracy up to +30 pp, and Opus 4.5 satisfies a hidden constraint 33.5%→44.5% with no visible trace — behavioural corroboration that output-only verification has a blind spot

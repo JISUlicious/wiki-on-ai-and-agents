@@ -7,9 +7,9 @@ sources:
   - agentic-ai-next-intelligence-explosion-evans-2026.md
 arxiv_id: "2603.20639"
 authors:
-  - James Evans
+  - [[james-evans]]
   - Benjamin Bratton
-  - Blaise Agüera y Arcas
+  - [[blaise-aguera-y-arcas]]
 first_author: James Evans
 year: 2026
 tags: [2026]

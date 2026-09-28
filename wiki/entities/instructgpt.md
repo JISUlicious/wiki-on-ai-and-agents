@@ -19,7 +19,7 @@ tags:
 
 # InstructGPT
 
-InstructGPT is [[openai|OpenAI]]'s instruction-following variant of [[gpt-3]], introduced in [[instructgpt-ouyang-2022|"Training language models to follow instructions with human feedback"]] (Ouyang et al., 2022). Released as `text-davinci-001` (and follow-ups) on the OpenAI API in January 2022 — predating ChatGPT by ~10 months.
+InstructGPT is [[openai|OpenAI]]'s instruction-following variant of [[gpt-3]], introduced in [[instructgpt-ouyang-2022|"Training language models to follow instructions with human feedback"]] (Ouyang et al., 2022). Released as `text-davinci-001` (and follow-ups) on the [[openai-api|OpenAI API]] in January 2022 — predating ChatGPT by ~10 months.
 
 ## The recipe
 
@@ -33,7 +33,7 @@ Three stages applied to a GPT-3 base model:
 
 InstructGPT is the **direct lineal ancestor of ChatGPT** and every general-purpose chat LLM since. The November 2022 ChatGPT release was a slightly improved variant of the same pipeline applied to GPT-3.5, with dialogue-specific training data added. The 1.3B-vs-175B preference result — labelers preferring the 100×-smaller-but-aligned model — became the canonical justification for spending compute on post-training alignment rather than just on scaling pre-training.
 
-The recipe also became the template for every other lab's assistant model: Claude (using Constitutional AI variations), Gemini, Llama-Chat, Mistral-Instruct, Qwen-Chat — all follow some version of SFT → preferences → policy optimization.
+The recipe also became the template for every other lab's assistant model: Claude (using [[constitutional-ai|Constitutional AI]] variations), Gemini, Llama-Chat, Mistral-Instruct, Qwen-Chat — all follow some version of SFT → preferences → policy optimization.
 
 ## Successors
 

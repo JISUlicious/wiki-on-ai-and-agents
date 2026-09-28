@@ -20,7 +20,7 @@ tags:
   - 2023
 ---
 
-A **looped transformer** is a [[transformer-architecture|transformer]] whose forward pass is re-applied (looped) over the same set of layers — depth-recursion as a substitute for, or complement to, depth-via-stacking. Instead of scaling capability by adding more distinct layers, a `k`-layer block is unrolled `L` times with tied weights, producing an effective depth of `kL` at roughly `1/L` the parameter count. The construction trades parameters for a recurrent inductive bias that is unusually well-matched to iterative algorithms (gradient descent, multi-hop graph traversal, dynamic programming) and to [[latent-reasoning|silent reasoning]] in embedding space. The line runs from the 2018 [[universal-transformer]] through the constructive 2023 work of Giannou et al. to 2026's [[recurrent-depth-transformer|pretraining-scale RDTs]] and [[parcae|Parcae]] scaling laws.
+A **looped transformer** is a [[transformer-architecture|transformer]] whose forward pass is re-applied (looped) over the same set of layers — depth-recursion as a substitute for, or complement to, depth-via-stacking. Instead of scaling capability by adding more distinct layers, a `k`-layer block is unrolled `L` times with tied weights, producing an effective depth of `kL` at roughly `1/L` the parameter count. The construction trades parameters for a recurrent inductive bias that is unusually well-matched to iterative algorithms (gradient descent, multi-hop graph traversal, dynamic programming) and to [[latent-reasoning|silent reasoning]] in embedding space. The line runs from the 2018 [[universal-transformer]] through the constructive 2023 work of Giannou et al. to 2026's [[recurrent-depth-transformer|pretraining-scale RDTs]] and [[parcae|Parcae]] [[scaling-laws|scaling laws]].
 
 ## Core mechanism
 
@@ -28,7 +28,7 @@ A **looped transformer** is a [[transformer-architecture|transformer]] whose for
 - A `k`-layer block looped `L` times approximates a `kL`-layer non-looped network on reasoning tasks at ~`1/L` the parameter count — Yang 2023 shows a 1-layer × 20-loop model matches a 12-layer baseline on in-context linear regression with <10% of the parameters.
 - Hand-constructed weights can make a constant-depth looped transformer simulate a programmable computer (Giannou 2023): 13 layers + a loop suffice to emulate SUBLEQ and run matrix algebra, power iteration, and SGD over an implicit network.
 - Learned looping captures iterative in-context-learning algorithms — Gatmiry 2024 proves looped transformers implement multi-step preconditioned gradient descent, and probing in Yang 2023 shows monotonic refinement of `w_OLS` across loop iterations.
-- Adding a per-iteration **timestep encoding** closes the expressivity gap with non-looped models (Xu & Sato 2024), so looped transformers are not constrained to be position-permutation-invariant across depth.
+- Adding a per-iteration **[[timestep-encoding|timestep encoding]]** closes the expressivity gap with non-looped models (Xu & Sato 2024), so looped transformers are not constrained to be position-permutation-invariant across depth.
 
 ## What it advances
 
@@ -53,7 +53,7 @@ The 2018 [[universal-transformer]] is the direct ancestor — same idea, [[adapt
 - [[cot-or-loop-xu-2025]] — formal CoT-vs-loop separation.
 - [[loop-think-generalize-2026]] — implicit-reasoning RDT case study.
 - [[parcae-scaling-laws-looped-2026]] — the stable pretraining recipe + scaling laws.
-- [[looped-transformers-length-generalization-fan-2024]] — looping for length generalization.
+- [[looped-transformers-length-generalization-fan-2024]] — looping for [[length-generalization|length generalization]].
 
 ## Related 2026 sources
 

@@ -46,7 +46,7 @@ Scaling: **15.1 PetaFLOP/s at 76% efficiency** on 512 GPUs (8.3B params), agains
 
 [[megatron-ptd-parallelism-narayanan-2021|PTD]] sharpens this: bubble fraction **(p−1)/m** for the GPipe schedule, and **(1/v)·(p−1)/m** for the *interleaved* 1F1B schedule with v chunks per device — at v× the communication, requiring m to be a multiple of p. PipeDream-Flush 1F1B has the same bubble as GPipe but stashes activations for only **p** in-flight microbatches instead of **m**.
 
-GPipe's own limitation is what motivated tensor parallelism: *"GPipe currently assumes that a single layer fits within the memory requirements of a single accelerator."*
+GPipe's own limitation is what motivated [[tensor-parallelism|tensor parallelism]]: *"GPipe currently assumes that a single layer fits within the memory requirements of a single accelerator."*
 
 ## Composing them: the placement rule
 

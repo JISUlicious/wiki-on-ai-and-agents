@@ -21,7 +21,7 @@ importance: medium
 
 Surfaced while researching [[agentic-harness-engineering]].
 
-[arXiv:2606.05922](https://arxiv.org/abs/2606.05922) — Wenbo Pan et al. (City University of Hong Kong; Microsoft Research Asia), June 2026.
+[arXiv:2606.05922](https://arxiv.org/abs/2606.05922) — Wenbo Pan et al. (City University of Hong Kong; [[microsoft-research|Microsoft Research]] Asia), June 2026.
 
 ## Summary
 

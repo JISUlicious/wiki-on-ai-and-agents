@@ -72,7 +72,7 @@ On seven QA benchmarks (NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, Musique,
 
 ## Quotes
 
-> "Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple outcome-based reward function." — Abstract
+> "Search-R1 optimizes LLM reasoning trajectories with multi-turn search interactions, leveraging retrieved token masking for stable RL training and a simple [[outcome-based-reward|outcome-based reward]] function." — Abstract
 
 > "We model the search engine as part of the environment, enabling sampled trajectory sequences that interleave LLM token generation with search engine retrievals." — §1, Contributions
 

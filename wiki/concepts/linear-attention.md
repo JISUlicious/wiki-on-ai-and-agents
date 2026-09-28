@@ -69,11 +69,11 @@ From Kimi Linear's matched 1.4T-token comparison (48B total / 3B active MoE):
 > [!note] The headline decode number is batch-scaled
 > The 6.3× TPOT at 1M comes largely from the smaller KV cache enabling **larger batches**, not from per-token work alone — at batch 1 it is 2.2×. The same indirection appears in KV-cache quantization (see [[quantization-performance]]): memory savings become throughput by way of concurrency.
 
-An elegant side effect: with **NoPE** on all full-attention layers, KDA becomes the *sole position-aware operator* — the gated delta rule acts as a learnable, data-dependent multiplicative positional encoding. This also lets MLA collapse to pure MQA at inference and removes RoPE base tuning / YaRN entirely. The RoPE variant is worse on long context (RULER 78.8 vs 84.3) while matching on short.
+An elegant side effect: with **NoPE** on all full-attention layers, KDA becomes the *sole position-aware operator* — the gated delta rule acts as a learnable, data-dependent multiplicative [[positional-encoding|positional encoding]]. This also lets MLA collapse to pure MQA at inference and removes RoPE base tuning / YaRN entirely. The RoPE variant is worse on long context (RULER 78.8 vs 84.3) while matching on short.
 
 ## Honest limitations
 
-Kimi Linear states them: finite-state capacity still caps exact recall (hence the hybrid); linear attention remains hampered by **hardware and inference-infrastructure maturity** — which is exactly the gap [[flash-kda-moonshot-2026|FlashKDA]] addresses; the 3:1 ratio is empirical rather than derived; and it **loses** on EvalPlus, MATH500, LiveBench, LongBench v2 and Frames. The authors also note sparse attention retrieves fine-grained history better, and combining the two is future work.
+Kimi Linear states them: finite-state capacity still caps exact recall (hence the hybrid); linear attention remains hampered by **hardware and inference-infrastructure maturity** — which is exactly the gap [[flash-kda-moonshot-2026|FlashKDA]] addresses; the 3:1 ratio is empirical rather than derived; and it **loses** on EvalPlus, MATH500, LiveBench, LongBench v2 and Frames. The authors also note [[sparse-attention|sparse attention]] retrieves fine-grained history better, and combining the two is future work.
 
 ## Related
 
@@ -88,4 +88,4 @@ Kimi Linear states them: finite-state capacity still caps exact recall (hence th
 ## Related 2026 sources
 
 - [[qwen3.8-flash-next]] — 36 of 48 layers are Gated DeltaNet, with the other 12 sparse — the same 3:1 linear-to-full ratio Kimi Linear reached independently
-- [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — the uncomfortable measurement: Gated DeltaNet's arithmetic intensity at decode is **0.87 FLOP/byte** against MHSA+GQA's ~1 and an H100 ridge point of 25.6 — **subquadratic models are *more* memory-bound at decode than the Transformers they replace**. A fixed-size state is a capacity win and an intensity loss, because every layer reads and writes its whole state matrix on every token regardless of sequence length
+- [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — the uncomfortable measurement: Gated DeltaNet's [[arithmetic-intensity|arithmetic intensity]] at decode is **0.87 FLOP/byte** against MHSA+GQA's ~1 and an H100 ridge point of 25.6 — **subquadratic models are *more* memory-bound at decode than the Transformers they replace**. A fixed-size state is a capacity win and an intensity loss, because every layer reads and writes its whole state matrix on every token regardless of sequence length

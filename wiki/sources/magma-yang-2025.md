@@ -36,7 +36,7 @@ importance: high
 
 # Magma: A Foundation Model for Multimodal AI Agents
 
-[arXiv:2502.13130](https://arxiv.org/abs/2502.13130) — CVPR 2025 — Microsoft Research, University of Maryland, University of Wisconsin–Madison, KAIST, University of Washington — [project page](https://microsoft.github.io/Magma)
+[arXiv:2502.13130](https://arxiv.org/abs/2502.13130) — CVPR 2025 — Microsoft Research, University of Maryland, University of Wisconsin–Madison, KAIST, [[university-of-washington|University of Washington]] — [project page](https://microsoft.github.io/Magma)
 
 ## Summary
 

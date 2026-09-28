@@ -88,7 +88,7 @@ This is one of the cleanest 2025 papers arguing that **iterative latent computat
 ## References (selected)
 
 - Lan et al. (2020) — ALBERT; parameter-sharing precedent for looped transformers.
-- Dehghani et al. (2018) — Universal Transformer; adaptive-compute looping precedent.
+- Dehghani et al. (2018) — [[universal-transformer|Universal Transformer]]; adaptive-compute looping precedent.
 - Bai et al. (2019) — Deep Equilibrium Models.
 - Saunshi et al. (2024) — gradual stacking / MidAS; the immediate precursor for the middle-looping variant and the perplexity-vs-reasoning isoplot methodology.
 - Saunshi et al. (2022); Liu et al. (2023) — perplexity-vs-downstream inductive bias studies.

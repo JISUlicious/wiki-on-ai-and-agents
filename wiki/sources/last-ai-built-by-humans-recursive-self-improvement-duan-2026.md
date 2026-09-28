@@ -26,7 +26,7 @@ tags:
 
 # The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement
 
-**Duan, Liu, Tang, Chen, Zhou (equal contribution), … , Xuanhe Zhou (corresponding), Fan Wu** (34 authors). Affiliations: Shanghai Jiao Tong University, Theseus Labs, [[tsinghua-university]], ByteDance, ModelBest, Xiaohongshu, Humanlaya, Agent-Native Research Lab, Shanghai AI Lab. [arXiv:2609.11873](https://arxiv.org/abs/2609.11873), cs.LG, v1 10 Sep 2026. It is a survey with no venue stated. Project page: `theseus-labs-rsi.github.io`.
+**Duan, Liu, Tang, Chen, Zhou (equal contribution), … , Xuanhe Zhou (corresponding), Fan Wu** (34 authors). Affiliations: [[shanghai-jiao-tong-university|Shanghai Jiao Tong University]], Theseus Labs, [[tsinghua-university]], ByteDance, ModelBest, Xiaohongshu, Humanlaya, Agent-Native Research Lab, Shanghai AI Lab. [arXiv:2609.11873](https://arxiv.org/abs/2609.11873), cs.LG, v1 10 Sep 2026. It is a survey with no venue stated. Project page: `theseus-labs-rsi.github.io`.
 
 ## Summary
 

@@ -9,13 +9,12 @@ sources:
   - sliminfer-dynamic-token-pruning-long-2025.md
 status: draft
 importance: medium
-tags:
-  - benchmark
+tags: []
 ---
 
 # LongBench
 
-The default benchmark for long-context *understanding* — as distinct from RULER-style synthetic *retrieval*. Sixteen to seventeen datasets across six task categories (single- and multi-document QA, summarization, few-shot learning, synthetic, and code), with average prompts of a few thousand tokens; **LongBench v2** extends to ~250K-token prompts.
+The default benchmark for long-context *understanding* — as distinct from RULER-style synthetic *retrieval*. Sixteen to seventeen datasets across six task categories (single- and multi-document QA, summarization, [[few-shot-learning|few-shot learning]], synthetic, and code), with average prompts of a few thousand tokens; **LongBench v2** extends to ~250K-token prompts.
 
 It appears in nearly every [[sparse-prefill]] paper because its task mix exposes the family's central weakness: **retrieval-style tasks survive aggressive token dropping and coverage-style tasks do not.** The same 10% keep that leaves multi-doc QA untouched costs ~16% on summarization and 11 points on NarrativeQA.
 

@@ -23,7 +23,7 @@ importance: high
 
 # GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints
 
-**Joshua Ainslie, James Lee-Thorp, Michiel de Jong (equal contribution), Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai** (Google Research; de Jong also University of Southern California) — [arXiv:2305.13245](https://arxiv.org/abs/2305.13245), accepted at **EMNLP 2023** (per the arXiv comments field).
+**Joshua Ainslie, James Lee-Thorp, Michiel de Jong (equal contribution), Yury Zemlyanskiy, Federico Lebrón, Sumit Sanghai** ([[google-research|Google Research]]; de Jong also University of Southern California) — [arXiv:2305.13245](https://arxiv.org/abs/2305.13245), accepted at **EMNLP 2023** (per the arXiv comments field).
 
 ## Summary
 

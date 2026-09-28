@@ -13,7 +13,7 @@ tags:
 
 # Chronos
 
-**Chronos** is a temporal-aware conversational agent for long-term memory, introduced by Sen et al. ([[pwc|PwC]]) in March 2026 ([[chronos-sen-2026]]). It is also the **custom-harness baseline** in their later [[grep-all-you-need-sen-2026|Is Grep All You Need?]] study — where the same Claude Opus 4.6 backbone hits **93.1% on Chronos vs. 76.7% on [[claude-code]]** under matched conditions.
+**Chronos** is a temporal-aware conversational agent for [[long-term-memory|long-term memory]], introduced by Sen et al. ([[pwc|PwC]]) in March 2026 ([[chronos-sen-2026]]). It is also the **custom-harness baseline** in their later [[grep-all-you-need-sen-2026|Is Grep All You Need?]] study — where the same Claude Opus 4.6 backbone hits **93.1% on Chronos vs. 76.7% on [[claude-code]]** under matched conditions.
 
 ## Core mechanism
 

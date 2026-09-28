@@ -12,7 +12,7 @@ authors:
   - Liangsheng Yin
   - Zhiqiang Xie
   - Ying Sheng
-  - Ion Stoica
+  - [[ion-stoica]]
 tags:
   - 2023
   - paper
@@ -22,7 +22,7 @@ importance: high
 
 # SGLang: Efficient Execution of Structured Language Model Programs
 
-**Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, et al.** (UC Berkeley, Stanford, Shanghai Jiao Tong, Texas A&M; equal contribution Lianmin Zheng and Ying Sheng) — [arXiv:2312.07104](https://arxiv.org/abs/2312.07104). No venue in the arXiv metadata; v2 (June 2024) is marked "Preprint. Under review."
+**Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, et al.** ([[uc-berkeley|UC Berkeley]], Stanford, Shanghai Jiao Tong, Texas A&M; equal contribution Lianmin Zheng and Ying Sheng) — [arXiv:2312.07104](https://arxiv.org/abs/2312.07104). No venue in the arXiv metadata; v2 (June 2024) is marked "Preprint. Under review."
 
 ## Summary
 
@@ -30,11 +30,11 @@ SGLang is a co-designed frontend language and serving runtime for **LM programs*
 
 The runtime contribution that matters for prefill is **RadixAttention**, the canonical automatic prefix-caching mechanism. Existing engines discard a request's KV cache when the request finishes; RadixAttention instead **retains it in a radix tree** that maps token sequences to KV tensors stored in a paged, non-contiguous layout (one token per page). Prefix matching, insertion, and eviction are all tree operations, so KV reuse becomes automatic across calls, across program instances, and across users — no manual annotation of what is shareable. Eviction is **LRU on leaves first** (so common ancestors survive until they themselves become leaves), with a reference counter per node so nodes in the running batch cannot be evicted. Cache and running requests share one memory pool rather than a preallocated cache, so under load the system will evict everything in favor of a larger batch.
 
-Because hit rate depends on request order, RadixAttention pairs the tree with a **cache-aware scheduler**: sort the waiting queue by matched prefix length and run longest-shared-prefix-first, which the paper proves (Theorem 3.1) is equivalent to depth-first traversal of the batch's radix tree and therefore optimal for cache hit rate given a cache at least as large as the longest request. FCFS or random ordering causes thrashing. Two other runtime techniques round out the system: a **compressed finite state machine** for constrained decoding (collapses multi-token deterministic paths so several tokens decode in one step) and **API speculative execution** for closed models. RadixAttention is compatible with continuous batching, paged attention, and tensor parallelism.
+Because hit rate depends on request order, RadixAttention pairs the tree with a **cache-aware scheduler**: sort the waiting queue by matched prefix length and run longest-shared-prefix-first, which the paper proves (Theorem 3.1) is equivalent to depth-first traversal of the batch's radix tree and therefore optimal for cache hit rate given a cache at least as large as the longest request. FCFS or random ordering causes thrashing. Two other runtime techniques round out the system: a **compressed finite state machine** for [[constrained-decoding|constrained decoding]] (collapses multi-token deterministic paths so several tokens decode in one step) and **API speculative execution** for closed models. RadixAttention is compatible with continuous batching, paged attention, and [[tensor-parallelism|tensor parallelism]].
 
 ## Key points
 
-- **Throughput up to 6.4× and latency down to 3.7×** versus vLLM v0.2.5, Guidance v0.1.8 (llama.cpp), and LMQL v0.7.3, on Llama-2-7B across MMLU (5-shot), HellaSwag (20-shot), ReAct agents, generative agents, tree-of-thought, skeleton-of-thought, LLM judge, JSON decoding, multi-turn chat, and a DSPy RAG pipeline. Mostly NVIDIA A10G (24 GB), fp16; the same trend holds for Mixtral-8x7B and Llama-2-70B under tensor parallelism.
+- **Throughput up to 6.4× and latency down to 3.7×** versus vLLM v0.2.5, Guidance v0.1.8 (llama.cpp), and LMQL v0.7.3, on Llama-2-7B across MMLU (5-shot), HellaSwag (20-shot), ReAct agents, [[generative-agents|generative agents]], tree-of-thought, skeleton-of-thought, LLM judge, JSON decoding, multi-turn chat, and a DSPy RAG pipeline. Mostly NVIDIA A10G (24 GB), fp16; the same trend holds for Mixtral-8x7B and Llama-2-70B under tensor parallelism.
 - **Cache hit rate is the mechanism.** Across those benchmarks the achieved hit rate ranges **50%–99%**, and cache-aware scheduling reaches **96% of the optimal hit rate on average**. The ablation (partially disabling matched tokens at runtime on tree-of-thought) shows hit rate driving all four metrics monotonically: higher hit rate → larger batch size → higher throughput and lower first-token/total latency.
 - **Two distinct wins from the same mechanism.** Reuse cuts prefill FLOPs (lower time-to-first-token) *and* cuts total KV memory by sharing, which admits a larger batch (higher max throughput). The paper is explicit that on **multi-turn chat with long outputs there is almost no speedup** — sharing is low across sessions and decode time dominates — whereas short-output chat benefits a lot. Prefix caching is a prefill optimization, not a decode one.
 - **Overhead is negligible when there is nothing to reuse.** On ShareGPT with no reuse opportunity, 100 requests take 74.3 s of which only **0.2 s (<0.3%)** is radix-tree bookkeeping, because tree operations are linear and cheap. The authors conclude RadixAttention can be on by default.

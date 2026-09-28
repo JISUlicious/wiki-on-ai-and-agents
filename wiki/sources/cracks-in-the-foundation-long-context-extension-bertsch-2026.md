@@ -10,7 +10,7 @@ authors:
   - Amanda Bertsch
   - Luca Soldaini
   - Matthew R. Gormley
-  - Graham Neubig
+  - [[graham-neubig]]
   - Hannaneh Hajishirzi
   - Kyle Lo
   - Dirk Groeneveld

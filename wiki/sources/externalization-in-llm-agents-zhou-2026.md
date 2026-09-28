@@ -22,7 +22,7 @@ importance: medium
 
 Surfaced while researching [[agentic-harness-engineering]].
 
-[arXiv:2604.08224](https://arxiv.org/abs/2604.08224) — Chenyu Zhou et al. (Shanghai Jiao Tong University, OPPO, CMU, Sun Yat-Sen University), April 2026. A systems-level survey.
+[arXiv:2604.08224](https://arxiv.org/abs/2604.08224) — Chenyu Zhou et al. ([[shanghai-jiao-tong-university|Shanghai Jiao Tong University]], OPPO, CMU, Sun Yat-Sen University), April 2026. A systems-level survey.
 
 ## Summary
 
@@ -46,7 +46,7 @@ It traces a historical progression "from weights to context to harness," reviews
 - [[agent-three-layer-model]] — the weights/context/infrastructure progression maps onto the three-layer view.
 - [[memory-management]] — memory as externalized state across time.
 - [[agent-skills]] — skills as externalized procedural expertise.
-- [[skill-optimization]] — skill acquisition and evolution stages.
+- [[skill-optimization]] — [[skill-acquisition|skill acquisition]] and evolution stages.
 - [[mcp]] — surveyed under agent-tool interaction protocols.
 - [[self-improving-agent]] — self-evolving harnesses named as an emerging direction.
 - [[llm-agent]] — the object of the review.

@@ -44,8 +44,8 @@ Beyond the immediate context window, agents manage memory across an explicit lif
 - **Scratchpad**: in-context working memory, lost between sessions.
 - **Vector store** (semantic memory): retrieve relevant past observations via embedding similarity.
 - **Structured memory** (key-value stores, databases): explicit reads/writes — see [[memgpt]], [[mem0]].
-- **Graph memory**: relational stores with PPR-style retrieval — see [[hipporag-2]], [[a-mem]].
-- **Procedural memory**: skill libraries the agent grows over time — see [[voyager]].
+- **[[graph-memory|Graph memory]]**: relational stores with PPR-style retrieval — see [[hipporag-2]], [[a-mem]].
+- **[[procedural-memory|Procedural memory]]**: skill libraries the agent grows over time — see [[voyager]].
 - **Multi-typed memory**: Core / Episodic / Semantic / Procedural / Resource / Vault — see [[mirix]].
 - **Parametric/online**: weights updated at test time as memory — see [[titans]].
 - **KV-cache-internal**: episodic structure inside the context cache — see [[em-llm]].
@@ -56,18 +56,18 @@ Beyond the immediate context window, agents manage memory across an explicit lif
 Mainstream production agent stacks combine:
 
 - A strong instruction-tuned model (Claude, GPT-4, Gemini).
-- Structured tool-use APIs (OpenAI function calling, Anthropic tool use, **MCP** servers).
+- Structured tool-use APIs (OpenAI [[function-calling|function calling]], Anthropic tool use, **MCP** servers).
 - A scaffolding/orchestration framework (LangGraph, Anthropic's Computer Use, OpenAI's Assistants API).
 - Domain-specific tools and memory.
 
-Agentic capability is one of the most active commercial frontiers — coding agents (Cursor, Claude Code, Devin), browser/computer-use agents, and customer-service/automation agents are the visible examples.
+Agentic capability is one of the most active commercial frontiers — coding agents (Cursor, [[claude-code|Claude Code]], Devin), browser/computer-use agents, and customer-service/automation agents are the visible examples.
 
 ## Open problems
 
 - **Reliability over long horizons**: agents drift, get stuck, or make catastrophic errors over long task sequences.
 - **Cost**: agentic workflows can consume thousands of LLM tokens per user request.
 - **Evaluation**: hard to benchmark; "did the agent succeed" is task-specific and often subjective.
-- **Safety**: an autonomous LLM with arbitrary actuation is a non-trivial security surface (cf. prompt injection, sandbox escape).
+- **Safety**: an autonomous LLM with arbitrary actuation is a non-trivial security surface (cf. [[prompt-injection|prompt injection]], sandbox escape).
 
 See [[agentic-ai-and-the-next-intelligence-explosion]] for a recent essay-length argument about where this is going.
 

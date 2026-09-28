@@ -20,7 +20,7 @@ importance: medium
 
 # Coding-agents can replicate scientific machine learning papers
 
-**Atharva Hans, Ilias Bilionis** (School of Mechanical Engineering, Purdue University; Hans now at Eli Lilly) — [arXiv:2607.02134](https://arxiv.org/abs/2607.02134) (v2, 10 July 2026). 16 pages, cs.AI; no venue listed.
+**Atharva Hans, Ilias Bilionis** (School of Mechanical Engineering, [[purdue-university|Purdue University]]; Hans now at Eli Lilly) — [arXiv:2607.02134](https://arxiv.org/abs/2607.02134) (v2, 10 July 2026). 16 pages, cs.AI; no venue listed.
 
 ## Summary
 
@@ -41,7 +41,7 @@ The completion gate is the paper's central design claim: `V_complete = V_spec �
 - **Effort varies ~2× even conditioning on paper.** Elapsed replication time ranges **1.2 to 13.0 hours**; posterior medians 6.9 h (PINN-II), 5.0 h (PINN-I), 2.2 h (PIFT), 1.9 h (SINDy). Posterior probability a PINN paper takes longer than a non-PINN paper: 0.947–0.972.
 - **Correction work is recorded, not overwritten.** 25 superseded tracked executions across the corpus — 11 in PINN-I, 10 in PINN-II, 3 in PIFT, 1 in SINDy. Within PINN-I, run 1 records 71 tracked executions (11 superseded) while runs 2 and 3 each record 12 with none superseded.
 - **Judgment variation**: fraction of aligned paper claims where *every* run of that paper recorded the same acceptance-rule type — SINDy 19/20 = 0.95, PIFT 8/11 = 0.73, PINN-I 4/8 = 0.50, PINN-II 5/11 = 0.46. The PINN papers vary because repeated runs sometimes classify the same claim as a numeric target and sometimes as a structural one. Two completed workspaces can support the same claim while accepting different *kinds* of evidence as sufficient.
-- **Skill implementation**: two layers — persistent agent instructions (`SKILL.md`, plus separate Codex and Claude Code prompt files adapting them per interface; `references/` files defining the workspace contract, author-code rule, compute environment, and acceptance-rule types) and workspace utilities (`scripts/paper_replication.py`) that create and check the manifest, reproduction matrix, task ledger, specification files, and report template. Instructions state the workflow rules "in a form the agent can reopen after an interruption or after losing earlier chat context" — the workspace, not the chat transcript, is the record of the run.
+- **Skill implementation**: two layers — persistent agent instructions (`SKILL.md`, plus separate Codex and [[claude-code|Claude Code]] prompt files adapting them per interface; `references/` files defining the workspace contract, author-code rule, compute environment, and acceptance-rule types) and workspace utilities (`scripts/paper_replication.py`) that create and check the manifest, reproduction matrix, task ledger, specification files, and report template. Instructions state the workflow rules "in a form the agent can reopen after an interruption or after losing earlier chat context" — the workspace, not the chat transcript, is the record of the run.
 - **Stated limitations**: 4 papers, 3 runs each, one agent interface / model / reasoning setting. Critically, **there is no ablation without the skill**, so the study characterizes what Paper-replication *produces* rather than estimating its effect versus an unstructured prompt. Only 13 scalar anchors. Hash checks do not rule out every transformed copy or adversarial reuse of paper material (none was observed). A passed check is "recorded evidence for the target, not proof that no other implementation choices could also be consistent with the paper."
 
 ## Concepts & entities

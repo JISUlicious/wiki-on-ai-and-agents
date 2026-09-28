@@ -7,7 +7,7 @@ sources:
   - nemotron-3-super-nvidia-2026.md
 arxiv_id: "2604.12374"
 authors:
-  - NVIDIA
+  - [[nvidia]]
 first_author: NVIDIA
 year: 2026
 tags:

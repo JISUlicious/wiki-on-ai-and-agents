@@ -184,7 +184,7 @@ This omission is partly forced and Mirzaei says so himself: *"Mathematics is not
 - [[adaptive-thinking]] / [[reasoning-effort]] — Figure 1(c) is direct evidence that unharnessed models do *not* modulate effort by confidence, and Figure 5(b) that the harness makes them.
 - [[agentic-harness-engineering]] / [[agentic-harness-engineering-lin-2026]] — the paper explicitly positions itself as harness engineering, opening with an OpenAI epigraph and citing Anthropic and LangChain harness work.
 - [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]] / [[beyond-the-leaderboard-albayaydh-2026]] — the caveat that applies to Panel A: leaderboard snapshots compare models *and* their undisclosed harnesses.
-- [[mcp]] / [[structured-outputs]] / [[function-calling]] — every stage is one MCP tool call with a JSON schema; the schema bound on `selected_index` makes invalid selections impossible at the tool layer.
+- [[mcp]] / [[structured-outputs]] / [[function-calling]] — every stage is one MCP tool call with a [[json-schema|JSON schema]]; the schema bound on `selected_index` makes invalid selections impossible at the tool layer.
 - [[hallucination-detection]] — FOK/JOL calibration is the same signal used for abstention and knowledge-boundary detection, applied to retry instead.
 - [[multimodal-llm]] — R-Bench-V is the multimodal leg; the harness's largest relative oracle gain (49.2 vs 47.3) is there.
 - [[agent-evaluation]] — the transferable protocol gap: report how often the adaptive branch engages, and against a cost-matched sampling curve.

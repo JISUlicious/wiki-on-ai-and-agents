@@ -30,13 +30,13 @@ importance: medium
 **Source**: `sources/wu-autogen-2023.md` (extracted from `wu-autogen-2023.pdf`)
 **arXiv**: [2308.08155](https://arxiv.org/abs/2308.08155)
 **Venue**: arxiv preprint Aug 2023 (later COLM 2024)
-**Authors**: Qingyun Wu (Penn State + Microsoft Research), Gagan Bansal, Jieyu Zhang, ..., Chi Wang (Microsoft Research)
+**Authors**: Qingyun Wu (Penn State + [[microsoft-research|Microsoft Research]]), Gagan Bansal, Jieyu Zhang, ..., Chi Wang (Microsoft Research)
 
 ## Summary
 
 AutoGen is an **open-source framework for building multi-agent LLM applications** as conversations between customizable "conversable" agents. Each agent can be powered by an LLM, a human, a tool, or some combination. Conversations are scripted (via natural language or code) and agents can take turns based on configurable policies.
 
-Where [[metagpt-hong-2023|MetaGPT]] is opinionated about *what* agents do (SOPs for software engineering), AutoGen is **opinionated about the infrastructure** — it makes "two agents talking to each other under a controller" a default building block, with hooks for tool use, code execution, and human-in-the-loop, but minimal prescription about the workflow itself.
+Where [[metagpt-hong-2023|MetaGPT]] is opinionated about *what* agents do (SOPs for software engineering), AutoGen is **opinionated about the infrastructure** — it makes "two agents talking to each other under a controller" a default building block, with hooks for [[tool-use|tool use]], code execution, and human-in-the-loop, but minimal prescription about the workflow itself.
 
 The two canonical agent types:
 
@@ -45,7 +45,7 @@ The two canonical agent types:
 
 Conversations between these two cover a remarkable range of patterns: assistant-assistant, assistant-tool-user-loop, group chats with multiple specialized assistants and a moderator, hierarchical agents, and so on.
 
-AutoGen became the most-widely-adopted open-source multi-agent framework for several reasons: (1) Microsoft Research backing and active maintenance; (2) excellent integration with LiteLLM / OpenAI API / Azure; (3) clean conceptual model (agents + conversations); (4) production-ready code execution sandbox; (5) good documentation and many template applications. By 2024–2025, "AutoGen-style" multi-agent setups were a common phrase in the LLM-agent literature.
+AutoGen became the most-widely-adopted open-source multi-agent framework for several reasons: (1) Microsoft Research backing and active maintenance; (2) excellent integration with LiteLLM / [[openai-api|OpenAI API]] / Azure; (3) clean conceptual model (agents + conversations); (4) production-ready code execution sandbox; (5) good documentation and many template applications. By 2024–2025, "AutoGen-style" multi-agent setups were a common phrase in the LLM-agent literature.
 
 ## Key Points
 

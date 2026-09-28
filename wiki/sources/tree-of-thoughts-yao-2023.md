@@ -14,7 +14,7 @@ authors:
   - Izhak Shafran
   - Thomas L. Griffiths
   - Yuan Cao
-  - Karthik Narasimhan
+  - [[karthik-narasimhan]]
 first_author: "[[shunyu-yao]]"
 introduces:
   - "[[tree-of-thoughts]]"
@@ -30,7 +30,7 @@ importance: high
 **Source**: `sources/yao-tot-2023.md` (extracted from `yao-tot-2023.pdf`)
 **arXiv**: [2305.10601](https://arxiv.org/abs/2305.10601)
 **Venue**: NeurIPS 2023
-**Authors**: [[shunyu-yao]] ([[princeton-university|Princeton]]; also first author of [[react-yao-2022|ReAct]]), Dian Yu, Jeffrey Zhao, Izhak Shafran (Google DeepMind), Thomas L. Griffiths (Princeton), Yuan Cao (Google DeepMind), Karthik Narasimhan (Princeton)
+**Authors**: [[shunyu-yao]] ([[princeton-university|Princeton]]; also first author of [[react-yao-2022|ReAct]]), Dian Yu, Jeffrey Zhao, Izhak Shafran (Google DeepMind), Thomas L. Griffiths (Princeton), Yuan Cao (Google DeepMind), [[karthik-narasimhan|Karthik Narasimhan]] (Princeton)
 
 ## Summary
 
@@ -48,7 +48,7 @@ Empirical demonstrations on three tasks requiring planning / search:
 - **Creative Writing** (4-paragraph coherent text from given endings): ToT produces more coherent results per human eval.
 - **Mini Crosswords**: ToT solves 60% of letters vs. 16% for greedy CoT.
 
-ToT is the conceptual bridge from "linear CoT reasoning" to "agent-style planning" — it makes the implicit search inside a single forward pass explicit, controllable, and inspectable. The technique inspired LATS (LLM Agent Tree Search), Reasoning with Language Model is Planning with World Model, MCTS-flavored LLM planning, and the broader test-time-search literature.
+ToT is the conceptual bridge from "linear CoT reasoning" to "agent-style planning" — it makes the implicit search inside a single forward pass explicit, controllable, and inspectable. The technique inspired LATS (LLM Agent Tree Search), Reasoning with Language Model is Planning with [[world-model|World Model]], MCTS-flavored LLM planning, and the broader test-time-search literature.
 
 ## Key Points
 

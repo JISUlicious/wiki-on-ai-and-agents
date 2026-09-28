@@ -11,7 +11,7 @@ authors:
   - Mehul Damani
   - Isha Puri
   - Idan Shenfeld
-  - Jacob Andreas
+  - [[jacob-andreas]]
 first_author: Mehul Damani
 venue: arXiv (cs.LG) preprint
 tags:
@@ -29,7 +29,7 @@ importance: medium
 
 RL with verifiable rewards (RLVR) optimizes only what can be objectively scored — answer correctness, unit-test pass rates. The authors argue this leaves the *non-verifiable* half of output quality unoptimized and often actively degraded: diversity collapse, unnatural-sounding text, and reward hacking are the documented failure modes. Their framing: "the gap between what is verifiable and what is valuable is precisely where current RLVR methods fall short." A bug fix that rewrites an entire function passes every test but is worthless to the programmer who has to review it.
 
-The proposed method, **VARL** (Verifiable and Adversarial Reinforcement Learning), co-trains two models: a **generator** trained with GRPO, and a **discriminator** that predicts whether a given output was written by a human or produced by the generator. The generator's reward is the **product** of the verifiable reward and the discriminator's probability that the output is human-written — a *verifier-gated* adversarial reward, so an incorrect answer earns nothing regardless of how human-like it looks. Because the discriminator is retrained continuously alongside the policy, it acts as an adaptive learned proxy for the human output distribution, supplying feedback on properties (readability, style, structure) that resist formalization as scalar rewards. The paper shows this reward transformation corresponds to minimizing the **Vincze–Le Cam divergence** between policy and demonstration distributions, and argues Le Cam is the only one of four candidate transformations satisfying both desirable properties (Table 1).
+The proposed method, **VARL** (Verifiable and Adversarial [[reinforcement-learning|Reinforcement Learning]]), co-trains two models: a **generator** trained with GRPO, and a **discriminator** that predicts whether a given output was written by a human or produced by the generator. The generator's reward is the **product** of the verifiable reward and the discriminator's probability that the output is human-written — a *verifier-gated* adversarial reward, so an incorrect answer earns nothing regardless of how human-like it looks. Because the discriminator is retrained continuously alongside the policy, it acts as an adaptive learned proxy for the human output distribution, supplying feedback on properties (readability, style, structure) that resist formalization as scalar rewards. The paper shows this reward transformation corresponds to minimizing the **Vincze–Le Cam divergence** between policy and demonstration distributions, and argues Le Cam is the only one of four candidate transformations satisfying both desirable properties (Table 1).
 
 Mode collapse gets penalized as a side effect: features that appear "suspiciously often" in model output are exactly what the discriminator learns to exploit. The authors position VARL as a bridge between RL and SFT — you specify soft properties via demonstrations rather than by hand-designing rewards, while keeping RLVR's accuracy gains, "in some cases yielding human-like policies with superhuman performance."
 

@@ -36,7 +36,7 @@ importance: high
 
 ## Summary
 
-This paper formalizes **activation engineering** — modifying a Transformer's activations **at inference time** to steer its outputs, without any optimization, fine-tuning, or prompt modification. It introduces the **Activation Addition (ActAdd)** technique: compute a [[steering-vectors|steering vector]] as the difference between a model's intermediate activations on two contrastive prompts (e.g., `"Love"` minus `"Hate"`) at a chosen layer, then **add that vector to the residual stream** during a real forward pass on a different input. The model's generation shifts in the direction of the steering vector — toward "more loving," "less toxic," etc.
+This paper formalizes **activation engineering** — modifying a Transformer's activations **at inference time** to steer its outputs, without any optimization, fine-tuning, or prompt modification. It introduces the **Activation Addition (ActAdd)** technique: compute a [[steering-vectors|steering vector]] as the difference between a model's intermediate activations on two contrastive prompts (e.g., `"Love"` minus `"Hate"`) at a chosen layer, then **add that vector to the [[residual-stream|residual stream]]** during a real forward pass on a different input. The model's generation shifts in the direction of the steering vector — toward "more loving," "less toxic," etc.
 
 The paper's central claim is the "elicitation overhang": LLMs harbor capabilities that prompt engineering can't fully unlock, but activation engineering can. ActAdd achieves SOTA on negative-to-positive sentiment shift and detoxification using LLaMA-3 and OPT, while preserving performance on unrelated tasks.
 

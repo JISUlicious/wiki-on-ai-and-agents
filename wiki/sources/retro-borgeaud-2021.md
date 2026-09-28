@@ -65,7 +65,7 @@ RETRO is the first major demonstration that retrieval scales meaningfully when b
 - **Retrieve during pre-training**, not just at inference. Each chunk retrieves neighbors and the model is *trained* to use them.
 - **Retriever**: frozen BERT-base encoder. No retriever training needed — fixed embeddings, fixed index. The database can be swapped freely.
 - **Chunked structure**: input split into 64-token chunks; each chunk's neighbors only attend to the *next* chunk's tokens, preserving causality.
-- **Chunked cross-attention (CCA)**: a new attention mechanism that interleaves with the decoder's self-attention. Time complexity linear in retrieved data.
+- **Chunked cross-attention (CCA)**: a new [[attention-mechanism|attention mechanism]] that interleaves with the decoder's self-attention. Time complexity linear in retrieved data.
 - **Database**: MassiveText, ~5T tokens; training retrieves from a 600B-token subset; evaluation uses the full 1.75T-token version.
 - **Results**:
   - 7.5B RETRO ≈ 175B GPT-3 / 178B Jurassic-1 on Pile language modeling. **25× parameter efficiency.**

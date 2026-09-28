@@ -23,7 +23,7 @@ importance: high
 
 # Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM
 
-**Deepak Narayanan, Mohammad Shoeybi, Jared Casper et al.** (NVIDIA; Stanford University; Microsoft Research) — [arXiv:2104.04473](https://arxiv.org/abs/2104.04473), accepted to SC 2021.
+**Deepak Narayanan, Mohammad Shoeybi, Jared Casper et al.** (NVIDIA; [[stanford-university|Stanford University]]; [[microsoft-research|Microsoft Research]]) — [arXiv:2104.04473](https://arxiv.org/abs/2104.04473), accepted to SC 2021.
 
 ## Summary
 
@@ -60,7 +60,7 @@ With `m` = number of microbatches per batch per pipeline, `p` = pipeline-paralle
 
 - **Takeaway #1**: *"tensor model parallelism should generally be used up to degree g when using g-GPU servers, and then pipeline model parallelism can be used to scale up to larger models across servers."* Confirmed empirically: peak performance occurs when tensor-parallel size equals the GPUs per node (**8** on DGX A100). Reason: tensor parallelism needs all-reduces per microbatch and would have to cross InfiniBand; pipeline parallelism only needs point-to-point.
 - **Takeaway #2**: choose total model-parallel size `M = t·p` just large enough that parameters and intermediate metadata fit in GPU memory; use data parallelism to scale beyond that.
-- **Takeaway #3**: optimal microbatch size `b` is model-dependent — it trades arithmetic intensity against bubble size (larger `b` → fewer microbatches `m` → bigger bubble). Batch time model: `(b′/b + p − 1)·(t_f(b) + t_b(b))`.
+- **Takeaway #3**: optimal microbatch size `b` is model-dependent — it trades [[arithmetic-intensity|arithmetic intensity]] against bubble size (larger `b` → fewer microbatches `m` → bigger bubble). Batch time model: `(b′/b + p − 1)·(t_f(b) + t_b(b))`.
 - Bad `(t, p)` splits cost up to **2× lower throughput** even with fast inter-server links.
 
 **Headline numbers (Table 1, weak scaling on Selene, A100 80GB, peak 312 teraFLOP/s in 16-bit)**

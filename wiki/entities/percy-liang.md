@@ -13,7 +13,7 @@ tags:
 
 # Percy Liang
 
-Stanford CS professor and director of the Stanford Center for Research on Foundation Models (CRFM). Co-author of Generative Agents and many other foundational NLP/LLM works. Influential in foundation-model evaluation, notably as a lead on HELM.
+Stanford CS professor and director of the Stanford Center for Research on Foundation Models (CRFM). Co-author of [[generative-agents|Generative Agents]] and many other foundational NLP/LLM works. Influential in foundation-model evaluation, notably as a lead on HELM.
 
 ## Notable work
 - [[generative-agents-park-2023]] — co-author.

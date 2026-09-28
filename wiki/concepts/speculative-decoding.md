@@ -26,7 +26,7 @@ Two frontier drafting directions push on the *drafter* and the *verification sch
 - Speedup scales with the draft model's acceptance rate.
 - Bottleneck: sequential dependence between drafting and verification.
 
-> [!note] Field measurement: an MTP head on a dense 27B, Apple Silicon (2026-09-10)
+> [!note] Field measurement: an MTP head on a dense 27B, [[apple-silicon|Apple Silicon]] (2026-09-10)
 > Qwen3.8-27B dense, 4-bit, M4 Air 32 GB, oMLX, single stream, contributed by a peer session. Drafter `mlx-community/Qwen3.8-27B-MTP-4bit`, **0.22 GB — 1.4% of the 15.7 GiB resident model**, block size 3.
 >
 > | | 120 tokens | 240 tokens |

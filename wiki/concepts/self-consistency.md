@@ -46,7 +46,7 @@ Self-consistency was one of the **first general-purpose inference-time-scaling t
 - **Best-of-N** sampling with a reward model.
 - **Process reward models** (Lightman et al. 2023): supervise intermediate steps, not just final answers.
 - **[[tree-of-thoughts|Tree of Thoughts]]** (Yao 2023): explicit search over reasoning paths.
-- **LATS** (Zhou 2023): LLM agent tree search with self-evaluation.
+- **LATS** (Zhou 2023): [[llm-agent|LLM agent]] tree search with self-evaluation.
 - **OpenAI o1** (Sep 2024) and subsequent reasoning models: internalize inference-time search via RL training. The "thinking tokens" the o1-family produce are the descendant of self-consistency's sampled chains, but baked into the model's policy rather than added at decoding time.
 
 ## Cost

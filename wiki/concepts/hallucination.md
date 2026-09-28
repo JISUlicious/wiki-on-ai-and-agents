@@ -20,7 +20,7 @@ Pre-trained LLMs are trained to maximize next-token likelihood, not to be truthf
 ## Mitigations
 
 - **[[retrieval-augmented-generation|RAG]]**: ground answers in retrieved passages from an authoritative corpus, with citations.
-- **Tool use / verification** (e.g. [[react|ReAct]]): let the model query external systems before answering.
+- **[[tool-use|Tool use]] / verification** (e.g. [[react|ReAct]]): let the model query external systems before answering.
 - **[[rlhf|RLHF]] / preference tuning**: train the model to prefer hedged, accurate answers over confident wrong ones.
 - **Self-consistency / chain-of-thought** ([[chain-of-thought-prompting|CoT]]): make the reasoning explicit so errors are catchable.
 - **Self-critique loops** (e.g. [[reflexion|Reflexion]]): let the model evaluate and revise its own outputs.

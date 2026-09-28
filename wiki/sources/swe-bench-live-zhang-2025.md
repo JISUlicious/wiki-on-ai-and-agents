@@ -74,7 +74,7 @@ The motivation is explicitly **contamination resistance**: because static benchm
 - [[llm-agent]] — the system class under evaluation (OpenHands, SWE-agent, Agentless).
 - [[benchmark-contamination]] — the central concern the design targets.
 - [[docker]] — per-instance reproducible execution environments.
-- [[react-prompting]] — RepoLaunch's setup agent follows a Thought→Action→Observation loop.
+- [[react|ReAct]] — RepoLaunch's setup agent follows a Thought→Action→Observation loop.
 - Benchmarks compared: [[swe-bench-verified]], [[multi-swe-bench]], [[swe-smith]], [[livecodebench]].
 
 ## Notable Quotes

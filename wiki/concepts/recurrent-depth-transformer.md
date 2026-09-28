@@ -12,7 +12,7 @@ tags:
   - 2026
 ---
 
-The **Recurrent-Depth Transformer (RDT)** is the modern (2025–2026) rebranding of [[looped-transformer|looped transformers]] for pretraining-scale language models. An RDT is a decoder-only transformer in which a fixed block of `L` layers is applied iteratively for `R` recurrent iterations, yielding an effective rolled-out depth of `D = L × R` with shared parameters. The terminology was crystallized by Kohli et al. (2026) and adopted by the open-source [[openmythos]] reference implementation; the load-bearing stability recipe comes from [[parcae|Parcae]] (Prairie et al., 2026), which makes the architecture trainable at 1.3B-parameter / 100B-token scale on par with or above a parameter-matched Transformer.
+The **Recurrent-Depth Transformer (RDT)** is the modern (2025–2026) rebranding of [[looped-transformer|looped transformers]] for pretraining-scale language models. An RDT is a [[decoder-only-transformer|decoder-only transformer]] in which a fixed block of `L` layers is applied iteratively for `R` recurrent iterations, yielding an effective rolled-out depth of `D = L × R` with shared parameters. The terminology was crystallized by Kohli et al. (2026) and adopted by the open-source [[openmythos]] reference implementation; the load-bearing stability recipe comes from [[parcae|Parcae]] (Prairie et al., 2026), which makes the architecture trainable at 1.3B-parameter / 100B-token scale on par with or above a parameter-matched Transformer.
 
 ## Core mechanism
 

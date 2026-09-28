@@ -43,7 +43,7 @@ The caveat is severe: **naive INT8 *activation* quantization is catastrophic**, 
 With vector quantization the cliff largely disappears: QuIP# and AQLM reach **3.83–3.91** on Llama-2-70B at ~2 bits (FP16 3.12), and QuIP# claims 3-bit beats *a theoretical lossless 4-bit model*. Meanwhile 2-bit RTN/AWQ collapses to chance — LLaMA2-7B LAMBADA goes **73.32 → 0.00**.
 
 > [!note] The "4-bit is optimal" claim is dated
-> Dettmers & Zettlemoyer's k-bit inference scaling laws (35,000+ experiments, 19M–176B) established 4-bit as the universal accuracy-per-bit optimum, and it held "across all models studied." That was 2022. QuIP#/AQLM/QTIP have since made 2–3 bit competitive per bit. Date-stamp the claim rather than repeating it as timeless.
+> Dettmers & Zettlemoyer's k-bit inference [[scaling-laws|scaling laws]] (35,000+ experiments, 19M–176B) established 4-bit as the universal accuracy-per-bit optimum, and it held "across all models studied." That was 2022. QuIP#/AQLM/QTIP have since made 2–3 bit competitive per bit. Date-stamp the claim rather than repeating it as timeless.
 
 ## Perplexity understates the damage
 
@@ -51,7 +51,7 @@ This is the section that matters most.
 
 ### Flips: accuracy stays flat while behavior diverges
 
-[[accuracy-is-not-all-you-need-dutta-2024|Dutta et al.]] (Microsoft Research India) measure **%flips** — answers that changed correct→incorrect *or* incorrect→correct. Their finding: *"Accuracy is preserved within 1% for the majority of the quantization methods, tasks and models… [yet] all quantization schemes except GPTQ W8A16 have significant %flips"* — **up to 13.6%**.
+[[accuracy-is-not-all-you-need-dutta-2024|Dutta et al.]] ([[microsoft-research|Microsoft Research]] India) measure **%flips** — answers that changed correct→incorrect *or* incorrect→correct. Their finding: *"Accuracy is preserved within 1% for the majority of the quantization methods, tasks and models… [yet] all quantization schemes except GPTQ W8A16 have significant %flips"* — **up to 13.6%**.
 
 MMLU, % of correct / incorrect baseline answers that flipped:
 
@@ -93,7 +93,7 @@ Vicuna-7B + SparseGPT across 50 calibration sets: perplexity **12.72 ± 0.18** w
 
 Same models, same quantization: **~0% damage at 8K, up to −23 points at 128K**. Non-English degrades "up to five times more than in English."
 
-**Reasoning and math.** [[quantization-hurts-reasoning-liu-2025|Liu et al.]] (COLM 2025) find *"harder tasks suffer up to 4× greater degradation than simpler ones."* At W4A4KV4 on a 32B reasoning model: AIME −3.9%, MATH-500 −1.2%, **GSM8K −0.0%**. Small models collapse where large ones shrug: W3G128 costs Qwen-1.5B **−16.6%** but Qwen-32B only −3.2%. Li et al. add that at W3, the dominant failure is **incorrect logic (~50%)**, not calculation error, and that multi-step reasoning and self-calibration tolerate quantization *worse* than instruction-following and in-context learning.
+**Reasoning and math.** [[quantization-hurts-reasoning-liu-2025|Liu et al.]] (COLM 2025) find *"harder tasks suffer up to 4× greater degradation than simpler ones."* At W4A4KV4 on a 32B reasoning model: AIME −3.9%, MATH-500 −1.2%, **GSM8K −0.0%**. Small models collapse where large ones shrug: W3G128 costs Qwen-1.5B **−16.6%** but Qwen-32B only −3.2%. Li et al. add that at W3, the dominant failure is **incorrect logic (~50%)**, not calculation error, and that multi-step reasoning and self-calibration tolerate quantization *worse* than instruction-following and [[in-context-learning|in-context learning]].
 
 > [!warning] Contradiction — is code disproportionately damaged?
 > **Claim A (yes)**: Shi et al. report *"up to a 92% drop in HumanEval pass rate"*; Giagnorio et al. measure CodeLlama-7B Python pass@1 falling 29.8 → 16.4 at 2-bit.

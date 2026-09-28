@@ -35,7 +35,7 @@ Crucially, the total FLOPs per layer are *the same* as a single attention head w
 ## Where it's used
 
 - Encoder self-attention (e.g., [[bert]])
-- Causal decoder self-attention (GPT family)
+- Causal decoder self-attention ([[gpt-family|GPT family]])
 - Cross-attention (decoder attending to encoder output, as in the original [[transformer]] for translation, or in [[rag|RAG]] for retrieval-augmented generation)
 
 ## References

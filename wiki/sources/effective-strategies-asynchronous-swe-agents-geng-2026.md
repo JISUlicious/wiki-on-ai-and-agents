@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2603.21489"
 authors:
   - Jiayi Geng
-  - Graham Neubig
+  - [[graham-neubig]]
 first_author: Jiayi Geng
 year: 2026
 tags:

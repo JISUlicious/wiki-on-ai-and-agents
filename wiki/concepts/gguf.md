@@ -42,7 +42,7 @@ k-quants are **calibration-free** by default (round-to-nearest per block).
 
 `IQ2_XXS`, `IQ3_S`, `IQ4_XS` and friends use **E8/D4 lattice codebooks**, explicitly crediting QuIP# ("the 'codebook' idea comes originally from QuIP# and is also being used in, e.g., AQLM").
 
-Unlike k-quants they effectively **require an importance-matrix (imatrix) calibration pass** at low bit widths. They win clearly at <=3 bits but generally decode slower, especially on CPU and Apple Silicon.
+Unlike k-quants they effectively **require an importance-matrix (imatrix) calibration pass** at low bit widths. They win clearly at <=3 bits but generally decode slower, especially on CPU and [[apple-silicon|Apple Silicon]].
 
 ## Related
 

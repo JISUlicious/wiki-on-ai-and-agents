@@ -35,7 +35,7 @@ This fundamentally alters **credit assignment**: the learning rule must distribu
 
 ## Why anyone would want the constraint
 
-Beyond biological fidelity, the authors argue non-negative synaptic magnitudes with fixed-sign routing may suit **neuromorphic hardware** (analog, photonic, synapse-device substrates where physical elements naturally encode non-negative quantities), yield **model compression for free** via the pruning floor, and help **continual learning** — a dedicated inhibitory stream dampens gradient excursions, and the sign constraint prevents the weight-sign flips implicated in catastrophic forgetting.
+Beyond biological fidelity, the authors argue non-negative synaptic magnitudes with fixed-sign routing may suit **neuromorphic hardware** (analog, photonic, synapse-device substrates where physical elements naturally encode non-negative quantities), yield **model compression for free** via the pruning floor, and help **[[continual-learning|continual learning]]** — a dedicated inhibitory stream dampens gradient excursions, and the sign constraint prevents the weight-sign flips implicated in catastrophic forgetting.
 
 ## Related
 

@@ -13,7 +13,7 @@ tags:
 
 # Shunyu Yao
 
-NLP researcher; PhD student at [[princeton-university|Princeton]] (advisor: Karthik Narasimhan) during this work. First author of "[[react-yao-2022|ReAct]]" (2022) and of "Tree of Thoughts" (Yao et al. 2023). A central figure in LLM-agent / reasoning research.
+NLP researcher; PhD student at [[princeton-university|Princeton]] (advisor: [[karthik-narasimhan|Karthik Narasimhan]]) during this work. First author of "[[react-yao-2022|ReAct]]" (2022) and of "Tree of Thoughts" (Yao et al. 2023). A central figure in LLM-agent / reasoning research.
 
 ## Affiliations
 

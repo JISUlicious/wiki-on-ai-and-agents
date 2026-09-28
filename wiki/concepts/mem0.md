@@ -13,7 +13,7 @@ tags:
 
 # Mem0
 
-Mem0 (Chhikara et al., 2025; ECAI 2025) is a production-deployment-focused long-term memory architecture for [[llm-agent]]s that addresses fixed-context-window limits in multi-session dialogue via an incremental **extract → consolidate → retrieve** pipeline. Its core contribution is letting the LLM itself act as the judge for memory edits (no separate classifier), and demonstrating that a small set of consolidated facts yields **91% lower p95 latency and >90% token-cost savings vs. full-context** baselines on [[locomo]], with a 26% relative LLM-as-Judge improvement over OpenAI ChatGPT memory. A graph variant, **Mem0^g**, layers a Neo4j-backed knowledge graph for relational and temporal queries.
+Mem0 (Chhikara et al., 2025; ECAI 2025) is a production-deployment-focused [[long-term-memory|long-term memory]] architecture for [[llm-agent]]s that addresses fixed-context-window limits in multi-session dialogue via an incremental **extract → consolidate → retrieve** pipeline. Its core contribution is letting the LLM itself act as the judge for memory edits (no separate classifier), and demonstrating that a small set of consolidated facts yields **91% lower p95 latency and >90% token-cost savings vs. full-context** baselines on [[locomo]], with a 26% relative LLM-as-Judge improvement over OpenAI ChatGPT memory. A graph variant, **Mem0^g**, layers a Neo4j-backed [[knowledge-graph|knowledge graph]] for relational and temporal queries.
 
 ## Core mechanism
 
@@ -27,7 +27,7 @@ Mem0 (Chhikara et al., 2025; ECAI 2025) is a production-deployment-focused long-
 
 - [[memory-management]]: defines the canonical `ADD/UPDATE/DELETE/NOOP` operator set that later RL-trained systems ([[memory-r1]]) inherit.
 - Production cross-session memory: extract/consolidate/retrieve pipeline with massive latency and token-cost reductions over full-context baselines.
-- Graph memory for agents: a working pattern for combining vector similarity with relational subgraph retrieval in a single memory layer.
+- [[graph-memory|Graph memory]] for agents: a working pattern for combining vector similarity with relational subgraph retrieval in a single memory layer.
 
 ## Relation to other systems
 

@@ -80,13 +80,13 @@ The **self-authored tool** thread ([[llm-as-tool-makers-cai-2023|LATM]], [[craft
 ## Is it accepted / standardized?
 
 - **Open standard exists**: [[agentskills-io-spec-2025|agentskills.io]] (published 2025-12-18, maintained by Anthropic, open contributions). Reference validator `skills-ref`. 40+ adopters listed (Cursor, GitHub Copilot, VS Code, OpenAI Codex, Gemini CLI, Goose, Letta).
-- **Academic recognition**: a dedicated survey ([[agent-skills-survey-xu-2026]], Zhejiang University) treats agent skills as a first-class research area as of early 2026.
+- **Academic recognition**: a dedicated survey ([[agent-skills-survey-xu-2026]], [[zhejiang-university|Zhejiang University]]) treats agent skills as a first-class research area as of early 2026.
 - **But not universal**: each big vendor still ships its *own* primary packaging unit (GPTs, Gems, Declarative Agents, Action Groups). The SKILL.md convergence is real among coding agents and the open-spec adopters, but the hyperscaler enterprise stacks (M365, Bedrock, Vertex) have not adopted SKILL.md as their native format.
 
 ## Verdict
 
 The packaging of reusable agent capability is **mid-convergence**:
-- The **coding-agent cluster** (Claude Code, Codex, Gemini CLI, Cursor, Goose) has effectively standardized on SKILL.md via agentskills.io.
+- The **coding-agent cluster** ([[claude-code|Claude Code]], Codex, Gemini CLI, Cursor, Goose) has effectively standardized on SKILL.md via agentskills.io.
 - The **enterprise-assistant cluster** (M365 Declarative Agents, Bedrock, Vertex, GPTs, Gems) each retains a proprietary manifest/config, mapping to the same conceptual slots (instructions + capabilities + actions) without sharing a file format.
 - **MCP is the orthogonal layer** — every vendor uses or interops with it for *tool connection*, while skills/manifests handle *task instruction*. The two compose.
 

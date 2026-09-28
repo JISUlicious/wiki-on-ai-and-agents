@@ -48,7 +48,7 @@ The paper's broader claim: **"LLMs may have an internal representation of the li
 
 ## Key Points
 
-- **Head-level intervention**: target ~10–50 specific attention heads rather than the full residual stream. More surgical than residual-stream methods.
+- **Head-level intervention**: target ~10–50 specific attention heads rather than the full [[residual-stream|residual stream]]. More surgical than residual-stream methods.
 - **Two-stage**: linear probe identifies candidate heads → causal validation filters to truly relevant ones.
 - **Result**: Alpaca TruthfulQA 32.5% → 65.1%. Nearly doubles truthfulness without breaking other capabilities.
 - **Data efficiency**: ~few hundred labeled true/false pairs. RLHF would need thousands.

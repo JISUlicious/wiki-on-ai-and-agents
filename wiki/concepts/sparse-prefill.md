@@ -60,7 +60,7 @@ It is orthogonal to [[prefix-caching]] (skip repeated content), [[chunked-prefil
 - [[speculative-prefill]] · [[token-pruning]] · [[sparse-attention]] — the three families.
 - [[methods-to-speed-up-prompt-processing]] — the synthesis this page is a tier of.
 - [[kv-cache]] · [[prefix-caching]] · [[prompt-compression]] · [[chunked-prefill]] · [[flash-attention]] · [[llm-inference-roofline-yuan-2024]]
-- [[omlx-specprefill-github-2026]] — a production implementation on Apple Silicon.
+- [[omlx-specprefill-github-2026]] — a production implementation on [[apple-silicon|Apple Silicon]].
 
 ## References
 

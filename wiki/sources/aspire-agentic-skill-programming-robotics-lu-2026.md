@@ -25,7 +25,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-28–07-05).
 
 ## Summary
 
-ASPIRE (from an NVIDIA-led team with UMich, UIUC, UC Berkeley, and CMU) reframes **robot programming as continual code-as-policy learning** that compounds experience into a reusable skill library. Rather than fixed, human-engineered pipelines, it runs an open-ended learning loop in which an agent autonomously writes and refines robot control programs, diagnoses failures, synthesizes repairs, and validates outcomes. Discovered skills persist across tasks, across simulation and real-world settings, and across different embodiments, so adaptation gets faster as the library grows.
+ASPIRE (from an NVIDIA-led team with UMich, UIUC, [[uc-berkeley|UC Berkeley]], and CMU) reframes **robot programming as continual code-as-policy learning** that compounds experience into a reusable [[skill-library|skill library]]. Rather than fixed, human-engineered pipelines, it runs an open-ended learning loop in which an agent autonomously writes and refines robot control programs, diagnoses failures, synthesizes repairs, and validates outcomes. Discovered skills persist across tasks, across simulation and real-world settings, and across different embodiments, so adaptation gets faster as the library grows.
 
 ## Key points
 

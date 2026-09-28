@@ -35,7 +35,7 @@ Subsequent models differ on which parts of the architecture they keep:
 
 - **Parallel along sequence length** (no recurrence) → effectively trainable at scale on GPUs/TPUs.
 - **Constant path length** between any two positions → long-range dependencies are no harder than short-range.
-- **Scaling laws** (Kaplan et al. 2020; reinforced by [[gpt-3-brown-2020|GPT-3]]) show smooth improvement with parameters, data, and compute.
+- **[[scaling-laws|Scaling laws]]** (Kaplan et al. 2020; reinforced by [[gpt-3-brown-2020|GPT-3]]) show smooth improvement with parameters, data, and compute.
 - **Architecture-agnostic to modality**: any sequence of tokens works, which led to vision ([[vit]]), code, audio, and multimodal extensions.
 
 ## References

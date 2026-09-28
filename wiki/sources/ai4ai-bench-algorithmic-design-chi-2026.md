@@ -21,7 +21,6 @@ status: complete
 importance: high
 tags:
   - 2026
-  - benchmark
 ---
 
 # AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement
@@ -30,7 +29,7 @@ tags:
 
 ## Summary
 
-The argument comes before the benchmark and is worth stating in the paper's own terms. A coding agent can automate three levels of the [[self-improving-agent|RSI]] loop — **systems engineering** (kernels, parallelism, communication), **data** (mixtures, synthesis, filtering), and **algorithmic design** (objectives, update rules, regularization, schedules). The first is bounded by the hardware roofline; the second by a finite stock of human text and a power law where each further halving of the loss gap costs several times more tokens. Only the third changes the *exchange rate* between compute and capability, so every subsequent run — including the run that produces the next agent — inherits the gain. Adam, layer normalization, [[dpo|DPO]] and [[grpo|GRPO]] "were each paid for once and have been earning since." If RSI compounds, most of the compounding must come from that level.
+The argument comes before the benchmark and is worth stating in the paper's own terms. A coding agent can automate three levels of the [[self-improving-agent|RSI]] loop — **systems engineering** (kernels, parallelism, communication), **data** (mixtures, synthesis, filtering), and **algorithmic design** (objectives, update rules, regularization, schedules). The first is bounded by the hardware roofline; the second by a finite stock of human text and a power law where each further halving of the loss gap costs several times more tokens. Only the third changes the *exchange rate* between compute and capability, so every subsequent run — including the run that produces the next agent — inherits the gain. Adam, [[layer-normalization|layer normalization]], [[dpo|DPO]] and [[grpo|GRPO]] "were each paid for once and have been earning since." If RSI compounds, most of the compounding must come from that level.
 
 And no benchmark isolates it. Kaggle-derived suites are won by feature engineering and ensembling while the learning algorithm stays a library call the agent never edits — and, crucially, *nothing in the submission is inherited by the next training run*. Repository-level and self-improvement suites aggregate execution, data, capacity, hyperparameter and learning-rule gains into one score, so they cannot tell "the agent changed how the run was executed" from "the agent changed how the model learns."
 

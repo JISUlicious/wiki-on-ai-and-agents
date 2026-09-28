@@ -58,7 +58,7 @@ The citation-grounding insight is also significant: by requiring the model to *q
 - **Citation grounding**: model must collect references (quoted passages) during browsing; these are presented alongside the final answer for human verification.
 - **ELI5 task**: Reddit's r/explainlikeimfive — long-form questions calling for paragraph-length explanations.
 - **Result**: 56% preferred over demonstrators, 69% over top-voted Reddit answers. First production-worthy answer-with-citations agent.
-- **Architectural lineage**: the action-text interface is the proto-version of modern tool-use APIs (OpenAI function calling, Anthropic tool use, MCP). Trade text emission for structured JSON, and you have today's tool-using agents.
+- **Architectural lineage**: the action-text interface is the proto-version of modern tool-use APIs (OpenAI [[function-calling|function calling]], Anthropic tool use, MCP). Trade text emission for structured JSON, and you have today's tool-using agents.
 
 ## Entities Mentioned
 

@@ -11,7 +11,7 @@ tags: []
 
 # Agent Benchmark
 
-Agent benchmarks are evaluation suites designed to measure LLM-based **agents** rather than raw next-token models. They typically require multi-step interaction with tools, environments, or codebases — tool use, browser/GUI navigation, software engineering on real repos, long-horizon planning, memory over many turns, etc. — and score end-to-end task completion rather than per-token accuracy.
+Agent benchmarks are evaluation suites designed to measure LLM-based **agents** rather than raw next-token models. They typically require multi-step interaction with tools, environments, or codebases — [[tool-use|tool use]], browser/GUI navigation, software engineering on real repos, long-horizon planning, memory over many turns, etc. — and score end-to-end task completion rather than per-token accuracy.
 
 - Distinguishing feature vs. static QA: the agent must **act**, observe results, and continue.
 - Coverage spans general assistant tasks, software engineering, GUI/computer use, and long-context memory.
@@ -20,6 +20,7 @@ Agent benchmarks are evaluation suites designed to measure LLM-based **agents** 
 
 ## Related
 
+- [[benchmark]] — hub of every benchmark page in this wiki
 - [[gaia]] — general assistant benchmark
 - [[swe-bench]] — repo-level software engineering
 - [[swe-bench-live]] — contamination-resistant variant

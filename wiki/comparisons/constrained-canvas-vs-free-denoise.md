@@ -70,7 +70,7 @@ Note also that the two projects **never cite each other**. There is no head-to-h
 
 Both guarantee validity the same way: the output is reconstructed from a pre-validated template, never parsed from free text. B returned 408/408 valid typed answers in every run, with no JSON repair, no retry and no fallback — invalid output raises rather than degrading.
 
-And neither is [[constrained-decoding]], which is the point most easily missed. Grammar-constrained decoding compiles a schema to an FSM and masks illegal tokens given the prefix so far. A diffusion model has no prefix, so there is nothing for the FSM to advance against — vLLM rejects structured outputs for diffusion models outright, and canvas-aware guided decoding remains an open issue. Seeding a canvas and reading it sidesteps the grammar problem by never needing a grammar. Both routes are that same sidestep, differing only in what they write in the holes.
+And neither is [[constrained-decoding]], which is the point most easily missed. Grammar-constrained decoding compiles a schema to an FSM and masks illegal tokens given the prefix so far. A diffusion model has no prefix, so there is nothing for the FSM to advance against — vLLM rejects [[structured-outputs|structured outputs]] for diffusion models outright, and canvas-aware guided decoding remains an open issue. Seeding a canvas and reading it sidesteps the grammar problem by never needing a grammar. Both routes are that same sidestep, differing only in what they write in the holes.
 
 ## Verdict
 

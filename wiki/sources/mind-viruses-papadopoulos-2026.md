@@ -104,7 +104,7 @@ Three findings deserve to survive this specific paper. The **soul-file result** 
 ## Related
 
 - [[multi-agent]] — the setting; the paper's whole premise is that agent-to-agent interaction is a distinct risk surface.
-- [[llm-agent]] — the host; propagation is by ordinary tool use and messaging, not by exploiting a parser.
+- [[llm-agent]] — the host; propagation is by ordinary [[tool-use|tool use]] and messaging, not by exploiting a parser.
 - [[openclaw]] — the harness the virus-chain setup is modeled on, and the source of the `SOUL.md` convention that turns out to be the key persistence mechanism.
 - [[multi-agent-memory]] / [[memory-management]] — agent-writable persistent memory is what lets a payload survive the context wipe.
 - [[prompt-injection]] / [[indirect-prompt-injection]] — the closest prior threat class; distinguished here because the agent is persuaded rather than mechanically forced to copy.
@@ -126,4 +126,4 @@ Three findings deserve to survive this specific paper. The **soul-file result** 
 
 - [arXiv:2608.10218](https://arxiv.org/abs/2608.10218)
 - Code: `github.com/frotaur/mindvirus-viruschain` and `github.com/BucketofJava/mind-virus-code-agent`; transcripts at `mindvirusdata.live`.
-- Moltbook post corpus: Hugging Face dataset `lnajt/moltbook` (through 2026-03-18).
+- Moltbook post corpus: [[huggingface|Hugging Face]] dataset `lnajt/moltbook` (through 2026-03-18).

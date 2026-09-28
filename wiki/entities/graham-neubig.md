@@ -11,7 +11,7 @@ tags:
   - person
 ---
 
-Graham Neubig is a professor at [[cmu]] (Carnegie Mellon University) working on natural language processing, code generation, and software-engineering agents. He is a co-founder of All Hands AI, the team behind the open-source OpenHands (formerly OpenDevin) agent framework.
+Graham Neubig is a professor at [[cmu]] (Carnegie Mellon University) working on natural language processing, [[code-generation|code generation]], and software-engineering agents. He is a co-founder of All Hands AI, the team behind the open-source OpenHands (formerly OpenDevin) agent framework.
 
 Neubig is a senior author on [[swe-gym]], a training environment for SWE agents that produced strong open-weights coding agents through RL and rejection sampling on executable repository tasks.
 

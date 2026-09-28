@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2502.14802"
 venue: ICML 2025
 authors:
-  - Bernal Jiménez Gutiérrez
+  - [[bernal-jimenez-gutierrez]]
   - Yiheng Shu
   - Weijian Qi
   - Sizhe Zhou
@@ -32,7 +32,7 @@ importance: high
 
 ## Summary
 
-HippoRAG 2 is the direct successor to HippoRAG, doubling down on its neurobiologically-inspired premise: an LLM acts as an **artificial neocortex**, a knowledge graph plus the **Personalized PageRank** (PPR) algorithm play the **hippocampus** (associative index), and an embedding model bridges them like the parahippocampal regions. The paper frames RAG itself as the most viable path to *non-parametric continual learning* for LLMs — sidestepping catastrophic forgetting from fine-tuning and the localized brittleness of model editing — and argues that flat vector retrieval cannot capture the **sense-making** and **associativity** that human long-term memory exhibits.
+HippoRAG 2 is the direct successor to HippoRAG, doubling down on its neurobiologically-inspired premise: an LLM acts as an **artificial neocortex**, a [[knowledge-graph|knowledge graph]] plus the **Personalized PageRank** (PPR) algorithm play the **hippocampus** (associative index), and an embedding model bridges them like the parahippocampal regions. The paper frames RAG itself as the most viable path to *non-parametric [[continual-learning|continual learning]]* for LLMs — sidestepping catastrophic forgetting from fine-tuning and the localized brittleness of model editing — and argues that flat vector retrieval cannot capture the **sense-making** and **associativity** that human [[long-term-memory|long-term memory]] exhibits.
 
 The core technical contribution is a graph-indexed memory that fixes the regressions earlier structure-augmented RAG methods (GraphRAG, LightRAG, RAPTOR, the original HippoRAG) suffered on simple factual QA. HippoRAG 2 keeps HippoRAG's OpenIE-extracted KG triples but adds three refinements: (1) **dense–sparse integration** — passages become first-class **passage nodes** in the KG, linked to their extracted phrases by "contains" context edges, so the graph carries both concept (sparse) and context (dense) signal; (2) **deeper contextualization** — query linking moves from NER-to-node to **query-to-triple** matching, letting the entire query select richer relational seed nodes; (3) **recognition memory** — an online LLM pass filters the top retrieved triples before they become PPR seed nodes, mirroring the recall/recognition distinction in human memory.
 

@@ -106,13 +106,13 @@ The agent must run a multi-step loop with a halt condition. The classical AI-age
 
 ### Action surface
 
-The agent needs typed interaction with the outside world: file I/O, shell, web fetch, code execution, etc. L3 mechanisms: function calling (OpenAI / Anthropic native), [[mcp|MCP]] (Model Context Protocol), ACP (Agent Client Protocol).
+The agent needs typed interaction with the outside world: file I/O, shell, web fetch, code execution, etc. L3 mechanisms: [[function-calling|function calling]] (OpenAI / Anthropic native), [[mcp|MCP]] (Model Context Protocol), ACP (Agent Client Protocol).
 
 Choice of action-surface protocol is partly a coupling decision: MCP-first agents ([[claude-code]], [[opencode]], [[hermes-agent]]) commit to one ecosystem; MCP-refusing agents ([[pi-mono]], [[openclaw]] in core) keep the agent's tool layer self-contained.
 
 ### Context assembly
 
-Every turn, the agent constructs a prompt. The decision of *what to include* is the agent's, not the user's. L3 inputs to context assembly:
+Every turn, the agent constructs a prompt. The decision of *what to include* is the agent's, not the user's. L3 inputs to [[context-assembly|context assembly]]:
 
 - **Auto-loaded files** — [[claude-code]]'s nested `CLAUDE.md`, AGENTS.md walks, `USER.md`, `MEMORY.md`
 - **Skills** — `SKILL.md` packages selected by relevance to the current task

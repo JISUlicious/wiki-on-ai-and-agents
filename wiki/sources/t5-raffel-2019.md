@@ -47,11 +47,11 @@ Beyond the framing, the paper is a *systematic ablation study* of pre-training o
 
 Side contributions: the **C4 (Colossal Clean Crawled Corpus)** — 750GB of cleaned Common Crawl text — became one of the most-used public pre-training corpora. T5 itself is released at sizes from 60M to 11B parameters, all open-weight.
 
-The text-to-text framing is the conceptual ancestor of instruction tuning ([[flan-wei-2021|FLAN]], [[instructgpt-ouyang-2022|InstructGPT]]) — once you've decided every task is text-to-text, the next step is "let me write a natural-language instruction telling the model which task." That step ships ~2 years later.
+The text-to-text framing is the conceptual ancestor of [[instruction-tuning|instruction tuning]] ([[flan-wei-2021|FLAN]], [[instructgpt-ouyang-2022|InstructGPT]]) — once you've decided every task is text-to-text, the next step is "let me write a natural-language instruction telling the model which task." That step ships ~2 years later.
 
 ## Key Points
 
-- **Text-to-text framing**: every task becomes `(input text, output text)`. Classification labels, regression numbers, structured outputs all serialized as strings.
+- **Text-to-text framing**: every task becomes `(input text, output text)`. Classification labels, regression numbers, [[structured-outputs|structured outputs]] all serialized as strings.
 - **Architecture**: encoder-decoder Transformer (similar to the original [[transformer]]). 5 sizes from 60M to 11B parameters.
 - **Pre-training objective**: **span corruption** (variant of MLM where contiguous spans are masked and the model must predict the masked content as a sequence). Empirically beats both autoregressive LM and standard MLM for this encoder-decoder setup.
 - **C4 corpus**: ~750GB / ~156B tokens, derived from Common Crawl with quality filtering and deduplication. Released publicly.

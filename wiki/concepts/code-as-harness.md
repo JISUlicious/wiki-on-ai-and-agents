@@ -26,7 +26,7 @@ tags:
 
 **Code as Harness** is the thesis that **executable code is the operational substrate of an agent's harness**, not merely an output the LLM produces. Programs are uniquely *executable* (verifiable by running), *inspectable* (intermediate state as structured traces), and *stateful* (persistent across steps) — making them the only medium that can unify the agent's reasoning, action, environment modeling, and verification under a single abstraction. The concept is formalized by the 2026 survey [[code-as-agent-harness-ning-2026]] (Ning et al., UIUC/Meta/Stanford) but pre-dates it by a long lineage of papers that progressively replaced natural-language and JSON-tool-call abstractions with executable program text.
 
-In the [[agent-three-layer-model]], this is an *axis* spanning L2 — every L2 abstraction (control flow, action surface, context assembly, memory, persistence, harness) can be re-instantiated with code as the medium. The central claim of the 2026 survey is that **the bottleneck of agent autonomy is not the base model's reasoning ability but the reliability of the surrounding harness** — and code is the medium that makes the harness reliable.
+In the [[agent-three-layer-model]], this is an *axis* spanning L2 — every L2 abstraction (control flow, action surface, [[context-assembly|context assembly]], memory, persistence, harness) can be re-instantiated with code as the medium. The central claim of the 2026 survey is that **the bottleneck of agent autonomy is not the base model's reasoning ability but the reliability of the surrounding harness** — and code is the medium that makes the harness reliable.
 
 ## Core mechanism
 
@@ -41,7 +41,7 @@ In the [[agent-three-layer-model]], this is an *axis* spanning L2 — every L2 a
 The survey distinguishes three coupled elements:
 
 1. **Model-internal capabilities** (L1 in the [[agent-three-layer-model]]): reasoning, ICL, alignment.
-2. **System-provided harness infrastructure**: planning, memory management, tool use, plan-execute-verify loop, optimization.
+2. **System-provided harness infrastructure**: planning, [[memory-management|memory management]], tool use, plan-execute-verify loop, optimization.
 3. **Agent-initiated code artifacts** (the novel category): tests, temporary tools, DSL programs, skills, intermediate program states — produced *by* the agent *in response to* a task. The survey's contribution is locating real autonomy gains in this third category.
 
 ## Five practical embodiments
@@ -56,7 +56,7 @@ The survey distinguishes three coupled elements:
 
 ## Frontier — Agentic Harness Engineering
 
-The survey's §3.5 introduces a 2026 frontier: the harness itself becomes the object of optimization — telemetry-driven mutation, program search, self-synthesis, and scaling laws over the scaffold, with the base model held fixed. This has grown into its own concept; see **[[agentic-harness-engineering]]** for the full treatment and source cluster. The intellectual line runs from the [[godel-machine|Gödel-machine]] / [[darwin-godel-machine]] (which evolve the *agent*) to AHE (which evolves only the *harness*), adjacent to [[agentic-context-engineering]] (prompt-level evolution).
+The survey's §3.5 introduces a 2026 frontier: the harness itself becomes the object of optimization — telemetry-driven mutation, program search, self-synthesis, and [[scaling-laws|scaling laws]] over the scaffold, with the base model held fixed. This has grown into its own concept; see **[[agentic-harness-engineering]]** for the full treatment and source cluster. The intellectual line runs from the [[godel-machine|Gödel-machine]] / [[darwin-godel-machine]] (which evolve the *agent*) to AHE (which evolves only the *harness*), adjacent to [[agentic-context-engineering]] (prompt-level evolution).
 
 ## Frontier — self-authored harness ([[dynamic-workflows]])
 
@@ -100,5 +100,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[llm-diagnosis-of-integration-test-failures-ziftci-2026]] — LLM Based Automated Diagnosis Of Integration Test Failures
 - [[opendev-terminal-coding-agent-bui-2026]] — Building Effective AI Coding Agents for the Terminal
 - [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent Planning with AND/OR Trees for Long Horizon
-- [[fundamental-components-of-harness]] — Fundamental Components of an LLM Agent Harness
+- [[fundamental-components-of-harness]] — Fundamental Components of an [[llm-agent|LLM Agent]] Harness
 - [[spatialclaw-cho-2026]] — SpatialClaw: code-as-action spatial reasoning over a persistent kernel (NVIDIA)

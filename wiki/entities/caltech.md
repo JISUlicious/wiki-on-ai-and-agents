@@ -13,11 +13,11 @@ tags:
 
 # Caltech
 
-California Institute of Technology. The Computing & Mathematical Sciences department hosts [[anima-anandkumar]]'s group, which works on foundation models for science, embodied agents, and tensor methods. Caltech produced Voyager (2023) jointly with NVIDIA — an LLM-powered lifelong-learning agent in Minecraft that bootstraps its own skill library via code generation.
+California Institute of Technology. The Computing & Mathematical Sciences department hosts [[anima-anandkumar]]'s group, which works on foundation models for science, embodied agents, and tensor methods. Caltech produced Voyager (2023) jointly with NVIDIA — an LLM-powered lifelong-learning agent in Minecraft that bootstraps its own [[skill-library|skill library]] via [[code-generation|code generation]].
 
 ## Notable work
 
-- [[voyager-wang-2023]] — Voyager: open-ended embodied agent with skill-library acquisition.
+- [[voyager-wang-2023]] — Voyager: open-ended [[embodied-agent|embodied agent]] with skill-library acquisition.
 - [[voyager]] — system / agent entity.
 
 ## References

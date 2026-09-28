@@ -18,14 +18,13 @@ authors:
   - Muhan Zhang
 tags:
   - 2026
-  - benchmark
 status: complete
 importance: high
 ---
 
 # ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?
 
-**Tianyi Guan, Yiding Wang, Haotong Yang, Siyuan Cao, Shirui Liu, Yi Hu, Jiaqi Li, Muhan Zhang** (Institute for Artificial Intelligence, Peking University; Beijing Institute for General Artificial Intelligence) — [arXiv:2608.03874](https://arxiv.org/abs/2608.03874), cs.AI, 4 Aug 2026. Preprint; no venue given. Code: `github.com/gtynnn060110-hash/continual-skill-bench-final`.
+**Tianyi Guan, Yiding Wang, Haotong Yang, Siyuan Cao, Shirui Liu, Yi Hu, Jiaqi Li, Muhan Zhang** (Institute for Artificial Intelligence, [[peking-university|Peking University]]; Beijing Institute for General Artificial Intelligence) — [arXiv:2608.03874](https://arxiv.org/abs/2608.03874), cs.AI, 4 Aug 2026. Preprint; no venue given. Code: `github.com/gtynnn060110-hash/continual-skill-bench-final`.
 
 ## Summary
 

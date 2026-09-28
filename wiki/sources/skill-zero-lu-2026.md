@@ -33,7 +33,7 @@ The method is an in-context reinforcement learning framework with a training-tim
 - Dynamic Curriculum prunes skill files by measured **on-policy helpfulness**, keeping only those that still help the current policy.
 - Skills grouped offline by category, rendered with interaction history into a compact (visual) context teaching multi-turn tool use.
 - Gains over RL baseline: +9.7% ALFWorld, +6.6% Search-QA, +10.1% WebShop; per-step context kept under 0.5k tokens.
-- Positioned against skill-augmentation methods (e.g. SkillRL) and the Claude Code / OpenClaw scaffold ecosystem.
+- Positioned against skill-augmentation methods (e.g. SkillRL) and the [[claude-code|Claude Code]] / OpenClaw scaffold ecosystem.
 - Code released at github.com/ZJU-REAL/SkillZero.
 
 ## Concepts & entities

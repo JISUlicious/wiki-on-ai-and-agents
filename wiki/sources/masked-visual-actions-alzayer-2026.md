@@ -22,7 +22,7 @@ importance: low
 
 # Masked Visual Actions for Unified World Modeling
 
-**Hadi Alzayer, Wenlong Huang, Lvmin Zhang, Maneesh Agrawala, … Jiajun Wu, Li Fei-Fei** (Stanford University; University of Maryland College Park; Harvard) — [arXiv:2607.19343](https://arxiv.org/abs/2607.19343), cs.CV, 21 Jul 2026. Preprint; no venue listed in the arXiv comments.
+**Hadi Alzayer, Wenlong Huang, Lvmin Zhang, Maneesh Agrawala, … Jiajun Wu, Li Fei-Fei** ([[stanford-university|Stanford University]]; University of Maryland College Park; Harvard) — [arXiv:2607.19343](https://arxiv.org/abs/2607.19343), cs.CV, 21 Jul 2026. Preprint; no venue listed in the arXiv comments.
 
 ## Summary
 

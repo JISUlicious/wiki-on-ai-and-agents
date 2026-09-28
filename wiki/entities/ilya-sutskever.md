@@ -15,12 +15,12 @@ tags:
 
 Researcher; co-founder and (at the time of the GPT-1 through GPT-4 papers) Chief Scientist of [[openai|OpenAI]]. Doctoral student of Geoffrey Hinton at the [[university-of-toronto|University of Toronto]]; co-author on AlexNet (2012) and Seq2Seq (2014), both landmark papers in modern deep learning.
 
-In this wiki, Sutskever appears as a co-author on the [[gpt-1-radford-2018|GPT-1 paper]] and remains involved through the GPT family.
+In this wiki, Sutskever appears as a co-author on the [[gpt-1-radford-2018|GPT-1 paper]] and remains involved through the [[gpt-family|GPT family]].
 
 ## Affiliations
 
 - [[openai]] (co-founder, 2015–2024)
-- Previously: Google Brain; doctoral student at [[university-of-toronto]] under Geoffrey Hinton
+- Previously: [[google-brain|Google Brain]]; doctoral student at [[university-of-toronto]] under Geoffrey Hinton
 
 ## References
 

@@ -55,7 +55,7 @@ The stated purpose is process supervision: dense per-requirement signals intende
 
 The ablation is candid. Of eight modules, best performance used only **graph, locate, read, retrieve, ask**: **memory caused error propagation**, **planning was unstable**, and **search was underutilized** on small codebases. The authors disclaim optimality — *"a perfect Agent-as-a-Judge is not the focus of this proof of concept."*
 
-Scope remains narrow: one domain (code generation / AI development), 55 tasks, three solver systems, small codebases, and no venue (preprint).
+Scope remains narrow: one domain ([[code-generation|code generation]] / AI development), 55 tasks, three solver systems, small codebases, and no venue (preprint).
 
 ## Related
 

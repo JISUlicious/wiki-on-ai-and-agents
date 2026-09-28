@@ -24,7 +24,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-21–06-28).
 
 ## Summary
 
-LLM-as-a-Judge is now the dominant evaluation paradigm for language models, but judge validation in practice relies on **exact-match agreement** — a metric that does not correct for chance and systematically overstates discriminative ability. This UC Berkeley study presents the largest systematic audit of LLM-as-a-Judge to date: 21 judges from nine providers across MT-Bench, JudgeBench, and RewardBench, evaluated under three protocols (agreement, consistency, bias audit) over 118 runs and ~541,000 individual judgments. Exact-match agreement collapses once corrected to chance-adjusted Cohen's κ; the authors distill the findings into a **Minimum Viable Validation Protocol**.
+LLM-as-a-Judge is now the dominant evaluation paradigm for language models, but judge validation in practice relies on **exact-match agreement** — a metric that does not correct for chance and systematically overstates discriminative ability. This [[uc-berkeley|UC Berkeley]] study presents the largest systematic audit of LLM-as-a-Judge to date: 21 judges from nine providers across MT-Bench, JudgeBench, and RewardBench, evaluated under three protocols (agreement, consistency, bias audit) over 118 runs and ~541,000 individual judgments. Exact-match agreement collapses once corrected to chance-adjusted Cohen's κ; the authors distill the findings into a **Minimum Viable Validation Protocol**.
 
 ## Key points
 

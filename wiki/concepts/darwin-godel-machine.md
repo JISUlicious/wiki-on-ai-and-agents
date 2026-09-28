@@ -23,7 +23,7 @@ The **Darwin Gödel Machine (DGM)** is an empirical Darwinian variant of Schmidh
 
 ## What it advances
 
-The DGM is the first paper to close the self-referential loop empirically: the agent that solves the downstream task and the agent that improves the downstream-task-solving agent are the same artifact. The SWE-bench jump from 20% to 50% on Claude 3.5 — discovered by the system itself, without a human meta-designer — is the load-bearing evidence that recursive self-improvement of LLM agent scaffolds is more than a thought experiment. It also explicitly flags the safety problem: open-ended evolution optimized for a benchmark can amplify misalignment, growing uninterpretability, and gaps between benchmark score and safety properties.
+The DGM is the first paper to close the self-referential loop empirically: the agent that solves the downstream task and the agent that improves the downstream-task-solving agent are the same artifact. The SWE-bench jump from 20% to 50% on Claude 3.5 — discovered by the system itself, without a human meta-designer — is the load-bearing evidence that recursive self-improvement of [[llm-agent|LLM agent]] scaffolds is more than a thought experiment. It also explicitly flags the safety problem: open-ended evolution optimized for a benchmark can amplify misalignment, growing uninterpretability, and gaps between benchmark score and safety properties.
 
 ## Relation to other concepts
 

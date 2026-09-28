@@ -17,7 +17,7 @@ tags:
 
 ## What it is
 
-vLLM accepts a model checkpoint (Hugging Face format or compatible) and exposes an OpenAI-compatible HTTP API (`/v1/chat/completions`, `/v1/completions`) so existing OpenAI-SDK clients can talk to it without code changes. It is designed for production serving — multi-tenant, high-QPS, GPU-resident.
+vLLM accepts a model checkpoint ([[huggingface|Hugging Face]] format or compatible) and exposes an OpenAI-compatible HTTP API (`/v1/chat/completions`, `/v1/completions`) so existing OpenAI-SDK clients can talk to it without code changes. It is designed for production serving — multi-tenant, high-QPS, GPU-resident.
 
 ## Key features
 
@@ -25,12 +25,12 @@ vLLM accepts a model checkpoint (Hugging Face format or compatible) and exposes 
 - **Continuous batching** — requests join and leave the running batch every decoding step, rather than waiting for a static batch to finish. Dramatically improves GPU utilization under variable-length workloads.
 - **OpenAI-compatible API** — drop-in replacement for OpenAI endpoints, including streaming and tool calling.
 - **Quantization support** — AWQ, GPTQ, FP8, INT4 paths.
-- **Speculative decoding** — supports draft-model and Medusa-style speculation for latency reduction.
-- **Distributed inference** — tensor parallelism and pipeline parallelism for multi-GPU / multi-node serving.
+- **[[speculative-decoding|Speculative decoding]]** — supports draft-model and Medusa-style speculation for latency reduction.
+- **Distributed inference** — [[tensor-parallelism|tensor parallelism]] and [[pipeline-parallelism|pipeline parallelism]] for multi-GPU / multi-node serving.
 
 ## Tool-calling support
 
-vLLM ships [[function-calling]] via ~25 model-family-specific parsers (see [[tool-call-parser]]). Activated with `--enable-auto-tool-choice --tool-call-parser <name>` at server start. Parsers cover Llama 3.x/4, Mistral, Hermes (Nous Research) / Qwen, IBM Granite, DeepSeek v3/v3.1, Kimi K2, GLM 4.5/4.7, FunctionGemma, Salesforce xLAM, and more.
+vLLM ships [[function-calling]] via ~25 model-family-specific parsers (see [[tool-call-parser]]). Activated with `--enable-auto-tool-choice --tool-call-parser <name>` at server start. Parsers cover Llama 3.x/4, Mistral, Hermes ([[nous-research|Nous Research]]) / Qwen, IBM Granite, DeepSeek v3/v3.1, Kimi K2, GLM 4.5/4.7, FunctionGemma, Salesforce xLAM, and more.
 
 ## Structured output backends
 

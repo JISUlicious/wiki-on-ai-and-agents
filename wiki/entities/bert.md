@@ -44,9 +44,9 @@ BERT-Base was sized to match [[gpt-1]] for a controlled comparison; BERT-Base ou
 
 ## Lineage
 
-BERT is encoder-only and trained for representation, not generation. Its successors are improved encoder pre-training schemes (RoBERTa removed NSP and trained longer; ALBERT used parameter sharing; ELECTRA used replaced-token-detection) and various distilled / efficient variants (DistilBERT, TinyBERT). It is **not** an ancestor of the GPT family — those descend from [[transformer-decoder]] (Liu 2018) and [[gpt-1]].
+BERT is encoder-only and trained for representation, not generation. Its successors are improved encoder pre-training schemes (RoBERTa removed NSP and trained longer; ALBERT used [[parameter-sharing|parameter sharing]]; ELECTRA used replaced-token-detection) and various distilled / efficient variants (DistilBERT, TinyBERT). It is **not** an ancestor of the [[gpt-family|GPT family]] — those descend from [[transformer-decoder]] (Liu 2018) and [[gpt-1]].
 
-BERT is later used as a building block for retrieval: [[dpr|DPR (Karpukhin et al. 2020)]] uses two BERT encoders as a question encoder and a passage encoder for dense retrieval, which in turn enables [[rag]] and [[retro]].
+BERT is later used as a building block for retrieval: [[dpr|DPR (Karpukhin et al. 2020)]] uses two BERT encoders as a question encoder and a passage encoder for [[dense-retrieval|dense retrieval]], which in turn enables [[rag]] and [[retro]].
 
 ## Results (at release)
 

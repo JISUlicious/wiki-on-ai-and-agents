@@ -17,7 +17,7 @@ tags:
 ByteDance Seed is ByteDance's research division focused on foundation models, including large language models and multimodal/agentic systems. It is the sub-team that produced the UI-TARS line of native GUI agents.
 
 - Sub-team of [[bytedance]].
-- Produced [[ui-tars-1]] — native GUI agent operating directly on screen pixels and keyboard/mouse actions.
+- Produced [[ui-tars-1]] — native [[gui-agent|GUI agent]] operating directly on screen pixels and keyboard/mouse actions.
 - Produced [[ui-tars-2]] — successor with improved reasoning and tool-use scaffolding.
 - Active in the broader [[computer-use-agent]] and [[vision-language-action-model]] research space.
 

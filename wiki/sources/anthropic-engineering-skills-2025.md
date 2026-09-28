@@ -60,7 +60,7 @@ The second mechanic is the **code-execution model**, which goes materially deepe
 - [[skill-md-format]] — the SKILL.md file format (YAML frontmatter + markdown body + referenced bundled files)
 - [[code-as-harness]] — code as deterministic tool, run without loading source/inputs into context; the "code as both tool and documentation" framing
 - [[mcp]] — Model Context Protocol; positioned as complementary to Skills
-- [[agentic-context-engineering]] — progressive disclosure / context assembly: managing what enters the context window and when (the source's `context-assembly` theme)
+- [[agentic-context-engineering]] — progressive disclosure / [[context-assembly|context assembly]]: managing what enters the context window and when (the source's `context-assembly` theme)
 - [[memory-management]] — filesystem-as-context navigation; loading only the needed slice rather than holding everything resident
 
 ## Notable Quotes

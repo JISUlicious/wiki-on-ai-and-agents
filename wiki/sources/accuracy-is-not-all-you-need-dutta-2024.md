@@ -17,7 +17,7 @@ importance: high
 
 # Accuracy is Not All You Need
 
-**Dutta et al.** (Microsoft Research India) — [arXiv:2407.09141](https://arxiv.org/abs/2407.09141), 2024.
+**Dutta et al.** ([[microsoft-research|Microsoft Research]] India) — [arXiv:2407.09141](https://arxiv.org/abs/2407.09141), 2024.
 
 ## The argument
 

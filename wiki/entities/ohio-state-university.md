@@ -17,7 +17,7 @@ Ohio State University (OSU). The NLP group led by Yu Su is the relevant locus fo
 
 ## Notable work
 
-- [[hipporag2-jimenez-gutierrez-2025]] — HippoRAG 2: hippocampus-inspired long-term memory for LLMs.
+- [[hipporag2-jimenez-gutierrez-2025]] — HippoRAG 2: hippocampus-inspired [[long-term-memory|long-term memory]] for LLMs.
 - [[hipporag-2]] — successor system / model entity.
 
 ## References

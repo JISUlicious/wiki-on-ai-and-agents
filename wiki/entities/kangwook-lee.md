@@ -15,7 +15,7 @@ tags:
 
 # Kangwook Lee
 
-Kangwook Lee is a professor at UW-Madison and a recurring senior author on the looped-transformer line of work. His group has produced several of the canonical papers establishing what fixed-depth transformers can compute when run as a recurrent block, including expressivity (programmable computers), in-context algorithm learning, and length generalization.
+Kangwook Lee is a professor at UW-Madison and a recurring senior author on the looped-transformer line of work. His group has produced several of the canonical papers establishing what fixed-depth transformers can compute when run as a recurrent block, including expressivity (programmable computers), in-context algorithm learning, and [[length-generalization|length generalization]].
 
 - Senior author on [[looped-transformers-learning-algorithms-yang-2023]].
 - Senior author on [[looped-transformers-length-generalization-fan-2024]].

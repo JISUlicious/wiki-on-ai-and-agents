@@ -37,7 +37,7 @@ Note the third row: `qk_matmul` is memory-bound *even during prefill*, which is 
 
 ## Consequences that recur across the wiki
 
-**Weight-only quantization helps decode and can hurt prefill.** W4A16 shrinks bytes but leaves FLOPs unchanged, so it raises `I`. Below the ridge that is pure win; above it, dequantization is added work on the critical path. Measured on Apple Silicon: 4-bit makes decode **2.3–2.9× faster** and prefill **2–12% slower** (see [[quantization-performance]]).
+**Weight-only quantization helps decode and can hurt prefill.** W4A16 shrinks bytes but leaves FLOPs unchanged, so it raises `I`. Below the ridge that is pure win; above it, dequantization is added work on the critical path. Measured on [[apple-silicon|Apple Silicon]]: 4-bit makes decode **2.3–2.9× faster** and prefill **2–12% slower** (see [[quantization-performance]]).
 
 **Batching moves you rightward across the ridge.** [[marlin-frantar-2024|Marlin]] quantifies the crossover — ~3.9× at batch ≤16–32, decaying to 1.5× at batch 128 — with the rule that W4A16 wins while you do fewer than ~25–50 MACs per 4-bit weight.
 

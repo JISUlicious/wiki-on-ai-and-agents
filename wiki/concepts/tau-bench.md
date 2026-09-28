@@ -8,8 +8,7 @@ sources:
   - skill-state-scalable-long-horizon-agent-skills-badhe-2026.md
 status: draft
 importance: medium
-tags:
-  - benchmark
+tags: []
 ---
 
 # τ-Bench

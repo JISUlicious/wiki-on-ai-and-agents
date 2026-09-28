@@ -2,7 +2,7 @@
 title: "What is Missing from AI Post-Training AI: An Empirical Analysis"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.19072"
 year: 2026
@@ -93,8 +93,10 @@ Every execution-level suggestion (reward details, hyperparameters, formatting) i
 
 The finding is a precise instance of the [[metacognition]] page's two-level account: the experience scaffold supplies *monitoring* (the journal observes the plateau, the evaluator names it), but the *control* relation — meta level acting on the object level — never fires for strategy-level choices, while it fires reliably for execution-level ones. That asymmetry is the whole result.
 
-> [!warning] Contradiction — scaffold memory and validation do not make the loop close
+> [!success] Resolved contradiction — scaffold memory and validation do not make the loop close
 > [[self-improving-agent]] lists "memory of past attempts" and an "empirical validation loop" as the mechanism by which self-improvement compounds. This paper builds both — an append-only journal and a dedicated evaluator — and shows they lift *execution* (+12.6 / +40.8) while leaving the decision that sets the run's ceiling untouched: 0 unplanned strategy revisions across three instrumented runs with 12 explicit strategy-level recommendations on the table. Memory and validation are necessary for the loop; they are not what closes it.
+>
+> **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
 > [!warning] Contradiction — skills are consumed, not produced
 > The [[skill-library]] / [[voyager]] premise is that a long-horizon agent turns experience into reusable skills. Here an agent with a `create-skill` meta-skill, explicit instructions to use it, and 18–60 skill reads per run **creates zero skills in any run**. This is the opposite end of the failure from [[continualskillbench-guan-2026]] and [[catastrophic-remembering]] (uncurated over-accumulation): when skill creation is left to the agent's initiative inside a demanding task, it does not happen at all. Both point at the same gap — the agent does not spontaneously reopen its own process.

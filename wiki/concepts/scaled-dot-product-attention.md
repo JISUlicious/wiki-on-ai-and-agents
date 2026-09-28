@@ -21,7 +21,7 @@ where `Q`, `K`, `V` are query, key, and value matrices and `dₖ` is the key dim
 
 ## Why the √dₖ scaling
 
-Without scaling, dot-product attention performs worse than additive attention for large `dₖ`. The intuition: if each component of `q` and `k` is mean-0 variance-1, the dot product `q · k = Σᵢ qᵢ kᵢ` has variance `dₖ`, so its magnitude grows as `√dₖ`. Large dot products push softmax into saturation regions with vanishing gradients. Dividing by `√dₖ` keeps the pre-softmax logits in a useful regime regardless of dimension.
+Without scaling, dot-product attention performs worse than [[additive-attention|additive attention]] for large `dₖ`. The intuition: if each component of `q` and `k` is mean-0 variance-1, the dot product `q · k = Σᵢ qᵢ kᵢ` has variance `dₖ`, so its magnitude grows as `√dₖ`. Large dot products push softmax into saturation regions with vanishing gradients. Dividing by `√dₖ` keeps the pre-softmax logits in a useful regime regardless of dimension.
 
 ## Why dot-product over additive
 

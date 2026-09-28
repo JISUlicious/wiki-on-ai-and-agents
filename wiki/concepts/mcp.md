@@ -15,7 +15,7 @@ tags:
 
 The **Model Context Protocol (MCP)** is an open standard for connecting LLM-based AI assistants to external data sources and tools. Introduced by [[anthropic|Anthropic]] on **November 25, 2024**, it standardizes the *agent ↔ tool/data* integration surface so that every AI app doesn't need a custom integration with every data source.
 
-In the [[agent-three-layer-model]], MCP is the dominant **L3 implementation of the L2 action surface** — a cross-cutter that also touches L2 harness (via the auth layer per server) and L2 context assembly (servers can inject resources into the prompt).
+In the [[agent-three-layer-model]], MCP is the dominant **L3 implementation of the L2 action surface** — a cross-cutter that also touches L2 harness (via the auth layer per server) and L2 [[context-assembly|context assembly]] (servers can inject resources into the prompt).
 
 ## What it solves
 

@@ -17,7 +17,7 @@ tags:
 
 # System One open ecosystem sweep (2026-09-22 to 09-28)
 
-An aggregation page covering the second week after [[jev|Jev]]'s launch. It was compiled from GitHub, Hugging Face and engine pull requests on 2026-09-28. Project numbers are self-reported unless stated.
+An aggregation page covering the second week after [[jev|Jev]]'s launch. It was compiled from GitHub, [[huggingface|Hugging Face]] and engine pull requests on 2026-09-28. Project numbers are self-reported unless stated.
 
 ## Serving engines
 

@@ -12,7 +12,7 @@ authors:
   - Tim Dettmers
   - Mike Lewis
   - Sam Shleifer
-  - Luke Zettlemoyer
+  - [[luke-zettlemoyer]]
 tags:
   - 2021
   - paper
@@ -22,7 +22,7 @@ importance: high
 
 # 8-bit Optimizers via Block-wise Quantization
 
-**Dettmers, Lewis, Shleifer, Zettlemoyer** (Facebook AI Research; University of Washington) — [arXiv:2110.02861](https://arxiv.org/abs/2110.02861), **ICLR 2022 spotlight**.
+**Dettmers, Lewis, Shleifer, Zettlemoyer** (Facebook AI Research; [[university-of-washington|University of Washington]]) — [arXiv:2110.02861](https://arxiv.org/abs/2110.02861), **ICLR 2022 spotlight**.
 
 ## Summary
 

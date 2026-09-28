@@ -2,7 +2,7 @@
 title: Trained Sparse Attention
 type: concept
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-09-29
 sources:
   - native-sparse-attention-yuan-2025.md
   - moba-mixture-of-block-attention-lu-2025.md
@@ -32,8 +32,10 @@ The shared design across the lineage: a cheap per-query selector (pooled keys, c
 
 [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] adds a **fourth position** the from-scratch / adapt / retrofit axis did not have: a training-free retrofit that presupposes the trained column. It cannot sparsify a dense model; it makes an already-sparse model's selector cheaper. [[gated-sparse-attention-shen-2026|GSA]] is the cautionary entry — its own ablation shows the sparse-only baseline is *already more stable* than dense (8.7 vs 12.3 loss spikes per 100K steps), so the paper does not show sparsity causing instability, and its long-context win belongs mostly to a generic gating trick.
 
-> [!warning] Contradiction — how many heads does DSA's lightning indexer have?
+> [!success] Resolved contradiction — how many heads does DSA's lightning indexer have?
 > [[gated-sparse-attention-shen-2026|GSA]] §2.2 says "typically 4" and builds its theoretical cost figures on H^I = 4. The released DeepSeek-V3.2 and V3.2-Exp configs say `index_n_heads: 64`, which is also what [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] uses and what its 8-of-64 routing presupposes. The config is authoritative; GSA's theoretical numbers are off by that factor.
+>
+> **Resolved 2026-09-29:** checked against the released `config.json` for both DeepSeek-V3.2 and V3.2-Exp on [[huggingface|Hugging Face]]: `index_n_heads: 64`, `index_head_dim: 128`, `index_topk: 2048`. The config is authoritative; GSA's "typically 4" is wrong.
 
 Two details from the source pages that the headlines hide:
 

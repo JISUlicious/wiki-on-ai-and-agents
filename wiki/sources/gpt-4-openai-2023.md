@@ -46,7 +46,7 @@ What the report **does** cover in depth:
 - **Predictable scaling**: predicted final pre-training loss within ~0.5% and HumanEval pass-rate buckets accurately, from much smaller runs. Validates the operational use of [[scaling-laws|scaling laws]] for safety-relevant capability forecasting.
 - **Exam performance**: bar exam top 10%; SAT 1410/1600; LSAT 88th percentile; USMLE Step 1 ~75%; AP Calculus BC 4/5; Codeforces ~5th percentile (still bad at competitive programming).
 - **MMLU**: 86.4% (5-shot), substantial gain over GPT-3.5's 70%.
-- **HumanEval**: 67% pass@1 (no CoT) — major jump in code generation.
+- **HumanEval**: 67% pass@1 (no CoT) — major jump in [[code-generation|code generation]].
 - **Acknowledged limitations**: [[hallucination|hallucination]], limited context window (originally 8k; 32k variant came later), no learning from experience, sensitive to prompt phrasing.
 - **Safety interventions**: model-assisted safety pipeline, RBRMs, extensive system card on real-world risk surfaces.
 

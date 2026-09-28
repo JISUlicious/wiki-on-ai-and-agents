@@ -13,7 +13,7 @@ tags:
 
 # Voyager
 
-Voyager is an open-ended embodied [[llm-agent]] for Minecraft that learns by accreting executable code into a persistent [[skill-library]]. It pairs a [[gpt-4]] backbone with three loops — automatic curriculum, skill retrieval, and iterative self-verifying code generation — to scale capability monotonically without parameter updates. Voyager is the canonical instantiation of *skill library = procedural memory* in the LLM-agent literature, and the load-bearing ingredient is the library itself: handing it to a different agent ([[autogpt]]) confers most of Voyager's transfer advantage.
+Voyager is an open-ended embodied [[llm-agent]] for Minecraft that learns by accreting executable code into a persistent [[skill-library]]. It pairs a [[gpt-4]] backbone with three loops — automatic curriculum, skill retrieval, and iterative self-verifying [[code-generation|code generation]] — to scale capability monotonically without parameter updates. Voyager is the canonical instantiation of *skill library = procedural memory* in the LLM-agent literature, and the load-bearing ingredient is the library itself: handing it to a different agent ([[autogpt]]) confers most of Voyager's transfer advantage.
 
 ## Core mechanism
 

@@ -69,10 +69,10 @@ Because existing benchmarks score answer quality, they cannot detect this gap, s
 - [[memory-systems-anatomy-2026]] — closely adjacent wiki query on memory-system anatomy; this survey supplies the governance half that memory-form taxonomies omit.
 - [[episodic-memory-llm]] — episodic traces are one of four "classical core" memory types in the taxonomy.
 - [[long-context-llm]] — treated as a *boundary* class: long-context QA assumes the context is given, so it is out of scope unless the agent chooses what to keep.
-- [[retrieval-augmented-generation]] — another boundary class (read-only curated corpus); also the most-studied lifecycle stage, and the pilot shows dense retrieval fails governance obligations identically to recency.
+- [[retrieval-augmented-generation]] — another boundary class (read-only curated corpus); also the most-studied lifecycle stage, and the pilot shows [[dense-retrieval|dense retrieval]] fails governance obligations identically to recency.
 - [[agent-evaluation]] — AOEP-v0 is the survey's contribution here: score state mutation and recovery obligations, not answer quality.
 - [[mirix]] / [[a-mem]] — agentic memory systems in the surveyed mechanism family; A-Mem is cited as the agentic note system whose entries link and refactor each other.
-- [[hipporag-2]] — graph-backed structured memory store, part of the "memory managers and graph memory" family.
+- [[hipporag-2]] — graph-backed structured memory store, part of the "memory managers and [[graph-memory|graph memory]]" family.
 
 ## References
 

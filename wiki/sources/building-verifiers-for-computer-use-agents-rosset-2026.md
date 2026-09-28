@@ -22,7 +22,7 @@ importance: medium
 
 # The Art of Building Verifiers for Computer Use Agents
 
-[arXiv:2604.06240](https://arxiv.org/abs/2604.06240) — Rosset, Sharma, Zhao, Gonzalez-Fernandez, Awadallah (Microsoft Research, Browserbase), 2026. Surfaced via the alphaXiv / NLP-newsletter digest.
+[arXiv:2604.06240](https://arxiv.org/abs/2604.06240) — Rosset, Sharma, Zhao, Gonzalez-Fernandez, Awadallah ([[microsoft-research|Microsoft Research]], Browserbase), 2026. Surfaced via the alphaXiv / NLP-newsletter digest.
 
 ## Summary
 

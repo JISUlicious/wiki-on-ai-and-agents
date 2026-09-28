@@ -13,7 +13,7 @@ authors:
   - Hanhong Zhao
   - Tianhong Li
   - Yoon Kim
-  - Jacob Andreas
+  - [[jacob-andreas]]
   - Kaiming He
 first_author: Keya Hu
 year: 2026

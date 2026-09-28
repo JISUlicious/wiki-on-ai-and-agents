@@ -14,9 +14,9 @@ tags:
 
 # MLX
 
-[[apple|Apple]]'s open-source array framework for machine learning on Apple Silicon ([ml-explore/mlx](https://github.com/ml-explore/mlx)). Its defining properties are **unified memory** — arrays live in memory the CPU and GPU both address, so there is no host↔device copy — and **lazy evaluation**, where operations build a graph that is materialized only when a value is needed. The GPU backend is Metal.
+[[apple|Apple]]'s open-source array framework for machine learning on [[apple-silicon|Apple Silicon]] ([ml-explore/mlx](https://github.com/ml-explore/mlx)). Its defining properties are **unified memory** — arrays live in memory the CPU and GPU both address, so there is no host↔device copy — and **lazy evaluation**, where operations build a graph that is materialized only when a value is needed. The GPU backend is Metal.
 
-The LLM layer is **mlx-lm** (Python: `mlx_lm.load`, `generate`, an OpenAI-compatible server, quantization) and **mlx-swift-lm**. Converted checkpoints live under the `mlx-community` organization on Hugging Face.
+The LLM layer is **mlx-lm** (Python: `mlx_lm.load`, `generate`, an OpenAI-compatible server, quantization) and **mlx-swift-lm**. Converted checkpoints live under the `mlx-community` organization on [[huggingface|Hugging Face]].
 
 ## Facts this wiki has verified
 

@@ -29,7 +29,7 @@ The paper defends the thesis three ways: (1) a control-theoretic formalization t
 ## Key points
 
 - **Scaffold-only variation is large.** Independent third-party monitoring reports up to **11 pts** scaffold-only variation for GPT-5 and **15 pts** for Kimi K2 Thinking on SWE-bench Verified; HAL reports single-model swings up to ~48 pts on SWE-bench Verified Mini.
-- **Held-fixed-model examples.** Same model, harness-only change raises [[terminal-bench]] 2 pass@1 from **69.7% → 77.0%**; Claude Opus 4.5 goes **45.9% → 55.4%** on SWE-bench Pro moving from SEAL scaffold to Claude Code.
+- **Held-fixed-model examples.** Same model, harness-only change raises [[terminal-bench]] 2 pass@1 from **69.7% → 77.0%**; Claude Opus 4.5 goes **45.9% → 55.4%** on SWE-bench Pro moving from SEAL scaffold to [[claude-code|Claude Code]].
 - **Ranking reversals.** Adding a single search subagent (WarpGrep) flips the SWE-bench Pro ordering between MiniMax 2.5 and Claude Opus 4.6, despite Opus ranking higher elsewhere.
 - **Closed-loop framing.** Agents are discrete-time closed-loop systems; the harness is the controller (stability V(s_t), context drift δ_t, control lag τ), explaining why small harness changes can exceed model-substitution effects.
 - **Attribution gap.** Harness swings routinely dwarf the 2–4 pt shifts papers report as meaningful model advances; the same composite score is misread as a model property, a benchmark property, and an agent property.

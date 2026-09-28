@@ -17,7 +17,7 @@ tags:
 
 ## In this wiki
 
-- Co-author institution and home of the co-corresponding author **Xue Yang** on [[skillopt-yang-2026|SkillOpt]] (the [[skill-optimization]] paper), a collaboration with [[microsoft|Microsoft]], Tongji University, and Fudan University.
+- Co-author institution and home of the co-corresponding author **Xue Yang** on [[skillopt-yang-2026|SkillOpt]] (the [[skill-optimization]] paper), a collaboration with [[microsoft|Microsoft]], Tongji University, and [[fudan-university|Fudan University]].
 
 ## References
 

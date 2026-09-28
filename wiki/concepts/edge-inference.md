@@ -18,7 +18,7 @@ Running LLMs on a single consumer or embedded device — a laptop, a phone, a Je
 
 ## The pages that live here
 
-- **[[weight-streaming]]** — models larger than DRAM, read per token from SSD. The main edge technique of 2026; ten Apple Silicon implementations surveyed.
+- **[[weight-streaming]]** — models larger than DRAM, read per token from SSD. The main edge technique of 2026; ten [[apple-silicon|Apple Silicon]] implementations surveyed.
 - **[[llm-in-a-flash-alizadeh-2023]]** — the origin, on an M1 Max and an M2 Ultra. Candid that energy per token goes *up*.
 - **[[neuroprefetcher-delta-prefetching-dhar-2026]]** — the same idea on an NVIDIA Jetson AGX Orin with 32 GiB, 7.9–12× over demand paging, at a measured accuracy cost.
 - **[[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]]** — the ~10 W regime where a partial FPGA accelerator makes sense; not reachable from a Mac ([[hardware-accelerator]]).

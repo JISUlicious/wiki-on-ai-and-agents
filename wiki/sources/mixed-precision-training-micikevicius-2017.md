@@ -65,7 +65,7 @@ This is the paper that made FP16 training safe and therefore standard. The setup
 - [[quantization-performance]] — the speed side: 2×–8× half-precision arithmetic throughput and halved memory bandwidth.
 - [[quantization-quality]] — the accuracy side: parity tables showing no degradation vs. FP32 baselines.
 - [[backpropagation]] — loss scaling exploits the chain rule to scale every activation gradient with one multiply at the loss.
-- [[scaling-laws-for-precision-kumar-2024]] — later work fitting precision into scaling laws; this paper is the empirical ancestor.
+- [[scaling-laws-for-precision-kumar-2024]] — later work fitting precision into [[scaling-laws|scaling laws]]; this paper is the empirical ancestor.
 - [[activation-recomputation]] — the complementary lever, motivated by the same observation that activations dominate training memory.
 
 ## References

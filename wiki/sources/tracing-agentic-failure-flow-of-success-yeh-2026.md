@@ -21,7 +21,7 @@ importance: high
 
 # Tracing Agentic Failure from the Flow of Success
 
-**Samuel Yeh, Yiwen Zhu, Shaleen Deep, Sharon Li** (University of Wisconsin–Madison; Microsoft Research) — [arXiv:2607.12747](https://arxiv.org/abs/2607.12747) (v1, 14 Jul 2026). Preprint; venue not stated.
+**Samuel Yeh, Yiwen Zhu, Shaleen Deep, Sharon Li** (University of Wisconsin–Madison; [[microsoft-research|Microsoft Research]]) — [arXiv:2607.12747](https://arxiv.org/abs/2607.12747) (v1, 14 Jul 2026). Preprint; venue not stated.
 
 ## Summary
 

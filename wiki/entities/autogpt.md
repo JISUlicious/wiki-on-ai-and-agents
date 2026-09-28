@@ -11,7 +11,7 @@ tags:
   - product
 ---
 
-AutoGPT is an early, widely popular open-source autonomous agent project created by Toran Bruce Richards and released in March 2023. It wrapped GPT-4 with a loop of self-prompted planning, sub-task decomposition, tool use, and persistent memory, becoming one of the first viral demonstrations of [[llm-agent]] patterns to a mainstream developer audience.
+AutoGPT is an early, widely popular open-source autonomous agent project created by Toran Bruce Richards and released in March 2023. It wrapped GPT-4 with a loop of self-prompted planning, sub-task decomposition, [[tool-use|tool use]], and persistent memory, becoming one of the first viral demonstrations of [[llm-agent]] patterns to a mainstream developer audience.
 
 The AutoGPT team co-authored [[gaia]], lending applied agent-engineering perspective to the benchmark's design.
 

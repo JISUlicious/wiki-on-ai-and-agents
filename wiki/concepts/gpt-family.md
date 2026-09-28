@@ -11,7 +11,7 @@ importance: high
 
 # GPT Family
 
-The GPT family is the line of [[decoder-only-transformer|decoder-only Transformer]] language models produced by [[openai|OpenAI]] starting in 2018. The defining recipe across the family: generative pre-training with [[autoregressive-language-modeling|next-token prediction]] on increasingly large corpora, with successive generations principally distinguished by **scale** (parameters, data, compute) and, in later generations, by post-training procedures like instruction tuning and [[rlhf|RLHF]].
+The GPT family is the line of [[decoder-only-transformer|decoder-only Transformer]] language models produced by [[openai|OpenAI]] starting in 2018. The defining recipe across the family: generative pre-training with [[autoregressive-language-modeling|next-token prediction]] on increasingly large corpora, with successive generations principally distinguished by **scale** (parameters, data, compute) and, in later generations, by post-training procedures like [[instruction-tuning|instruction tuning]] and [[rlhf|RLHF]].
 
 ## Lineage
 
@@ -35,7 +35,7 @@ ChatGPT (Nov 2022) is a deployed product based on a fine-tuned GPT-3.5 / GPT-4 �
 ## Recurring research themes
 
 - **Scaling**: each generation 10–100× the previous in parameters and/or training compute.
-- **Capability emergence**: behaviors like [[in-context-learning|few-shot learning]], [[chain-of-thought-prompting|chain-of-thought]] reasoning, and tool use emerge at scale rather than being explicitly trained.
+- **Capability emergence**: behaviors like [[in-context-learning|few-shot learning]], [[chain-of-thought-prompting|chain-of-thought]] reasoning, and [[tool-use|tool use]] emerge at scale rather than being explicitly trained.
 - **Alignment**: from GPT-3.5 onward, [[rlhf|RLHF]] and constitutional methods became central to making the base model usable as an assistant.
 
 ## References

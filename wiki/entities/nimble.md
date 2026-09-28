@@ -26,7 +26,7 @@ The schema must be **flat**: no nesting, each field an enum (1–26 string choic
 
 Fields are scored independently, so one field cannot see another's answer — the caller must enforce cross-field consistency. Prompts cap at 2,048 tokens including the schema.
 
-The two runners differ in a way that matters for [[edge-inference|local inference]]: the Apple Silicon `ParallelScorer` prefills the shared context once and scores all fields in parallel, while the CUDA scorer re-processes the full prompt for each field separately.
+The two runners differ in a way that matters for [[edge-inference|local inference]]: the [[apple-silicon|Apple Silicon]] `ParallelScorer` prefills the shared context once and scores all fields in parallel, while the CUDA scorer re-processes the full prompt for each field separately.
 
 ## Contrastive data curation
 
@@ -65,7 +65,7 @@ Trained on 2,676 examples from a few domains, it is not expected to generalize f
 > The README states the team did not distill from Jev. Saved Jev probabilities exist in their pipeline but were not used as training targets; the trainer optimizes cross-entropy over the allowed candidate logits directly. If accurate, the 90.12% is not [[illicit-distillation|distillation]] of a competitor but independent convergence on the same recipe — which is the stronger claim, since it suggests the approach is reproducible rather than proprietary.
 
 > [!warning] Correction: the weights are licensed
-> An earlier version of this page said the missing license blocked commercial use. The **GitHub code** still has no license as of 2026-09-28, but the **Hugging Face weights** — `Bespoke-Nimble-9B` and `Bespoke-Nimble-9B-v2` (released 2026-09-23) — are tagged **Apache-2.0**. You can use the model; the reference code is what lacks a grant. v2 applies a fitted temperature to its probabilities by default.
+> An earlier version of this page said the missing license blocked commercial use. The **GitHub code** still has no license as of 2026-09-28, but the **[[huggingface|Hugging Face]] weights** — `Bespoke-Nimble-9B` and `Bespoke-Nimble-9B-v2` (released 2026-09-23) — are tagged **Apache-2.0**. You can use the model; the reference code is what lacks a grant. v2 applies a fitted temperature to its probabilities by default.
 
 ## The other open route
 

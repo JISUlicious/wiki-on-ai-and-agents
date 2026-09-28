@@ -21,11 +21,11 @@ importance: high
 
 # Can Language Models Actually Retrieve In-Context? Drowning in Documents at Million Token Scale
 
-**Siddharth Gollapudi, Nilesh Gupta, Prasann Singhal, Sewon Min** (UC Berkeley; Nilesh Gupta at UT Austin) — [arXiv:2607.01538](https://arxiv.org/abs/2607.01538), cs.CL, 1 Jul 2026. Preprint; supported by the NVIDIA Academic Grant Program.
+**Siddharth Gollapudi, Nilesh Gupta, Prasann Singhal, Sewon Min** ([[uc-berkeley|UC Berkeley]]; Nilesh Gupta at UT Austin) — [arXiv:2607.01538](https://arxiv.org/abs/2607.01538), cs.CL, 1 Jul 2026. Preprint; supported by the NVIDIA Academic Grant Program.
 
 ## Summary
 
-The first systematic study of **in-context retrieval (ICR)** at the two scales a practical retriever actually demands: **million-token corpora** and **length generalization far beyond training size**. ICR casts retrieval as conditional generation — put the whole corpus in context and have the model decode the identifier of the relevant document — which would collapse the two-stage RAG pipeline into one model and allow retrieval behavior beyond inner-product similarity. Prior work either used proprietary systems without controlled evaluation or studied reranking over small candidate pools, so corpus-scale ICR was untested.
+The first systematic study of **in-context retrieval (ICR)** at the two scales a practical retriever actually demands: **million-token corpora** and **[[length-generalization|length generalization]] far beyond training size**. ICR casts retrieval as conditional generation — put the whole corpus in context and have the model decode the identifier of the relevant document — which would collapse the two-stage RAG pipeline into one model and allow retrieval behavior beyond inner-product similarity. Prior work either used proprietary systems without controlled evaluation or studied reranking over small candidate pools, so corpus-scale ICR was untested.
 
 The paper introduces **BLOCKSEARCH**, a **0.6B** LM retriever (Qwen3-0.6B backbone, trained on 8× A100s) that keeps the block-sparse-attention ICR architecture and adds three things for scale: randomized per-document identifier codes (so the model can't overfit code to position or semantics), in-batch negative training (one prefill of b×16 documents yields b training signals), and an **on-policy auxiliary loss** that trains on the model's own rolled-out digit prefixes to fix exposure bias. Every model trains with only 256 documents in context, yet BLOCKSEARCH length-generalizes **~10×** beyond that — matching a dense retriever at moderate corpus sizes (95.8% vs. 95.5% Recall@1 on MS MARCO at ~45k tokens) — before collapsing beyond roughly 500,000 tokens.
 

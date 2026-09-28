@@ -96,7 +96,7 @@ But the honest answer needs three refinements, and each one matters for how this
 
 The paper's own positioning against the video-world-model line is the crispest framing: those systems' "central modeling object remains the generated observation sequence: scene-specific state and interaction outcomes are primarily carried by visual history, latent context, or visual memory." CWM moves the state out of the pixels and into a program, and hands the video model only what it needs to render this frame.
 
-**One caveat the paper itself raises.** The state-to-condition problem does not go away if the two models are merged: "Even if they are unified into an omni-modal network, continuously changing external world state maintained by code must still be encoded and supplied to the visual generation process. Parameter sharing may simplify communication between components, but it does not remove the state-to-condition problem." So the contribution is the *interface*, not the two-model implementation.
+**One caveat the paper itself raises.** The state-to-condition problem does not go away if the two models are merged: "Even if they are unified into an omni-modal network, continuously changing external world state maintained by code must still be encoded and supplied to the visual generation process. [[parameter-sharing|Parameter sharing]] may simplify communication between components, but it does not remove the state-to-condition problem." So the contribution is the *interface*, not the two-model implementation.
 
 ## Where it breaks
 

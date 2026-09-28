@@ -21,7 +21,7 @@ importance: high
 
 # Is Progressive Disclosure All You Need for Long-Context Agents?
 
-**Yifeng He, Yinzhe Zhao, Jicheng Wang, Hao Chen** (University of California, Davis; Zhejiang University; The University of Hong Kong) — [arXiv:2607.17598](https://arxiv.org/abs/2607.17598), v1, 20 Jul 2026 (cs.AI). No venue in the arXiv comments.
+**Yifeng He, Yinzhe Zhao, Jicheng Wang, Hao Chen** (University of California, Davis; [[zhejiang-university|Zhejiang University]]; The University of Hong Kong) — [arXiv:2607.17598](https://arxiv.org/abs/2607.17598), v1, 20 Jul 2026 (cs.AI). No venue in the arXiv comments.
 
 ## Summary
 
@@ -94,7 +94,7 @@ The headline is a boundary condition, not a refutation: **"progressive disclosur
 - [[agent-skills]] — the pattern under test, and the source of the two conflated design axes (routing depth; always-loaded vs. load-on-activation index). The paper's verdict qualifies the wiki's positive framing: one flat level is the default, depth is harmful.
 - [[skill-md-format]] — both packs are built from the standard format; the flat pack is `SKILL.md` + `references/`, the hierarchical pack turns every chunk into its own `SKILL.md` with a meta-router.
 - [[long-context-llm]] — the motivating premise (U-shaped position effects, effective context lagging the advertised window) and what the paper measures agents against.
-- [[claude-code]] — one of the three harnesses, and the origin of the anecdote the paper set out to test: dropping the retrieval index in favor of on-demand agentic search, reported from experience rather than controlled comparison.
+- [[claude-code]] — one of the three harnesses, and the origin of the anecdote the paper set out to test: dropping the retrieval index in favor of on-demand [[agentic-search|agentic search]], reported from experience rather than controlled comparison.
 - [[agent-evaluation]] — LOONGDOC's contribution as an environment: per-trajectory verifier reward, full tool-call traces, and a reproducible cross-harness protocol over ACP.
 - [[memory-management]] — the flat/hierarchical contrast is a read-side design question: what stays resident versus what is fetched on demand.
 - [[can-lms-actually-retrieve-in-context-gollapudi-2026]] — companion evidence on the retrieval side; here the classical hybrid retriever also *loses* to in-skill index routing in nearly every cell.

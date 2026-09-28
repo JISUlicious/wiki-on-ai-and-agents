@@ -2,7 +2,7 @@
 title: "Neither Parallel Nor Sequential: How DiffusionGemma Actually Commits Tokens"
 type: source
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-09-29
 sources: []
 arxiv_id: "2606.14620"
 authors:
@@ -69,12 +69,14 @@ Pooling across regimes gives AUROC **0.437**, which would read as "more confiden
 
 This is a rank-correlation study, not a mechanism: high τ_b is consistent with a left-to-right commit bias but does not show the model *reasons* left-to-right, and the authors avoid causal language. Because commit is observed at accept-call resolution with large tied batches, much of the "sub-block disorder" is genuinely **unresolved** order rather than measured reordering — a finer hook would be needed to settle it. Nothing here is a latency result: the paper counts accept-calls, not wall-clock, and draws no throughput conclusion, so it says nothing about whether diffusion decoding is actually faster than [[speculative-decoding]] or plain AR decoding. R2/R3 have no code-execution harness, so the confidence–correctness claim covers only math and factual recall, and R6 has no errors at all. The AR contrast is accuracy-only on n≈30 prompts per cell with no CIs. Everything is one checkpoint, one GPU, 20 prompts/regime, with no multiplicity correction across six regimes and several statistics; the authors also flag possible pretraining contamination on R1–R3. Two artifacts were caught and corrected and would have manufactured findings otherwise: trailing-EOS padding drives a naive order metric to **τ_b ≈ −0.9**, and cross-regime pooling reverses the calibration result.
 
-> [!warning] Contradiction
+> [!success] Resolved contradiction
 > Google's model card (dated 2026-06-10) is reported by the concurrent GDM study [[how-transparent-is-diffusiongemma-engels-2026]] as using "only **12 to 16** steps" under adaptive stopping. This paper's direct instrumentation measures **3.3–17.1** accept-calls per generation, with short regimes (factual recall, 3.3) far below that range. The vendor figure appears to describe long-output behaviour only.
+>
+> **Resolved 2026-09-29:** this paper's direct instrumentation (3.3–17.1 accept-calls) is authoritative over the unmeasured 12–16 figure.
 
 ## Related
 
-- [[how-transparent-is-diffusiongemma-engels-2026]] — the concurrent Google DeepMind transparency audit of the same checkpoint, which cites this paper. Its Appendix A independently corroborates the non-monotonic commitment: the entropy-bounded accept set is re-evaluated from scratch each step rather than locking positions. Its §5.1.3 "skeleton-first" code generation is the qualitative twin of this paper's R2/R3 order numbers.
+- [[how-transparent-is-diffusiongemma-engels-2026]] — the concurrent Google DeepMind transparency audit of the same checkpoint, which cites this paper. Its Appendix A independently corroborates the non-monotonic commitment: the entropy-bounded accept set is re-evaluated from scratch each step rather than locking positions. Its §5.1.3 "skeleton-first" [[code-generation|code generation]] is the qualitative twin of this paper's R2/R3 order numbers.
 - [[cola-continuous-latent-diffusion-language-model-guo-2026]] · [[elf-embedded-language-flows-hu-2026]] · [[latent-reasoning-with-normalizing-flows-tu-2026]] — the wiki's other diffusion / continuous-latent language-model entries. Those propose architectures; this one audits a shipped one.
 - [[latent-reasoning]] — the broader agenda. This paper's contribution to it is negative and useful: much of what looks like parallel latent commitment is a partial left-to-right drift measured at coarse resolution.
 - [[constrained-decoding]] · [[structured-outputs]] — the JSON regime (τ_b ≈ 0) is the one place order genuinely vanishes, consistent with anchor-first structural generation.

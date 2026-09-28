@@ -10,7 +10,7 @@ authors:
   - Guanting Dong
   - Zhicheng Dou
   - "Renmin University of China"
-  - "ByteDance Seed"
+  - [[bytedance-seed]]
 first_author: Guanting Dong
 year: 2026
 tags:
@@ -27,7 +27,7 @@ importance: medium
 
 ## Summary
 
-Training robust general-purpose agents is bottlenecked by the lack of realistic, stateful tool environments and principled life-long-learning mechanisms. **Agent-World** is a self-evolving training arena that scales environment synthesis to address this. It has two parts: **Agentic Environment-Task Discovery**, which autonomously explores topic-aligned databases and executable tool ecosystems across thousands of real-world themes and synthesizes verifiable tasks with controllable difficulty; and **Continuous Self-Evolving Agent Training**, which combines multi-environment RL with a self-evolving arena that detects capability gaps via dynamic task synthesis and drives targeted learning — enabling co-evolution of agent policies and environments. Built on standards like the Model Context Protocol (MCP) and agent skills, it targets the compositional, stateful nature of open-world tool use.
+Training robust general-purpose agents is bottlenecked by the lack of realistic, stateful tool environments and principled life-long-learning mechanisms. **Agent-World** is a self-evolving training arena that scales environment synthesis to address this. It has two parts: **Agentic Environment-Task Discovery**, which autonomously explores topic-aligned databases and executable tool ecosystems across thousands of real-world themes and synthesizes verifiable tasks with controllable difficulty; and **Continuous Self-Evolving Agent Training**, which combines multi-environment RL with a self-evolving arena that detects capability gaps via dynamic task synthesis and drives targeted learning — enabling co-evolution of agent policies and environments. Built on standards like the [[mcp|Model Context Protocol (MCP)]] and agent skills, it targets the compositional, stateful nature of open-world [[tool-use|tool use]].
 
 ## Key points
 

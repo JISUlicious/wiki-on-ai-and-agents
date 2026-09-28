@@ -59,13 +59,13 @@ Measured overhead reduction:
 Headline: **530B on 2240 A100s at 54.2% MFU — 29% faster** than the 42.1% achieved with full recomputation.
 
 > [!note] Sequence parallelism is the companion trick
-> Tensor parallelism leaves a `10sbh` residue replicated (layer-norms and the two dropouts). Sequence parallelism partitions *that* along the sequence dimension at **zero extra communication bandwidth** — because a ring all-reduce is already reduce-scatter + all-gather, so four all-reduces simply become four all-gathers plus four reduce-scatters.
+> [[tensor-parallelism|Tensor parallelism]] leaves a `10sbh` residue replicated (layer-norms and the two dropouts). Sequence parallelism partitions *that* along the sequence dimension at **zero extra communication bandwidth** — because a ring all-reduce is already reduce-scatter + all-gather, so four all-reduces simply become four all-gathers plus four reduce-scatters.
 
 ## In pipeline parallelism
 
 [[gpipe-huang-2018|GPipe]] pairs recomputation with micro-batching: peak activation memory `O(N + (L/K)·(N/M))` versus `O(N × L)` without either. Recomputation *alone* on a single accelerator took AmoebaNet activations from **6.26 GB → 3.46 GB (~45%)**, lifting the trainable model from 82M → 318M parameters (3.9×).
 
-A limit worth knowing: pipeline parallelism can't reduce this for the first stage — under 1F1B it stores `p × L/p = L` layers' worth regardless of p.
+A limit worth knowing: [[pipeline-parallelism|pipeline parallelism]] can't reduce this for the first stage — under 1F1B it stores `p × L/p = L` layers' worth regardless of p.
 
 ## Practical guidance
 

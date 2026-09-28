@@ -22,7 +22,7 @@ importance: medium
 
 # Speculate While You Reason: Teaching Agents to Predict Their Next Tool Call via Joint Agent-Speculator RL
 
-**Jiabao Ji, Yujian Liu, Li An, Rohit Jain et al.** (UC Santa Barbara; LinkedIn Inc.) — [arXiv:2607.25816](https://arxiv.org/abs/2607.25816).
+**Jiabao Ji, Yujian Liu, Li An, Rohit Jain et al.** ([[uc-santa-barbara|UC Santa Barbara]]; LinkedIn Inc.) — [arXiv:2607.25816](https://arxiv.org/abs/2607.25816).
 
 ## Summary
 
@@ -73,12 +73,12 @@ Self-speculation is both **more accurate and cheaper**: on MuSiQue with Qwen3-4B
 - Headline: average next-call Hit@1 **44.1 → 61.2** (Qwen3-4B) and **48.9 → 66.3** (Qwen3.5-4B) from SFT to joint RL, with gains on *every* benchmark. The base 4B agent prompted to self-speculate (29.1 / 33.2) already beats the strongest external same-family drafter (18.6 / 22.3).
 - **Task success is preserved, not traded away:** 26.6 → 27.7 (Qwen3-4B) and 49.2 → 50.6 (Qwen3.5-4B) — stable or slightly improved, with no systematic degradation on any benchmark.
 - **Update schedule matters a lot** (ablation on SearchQA, Qwen3-4B, fixed iteration budget). 1:1 agent:speculator switching collapses to 31.8 avg Hit@1 / 10.3 avg success; 2:2 → 41.8 / 22.9; 4:4 → 50.3 / 24.4; the final **4:8** schedule (4 agent updates then 8 speculator updates) reaches **55.2 / 26.1**. The speculator needs enough consecutive signal to track the agent's current call distribution while the agent needs periodic updates to hold task performance. Removing SFT warmup or optimizer reset also weakens and destabilizes reward traces.
-- **Cross-domain transfer is partial.** Call-level behavior transfers but task success does not: the SearchQA-trained Qwen3-4B checkpoint lifts Airline/Retail Hit@1 from 35.6/39.7 to 45.6/50.1, but success *drops* from 21.6/36.4 to 17.6/29.8. Reverse direction: ToolScale-trained Qwen3.5-4B lifts HotpotQA/MuSiQue Hit@1 from 25.4/28.3 to 35.4/37.9 while success falls (63.1/25.1 → 57.9/21.6). Matched-domain agentic RL is therefore needed to preserve success in the target domain.
+- **Cross-domain transfer is partial.** Call-level behavior transfers but task success does not: the SearchQA-trained Qwen3-4B checkpoint lifts Airline/Retail Hit@1 from 35.6/39.7 to 45.6/50.1, but success *drops* from 21.6/36.4 to 17.6/29.8. Reverse direction: ToolScale-trained Qwen3.5-4B lifts HotpotQA/MuSiQue Hit@1 from 25.4/28.3 to 35.4/37.9 while success falls (63.1/25.1 → 57.9/21.6). Matched-domain [[agentic-rl|agentic RL]] is therefore needed to preserve success in the target domain.
 
 > [!note] Latency is measured indirectly
 > The paper reports serving cost (wall-clock speculation time and peak GPU memory) only for the off-the-shelf pilot in Table 1. It does **not** report an end-to-end wall-clock latency reduction for the trained self-speculating agent — Hit@1 is used as the proxy for how much tool latency can be hidden, on the argument that a hit lets the pre-executed result be reused outright.
 
-**Limitations acknowledged by the authors:** speculation assumes tools can be pre-executed **without mutating external state** — fine for search, retrieval, and database lookup, but not for placing orders, writing records, or triggering irreversible workflows, which would need dry-run modes, transactional rollback, or human confirmation. Evaluation covers only two task families (multi-hop search QA, conversational tool use) and only 4B-scale backbones; larger models may show a different speculator–agent gap and different optimization dynamics.
+**Limitations acknowledged by the authors:** speculation assumes tools can be pre-executed **without mutating external state** — fine for search, retrieval, and database lookup, but not for placing orders, writing records, or triggering irreversible workflows, which would need dry-run modes, transactional rollback, or human confirmation. Evaluation covers only two task families (multi-hop search QA, conversational [[tool-use|tool use]]) and only 4B-scale backbones; larger models may show a different speculator–agent gap and different optimization dynamics.
 
 ## Concepts & entities
 

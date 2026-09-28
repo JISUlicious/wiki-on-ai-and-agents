@@ -28,7 +28,7 @@ Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-28–07-05).
 
 ## Summary
 
-Google Research introduces the **Paper Assistant Tool (PAT)**, an agentic AI framework for *deep* scientific review and verification — not surface-level checks. As AI accelerates scientific output (hypothesis generation, theorem proving), human peer review cannot scale to match: the authors report combined submissions to ICLR, ICML, and NeurIPS projected at ~73,883 for 2026. Their thesis is that AI must be deployed to accelerate the verification and review process itself. PAT ingests full manuscripts and produces comprehensive evaluations — checking theoretical results, validating experiments, suggesting improvements, and flagging flaws — using inference-scaling to catch deeper issues than a single model call.
+[[google-research|Google Research]] introduces the **Paper Assistant Tool (PAT)**, an agentic AI framework for *deep* scientific review and verification — not surface-level checks. As AI accelerates scientific output (hypothesis generation, theorem proving), human peer review cannot scale to match: the authors report combined submissions to ICLR, ICML, and NeurIPS projected at ~73,883 for 2026. Their thesis is that AI must be deployed to accelerate the verification and review process itself. PAT ingests full manuscripts and produces comprehensive evaluations — checking theoretical results, validating experiments, suggesting improvements, and flagging flaws — using inference-scaling to catch deeper issues than a single model call.
 
 ## Key points
 

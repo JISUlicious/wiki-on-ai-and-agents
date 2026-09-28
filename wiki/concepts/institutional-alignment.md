@@ -24,7 +24,7 @@ Articulated in [[agentic-ai-and-the-next-intelligence-explosion|Evans, Bratton, 
 
 ## Relation to other alignment approaches
 
-- **[[rlhf]] / RLAIF / Constitutional AI**: bake values into individual model weights. Institutional alignment is complementary, not opposed — but argues it's insufficient at ecosystem scale.
+- **[[rlhf]] / RLAIF / [[constitutional-ai|Constitutional AI]]**: bake values into individual model weights. Institutional alignment is complementary, not opposed — but argues it's insufficient at ecosystem scale.
 - **Sandboxing / capability containment**: limit what any one model can do. Institutional alignment is more about *what models do together* and how their actions are checked.
 - **Interpretability** ([[mechanistic-interpretability]], [[functional-emotions]]): understand and intervene on individual model internals. Institutional alignment is the macro counterpart.
 

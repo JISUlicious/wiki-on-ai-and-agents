@@ -15,7 +15,7 @@ RLHF is the dominant post-training procedure for aligning large language models 
 
 1. **Supervised fine-tuning (SFT)**: fine-tune the pre-trained base model on a curated dataset of (instruction, response) pairs written by human annotators or selected from existing examples. This gives a "policy" model that follows instructions.
 2. **Reward model (RM) training**: human raters rank multiple candidate responses to the same prompt. Train a reward model — typically a fine-tuned LM with a scalar head — to predict the human-preferred ranking. The RM is the learned proxy for "human preference."
-3. **Policy optimization**: fine-tune the SFT policy with reinforcement learning (PPO is the canonical choice) to maximize the reward model's score, with a KL-divergence penalty against the SFT policy to prevent reward hacking.
+3. **Policy optimization**: fine-tune the SFT policy with [[reinforcement-learning|reinforcement learning]] (PPO is the canonical choice) to maximize the reward model's score, with a KL-divergence penalty against the SFT policy to prevent [[reward-hacking|reward hacking]].
 
 ## Why RLHF matters
 
@@ -27,7 +27,7 @@ Every major deployed LLM uses some form of RLHF or close cousin: [[gpt-4|GPT-4]]
 
 - **DPO (Direct Preference Optimization)**, Rafailov et al. 2023: skip the reward model and PPO; directly optimize the policy on preference data via a contrastive loss. Simpler, often as effective.
 - **IPO, KTO, ORPO, SimPO**: variants of DPO with different loss formulations.
-- **RLAIF (RL from AI Feedback)**: an AI model (constitutional or critic) provides preferences instead of (or alongside) humans. Used in Anthropic's Claude (constitutional AI).
+- **[[rlaif|RLAIF (RL from AI Feedback)]]**: an AI model (constitutional or critic) provides preferences instead of (or alongside) humans. Used in Anthropic's Claude ([[constitutional-ai|constitutional AI]]).
 - **Iterated / online RLHF**: re-collect preferences and update the RM/policy in iterations.
 - **Process supervision**: reward intermediate reasoning steps, not just final answers (used in math reasoning models).
 

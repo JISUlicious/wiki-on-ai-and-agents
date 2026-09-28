@@ -178,7 +178,7 @@ Failure (2) *is* the censored-outcome assumption, relocated rather than solved. 
 
 **Verdict:** SKILL.state converts *unbounded growth with unsafe deletion* into *bounded growth with lossy, irreversible writes*. It is a real fix for the ratchet, achieved by throwing information away on a schedule the schema author chose in advance — not by supplying the provenance that would make deletion safe. It should be read as complementary to the provenance line, not as a substitute: the two answer different halves of the same problem, and the paper's own scope carve-outs say where each belongs.
 
-Worth contrasting with [[continualskillbench-guan-2026]]'s finding (recorded on [[catastrophic-remembering]]) that maintaining an explicit *skill library* scores 0.602 vs 0.605 for plain in-context learning — no aggregate advantage. SKILL.state's explicit structure is a different object (per-step execution state, not a growing library of reusable artifacts) and does show a clear advantage, which suggests the useful distinction is **mutable-and-bounded** versus **accumulating**, rather than structured versus unstructured.
+Worth contrasting with [[continualskillbench-guan-2026]]'s finding (recorded on [[catastrophic-remembering]]) that maintaining an explicit *skill library* scores 0.602 vs 0.605 for plain [[in-context-learning|in-context learning]] — no aggregate advantage. SKILL.state's explicit structure is a different object (per-step execution state, not a growing library of reusable artifacts) and does show a clear advantage, which suggests the useful distinction is **mutable-and-bounded** versus **accumulating**, rather than structured versus unstructured.
 
 ## Limitations
 
@@ -211,4 +211,4 @@ Beyond the three sufficient-statistic failures above:
 ## References
 
 - [arXiv:2608.26263](https://arxiv.org/abs/2608.26263) — v3, 2 Sep 2026; accepted at EMNLP.
-- Cited within: InterCode CTF (Yang et al. 2023), Sierra τ-Bench (Yao et al. 2024), LangGraph, LLMLingua (Jiang et al. 2023) → [[llmlingua-jiang-2023]], MemGPT (Packer et al. 2023) → [[memgpt-packer-2023]], Mem0 (Chhikara et al. 2025) → [[mem0-chhikara-2025]], Generative Agents (Park et al. 2023) → [[generative-agents-park-2023]], ReAct (Yao et al. 2022) → [[react-yao-2022]], Badhe et al. 2026 agent-skills survey.
+- Cited within: InterCode CTF (Yang et al. 2023), Sierra τ-Bench (Yao et al. 2024), LangGraph, LLMLingua (Jiang et al. 2023) → [[llmlingua-jiang-2023]], MemGPT (Packer et al. 2023) → [[memgpt-packer-2023]], Mem0 (Chhikara et al. 2025) → [[mem0-chhikara-2025]], [[generative-agents|Generative Agents]] (Park et al. 2023) → [[generative-agents-park-2023]], ReAct (Yao et al. 2022) → [[react-yao-2022]], Badhe et al. 2026 agent-skills survey.

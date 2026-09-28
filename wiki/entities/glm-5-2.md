@@ -21,8 +21,8 @@ tags:
 ## Architecture
 
 - **744B-parameter [[mixture-of-experts|Mixture-of-Experts]]** with **40B active parameters** — the same base as GLM-5.1, with post-training retargeted at extended-context coding.
-- **IndexShare** sparse attention — every group of four transformer layers shares a single lightweight indexer rather than each layer computing its own, making the 1M-token context tractable (vendor-stated ~2.9× lower per-token FLOPs). See [[long-context-llm]].
-- Open weights on Hugging Face (`zai-org`); available via Z.ai and Zhipu's Coding Plan.
+- **IndexShare** [[sparse-attention|sparse attention]] — every group of four transformer layers shares a single lightweight indexer rather than each layer computing its own, making the 1M-token context tractable (vendor-stated ~2.9× lower per-token FLOPs). See [[long-context-llm]].
+- Open weights on [[huggingface|Hugging Face]] (`zai-org`); available via Z.ai and Zhipu's Coding Plan.
 
 ## Lineage
 

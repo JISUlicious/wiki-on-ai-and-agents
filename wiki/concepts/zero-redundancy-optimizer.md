@@ -55,7 +55,7 @@ Measured: GPT-175B at **>173 / >186 TFLOPS per GPU** (batch 1/2) — roughly **5
 
 ## Where it sits against parallelism
 
-ZeRO shards parameters and optimizer states but **not activations**; tensor and pipeline parallelism shard differently (see [[distributed-training]]). The two are complementary, and the historical record is easy to misread — see the callout on that page about ZeRO's "10× over Megatron" and PTD-P's "70% over ZeRO-3" being a year apart and measuring different configurations.
+ZeRO shards parameters and optimizer states but **not activations**; tensor and [[pipeline-parallelism|pipeline parallelism]] shard differently (see [[distributed-training]]). The two are complementary, and the historical record is easy to misread — see the callout on that page about ZeRO's "10× over Megatron" and PTD-P's "70% over ZeRO-3" being a year apart and measuring different configurations.
 
 ## Related
 

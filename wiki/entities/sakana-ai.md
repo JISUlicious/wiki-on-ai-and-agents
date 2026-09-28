@@ -12,7 +12,7 @@ tags:
   - org
 ---
 
-Sakana AI is a Tokyo-based research lab focused on evolutionary, nature-inspired, and open-ended machine learning. Co-founded in 2023 by former Google Brain researchers including David Ha and Llion Jones, the lab emphasizes model-merging, population-based training, and self-improving systems over monolithic scaling.
+Sakana AI is a Tokyo-based research lab focused on evolutionary, nature-inspired, and open-ended machine learning. Co-founded in 2023 by former [[google-brain|Google Brain]] researchers including David Ha and Llion Jones, the lab emphasizes model-merging, population-based training, and self-improving systems over monolithic scaling.
 
 Sakana's work on the [[darwin-godel-machine]] (a [[self-improving-agent]] that rewrites its own code under empirical validation) exemplifies their bet on open-ended evolution as a path to capable agents.
 
@@ -23,7 +23,7 @@ Sakana's work on the [[darwin-godel-machine]] (a [[self-improving-agent]] that r
 - Research on evolutionary model merging and population-based training.
 - Collaborations with [[jeff-clune]] and [[robert-lange]] on open-ended search.
 
-Fugu and the Darwin Gödel Machine share the lab's signature bet: **evolutionary / population-based** methods over monolithic scaling — applied to *coordination* (Fugu) and *self-modification* (DGM) respectively.
+Fugu and the Darwin [[godel-machine|Gödel Machine]] share the lab's signature bet: **evolutionary / population-based** methods over monolithic scaling — applied to *coordination* (Fugu) and *self-modification* (DGM) respectively.
 
 ## References
 

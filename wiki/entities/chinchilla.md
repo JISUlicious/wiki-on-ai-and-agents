@@ -18,7 +18,7 @@ tags:
 
 # Chinchilla
 
-Chinchilla is the 70B-parameter language model introduced in [[chinchilla-hoffmann-2022|"Training Compute-Optimal Large Language Models"]] (Hoffmann et al., DeepMind, NeurIPS 2022) as the empirical proof of the **Chinchilla scaling laws**.
+Chinchilla is the 70B-parameter language model introduced in [[chinchilla-hoffmann-2022|"Training Compute-Optimal Large Language Models"]] (Hoffmann et al., DeepMind, NeurIPS 2022) as the empirical proof of the **Chinchilla [[scaling-laws|scaling laws]]**.
 
 ## What makes it notable
 
@@ -28,7 +28,7 @@ The result demonstrated that **GPT-3-era models were significantly undertrained 
 
 ## Architecture / training
 
-- **Parameters**: 70B (decoder-only Transformer, similar architecture to Gopher).
+- **Parameters**: 70B ([[decoder-only-transformer|decoder-only Transformer]], similar architecture to Gopher).
 - **Training tokens**: 1.4T tokens (MassiveText, similar corpus to Gopher).
 - **Tokenizer**: SentencePiece, 32k vocabulary.
 - **Compute**: ~equal to Gopher's training run (large but not disclosed precisely).

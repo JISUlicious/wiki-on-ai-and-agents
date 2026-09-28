@@ -13,7 +13,7 @@ importance: high
 
 # Grouped-Query Attention (GQA)
 
-**GQA** interpolates between multi-head attention (MHA) and multi-query attention (MQA): the H query heads are split into **G groups**, each group sharing a single key/value head. `GQA-1` ≡ MQA, `GQA-H` ≡ MHA. Introduced by [[grouped-query-attention-ainslie-2023|Ainslie et al. (EMNLP 2023)]], it is now near-universal in production LLMs.
+**GQA** interpolates between [[multi-head-attention|multi-head attention]] (MHA) and multi-query attention (MQA): the H query heads are split into **G groups**, each group sharing a single key/value head. `GQA-1` ≡ MQA, `GQA-H` ≡ MHA. Introduced by [[grouped-query-attention-ainslie-2023|Ainslie et al. (EMNLP 2023)]], it is now near-universal in production LLMs.
 
 ## Why it exists
 

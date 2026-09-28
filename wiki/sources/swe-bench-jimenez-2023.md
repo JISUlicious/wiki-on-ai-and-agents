@@ -8,14 +8,14 @@ sources:
 arxiv_id: "2310.06770"
 venue: ICLR 2024
 authors:
-  - Carlos E. Jimenez
+  - [[carlos-jimenez]]
   - John Yang
   - Alexander Wettig
-  - Shunyu Yao
+  - [[shunyu-yao]]
   - Kexin Pei
-  - Ofir Press
-  - Karthik Narasimhan
-first_author: Carlos E. Jimenez
+  - [[ofir-press]]
+  - [[karthik-narasimhan]]
+first_author: [[carlos-jimenez]]
 year: 2023
 introduces:
   - "[[swe-bench]]"

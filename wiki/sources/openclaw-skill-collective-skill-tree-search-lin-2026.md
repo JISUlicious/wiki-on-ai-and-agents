@@ -22,7 +22,7 @@ importance: medium
 
 ## Summary
 
-OpenClaw-Skill targets the problem of equipping LLM agents with reusable [[agent-skills]] for tool use, multi-step reasoning, and dynamic environment interaction in systems like [[openclaw]]. Rather than distilling one trajectory at a time, it proposes **Collective Skill Tree Search (CSTS)**, a tree-search-based [[skill-acquisition]] framework that constructs a structured, diverse, and generalizable *tree* of skills using collective intelligence from multiple models.
+OpenClaw-Skill targets the problem of equipping LLM agents with reusable [[agent-skills]] for [[tool-use|tool use]], multi-step reasoning, and dynamic environment interaction in systems like [[openclaw]]. Rather than distilling one trajectory at a time, it proposes **Collective Skill Tree Search (CSTS)**, a tree-search-based [[skill-acquisition]] framework that constructs a structured, diverse, and generalizable *tree* of skills using collective intelligence from multiple models.
 
 CSTS runs two iterative phases: Collective Skill Node Generation (CSN-Gen) explores diverse candidate skills per subtask by pooling knowledge across models, and Collective Skill Node Assessment (CSN-Assess) uses multiple models as judges with two scoring mechanisms — collective quality scoring (aggregated independent evaluations) and collective transferability scoring (verifies a skill generalizes across models). The output is a skill tree plus skill-augmented training data. A second stage, Collective Skill Reinforcement Learning (CSRL), trains agents to actively retrieve and apply multiple relevant skills from the hierarchy, broadening solution-space exploration and avoiding single-skill homogeneous solutions.
 

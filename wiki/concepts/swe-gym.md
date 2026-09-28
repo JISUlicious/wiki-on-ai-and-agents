@@ -9,7 +9,6 @@ status: draft
 importance: medium
 tags:
   - 2024
-  - benchmark
 ---
 
 **SWE-Gym** is a training environment for software-engineering agents introduced by Pan et al. (2024). It collects 2,438 real Python tasks drawn from 11 GitHub repositories, each shipped with the original failing/passing unit tests so policies can be optimized against an executable reward signal.

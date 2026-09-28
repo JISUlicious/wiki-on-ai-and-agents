@@ -22,7 +22,7 @@ importance: high
 
 # FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
 
-**Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré** (Stanford University; University at Buffalo, SUNY) — [arXiv:2205.14135](https://arxiv.org/abs/2205.14135), submitted 27 May 2022 (v2 23 Jun 2022). *No venue is stated in the arXiv comments field.*
+**Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré** ([[stanford-university|Stanford University]]; University at Buffalo, SUNY) — [arXiv:2205.14135](https://arxiv.org/abs/2205.14135), submitted 27 May 2022 (v2 23 Jun 2022). *No venue is stated in the arXiv comments field.*
 
 ## Summary
 

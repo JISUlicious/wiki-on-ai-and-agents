@@ -26,7 +26,7 @@ Mem-α (Wang et al., 2025) is a reinforcement-learning framework that trains LLM
 ## What it advances
 
 - [[memory-management]]: shifts the RL target from *editing* an existing memory ([[memory-r1]]) to *constructing* a structured one from scratch — including deciding which component (core/semantic/episodic) a new piece of information belongs in.
-- Length generalization: demonstrates that RL-trained memory construction extrapolates far beyond the training distribution (13×), a property absent from heuristic and supervised baselines.
+- [[length-generalization|Length generalization]]: demonstrates that RL-trained [[memory-construction|memory construction]] extrapolates far beyond the training distribution (13×), a property absent from heuristic and supervised baselines.
 - Small-model viability: a 4B parameter agent with the right training can beat much larger heuristically-prompted agents on long-context memory tasks.
 
 ## Relation to other systems

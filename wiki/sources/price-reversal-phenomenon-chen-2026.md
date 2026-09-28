@@ -10,7 +10,7 @@ authors:
   - Lingjiao Chen
   - Chi Zhang
   - Yeye He
-  - Ion Stoica
+  - [[ion-stoica]]
   - Matei Zaharia
   - James Zou
 first_author: Lingjiao Chen
@@ -25,11 +25,11 @@ importance: medium
 
 Surfaced via the alphaXiv / NLP-newsletter digest.
 
-[arXiv:2603.23971](https://arxiv.org/abs/2603.23971) — Chen, Zhang, He, Stoica, Zaharia, Zou (Stanford, UC Berkeley, CMU, Microsoft Research), 2026.
+[arXiv:2603.23971](https://arxiv.org/abs/2603.23971) — Chen, Zhang, He, Stoica, Zaharia, Zou (Stanford, [[uc-berkeley|UC Berkeley]], CMU, [[microsoft-research|Microsoft Research]]), 2026.
 
 ## Summary
 
-Developers and enterprises increasingly pick reasoning models (RMs) by their listed API prices, but this study asks how well listed prices track *actual* inference cost. Across 8 frontier RMs and 12 tasks (competition math, science QA, code generation, multi-domain agents), the authors document a **price reversal phenomenon**: in 32% of model-pair comparisons, the model with the lower listed price actually incurs the higher total cost, with reversal magnitude reaching up to **28×**. For example, Gemini 3 Flash is listed 80% cheaper than GPT-5.4 yet costs 38% more across all tasks.
+Developers and enterprises increasingly pick reasoning models (RMs) by their listed API prices, but this study asks how well listed prices track *actual* inference cost. Across 8 frontier RMs and 12 tasks (competition math, science QA, [[code-generation|code generation]], multi-domain agents), the authors document a **price reversal phenomenon**: in 32% of model-pair comparisons, the model with the lower listed price actually incurs the higher total cost, with reversal magnitude reaching up to **28×**. For example, Gemini 3 Flash is listed 80% cheaper than GPT-5.4 yet costs 38% more across all tasks.
 
 The cause is enormous heterogeneity in **thinking-token consumption** and **number of interaction turns**: on the same query one model may use 900% more thinking tokens or 10× more environment turns than another. The authors build a Shapley-value cost-attribution framework to trace the dominant contributors, and show per-query cost prediction is fundamentally hard — repeated runs of the same query vary thinking tokens up to 9.7×, an irreducible noise floor. They reframe the problem as **cost-distribution prediction** and call for cost-aware model selection and transparent per-request cost monitoring.
 

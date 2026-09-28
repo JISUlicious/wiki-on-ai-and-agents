@@ -47,7 +47,7 @@ Each parser implements two methods:
 
 ## Relationship to structured outputs
 
-A tool-call parser is **descriptive**, not prescriptive — it interprets whatever the model emits. It does **not** guarantee that the extracted arguments validate against the function's JSON schema. For schema guarantees, [[vllm]] (and similar engines) pair the parser with a [[structured-outputs]] backend that uses [[constrained-decoding]]:
+A tool-call parser is **descriptive**, not prescriptive — it interprets whatever the model emits. It does **not** guarantee that the extracted arguments validate against the function's [[json-schema|JSON schema]]. For schema guarantees, [[vllm]] (and similar engines) pair the parser with a [[structured-outputs]] backend that uses [[constrained-decoding]]:
 
 - **Auto mode** (`tool_choice="auto"`): parser alone — argument correctness is a function of model quality.
 - **Named / required mode** (`tool_choice="function_name"` or `"required"`): constrained decoding forces the model to emit schema-valid JSON; the parser then extracts it.

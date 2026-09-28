@@ -34,7 +34,7 @@ Search agents are usually trained as policies over a growing transcript: the mod
 - The 20B policy retains only semantic choices (search / keep-discard / verify / stop); RL optimizes those.
 - Results: 0.730 avg curated recall over 8 benchmarks; +11.4 pts over best open search subagent; competitive with larger frontier searchers.
 - Strong held-out transfer indicates externalized state yields generalizable retrieval behaviors.
-- Code released (github.com/pat-jj/harness-1); authors at UIUC, UC Berkeley, and Chroma.
+- Code released (github.com/pat-jj/harness-1); authors at UIUC, [[uc-berkeley|UC Berkeley]], and Chroma.
 
 ## Concepts & entities
 

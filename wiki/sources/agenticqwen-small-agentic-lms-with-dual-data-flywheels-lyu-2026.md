@@ -39,7 +39,7 @@ Industrial agent applications need models that do multi-step reasoning and tool 
 - **Reasoning flywheel**: increases task difficulty by learning from the model's own errors.
 - **Agentic flywheel**: expands linear workflows into multi-branch behavior trees that better capture real decision complexity.
 - Achieves strong performance on multiple public agentic benchmarks.
-- In an industrial agent system, closes the gap with much larger models on search and data-analysis tasks; checkpoints and partial data released on Hugging Face.
+- In an industrial agent system, closes the gap with much larger models on search and data-analysis tasks; checkpoints and partial data released on [[huggingface|Hugging Face]].
 
 ## Concepts & entities
 

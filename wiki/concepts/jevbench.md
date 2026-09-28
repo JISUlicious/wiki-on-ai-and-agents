@@ -40,6 +40,7 @@ Two further caveats. Half the hard tier is public and can be trained on — seve
 
 ## Related
 
+- [[benchmark]] — hub of every benchmark page in this wiki
 - [[system-one-model]] · [[jev]] · [[kev]] · [[laya]] · [[openjev]] · [[calibration]] · [[independent-jev-calibration-audits-2026]]
 
 ## References

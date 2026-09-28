@@ -9,12 +9,12 @@ arxiv_id: "2405.15793"
 venue: NeurIPS 2024
 authors:
   - John Yang
-  - Carlos E. Jimenez
+  - [[carlos-jimenez]]
   - Alexander Wettig
   - Kilian Lieret
-  - Shunyu Yao
+  - [[shunyu-yao]]
   - "[[karthik-narasimhan]]"
-  - Ofir Press
+  - [[ofir-press]]
 first_author: John Yang
 year: 2024
 introduces:

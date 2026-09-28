@@ -26,7 +26,7 @@ importance: medium
 
 ## Summary
 
-Cola DLM is a hierarchical latent **diffusion language model** from ByteDance Seed that reframes text generation as hierarchical information decomposition rather than strict left-to-right autoregression. The pipeline has three stages: a Text VAE learns a stable text-to-latent mapping, a block-causal Diffusion Transformer (DiT) models a global semantic prior in continuous latent space, and a conditional decoder realizes the final tokens. Viewed through a unified Markov-path lens, the diffusion process performs latent *prior transport* instead of token-level observation recovery, decoupling global semantic organization from local textual realization. This yields a flexible non-autoregressive inductive bias and a natural bridge from discrete text toward continuous modalities (e.g., vision).
+Cola DLM is a hierarchical latent **[[diffusion-language-model|diffusion language model]]** from [[bytedance-seed|ByteDance Seed]] that reframes text generation as hierarchical information decomposition rather than strict left-to-right autoregression. The pipeline has three stages: a Text VAE learns a stable text-to-latent mapping, a block-causal Diffusion Transformer (DiT) models a global semantic prior in continuous latent space, and a conditional decoder realizes the final tokens. Viewed through a unified Markov-path lens, the diffusion process performs latent *prior transport* instead of token-level observation recovery, decoupling global semantic organization from local textual realization. This yields a flexible non-autoregressive inductive bias and a natural bridge from discrete text toward continuous modalities (e.g., vision).
 
 ## Key points
 

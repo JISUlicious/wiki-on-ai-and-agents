@@ -10,7 +10,7 @@ year: 2023
 authors:
   - Qian Huang
   - Jian Vora
-  - Percy Liang
+  - [[percy-liang]]
   - Jure Leskovec
 tags:
   - 2023

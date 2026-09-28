@@ -51,7 +51,7 @@ The annotations are inline `[ToolName(args) → result]` tokens that the model b
 
 Toolformer's contribution is methodological: tool use can be **bootstrapped self-supervised** rather than taught via prompt engineering or labeled demonstrations. The model trains itself on what helps it predict text better. This generalized the "LLMs can use tools" pattern from the per-tool, per-prompt approach of [[react|ReAct]] / [[webgpt-nakano-2021|WebGPT]] to a more scalable training-data-generation pipeline.
 
-The downside (and reason the paper is less directly applied than ReAct) is that the tool-use behavior is baked into the model's weights and tied to a fixed toolbox. Modern production tool use uses **structured function-calling APIs** ([[react|ReAct]]-style with JSON arguments, OpenAI function calling, Anthropic tool use), which keeps the toolbox swappable at inference time. But Toolformer's self-supervision insight has reappeared in many downstream training pipelines for tool-using and agentic LLMs.
+The downside (and reason the paper is less directly applied than ReAct) is that the tool-use behavior is baked into the model's weights and tied to a fixed toolbox. Modern production tool use uses **structured function-calling APIs** ([[react|ReAct]]-style with JSON arguments, OpenAI [[function-calling|function calling]], Anthropic tool use), which keeps the toolbox swappable at inference time. But Toolformer's self-supervision insight has reappeared in many downstream training pipelines for tool-using and agentic LLMs.
 
 ## Key Points
 
@@ -59,7 +59,7 @@ The downside (and reason the paper is less directly applied than ReAct) is that 
 - **Inline tool-call format**: `[API(args) → result]` tokens embedded in the text stream. The model treats tool calls as a special part of next-token prediction.
 - **Fixed toolbox**: calculator, QA system, Wikipedia search, machine translation, calendar. (Compare to ReAct's external-action-anything approach.)
 - **Performance**: Toolformer-trained 6.7B GPT-J matches or exceeds much larger LMs on tasks requiring the tools (LAMA factual recall, math word problems, multilingual QA, temporal reasoning).
-- **No instruction tuning, no RLHF**: pure self-supervised fine-tuning on the bootstrapped annotations.
+- **No [[instruction-tuning|instruction tuning]], no RLHF**: pure self-supervised fine-tuning on the bootstrapped annotations.
 
 ## Entities Mentioned
 

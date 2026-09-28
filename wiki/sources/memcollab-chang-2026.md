@@ -37,7 +37,7 @@ Most agent-memory systems build memory for a single agent and reuse it with the 
 - **Contrastive trajectory distillation**: compares preferred vs. unpreferred trajectories from different agents on the same task to extract shared invariants and cross-model failure patterns.
 - Stores **high-level reasoning strategies + error-forbidden constraints**, not raw experience traces.
 - **Task-aware retrieval** conditions memory access on task category to avoid retrieving irrelevant constraints.
-- Evaluated on math reasoning (e.g., MATH500) and code generation; consistent accuracy *and* efficiency gains across heterogeneous backbones and model families.
+- Evaluated on math reasoning (e.g., MATH500) and [[code-generation|code generation]]; consistent accuracy *and* efficiency gains across heterogeneous backbones and model families.
 - Positions collaboratively built cross-model memory as a **shared reasoning resource** for heterogeneous agent fleets.
 
 ## Concepts & entities

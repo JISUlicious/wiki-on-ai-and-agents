@@ -22,7 +22,6 @@ authors:
   - Chengfu Huo
 tags:
   - 2026
-  - benchmark
 status: complete
 importance: high
 ---
@@ -58,7 +57,7 @@ Crucially the agent observes *realized* changes through catalog and supplier que
 
 ## Setup
 
-Eight LLMs × two frameworks × three runs = **48 runs of 365 simulated days**. Models: GPT-5.6 Sol, Claude Opus 4.8, Qwen3.7-Max, Qwen3.7-Plus, GLM-5.2, DeepSeek-V4-Pro, DeepSeek-V4-Flash, Kimi K2.6. Frameworks: **[[react]]** (minimal controller over the 26 tools) and **Hermes** (same 26 tools plus built-in code execution, planning, memory, and skill management).
+Eight LLMs × two frameworks × three runs = **48 runs of 365 simulated days**. Models: GPT-5.6 Sol, [[claude-opus-4-8|Claude Opus 4.8]], Qwen3.7-Max, Qwen3.7-Plus, GLM-5.2, DeepSeek-V4-Pro, DeepSeek-V4-Flash, Kimi K2.6. Frameworks: **[[react]]** (minimal controller over the 26 tools) and **Hermes** (same 26 tools plus built-in code execution, planning, memory, and skill management).
 
 Context management matters at this horizon and is documented: ReAct histories that reach **160,000 tokens** trigger a reminder to summarize into persistent memory, then truncate to the **most recent 30,000 tokens**; Hermes uses its default summarization. **Each evaluated model serves as its own summarizer.**
 

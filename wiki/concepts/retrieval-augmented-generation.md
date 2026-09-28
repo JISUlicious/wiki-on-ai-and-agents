@@ -52,7 +52,7 @@ Common variations:
 ## Related but distinct
 
 - **In-context learning** ([[in-context-learning]]): user puts examples in the prompt manually. RAG is the automated, retrieval-driven version.
-- **Tool use** (e.g. [[react|ReAct]]): the model itself emits retrieval queries as part of reasoning. RAG is a special case where retrieval is unconditional and fixed.
+- **[[tool-use|Tool use]]** (e.g. [[react|ReAct]]): the model itself emits retrieval queries as part of reasoning. RAG is a special case where retrieval is unconditional and fixed.
 - **Fine-tuning on the corpus**: bakes knowledge into weights; complementary to retrieval, not a substitute.
 - **[[memory-management|Memory management]]**: RAG covers only the *retrieve* step of a fuller lifecycle (write/store/retrieve/compact/consolidate/evict/curate). Modern agent memory systems — [[memgpt]], [[mem0]], [[a-mem]], [[mirix]] — extend beyond RAG by managing how memories are written, edited, forgotten, and consolidated over time. RAG remains the underlying retrieval primitive, but it is not the whole problem.
 
@@ -66,8 +66,8 @@ Common variations:
 Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[agentir-reasoning-aware-retrieval-chen-2026]] — AgentIR Reasoning Aware Retrieval for Deep Research Agents
-- [[diagnosing-retrieval-vs-utilization-bottlenecks-su-2026]] — Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent
-- [[karl-knowledge-agents-databricks-2026]] — KARL Knowledge Agents via Reinforcement Learning
+- [[diagnosing-retrieval-vs-utilization-bottlenecks-su-2026]] — Diagnosing Retrieval vs. Utilization Bottlenecks in [[llm-agent|LLM Agent]]
+- [[karl-knowledge-agents-databricks-2026]] — KARL Knowledge Agents via [[reinforcement-learning|Reinforcement Learning]]
 - [[when-to-retrieve-during-reasoning-guo-2026]] — When to Retrieve During Reasoning Adaptive Retrieval for
 - [[prompt-compression]] — task-agnostic compression is query-independent, so a compressed document needn't be recompressed per query
 - [[stair-structure-aware-retriever-kumar-2026]] — retrieval by table of contents: Recall@1 82.6 vs 76.9 for DSI on 18 books, with output constrained to valid section titles

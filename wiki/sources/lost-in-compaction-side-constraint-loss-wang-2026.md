@@ -15,7 +15,6 @@ status: complete
 importance: high
 tags:
   - 2026
-  - benchmark
 ---
 
 # Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction

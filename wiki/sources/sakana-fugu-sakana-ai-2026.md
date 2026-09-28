@@ -33,8 +33,8 @@ Fugu is a family of **orchestrator models** from [[sakana-ai|Sakana AI]] — lan
 ## Key points
 
 - **Learned orchestration, not static routing** — Fugu is itself an LM that interprets a query and constructs an agentic scaffold on the fly, decomposing into natural-language subtasks each assigned to a worker agent from the pool.
-- **Three-part training paradigm** — large-scale fine-tuning, evolutionary algorithms (sep-CMA-ES, following the Trinity optimization approach), and reinforcement learning over end-to-end agentic trajectories.
-- **End-to-end trajectory training** — collects real multi-turn coding-assistant trajectories (Claude Code, Codex, OpenCode) so Fugu learns *practical* worker capability inside a tool-using harness, not just isolated benchmark scores.
+- **Three-part training paradigm** — large-scale fine-tuning, evolutionary algorithms (sep-CMA-ES, following the Trinity optimization approach), and [[reinforcement-learning|reinforcement learning]] over end-to-end agentic trajectories.
+- **End-to-end trajectory training** — collects real multi-turn coding-assistant trajectories ([[claude-code|Claude Code]], Codex, OpenCode) so Fugu learns *practical* worker capability inside a tool-using harness, not just isolated benchmark scores.
 - **Two release variants** — Fugu (single-worker, low latency) vs. Fugu-Ultra (quality-first on the hardest tasks).
 - **Orchestration as a scaling axis** — new workers can be added to the pool without retraining the orchestrator; argues frontier progress need not depend solely on the largest training runs.
 - **Broad SOTA claims** — best public results across SWE-Bench Pro, Terminal Bench, LiveCodeBench, GPQA-Diamond, Humanity's Last Exam, and CharXiv Reasoning.

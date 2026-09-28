@@ -133,7 +133,7 @@ So "beats six frontier models" holds for **length-adjusted scores under both jud
 - [arXiv:2608.26701](https://arxiv.org/abs/2608.26701)
 - Gottweis et al., 2026 — original Co-Scientist (in-silico hypothesis generation)
 - Schmidgall et al., 2025 — Agent Laboratory (the external baseline)
-- HealthBench / HealthBench Professional: `openai/healthbench`, `openai/healthbench-professional` on Hugging Face
+- HealthBench / HealthBench Professional: `openai/healthbench`, `openai/healthbench-professional` on [[huggingface|Hugging Face]]
 - Swarm colony images: https://doi.org/10.5281/zenodo.19612563
 
 ## Related 2026 sources

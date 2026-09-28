@@ -16,7 +16,6 @@ importance: medium
 tags:
   - 2025
   - paper
-  - hardware
 ---
 
 # SSD Offloading for LLM Mixture-of-Experts Weights Considered Harmful in Energy Efficiency
@@ -44,7 +43,7 @@ Because decode is where sparsity is sharpest (one token per request per step) an
 
 Values "account for both the energy consumed within the memory/storage chips and that consumed in the external I/O paths" (NVLink plus memory-interface energy). The tiers compose along a path: with GPUDirect Storage the SSD case is Flash read → HBM write → HBM read, i.e. **102.4 + 4.2 + 4.2 = 110.8 pJ/b, a ~26× premium over the 4.2 pJ/b HBM-only baseline** (the paper's arithmetic). *Derived:* the DDR path is 9.2 + 4.2 + 4.2 = **17.6 pJ/b, ~4.2× HBM** — the paper never states this number, but it is what makes CPU offload merely bad and SSD offload harmful.
 
-**System (Table I and §IV):** a DGX H100 mirror — up to eight H100 SXM5 80 GB per node, NVLink4.0 at **450 GB/s per direction** (NVLink5.0, used in Figs. 4–6, doubles it), InfiniBand at 8 × 50 GB/s between nodes, **256 GB of DDR5-7200 and NVMe SSDs per GPU**. Everything BF16. Background power is charged in every scenario: **57 W per 256 GB of DDR** (static) and **70 W per GPU** (idle); SSD idle power is deemed negligible (Samsung 9100 PRO datasheet) and dropped. GPU compute energy is cache access plus MACs. MoE layers use expert parallelism; FC layers and shared experts use tensor parallelism within a node and data parallelism across nodes ([[distributed-training]]).
+**System (Table I and §IV):** a DGX H100 mirror — up to eight H100 SXM5 80 GB per node, NVLink4.0 at **450 GB/s per direction** (NVLink5.0, used in Figs. 4–6, doubles it), InfiniBand at 8 × 50 GB/s between nodes, **256 GB of DDR5-7200 and NVMe SSDs per GPU**. Everything BF16. Background power is charged in every scenario: **57 W per 256 GB of DDR** (static) and **70 W per GPU** (idle); SSD idle power is deemed negligible (Samsung 9100 PRO datasheet) and dropped. GPU compute energy is cache access plus MACs. MoE layers use expert parallelism; FC layers and shared experts use [[tensor-parallelism|tensor parallelism]] within a node and data parallelism across nodes ([[distributed-training]]).
 
 | Model | Params | Nodes × GPUs | Dense FFN / MoE decoders | Experts | top-k |
 |---|---|---|---|---|---|
@@ -169,7 +168,7 @@ It does, however, address edge devices directly — as the *future* beneficiary 
 ## References
 
 - [arXiv:2508.06978](https://arxiv.org/abs/2508.06978) — IEEE Computer Architecture Letters, 2025, DOI 10.1109/LCA.2025.3592563.
-- Kaplan et al., "Scaling Laws for Neural Language Models," [arXiv:2001.08361](https://arxiv.org/abs/2001.08361) — ref [1].
+- Kaplan et al., "[[scaling-laws|Scaling Laws]] for Neural Language Models," [arXiv:2001.08361](https://arxiv.org/abs/2001.08361) — ref [1].
 - Alizadeh et al., "LLM in a Flash," [arXiv:2312.11514](https://arxiv.org/abs/2312.11514) — ref [2]; the Flash cost/energy/bandwidth framing.
 - Hwang et al., "Pre-gated MoE," ISCA 2024 — ref [3]; the prefetching scheme modelled.
 - Mohan, Gurumurthi & Stan, "FlashPower: A detailed power model for NAND flash memory," DATE 2010 — ref [5]; source of the 102.4 pJ/b.

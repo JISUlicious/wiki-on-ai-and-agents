@@ -30,7 +30,7 @@ The doc walks through the canonical 5-step workflow (provide tools → receive t
 ## Key Points
 
 - **Five-step workflow** — (1) provide model with tools, (2) receive tool calls, (3) execute application logic, (4) return results with `call_id`, (5) obtain final text response.
-- **Tool definition as [[json-schema|JSON Schema]]** — required fields are `type` ("function"), `name`, `description`, `parameters`. Optional `strict: true` triggers constrained decoding for schema compliance.
+- **Tool definition as [[json-schema|JSON Schema]]** — required fields are `type` ("function"), `name`, `description`, `parameters`. Optional `strict: true` triggers [[constrained-decoding|constrained decoding]] for schema compliance.
 - **Namespaces** group related tools (e.g., `crm` namespace with customer-lookup and order-management tools) — keeps large tool surfaces organized.
 - **Two API surfaces**:
   - *Chat Completions* — tools nested under a `"function"` wrapper; responses contain a `tool_calls` array.

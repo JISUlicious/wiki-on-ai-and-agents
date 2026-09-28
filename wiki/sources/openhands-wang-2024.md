@@ -8,7 +8,7 @@ sources:
 arxiv_id: "2407.16741"
 venue: ICLR 2025
 authors:
-  - Xingyao Wang
+  - [[xingyao-wang]]
   - Boxuan Li
   - Yufan Song
   - Frank F. Xu
@@ -29,8 +29,8 @@ authors:
   - Binyuan Hui
   - Junyang Lin
   - Robert Brennan
-  - Hao Peng
-  - Heng Ji
+  - [[hao-peng]]
+  - [[heng-ji]]
   - "[[graham-neubig]]"
 first_author: Xingyao Wang
 year: 2024
@@ -48,7 +48,7 @@ importance: high
 
 ## Summary
 
-OpenHands (formerly **OpenDevin**) is an open-source, MIT-licensed platform for building AI agents that interact with the world the same way human software developers do: by writing code, running bash commands, and browsing the web. It was originally launched as a community response to Cognition's closed-source Devin demo, then rebranded as the project expanded well beyond software engineering. The paper, led by Xingyao Wang (UIUC) and [[graham-neubig]] ([[cmu]] / All Hands AI) with contributors across UIUC, [[cmu]], Yale, UC Berkeley, Contextual AI, KAUST, ANU, HCMUT, Alibaba, and All Hands AI, formalises the platform's architecture and benchmarks its reference agents.
+OpenHands (formerly **OpenDevin**) is an open-source, MIT-licensed platform for building AI agents that interact with the world the same way human software developers do: by writing code, running bash commands, and browsing the web. It was originally launched as a community response to Cognition's closed-source Devin demo, then rebranded as the project expanded well beyond software engineering. The paper, led by Xingyao Wang (UIUC) and [[graham-neubig]] ([[cmu]] / All Hands AI) with contributors across UIUC, [[cmu]], Yale, [[uc-berkeley|UC Berkeley]], Contextual AI, KAUST, ANU, HCMUT, Alibaba, and All Hands AI, formalises the platform's architecture and benchmarks its reference agents.
 
 Architecturally, OpenHands is a clean reference implementation of the **code-as-harness** pattern. It is built around three components: (1) an *agent abstraction* whose `step` function maps an event stream of past actions/observations to a next action; (2) an *event stream* that records every `Action`/`Observation` pair; and (3) a Docker-sandboxed *agent runtime* exposing three primitives — an IPython server (`IPythonRunCellAction`), a bash shell (`CmdRunAction`), and a Playwright Chromium browser (`BrowseInteractiveAction`). On top of these primitives sits an **AgentSkills** library (Python tools auto-imported into IPython, e.g. `edit_file`, `scroll_up/down`, `parse_image`, `parse_pdf`) and an `AgentDelegateAction` for **multi-agent delegation** (the generalist `CodeActAgent` can hand off web tasks to a specialised `BrowsingAgent`).
 
@@ -59,7 +59,7 @@ Empirically, OpenHands ships with 15 integrated benchmarks spanning software (SW
 - **Origins and rename.** Launched as OpenDevin in March 2024 in response to Cognition's Devin demo; renamed to OpenHands once scope expanded beyond software engineering. Released under MIT for commercial use.
 - **Event-stream architecture.** State is a chronological list of `Action`/`Observation` pairs; agents are pure functions from event history to next action. This makes agent implementations trivially swappable (Fig. 3 in the paper shows a ~20-line minimal agent).
 - **Docker sandbox + Action Execution API.** Each session spins up an isolated Docker container with a REST API server that exposes bash, IPython, and Playwright browser primitives. Arbitrary user-provided Docker images are supported via a build mechanism that injects the OpenHands API.
-- **CodeAct foundation.** Action space is grounded in Wang et al.'s [[code-as-harness|CodeAct]] framework: arbitrary Python and bash subsume tool use, since any JSON-style tool can be defined as a Python function and any new tool can be authored by the agent at runtime.
+- **CodeAct foundation.** Action space is grounded in Wang et al.'s [[code-as-harness|CodeAct]] framework: arbitrary Python and bash subsume [[tool-use|tool use]], since any JSON-style tool can be defined as a Python function and any new tool can be authored by the agent at runtime.
 - **AgentSkills library.** Python package of tools auto-loaded into IPython. Inclusion criteria are deliberately narrow: only add a skill if LLMs cannot trivially write it inline, or if it wraps an external model (e.g. `parse_image` calls GPT-4V).
 - **Multi-agent delegation.** `AgentDelegateAction` lets a generalist agent hand subtasks to specialists. AgentHub ships 10+ agent implementations including CodeActAgent (default), BrowsingAgent (zero-shot WebArena-style), GPTSwarm, and user-contributed *micro agents* (specialised prompts on top of CodeActAgent).
 - **SWE-Bench results.** `CodeActAgent v1.8` + `claude-3-5-sonnet` → **26.7% SWE-Bench Lite** (0-shot, no hint). Earlier `v1.5` + `gpt-4o` → 22.0%. With `gpt-4o-mini` → 7.0%.

@@ -24,7 +24,7 @@ importance: medium
 
 ## Summary
 
-This CMU/University of Maryland paper proposes a sleep-like **memory consolidation** mechanism for hybrid SSM-attention models that attacks the gap between scalable memory and scalable reasoning. Transformer attention scales poorly with context, and while fast-weight memories in efficient sequence models support long-range recall, the authors find vanilla SSM-attention hybrids degrade as required reasoning depth grows. Their fix: periodically the model "sleeps," performing N offline recurrent passes over accumulated context and updating the fast weights in its state-space-model blocks via a learned local rule, then clears the KV cache. This shifts extra computation into the offline sleep phase while preserving wake-time inference latency.
+This CMU/University of Maryland paper proposes a sleep-like **[[memory-consolidation|memory consolidation]]** mechanism for hybrid SSM-attention models that attacks the gap between scalable memory and scalable reasoning. Transformer attention scales poorly with context, and while fast-weight memories in efficient sequence models support long-range recall, the authors find vanilla SSM-attention hybrids degrade as required reasoning depth grows. Their fix: periodically the model "sleeps," performing N offline recurrent passes over accumulated context and updating the fast weights in its state-space-model blocks via a learned local rule, then clears the KV cache. This shifts extra computation into the offline sleep phase while preserving wake-time inference latency.
 
 ## Key points
 

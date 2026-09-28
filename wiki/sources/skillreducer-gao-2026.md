@@ -28,7 +28,7 @@ importance: high
 
 **Source file**: [[skillreducer-gao-2026]]
 **arXiv**: [arXiv:2603.29919](https://arxiv.org/abs/2603.29919) (v1, 31 Mar 2026, cs.SE)
-**Authors**: Yudong Gao, Zongjie Li, Zimo Ji, Shuai Wang (HKUST); Yuanyuan Yuan ([[tsinghua-university|Tsinghua University]]); Pingchuan Ma (Zhejiang University of Technology)
+**Authors**: Yudong Gao, Zongjie Li, Zimo Ji, Shuai Wang (HKUST); Yuanyuan Yuan ([[tsinghua-university|Tsinghua University]]); Pingchuan Ma ([[zhejiang-university|Zhejiang University]] of Technology)
 **Affiliation**: The Hong Kong University of Science and Technology (primary); Tsinghua University; Zhejiang University of Technology
 **Year**: 2026
 
@@ -66,7 +66,7 @@ The contribution is a **two-stage, training-free optimizer** that compresses bot
 - [[agent-skills-survey-xu-2026]] — companion academic anchor for the skill paradigm; SkillReducer is the efficiency-and-debloating counterpart to that survey's architecture/security framing (both cite the ~26% empirical skill-quality figure, from different angles)
 - [[skillopt-yang-2026]] — adjacent skill-optimization work (cross-reference)
 - Delta debugging, program slicing, software debloating — the SE techniques adapted for Stages 1 and 2 (no dedicated pages yet)
-- Prompt compression — the prior art SkillReducer outperforms (LLMLingua, Selective Context, Gisting, RECOMP) by being structure-aware rather than flat (no dedicated page yet)
+- [[prompt-compression|Prompt compression]] — the prior art SkillReducer outperforms (LLMLingua, Selective Context, Gisting, RECOMP) by being structure-aware rather than flat (no dedicated page yet)
 
 ## Notable Quotes
 

@@ -13,7 +13,7 @@ authors:
   - Zhuohan Li
   - Siyuan Zhuang
   - Joseph E. Gonzalez
-  - Ion Stoica
+  - [[ion-stoica]]
 tags:
   - 2023
   - paper
@@ -23,7 +23,7 @@ importance: high
 
 # Efficient Memory Management for Large Language Model Serving with PagedAttention
 
-**Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, Ion Stoica** (UC Berkeley; Stanford; UC San Diego) — [arXiv:2309.06180](https://arxiv.org/abs/2309.06180), SOSP '23 (Koblenz, Germany, Oct 2023).
+**Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, Ion Stoica** ([[uc-berkeley|UC Berkeley]]; Stanford; UC San Diego) — [arXiv:2309.06180](https://arxiv.org/abs/2309.06180), SOSP '23 (Koblenz, Germany, Oct 2023).
 
 ## Summary
 

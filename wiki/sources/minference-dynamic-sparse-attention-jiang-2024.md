@@ -42,7 +42,7 @@ Results: on LLaMA-3-8B on a single A100 (bf16), end-to-end prefill speedups of *
 
 ## Key points
 
-**Where this sits: attention sparsification, not token pruning.** MInference **keeps every token in the sequence and every entry of the KV cache**; it skips most *entries of the attention matrix* (QKᵀ and PV) during prefill. It is therefore orthogonal to *token pruning* (dropping tokens from the sequence before or during prefill, e.g. [[prompt-compression]] / LLMLingua from the same authors) and to *speculative prefill* (a draft model choosing which tokens to drop), and it composes with decode-side KV compression (the paper stacks it with SnapKV). It only touches the **O(N²) attention term** — the Q/K/V/O projections and the FFN are computed densely for all N tokens — so its end-to-end gain is bounded by attention's share of prefill time. Decoding is left fully dense.
+**Where this sits: attention sparsification, not [[token-pruning|token pruning]].** MInference **keeps every token in the sequence and every entry of the KV cache**; it skips most *entries of the attention matrix* (QKᵀ and PV) during prefill. It is therefore orthogonal to *token pruning* (dropping tokens from the sequence before or during prefill, e.g. [[prompt-compression]] / LLMLingua from the same authors) and to *[[speculative-prefill|speculative prefill]]* (a draft model choosing which tokens to drop), and it composes with decode-side KV compression (the paper stacks it with SnapKV). It only touches the **O(N²) attention term** — the Q/K/V/O projections and the FFN are computed densely for all N tokens — so its end-to-end gain is bounded by attention's share of prefill time. Decoding is left fully dense.
 
 **The three patterns** (Table 1; block sizes from Fig. 3c/Fig. 7):
 

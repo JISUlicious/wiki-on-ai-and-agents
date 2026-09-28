@@ -7,7 +7,7 @@ sources:
   - minimax-m2-series-minimax-2026.pdf
 arxiv_id: "2605.26494"
 authors:
-  - MiniMax
+  - [[minimax]]
 first_author: MiniMax
 year: 2026
 tags: [2026]

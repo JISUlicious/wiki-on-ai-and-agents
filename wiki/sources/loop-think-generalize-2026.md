@@ -23,11 +23,11 @@ importance: high
 
 # Loop, Think, & Generalize: Implicit Reasoning in Recurrent-Depth Transformers
 
-[arXiv:2604.07822](https://arxiv.org/abs/2604.07822) — Kohli, Parthasarathy, Sun, Yao (The Ohio State University, OSU-NLP Group), 2026. Code: https://github.com/OSU-NLP-Group/Loop-Think-Generalize.
+[arXiv:2604.07822](https://arxiv.org/abs/2604.07822) — Kohli, Parthasarathy, Sun, Yao (The [[ohio-state-university|Ohio State University]], OSU-NLP Group), 2026. Code: https://github.com/OSU-NLP-Group/Loop-Think-Generalize.
 
 ## Summary
 
-This paper introduces and names the **Recurrent-Depth Transformer (RDT)**: a decoder-only transformer in which a fixed block of `L` layers is applied iteratively for `R` recurrent iterations, yielding an effective rolled-out depth of `D = L × R` with shared parameters. The architecture is positioned as the modern descendant of the [[universal-transformer]] and the looped-transformer line (Yang et al. 2024a; Fan et al. 2025; Saunshi et al. 2025; Geiping et al. 2025; Zhu et al. 2025), and the paper provides the controlled empirical case that depth-recursion is what unlocks **implicit reasoning** — solving multi-step compositional queries inside a single forward pass without emitting any explicit chain-of-thought tokens.
+This paper introduces and names the **Recurrent-Depth Transformer (RDT)**: a [[decoder-only-transformer|decoder-only transformer]] in which a fixed block of `L` layers is applied iteratively for `R` recurrent iterations, yielding an effective rolled-out depth of `D = L × R` with shared parameters. The architecture is positioned as the modern descendant of the [[universal-transformer]] and the looped-transformer line (Yang et al. 2024a; Fan et al. 2025; Saunshi et al. 2025; Geiping et al. 2025; Zhu et al. 2025), and the paper provides the controlled empirical case that depth-recursion is what unlocks **implicit reasoning** — solving multi-step compositional queries inside a single forward pass without emitting any explicit chain-of-thought tokens.
 
 Using a synthetic multi-hop knowledge-graph task (2,000 entities, 200 relations, ~40k atomic facts) the authors train models from scratch and isolate two out-of-distribution generalization challenges: **systematic generalization** (composing atomic facts that were never used in any composition during training) and **depth extrapolation** (training on up to `k_train`-hop chains, testing on deeper chains). Vanilla transformers (`R=1`) fail completely on both; even a simple `R=2` recurrent-depth model achieves non-trivial systematic generalization, and `R=4`/`R=8` converge dramatically faster in both epochs and wall-clock time.
 
@@ -51,7 +51,7 @@ This is the canonical 2026 paper anchoring the **"Recurrent-Depth Transformer"**
 - [[looped-transformer]] — closely related/synonymous line of work (Yang et al. 2024a; Fan et al. 2025; Saunshi et al. 2025).
 - [[universal-transformer]] — Dehghani et al. 2019 ancestor that first proposed sharing parameters across depth iterations.
 - [[chain-of-thought-prompting]] — the explicit-token alternative this paper positions itself against; RDTs do compositional multi-hop reasoning *without* CoT.
-- [[inference-time-compute]] — depth extrapolation is achieved by scaling recurrent iterations `R` at inference, a parameter-free form of test-time compute.
+- [[inference-time-compute]] — depth extrapolation is achieved by scaling recurrent iterations `R` at inference, a parameter-free form of [[test-time-compute|test-time compute]].
 - [[grokking]] — the delayed-generalization phenomenon that structures the three-stage training dynamic observed for systematic generalization.
 - [[compositional-generalization]] — the umbrella property the paper tries to instill: systematic generalization + depth extrapolation.
 

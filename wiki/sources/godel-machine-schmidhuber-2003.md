@@ -7,7 +7,7 @@ sources:
   - godel-machine-schmidhuber-2003.md
 arxiv_id: "cs/0309048"
 authors:
-  - Jürgen Schmidhuber
+  - [[jurgen-schmidhuber]]
 first_author: Jürgen Schmidhuber
 year: 2003
 introduces:

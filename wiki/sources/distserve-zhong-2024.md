@@ -23,7 +23,7 @@ importance: high
 
 # DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving
 
-**Yinmin Zhong, Shengyu Liu, Junda Chen, Jianbo Hu, Yibo Zhu, Xuanzhe Liu, Xin Jin, Hao Zhang** (Peking University; StepFun; UC San Diego) — [arXiv:2401.09670](https://arxiv.org/abs/2401.09670), OSDI 2024.
+**Yinmin Zhong, Shengyu Liu, Junda Chen, Jianbo Hu, Yibo Zhu, Xuanzhe Liu, Xin Jin, Hao Zhang** ([[peking-university|Peking University]]; StepFun; UC San Diego) — [arXiv:2401.09670](https://arxiv.org/abs/2401.09670), OSDI 2024.
 
 ## Summary
 

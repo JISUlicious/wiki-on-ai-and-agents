@@ -16,7 +16,6 @@ importance: medium
 tags:
   - 2026
   - paper
-  - hardware
 ---
 
 # Prefill/Decode-Aware Evaluation of LLM Inference on Emerging AI Accelerators

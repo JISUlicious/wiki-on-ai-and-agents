@@ -13,7 +13,7 @@ tags:
 
 # Gödel Machine
 
-A **Gödel machine** is a self-referential problem solver that rewrites its own code when it can *prove* the rewrite is useful, with respect to a problem-dependent utility function. Introduced by Jürgen Schmidhuber in 2003 ([[godel-machine-schmidhuber-2003]]); the direct theoretical ancestor of [[darwin-godel-machine]], which makes the vision empirical 22 years later.
+A **Gödel machine** is a self-referential problem solver that rewrites its own code when it can *prove* the rewrite is useful, with respect to a problem-dependent utility function. Introduced by [[jurgen-schmidhuber|Jürgen Schmidhuber]] in 2003 ([[godel-machine-schmidhuber-2003]]); the direct theoretical ancestor of [[darwin-godel-machine]], which makes the vision empirical 22 years later.
 
 ## Core mechanism
 

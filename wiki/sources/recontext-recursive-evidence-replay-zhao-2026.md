@@ -50,7 +50,7 @@ The paper supplies an **associative-memory account** with a monotonic-improvemen
 - [[long-context-llm]] — the core target; the paper's thesis is that the bottleneck is utilization, not window size, and the top-0.1%-of-tokens measurement is a compact piece of evidence for that.
 - [[retrieval-augmented-generation]] — deliberate contrast: ReContext performs retrieval-like evidence selection using only prompt-internal attention signals, with no external index, no trained retriever, and no removal of the original context.
 - [[code-as-harness]] — the paper explicitly calls its inference-time procedure an "LLM harness," extending harness framing from agent scaffolding to single-turn long-context reasoning.
-- [[fundamental-components-of-harness]] — context assembly and re-presentation treated as the harness component that matters here.
+- [[fundamental-components-of-harness]] — [[context-assembly|context assembly]] and re-presentation treated as the harness component that matters here.
 - [[kv-cache]] — relevant cost dimension: the full context is preserved and re-read across R rounds, which is what the ~1.4× runtime overhead buys.
 - [[agent-evaluation]] — eight-dataset, three-backbone, rank-aggregated protocol; the authors are careful to claim aggregate rather than per-metric dominance.
 

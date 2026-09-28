@@ -31,7 +31,7 @@ Decoder-only models like [[gpt-1]], [[gpt-2]], [[gpt-3]], and [[gpt-4]] use **ma
 
 ## Significance
 
-Self-attention was used in NLP before the [[transformer]] paper (e.g., reading comprehension, summarization, entailment models), but the Transformer was the first transduction model to rely *entirely* on self-attention, eliminating recurrence and convolution. Subsequent models — [[bert]] (encoder self-attention), the GPT family (causal self-attention), [[vit]] (self-attention over image patches) — built on this pattern.
+Self-attention was used in NLP before the [[transformer]] paper (e.g., reading comprehension, summarization, entailment models), but the Transformer was the first transduction model to rely *entirely* on self-attention, eliminating recurrence and convolution. Subsequent models — [[bert]] (encoder self-attention), the [[gpt-family|GPT family]] (causal self-attention), [[vit]] (self-attention over image patches) — built on this pattern.
 
 ## References
 

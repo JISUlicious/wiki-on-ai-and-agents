@@ -13,7 +13,7 @@ authors:
   - Quentin Xu
   - Matthieu Lin
   - Yong-Jin Liu
-  - Gao Huang
+  - [[gao-huang]]
 first_author: Andrew Zhao
 year: 2023
 introduces:
@@ -30,7 +30,7 @@ importance: medium
 
 ## Summary
 
-ExpeL (Experiential Learning) is a gradient-free LLM agent that learns from its own trial-and-error experience across a collection of training tasks, then applies that learning to unseen tasks at inference — **without any parameter updates**. During a training phase the agent gathers success and failure trajectories using [[reflexion]] over a [[react]] base policy, storing them in an experience pool. From this pool it does two things: (1) it **distills cross-task insights as natural-language rules** (a growing list of "good practices" and failure patterns, edited via ADD/EDIT/UPVOTE/DOWNVOTE operators), and (2) it builds a [[faiss]] vector store of successful trajectories for **task-similarity retrieval**. At evaluation, each task prompt is augmented with the full insight list plus the top-k retrieved trajectories as few-shot demonstrations, and solved in a single attempt — like a student who studies practice problems, derives insights, then sits the exam once. Because it touches only the prompt, ExpeL is compatible with closed-source API models like GPT-4 and Claude.
+ExpeL (Experiential Learning) is a gradient-free [[llm-agent|LLM agent]] that learns from its own trial-and-error experience across a collection of training tasks, then applies that learning to unseen tasks at inference — **without any parameter updates**. During a training phase the agent gathers success and failure trajectories using [[reflexion]] over a [[react]] base policy, storing them in an experience pool. From this pool it does two things: (1) it **distills cross-task insights as natural-language rules** (a growing list of "good practices" and failure patterns, edited via ADD/EDIT/UPVOTE/DOWNVOTE operators), and (2) it builds a [[faiss]] vector store of successful trajectories for **task-similarity retrieval**. At evaluation, each task prompt is augmented with the full insight list plus the top-k retrieved trajectories as few-shot demonstrations, and solved in a single attempt — like a student who studies practice problems, derives insights, then sits the exam once. Because it touches only the prompt, ExpeL is compatible with closed-source API models like GPT-4 and Claude.
 
 This paper is the **natural-language counterpoint to code-based skill libraries** such as [[voyager]]. Both accumulate reusable experience across tasks, but the "skill" representation differs fundamentally: in Voyager a skill is an *executable code module* added to a programmatic [[skill-library]] and re-invoked verbatim; in ExpeL a "skill" is a *distilled experiential insight* expressed in natural language plus a retrievable past trajectory — there is no executable code and nothing is run. ExpeL thus stakes out one pole of the "code skills vs. distilled experience" axis for [[agent-skills]]: human-readable, inspectable, editable text rules learned off-policy from experience, managed entirely through prompt construction rather than a parameter update or a code repository. This makes it a load-bearing reference point for the wiki's [[memory-management]] and [[skill-library]] discussions.
 

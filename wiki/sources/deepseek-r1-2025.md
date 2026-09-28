@@ -31,7 +31,7 @@ DeepSeek-R1 demonstrates that advanced reasoning capabilities in LLMs can be **i
 
 Because R1-Zero suffers from poor readability and English/Chinese language mixing, the authors then build the production-quality **DeepSeek-R1** via a multi-stage pipeline: (1) SFT cold-start on thousands of conversational long-CoT examples, (2) first RL stage with rule-based rewards plus a language-consistency reward, (3) rejection-sampling + SFT on mixed reasoning and non-reasoning data (Dev3), and (4) a final RL stage combining rule-based and model-based preference rewards for helpfulness/harmlessness. The resulting model reaches **AIME 2024 pass@1 = 79.8%, MATH-500 = 97.3%, Codeforces 96.3rd percentile (rating 2029)**, putting it in the same class as OpenAI's o1 series.
 
-DeepSeek released the R1 family under open weights on Hugging Face, alongside distilled checkpoints at 7B/32B/70B scales that inherit much of R1's reasoning ability. The release became the substrate for essentially every 2025 agentic-RL paper that followed — open weights plus a recipe that demonstrably elicits reasoning from RL alone reshaped how the field thinks about post-training and triggered a wave of replications, ablations, and extensions into agentic / tool-use settings.
+DeepSeek released the R1 family under open weights on [[huggingface|Hugging Face]], alongside distilled checkpoints at 7B/32B/70B scales that inherit much of R1's reasoning ability. The release became the substrate for essentially every 2025 agentic-RL paper that followed — open weights plus a recipe that demonstrably elicits reasoning from RL alone reshaped how the field thinks about post-training and triggered a wave of replications, ablations, and extensions into agentic / tool-use settings.
 
 ## Key Points
 

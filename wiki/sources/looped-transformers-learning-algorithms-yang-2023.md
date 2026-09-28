@@ -73,6 +73,6 @@ The work bridges the gap between Giannou et al.'s (2023) hand-constructed theory
 - Garg, Tsipras, Liang, Valiant (2022) — ICL of function classes, the experimental setup this paper inherits.
 - Giannou et al. (2023) — hand-constructed looped transformers as universal iterative solvers; theory that this paper makes learnable.
 - von Oswald et al. (2022); Akyürek et al. (2022); Ahn et al. (2023); Mahankali et al. (2023); Zhang et al. (2023a) — gradient-descent-as-ICL line of work.
-- Dehghani et al. (2018) — Universal Transformer; earlier weight-tying-across-depth proposal.
+- Dehghani et al. (2018) — [[universal-transformer|Universal Transformer]]; earlier weight-tying-across-depth proposal.
 - Bai et al. (2019, 2021, 2022) — Deep Equilibrium / implicit models; closest prior on infinite-depth fixed-point networks.
 - Code: <https://github.com/Leiay/looped_transformer>

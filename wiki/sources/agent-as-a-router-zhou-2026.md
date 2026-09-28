@@ -27,7 +27,7 @@ importance: medium
 **Source file**: [[agent-as-a-router-zhou-2026]]
 **arXiv**: [arXiv:2606.22902](https://arxiv.org/abs/2606.22902) (v2, 24 Jun 2026, cs.AI)
 **Authors**: Pengfei Zhou, Zhiwei Tang, Yixing Ma, Jiasheng Tang, … Wangbo Zhao, Yang You
-**Affiliations**: National University of Singapore; DAMO Academy, Alibaba Group; Hupan Lab; UC Berkeley; Zhejiang University; HKUST
+**Affiliations**: National University of Singapore; DAMO Academy, Alibaba Group; Hupan Lab; [[uc-berkeley|UC Berkeley]]; [[zhejiang-university|Zhejiang University]]; HKUST
 
 _Surfaced via the NLP newsletter (Top AI Papers of the Week, 2026-06-21–06-28)._
 

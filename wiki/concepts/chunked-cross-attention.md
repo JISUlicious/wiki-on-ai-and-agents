@@ -11,7 +11,7 @@ importance: medium
 
 # Chunked Cross-Attention
 
-Chunked cross-attention (CCA) is the attention mechanism introduced in [[retro-borgeaud-2021|RETRO]] (Borgeaud et al. 2021) to integrate **retrieved neighbor chunks** into an autoregressive language model while preserving causal generation.
+Chunked cross-attention (CCA) is the [[attention-mechanism|attention mechanism]] introduced in [[retro-borgeaud-2021|RETRO]] (Borgeaud et al. 2021) to integrate **retrieved neighbor chunks** into an autoregressive language model while preserving causal generation.
 
 ## Setup
 
