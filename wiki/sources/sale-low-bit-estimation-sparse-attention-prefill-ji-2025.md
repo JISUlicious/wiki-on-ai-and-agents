@@ -144,7 +144,7 @@ So SALE is **never net-negative in this data** — unlike MInference (0.07× at 
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse prefill attention on FPGA; a different answer to SALE's INT4-hardware dependency.
 - [[sts-speculative-token-sparsity-yu-2026]] · [[specattn-speculating-sparse-attention-shah-2025]] — the two *draft-model* estimators ingested alongside this one. Both run inside a [[speculative-decoding]] loop and measure only **decode**-side gains (STS claims a prefill mode but never times it), so they are the decode counterparts, not competitors, of SALE.
 - [[llama]] · [[qwen]] · [[nvidia]] · [[peking-university]]
-- [[infinitebench]] · [[needle-in-a-haystack]] — **no pages yet**; linked as benchmark concepts.
+- [[needle-in-a-haystack]] · [[infinitebench]] — `infinitebench` has no page yet.
 
 ## References
 

@@ -39,7 +39,7 @@ Used as a general interface across long-context reasoning, retrieval-augmented g
 
 ## Concepts & entities
 
-[[long-context-llm]] · [[code-as-harness]] · [[llm-agent]] · [[retrieval-augmented-generation]] · [[attention]] · [[tool-use]] · [[open-domain-question-answering]] · [[context-window]]
+[[long-context-llm]] · [[code-as-harness]] · [[llm-agent]] · [[retrieval-augmented-generation]] · [[attention-mechanism|attention]] · [[tool-use]] · [[open-domain-question-answering]] · [[context-window]]
 
 ## References
 

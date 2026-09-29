@@ -141,7 +141,7 @@ An inverted-U: layers 1–2 tolerate only **5–10% sparsity** (the [[attention-
 - [[attention-sink]] — the explanation offered for dense layers 1–2.
 - [[arithmetic-intensity]] · [[long-context-llm]] · [[methods-to-speed-up-prompt-processing]] — decode at long context is KV-bandwidth-bound, which is why a token budget translates to wall-clock here in a way it would not for prefill.
 - [[vllm]] · [[llama]] · [[nvidia]] · [[uc-berkeley]] · [[longbench]] · [[swe-bench]] · [[mmlu]]
-- [[needle-in-a-haystack]] — **no page yet**; the passkey probe.
+- [[needle-in-a-haystack]] — the passkey probe.
 
 ## References
 

@@ -101,7 +101,7 @@ Breadth alone buys nothing (6.9% vs 7.1%); **the selection step is what makes a 
 - [[agentic-harness-engineering]] — same family of question: what part of the scaffold actually carries the gain.
 - [[inference-time-compute]] — the tradeoff being made: 20 judge calls to avoid one 30-minute training run.
 - [[code-generation]] · [[llm-agent]] — the modifications being judged are code patches proposed by an LLM agent.
-- [[mle-bench]] — cited as the adjacent ML-engineering [[agent-benchmark|agent benchmark]] (no page yet).
+- [[mle-bench]] — cited as the adjacent ML-engineering [[agent-benchmark|agent benchmark]].
 
 ## References
 

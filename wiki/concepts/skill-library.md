@@ -2,7 +2,7 @@
 title: Skill Library
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-29
 sources:
   - voyager-wang-2023.md
 status: draft
@@ -16,6 +16,10 @@ tags:
 A **skill library** is a growing collection of executable code skills that an agent has learned and can retrieve by natural-language description. Introduced by [[voyager]] ([[voyager-wang-2023|Wang et al. 2023]]) for open-ended Minecraft play, each skill is a self-contained code function indexed by the embedding of its NL description. When the agent encounters a new task it retrieves the top-k most relevant skills and writes new code that *composes* them — by never overwriting prior skills, the system avoids the catastrophic forgetting that plagues weight-update approaches.
 
 The skill library is the [[procedural-memory|procedural-memory]] ancestor of the modern `SKILL.md` packaging convention: a discoverable, descriptor-keyed bundle of executable behavior that an LLM can load on demand.
+
+
+> [!note] Skill creation has to be required
+> Voyager's library grows because its curriculum *requires* a new verified skill at each step. When creation is left to the agent's own initiative, it does not happen: [[what-is-missing-from-ai-post-training-ai-lim-2026|Lim et al. 2026]] gave an agent a `create-skill` meta-skill and explicit instructions, and it read skills 18–60 times per run but **created zero** in every run. At the other extreme, uncurated accumulation fragments instead of compounding ([[continualskillbench-guan-2026|ContinualSkillBench]], [[catastrophic-remembering]]). A skill library works when the loop mandates and gates creation.
 
 ## Where it appears
 

@@ -112,9 +112,9 @@ Two smaller provenance notes. The baseline rows in Table 1 are borrowed from the
 - [[native-sparse-attention-yuan-2025]] · [[moba-mixture-of-block-attention-lu-2025]] — the Block-Sparse baseline is a MoBA-style selector; the paper's reading is that block granularity, not head count, is what loses on retrieval.
 - [[gated-sparse-attention-shen-2026]] — the other 2026 DSA descendant on this wiki: a from-scratch architecture that changes the indexer's activation, where MISA changes nothing and trains nothing.
 - [[sparse-attention]] · [[sparse-prefill]] · [[minference-dynamic-sparse-attention-jiang-2024]] — the training-free retrofits for *dense* models; different target.
-- [[mixture-of-experts]] — head-as-expert routing; [[multi-head-latent-attention]] (no page yet) — the MQA-mode sparse MLA that makes one shared token set per query possible; [[grouped-query-attention]].
+- [[mixture-of-experts]] — head-as-expert routing; [[multi-head-latent-attention]] — the MQA-mode sparse MLA that makes one shared token set per query possible; [[grouped-query-attention]].
 - [[flash-attention]] · [[kv-cache]] · [[long-context-llm]] · [[arithmetic-intensity]] · [[longbench]]
-- [[deepseek]] · [[z-ai]] · [[glm-5-2]] · [[glm-5]] (no page yet) · [[peking-university]]
+- [[deepseek]] · [[z-ai]] · [[glm-5-2]] · [[glm-5]] · [[peking-university]]
 
 ## References
 

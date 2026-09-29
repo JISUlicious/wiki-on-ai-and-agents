@@ -2,7 +2,7 @@
 title: "Harness vs. Model: Performance Attribution (factorial studies)"
 type: comparison
 created: 2026-06-22
-updated: 2026-09-15
+updated: 2026-09-29
 sources:
   - cross-agent-comparison-doc-2026.md
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
@@ -95,7 +95,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[rethinking-evaluation-harness-evolution-wang-2026]] — harness *evolution* fails to beat plain test-time scaling at matched budgets (67.4 vs 72.3)
 - [[nvidia-oo-agents-furgale-2026]] — RHAE 85.1% vs 13.3% for the raw model on ARC-AGI-3 — a 6.4× harness effect on one backbone
 
-> [!warning] Contradiction — the 13.3% baseline may be the wrong model
+> [!success] Resolved contradiction — the 13.3% baseline may be the wrong model
 > [[prime-agent-self-improving-rlm-harness-karten-2026|Prime Agent]] (2026) reports the ARC-AGI-3 reference figures with a different attribution: **13.3% is GPT-5.6 *Terra***, while GPT-5.6 **Sol** — the backbone NVIDIA used — is listed at **38.3%** ([[responses-api|Responses API]]) and **7.0%** (ARC harness). Against 38.3% the NVIDIA harness effect is **2.2×**, not 6.4×; against 7.0% it is 12.2×.
 >
 > Both papers cite external ARC Prize numbers rather than running the raw baseline themselves, so this is a citation conflict, not a measurement conflict. **Treat 6.4× as unverified** until the raw Sol baseline is pinned down. The qualitative claim — that the harness is worth a large multiple on this benchmark — survives either way.
@@ -103,6 +103,11 @@ Surfaced via newsletter ingests; see [[index]].
 > A second data point in the same table cuts against the newer system: **on the same backbone (GPT-5.6 Sol), NVIDIA's 85.1% beats Prime Agent's 78.3%.** Prime Agent's headline 95.5% comes from switching to Claude Opus 5, not from a better harness — and its authors say the reference numbers "situate the result rather than isolate a causal harness effect."
 >
 > Note also that a widely-circulated "NVIDIA AVO at 100% on ARC-AGI-3" figure (AI Agents Weekly, 2026-08-22) **could not be verified against any paper** and is recorded only as product news.
+>
+> **Resolved 2026-09-29 against ARC Prize's own results pages** ([Sol](https://arcprize.org/results/openai-gpt-5-6-sol), [Terra](https://arcprize.org/results/openai-gpt-5-6-terra), both dated 2026-07-09). GPT-5.6 **Sol** at max reasoning effort averages **13.33% on the 25-game Public set** and 7.78% on Semi-Private; **Terra** averages **2.3%** Public and 0.80% Semi-Private. So 13.3% belongs to Sol, and Prime Agent's legend mislabels it as Terra. NVIDIA's comparison is like-for-like: same model, same game set, same effort. **The 6.4× figure (85.1 / 13.33) stands**, though evaluation budgets differ, NVIDIA itself calls it indicative, and its 85.1% is a self-reported community-leaderboard entry. The alternatives do not hold as raw baselines. 7.0% and 7.8% are **Semi-Private** scores (7.0% matches Sol at XHigh effort, 7.8% at Max), so dividing a Public-set 85.1% by them crosses game sets. 38.3% is OpenAI's self-reported Public-set result with Responses API retained reasoning and compaction switched on, a harnessed configuration rather than a raw baseline.
+
+> [!warning] Superseded 2026-09-29: this update compared across game sets
+> The reasoning below — that 38.3% is itself harnessed — is right. The conclusion is wrong: 7.8% is Sol's **Semi-Private** score, while NVIDIA's 85.1% and the 13.33% baseline are both on the **Public** set. The ~11× multiple therefore crosses game sets, and 6.4× is the like-for-like figure (see the resolved callout above). Kept below for the record.
 
 > [!note] Update 2026-09-07 — a third number, and it points the other way
 > OpenAI's **GPT-6 Astra launch comparison** reports **GPT-5.6 Sol at 7.8%** on ARC-AGI-3. That is a third independent figure for the same raw model, and it sits next to Prime Agent's **7.0%** ("ARC harness") rather than its 38.3% ("Responses API").

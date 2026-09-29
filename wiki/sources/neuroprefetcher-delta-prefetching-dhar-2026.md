@@ -254,7 +254,7 @@ Net: the ranking is credible and the mechanism is real; the *magnitude* is again
 - [[hbm-is-not-all-you-need-wei-2026]] · [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] — the memory-tier framing.
 - [[zero-offload-ren-2021]] — the training-side offload lineage (ZeRO-Inference fails on this board with an allocation error).
 - [[llama]] — Llama-3-8B, the quality-study second model.
-- [[activation-sparsity]] · [[edge-inference]] — **no pages yet**; this source is a natural seed for both (DejaVu, ReLU Strikes Back, CATS, TEAL, TurboSparse, PowerInfer, SparseInfer are all cited here).
+- [[activation-sparsity]] · [[edge-inference]] — this source was a seed for both (DejaVu, ReLU Strikes Back, CATS, TEAL, TurboSparse, PowerInfer, SparseInfer are all cited here).
 - Not [[memory-management]] — in this wiki that slug means *agent* memory systems (MemGPT, Mem0), not OS paging; linked only to disambiguate.
 
 ## References

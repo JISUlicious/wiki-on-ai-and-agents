@@ -104,8 +104,8 @@ A "random token drop" baseline (Random-LTD style, averaged over 5 runs) is also 
 
 - [[kv-cache]] — LazyLLM changes *when* KV is computed (lazily, on selection) rather than evicting it; the Aux Cache is a companion structure holding hidden states of not-yet-computed tokens.
 - [[attention-mechanism]] — the selector is the model's own attention from the last position, so selection cost is a partial forward pass of the target model. Contrast [[speculative-prefill]] (no concept page yet; see [[speculative-prefill-liu-2025]]), which uses a separate small draft model for the same job.
-- [[token-pruning]] (no page yet) — the technique family; LazyLLM is the dynamic-with-revival member, [[discovering-the-gems-in-early-layers-shi-2024]] the static-once member.
-- [[longbench]] (no page yet) — the benchmark for all results; 16 datasets, 6 tasks, macro-averaged per task.
+- [[token-pruning]] — the technique family; LazyLLM is the dynamic-with-revival member, [[discovering-the-gems-in-early-layers-shi-2024]] the static-once member.
+- [[longbench]] — the benchmark for all results; 16 datasets, 6 tasks, macro-averaged per task.
 - [[prompt-compression]] and [[llmlingua-jiang-2023]] — the contrasting approach; Selective Context is shown to make TTFT 2-10× slower because compression itself runs an LLM.
 - [[long-context-llm]] — the motivating regime, though the evaluation stays at ~3.4K-token prompts.
 - [[llm-inference-roofline-yuan-2024]] — prefill is compute-bound, which is why cutting the token count through the stack translates directly into TTFT.

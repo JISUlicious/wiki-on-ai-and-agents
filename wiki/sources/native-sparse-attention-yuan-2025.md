@@ -171,7 +171,7 @@ Both trainable alternatives "exhibited inferior loss". This is the closest the p
 - [[deepseek-r1]] · [[deepseek-r1-2025]] — the SFT teacher for the AIME experiment, and the "long CoT is decode-heavy" motivation.
 - [[longbench]] · [[mmlu]] · [[humaneval]] · [[attention-sink]] — the leading-128 + local-512 baseline budget is StreamingLLM's sink + window.
 - [[long-context-llm]] · [[methods-to-speed-up-prompt-processing]] · [[deepseek]].
-- [[multi-head-latent-attention]] — **no page yet**; NSA is instantiated on GQA, DSA on MLA, and the difference matters for the kernel.
+- [[multi-head-latent-attention]] — NSA is instantiated on GQA, DSA on MLA, and the difference matters for the kernel.
 
 ## References
 

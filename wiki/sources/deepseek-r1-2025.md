@@ -64,7 +64,7 @@ DeepSeek released the R1 family under open weights on [[huggingface|Hugging Face
 - [[rule-based-rewards]] vs. neural reward models.
 - [[reward-hacking]] — explicit motivation for avoiding neural reward models on reasoning data.
 - [[knowledge-distillation]] — for the 7B / 32B / 70B distilled variants.
-- [[sft]] (cold-start) and [[rejection-sampling]] within the multi-stage pipeline.
+- [[supervised-fine-tuning|SFT]] (cold-start) and [[rejection-sampling]] within the multi-stage pipeline.
 - Benchmarks: [[aime]], [[math-500]], [[codeforces]], [[livecodebench]], [[swe-bench]], [[gpqa]], [[mmlu-pro]].
 
 ## Notable Quotes

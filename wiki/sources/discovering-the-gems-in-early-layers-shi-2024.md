@@ -92,8 +92,8 @@ Averages hide large per-dataset swings. On LLaMA 3.1 at k=1024, NarrativeQA fall
 
 - [[kv-cache]] — the paper's framing is that KV *eviction* (SnapKV, H2O) leaves prompt computation untouched; GemFilter cuts the prompt pass itself, then runs pass 2 with a k-token cache.
 - [[attention-mechanism]] — selection uses raw last-token Q·K^T at one layer, so the model's own attention is the retriever; contrast [[speculative-prefill]] (no concept page yet; see [[speculative-prefill-liu-2025]]), which delegates that to a small draft model.
-- [[token-pruning]] (no page yet) — GemFilter is the canonical *static, decide-once* member of this family; [[lazyllm-dynamic-token-pruning-fu-2024]] is the dynamic-with-revival member and reports a "static token pruning" baseline built on this same recipe.
-- [[longbench]] (no page yet) — 14 English datasets here (no code completion); also Needle in a Haystack.
+- [[token-pruning]] — GemFilter is the canonical *static, decide-once* member of this family; [[lazyllm-dynamic-token-pruning-fu-2024]] is the dynamic-with-revival member and reports a "static token pruning" baseline built on this same recipe.
+- [[longbench]] — 14 English datasets here (no code completion); also Needle in a Haystack.
 - [[flash-attention]] — all timing runs use it; the paper notes H2O's cumulative scoring is incompatible with fused attention, which is why H2O is absent from NIAH and timing.
 - [[positional-encoding]] / [[rope-scaling]] — pass 2 recomputes RoPE over k+t positions; the authors credit this shortened range for GemFilter beating the uncompressed model on NIAH.
 - [[long-context-llm]] — the target regime; NIAH runs at 60K-120K tokens.

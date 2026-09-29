@@ -2,7 +2,7 @@
 title: "ClawGym II: Exploring Black-Box RL on Agent Harness"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.16798"
 year: 2026
@@ -119,11 +119,15 @@ In-loop, white-box RL wins big (+18.21 over base, +8.53 over the black-box model
 - **PPO on the tree is admitted to be a simplification** (γ = λ = 1, independent branches).
 - **Mix-harness results are figure-only** with the claim "matches or slightly outperforms"; no table.
 - **The judge is GPT-5.4 for rubric tasks**; a 0.3 rubric weight is part of the ClawGym-Bench score, so some of the gain is judge-satisfaction ([[llm-as-a-judge]]).
-- **The token-in-token-out discipline is exactly the "buffered token replacement" that [[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1.0]] argues is off-policy stitching** — see the contradiction below. ClawGym II's importance correction targets engine mismatch, not prompt mismatch.
+- **The token-in-token-out discipline may be the "stitching" that [[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1.0]] argues is off-policy** — see the open question below. The paper frames its importance correction as fixing engine mismatch only.
 
 > [!warning] Contradiction — is splicing sampled tokens into the next prompt correct?
-> **This paper:** the generated tokens are grafted onto the prefix tree as the sole training record, and the harness's re-serialized text is never encoded back — so the trained sequence "is by construction identical to the one the policy model sampled."
-> **[[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1.0]] (Microsoft, one day later):** replacing the retokenized response segment in `pᵢ₊₁` with the originally sampled `aᵢ` produces a stitched prompt `p̃ᵢ₊₁ ≠ pᵢ₊₁`; since `aᵢ₊₁` was sampled under `pᵢ₊₁`, training under `p̃ᵢ₊₁` "introduces an off-policy discrepancy." Agent Lightning therefore keeps **no** buffer and merges only when observed token IDs already match. Both cannot be fully right: ClawGym II's construction guarantees the *response* tokens are exact but can make the *prompt* for the next turn differ from what the policy actually consumed; Agent Lightning's guarantees the prompt is exact but fragments the rollout (64% of its coding rollouts split). Neither paper measures the size of the other's error. Unresolved.
+> **This paper:** the generated tokens are grafted onto the prefix tree as the sole training record, and the harness's re-serialized text is never encoded back — so the trained sequence "is by construction identical to the one the policy model sampled" (§3.2.4).
+> **[[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1.0]] (one day later):** if the response segment of the next prompt is replaced with the originally sampled tokens, the stitched prompt differs from the prompt the next turn was actually sampled under, which "introduces an off-policy discrepancy" (§2.1). Its objection names AReaL and verl Uni-Agent, not this paper.
+>
+> **Status after reading both papers in full (2026-09-29): narrower than it first looked, and still open.** The two claims concern different things. This paper's claim is about the *response* tokens and always holds. Agent Lightning's is about the *context* the next turn was sampled under. Which one bites here turns on a fact this paper never states: whether its proxy serves the model the grafted token sequence (then training is on-policy) or the harness's re-serialized text (then Agent Lightning's objection applies). Every relevant passage places the grafting in offline trajectory reconstruction (§3.1, §3.2.4), and the paper concedes that harness transformations "may alter the representation of model outputs before they re-enter subsequent interactions". That points toward the second case, but the paper's longest-prefix matching (§3.2.1) would not work cleanly in that case, so it cannot be settled from the text.
+>
+> Two further points. First, as an *inference*, the truncated importance ratio `min(exp(log π_old − log π_rollout), c̄)` would partly absorb a context mismatch, not only the engine drift it is framed around. Second, neither paper measures the size of either error; Agent Lightning's 64% rollout-split figure mixes retokenization with subagents and summarization. Settling this needs ClawGym's code or an author statement on how the proxy handles requests.
 
 ## Agent Lightning v1.0 vs. ClawGym II — same boundary, different answers
 
@@ -132,7 +136,7 @@ In-loop, white-box RL wins big (+18.21 over base, +8.53 over the black-box model
 | Name for the paradigm | "harnessed agentic RL" | "black-box RL on agent harness" |
 | What the harness is | deploy-time harness, open and instrumentable (mini-SWE-agent, LLM-in-Sandbox) | production binary treated as opaque (OpenClaw, Claude Code), with pseudo-streaming and settling hacks to keep it happy |
 | Sample construction | **best-effort linear merging** — extend a sequence only on exact token-prefix match, else close it; 36% of rollouts stay one sample, mean 2.41 | **rollout-level prefix tree** — attach by longest prefix, shared prefix stored once, forks kept as branches |
-| Retokenization | named as a first-class challenge with three mechanisms; buffered replacement rejected as off-policy stitching | not named; handled by token-in-token-out grafting (i.e. buffered replacement) + token-level IS correction for engine mismatch |
+| Retokenization | named as a first-class challenge with three mechanisms; buffered replacement rejected as off-policy stitching | not named; handled by token-in-token-out grafting at training time (whether this amounts to buffered replacement depends on what the proxy serves, which the paper does not state) + token-level IS correction framed as fixing engine mismatch |
 | Advantage | rollout-level (agree) | rollout-level, once per rollout (agree) |
 | Loss normalization | rollout-level token-mean, to stop multi-sample rollouts dominating | shared-prefix tokens counted once per rollout — the same goal by tree structure |
 | Subagent / compaction branches | kept as extra samples inheriting the reward; credit assignment deferred | **discarded** as auxiliary; credit assignment deferred |
@@ -141,7 +145,7 @@ In-loop, white-box RL wins big (+18.21 over base, +8.53 over the black-box model
 | Infrastructure emphasis | ~3,500 LOC, Kubernetes Jobs, collocated async, idempotent gateway | temporary sandboxes + in-sandbox MCP servers, fault handling |
 | Evidence | ablation of advantage/normalization choices; SWE-bench Verified 41.8 → 56.4 | Table 1 across 2 harnesses × 2 sizes; white-box vs black-box transfer |
 
-**Does the prefix tree solve what Agent Lightning names?** Partly. (1) *Sample merging under forks* — yes: the tree is exactly the "prefix-shared / tree-structured training" option Agent Lightning lists as principled but backend-intensive, and ClawGym II ships it (the paper does not say whether it uses branch-aware attention masks or flattens root-to-leaf paths with a once-per-prefix loss mask). (2) *Advantage calculation* — both land on rollout-level; the tree does not change that. (3) *Loss normalization* — the once-per-rollout prefix counting is a structural version of Agent Lightning's rollout-level token-mean. (4) *Retokenization* — **no**: the tree's grafting is the buffered-replacement strategy Agent Lightning explicitly rejects, and ClawGym II's only correction term addresses inference/training engine drift, not prompt stitching. Where the two do agree, they agree against slime and AReaL (sample-level advantage).
+**Does the prefix tree solve what Agent Lightning names?** Partly. (1) *Sample merging under forks* — yes: the tree is exactly the "prefix-shared / tree-structured training" option Agent Lightning lists as principled but backend-intensive, and ClawGym II ships it (the paper does not say whether it uses branch-aware attention masks or flattens root-to-leaf paths with a once-per-prefix loss mask). (2) *Advantage calculation* — both land on rollout-level; the tree does not change that. (3) *Loss normalization* — the once-per-rollout prefix counting is a structural version of Agent Lightning's rollout-level token-mean. (4) *Retokenization* — **unclear**: the grafting is described as offline trajectory construction, and whether it reproduces the off-policy stitching Agent Lightning rejects depends on an unstated serving detail (see the open question above). Where the two do agree, they agree against slime and AReaL (sample-level advantage).
 
 ## Related
 

@@ -61,7 +61,7 @@ Using SWE-Gym the authors run two complementary scaling axes. **Training-time sc
 - [[llm-agent]] — SWE agents fit the broader LM-agent paradigm: [[tool-use|tool use]], multi-turn planning, environment feedback.
 - [[agentic-rl]] — the paper is a canonical example of moving SWE agents from prompting-only into a training-loop regime with executable reward.
 - [[verifier]] / [[outcome-based-reward]] — outcome-supervised reward model trained on trajectory pass/fail; powers test-time best-of-N.
-- Related but not page-worthy here: [[rejection-sampling-fine-tuning]], [[inference-time-scaling]], OpenHands CodeAct scaffold, MoatlessTools scaffold.
+- Related but not page-worthy here: [[rejection-sampling-fine-tuning]], [[inference-time-compute|inference-time scaling]], OpenHands CodeAct scaffold, MoatlessTools scaffold.
 
 ## Quotes
 

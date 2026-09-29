@@ -91,12 +91,12 @@ LTP (the FFN half) contributes more than PAP (the attention half) — 0.71× of 
 
 - [[lazyllm-dynamic-token-pruning-fu-2024]] and [[sliminfer-dynamic-token-pruning-long-2025]] — the dynamic-with-revival methods SPTS positions itself against; it argues their per-decode-step recompute of revived tokens caps end-to-end speed and that their previous-layer scores are "outdated."
 - [[discovering-the-gems-in-early-layers-shi-2024]] — the static prune-once method, re-evaluated here at 47.09 / 1.31× on LLaMA and criticised for the extra forward pass; SPTS's Fig. 5b is the "prefilling-phase pruning" scheme GemFilter exemplifies.
-- [[token-pruning]] (no page yet) — SPTS is the *skipping* variant: identity shortcut instead of deletion, plus delayed pruning at stage ends.
+- [[token-pruning]] — SPTS is the *skipping* variant: identity shortcut instead of deletion, plus delayed pruning at stage ends.
 - [[residual-connection]] — the mechanism that makes skipping possible: Y = X + F(X), so an unselected token is exactly preserved.
 - [[kv-cache]] — PAP produces a layer-ragged cache holding only active tokens per layer; this is where the decode-phase speedup comes from.
 - [[attention-mechanism]] — the probe is the current layer's own last-token softmax attention; contrast [[speculative-prefill]] (no concept page yet; see [[speculative-prefill-liu-2025]]), which delegates selection to a small draft model.
 - [[flash-attention]] — the dense baseline; all methods run on top of it.
-- [[longbench]] (no page yet) — all 17 datasets; efficiency measured on 8K-32K samples drawn from it (20 per length).
+- [[longbench]] — all 17 datasets; efficiency measured on 8K-32K samples drawn from it (20 per length).
 - [[long-context-llm]] — the regime targeted; gains are minimal below 8K.
 - [[llm-inference-roofline-yuan-2024]] — why FFN skipping (LTP) contributes more than attention skipping (PAP) to prefill time.
 - [[llama]], [[qwen]] — LLaMA 3.1 8B Instruct and Qwen2.5 7B Instruct; openPangu-Embedded-1B on Ascend NPU is the third model.

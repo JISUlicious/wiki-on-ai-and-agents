@@ -129,7 +129,7 @@ The honest reading: this is a **strong existence proof about a bottleneck**, not
 - [[a-hippocampus-for-linear-attention-cui-2026]] — bolts exact memory onto a GDN state; would change the 2 MB budget this design depends on.
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — same lab (Prasanna group, USC), the prefill half of the story.
 - [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] · [[hbm-is-not-all-you-need-wei-2026]] — the phase-vs-hardware framing.
-- [[fpga]] · [[hardware-accelerator]] · [[edge-inference]] — no pages yet.
+- [[fpga]] · [[hardware-accelerator]] · [[edge-inference]]
 - [[nvidia]] · [[qwen]] · [[vllm]] · [[llama-cpp]] — baseline vendor, model family, and the serving engines this is *not* a substitute for.
 
 ## References

@@ -121,12 +121,12 @@ FlexPrefill and MInference save nothing here (full cache at every layer); LazyLL
 - [[lazyllm-dynamic-token-pruning-fu-2024]] — direct ancestor and codebase; SlimInfer adds block granularity, current-layer Q·K scoring with a recent-token query window, CPU offload of pruned KV, and predictor-free prefetching. Beats it on both axes in Table E.
 - [[discovering-the-gems-in-early-layers-shi-2024]] — the static alternative; not a baseline here, but the "information diffusion" analysis is the same layer-13 phenomenon GemFilter exploits, read the opposite way (SlimInfer keeps early layers dense *because* diffusion happens there).
 - [[probe-and-skip-self-predictive-token-skipping-wu-2026]] — successor that re-evaluates SlimInfer as a baseline and argues per-step recompute of revived tokens is what caps its decode speed.
-- [[token-pruning]] (no page yet) — the family; SlimInfer is the dynamic-with-revival-plus-offload member.
+- [[token-pruning]] — the family; SlimInfer is the dynamic-with-revival-plus-offload member.
 - [[kv-cache]] — pruned blocks' KV lives on the CPU rather than being evicted; the async manager is a KV-offload scheduler.
 - [[attention-sink]] — the first prompt block is unconditionally kept for this reason.
 - [[attention-mechanism]] — selection is a dot product of pooled keys against a pooled recent query at the pruning layer; contrast [[speculative-prefill]] (no concept page yet; see [[speculative-prefill-liu-2025]]), which uses a separate draft model.
 - [[flash-attention]] — the dense baseline (FlashAttention-2); all methods run on top of it.
-- [[longbench]] (no page yet) — all 17 datasets used, plus Needle in a Haystack.
+- [[longbench]] — all 17 datasets used, plus Needle in a Haystack.
 - [[long-context-llm]] — the regime where the method pays off (≥16K-24K tokens).
 - [[llm-inference-roofline-yuan-2024]] — why removing hidden states (FFN + attention) beats sparsifying attention alone on prefill.
 - [[llama]], [[qwen]] — LLaMA 3.1 8B Instruct and Qwen2.5 7B Instruct.

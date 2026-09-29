@@ -86,7 +86,7 @@ Read the rows, not the headline: **gating alone gets most of the way** (6.03 →
 | Gated only | 90.6 | 87.1 | 84.6 | 79.8 | 66.6 | 58.8 |
 | **GSA** | **91.2** | **88.5** | **86.1** | **82.3** | **69.5** | **62.2** |
 
-"Nearly double" at 128K is 31.7 → 62.2 (1.96×). But the same table shows that **the doubling is gating's** — gated-only reaches 58.8, sparse-only only 36.8. Every model here was trained at 4K, so the 64K/128K columns measure extrapolation under YaRN, and what they show is that sigmoid gating extrapolates better; the sparse selection contributes ~3–4 points on top. There is no [[ruler]] (no page yet) comparison to NSA, MoBA or a DSA model trained at long context.
+"Nearly double" at 128K is 31.7 → 62.2 (1.96×). But the same table shows that **the doubling is gating's** — gated-only reaches 58.8, sparse-only only 36.8. Every model here was trained at 4K, so the 64K/128K columns measure extrapolation under YaRN, and what they show is that sigmoid gating extrapolates better; the sparse selection contributes ~3–4 points on top. There is no [[ruler]] comparison to NSA, MoBA or a DSA model trained at long context.
 
 ### Attention sinks and activations (Table 7)
 
@@ -144,8 +144,8 @@ The authors': below ~4K the indexer's overhead exceeds the sparse saving, so a d
 - [[attention-sink]] · [[gated-attention]] (no page yet; Qiu et al. 2025, the source of G1/G2) · [[qwen3.8-flash-next]] — the Qwen line that ships Qiu-style gating in production.
 - [[sparse-attention]] · [[sparse-prefill]] · [[minference-dynamic-sparse-attention-jiang-2024]] — the training-free side, and the attention-share rule that decides what a 12× attention number is worth.
 - [[flash-attention]] · [[kv-cache]] · [[long-context-llm]] · [[arithmetic-intensity]] · [[grouped-query-attention]] · [[rope-scaling]]
-- [[mmlu]] · [[humaneval]] · [[ruler]] (no page yet)
-- [[deepseek]] · [[uc-berkeley]] · [[amazon]] (no page yet)
+- [[mmlu]] · [[humaneval]] · [[ruler]]
+- [[deepseek]] · [[uc-berkeley]] · [[amazon]]
 
 ## References
 

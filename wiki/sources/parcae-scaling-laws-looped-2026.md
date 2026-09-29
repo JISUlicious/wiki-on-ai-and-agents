@@ -57,18 +57,18 @@ This is the load-bearing reference for the [[openmythos]] open-source looped-LM 
 - **Authors:** Hayden Prairie, Zachary Novack, [[taylor-berg-kirkpatrick]], [[daniel-fu]] (Daniel Y. Fu)
 - **Affiliations:** [[ucsd]] (University of California, San Diego); [[together-ai]] (Prairie and Fu are joint UCSD / Together AI)
 - **Companion blog / open-source channel:** Sandy Research (`sandyresearch.github.io`) — Daniel Fu's group; basis for the [[openmythos]] open-source reimplementation.
-- **Baselines:** RDM ([[recurrent-depth-model]], Geiping et al. 2025); [[nanochat]] ([[andrej-karpathy]]).
+- **Baselines:** RDM ([[recurrent-depth-transformer|recurrent-depth model]], Geiping et al. 2025); [[nanochat]] ([[andrej-karpathy]]).
 
 ## Concepts
 
-- [[looped-transformer]] / [[looped-language-model]] — the architectural family this paper stabilizes.
+- [[looped-transformer]] / [[looped-transformer|looped language model]] — the architectural family this paper stabilizes.
 - [[parcae]] — the architecture introduced here.
 - [[scaling-laws]] — extended to looping as a third axis alongside N and D.
 - [[parameter-sharing]] — looping is the extreme case (one block reused T times).
 - [[inference-time-compute]] / test-time scaling — looping as a knob for per-token adaptive compute.
 - [[linear-time-invariant-system]] / dynamical systems view of residual streams — the analytical lens.
 - [[layer-normalization]] — Parcae's prelude norm on `e`.
-- [[chinchilla-scaling-laws]] — methodological template (parabolic + parametric Huber fits, L-BFGS).
+- [[chinchilla-hoffmann-2022|Chinchilla scaling laws]] — methodological template (parabolic + parametric Huber fits, L-BFGS).
 - [[latent-reasoning]] — looped models as a substrate for reasoning in latent space (cited as motivation).
 - Open-source implementation: [[openmythos]] — community reimplementation building on Parcae.
 
@@ -90,6 +90,6 @@ This is the load-bearing reference for the [[openmythos]] open-source looped-LM 
 
 - arXiv: <https://arxiv.org/abs/2604.12946>
 - Companion blog (Sandy Research): <https://sandyresearch.github.io/parcae/>
-- Baseline RDM (looped LM): Geiping et al., 2025 ([[recurrent-depth-model]])
+- Baseline RDM (looped LM): Geiping et al., 2025 ([[recurrent-depth-transformer|recurrent-depth model]])
 - Transformer baseline harness: Karpathy, [nanochat](https://github.com/karpathy/nanochat), 2025
 - Open-source reimplementation: [[openmythos]]

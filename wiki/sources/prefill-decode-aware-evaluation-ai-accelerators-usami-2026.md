@@ -110,7 +110,7 @@ The authors flag the real blocker honestly: homogeneous GPU clusters have NVLink
 - [[quantization-performance]] — an orthogonal axis held fixed here (FP16 only), and the one that decides whether a model fits an SRAM-only device at all.
 - [[methods-to-speed-up-prompt-processing]] · [[from-llm-inference-to-agentic-workloads-chang-2026]] — the serving-side context; agentic workloads shift the L_out/L_in ratio that this paper's break-even rule turns on.
 - [[long-context-llm]] — 4,096-token ceiling here; the KV-per-token cost is what stops the analysis extending.
-- [[groq]] · [[hardware-accelerator]] — no pages yet.
+- [[groq]] · [[hardware-accelerator]]
 - [[nvidia]] · [[sambanova]] · [[vllm]] · [[llama]] — platforms, engine and model.
 
 ## References

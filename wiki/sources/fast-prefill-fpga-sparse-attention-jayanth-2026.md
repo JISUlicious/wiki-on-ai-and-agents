@@ -115,7 +115,7 @@ Related and also unstated: **where the model weights live**. The text says compu
 - [[llm-inference-roofline-yuan-2024]] — the memory-bound-vs-compute-bound framing that justifies a 5.4 TOPS device beating a 222 TOPS one.
 - [[methods-to-speed-up-prompt-processing]] — this is a hardware tier that page does not yet cover.
 - [[long-context-llm]] · [[longbench]] — 4K–128K is the target regime.
-- [[fpga]] · [[hardware-accelerator]] · [[arithmetic-intensity]] — no pages yet; this source is the wiki's entry point for all three.
+- [[fpga]] · [[hardware-accelerator]] · [[arithmetic-intensity]] — this source was the wiki's entry point for all three.
 - [[nvidia]] · [[llama]] · [[qwen]] — baseline vendor and evaluated model families.
 - [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — the decode-side FPGA counterpart; together they cover both phases.
 - [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] · [[hbm-is-not-all-you-need-wei-2026]] — the phase-vs-hardware framing this result sits inside.

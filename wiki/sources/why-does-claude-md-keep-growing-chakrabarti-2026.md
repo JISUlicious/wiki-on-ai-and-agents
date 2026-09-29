@@ -191,8 +191,8 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 - [[reward-hacking]] — contrast: the failure here is not a maintainer gaming a metric but a rational maintainer facing genuinely censored feedback. Append-only is the *optimal* estimator once provenance is gone.
 - [[skill-optimization]], [[memory-evolution]], [[procedural-memory]], [[tiered-memory]], [[agent-three-layer-model]], [[dynamic-workflows]] — all assume or describe accretion into a persistent instruction artifact; the ratchet is the cost model none of them price.
 - [[bad-memory-prompt-injection-agentic-gadgil-2026]] — an angle nothing currently connects: an instruction nobody can justify deleting is also a *trust* surface. Imperfect recall means stale injected instructions are the hardest ones to remove.
-- `[[continual-learning|catastrophic forgetting]]` — **no page yet**; the paper defines its central term as this concept's inverse, so the wiki cannot express the contrast.
-- `[[continual-learning]]` — **no page yet**; the paper positions prompt maintenance as continual learning over text and notes nobody has built its analogue of rehearsal or regularization.
+- [[continual-learning|catastrophic forgetting]] — the paper defines its central term, [[catastrophic-remembering]], as this concept's inverse.
+- [[continual-learning]] — the paper positions prompt maintenance as continual learning over text and notes nobody has built its analogue of rehearsal or regularization.
 - `[[instruction-following]]` — **no page yet**; IFEval and WildIFEval both hang off it.
 
 ## References

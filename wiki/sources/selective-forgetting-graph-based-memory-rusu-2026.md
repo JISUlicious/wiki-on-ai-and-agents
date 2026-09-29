@@ -2,7 +2,7 @@
 title: "Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents"
 type: source
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.28978"
 authors:
@@ -118,7 +118,7 @@ Removed nodes are characterized as low re-reference frequency, limited structura
 
 **Complexity.** Two exhaustive vector scans dominate — one at de-duplication `O(kNd)`, one at retrieval `O(qNd)` — giving per-turn `O(Nd + M)`. Forgetting is `O(N+M)` every 400 turns, amortized `O((N+M)/T)`. The authors point out the scan terms are incidental (an ANN index removes them), "leaving the forgetting module as the mechanism that bounds N itself." That is the honest architectural case for the pruner: it is the only component that bounds the thing that grows.
 
-> [!warning] Contradiction
+> [!success] Resolved contradiction
 > This paper contradicts a claim currently made on the [[graph-memory]] concept page. That page states: *"The trade-off versus dense-vector memory is retrieval **simplicity** for relational **expressiveness** — graph traversals can answer multi-hop queries that flat embeddings struggle with, at the cost of a heavier ingest pipeline and more complex retrieval."*
 >
 > Two things are wrong with that framing in light of these measurements.
@@ -130,6 +130,8 @@ Removed nodes are characterized as low re-reference frequency, limited structura
 > **Scope of the refutation — be precise.** This refutes *extraction-based graph retrieval as a general default*, at this pipeline's fidelity. It does **not** refute [[hipporag-2]], whose design differs in exactly the way that matters: HippoRAG 2 keeps **passage nodes as first-class citizens** linked to extracted phrases, so the original text remains reachable and the surface form is never discarded. Reading these two papers together, the compatible synthesis is that the failure lies in *replacing* text with entities, not in *indexing* text with entities. The authors themselves also decline the general claim — one small extractor, one benchmark.
 >
 > **The forgetting half survives untouched, and points the other way.** Nothing here counts against graph-structured *retention*: the importance function pruned 9.8% of a 27,021-node store with no significant loss on any of four metrics. Whatever else is true of graph memory, the fact that a graph exposes degree centrality and incident-edge structure is what makes principled pruning available at all — a flat store has no centrality term to score with.
+>
+> **Resolved 2026-09-29:** [[graph-memory]]'s trade-off sentence was rewritten to reflect this result, scoped to extraction-based graphs.
 
 ## Limitations
 

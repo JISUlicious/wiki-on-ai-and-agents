@@ -7,6 +7,17 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-29] lint | Broken links and contradictions, second pass
+
+**Broken links: 176 → 164 targets.** Seven links repointed to existing pages: `recurrent-depth-model`, `inference-time-scaling`, `gaia-benchmark`, `attention`, `looped-language-model`, `chinchilla-scaling-laws` and `sft`. Five "broken links" were never links: they sit inside inline code, which Obsidian does not render as links. The lint and integrity parsers now skip inline code too. About 30 stale "no page yet" notes were rewritten, since their pages now exist; the notes now name only what is still missing. The remaining 164 are each linked from one page and are mostly intentional red links for pages not yet written. Not auto-fixed.
+
+**Contradictions: 22 → 15 open.**
+- [[harness-vs-model-attribution]] and [[prime-agent-self-improving-rlm-harness-karten-2026]] — resolved from ARC Prize's own results pages. GPT-5.6 Sol scores 13.33% on the 25-game Public set; Terra scores 2.3%. Prime Agent's figure mislabels 13.3% as Terra. **NVIDIA's 6.4× stands.** The 2026-09-07 "~11×" update is marked superseded: it divided a Public-set score by a Semi-Private one.
+- [[agent-skills]] with [[is-progressive-disclosure-all-you-need-he-2026]], and [[graph-memory]] with [[selective-forgetting-graph-based-memory-rusu-2026]] — the concept pages were rewritten to state the controlled results, with their scope limits.
+- [[skill-library]] with [[what-is-missing-from-ai-post-training-ai-lim-2026]] — not a real contradiction once the condition is stated: skill creation happens when the loop mandates it.
+- [[clawgym-ii-black-box-rl-agent-harness-song-2026]] — kept open but reworded after reading both papers. The two claims concern different things, and the deciding fact (what ClawGym's proxy serves) is not stated anywhere.
+- Genuinely open: harness evolution vs matched-budget search, reflection vs sampling at larger scale, ACE's append-mostly design, three quantization disputes, chunked prefill vs disaggregation, and two single-study findings.
+
 ## [2026-09-29] lint | Auto-fix: errors, warnings and suggestions (option 3)
 
 **Errors.** Broken link targets fell from 221 to 176. 40 draft stubs were created for targets linked from 2+ pages, 3 true synonyms were repointed (`react-prompting` → [[react]], `embedding-retrieval` → [[dense-retrieval]], `multi-turn-rl` → [[agentic-rl]]), and 2 typos fixed. The other 8 "synonyms" proposed in the lint report were wrong: they name specific models or sibling topics, so they became their own pages instead. Index: 35 entries moved out of topic subsections under `## Sources`, 4 pages given their first real entry, 1 duplicate removed, and a new "Software, libraries, and hardware platforms" entity subsection. 57 `authors` / `first_author` strings linked to existing person and org pages. One was reverted: the Hao Peng on [[what-is-missing-from-ai-post-training-ai-lim-2026]] is the Tsinghua researcher, not the UIUC [[hao-peng]].

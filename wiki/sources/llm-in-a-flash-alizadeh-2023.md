@@ -175,7 +175,7 @@ MMLU: Persimmon holds flat only with the high-rank last-4-layer predictors; **Ph
 - [[zero-offload-ren-2021]] — the training-side ancestor of tiered offloading; FlexGen is the inference-side comparator the paper argues is still flash-bandwidth-bound.
 - [[hardware-accelerator]] · [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] · [[hbm-is-not-all-you-need-wei-2026]] — the memory-tier framing from the other direction (on-chip vs HBM rather than DRAM vs flash).
 - [[sparse-attention]] · [[token-pruning]] — the *other* sparsity families in this wiki, both prefill-side and structural; activation sparsity is per-neuron and decode-side.
-- [[activation-sparsity]] · [[edge-inference]] — no pages yet.
+- [[activation-sparsity]] · [[edge-inference]]
 - [[nvidia]] — the RTX 4090 backend.
 
 ## References

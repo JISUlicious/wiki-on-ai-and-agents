@@ -135,7 +135,7 @@ The strongest of the four papers here. Everything is PCIe cards on a real cluste
 - [[llm-inference-roofline-yuan-2024]] · [[arithmetic-intensity]] — MFU >70% vs MBU <1% is the sharpest empirical statement of the prefill/decode split in any of these four papers.
 - [[methods-to-speed-up-prompt-processing]] · [[from-llm-inference-to-agentic-workloads-chang-2026]] — serving context; agentic traffic moves the L_in/L_out ratio that decides whether MemHA pays.
 - [[long-context-llm]] · [[longbench]] — the 14B regime where the win is largest is the long-context one.
-- [[hardware-accelerator]] · [[tenstorrent]] · [[groq]] — no pages yet.
+- [[hardware-accelerator]] · [[groq]] · [[tenstorrent]] — `tenstorrent` has no page yet.
 - [[nvidia]] · [[qwen]] · [[vllm]] · [[shanghai-jiao-tong-university]] — vendor, model family, engine, affiliation.
 
 ## References

@@ -162,7 +162,7 @@ It does, however, address edge devices directly — as the *future* beneficiary 
 - [[llm-memory-and-compute-bottlenecks]] — the wiki's inference-bottleneck query; weights-as-bytes-per-token is the decode-side term.
 - [[memory-management]] — note: this wiki's page of that name is about *agent* memory lifecycles, not the hardware memory hierarchy; linked for disambiguation only.
 - [[scaling-laws-kaplan-2020]] — the paper's ref [1], cited for the parameter-growth trend that creates the capacity problem.
-- [[edge-inference]] · [[energy-efficiency]] — no pages yet; this source is a natural seed for both.
+- [[edge-inference]] · [[energy-efficiency]] — `energy-efficiency` has no page yet; this source is a natural seed for it.
 - [[nvidia]] · [[deepseek]] · [[llama]] — the platform and the model families.
 
 ## References

@@ -109,7 +109,7 @@ Hold the adapter, swap the model: +20 pp Match-SOTA. Hold the model, swap the ha
 - [[code-generation]] · [[llm-agent]] · [[agentic-harness-engineering]] — the operators are code transformations; the harness-vs-model separation is the paper's cleanest experimental idea.
 - [[claude-code]] · [[claude-opus-4-8]] — general-purpose harness/model baselines in the comparison tables.
 - [[tsinghua-university]] · [[zhejiang-university]] · [[shanghai-jiao-tong-university]] — affiliations.
-- [[mle-bench]] — the primary benchmark (no page yet).
+- [[mle-bench]] — the primary benchmark.
 
 ## References
 

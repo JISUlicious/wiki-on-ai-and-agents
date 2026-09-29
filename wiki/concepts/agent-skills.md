@@ -2,7 +2,7 @@
 title: Agent Skills (Anthropic)
 type: concept
 created: 2026-05-16
-updated: 2026-05-31
+updated: 2026-09-29
 sources:
   - anthropic-agent-skills-2025.md
   - anthropic-engineering-skills-2025.md
@@ -27,7 +27,7 @@ The defining architectural choice. Context is loaded lazily across three levels 
 - **Level 2 — Body loaded on demand**: once Claude judges a skill relevant to the task at hand, the full SKILL.md body (workflow steps, examples, constraints) is loaded into context.
 - **Level 3 — Supporting files referenced from body**: scripts, templates, and reference docs in the skill directory are loaded only when the body's instructions explicitly reference them mid-execution.
 
-The cumulative effect: planning sees a thin index; execution unfolds the relevant subtree on demand. This is the principle that makes the format scale to organization-wide skill catalogs.
+The cumulative effect: planning sees a thin index; execution unfolds the relevant subtree on demand. Anthropic presents this as the principle that lets the format scale to organization-wide skill catalogs. The first controlled study ([[is-progressive-disclosure-all-you-need-he-2026|He et al. 2026]]) supports a narrower version. Disclosure helps when the agent would otherwise navigate badly, and adds nothing measurable under a strong harness (0.8943 vs 0.8977 flat). And adding levels of *always-loaded* descriptions can hurt badly: a hierarchical pack collapsed one task from 0.9126 to 0.6398 as child descriptions saturated the router's context. The study measured disclosure over document chunks, not over heterogeneous capability skills, so it qualifies the claim rather than overturning it. Its own prescription is one layered skill, not many parallel packages.
 
 ### Filesystem navigation + code execution (engineering deep-dive)
 
@@ -71,7 +71,7 @@ Anthropic frames Skills around four properties differentiating them from naive t
 |---|---|
 | **Composability** | Skills stack. Claude identifies which apply and coordinates them — no manual selection. |
 | **Portability** | Same format across apps, [[claude-code\|Code]], and API. Build once, run anywhere. |
-| **Efficiency** | Load only what's needed, when it's needed (progressive disclosure). |
+| **Efficiency** | Load only what's needed, when it's needed (progressive disclosure). Conditional in controlled tests; more always-loaded levels can hurt. |
 | **Power** | Skills can include executable code — deterministic execution beats token generation for many tasks. |
 
 ## Comparison with function calling and MCP
@@ -142,7 +142,7 @@ The convergence happened organically rather than via formal standardization, bec
 - Engineering: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - Open standard: https://agentskills.io
 
-> [!warning] Contradiction — progressive disclosure is conditional, and adding levels can hurt
+> [!success] Resolved contradiction — progressive disclosure is conditional, and adding levels can hurt
 > This page presents three-level progressive disclosure as what "makes the format scale to organization-wide skill catalogs," and lists Efficiency as an unqualified property. [[is-progressive-disclosure-all-you-need-he-2026|He et al. 2026]] is the first *controlled* study of the pattern, and qualifies both claims:
 > - **Not a universal accuracy lever.** Under a strong harness on a single document, disclosure adds nothing measurable (Codex/gpt-5.4-mini: raw 0.8943 vs flat 0.8977 on En.MC — a tie within noise). The benefit is *conditional on the agent navigating badly on its own*; Codex's bare agent reconstructs locate-then-read by grepping. Their summary: **"progressive disclosure buys context, not intelligence."**
 > - **Always-loaded descriptions do not scale by adding levels.** A `hierarchical` pack — many sibling skills each with a resident description, behind a meta-router — is structurally the same shape as a large L1 catalog, and it **collapsed En.MC 0.9126 → 0.6398** and **Zh.QA 0.7479 → 0.3890**, "as the always-loaded child descriptions saturate the router's context before it commits to a chunk."
@@ -150,6 +150,8 @@ The convergence happened organically rather than via formal standardization, bec
 > Their prescription is explicitly **one level**: *"package a book as one skill layered progressive disclosure, not as multiple parallel packages of child skills with always-loaded descriptions."*
 >
 > **Scope limits before over-reading it**: the study measures disclosure over **document chunks**, not over heterogeneous capability skills (the actual Agent Skills use case), and the authors flag a pre-training confound on the English multiple-choice subset. At **library scale the picture flips** — bundling twenty books sinks even Codex, and the flat pack becomes decisive. So the format's scaling claim survives; the *unconditional accuracy* claim and the *more-levels-is-better* intuition do not.
+>
+> **Resolved 2026-09-29:** the scaling claim above was rewritten as conditional, and the Efficiency row qualified, following He et al. 2026.
 
 ## Related 2026 sources
 

@@ -206,7 +206,7 @@ Beyond the three sufficient-statistic failures above:
 - [[agent-benchmark]] · [[llm-agent]] · [[tool-use]] · [[procedural-memory]] · [[long-term-memory]]
 
 > [!note] Wikilink gaps
-> `[[tau-bench]]` (Sierra τ-Bench, used here and a standard agent benchmark) and `[[purdue-university]]` have **no page yet**. Both are linked above per convention so the backlinks exist when they are created. `jie-tang` (co-author of the companion Trace-as-State ingest) is likewise absent from `wiki/entities/`.
+> [[tau-bench]] (Sierra τ-Bench, used here and a standard agent benchmark) and [[purdue-university]] now have pages. `jie-tang` (co-author of the companion Trace-as-State ingest) is still absent from `wiki/entities/`.
 
 ## References
 

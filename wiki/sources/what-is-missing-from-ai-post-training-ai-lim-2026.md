@@ -98,8 +98,10 @@ The finding is a precise instance of the [[metacognition]] page's two-level acco
 >
 > **Resolved 2026-09-29:** [[self-improving-agent]]'s mechanism section was rewritten to reflect this finding.
 
-> [!warning] Contradiction — skills are consumed, not produced
+> [!success] Resolved contradiction — skills are consumed, not produced
 > The [[skill-library]] / [[voyager]] premise is that a long-horizon agent turns experience into reusable skills. Here an agent with a `create-skill` meta-skill, explicit instructions to use it, and 18–60 skill reads per run **creates zero skills in any run**. This is the opposite end of the failure from [[continualskillbench-guan-2026]] and [[catastrophic-remembering]] (uncurated over-accumulation): when skill creation is left to the agent's initiative inside a demanding task, it does not happen at all. Both point at the same gap — the agent does not spontaneously reopen its own process.
+>
+> **Resolved 2026-09-29:** not a contradiction of Voyager once the condition is stated: Voyager's curriculum mandates skill creation, while here it was optional. [[skill-library]] now says so.
 
 Consistent with [[rethinking-evaluation-harness-evolution-wang-2026]], whose trajectory analysis found harness self-edits "memorize fixes rather than distilling strategies" — the same local-vs-global shape one level up. Consistent with [[rehearse-confidence-cliff-autoresearch-ji-2026]] on the gate degrading late in a loop, and sharper: here the gate is not consulted at all for the choice that matters. [[frontis-ma1-ai4ai-recursive-self-improvement-yang-2026]] is the optimistic AI4AI result on [[mle-bench]]; this paper explains what its harness gains do and do not touch. And the [[agentic-harness-engineering]] literature's "the harness is worth more than the model" story holds here for execution — the framework beats the autonomous baseline of a stronger-looking configuration — while being irrelevant to the ceiling.
 

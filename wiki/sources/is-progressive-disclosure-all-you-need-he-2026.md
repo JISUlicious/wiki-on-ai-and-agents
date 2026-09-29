@@ -2,7 +2,7 @@
 title: "Is Progressive Disclosure All You Need for Long-Context Agents?"
 type: source
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-09-29
 sources:
   - is-progressive-disclosure-all-you-need-he-2026.md
 arxiv_id: "2607.17598"
@@ -31,11 +31,13 @@ Three routes to the same book are compared, over one fixed chunk set so only the
 
 The headline is a boundary condition, not a refutation: **"progressive disclosure buys context, not intelligence."** On a single book the gain is entirely a function of how badly the harness navigates raw text — large under Pi and Claude-Code, indistinguishable from zero under Codex, whose bare agent *reconstructs locate-then-read on its own* by grepping the raw text for the entities each question names. For such an agent, a pre-cut skill pack "buys controllability of the retrieval path, not accuracy." At library scale the verdict flips hard: bundling twenty books sinks even Codex, and the flat pack becomes decisive. And the second routing level **never helps and sometimes destroys accuracy**, because always-loaded child descriptions recreate exactly the context pressure disclosure exists to relieve.
 
-> [!warning] Contradiction
+> [!success] Resolved contradiction
 > The wiki's [[agent-skills]] page frames three-level progressive disclosure as the mechanism that "makes the format scale to organization-wide skill catalogs," and lists Efficiency ("load only what's needed, when it's needed") as an unqualified property. This paper is the first controlled evidence and it qualifies both claims.
 > **(1) Not a universal accuracy lever.** Under a strong harness on a single document, disclosure adds nothing measurable (Codex/gpt-5.4-mini: raw 0.8943 vs. flat 0.8977 on En.MC, a tie within noise on all three subsets). Its benefit is *conditional on the agent navigating badly on its own*.
 > **(2) Always-loaded descriptions do not scale by adding levels.** The `hierarchical` pack — many sibling skills, each with a description resident in context, routed by a meta-router — is structurally the same shape as a large L1 skill catalog. It collapsed **En.MC from 0.9126 to 0.6398** on Pi/gpt-5.4-mini and **Zh.QA from 0.7479 to 0.3890** on qwen3.6-27b, "as the always-loaded child descriptions saturate the router's context before it commits to a chunk." At K=20 books it falls back onto raw on En.QA (0.267 vs. raw 0.257) while flat holds 0.462.
 > The paper's own prescription is explicitly one level: *"package a book as one skill layered progressive disclosure, not as multiple parallel packages of child skills with always-loaded descriptions."* Caveats before over-reading it: this measures disclosure over **document chunks**, not over heterogeneous capability skills, and the En.MC subset carries a pre-training confound the authors flag themselves (canonical English novels the models likely memorized — the raw agent answers En.MC correctly in a handful of tool calls at K=20, far too few to have read twenty books).
+>
+> **Resolved 2026-09-29:** [[agent-skills]] now states the conditional version of the claim, with this paper's numbers and its scope limit (document chunks, not capability skills).
 
 ## Key points
 

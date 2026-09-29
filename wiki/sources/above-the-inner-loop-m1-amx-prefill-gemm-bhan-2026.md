@@ -140,7 +140,7 @@ Nothing in the paper places these numbers against Metal. The kernel's ~1.2 TFLOP
 - [[quantization-performance]] · [[methods-to-speed-up-prompt-processing]] — the Metal-backend Apple Silicon numbers this should not be confused with.
 - [[llama-cpp]] · [[gguf]] · [[llama]] — the engine, the file format and the model family used for the end-to-end run.
 - [[arithmetic-intensity]] · [[hardware-accelerator]] · [[edge-inference]] · [[apple]] · [[mlx]]
-- [[amx]] · [[apple-silicon]] · [[metal]] — no pages yet (unresolved).
+- [[apple-silicon]] · [[amx]] · [[metal]] — `amx` and `metal` have no pages yet.
 
 ## References
 

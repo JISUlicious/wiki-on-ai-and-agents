@@ -2,7 +2,7 @@
 title: "Prime Agent: A Self-Improving RLM Harness"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-29
 sources: []
 arxiv_id: "2608.23552"
 year: 2026
@@ -45,9 +45,9 @@ The headline is [[arc-agi-3-arc-prize-foundation-2026|ARC-AGI-3]] RHAE Best@1 **
 |---|---|---|---|
 | Prime Agent + Opus 5 | **95.5%** | Human baseline | 95.4% |
 | Prime Agent + GPT-5.6 Sol | 78.3% | GPT-5.6 Sol, Responses API | 38.3% |
-| Prime Agent + Terra | 25.7% | GPT-5.6 Terra, Responses API | 13.3% |
+| Prime Agent + Terra | 25.7% | GPT-5.6 Terra, Responses API | 13.3% (mislabelled: ARC Prize has 13.33% for **Sol**; Terra is 2.3%) |
 | Prime Agent + GLM 5.2 | 8.6% | **Opus 5, ARC harness** | **30.2%** |
-| Hermes Agent + GPT-5.6 Sol | 5.8% | GPT-5.6 Sol, ARC harness | 7.0% |
+| Hermes Agent + GPT-5.6 Sol | 5.8% | GPT-5.6 Sol, ARC harness | 7.0% (Semi-Private set, XHigh effort) |
 
 So the abstract's "30% → 95.5%" is **Opus 5 under ARC's own harness (30.2%, an external number) → Opus 5 under Prime Agent (95.5%)**. Model class is held fixed, but the baseline is not the authors' own measurement, and they say so twice: "we note that Claude Code and Codex runs perform worse than Anthropic and Open AI self-reported performance on ARC-AGI-3 (public set), so we defer to their results over our own runs with matched prompt and settings," and "[the reference lines] are external values because our native-harness reruns fell below the published scores, so they **situate the result rather than isolate a causal harness effect**." The intro also quotes the same result as "30% to 95%," inconsistent with the abstract's 95.5%.
 
@@ -117,17 +117,19 @@ The task the wiki poses to every accumulating harness ([[catastrophic-rememberin
 - **The three flagship non-ARC results are nulls or reversals** — nanoGPT (harness within noise), PMPP-Hard (ordering reverses), long-context (row-by-row trade). The token-efficiency claim that would rescue PMPP-Hard is asserted without numbers.
 - **Model coverage is uneven.** GLM-5.2 reaches 8.6% RHAE where Opus 5 reaches 95.5%; the harness's value is evidently a strong function of the backbone, which cuts against reading 95.5% as a harness property.
 
-> [!warning] Contradiction — the ARC-AGI-3 baseline for GPT-5.6 Sol
+> [!success] Resolved contradiction — the ARC-AGI-3 baseline for GPT-5.6 Sol
 > [[nvidia-oo-agents-furgale-2026]] is recorded in this wiki as reaching "RHAE **85.1%** (170 levels)" on GPT-5.6-sol "vs ARC Prize's own evaluation of raw GPT-5.6-sol at **13.3%** on the same 25 public games — a 6.4× harness effect," and [[harness-vs-model-attribution]] carries that pair as its largest single datapoint. Prime Agent's Figure 5 reports **three different raw numbers for that model class**: GPT-5.6 **Sol** on the [[responses-api|Responses API]] = **38.3%**, GPT-5.6 **Sol** under the ARC harness = **7.0%**, and 13.3% attributed to GPT-5.6 **Terra** on the Responses API — a *different* model from Sol in this paper's own legend.
 >
 > Both papers cannot be right about what "raw GPT-5.6-sol" scores. Either the wiki's NVIDIA entry has the variant wrong (13.3% is Terra, not Sol), or the two labs are quoting different ARC configurations under the same name. Until that resolves, **the 6.4× figure should be treated as unverified**: against 38.3% the same NVIDIA result is 2.2×, and against 7.0% it is 12.2×. This is a measurement-hygiene problem for the whole harness-attribution question, not a dispute about either system.
+>
+> **Resolved 2026-09-29 against ARC Prize's own results pages** ([Sol](https://arcprize.org/results/openai-gpt-5-6-sol), [Terra](https://arcprize.org/results/openai-gpt-5-6-terra), both dated 2026-07-09). GPT-5.6 **Sol** at max reasoning effort averages **13.33% on the 25-game Public set** and 7.78% on Semi-Private; **Terra** averages **2.3%** Public and 0.80% Semi-Private. So 13.3% belongs to Sol, and Prime Agent's legend mislabels it as Terra. NVIDIA's comparison is like-for-like: same model, same game set, same effort. **The 6.4× figure (85.1 / 13.33) stands**, though evaluation budgets differ, NVIDIA itself calls it indicative, and its 85.1% is a self-reported community-leaderboard entry. The alternatives do not hold as raw baselines. 7.0% and 7.8% are **Semi-Private** scores (7.0% matches Sol at XHigh effort, 7.8% at Max), so dividing a Public-set 85.1% by them crosses game sets. 38.3% is OpenAI's self-reported Public-set result with Responses API retained reasoning and compaction switched on, a harnessed configuration rather than a raw baseline. This paper's Figure 5 also mixes Public and Semi-Private numbers, and verified with self-reported ones, on a single axis.
 
 > [!note] Three-way ARC-AGI-3 RHAE comparison
 > | System | Backbone | RHAE | Its own stated baseline |
 > |---|---|---|---|
 > | [[nvidia-oo-agents-furgale-2026|NVIDIA NOOA]] | GPT-5.6-sol | 85.1% (170 levels) | 13.3% raw |
 > | **Prime Agent** | **Opus 5** | **95.5%** | 30.2% (Opus 5, ARC harness) |
-> | Prime Agent | GPT-5.6 Sol | 78.3% | 38.3% / 7.0% (see above) |
+> | Prime Agent | GPT-5.6 Sol | 78.3% | 38.3% self-reported (harnessed) / 7.0% Semi-Private (see above) |
 >
 > On the **same backbone** — GPT-5.6 Sol — NOOA's 85.1% is **ahead of** Prime Agent's 78.3%. Prime Agent's higher headline comes from switching to Opus 5, not from a better harness on a shared model. Neither result is a matched-budget comparison, and NOOA's own caveat (evaluation budgets differ) applies to both. A newsletter figure of "NVIDIA AVO at 100%" could not be verified — no such system appears in either paper or anywhere in this wiki.
 
