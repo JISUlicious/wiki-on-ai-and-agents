@@ -2,7 +2,7 @@
 title: "Reaching Agreement Among Reasoning LLM Agents"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - reaching-agreement-among-reasoning-llm-agents-ruan-2025.md
 arxiv_id: "2512.20184"
@@ -45,3 +45,7 @@ It contributes a formal model of "multi-agent refinement" (correctness guarantee
 
 ## References
 - arXiv:2512.20184
+
+## Related 2026 sources
+
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

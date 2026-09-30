@@ -2,7 +2,7 @@
 title: Function Calling
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - function-calling-llms-promptingguide.md
   - openai-function-calling-2025.md
@@ -128,3 +128,8 @@ Function calling lives at **L3**: it is the JSON-payload protocol by which the m
 - [[function-calling-llms-promptingguide]]
 - [[openai-function-calling-2025]]
 - [[vllm-tool-calling-2025]]
+
+## Related 2026 sources
+
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3

@@ -2,7 +2,7 @@
 title: HippoRAG 2
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - hipporag2-jimenez-gutierrez-2025.md
 status: complete
@@ -36,3 +36,7 @@ HippoRAG 2 contributes the **graph-indexed retrieve** operation to [[memory-mana
 ## References
 
 - [[hipporag2-jimenez-gutierrez-2025]] — Jiménez Gutiérrez et al., *From RAG to Memory: Non-Parametric Continual Learning for LLMs*, ICML 2025 ([arXiv:2502.14802](https://arxiv.org/abs/2502.14802))
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

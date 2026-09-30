@@ -2,7 +2,7 @@
 title: Quantization
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - gptq-frantar-2022.md
   - awq-lin-2023.md
@@ -125,3 +125,8 @@ Dettmers & Zettlemoyer's **k-bit inference [[scaling-laws|scaling laws]]** ([arX
 ## Training systems
 
 - [[mixed-precision-training]] — the training-time ancestor: fp32 master weights, loss scaling, fp32 accumulation
+
+## Related 2026 sources
+
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

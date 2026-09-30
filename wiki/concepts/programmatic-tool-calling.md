@@ -2,7 +2,7 @@
 title: Programmatic Tool Calling
 type: concept
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources:
   - the-bitter-lesson-of-tool-calling-patel-2026.md
 status: complete
@@ -30,6 +30,8 @@ This is why the paper's title invokes the bitter lesson: the advantage **tracks 
 - Under context flooding, JSON degrades **−2.3%** while programmatic calling *improves* **+5.5%**.
 - Token crossover at roughly **N ≈ 26** tools.
 
+  - Measured end-to-end on enterprise agent tasks, the picture is weaker: [[is-bash-all-you-need-enterprise-agents-mak-2026|Is Bash All You Need?]] (Microsoft, 2026) finds programmatic tool calling saves tokens but improves score only for Opus on one benchmark, trails plain bash everywhere, and has the lowest tool-call success rate (65.2%). The 11-of-14 result above comes from echo-stub BFCL tests.
+
 The sharpest structural result is a scaling wall: Claude Sonnet 5's JSON enumeration is 100% at N ≤ 70, 75% at N = 72, and **0% at N = 100**, while the programmatic path holds 100% at both — though GPT-5.6-Sol holds 100% JSON through N = 100, so this is a serialization limit of one implementation rather than a universal one.
 
 > [!warning] The aggregate goes the other way
@@ -48,3 +50,7 @@ The sharpest structural result is a scaling wall: Claude Sonnet 5's JSON enumera
 ## References
 
 - [[the-bitter-lesson-of-tool-calling-patel-2026]]
+
+## Related 2026 sources
+
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed

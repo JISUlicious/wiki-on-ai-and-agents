@@ -2,7 +2,7 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
@@ -86,3 +86,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]] — **invisible reasoning**: filler tokens lift accuracy up to +30 pp, and Opus 4.5 satisfies a hidden constraint 33.5%→44.5% with no visible trace — behavioural corroboration that output-only verification has a blind spot
 - [[gamut-two-level-meta-rubrics-chen-2026]] — factual *completeness* as a verification target, not just precision
 - [[arex-recursive-self-improving-research-baai-2026]] — verification gating the transition *between* research rounds (Accept/Refine/Restart), exploiting the discover-vs-verify asymmetry
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble

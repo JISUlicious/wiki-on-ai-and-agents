@@ -2,7 +2,7 @@
 title: "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses"
 type: source
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-09-30
 sources:
   - agentic-harness-engineering-lin-2026.md
 arxiv_id: "2604.25850"
@@ -101,3 +101,7 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 - **Benchmarks**: Terminal-Bench 2 (primary), SWE-bench-verified (transfer).
 - **Substrate**: NexAU harness framework (refs [23, 37] in the paper) — the file-level, decoupled component substrate that makes component observability possible.
 - **Trajectory analysis**: Agent Debugger (ref [17]) — the framework AHE uses to turn raw rollouts into the layered evidence corpus.
+
+## Related 2026 sources
+
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)

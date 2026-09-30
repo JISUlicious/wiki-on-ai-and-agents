@@ -2,7 +2,7 @@
 title: "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - single-agent-vs-multi-agent-tran-2026.md
 arxiv_id: "2604.02460"
@@ -43,3 +43,7 @@ Their controlled study spans three model families (Qwen3, DeepSeek-R1-Distill-Ll
 ## References
 
 - arXiv: [arXiv:2604.02460](https://arxiv.org/abs/2604.02460)
+
+## Related 2026 sources
+
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

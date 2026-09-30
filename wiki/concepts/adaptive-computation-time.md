@@ -2,7 +2,7 @@
 title: Adaptive Computation Time (ACT)
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-09-30
 sources:
   - adaptive-computation-time-graves-2016.md
 status: complete
@@ -40,3 +40,7 @@ tags:
 - [[adaptive-computation-time-graves-2016]] — Graves 2016, the canonical paper
 - [[universal-transformer-dehghani-2018]] — first transformer adoption
 - [[looped-transformers-length-generalization-fan-2024]] — modern variant using confidence-based halting
+
+## Related 2026 sources
+
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters

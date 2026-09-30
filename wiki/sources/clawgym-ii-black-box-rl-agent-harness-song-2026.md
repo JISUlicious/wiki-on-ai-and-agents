@@ -2,7 +2,7 @@
 title: "ClawGym II: Exploring Black-Box RL on Agent Harness"
 type: source
 created: 2026-09-05
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.16798"
 year: 2026
@@ -128,6 +128,8 @@ In-loop, white-box RL wins big (+18.21 over base, +8.53 over the black-box model
 > **Status after reading both papers in full (2026-09-29): narrower than it first looked, and still open.** The two claims concern different things. This paper's claim is about the *response* tokens and always holds. Agent Lightning's is about the *context* the next turn was sampled under. Which one bites here turns on a fact this paper never states: whether its proxy serves the model the grafted token sequence (then training is on-policy) or the harness's re-serialized text (then Agent Lightning's objection applies). Every relevant passage places the grafting in offline trajectory reconstruction (§3.1, §3.2.4), and the paper concedes that harness transformations "may alter the representation of model outputs before they re-enter subsequent interactions". That points toward the second case, but the paper's longest-prefix matching (§3.2.1) would not work cleanly in that case, so it cannot be settled from the text.
 >
 > Two further points. First, as an *inference*, the truncated importance ratio `min(exp(log π_old − log π_rollout), c̄)` would partly absorb a context mismatch, not only the engine drift it is framed around. Second, neither paper measures the size of either error; Agent Lightning's 64% rollout-split figure mixes retokenization with subagents and summarization. Settling this needs ClawGym's code or an author statement on how the proxy handles requests.
+>
+> **Update 2026-09-30:** [[score-centering-stabilizes-off-policy-rl-marek-2026|Score Centering]] finds that truncated importance sampling reintroduces drift and collapses under severe sampler–trainer mismatch, so the inference above — that the ratio would partly absorb a context mismatch — holds only partially at best. It does not study context mismatch itself, so it does not settle the dispute.
 
 ## Agent Lightning v1.0 vs. ClawGym II — same boundary, different answers
 
@@ -175,3 +177,8 @@ In-loop, white-box RL wins big (+18.21 over base, +8.53 over the black-box model
 - ClawGym (predecessor): Bai et al., arXiv:2604.26904
 - Prefix-tree construction credited to Kat-Coder-V2 (arXiv:2603.27703); token-in-token-out to Gallouédec & Rasul (HF blog); IS correction to Yao et al. 2025
 - Compared / cited frameworks: Polar (arXiv:2605.24220), Dressage, OpenForgeRL (arXiv:2607.21557)
+
+## Related 2026 sources
+
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails

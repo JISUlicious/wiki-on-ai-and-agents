@@ -2,7 +2,7 @@
 title: Layer Skipping
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - pop-prefill-only-pruning-he-2026.md
   - fast-forward-predictive-ffn-sparsity-prefill-gautam-2026.md
@@ -27,3 +27,7 @@ importance: low
 ## References
 
 - [[pop-prefill-only-pruning-he-2026]] · [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026]]
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

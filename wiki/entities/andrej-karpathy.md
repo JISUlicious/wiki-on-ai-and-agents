@@ -57,3 +57,8 @@ AI researcher and educator. His own site describes him as a founding member of [
 - [karpathy/autoresearch](https://github.com/karpathy/autoresearch) — "AI agents running research on single-GPU nanochat training automatically"
 - [llm-wiki.md gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — the LLM Wiki pattern (created 2026-04-04)
 - [[parcae-scaling-laws-looped-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[last-ai-built-by-humans-recursive-self-improvement-duan-2026]] · [[what-is-missing-from-ai-post-training-ai-lim-2026]] · [[wikiskill-compiling-agent-experience-tang-2026]]
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours

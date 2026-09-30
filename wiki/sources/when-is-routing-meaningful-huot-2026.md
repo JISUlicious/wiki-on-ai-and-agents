@@ -2,7 +2,7 @@
 title: "When is Routing Meaningful? Diversity and Robustness in Language Model Societies"
 type: source
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-09-30
 sources:
   - when-is-routing-meaningful-huot-2026.md
 arxiv_id: "2607.09197"
@@ -57,3 +57,7 @@ The headline empirical result is that **accuracy and meaningfulness sharply dive
 
 - [arXiv:2607.09197](https://arxiv.org/abs/2607.09197) — "When is Routing Meaningful? Diversity and Robustness in Language Model Societies", Fantine Huot, Michael Kaisers, Mirella Lapata, Google DeepMind, 2026.
 - Balch (2000), "Hierarchic social entropy: An information theoretic measure of robot group diversity", *Autonomous Robots* 8(3):209–238 — the metric adapted here.
+
+## Related 2026 sources
+
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win

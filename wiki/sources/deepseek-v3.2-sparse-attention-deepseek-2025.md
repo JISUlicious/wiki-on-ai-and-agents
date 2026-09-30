@@ -2,7 +2,7 @@
 title: "DeepSeek-V3.2: DeepSeek Sparse Attention and the Lightning Indexer"
 type: source
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-09-30
 sources: []
 arxiv_id: "2512.02556"
 authors:
@@ -69,3 +69,4 @@ The rest of the paper — the RL training pipeline, reasoning-mode results, the 
 
 - [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — skips 56 of the indexer's 64 heads per query, training-free, at LongBench 50.85 vs 51.05
 - [[gated-sparse-attention-shen-2026]] — assumes the indexer has 4 heads; the released config says 64 — see the contradiction on [[trained-sparse-attention]]
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

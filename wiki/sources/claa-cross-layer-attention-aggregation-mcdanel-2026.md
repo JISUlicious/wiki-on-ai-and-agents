@@ -2,7 +2,7 @@
 title: "CLAA: Cross-Layer Attention Aggregation for Accelerating LLM Prefill"
 type: source
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-30
 sources:
   - claa-cross-layer-attention-aggregation-mcdanel-2026.md
 arxiv_id: "2602.16054"
@@ -142,3 +142,7 @@ The autoregressive rewrite dominates the compressors' latency; they would only p
 ## References
 
 - [arXiv:2602.16054](https://arxiv.org/abs/2602.16054) — v1, 17 Feb 2026.
+
+## Related 2026 sources
+
+- [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth

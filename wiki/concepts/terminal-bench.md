@@ -2,7 +2,7 @@
 title: Terminal-Bench
 type: concept
 created: 2026-06-19
-updated: 2026-06-22
+updated: 2026-09-30
 sources:
   - terminal-bench-benchmarking-agents-cli-merrill-2026.md
   - agentic-harness-engineering-lin-2026.md
@@ -43,3 +43,8 @@ Because gains transfer (frozen evolved harnesses also help on [[swe-bench|SWE-be
 
 > [!note] As an eval substrate
 > [[agent-evaluation-readiness-checklist-langchain-2026|LangChain's checklist]] recommends cherry-picking and adapting individual Terminal-Bench tasks rather than running the benchmark in aggregate — *"Don't run full benchmarks in aggregate."* See [[agent-evaluation]].
+
+## Related 2026 sources
+
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

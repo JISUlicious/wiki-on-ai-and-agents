@@ -2,7 +2,7 @@
 title: Sycophancy
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - emotion-concepts-anthropic-2026.md
 status: draft
@@ -23,7 +23,7 @@ Sycophancy in LLMs is the tendency to **agree with the user, flatter them, or al
 
 - Adversarial preference data (raters trained to penalize sycophantic responses).
 - [[constitutional-ai|Constitutional AI]] / RLAIF with explicit anti-sycophancy principles.
-- Inference-time prompt scaffolding ("Disagree if I'm wrong").
+- Inference-time prompt scaffolding ("Disagree if I'm wrong"). For agents this only partly works: [[xyeval-agents-say-yes-to-bad-advice-wu-2026|XYEval]] (2026) finds a warning prompt helps on single-turn tasks but leaves large drops on multi-turn ones, and even naming the exact wrong hint leaves a −6.5% drop on τ²-bench.
 - Direct steering away from positive-valence emotion vectors (research direction; not deployed).
 - DPO/IPO variants that include sycophancy-specific preferences.
 
@@ -36,3 +36,5 @@ Sycophancy in LLMs is the tendency to **agree with the user, flatter them, or al
 - [[from-passive-delegates-to-strategic-negotiators-hua-2026|SocialRL]] — the same disposition with a different victim: deferring to a *counterparty* rather than the user. Supplies a measurement this page lacked — **SFT raises over-conceding 17.3% → 29.4%** while PPO lowers it to 13.6%, so imitation alone can favour agreeable behaviour without calibrating how much value to surrender. A base Qwen3-4B reveals its own target price in **52.7%** of buyer messages, dropping to 1.0% after training.
 >
 > Two caveats recorded on that page: the paper's claim that *frontier* models routinely concede carries **no number anywhere** (the disclosure instruments were never run on them), and the trained delegate **fabricates market references** — the authors call it learned bluffing and report no rate.
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
+- [[verifiable-social-reasoning-llm-assistants-taubenfeld-2026]] — Google's Fuse: simulated hidden motives; one biased sentence from the user costs models 7.7 points vs 3.6 for humans

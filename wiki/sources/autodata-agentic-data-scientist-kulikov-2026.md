@@ -2,7 +2,7 @@
 title: "Autodata: An agentic data scientist to create high quality synthetic data"
 type: source
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-09-30
 sources:
   - autodata-agentic-data-scientist-kulikov-2026.md
 arxiv_id: "2606.25996"
@@ -51,3 +51,8 @@ Autodata casts an AI agent as a **data scientist** whose job is to build high-qu
 
 _Original source: `sources/autodata-agentic-data-scientist-kulikov-2026.md`_
 _arXiv: [arXiv:2606.25996](https://arxiv.org/abs/2606.25996)_
+
+## Related 2026 sources
+
+- [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation

@@ -2,7 +2,7 @@
 title: Pre-training
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - bert-devlin-2018.md
 status: complete
@@ -38,3 +38,8 @@ A large, diverse, unlabeled corpus offers far more supervisory signal than any a
 
 - [[distributed-training]] — how large-model pre-training is parallelized: DP/TP/PP and which memory consumer each shards
 - [[training-memory-anatomy]] — the 16Ψ model-state accounting and the per-layer activation formula
+
+## Related 2026 sources
+
+- [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data
+- [[ncp-archpreview-next-concept-prediction-shanghai-ai-lab-2026]] — NCP-ArchPreview: 8.9B LM adding next-concept prediction; the gain shrinks to +0.59 after mid-training

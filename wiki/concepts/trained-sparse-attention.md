@@ -2,7 +2,7 @@
 title: Trained Sparse Attention
 type: concept
 created: 2026-09-10
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - native-sparse-attention-yuan-2025.md
   - moba-mixture-of-block-attention-lu-2025.md
@@ -57,6 +57,11 @@ The practical consequence for anyone choosing a model rather than a kernel: **a 
 
 [[flashmemory-lookahead-sparse-attention-wang-2026|DeepSeek-V4's lookahead sparse attention]] extends DSA's indexer toward ultra-long context. The hybrid designs — [[qwen3.8-flash-next]] at 3:1 GDN-to-sparse-attention, Kimi's KDA — combine [[linear-attention]] layers with a minority of trained sparse-attention layers, which is what makes token-axis methods, not attention-axis ones, the right retrofit for them (see UniPrefill on [[sparse-prefill]]).
 
+> [!warning] Contradiction — FlashMemory is not DeepSeek-V4's own attention
+> The sentence above labels [[flashmemory-lookahead-sparse-attention-wang-2026]] "DeepSeek-V4's lookahead sparse attention". DeepSeek's own [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026|DeepSeek-V4.1-Flash]] report (§1, §2.3) describes V4's attention as a CSA–HCA hybrid with sliding-window attention; FlashMemory is a Tencent report built around V4, not V4's mechanism. Treat the label as a mis-attribution until a DeepSeek source says otherwise.
+>
+> V4.1 also changes the indexer. Each indexed layer uses **32 indexer query heads** (head dim 128) and top-k **512**, against V3.2's released `index_n_heads: 64` and top-k 2048. Only one layer in 6 (encoder) or one in 4 (decoder) runs an indexer at all, and a hierarchical indexer caps the later decoder layers.
+
 ## Related
 
 - [[sparse-attention]] · [[sparse-prefill]] · [[flash-attention]] · [[grouped-query-attention]] · [[multi-head-latent-attention]]
@@ -66,3 +71,8 @@ The practical consequence for anyone choosing a model rather than a kernel: **a 
 ## References
 
 - [[native-sparse-attention-yuan-2025]] · [[moba-mixture-of-block-attention-lu-2025]] · [[deepseek-v3.2-sparse-attention-deepseek-2025]] · [[gated-sparse-attention-shen-2026]] · [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] · [[flashmemory-lookahead-sparse-attention-wang-2026]] · [[minference-dynamic-sparse-attention-jiang-2024]]
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+- [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth

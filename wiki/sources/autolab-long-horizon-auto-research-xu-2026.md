@@ -2,7 +2,7 @@
 title: "AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Tasks?"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-09-30
 sources:
   - autolab-long-horizon-auto-research-xu-2026.md
 arxiv_id: "2606.05080"
@@ -47,3 +47,7 @@ Evaluating 17 state-of-the-art models yields a clear finding: the dominant predi
 
 - [arXiv:2606.05080](https://arxiv.org/abs/2606.05080) — Xu, Chen, et al. (UW, Stanford, Princeton, et al.), 2026
 - Source text: `sources/autolab-long-horizon-auto-research-xu-2026.md`
+
+## Related 2026 sources
+
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

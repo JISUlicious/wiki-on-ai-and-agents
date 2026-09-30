@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-09-15",
+  "last_processed_date": "2026-09-30",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -84,7 +84,14 @@
     "1a0723908df9606e",
     "1a09b7be8fdbd3b0",
     "1a087bf349f7b51e",
-    "1a0964b52fb41651"
+    "1a0964b52fb41651",
+    "1a0efe5201ffbded",
+    "1a0e3de1ce7da3ad",
+    "1a0de37ceee1afb7",
+    "1a0d1fc47b8c8393",
+    "1a0bfd5bc231b613",
+    "1a0bab5b521b241b",
+    "1a0a7dbed7425c88"
   ],
   "runs": [
     {
@@ -256,6 +263,26 @@
         "alphaXiv 2609.navier-stokes (no arXiv ID)"
       ],
       "notes": "4 agents x 3 papers, no failures. Watchlist: LEGO-RL resolved (2608.17393); 5 unresolved. Near-miss 2609.11987 noted, not ingested."
+    },
+    {
+      "date": "2026-09-30",
+      "type": "newsletter sweep (manual; 3 alphaXiv digests + 2 NLP Top-Papers + 2 AI Agents Weekly by subject line only)",
+      "threads_read": 7,
+      "candidate_ids_verified": 30,
+      "on_domain_ingested": 32,
+      "new_source_pages": 32,
+      "new_entity_pages": 1,
+      "dups_skipped": [
+        "2609.11873"
+      ],
+      "off_domain_dropped": [
+        "alphaXiv 2609.navier-stokes (no arXiv ID)"
+      ],
+      "alphaxiv_native": [
+        "2609.mimo-scaling-reinforcement-learning",
+        "2609.recurrent-looped-transformer"
+      ],
+      "notes": "4 agents x 8 papers. Capability-laundering page written by main session after a safety filter stopped the subagent. Promoted [[metal]] (3 inbound links). WFM flagged: self-described unmeasured cells."
     }
   ],
   "pending_threads": [

@@ -2,7 +2,7 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
@@ -52,6 +52,8 @@ Where frontier scale does show up is **label-space capacity**: Jev handles 255 o
 
 **Ranking.** On [[jevbench|JevBench]] Jev is 4th of 91 on the composite, behind three open 4B fine-tunes, but it leads the #3 system on the reasoning axis (Intelligence 53.1 vs 49.4) and on calibration. The open models win on speed and cost.
 
+**As a judge.** [[jev-as-a-judge-accept-when-confident-li-2026|JEV-as-a-Judge]] (CMU, 2026) ranks Jev 8th of 15 judges, 1.7 points behind GPT-6 at 277× lower fee. It is well calibrated when a reference or pair anchors the verdict (ECE 0.01–0.07) and near chance without one. Escalating low-confidence verdicts to GPT-6 matched GPT-6's accuracy at 41% of its fee.
+
 ## Related
 
 - [[typesafe-ai]] · [[system-one-model]] · [[calibration]] · [[logit-scoring]] · [[cloze-scoring]] · [[nimble]] · [[openjev]] · [[laya]] · [[independent-jev-calibration-audits-2026]] · [[jev-research-papers-september-2026]] · [[jevbench]] · [[kev]] · [[system-one-ecosystem-sweep-2026-09-28]]
@@ -59,3 +61,7 @@ Where frontier scale does show up is **label-space capacity**: Jev handles 255 o
 ## References
 
 - [[introducing-system-one-models-and-jev-typesafe-2026]]
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

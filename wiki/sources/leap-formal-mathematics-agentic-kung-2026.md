@@ -2,7 +2,7 @@
 title: "LEAP: Supercharging LLMs for Formal Mathematics with Agentic Frameworks"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-09-30
 sources:
   - leap-formal-mathematics-agentic-kung-2026.md
 arxiv_id: "2606.03303"
@@ -48,3 +48,7 @@ Empirically LEAP is strong. On the 2025 Putnam Competition it **solves all 12 pr
 
 - [arXiv:2606.03303](https://arxiv.org/abs/2606.03303) — Kung, Song, et al. (Google), 2026
 - Source text: `sources/leap-formal-mathematics-agentic-kung-2026.md`
+
+## Related 2026 sources
+
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble

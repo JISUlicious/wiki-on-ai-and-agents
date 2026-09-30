@@ -2,7 +2,7 @@
 title: pi (pi-mono coding agent)
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - pi-mono.md
   - comparison.md
@@ -63,3 +63,7 @@ Five-package npm workspace:
 
 - [[pi-mono-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+
+## Related 2026 sources
+
+- [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score

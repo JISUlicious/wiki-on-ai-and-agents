@@ -2,7 +2,7 @@
 title: Quality-Diversity
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - darwin-godel-machine-zhang-2025.md
 status: draft
@@ -33,3 +33,7 @@ The same concern with keeping diversity alive shows up on the training side. [[v
 
 - [[darwin-godel-machine-zhang-2025]]
 - MAP-Elites: Mouret & Clune, "Illuminating search spaces by mapping elites" — [arXiv:1504.04909](https://arxiv.org/abs/1504.04909)
+
+## Related 2026 sources
+
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours

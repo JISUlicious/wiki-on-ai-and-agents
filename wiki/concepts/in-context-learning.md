@@ -2,7 +2,7 @@
 title: In-Context Learning
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - gpt-3-brown-2020.md
 status: complete
@@ -53,3 +53,7 @@ The number of demonstrations gives a small taxonomy:
 ## References
 
 - [[gpt-3-brown-2020]]
+
+## Related 2026 sources
+
+- [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data

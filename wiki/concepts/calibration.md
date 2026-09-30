@@ -2,7 +2,7 @@
 title: Calibration
 type: concept
 created: 2026-09-21
-updated: 2026-09-22
+updated: 2026-09-30
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - llm-as-a-verifier-kwok-2026.md
@@ -49,3 +49,7 @@ Acting requires a loss function: choose the action minimizing expected loss unde
 
 - [[llm-as-a-verifier-kwok-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]] · [[introducing-system-one-models-and-jev-typesafe-2026]]
 - Gneiting and Raftery, *Strictly Proper Scoring Rules, Prediction, and Estimation*, JASA 2007.
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

@@ -2,7 +2,7 @@
 title: Multi-Agent Memory
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - mirix-wang-2025.md
 status: draft
@@ -22,3 +22,7 @@ Multi-agent memory is an architectural pattern in which several sub-agents each 
 ## References
 
 - [[mirix-wang-2025]] — MIRIX: Multi-Agent Memory System for LLM-Based Agents (Wang & Chen 2025).
+
+## Related 2026 sources
+
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours

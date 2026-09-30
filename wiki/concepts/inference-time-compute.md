@@ -2,7 +2,7 @@
 title: Inference-Time Compute
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-09-30
 sources:
   - latent-thoughts-looped-transformers-saunshi-2025.md
   - cot-or-loop-xu-2025.md
@@ -24,3 +24,7 @@ Related: [[chain-of-thought-prompting]], [[deepseek-r1]], [[looped-transformer]]
 ## References
 - [[latent-thoughts-looped-transformers-saunshi-2025]]
 - [[cot-or-loop-xu-2025]]
+
+## Related 2026 sources
+
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble

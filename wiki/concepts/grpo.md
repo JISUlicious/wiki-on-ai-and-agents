@@ -2,7 +2,7 @@
 title: GRPO (Group Relative Policy Optimization)
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - memory-r1-yan-2025.md
 status: draft
@@ -22,3 +22,8 @@ Group Relative Policy Optimization (GRPO) is a reinforcement learning algorithm 
 ## References
 
 - `memory-r1-yan-2025.md`
+
+## Related 2026 sources
+
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3

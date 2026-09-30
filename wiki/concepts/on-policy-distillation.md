@@ -2,7 +2,7 @@
 title: On-Policy Distillation
 type: concept
 created: 2026-08-17
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - weak-to-strong-on-policy-distillation-yu-2026.md
   - on-policy-self-distillation-without-supervision-li-2026.md
@@ -49,3 +49,5 @@ All three get their gains from *where* the signal is measured rather than from a
 
 - [[rethinking-on-policy-distillation-ii-one-training-example-fu-2026]] — one training problem recovers 87% of full-data OPD's gain at 300 steps; the paper's diagnosis is that OPD is limited by how fast the student absorbs signal, not by data
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — on-policy correction beats imitation: fine-tuning a weaker model on a stronger model's full trajectories *dropped* it on all seven tasks (−4 to −30 points) under the harness evolved for it; rewriting only the failing turn helps
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness

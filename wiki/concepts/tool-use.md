@@ -2,7 +2,7 @@
 title: Tool Use
 type: concept
 created: 2026-05-13
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - react-yao-2022.md
   - function-calling-llms-promptingguide.md
@@ -57,3 +57,4 @@ See [[function-calling]] for the canonical treatment — the model/application c
 ## Related 2026 sources
 
 - [[programmatic-tool-calling]] — expose tools as typed code stubs instead of JSON schemas — wins on capable models and under parallel fan-out, loses on the 14-model mean
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed

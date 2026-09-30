@@ -2,7 +2,7 @@
 title: Generative Agents
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - generative-agents-park-2023.md
 status: complete
@@ -47,3 +47,7 @@ The architecture has no compact, evict, or curate operations — the stream grow
 - Source: [[generative-agents-park-2023]]
 - arXiv: <https://arxiv.org/abs/2304.03442>
 - Venue: UIST 2023
+
+## Related 2026 sources
+
+- [[verifiable-social-reasoning-llm-assistants-taubenfeld-2026]] — Google's Fuse: simulated hidden motives; one biased sentence from the user costs models 7.7 points vs 3.6 for humans

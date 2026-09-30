@@ -2,7 +2,7 @@
 title: "Rehearse: Stepping Back from the Confidence Cliff in Self-Improving Autoresearch"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources: []
 arxiv_id: "2607.27687"
 authors:
@@ -111,3 +111,5 @@ Breadth alone buys nothing (6.9% vs 7.1%); **the selection step is what makes a 
 
 - [[ai-research-preference-models-foster-2026]] — **a tension worth holding open, not a contradiction.** That paper finds *"supplying the RPM with a deeper history of historical search tree nodes and their validation scores **consistently improves** child-selection judgment"* (65.1% at zero cited metrics → 81.2% at ≥5), where this paper finds a full history dump loses **12.7 points** to a candidate-relevant slice from the same store. Three reasons they may not truly conflict: the other paper's context is **structured node + validation-score records** while this one's dump is **raw rationale text**; its citation result is **correlational**, not a controlled context-size intervention; and it **averages over depths** while this finding is depth-specific. It also has no coverage/abstention split — its tournament always emits a choice — so the statistic that revealed the cliff here cannot move there. **Nobody has run the crossed experiment**
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the practice this result bears on: routing every PR through AI review passes so humans review only what matters. Its monthly tuning ritual is the right shape of countermeasure but is calibration by sampling — it will not surface the silent degradation measured here without accuracy conditioned on an abstention protocol
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

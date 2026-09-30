@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -89,3 +89,7 @@ The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the
 - [[independent-jev-calibration-audits-2026]]
 - [[system-one-ecosystem-sweep-2026-09-28]]
 - [[jev-research-papers-september-2026]]
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

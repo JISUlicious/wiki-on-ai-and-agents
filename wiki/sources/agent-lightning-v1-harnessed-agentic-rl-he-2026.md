@@ -2,7 +2,7 @@
 title: "Agent Lightning v1.0: Towards Harnessed Agentic RL"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.17528"
 year: 2026
@@ -129,3 +129,7 @@ Fixing only the advantage *hurts* (35.0 → 33.1) and lets policy entropy climb;
 - Code: https://github.com/microsoft/agent-lightning
 - Original Agent Lightning: Luo et al., arXiv:2508.03680
 - Compared frameworks: verl Uni-Agent (github.com/verl-project/uni-agent); AReaL 2.0 (arXiv:2607.01120); slime (github.com/THUDM/slime); Polar (arXiv:2605.24220)
+
+## Related 2026 sources
+
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails

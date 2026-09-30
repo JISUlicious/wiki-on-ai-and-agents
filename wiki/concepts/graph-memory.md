@@ -2,7 +2,7 @@
 title: Graph Memory
 type: concept
 created: 2026-05-16
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - hipporag2-jimenez-gutierrez-2025.md
   - mem0-chhikara-2025.md
@@ -39,3 +39,7 @@ Agent memory stored as a graph of entities, relations, and metadata, retrieved w
 - [[hipporag2-jimenez-gutierrez-2025]]
 - [[mem0-chhikara-2025]]
 - [[a-mem-xu-2025]]
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

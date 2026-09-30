@@ -2,7 +2,7 @@
 title: AI Safety
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - darwin-godel-machine-zhang-2025.md
   - hyperagents-zhang-2026.md
@@ -40,3 +40,7 @@ Both pages that link here are about [[self-improving-agent|self-improving agents
 
 - Amodei et al., "Concrete Problems in AI Safety" — [arXiv:1606.06565](https://arxiv.org/abs/1606.06565)
 - [[darwin-godel-machine-zhang-2025]] · [[hyperagents-zhang-2026]] · [[agentic-misalignment-lynch-2025]] · [[red-teaming-ganguli-2022]]
+
+## Related 2026 sources
+
+- [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers

@@ -2,7 +2,7 @@
 title: Supervised Fine-Tuning (SFT)
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - embarrassingly-simple-self-distillation-zhang-2026.md
   - pivotrl-high-accuracy-agentic-post-training-yi-2026.md
@@ -32,3 +32,7 @@ importance: medium
 ## References
 
 - [[instructgpt-ouyang-2022]] · [[deepseek-r1-2025]] · [[pivotrl-high-accuracy-agentic-post-training-yi-2026]] · [[embarrassingly-simple-self-distillation-zhang-2026]]
+
+## Related 2026 sources
+
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3

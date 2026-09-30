@@ -2,7 +2,7 @@
 title: "Research papers on Jev and System One models (September 2026)"
 type: source
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - https://arxiv.org/abs/2609.28613
   - https://arxiv.org/abs/2609.29429
@@ -55,3 +55,7 @@ Where papers measured calibration and then recalibrated, isotonic or post-hoc re
 ## References
 
 - [2609.28613](https://arxiv.org/abs/2609.28613) · [2609.29429](https://arxiv.org/abs/2609.29429) · [2609.24052](https://arxiv.org/abs/2609.24052) · [2609.23959](https://arxiv.org/abs/2609.23959)
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

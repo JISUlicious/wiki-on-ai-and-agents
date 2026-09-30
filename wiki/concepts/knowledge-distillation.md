@@ -2,7 +2,7 @@
 title: Knowledge Distillation
 type: concept
 created: 2026-06-19
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - deepseek-r1-2025.md
 status: draft
@@ -31,3 +31,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[on-policy-self-distillation-without-supervision-li-2026]] — beats gold-label supervision with pseudo-labels that are 13.3% wrong
 - [[illicit-distillation]] — the same technique done covertly and without authorization, through fraudulent accounts and proxy networks. Anthropic's 2026 report attributes seven campaigns to China-based labs, the largest at over 151 million exchanges, and claims a distilled student inherits capability but not the teacher's refusals
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — a measured failure of trajectory distillation: the student copies a planning strategy it cannot execute
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness
+- [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)

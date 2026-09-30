@@ -2,7 +2,7 @@
 title: Prefix Caching
 type: concept
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-09-30
 sources:
   - sglang-radixattention-zheng-2023.md
   - prompt-cache-gim-2023.md
@@ -74,3 +74,4 @@ The mechanism descends from [[paged-attention|PagedAttention]]'s ref-counted, co
 ## Related 2026 sources
 
 - [[speculative-prefill]] — composes: oMLX prefills stable system/tool prefixes in full and caches them, so only conversation tokens enter draft selection
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

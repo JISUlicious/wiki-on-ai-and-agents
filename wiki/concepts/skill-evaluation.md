@@ -2,7 +2,7 @@
 title: Skill Evaluation
 type: concept
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-09-30
 sources:
   - agentic-skills-in-the-wild-liu-2026.md
 status: draft
@@ -32,3 +32,8 @@ tags:
 ## References
 
 - [[agentic-skills-in-the-wild-liu-2026]] — the realistic skill-usage benchmark
+
+## Related 2026 sources
+
+- [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

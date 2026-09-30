@@ -205,7 +205,7 @@ Verified: the abstract's 1.56×/1.35× decode figures, Figure 1's +35% and +78%,
 
 ## Related
 
-- [[mlx]] · [[llama-cpp]] · [[apple]] · [[metal]] — the runtimes and the API. `metal` has no page yet.
+- [[mlx]] · [[llama-cpp]] · [[apple]] · [[metal]] — the runtimes and the API.
 - [[omlx-specprefill-github-2026]] — the MLX-based server this is most often weighed against; see the feature table above.
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the hardware lever this paper does not test.
 - [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] — third-party M4 Max measurement of the Metal tensor path BaseRT's GEMMs sit on, and the fused-attention negative result.

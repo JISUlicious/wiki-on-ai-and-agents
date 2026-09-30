@@ -2,7 +2,7 @@
 title: "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.27454"
 authors:
@@ -188,3 +188,7 @@ So assumption 2 is defused for the *ledger* and left intact for the *pattern pag
 - Karpathy (2026), *LLM Wiki* — the perspective §1 names as its inspiration
 - Baselines: EvoSkill (arXiv:2603.02766), Trace2Skill, [[skillopt-yang-2026|SkillOpt]]; GEPA cited as the general prompt-optimization family deliberately not compared against
 - Benchmarks: LiveMathematicianBench, SealQA, SpreadsheetBench, OfficeQA, [[alfworld|ALFWorld]]
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

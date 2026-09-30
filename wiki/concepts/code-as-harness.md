@@ -2,7 +2,7 @@
 title: Code as Harness
 type: concept
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-09-30
 sources:
   - code-as-agent-harness-ning-2026.md
   - codeact-wang-2024.md
@@ -102,3 +102,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent Planning with AND/OR Trees for Long Horizon
 - [[fundamental-components-of-harness]] — Fundamental Components of an [[llm-agent|LLM Agent]] Harness
 - [[spatialclaw-cho-2026]] — SpatialClaw: code-as-action spatial reasoning over a persistent kernel (NVIDIA)
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness

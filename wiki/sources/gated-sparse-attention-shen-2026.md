@@ -2,7 +2,7 @@
 title: "Gated Sparse Attention: Combining Computational Efficiency with Training Stability for Long-Context Language Models"
 type: source
 created: 2026-09-10
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 arxiv_id: "2601.15305"
 authors:
@@ -152,3 +152,7 @@ The authors': below ~4K the indexer's overhead exceeds the sparse saving, so a d
 - [arXiv:2601.15305](https://arxiv.org/abs/2601.15305) — v1, 12 January 2026 (the version read here). Code: `github.com/alfredcs/Gated-Sparse-Attention`.
 - Qiu et al., *Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free*, NeurIPS 2025 — the G1/G2 gates; cited by this paper as the source of the gating recipe and of the 47% → under 5% sink figure.
 - DeepSeek-V3.2 / V3.2-Exp released model configuration — `index_n_heads: 64`, used above to check §2.2.
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

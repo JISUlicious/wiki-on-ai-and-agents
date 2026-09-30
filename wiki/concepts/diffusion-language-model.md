@@ -2,7 +2,7 @@
 title: Diffusion Language Model
 type: concept
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-30
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - neither-parallel-nor-sequential-diffusiongemma-asaria-2026.md
@@ -66,3 +66,7 @@ Because a masked diffusion model's native operation is *filling declared holes*,
 - [[how-transparent-is-diffusiongemma-engels-2026]] — architecture recap and interpretability audit
 - [[neither-parallel-nor-sequential-diffusiongemma-asaria-2026]] — what the commit rule actually is
 - [[cola-continuous-latent-diffusion-language-model-guo-2026]] · [[elf-embedded-language-flows-hu-2026]] · [[latent-reasoning-with-normalizing-flows-tu-2026]]
+
+## Related 2026 sources
+
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters

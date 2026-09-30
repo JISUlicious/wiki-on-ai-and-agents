@@ -2,7 +2,7 @@
 title: Self-Consistency
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - wang-self-consistency-2022.md
 builds-on: "[[chain-of-thought-prompting]]"
@@ -62,3 +62,6 @@ Roughly **N×** the inference compute of greedy CoT. For N=40, that's 40× more 
 Surfaced via newsletter ingests; see [[index]].
 
 - [[structured-output-collapses-diversity-parikh-2026]] — JSON mode costs **0.22 bits of answer surprisal** field-wide (p=.0002), but the collapse is *positional*: within-model self-distinctness is nearly flat (0.42 → 0.39), so mass relocates onto the field's shared mode rather than each model sampling less around its own answer. The threat is therefore to **cross-model/cross-run pooling**, and weaker for single-model repeated sampling than the headline implies
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

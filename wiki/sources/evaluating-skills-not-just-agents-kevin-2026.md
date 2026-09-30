@@ -2,7 +2,7 @@
 title: "Evaluating Skills, Not Just Agents: Agentic Continuous Evaluation of Skills"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.20614"
 venue: "Extended preprint of versions accepted at Agent Skills '26 (ACM CAIS 2026) and the KDD 2026 Workshop on Enterprise AI Agents"
@@ -188,3 +188,7 @@ The constructive reading is that they are complementary at different granulariti
 - Open-source implementation: NVIDIA SkillEvaluator
 - Cited building blocks: G-Eval (rubric-anchored judging), RAGAS (`AgentGoalAccuracyWithReference`), Harbor (sandboxed execution and ATIF-native task lifecycle)
 - Compared against: SkillsBench (84-task fixed set, pass-rate deltas), Skills in the Wild (34k-skill retrieval), SkillTester, SkillAudit
+
+## Related 2026 sources
+
+- [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents

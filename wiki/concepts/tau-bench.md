@@ -2,7 +2,7 @@
 title: τ-Bench
 type: concept
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-30
 sources:
   - recuris-experiential-working-memory-evolution-yu-2026.md
   - skill-state-scalable-long-horizon-agent-skills-badhe-2026.md
@@ -37,3 +37,9 @@ What distinguishes it from single-shot tool benchmarks is that **success is gate
 ## References
 
 - [[recuris-experiential-working-memory-evolution-yu-2026]] · [[skill-state-scalable-long-horizon-agent-skills-badhe-2026]]
+
+## Related 2026 sources
+
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3

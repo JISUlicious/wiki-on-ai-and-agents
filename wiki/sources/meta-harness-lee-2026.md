@@ -2,7 +2,7 @@
 title: "Meta-Harness: End-to-End Optimization of Model Harnesses"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - meta-harness-lee-2026.md
 arxiv_id: "2603.28052"
@@ -54,3 +54,7 @@ Empirically the discovered harnesses are strong across three regimes: on online 
 - [arXiv:2603.28052](https://arxiv.org/abs/2603.28052) — Lee et al., 2026 (v1, 30 Mar 2026).
 - Project page / demo: yoonholee.com/meta-harness; artifact: github.com/stanford-iris-lab/meta-harness-tbench2-artifact.
 - Baselines: ACE ([[agentic-context-engineering-zhang-2025]]), OpenEvolve, TTT-Discover.
+
+## Related 2026 sources
+
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)

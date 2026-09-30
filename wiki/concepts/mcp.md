@@ -2,7 +2,7 @@
 title: Model Context Protocol (MCP)
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - model-context-protocol-anthropic-2024.md
 status: complete
@@ -105,3 +105,4 @@ This split makes MCP one of the **non-universal** features in the cross-agent co
 Surfaced via newsletter ingests; see [[index]].
 
 - [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (synthesis: [[mcp-server-architecture-patterns]])
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation

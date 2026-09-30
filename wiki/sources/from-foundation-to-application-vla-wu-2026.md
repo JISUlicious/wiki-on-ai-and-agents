@@ -2,7 +2,7 @@
 title: "From Foundation to Application: Improving VLA Models in Practice"
 type: source
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-09-30
 sources:
   - from-foundation-to-application-vla-wu-2026.md
 arxiv_id: "2607.06403"
@@ -55,3 +55,7 @@ Peripheral to this wiki's LLM/agent focus, but notable as an open-weights embodi
 
 - [arXiv:2607.06403](https://arxiv.org/abs/2607.06403)
 - Original source text: `sources/from-foundation-to-application-vla-wu-2026.md`
+
+## Related 2026 sources
+
+- [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots

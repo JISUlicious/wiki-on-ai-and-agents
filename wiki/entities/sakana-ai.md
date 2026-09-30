@@ -2,7 +2,7 @@
 title: Sakana AI
 type: entity
 created: 2026-05-17
-updated: 2026-06-30
+updated: 2026-09-30
 sources:
   - darwin-godel-machine-zhang-2025.md
   - sakana-fugu-sakana-ai-2026.md
@@ -33,3 +33,7 @@ Fugu and the Darwin [[godel-machine|Gödel Machine]] share the lab's signature b
 ## Biologically plausible learning (2026)
 
 [[diffusing-blame-yamada-2026|*Diffusing Blame*]] (ALIFE 2026) trains **Dale-compliant dual-stream networks** without [[backpropagation]] — 96.7% MNIST / 61.7% CIFAR-10 via Error Diffusion, plus an ED-PPO reinforcement-learning extension. Continues Sakana's nature-inspired, emergence-oriented line alongside [[darwin-godel-machine]]. See [[dales-principle]], [[backprop-free-learning]].
+
+## Related 2026 sources
+
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost

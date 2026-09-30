@@ -2,7 +2,7 @@
 title: Planning
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
   - drop-the-hierarchy-and-roles-dochkina-2026.md
@@ -34,3 +34,7 @@ importance: medium
 
 - [[reliability-limits-llm-multi-agent-planning-ao-2026]] · [[drop-the-hierarchy-and-roles-dochkina-2026]]
 - [[code-as-agent-harness-ning-2026]] · [[structuredagent-andor-tree-planning-lobo-2026]] · [[beyond-the-leaderboard-albayaydh-2026]]
+
+## Related 2026 sources
+
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K

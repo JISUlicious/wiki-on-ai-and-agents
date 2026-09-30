@@ -2,7 +2,7 @@
 title: Shanghai Jiao Tong University
 type: entity
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-09-30
 sources:
   - skillopt-yang-2026.md
 status: draft
@@ -22,3 +22,7 @@ tags:
 ## References
 
 - [[skillopt-yang-2026]] — SkillOpt (Yang et al., Microsoft / SJTU, 2026).
+
+## Related 2026 sources
+
+- [[ncp-archpreview-next-concept-prediction-shanghai-ai-lab-2026]] — NCP-ArchPreview: 8.9B LM adding next-concept prediction; the gain shrinks to +0.59 after mid-training

@@ -2,7 +2,7 @@
 title: "The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic AI"
 type: source
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-09-30
 sources:
   - the-harness-effect-token-economics-writer-2026.md
 arxiv_id: "2607.06906"
@@ -71,3 +71,7 @@ Blended parity scorecard (Table 3), baseline → harness:
 - Related harness-as-object-of-study work cited by the paper: Gu, "From model scaling to system scaling" (arXiv:2605.26112); Harness-Bench (5,194 trajectories across model–harness configurations, ref [28]).
 - Contrasted efficiency lines: [[prompt-compression|prompt compression]] (LLMLingua), token-budget-aware reasoning, Chain-of-Draft, [[speculative-decoding|speculative decoding]], PagedAttention — all within-call; routing/cascades (FrugalGPT, RouteLLM) — between-model. The paper positions the harness as the cross-call layer neither family touches.
 - **Disclosure noted in the paper**: all authors are employed by Writer, Inc., which develops both the Agent Harness under test and the Palmyra X6 model.
+
+## Related 2026 sources
+
+- [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score

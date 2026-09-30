@@ -2,7 +2,7 @@
 title: "Harness Continual Learning: Continual Adaptation Beyond Model Parameters"
 type: source
 created: 2026-09-05
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.19013"
 year: 2026
@@ -150,3 +150,8 @@ The full-vs-ablated spread is ~1.1 points, small enough that without variance it
 ## References
 
 - [arXiv:2608.19013](https://arxiv.org/abs/2608.19013)
+
+## Related 2026 sources
+
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)

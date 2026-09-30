@@ -2,7 +2,7 @@
 title: Universal Transformer
 type: concept
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-09-30
 sources:
   - universal-transformer-dehghani-2018.md
 status: complete
@@ -36,3 +36,7 @@ The UT is the direct predecessor of [[looped-transformer]] — same architecture
 - [[adaptive-computation-time]] — Graves 2016 mechanism, here applied per position.
 - [[transformer-architecture]] — the base architecture being generalized.
 - [[turing-completeness]] — the expressivity claim UT first establishes for the transformer family.
+
+## Related 2026 sources
+
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: decoder state carried across all tokens; a design report with no experiments (alphaXiv-only)

@@ -2,7 +2,7 @@
 title: Agentic RL
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-30
 sources:
   - deepseek-r1-2025.md
   - search-r1-jin-2025.md
@@ -47,3 +47,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[right-in-the-right-way-damani-2026]] — adds a human-demonstration discriminator alongside verifiable reward to stop style/diversity collapse
 - [[agentopsd-recursive-self-distillation-agentic-rl-wang-2026]] — turn-level credit assignment as a bounded positive multiplier on GRPO's advantage; **−0.54** success points per extra turn vs GRPO's −2.91
 - [[harness-r1-learning-to-edit-runtime-harnesses-shao-2026]] — RL applied to the harness instead of the policy, with the target agent frozen
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails

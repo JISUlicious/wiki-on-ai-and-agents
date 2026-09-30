@@ -2,7 +2,7 @@
 title: "Independent calibration audits of Jev (September 2026)"
 type: source
 created: 2026-09-22
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - https://github.com/jourdanlabs/assay-001
   - https://github.com/AnthusAI/Jev-Calibration
@@ -65,6 +65,9 @@ Audits kept arriving, several larger or better controlled than the first wave:
 
 Two conclusions strengthen. **Calibration depends on question type as well as dataset**: the direction of miscalibration flips between boolean and choice questions, and judge-style use is badly miscalibrated. And **Jev's real advantage over small open models is label cardinality**, now confirmed on 24,114 paired decisions.
 
+> [!note] Update 2026-09-30 — judge calibration depends on an anchor
+> [[jev-as-a-judge-accept-when-confident-li-2026|JEV-as-a-Judge]] (CMU, pre-registered) measures Jev as a judge and finds it **well calibrated when a reference answer or a comparison pair anchors the verdict**: ECE 0.01 on RewardBench, 0.03 on JudgeBench and 0.07 on HaluEval, with reliability curves. On reference-free prose judgments it is near chance (53.5%, AUROC 0.498) at a mean confidence of 0.91. That is the same regime as the BargLabs result above (ECE 0.458). The two are consistent: judge calibration holds with an anchor and fails without one. The paper's confidence-gated cascade to GPT-6 matched GPT-6's accuracy at 41% of its fee.
+
 A self-published result from the Nautilus Assay author reported hosted Jev at ECE 0.041, with "zero calibration degradation" under adversarial prompts. It is far out of line with every other measurement and has not been independently confirmed. It was posted to the unofficial community `TypeSafeAI` GitHub organisation, not to TypeSafe.
 
 ## What this does not establish
@@ -93,3 +96,7 @@ Separately, on Hacker News Almeida agreed that Jev is essentially a zero-shot cl
 - [jourdanlabs/assay-001](https://github.com/jourdanlabs/assay-001) · [AnthusAI/Jev-Calibration](https://github.com/AnthusAI/Jev-Calibration) · [WanLanglin/jev-skills](https://github.com/WanLanglin/jev-skills)
 - [jujumilk3/jev-calibration-audit](https://github.com/jujumilk3/jev-calibration-audit) · [4esv/jev-eval](https://github.com/4esv/jev-eval) · [ickma2311/jev-baselines-eval](https://github.com/ickma2311/jev-baselines-eval)
 - [TypeSafe model jaggedness docs](https://docs.typesafe.ai/model-jaggedness/jev-1.13) · [Latent Space interview, 2026-09-21](https://www.latent.space/p/jev)
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

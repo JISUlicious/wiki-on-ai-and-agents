@@ -2,7 +2,7 @@
 title: "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning"
 type: source
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-09-30
 sources:
   - molt-pytorch-native-agentic-rl-framework-hu-2026.md
 arxiv_id: "2607.21653"
@@ -69,3 +69,8 @@ The agent contract is the other distinctive piece. An RL run names one Python mo
 
 - [arXiv:2607.21653](https://arxiv.org/abs/2607.21653)
 - Code, recipes, containers: github.com/NVIDIA-NeMo/labs-molt
+
+## Related 2026 sources
+
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails

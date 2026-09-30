@@ -2,7 +2,7 @@
 title: "Generative Recursive Reasoning"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - generative-recursive-reasoning-baek-2026.pdf
 arxiv_id: "2605.19376"
@@ -48,3 +48,7 @@ GRAM (Generative Recursive reAsoning Models) from KAIST, Mila, and NYU turns **r
 
 - [arXiv:2605.19376](https://arxiv.org/abs/2605.19376)
 - Project page: https://ahn-ml.github.io/gram-website
+
+## Related 2026 sources
+
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters

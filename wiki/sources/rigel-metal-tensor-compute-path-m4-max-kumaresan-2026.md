@@ -119,7 +119,7 @@ The paper is explicit that it measures **a pre–neural-accelerator generation**
 - [[arithmetic-intensity]] · [[hardware-accelerator]] · [[edge-inference]] · [[quantization]]
 - [[flash-attention]] · [[flash-attention-3-shah-2024]] — the fused-attention negative result on M4, and the Hopper fp8 path M4 lacks.
 - [[apple]] · [[mlx]] · [[llama-cpp]] — MLX's GPU backend and llama.cpp's Metal backend both sit on the path characterised here.
-- [[apple-silicon]] · [[metal]] — `metal` has no page yet.
+- [[apple-silicon]] · [[metal]]
 
 ## References
 

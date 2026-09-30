@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -76,6 +76,8 @@ AHE is the empirical, harness-level descendant of the [[godel-machine|Gödel-mac
 > **This page's claim** (Lin et al., [[agentic-harness-engineering-lin-2026]]): automatic harness evolution improves agent performance.
 > **Counter-claim** ([[rethinking-evaluation-harness-evolution-wang-2026]], AI2/UW 2026): harness evolution *is itself a search procedure* and must be compared against test-time-scaling baselines at **matched feedback and inference budgets**. Instantiating it as **AHE with the explore agent disabled** on Terminal-Bench 2.1, evolved harnesses score **67.4** — *below* the static initial harness at **68.2** — while plain parallel sampling reaches **72.3**. Damage is worst on the strongest model (GPT-5.4: 75.3 → 69.7), and gains transfer to held-out tasks at only +0.6. Diagnosis: edits "memorize fixes rather than distilling strategies".
 > **Unresolved.** The authors themselves caveat (§5.2) that the negative result may be Terminal-Bench-specific — scores are already high and the benchmark may simply not be harness-sensitive. Both results stand; the open question is whether reported harness-evolution gains survive a matched-budget search baseline.
+>
+> **Update 2026-09-30.** Eight new harness and self-improvement papers, and only one — [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026|SAT]] — runs a compute-matched control; it wins on math (+8.0) but not on knowledge tasks. [[self-improvement-via-fast-tree-search-fu-2026|SIFT]]'s search without its judge gained nothing on Terminal-Bench 2.1, which fits the matched-budget objection. [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026|RRSI]] bears on the *transfer* half: run by a third party from a shared baseline, AHE's evolved harness ended **below** that baseline out of distribution (39.2 vs 39.7), while RRSI's regularized search reached 43.6. That is direct evidence against the claim above that AHE's harness transfers. The matched-compute question stays open.
 
 ## References
 
@@ -115,3 +117,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — harness evolution lifts Qwen3-Coder-30B-A3B from 29.2% to 78.0%, and changes which fine-tuning recipe helps or hurts
 - [[lego-rl-harness-native-reinforcement-learning-coding-agents-du-2026]] — RL through unmodified real harnesses — OpenHands SDK, [[claude-code|Claude Code]], OpenCode — via a proxy at the model API; +5.8 to +9.4 on [[swe-bench-verified|SWE-bench Verified]]
 - [[frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026]] — swapping only the harness lifts the untrained 4B base from 8.3% to 37.2% while a strong model scores the same under both
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
+- [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness

@@ -2,7 +2,7 @@
 title: A-MEM
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - a-mem-xu-2025.md
 status: complete
@@ -36,3 +36,7 @@ Primarily **curate** in the [[memory-management]] vocabulary: A-MEM is the first
 ## References
 
 - [[a-mem-xu-2025]]
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

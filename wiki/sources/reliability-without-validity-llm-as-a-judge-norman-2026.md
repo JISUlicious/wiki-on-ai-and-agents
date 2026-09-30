@@ -2,7 +2,7 @@
 title: "Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models"
 type: source
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-09-30
 sources:
   - reliability-without-validity-llm-as-a-judge-norman-2026.md
 arxiv_id: "2606.19544"
@@ -43,3 +43,7 @@ LLM-as-a-Judge is now the dominant evaluation paradigm for language models, but 
 ## References
 
 - [arXiv:2606.19544](https://arxiv.org/abs/2606.19544) — Norman, Rivera, Hughes. "Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models Across Agreement, Consistency, and Bias" (2026). UC Berkeley School of Information.
+
+## Related 2026 sources
+
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success

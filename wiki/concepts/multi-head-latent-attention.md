@@ -2,7 +2,7 @@
 title: Multi-Head Latent Attention
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - deepseek-v3.2-sparse-attention-deepseek-2025.md
   - native-sparse-attention-yuan-2025.md
@@ -32,3 +32,8 @@ importance: medium
 
 - DeepSeek-AI, "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model" (2024), [arXiv:2405.04434](https://arxiv.org/abs/2405.04434). This paper introduced MLA.
 - [[deepseek-v3.2-sparse-attention-deepseek-2025]] · [[native-sparse-attention-yuan-2025]] · [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] · [[kimi-linear-kimi-team-2025]] · [[normalized-low-rank-adaptation-kang-2026]]
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+- [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU

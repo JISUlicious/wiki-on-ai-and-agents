@@ -2,7 +2,7 @@
 title: Plan-Execute-Verify Loop (PEV)
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - code-as-agent-harness-ning-2026.md
   - agentcoder-huang-2023.md
@@ -30,3 +30,7 @@ The **Plan-Execute-Verify (PEV) loop** is the control abstraction that the [[cod
 ## References
 
 - [[code-as-agent-harness-ning-2026]] (§3.4) · [[agentcoder-huang-2023]]
+
+## Related 2026 sources
+
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K

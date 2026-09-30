@@ -2,7 +2,7 @@
 title: DeepSeek
 type: entity
 created: 2026-05-17
-updated: 2026-09-14
+updated: 2026-09-30
 sources:
   - deepseek-r1-2025.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -50,3 +50,4 @@ This is Anthropic's allegation against a competitor. The report calls its attrib
 - [[native-sparse-attention-yuan-2025]] — NSA, ACL 2025 best paper — the from-scratch version
 - [[trained-sparse-attention]] — the lineage page
 - [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — a third-party retrofit that makes V3.2's lightning indexer 3.82× cheaper by skipping 56 of its 64 heads per query
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

@@ -2,7 +2,7 @@
 title: FAIR (Facebook AI Research / Meta AI)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - dpr-karpukhin-2020.md
 status: draft
@@ -25,3 +25,7 @@ In this wiki, FAIR is the origin of [[dpr-karpukhin-2020|DPR]] and [[rag-lewis-2
 ## References
 
 - [[dpr-karpukhin-2020]]
+
+## Related 2026 sources
+
+- [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)

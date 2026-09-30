@@ -2,7 +2,7 @@
 title: World Model
 type: concept
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-09-30
 sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
   - latent-spatial-memory-for-video-world-models-wang-2026.md
@@ -17,6 +17,9 @@ tags:
 # World Model
 
 A **world model** is a learned internal model of an environment's dynamics — it predicts how the world (or a latent abstraction of it) evolves under actions, so an agent can simulate, plan, and act rather than merely react. The defining shift from token prediction is **predicting representations / future states** instead of surface symbols; this connects world models to [[latent-reasoning|latent reasoning]] and to the JEPA/data2vec line of self-supervised learning.
+
+> [!note] Not always learned
+> [[gavel-graph-world-models-llm-task-planning-wang-2026|GAVEL]] (2026) gets large planning gains from a world model whose transition rules are **hand-written**; only its beliefs about where unseen objects are get updated. Explicit, symbolic world models around an LLM are a working alternative to learned ones.
 
 ## Strands in this wiki
 
@@ -51,3 +54,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[masked-visual-actions-alzayer-2026]] — one video model as both forward and inverse dynamics via a pixel-space control interface
 - [[robottt-context-scaling-robot-policies-jiang-2026]] — test-time training as the recurrent state; context scaling to 8K timesteps at flat latency
 - [[code-world-model-coding-agent-as-world-brain-chen-2026]] — an explicitly **anti-latent** world model: the agent-code loop is the transition function and the video model the observation function. Persistence that latent designs solve with spatial memory is solved here by storing it in a program variable. Note it reports **no quantitative results at all**
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K

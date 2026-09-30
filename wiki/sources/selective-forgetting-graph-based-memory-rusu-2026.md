@@ -2,7 +2,7 @@
 title: "Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents"
 type: source
 created: 2026-09-07
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.28978"
 authors:
@@ -176,3 +176,7 @@ The paper's own limitations are unusually candid, in an appendix section address
 - [arXiv:2608.28978](https://arxiv.org/abs/2608.28978) — Rusu, Khanzadeh & Alalfi, *Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents*, 29 Aug 2026, v1, cs.AI.
 - Code: `github.com/skhanzad/Selective-Amnesia`
 - Benchmark: LongMemEval (Wu et al., ICLR 2025) — not independently ingested in this wiki.
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

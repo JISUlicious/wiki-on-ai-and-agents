@@ -2,7 +2,7 @@
 title: "Co-Evolving Harnesses and Models: On-Policy Correction Helps Weaker Models Catch Up Where Imitation Fails"
 type: source
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - co-evolving-harnesses-and-models-on-policy-correction-yu-2026.md
 arxiv_id: "2609.09134"
@@ -66,3 +66,7 @@ tags:
 - Task suite and harness framework: Yang et al., "Better harnesses, smaller models", [arXiv:2607.08938](https://arxiv.org/abs/2607.08938). GEPA: Agrawal et al., [arXiv:2507.19457](https://arxiv.org/abs/2507.19457).
 - Joint harness–weight work: Co-Harness ([arXiv:2607.22688](https://arxiv.org/abs/2607.22688)), HarnessForge ([arXiv:2606.01779](https://arxiv.org/abs/2606.01779)), HarnessX ([arXiv:2606.14249](https://arxiv.org/abs/2606.14249)), SIA ([arXiv:2605.27276](https://arxiv.org/abs/2605.27276)).
 - On-policy expert correction precedents: Lauffer et al., [arXiv:2512.14895](https://arxiv.org/abs/2512.14895); Ye et al., [arXiv:2607.04574](https://arxiv.org/abs/2607.04574). LoRA: Hu et al., ICLR 2022.
+
+## Related 2026 sources
+
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness

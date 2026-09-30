@@ -2,7 +2,7 @@
 title: SKILL.md Format (Agent Skills)
 type: concept
 created: 2026-05-14
-updated: 2026-05-31
+updated: 2026-09-30
 sources:
   - claude-code.md
   - opencode.md
@@ -100,3 +100,7 @@ The trade-off: skills are *prompt-engineering artifacts*, not executable code. T
 - [[hermes-agent-doc-2026]]
 - [[openclaw-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+
+## Related 2026 sources
+
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

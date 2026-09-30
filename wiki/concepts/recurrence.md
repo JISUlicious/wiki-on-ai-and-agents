@@ -2,7 +2,7 @@
 title: Recurrence
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - adaptive-computation-time-graves-2016.md
   - universal-transformer-dehghani-2018.md
@@ -33,3 +33,8 @@ importance: medium
 ## References
 
 - [[adaptive-computation-time-graves-2016]] · [[universal-transformer-dehghani-2018]] · [[recirculation-mozer-2026]] · [[long-short-term-memory-hochreiter-1997]]
+
+## Related 2026 sources
+
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: decoder state carried across all tokens; a design report with no experiments (alphaXiv-only)

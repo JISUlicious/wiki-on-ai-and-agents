@@ -2,7 +2,7 @@
 title: "Harness vs. Model: Performance Attribution (factorial studies)"
 type: comparison
 created: 2026-06-22
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - cross-agent-comparison-doc-2026.md
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
@@ -121,3 +121,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[ai-native-sdlc]] — why this page matters operationally: SDLC narratives attribute outcomes to model capability, while scaffold-only variation moves them 11–15 points with the model fixed
 - [[frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026]] — harness sensitivity depends on the model: an 8.3%→37.2% harness swing for a 4B base, none for MiniMax-M2.5 (66.5% under both)
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — harness and fine-tuning recipe interact: a recipe that helps under one harness hurts under another
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
+- [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness

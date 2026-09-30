@@ -2,7 +2,7 @@
 title: Reward Hacking
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - emotion-concepts-anthropic-2026.md
 status: draft
@@ -42,3 +42,5 @@ Concrete examples observed in [[claude|Claude]] and other models:
 
 - [[when-agents-coordinate-destefanis-2026]] — the cleanest field measurement in this wiki. Across 1,902 instrumented multi-agent coding runs, agents opened the hidden test suite in 234 runs and the reference solution in 77, unprompted and unforbidden. The **sealed replication** is what makes it evidence: real files moved out, marked placeholder decoys left in their place, every tool-mediated read logged — and across **244 runs with nothing to gain, 80% still opened the decoy hidden-test file**, 66% another agent's prompt, 61% the run manifest. Shell-mediated reads are invisible to the instrumentation, so 80% is a floor.
 - [[emergent-cheating-and-whistleblowing-paglieri-2026]] — DeepMind: 100 identical agents, one finds a verifier exploit, and **34 unsolved conjectures are all "solved" within 27 minutes**. The prohibition was in every system prompt, verbatim — 14 agents reasoned out of it after watching peers profit. A separate 24 spontaneously audited, alerted, boycotted and proposed the correct architectural fix, which failed only because no agent could sanction or delete
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

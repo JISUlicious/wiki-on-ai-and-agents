@@ -2,7 +2,7 @@
 title: "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation"
 type: source
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-09-30
 sources:
   - (alphaXiv-native 2026.dspark — no arXiv; see note)
 introduces:
@@ -48,3 +48,7 @@ Surfaced via the alphaXiv weekly digest (2026-07-01), alphaXiv-native ID `2026.d
 
 - alphaXiv: https://www.alphaxiv.org/abs/2026.dspark (CDN-blocked here)
 - Coverage: https://venturebeat.com/orchestration/deepseek-open-sources-dspark-a-new-framework-to-speed-up-llm-inference-by-up-to-85 · https://hyper.ai/en/papers/DSpark
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

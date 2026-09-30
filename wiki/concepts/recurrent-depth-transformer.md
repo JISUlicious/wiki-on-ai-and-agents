@@ -2,7 +2,7 @@
 title: Recurrent-Depth Transformer
 type: concept
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-09-30
 sources:
   - loop-think-generalize-2026.md
   - parcae-scaling-laws-looped-2026.md
@@ -37,3 +37,8 @@ RDT is the modern terminology for what [[looped-transformer]] research called "l
 - [[looped-transformer]] — the broader concept family RDT specializes.
 - [[universal-transformer]] — the 2018 ancestor.
 - [[openmythos]] — open-source reference implementation.
+
+## Related 2026 sources
+
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: decoder state carried across all tokens; a design report with no experiments (alphaXiv-only)

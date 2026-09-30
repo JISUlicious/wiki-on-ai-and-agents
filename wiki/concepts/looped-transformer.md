@@ -2,7 +2,7 @@
 title: Looped Transformer
 type: concept
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-09-30
 sources:
   - universal-transformer-dehghani-2018.md
   - looped-transformers-programmable-computers-giannou-2023.md
@@ -60,3 +60,5 @@ The 2018 [[universal-transformer]] is the direct ancestor — same idea, [[adapt
 Surfaced via newsletter ingests; see [[index]].
 
 - [[looped-world-models-facemind-2026]] — LoopWM: looped transformer applied to world modeling
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: decoder state carried across all tokens; a design report with no experiments (alphaXiv-only)

@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-08-04
+updated: 2026-09-30
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 506 sources, 149 entities, 282 concepts, 3 comparisons, 13 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 547 sources, 177 entities, 317 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -77,6 +77,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[j-space-cognition-suite]] — **entity**: an Agent Skill package turning the J-space findings into an inference-time protocol; careful research digest, unmatched benchmark comparison
 - [[nanochat]] — Karpathy's minimal LLM training harness; Parcae baseline and reference autoresearch loop
 - [[apple-silicon]] — Apple M-series SoCs; the wiki's local-inference platform (GPU/Metal, AMX/SME, no eGPU path)
+- [[metal]] — Apple's GPU API; what MLX and llama.cpp run on, and what native runtimes like BaseRT target directly
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -729,6 +730,48 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Long-context recall (2026-09-15)
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — Korea University: facts encoded as feed-forward residual vectors and regenerated on demand; 50–80% single-fact recall at 2M tokens from 3–5 questions per model, near-constant GPU memory, weak on paraphrased questions
+
+### Newsletter sweep 2026-09-30
+
+*Harness evolution and self-improvement*
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7)
+- [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search; DGM-style gains at a tenth of the cost
+- [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without it
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): Git DAG as shared memory for 13 autoresearch agents; 98% of the gain in the first 6 hours
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged proof harness; the 71.0% headline is a two-run ensemble
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; over-fits its own reviewer
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): the only compute-matched control this sweep; +8.0 on math, not on knowledge
+
+*Evaluation, judges and safety*
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU: Jev as a judge is calibrated when anchored by a reference or pair, near chance without
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon: simulator+judge gates rank agents well, but satisfaction says nothing about success
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: one plausible wrong user hint cuts agent scores up to 46.7%
+- [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: executable reference answers plus factoid scoring for data-science agents
+- [[verifiable-social-reasoning-llm-assistants-taubenfeld-2026]] — Google's Fuse: biased user framing costs models 7.7 points vs 3.6 for humans
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: heterogeneous model pools degrade routing, voting and judging
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end with 19–72% fewer tokens
+- [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: composing harmful capability from individually permitted answers; per-request safety misses it
+
+*Architecture and efficiency*
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV
+- [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging; prefill exits at half depth
+- [[memory-attention-kang-2026]] — Memory Attention: values = keys + per-layer token embedding; tables offloadable to CPU
+- [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: byte students distilled from token teachers overtake them at high compute (extrapolated)
+- [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining on generated programs; zero-shot power laws on natural data
+- [[ncp-archpreview-next-concept-prediction-shanghai-ai-lab-2026]] — NCP-ArchPreview: next-concept prediction at 8.9B; the gain shrinks to +0.59 after mid-training
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: flow-matching losses for looped reasoners; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: state carried across all tokens; design report, no experiments (alphaXiv-only)
+
+*RL and agent training*
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — MiMo-V2.6 (Xiaomi): 1.02T MoE agentic RL at ~$2.6M; router freezing, multi-harness training (alphaXiv-only)
+- [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Score centering cancels sampler–trainer drift where truncated importance sampling fails
+- [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale VLA action chunks; 29/30 on real robots
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on config-derived environments; its SFT checkpoint beats the RL release on 2 of 3
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — WFM: graph retriever for wiki-style agent memory; not budget-matched, some results self-described as unmeasured
+- [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-written world model repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, evolving ontology served over MCP; +17.8 on DDR-Bench
 
 ### Newsletter sweep 2026-09-15
 *Agents and memory*

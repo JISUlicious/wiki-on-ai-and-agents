@@ -2,7 +2,7 @@
 title: AI-Enabled Cyber Operations
 type: concept
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-30
 sources:
   - anthropic-threat-intelligence-report-september-2026.md
 status: complete
@@ -75,3 +75,7 @@ A weapons-development cell in the same report ran several Claude instances in fi
 ## References
 
 - [[anthropic-threat-intelligence-report-september-2026]]
+
+## Related 2026 sources
+
+- [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers

@@ -2,7 +2,7 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
@@ -89,3 +89,7 @@ Other constraints are structural: the answer space must be small enough to enume
 
 - [[system-one-ecosystem-sweep-2026-09-28]] · [[structured-generation-mode-for-diffusiongemma-mastracci-2026]] · [[bespoke-nimble-github-2026]] · [[introducing-system-one-models-and-jev-typesafe-2026]]
 - [[independent-jev-calibration-audits-2026]] · [[constrained-canvas-vs-free-denoise]]
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

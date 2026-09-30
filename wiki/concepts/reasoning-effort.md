@@ -2,7 +2,7 @@
 title: Reasoning Effort (the `effort` parameter)
 type: concept
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - claude-effort-and-ultracode-docs-2026.md
 status: complete
@@ -46,3 +46,7 @@ Effort decouples *capability dialing* from *prompt engineering*: instead of padd
 
 - [[claude-effort-and-ultracode-docs-2026]] — the authoritative effort docs.
 - Docs: https://platform.claude.com/docs/en/build-with-claude/effort
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

@@ -2,7 +2,7 @@
 title: Luke Zettlemoyer
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - schick-toolformer-2023.md
 status: draft
@@ -18,3 +18,7 @@ NLP researcher; faculty at the [[university-of-washington|University of Washingt
 ## References
 
 - [[toolformer-schick-2023]]
+
+## Related 2026 sources
+
+- [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)

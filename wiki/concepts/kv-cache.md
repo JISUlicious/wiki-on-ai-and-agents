@@ -2,7 +2,7 @@
 title: KV-Cache
 type: concept
 created: 2026-05-16
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - em-llm-fountas-2024.md
 status: draft
@@ -50,3 +50,6 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 - [[token-pruning]] — distinct from KV *eviction* (SnapKV, H2O): pruning skips the tokens' attention and FFN during prefill, eviction prefills everything then forgets
 - [[weight-streaming]] — the KV cache competes with the streamed-expert cache for one RAM budget, and KV wins: a 126 GB MoE streamed on a 64 GB Mac falls from 4.65 tok/s at 512 context to **0.32 at 40K**, and KV quantization restores it to 4.16. At long context, quantizing the KV cache is the precondition for streaming, not an optimization of it
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — replaces the KV cache for a discarded document with a bounded store of per-fact residual vectors; response-time GPU memory stays within about 1 GB of the bare model from 4K to 2M tokens
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+- [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth
+- [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU

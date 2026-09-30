@@ -2,7 +2,7 @@
 title: Illicit Distillation
 type: concept
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-30
 sources:
   - anthropic-threat-intelligence-report-september-2026.md
 status: complete
@@ -104,3 +104,7 @@ The report calls this a layered defense because "no single safeguard can address
 ## References
 
 - [[anthropic-threat-intelligence-report-september-2026]]
+
+## Related 2026 sources
+
+- [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers

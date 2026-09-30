@@ -2,7 +2,7 @@
 title: Agent Evaluation
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - agent-evaluation-readiness-checklist-langchain-2026.md
@@ -172,3 +172,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[merchantbench-long-term-coherence-shi-2026]] — 365 simulated days of e-commerce; best config reaches **27.3%** of human net assets, and a rule-based baseline beats 6 of 16 LLM configurations purely by never stopping
 - [[harness-if-instruction-following-across-instruction-surfaces-huang-2026]] — Against-Prior Accuracy: score only rules the agent would *not* have followed anyway. Every model drops 3.6–7.4 points, and the inflation varies twofold across the cohort
 - [[model-or-harness-interaction-centric-taxonomy-raj-2026]] — localizing *where the repair belongs* rather than reporting system-level outcomes
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
+- [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents

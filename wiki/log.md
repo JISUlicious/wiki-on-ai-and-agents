@@ -7,6 +7,26 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-30] ingest | Newsletter sweep 2026-09-30 — 32 sources
+
+Seven new threads since 2026-09-15: three alphaXiv digests, two NLP "Top AI Papers" issues, and two paywalled "AI Agents Weekly" issues (used by subject line only). Every arXiv ID was checked against its title before download. Skipped one duplicate ([[last-ai-built-by-humans-recursive-self-improvement-duan-2026]]) and one off-domain paper (Navier–Stokes). Two papers exist only on alphaXiv, with no arXiv ID, and are marked as such: [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] and [[recurrent-looped-transformer-zhang-2026]]. Four agents wrote eight pages each, with every number taken from the paper body. The capability-laundering page was written in the main session at abstract level, after a safety filter stopped the subagent partway.
+
+**New pages:** 32 source pages (index section "Newsletter sweep 2026-09-30") plus [[metal]], promoted because 3 pages now link it. 188 backlinks were added to existing pages.
+
+**Contradictions and qualifications recorded:**
+- [[trained-sparse-attention]] and the MISA page labelled FlashMemory as "DeepSeek-V4's" attention. DeepSeek's own V4.1 report describes a CSA–HCA hybrid. A contradiction callout was added, plus V4.1's new indexer (32 heads, top-k 512 vs V3.2's 64 and 2048).
+- [[agentic-harness-engineering]]: RRSI's third-party run finds AHE's evolved harness *below* baseline out of distribution (39.2 vs 39.7), against the page's transfer claim. Only SAT ran a compute-matched control this sweep, so the matched-budget dispute stays open.
+- [[independent-jev-calibration-audits-2026]] and [[jev]]: JEV-as-a-Judge reconciles the judge-calibration numbers. ECE is 0.01–0.07 when a reference or pair anchors the verdict, and near chance without one (consistent with the audit's 0.458).
+- Qualified: [[llm-as-a-judge]] (GAUGE: agreement with humans is not the same as tracking success), [[sycophancy]] (XYEval), [[programmatic-tool-calling]] (end-to-end, the score advantage disappears), [[multi-agent]] (SAT vs Mo' Models), [[world-model]] (GAVEL's model is hand-written), ClawGym's importance-sampling inference (Score Centering), and a [[gpqa]] version note. [[xiaomi]] updated.
+
+**Flagged in the pages:**
+- WFM says some of its own cells are "constructed planning values", not measurements.
+- Koa's SFT checkpoint beats its RL release on 2 of 3 benchmarks.
+- Stellar Colosseum's 71.0% is a two-run ensemble.
+- ScientistTwo over-fits its own reviewer.
+
+**Candidate concepts not created:** `autoresearch` (named on ~39 pages), training–inference mismatch (8), sliding-window attention (~22), prefill–decode disaggregation (13), YOCO (3).
+
 ## [2026-09-30] lint | Pages for the seven broken-link targets that matter
 
 Created [[andrej-karpathy]], [[francois-chollet]], [[gemma]], [[o1]], [[swe-bench-verified]], [[gpqa]] and [[aime]]. Each is built from the wiki's own mentions, and every added fact is checked against a primary source (URLs on each page). 120 first-mention links were added on pages that named these in plain text: SWE-bench Verified 29, AIME 27, Gemma 24, o1 18, GPQA 14, Karpathy 7, Chollet 1. The o1 matches were reviewed by hand for false hits. The benchmark hub and index are updated.

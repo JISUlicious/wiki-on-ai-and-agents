@@ -2,7 +2,7 @@
 title: "DataSpace: Benchmarking Data Agents for Verifiable Analytics over Heterogeneous Workspaces"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.03451"
 year: 2026
@@ -161,3 +161,7 @@ The paper has no dedicated limitations section, so these are observed rather tha
 - Dataset: https://huggingface.co/datasets/HKUSTDial/DataSpace
 - Source corpora: EHRSQL (clinical Text-to-SQL), BULL (financial Text-to-SQL)
 </content>
+
+## Related 2026 sources
+
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation

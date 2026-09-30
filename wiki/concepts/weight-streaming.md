@@ -2,7 +2,7 @@
 title: Weight Streaming
 type: concept
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-09-30
 sources:
   - llm-in-a-flash-alizadeh-2023.md
   - neuroprefetcher-delta-prefetching-dhar-2026.md
@@ -94,3 +94,7 @@ Every number here is a README self-report as of 2026-09-09. None has been indepe
 ## References
 
 - [[llm-in-a-flash-alizadeh-2023]] · [[neuroprefetcher-delta-prefetching-dhar-2026]] · [[ssd-offloading-moe-weights-considered-harmful-kyung-2025]] · [[flash-moe-ssd-expert-streaming-woods-2026]] · [[omlx-specprefill-github-2026]]
+
+## Related 2026 sources
+
+- [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU

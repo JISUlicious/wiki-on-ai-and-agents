@@ -2,7 +2,7 @@
 title: OpenClaw
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - openclaw.md
   - comparison.md
@@ -55,3 +55,4 @@ OpenClaw is a single-operator, multi-channel personal AI assistant. Runs as a lo
 ## Related 2026 sources
 
 - [[illicit-distillation]] — named twice in Anthropic's 2026 report: Xiaomi allegedly replayed its users' OpenClaw sessions through Claude for training data, and attackers prompt-injected OpenClaw deployments to steal API keys
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

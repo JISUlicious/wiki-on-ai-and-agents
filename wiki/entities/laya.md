@@ -2,7 +2,7 @@
 title: Laya
 type: entity
 created: 2026-09-22
-updated: 2026-09-28
+updated: 2026-09-30
 sources:
   - https://huggingface.co/convaiinnovations/laya
   - independent-jev-calibration-audits-2026.md
@@ -71,3 +71,7 @@ The first wave of open Jev clones ran on [[diffusiongemma|DiffusionGemma]], beca
 
 - [NandhaKishorM/laya (upstream)](https://github.com/NandhaKishorM/laya) · [laya.convaiinnovations.com](https://laya.convaiinnovations.com/) · [HuggingFace](https://huggingface.co/convaiinnovations/laya) · [receptron/laya](https://github.com/receptron/laya)
 - [[independent-jev-calibration-audits-2026]]
+
+## Related 2026 sources
+
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one

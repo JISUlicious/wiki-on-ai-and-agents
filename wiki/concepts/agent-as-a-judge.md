@@ -2,7 +2,7 @@
 title: Agent-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - agent-as-a-judge-zhuge-2024.md
 builds-on:
@@ -65,3 +65,8 @@ Scope remains narrow: one domain ([[code-generation|code generation]] / AI devel
 ## References
 
 - [[agent-as-a-judge-zhuge-2024]]
+
+## Related 2026 sources
+
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

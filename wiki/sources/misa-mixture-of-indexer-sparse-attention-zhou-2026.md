@@ -2,7 +2,7 @@
 title: "MISA: Mixture of Indexer Sparse Attention for Long-Context LLM Inference"
 type: source
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-09-30
 sources: []
 arxiv_id: "2605.07363"
 authors:
@@ -108,7 +108,7 @@ Two smaller provenance notes. The baseline rows in Table 1 are borrowed from the
 ## Related
 
 - [[trained-sparse-attention]] — the lineage this paper retrofits onto; MISA is a training-free layer on top of the trained column, not a member of it.
-- [[deepseek-v3.2-sparse-attention-deepseek-2025]] — the indexer being routed; [[flashmemory-lookahead-sparse-attention-wang-2026]] — DeepSeek-V4's successor, which the introduction describes as "DSA applied on top of a 4× compressed (block-level) KV stream".
+- [[deepseek-v3.2-sparse-attention-deepseek-2025]] — the indexer being routed; [[flashmemory-lookahead-sparse-attention-wang-2026]] — DeepSeek-V4's successor, which the introduction describes as "DSA applied on top of a 4× compressed (block-level) KV stream". *(Caution, 2026-09-30: DeepSeek's own [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026|DeepSeek-V4.1-Flash]] report describes V4's attention as a CSA–HCA hybrid; FlashMemory is a Tencent report, not DeepSeek's mechanism. See [[trained-sparse-attention]].)*
 - [[native-sparse-attention-yuan-2025]] · [[moba-mixture-of-block-attention-lu-2025]] — the Block-Sparse baseline is a MoBA-style selector; the paper's reading is that block granularity, not head count, is what loses on retrieval.
 - [[gated-sparse-attention-shen-2026]] — the other 2026 DSA descendant on this wiki: a from-scratch architecture that changes the indexer's activation, where MISA changes nothing and trains nothing.
 - [[sparse-attention]] · [[sparse-prefill]] · [[minference-dynamic-sparse-attention-jiang-2024]] — the training-free retrofits for *dense* models; different target.
@@ -120,3 +120,7 @@ Two smaller provenance notes. The baseline rows in Table 1 are borrowed from the
 
 - [arXiv:2605.07363](https://arxiv.org/abs/2605.07363) — v1, 8 May 2026 (the version read here). Code: `github.com/MuLabPKU/TransArch`.
 - DeepSeek-V3.2 indexer configuration (`index_n_heads: 64`, `index_head_dim: 128`, `index_topk: 2048`) confirmed against the released model config, both V3.2-Exp and V3.2.
+
+## Related 2026 sources
+
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512

@@ -2,7 +2,7 @@
 title: "Agent-World: Real-World Environment Synthesis"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - agent-world-real-world-environment-synthesis-dong-2026.md
 arxiv_id: "2604.18292"
@@ -50,3 +50,7 @@ Training robust general-purpose agents is bottlenecked by the lack of realistic,
 - [arXiv:2604.18292](https://arxiv.org/abs/2604.18292)
 - Project page: https://agent-tars-world.github.io/-/
 - Local source: `sources/agent-world-real-world-environment-synthesis-dong-2026.md`
+
+## Related 2026 sources
+
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

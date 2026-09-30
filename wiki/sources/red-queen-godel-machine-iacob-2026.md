@@ -2,7 +2,7 @@
 title: "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators"
 type: source
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-09-30
 sources:
   - red-queen-godel-machine-iacob-2026.md
 arxiv_id: "2606.26294"
@@ -46,3 +46,7 @@ To keep self-improvement guarantees intact, RQGM uses **controlled utility evolu
 ## References
 
 - [arXiv:2606.26294](https://arxiv.org/abs/2606.26294) — "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators", Alex Iacob et al., 2026.
+
+## Related 2026 sources
+
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost

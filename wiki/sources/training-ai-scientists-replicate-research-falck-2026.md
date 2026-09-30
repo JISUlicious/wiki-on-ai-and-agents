@@ -2,7 +2,7 @@
 title: "Training AI Scientists to Replicate Research"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.13331"
 year: 2026
@@ -193,3 +193,7 @@ Reality-check from four original authors (Rupp et al. 2012, Gómez-Bombarelli et
 ## References
 
 - [arXiv:2608.13331](https://arxiv.org/abs/2608.13331) — Falck, Sabri, Surina, Foster, Sims, Devlin, Rogers, Collins, Aleksiev, Kirsch, Hughes. *Training AI Scientists to Replicate Research.* Inherent, 13 Aug 2026.
+
+## Related 2026 sources
+
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

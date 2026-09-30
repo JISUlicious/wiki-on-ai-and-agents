@@ -2,7 +2,7 @@
 title: Long-Term Memory
 type: concept
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-09-30
 sources:
   - a-mem-xu-2025.md
 status: draft
@@ -18,3 +18,7 @@ Long-term memory refers to information an agent persists across sessions, as opp
 ## References
 
 - [[a-mem-xu-2025]]
+
+## Related 2026 sources
+
+- [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured

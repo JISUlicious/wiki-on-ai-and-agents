@@ -2,7 +2,7 @@
 title: "Multi-Turn On-Policy Distillation with Prefix Replay"
 type: source
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-09-30
 sources:
   - multi-turn-on-policy-distillation-prefix-replay-liao-2026.md
 arxiv_id: "2607.04763"
@@ -69,3 +69,7 @@ Experiments use Qwen3-family teachers and students on two agentic environments (
 
 - [arXiv:2607.04763](https://arxiv.org/abs/2607.04763)
 - Project page: baohaoliao.github.io/ReOPD; code: github.com/baohaoliao/ReOPD; models/data: huggingface.co/baohao/reopd
+
+## Related 2026 sources
+
+- [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains

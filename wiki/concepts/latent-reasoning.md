@@ -2,7 +2,7 @@
 title: Latent Reasoning
 type: concept
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-09-30
 sources:
   - latent-thoughts-looped-transformers-saunshi-2025.md
   - cot-or-loop-xu-2025.md
@@ -49,3 +49,6 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[generative-recursive-reasoning-baek-2026]] — Generative Recursive Reasoning
 - [[latent-reasoning-with-normalizing-flows-tu-2026]] — Latent Reasoning with Normalizing Flows (NF CoT)
 - [[the-latent-space-yu-2026]] — The Latent Space Foundation, Evolution, Mechanism, Ability, and
+- [[ncp-archpreview-next-concept-prediction-shanghai-ai-lab-2026]] — NCP-ArchPreview: 8.9B LM adding next-concept prediction; the gain shrinks to +0.59 after mid-training
+- [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+- [[recurrent-looped-transformer-zhang-2026]] — Recurrent Looped Transformer: decoder state carried across all tokens; a design report with no experiments (alphaXiv-only)

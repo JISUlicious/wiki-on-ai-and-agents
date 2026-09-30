@@ -2,7 +2,7 @@
 title: "Scaling Behavior of Single LLM-Driven Multi-Agent Systems"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-09-30
 sources:
   - scaling-behavior-single-llm-multi-agent-systems-li-2026.md
 arxiv_id: "2606.00655"
@@ -46,3 +46,8 @@ The central finding: performance does **not** scale monotonically with agent cou
 ## References
 
 - [arXiv:2606.00655](https://arxiv.org/abs/2606.00655)
+
+## Related 2026 sources
+
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

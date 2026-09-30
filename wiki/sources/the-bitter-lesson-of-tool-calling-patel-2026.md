@@ -2,7 +2,7 @@
 title: "The Bitter Lesson of Tool Calling"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.06370"
 year: 2026
@@ -116,3 +116,7 @@ Minor internal inconsistency: the abstract and §4.1 both give the GPT-5.6 gain 
 
 - [arXiv:2608.06370](https://arxiv.org/abs/2608.06370)
 - BFCL v4 — Berkeley Function Calling Leaderboard (benchmark used; 309-entry subset, entry IDs released with the harness)
+
+## Related 2026 sources
+
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed

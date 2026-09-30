@@ -2,7 +2,7 @@
 title: Multi-Agent Systems (LLM)
 type: concept
 created: 2026-06-03
-updated: 2026-09-15
+updated: 2026-09-30
 sources:
   - reaching-agreement-among-reasoning-llm-agents-ruan-2025.md
   - single-agent-vs-multi-agent-tran-2026.md
@@ -40,6 +40,8 @@ A recurring 2026 theme is skepticism — measuring whether multi-agent coordinat
 - [[scaling-behavior-single-llm-multi-agent-systems-li-2026|SIMAS]] (Li et al. 2026) shows performance is **non-monotonic** in agent count — diminishing returns then degradation from coordination overhead; the optimal count is task-dependent, so "design the interaction, don't just stack agents."
 - [[theory-of-mind-internal-beliefs-multi-agent-kostka-2026|ToM evaluation]] probes whether agents maintain accurate internal beliefs about each other — a prerequisite for genuine coordination.
 
+  - Qualified by [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026|SAT]] (2026): a heterogeneous team that learns its own collaboration strategy beats a roughly compute-matched single agent by 8 points on math/physics, but only +0.7 on knowledge and logic. Three copies of one model running the same strategies score 56.0, so heterogeneity matters. [[mo-models-mo-problems-model-pool-selection-marjanovic-2026|Mo' Models]] finds the opposite for untrained routing, voting and judging: mixing model families mostly degrades them.
+
 These results push the field toward *equal-compute* baselines and away from uncritical "more agents = better" framing.
 
 ## Related
@@ -75,3 +77,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[ai-enabled-cyber-operations]] — multi-agent orchestration in adversarial use: parallel reconnaissance and exploitation agents run for hours, and a weapons cell that split Claude instances into coder, researcher and reviewer roles "much as a lead would delegate work on a small engineering team"
 - [[codebook-agent-amortized-topology-design-yu-2026]] — a 16-entry codebook of communication graphs beats every generated-topology method at 84.6 average — but sparser graphs cost *more* tokens (r ≈ −0.4, one pooled correlation), and the best fixed graph is within 1.4 points
 - [[parser-read-in-parallel-reason-in-depth-li-2026]] — parallel frozen readers plus one RL-trained lead agent beat sequential memory agents by +12.0 at 896K tokens and stay flat when evidence order is reversed
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

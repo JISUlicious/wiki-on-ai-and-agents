@@ -2,7 +2,7 @@
 title: "Diversity Collapse in Multi-Agent LLM Systems"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - diversity-collapse-in-multi-agent-llm-systems-chen-2026.md
 arxiv_id: "2604.18005"
@@ -52,3 +52,9 @@ Multi-agent systems (MAS) are widely assumed to broaden exploration in open-ende
 - [arXiv:2604.18005](https://arxiv.org/abs/2604.18005)
 - Code: https://github.com/Xtra-Computing/MAS_Diversity
 - Local source: `sources/diversity-collapse-in-multi-agent-llm-systems-chen-2026.md`
+
+## Related 2026 sources
+
+- [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win
+- [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours
+- [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge

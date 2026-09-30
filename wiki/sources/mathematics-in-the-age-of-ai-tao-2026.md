@@ -2,7 +2,7 @@
 title: "Mathematics in the age of AI"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.16753"
 venue: Submitted to the Proceedings of the ICM 2026
@@ -166,3 +166,7 @@ Worth being explicit, since the title invites over-reading:
 - M. Abouzaid, N. Srivastava et al., *First Proof Second Batch*, arXiv:2606.18119 — the controlled capability evaluation Tao cites.
 - W. P. Thurston, *On proof and progress in mathematics*, Bull. AMS 30 (1994) — the essay's touchstone.
 - T. Tao, *What is good mathematics?*, Bull. AMS 44 (2007) — his earlier treatment of the goal-alignment phenomenon.
+
+## Related 2026 sources
+
+- [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble

@@ -2,7 +2,7 @@
 title: "PivotRL: High Accuracy Agentic Post-Training at Low Compute Cost"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - pivotrl-high-accuracy-agentic-post-training-yi-2026.md
 arxiv_id: "2603.21383"
@@ -49,3 +49,7 @@ It uses two mechanisms. First, it runs **local, on-policy rollouts and filters f
 
 - arXiv: [arXiv:2603.21383](https://arxiv.org/abs/2603.21383)
 - Local source: `sources/pivotrl-high-accuracy-agentic-post-training-yi-2026.md`
+
+## Related 2026 sources
+
+- [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3

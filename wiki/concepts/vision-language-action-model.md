@@ -2,7 +2,7 @@
 title: Vision-Language-Action Model
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-30
 sources:
   - magma-yang-2025.md
 status: complete
@@ -38,3 +38,7 @@ VLAs collapse the perception → planning → control pipeline into a single lea
 
 - [[magma-yang-2025]] — current unified-VLA reference; [arXiv:2502.13130](https://arxiv.org/abs/2502.13130)
 - Related prior work: OpenVLA (Kim et al. 2024), RT-2 (Brohan et al. 2023), RoboFlamingo.
+
+## Related 2026 sources
+
+- [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots

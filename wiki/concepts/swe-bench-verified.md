@@ -73,3 +73,7 @@ Trend claims: [[demystifying-evals-for-ai-agents-anthropic-2026|Anthropic]] says
 - SWE-bench Verified overview (500 human-filtered instances, created with OpenAI): https://www.swebench.com/verified.html
 - Dataset card, "a subset of 500 samples from the SWE-bench test set": https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified
 - The wiki sources listed in frontmatter.
+
+## Related 2026 sources
+
+- [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help

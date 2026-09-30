@@ -57,6 +57,9 @@ The paper defines three nested sets:
 - **Opus is reported twice in different tables:** Opus 4.8 at 91.0 in Kimi K3's table and Opus 4.6 (Max) at 91.3 in the Qwen3.8 card. These are different model versions, and each table was compiled by a competing vendor.
 - Nemotron's "GPQA (no tools)" does not say which subset it uses, so it is not directly comparable to the Diamond rows.
 
+> [!note] DeepSeek-V4-Flash appears at two values
+> 90.8 on the Qwen3.8 model card (V4-Flash-0731) and 89.9 in DeepSeek's own [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026|V4.1-Flash report]] (§5.3.2). Most likely two checkpoints; neither source says.
+
 ## Related
 
 [[benchmark]] · [[mmlu]] · [[benchmark-contamination]] · [[reasoning]] · [[aime]] · [[diffusiongemma]]

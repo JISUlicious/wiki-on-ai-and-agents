@@ -2,7 +2,7 @@
 title: LLM-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - langsmith-evaluation-docs.md
@@ -32,6 +32,9 @@ Both major platforms ship an alignment feature measuring the judge against human
 |---|---|---|
 | **LangSmith** *Align Evaluator* | human-in-the-loop prompt iteration in a playground; **alignment score = % agreement with human experts**; corrections auto-inserted as few-shot examples | **>=20**, balanced; grow to ~100 for production |
 | **MLflow** `judge.align()` | **automated prompt optimization** — MemAlign (default), SIMBA, GEPA (DSPy-backed) | **>=10** traces, >=30% of each class |
+
+> [!warning] Agreement with humans is not the same as tracking success
+> [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026|GAUGE]] (Amazon, 2026) found that 57.5% of conversations humans rated "satisfied" had failed the task, the same as the base failure rate. A judge can agree with human raters and still be anchored to the wrong outcome. The gate ranks agents well overall (ρ = 0.94) but picks the worse of two near-equal agents 31% of the time, and averaging four judges does not help. Calibrate a judge against a verifiable reward before trusting it for close calls.
 
 LangSmith measures and lets you tune; MLflow optimizes for you.
 
@@ -86,3 +89,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[rehearse-confidence-cliff-autoresearch-ji-2026]] — the confidence cliff: 82.8% → 56.9% selective accuracy as a self-improvement trajectory deepens, while coverage *rises*
 - [[metacognition]] — JOL is a poor *ranker* — within-problem SD 0.048 vs 0.270 across problems, so self-confidence can allocate compute but cannot pick the best attempt
 - [[lifecycle-of-llm-as-a-judge-recommendation-explanations-kong-2026]] — Netflix, in production: a judge as a four-phase lifecycle rather than a one-time artifact, with drift monitoring behind a review gate. Supplies the *mechanism* this page's "recalibrate periodically" rule lacked — a meta-judge over the judge's own reasoning traces mismatches back to specific rubric language
+- [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one
+- [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+- [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer

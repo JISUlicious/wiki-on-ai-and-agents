@@ -2,7 +2,7 @@
 title: Knowledge Graph
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - hipporag2-jimenez-gutierrez-2025.md
   - mem0-chhikara-2025.md
@@ -26,3 +26,7 @@ A structured representation of knowledge as `(entity, relation, entity)` triples
 
 - [[hipporag2-jimenez-gutierrez-2025]]
 - [[mem0-chhikara-2025]]
+
+## Related 2026 sources
+
+- [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation

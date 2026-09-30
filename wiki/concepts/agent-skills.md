@@ -2,7 +2,7 @@
 title: Agent Skills (Anthropic)
 type: concept
 created: 2026-05-16
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - anthropic-agent-skills-2025.md
   - anthropic-engineering-skills-2025.md
@@ -182,3 +182,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the deployment guidance, and it states the limit correctly: skills are **advisory**, so anything that must always hold belongs in a hook or the PR gate. Its skill metric is *latency* (policy change → merged skill), which says nothing about whether the skill fires or helps
 - [[ai-enabled-cyber-operations]] — the report's Appendix A is a table of skills threat actors built, each mapped to a MITRE ATT&CK technique — personas, `MEMORY.md` indexes, and a "dead-end ledger" of confirmed failures never to retry. Ordinary skill patterns, adversarial purpose
 - [[building-an-ai-native-sdlc-plugin]] — a worked design that keeps the auto-invoked skill count at two by moving every human-initiated stage to `disable-model-invocation: true` skills, which cost no routing budget
+- [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)

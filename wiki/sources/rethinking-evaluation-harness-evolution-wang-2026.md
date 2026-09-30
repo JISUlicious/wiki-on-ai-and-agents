@@ -2,7 +2,7 @@
 title: "Rethinking the Evaluation of Harness Evolution for Agents"
 type: source
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-09-30
 sources:
   - rethinking-evaluation-harness-evolution-wang-2026.md
 arxiv_id: "2607.12227"
@@ -94,3 +94,7 @@ The verdict across three settings: **harness evolution does not consistently bea
 - Other harness-evolution work critiqued: Meta-Harness (Lee et al., arXiv:2603.28052); AEVO (Zhang et al., 2026).
 - Test-time scaling baselines drawn from: Snell et al. 2024; self-consistency (Wang et al. 2022); Large Language Monkeys (Brown et al. 2024); Self-Refine (Madaan et al. 2023); AlphaEvolve (Novikov et al. 2025).
 - Benchmark: Terminal-Bench (Merrill et al., arXiv:2601.11868), v2.1.
+
+## Related 2026 sources
+
+- [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)

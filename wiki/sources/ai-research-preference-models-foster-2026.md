@@ -2,7 +2,7 @@
 title: "AI Research Preference Models"
 type: source
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.13940"
 authors:
@@ -177,3 +177,7 @@ Reading caveats to add: the 20 evaluated tasks are **text and tabular only**; th
 ## References
 
 - [arXiv:2608.13940](https://arxiv.org/abs/2608.13940) (v2, 25 Aug 2026)
+
+## Related 2026 sources
+
+- [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost

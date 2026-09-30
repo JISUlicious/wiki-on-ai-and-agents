@@ -2,7 +2,7 @@
 title: Chelsea Finn
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - rafailov-dpo-2023.md
 status: draft
@@ -18,3 +18,7 @@ ML researcher; [[stanford-university|Stanford]] assistant professor. First autho
 ## References
 
 - [[dpo-rafailov-2023]]
+
+## Related 2026 sources
+
+- [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots

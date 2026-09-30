@@ -2,7 +2,7 @@
 title: Sparse Attention
 type: concept
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-30
 sources:
   - minference-dynamic-sparse-attention-jiang-2024.md
   - token-sparse-attention-jo-2026.md
@@ -77,3 +77,5 @@ Trained sparse attention — [[minimax-sparse-attention-lai-2026|MiniMax]]'s 28.
 - [[specattn-speculating-sparse-attention-shah-2025]] — same idea at layer granularity with top-p; 78% of KV reads skipped at +15% perplexity — but **net slower** than plain [[speculative-decoding|speculative decoding]] (59.95 vs 68.26 tok/s)
 - [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] — routes each query to 8 of DSA's 64 indexer heads, parameter-free; retrofit onto DSA-trained models only
 - [[gated-sparse-attention-shen-2026]] — DSA-style indexer plus G1/G2 gates, 1.7B from scratch; sparse-only is already *more* stable than dense in its own table
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+- [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth

@@ -2,7 +2,7 @@
 title: Tool Creation
 type: concept
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-09-30
 sources:
   - llm-as-tool-makers-cai-2023.md
   - craft-yuan-2023.md
@@ -31,3 +31,7 @@ tags:
 
 - [[llm-as-tool-makers-cai-2023]]
 - [[craft-yuan-2023]]
+
+## Related 2026 sources
+
+- [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed

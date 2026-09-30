@@ -2,7 +2,7 @@
 title: Byte-Pair Encoding
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-09-30
 sources:
   - transformer-vaswani-2017.md
 status: draft
@@ -18,3 +18,7 @@ The [[attention-is-all-you-need-vaswani-2017|original Transformer]] used BPE wit
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Related 2026 sources
+
+- [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)

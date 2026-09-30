@@ -2,7 +2,7 @@
 title: Red-Teaming (LLMs)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - ganguli-red-teaming-2022.md
 status: complete
@@ -49,3 +49,4 @@ External evaluation organizations (METR, AISI, NIST AISIC) have emerged to provi
 ## Related 2026 sources
 
 - [[anthropic-threat-intelligence-report-september-2026]] — the post-deployment counterpart: Anthropic's threat-intelligence team documents real misuse across seven harm areas, and its Frontier Red Team built new evaluations for tactical intelligence targeting and conventional weapons development in response
+- [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers
