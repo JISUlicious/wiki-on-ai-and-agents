@@ -65,7 +65,7 @@ Two directions of movement: controls shift **left** (policy applied during gener
 
 ## Three things that dominate outcomes and rarely appear in SDLC narratives
 
-**The harness, not the model.** Scaffold-only variation moves results **11–15 points** on SWE-bench Verified with the model fixed, up to ~48 on some leaderboards ([[harness-vs-model-attribution]]). Cost per success swings **5–30×** across harnesses at equal success rate ([[same-task-different-work-weinberger-2026]]). The playbook gets this right in one place worth copying: it treats a change to the model, prompt, `CLAUDE.md`, skills *or* hooks as a configuration change that must re-run the eval suite.
+**The harness, not the model.** Scaffold-only variation moves results **11–15 points** on [[swe-bench-verified|SWE-bench Verified]] with the model fixed, up to ~48 on some leaderboards ([[harness-vs-model-attribution]]). Cost per success swings **5–30×** across harnesses at equal success rate ([[same-task-different-work-weinberger-2026]]). The playbook gets this right in one place worth copying: it treats a change to the model, prompt, `CLAUDE.md`, skills *or* hooks as a configuration change that must re-run the eval suite.
 
 **Prompt wording, independent of content.** Asking for "multiple approaches" inflates reasoning tokens **2.4–7.4×** across six models **with no success gain**. Bounded-efficiency wording — scope, acceptance criteria, stop condition — is neutral-or-better everywhere.
 

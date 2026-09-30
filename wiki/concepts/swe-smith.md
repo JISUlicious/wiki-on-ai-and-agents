@@ -18,7 +18,7 @@ importance: low
 
 ## In this wiki
 
-- **RL training tasks.** [[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1]] trains its coding agent on SWE-smith tasks inside a mini-SWE-agent harness with GRPO. Qwen3.5-9B goes from 41.8% to 56.4% on SWE-bench Verified.
+- **RL training tasks.** [[agent-lightning-v1-harnessed-agentic-rl-he-2026|Agent Lightning v1]] trains its coding agent on SWE-smith tasks inside a mini-SWE-agent harness with GRPO. Qwen3.5-9B goes from 41.8% to 56.4% on [[swe-bench-verified|SWE-bench Verified]].
 - **Environment-generation baseline.** [[envharness-awakening-static-worlds-huang-2026|EnvHarness]] compares against SWE-smith as a domain-specific environment generator. The page cautions that SWE-smith was built to run at scale, not at 100–300 seeds.
 - **Trajectory corpus.** [[toktier-exact-stateful-tokenization-zhang-2026|TokTier]] replays 74,064 repairs from public SWE-smith trajectories to test its tokenizer splicing.
 - **Benchmark landscape.** [[swe-bench-live-zhang-2025|SWE-bench-Live]] lists it alongside Multi-SWE-bench and [[livecodebench]].

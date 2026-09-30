@@ -52,7 +52,7 @@ The [[transformer|Transformer]] eliminated recurrence and convolution, replacing
 [[rlhf-christiano-2017|Christiano (2017)]] established the preference-learning recipe (preferences → reward model → PPO). [[instructgpt-ouyang-2022|InstructGPT (2022)]] applied it to LLMs; ChatGPT shipped the result. [[constitutional-ai-bai-2022|Constitutional AI]] generalized to [[rlaif|AI-feedback]] preferences. [[dpo-rafailov-2023|DPO]] collapsed the pipeline into a single supervised loss.
 
 ### Track 5 — Reasoning
-[[chain-of-thought-wei-2022|Wei (2022)]] showed CoT exemplars dramatically improve multi-step reasoning at scale. [[zero-shot-cot-kojima-2022|Zero-shot CoT]] needs just `"Let's think step by step"`. [[self-consistency-wang-2022|Self-Consistency]] introduced inference-time-scaling. [[tree-of-thoughts-yao-2023|ToT]] generalized to explicit search trees. Modern reasoning models (o1, etc.) internalize the lineage via RL.
+[[chain-of-thought-wei-2022|Wei (2022)]] showed CoT exemplars dramatically improve multi-step reasoning at scale. [[zero-shot-cot-kojima-2022|Zero-shot CoT]] needs just `"Let's think step by step"`. [[self-consistency-wang-2022|Self-Consistency]] introduced inference-time-scaling. [[tree-of-thoughts-yao-2023|ToT]] generalized to explicit search trees. Modern reasoning models ([[o1|o1]], etc.) internalize the lineage via RL.
 
 ### Track 6 — Retrieval
 [[dpr|DPR]] proved [[dense-retrieval]] beats BM25 by 9–19%. [[rag-lewis-2020|RAG (Lewis 2020)]] named the paradigm. [[retro-borgeaud-2021|RETRO]] pushed retrieval into pre-training itself; 7.5B + retrieval matched 175B parametric-only.

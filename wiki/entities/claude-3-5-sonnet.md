@@ -21,7 +21,7 @@ Mid-tier model of [[anthropic|Anthropic]]'s [[claude|Claude]] 3.5 generation, an
 
 ## In this wiki
 
-- **Self-improving agent backbone.** In [[darwin-godel-machine-zhang-2025|Darwin Gödel Machine]], a minimal Claude-3.5-Sonnet agent with Bash and edit tools goes from **20.0% to 50.0% on SWE-bench Verified** and 14.2% to 30.7% on Polyglot over 80 iterations of self-rewriting. The discovered scaffolds transfer to Claude 3.7 Sonnet. See [[darwin-godel-machine]].
+- **Self-improving agent backbone.** In [[darwin-godel-machine-zhang-2025|Darwin Gödel Machine]], a minimal Claude-3.5-Sonnet agent with Bash and edit tools goes from **20.0% to 50.0% on [[swe-bench-verified|SWE-bench Verified]]** and 14.2% to 30.7% on Polyglot over 80 iterations of self-rewriting. The discovered scaffolds transfer to Claude 3.7 Sonnet. See [[darwin-godel-machine]].
 - **Expert-trajectory source.** [[sage-skill-library-wang-2025|SAGE]] warm-starts [[qwen-2-5|Qwen2.5]]-32B by SFT on Claude 3.5 Sonnet V2 trajectories, because open models could not follow the skill-library prompt. [[swe-gym-pan-2024|SWE-Gym]] rejection-samples GPT-4o and Claude 3.5 Sonnet rollouts to fine-tune Qwen-2.5-Coder-32B.
 - **Harness evaluation.** [[openhands-wang-2024|OpenHands]] CodeActAgent v1.8 with `claude-3-5-sonnet` reaches **26.7% on SWE-Bench Lite**. [[on-the-fragility-of-self-improving-agents-ye-2026|On the Fragility of Self-Improving Agents]] re-examines AWM results run on Claude-3.5-Sonnet.
 

@@ -90,4 +90,4 @@ Under this reading, [[reflexion]] (listed as a precursor on the concept page) is
 
 - [arXiv:2609.11873](https://arxiv.org/abs/2609.11873) (v1, 10 Sep 2026).
 - Level exemplars: Self-Refine, Reflexion, Tree of Thoughts (B0); FineWeb-Edu (L1); Self-Harness, ADAS, AFlow, GEPA (L2); SIMA 2, AZR, R-Zero (L3); PANDO, Voyager (L4); STOP, Gödel Agent, DGM, HyperAgents, RQGM, A-Evolve-Training (L5 mechanisms).
-- Industry: OpenAI, Anthropic ("When AI builds itself", tagged an L5 *target*), Google DeepMind, Meta AIRA2, Weco AIDE2, Karpathy's autoresearch; 72 companies/teams in Appendix B (Table 12).
+- Industry: OpenAI, Anthropic ("When AI builds itself", tagged an L5 *target*), Google DeepMind, Meta AIRA2, Weco AIDE2, [[andrej-karpathy|Karpathy]]'s autoresearch; 72 companies/teams in Appendix B (Table 12).

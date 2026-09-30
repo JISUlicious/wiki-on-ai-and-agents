@@ -7,6 +7,16 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-09-30] lint | Pages for the seven broken-link targets that matter
+
+Created [[andrej-karpathy]], [[francois-chollet]], [[gemma]], [[o1]], [[swe-bench-verified]], [[gpqa]] and [[aime]]. Each is built from the wiki's own mentions, and every added fact is checked against a primary source (URLs on each page). 120 first-mention links were added on pages that named these in plain text: SWE-bench Verified 29, AIME 27, Gemma 24, o1 18, GPQA 14, Karpathy 7, Chollet 1. The o1 matches were reviewed by hand for false hits. The benchmark hub and index are updated.
+
+The benchmark pages surface number conflicts the wiki already contained, recorded per result on each page: e.g. Qwen3-8B on AIME25 appears as 21.1, 23.33 and 67.8 in different sources with unstated modes, and several SWE-bench Verified baselines differ by harness.
+
+Also fixed a stale [[overview]] line that said reasoning models were absent from the corpus. The overview has not been reviewed since 2026-05-13, and its "future ingests" list names sources that now exist.
+
+The remaining one-off broken links (~157) are left as placeholders.
+
 ## [2026-09-29] lint | Broken links and contradictions, second pass
 
 **Broken links: 176 → 164 targets.** Seven links repointed to existing pages: `recurrent-depth-model`, `inference-time-scaling`, `gaia-benchmark`, `attention`, `looped-language-model`, `chinchilla-scaling-laws` and `sft`. Five "broken links" were never links: they sit inside inline code, which Obsidian does not render as links. The lint and integrity parsers now skip inline code too. About 30 stale "no page yet" notes were rewritten, since their pages now exist; the notes now name only what is still missing. The remaining 164 are each linked from one page and are mostly intentional red links for pages not yet written. Not auto-fixed.

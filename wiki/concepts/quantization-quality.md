@@ -93,7 +93,7 @@ Vicuna-7B + SparseGPT across 50 calibration sets: perplexity **12.72 ± 0.18** w
 
 Same models, same quantization: **~0% damage at 8K, up to −23 points at 128K**. Non-English degrades "up to five times more than in English."
 
-**Reasoning and math.** [[quantization-hurts-reasoning-liu-2025|Liu et al.]] (COLM 2025) find *"harder tasks suffer up to 4× greater degradation than simpler ones."* At W4A4KV4 on a 32B reasoning model: AIME −3.9%, MATH-500 −1.2%, **GSM8K −0.0%**. Small models collapse where large ones shrug: W3G128 costs Qwen-1.5B **−16.6%** but Qwen-32B only −3.2%. Li et al. add that at W3, the dominant failure is **incorrect logic (~50%)**, not calculation error, and that multi-step reasoning and self-calibration tolerate quantization *worse* than instruction-following and [[in-context-learning|in-context learning]].
+**Reasoning and math.** [[quantization-hurts-reasoning-liu-2025|Liu et al.]] (COLM 2025) find *"harder tasks suffer up to 4× greater degradation than simpler ones."* At W4A4KV4 on a 32B reasoning model: [[aime|AIME]] −3.9%, MATH-500 −1.2%, **GSM8K −0.0%**. Small models collapse where large ones shrug: W3G128 costs Qwen-1.5B **−16.6%** but Qwen-32B only −3.2%. Li et al. add that at W3, the dominant failure is **incorrect logic (~50%)**, not calculation error, and that multi-step reasoning and self-calibration tolerate quantization *worse* than instruction-following and [[in-context-learning|in-context learning]].
 
 > [!warning] Contradiction — is code disproportionately damaged?
 > **Claim A (yes)**: Shi et al. report *"up to a 92% drop in HumanEval pass rate"*; Giagnorio et al. measure CodeLlama-7B Python pass@1 falling 29.8 → 16.4 at 2-bit.

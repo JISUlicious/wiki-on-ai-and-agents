@@ -158,7 +158,7 @@ The ≈ values are read from linear-axis plots and are good to ~10%; the two bol
 - **Parameter-free gating caps what can be learned.** The router cannot become better than "query · mean key"; NSA's learned compression and DSA's learned indexer are both answers to that. MoBA's own related-work section concedes Quest is the same gate with a different pooling.
 - **Per-head selection** ignores KV-sharing architectures (above).
 - **Prefill-only in the reported evaluation**; the hybrid experiments show MoBA-only training hurts trailing tokens and SFT, and the fixes (last three layers full, full attention at generation) leave part of the model dense.
-- **Reasoning after long-CoT SFT/RL is not evaluated** — the one setting NSA tests (AIME) and the one Moonshot's own k1.5 motivates on page 1.
+- **Reasoning after long-CoT SFT/RL is not evaluated** — the one setting NSA tests ([[aime|AIME]]) and the one Moonshot's own k1.5 motivates on page 1.
 - **Speedup baseline version is unstated** ("Flash Attention", Dao et al. 2022) and the hardware is not named.
 - The largest model trained with MoBA from scratch is 2.1B; the 8B result is a retrofit.
 

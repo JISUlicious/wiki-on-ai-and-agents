@@ -110,7 +110,7 @@ The largest effects are the two *context* rows, and both point the same way: **f
 - **Sonnet-4.6** — the only model passing all six rows ("Calibrated Metacognition"). This is why it is the base model.
 - **Opus-4.6** — "Adequate": no outright failures, both raw ECEs at threshold.
 - **GPT-OSS, Haiku-4.5, Gemini-3-Flash, Trinity, DeepSeek-V4-Pro, MiniMax-M2.7** — "Discriminative but Miscalibrated": they can *rank* correct above incorrect but their probability magnitudes drift. GPT-OSS is the exemplar: JOL AUROC 0.87, JOL ECE 0.41; the per-model SVM pulls joint ECE to 0.06.
-- **Gemma-4** — "Absent Metacognitive Signal": discrimination itself at chance on FOK.
+- **[[gemma|Gemma]]-4** — "Absent Metacognitive Signal": discrimination itself at chance on FOK.
 
 The winning kernel differs per model (poly for Sonnet, linear for Opus/Haiku/Trinity, sigmoid for DeepSeek, RBF for Gemini/MiniMax), which the authors read as the FOK–JOL plane having different curvature per model — the argument against a transferable universal threshold.
 

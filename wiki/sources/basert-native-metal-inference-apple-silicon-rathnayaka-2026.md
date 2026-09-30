@@ -44,7 +44,7 @@ The paper does **not** say "command-buffer granularity" or "memory copies," and 
 ## Architecture
 
 - **C++ runtime directly on Metal**, no MLX / PyTorch / CoreML / MPSGraph dependency; C API with Python, Node, Rust and Swift bindings; models in a native `.base` weight format.
-- **Data-driven architecture descriptors** — activation/norm variants, MoE routing, attention and positional-encoding conventions are data, so the hot path never branches on architecture. Supported families at submission: LLaMA, Qwen3, Gemma, Whisper, BERT.
+- **Data-driven architecture descriptors** — activation/norm variants, MoE routing, attention and positional-encoding conventions are data, so the hot path never branches on architecture. Supported families at submission: LLaMA, Qwen3, [[gemma|Gemma]], Whisper, BERT.
 - **Hand-written Metal shader library** across matmul, attention, norm, RoPE, embedding, activation and sampling. Separate **GEMV (decode, M=1)** and **GEMM (prefill, M>1)** kernels per quantisation format, 2- to 16-bit; eight formats total (Q2, Q3, Q4, Q5, Q6, Q8, BF16, FP16).
 - **Hardware-adaptive kernel selection** — a per-chip configuration keyed on GPU core count and family (M1 through M5) sets threadgroup sizes, selection thresholds and fusion decisions.
 - **Prefill** — tiled GEMM on `simdgroup_matrix` intrinsics with tile geometry tuned per sequence-length regime; [[chunked-prefill]] with a bounded chunk size to cap scratch memory; a FlashAttention-style tiled online-softmax kernel with O(n) memory. The paper states the standard [[arithmetic-intensity]] framing: prefill is compute-bound, decode memory-bound.

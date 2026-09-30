@@ -50,7 +50,7 @@ Results on InstructGPT and PaLM with 8-shot CoT prompts:
 - **StrategyQA**: +6.4%
 - **ARC-Challenge**: +3.9%
 
-Self-consistency was one of the **earliest, most general inference-time-scaling techniques** — pay more inference compute (more samples) for more accuracy. It's the conceptual ancestor of every later test-time-compute method: best-of-N sampling, process reward models, the OpenAI o1 reasoning models (Sep 2024), Anthropic's reasoning Claude variants, and DeepSeek's R1 reasoning model.
+Self-consistency was one of the **earliest, most general inference-time-scaling techniques** — pay more inference compute (more samples) for more accuracy. It's the conceptual ancestor of every later test-time-compute method: best-of-N sampling, process reward models, the [[o1|OpenAI o1]] reasoning models (Sep 2024), Anthropic's reasoning Claude variants, and DeepSeek's R1 reasoning model.
 
 Crucially, self-consistency doesn't require any model changes, fine-tuning, or auxiliary models. It's a pure decoding-time technique that wraps existing CoT-prompted models.
 

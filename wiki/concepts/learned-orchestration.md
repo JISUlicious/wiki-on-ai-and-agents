@@ -38,7 +38,7 @@ A plain router maps a query to one model by a fixed classifier. Learned orchestr
 | Output | single worker per turn (selection head over hidden state; no decoding, no role assignment) | full NL agentic workflow (subtasks + worker-id + access-list → tree/chain/best-of-N) |
 | Training | SFT on soft worker-distributions → **sep-CMA-ES** evolutionary search on end-to-end trajectories | **[[grpo\|GRPO]]** with format + correctness reward |
 
-A hallmark result is **domain adaptivity**: the learned routing distribution *recovers known specializations without being told* — Terminal-Bench routes to GPT-5.5, GPQA to Gemini-3.1-Pro, HLE math→GPT, chemistry/biology→Gemini. New workers can be added to the pool **without retraining** the orchestrator.
+A hallmark result is **domain adaptivity**: the learned routing distribution *recovers known specializations without being told* — Terminal-Bench routes to GPT-5.5, [[gpqa|GPQA]] to Gemini-3.1-Pro, HLE math→GPT, chemistry/biology→Gemini. New workers can be added to the pool **without retraining** the orchestrator.
 
 ## Relation to neighboring ideas
 

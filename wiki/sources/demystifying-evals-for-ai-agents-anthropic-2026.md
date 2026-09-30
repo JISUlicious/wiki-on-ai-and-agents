@@ -61,7 +61,7 @@ Guidance: **deterministic where possible, LLM where necessary, human for validat
 
 ## By agent type
 
-- **Coding** — deterministic graders are natural (does it run, do tests pass). SWE-bench Verified went from ~40% to >80% in a year. Also grade the transcript for code quality and tool-use behavior.
+- **Coding** — deterministic graders are natural (does it run, do tests pass). [[swe-bench-verified|SWE-bench Verified]] went from ~40% to >80% in a year. Also grade the transcript for code quality and tool-use behavior.
 - **Conversational** — *"the quality of the interaction itself is part of what you're evaluating."* Usually requires a **second LLM simulating the user** (τ-bench, τ²-bench). Multidimensional: ticket resolved (state check) + under 10 turns (transcript constraint) + appropriate tone (LLM rubric).
 - **Research** — no binary signal; combine **groundedness** (claims supported by retrieved sources), **coverage** (key facts a good answer must include), and **source quality** (authoritative, not merely first-retrieved).
 - **Computer use** — run in a real/sandboxed environment and check achieved outcome (WebArena-style URL/page-state + backend verification). Notes a real DOM-vs-screenshot tradeoff: DOM is fast but token-hungry, screenshots slower but cheaper — Claude for Chrome has evals checking the agent picks the right one.

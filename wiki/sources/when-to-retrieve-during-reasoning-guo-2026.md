@@ -23,7 +23,7 @@ Surfaced via the alphaXiv / NLP-newsletter digest.
 
 ## Summary
 
-Large reasoning models (DeepSeek-R1, OpenAI o1) generate extended chains of thought spanning thousands of tokens, but their integration with retrieval-augmented generation is misaligned: standard RAG optimizes for providing context *before* reasoning begins, while reasoning models need evidence injected *during* multi-step inference. **ReaLM-Retrieve** is a reasoning-aware retrieval framework that injects evidence at the right moment within the reasoning chain rather than only at the start.
+Large reasoning models (DeepSeek-R1, [[o1|OpenAI o1]]) generate extended chains of thought spanning thousands of tokens, but their integration with retrieval-augmented generation is misaligned: standard RAG optimizes for providing context *before* reasoning begins, while reasoning models need evidence injected *during* multi-step inference. **ReaLM-Retrieve** is a reasoning-aware retrieval framework that injects evidence at the right moment within the reasoning chain rather than only at the start.
 
 ## Key points
 

@@ -84,7 +84,7 @@ At 10% keep the average is 98.5% of baseline; summarization loses ~16% relative 
 
 (dense → SpecPrefill.) Retrieval and QA hold or improve at one-tenth of the tokens; the 4K multi-hop dip is because 10% of 4K is only ~400 tokens. Aggregation — "which words are most common in this text" — is the failure mode: every token is evidence, and no importance estimator can drop 90% of them.
 
-**Standard short tasks (Figure 6, 70B).** Generative MMLU, IFEval, GSM8K 8-shot, HumanEval, MBPP, ARC-Challenge, GPQA 8-shot. Numbers are only given graphically; the text says short prompts are "information dense" so low keep rates hurt, but MBPP and GPQA improve at some keep rates and the average can match or beat the baseline "when choosing the right token keep rate". Treat this as: SpecPrefill is a long/medium-context tool, not a general default.
+**Standard short tasks (Figure 6, 70B).** Generative MMLU, IFEval, GSM8K 8-shot, HumanEval, MBPP, ARC-Challenge, [[gpqa|GPQA]] 8-shot. Numbers are only given graphically; the text says short prompts are "information dense" so low keep rates hurt, but MBPP and GPQA improve at some keep rates and the average can match or beat the baseline "when choosing the right token keep rate". Treat this as: SpecPrefill is a long/medium-context tool, not a general default.
 
 **Efficiency (8×H200, TP=8):**
 

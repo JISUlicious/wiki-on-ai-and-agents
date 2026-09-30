@@ -74,7 +74,7 @@ This matters for where the technique belongs in this wiki. See the taxonomy note
 
 ## Setup
 
-- **Models:** Gemma-4-{31B, 12B, E4B} and Qwen-3.6-27B, Qwen-3.5-{9B, 4B} ([[qwen]]). All natively 256K input except Gemma-4-E4B (128K). No weight updates anywhere — DA is **zero-shot prompting on off-the-shelf checkpoints**.
+- **Models:** [[gemma|Gemma]]-4-{31B, 12B, E4B} and Qwen-3.6-27B, Qwen-3.5-{9B, 4B} ([[qwen]]). All natively 256K input except Gemma-4-E4B (128K). No weight updates anywhere — DA is **zero-shot prompting on off-the-shelf checkpoints**.
 - **Tasks:** 15 long-context sources from RULER, [[longbench|LongBench v1/v2]], LooGLE, ZeroSCROLLS, split into single-span retrieval/reasoning (10) and multi-span reasoning (5). Contexts range from 6.4K mean (ZS/quality) to **1071.1K mean** (LBv2/code_repo). Eleven use original QA; four use synthetic QA generated with Gemini-3-Flash. Samples over 244K tokens excluded (116K for E4B); up to 128 examples per source at a fixed seed.
 - **Judge:** a per-question strict acceptance rubric written by Gemini-3-Flash, applied by thinking-enabled Qwen-3.5-4B; Pearson **r = 0.99** against Gemini-3.1-Pro.
 - **Arms:** *Vanilla* (raw context inline, full causal attention) · *DA^nm* (full DA prompt, **full causal attention** — isolates the prompt format) · *DA* (prompt + mask).

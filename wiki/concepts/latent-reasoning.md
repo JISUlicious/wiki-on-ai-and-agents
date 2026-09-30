@@ -29,7 +29,7 @@ Latent reasoning legitimizes reasoning in continuous space as a first-class alte
 
 ## Relation to other concepts
 
-[[chain-of-thought-prompting]] is the token-recursion sibling; latent reasoning is the depth-recursion alternative. [[looped-transformer]] is the architectural family that makes latent reasoning operational; [[recurrent-depth-transformer]] is its pretraining-scale incarnation. [[inference-time-compute]] is the broader axis both CoT and latent reasoning sit on; the two are complementary, not substitutes (Xu & Sato 2025). [[deepseek-r1]] and the o1 lineage represent the RL-reasoning thread that latent reasoning competes with on the parameter side. Connections also run to [[agentic-rl]] (where chains of latent reasoning steps might internalize what is currently externalized as tool-call traces) and to [[grokking]] as the training-dynamics phenomenon underlying implicit-reasoning emergence.
+[[chain-of-thought-prompting]] is the token-recursion sibling; latent reasoning is the depth-recursion alternative. [[looped-transformer]] is the architectural family that makes latent reasoning operational; [[recurrent-depth-transformer]] is its pretraining-scale incarnation. [[inference-time-compute]] is the broader axis both CoT and latent reasoning sit on; the two are complementary, not substitutes (Xu & Sato 2025). [[deepseek-r1]] and the [[o1|o1]] lineage represent the RL-reasoning thread that latent reasoning competes with on the parameter side. Connections also run to [[agentic-rl]] (where chains of latent reasoning steps might internalize what is currently externalized as tool-call traces) and to [[grokking]] as the training-dynamics phenomenon underlying implicit-reasoning emergence.
 
 ## References
 

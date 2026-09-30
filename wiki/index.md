@@ -46,6 +46,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[deepseek-v3]] — DeepSeek's 671B/37B-active MoE; base model of DeepSeek-R1
 - [[claude-3-5-sonnet]] — Anthropic's June-2024 Sonnet; default closed coding-agent backbone and expert-trajectory source
 - [[glm-5]] — Z.ai's 744B/40B-active MoE with DSA; SkillMOO backbone, MISA retrofit target, precedes GLM-5.2
+- [[gemma]] — Google's open-weights family (2024–); Gemma 3/4 are frequent test models; Gemma 4 26B A4B underlies DiffusionGemma
+- [[o1]] — OpenAI's first RL-trained reasoning model series; the o1-class bar DeepSeek-R1 and later LRMs are measured against
 
 ### Agent products (2026 era)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -97,6 +99,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[jacob-devlin]] — BERT first author; Google AI Language
 - [[alec-radford]] — GPT-1/2 lead author; OpenAI
 - [[colin-raffel]] — T5 co-first author
+- [[andrej-karpathy]] — OpenAI co-founder, ex-Tesla AI; author of nanochat, the autoresearch loop and the LLM Wiki pattern
 
 ### People — Scaling and emergence
 - [[tom-brown]] — GPT-3 first author; Anthropic co-founder
@@ -152,6 +155,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[mario-zechner]] — pi-mono creator; "badlogic"
 - [[thariq-shihipar]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
 - [[sid-bidasaria]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
+- [[francois-chollet]] — Keras creator, ARC Prize co-founder; designer of ARC-AGI 1/2/3, the wiki's harness-effect test bed
 
 ### Organizations
 - [[anthropic]] — Founded 2021 by Amodei et al.; Claude family
@@ -535,6 +539,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[livecodebench]] — Contest problems collected continuously so scores can avoid contamination; v6 is the standard coding metric for reasoning models
 - [[swe-smith]] — Pipeline that makes SWE-agent training tasks by breaking tests (50K instances); RL corpus for Agent Lightning
 - [[benchmark-contamination]] — Test data leaking into training; SWE-bench-Live's 43% → 19% drop, refresh and n-gram filter remedies
+- [[swe-bench-verified]] — 500 human-checked SWE-bench tasks; the wiki's recorded scores, harness swings, contamination gap
+- [[gpqa]] — Expert-written "Google-proof" science questions; Diamond is 198; scores from DeepSeek-R1 to Kimi K3
+- [[aime]] — Competition-math benchmark scored by year (2024/25/26); contamination makes year choice matter
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication

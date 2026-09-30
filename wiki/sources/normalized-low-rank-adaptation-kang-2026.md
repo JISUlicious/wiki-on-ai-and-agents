@@ -111,7 +111,7 @@ Two findings. On MLA, **NoRA-init recovers most of the perplexity benefit of tru
 | MiLoRA | 4.2 | 0.0 | 19.6 | 0.0 | 44.5 | 11.7 | 18.0 |
 | PiSSA | 0.0 | 0.0 | 0.0 | 0.0 | 0.6 | 0.1 | **0.2** |
 
-NoRA is **+1.6 over LoRA and +3.4 over base** — a much smaller margin than in SFT, and it does *not* win everywhere (LoRA is ahead on AIME24 average, and HMMT is a tie). The dramatic number in this table belongs to someone else: **the SVD-based spectral initializations detonate under RL** — PiSSA falls to 0.2, MiLoRA to 18.0, both far below the untrained base model. Since PiSSA is second-best-ish under SFT (40.26), this is a strong regime-dependence result and the practical case for NoRA: it needs no SVD of the pretrained weights, so it has nothing to be fragile about.
+NoRA is **+1.6 over LoRA and +3.4 over base** — a much smaller margin than in SFT, and it does *not* win everywhere (LoRA is ahead on [[aime|AIME]]24 average, and HMMT is a tie). The dramatic number in this table belongs to someone else: **the SVD-based spectral initializations detonate under RL** — PiSSA falls to 0.2, MiLoRA to 18.0, both far below the untrained base model. Since PiSSA is second-best-ish under SFT (40.26), this is a strong regime-dependence result and the practical case for NoRA: it needs no SVD of the pretrained weights, so it has nothing to be fragile about.
 
 ## Limitations and things that did not fully check out
 

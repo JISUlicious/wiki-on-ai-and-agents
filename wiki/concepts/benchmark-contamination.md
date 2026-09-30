@@ -18,7 +18,7 @@ importance: medium
 
 ## In this wiki
 
-- **Evidence from coding agents.** [[swe-bench-live-zhang-2025|SWE-bench-Live]] is the wiki's main case. The same OpenHands + Claude 3.7 Sonnet setup resolves **43.20%** on SWE-bench Verified but **19.25%** on fresh issues. Instances from repos that overlap with the original SWE-bench score higher (22.96%) than instances from new repos (18.89%). Its answer is the monthly refresh (see [[swe-bench-live]]).
+- **Evidence from coding agents.** [[swe-bench-live-zhang-2025|SWE-bench-Live]] is the wiki's main case. The same OpenHands + Claude 3.7 Sonnet setup resolves **43.20%** on [[swe-bench-verified|SWE-bench Verified]] but **19.25%** on fresh issues. Instances from repos that overlap with the original SWE-bench score higher (22.96%) than instances from new repos (18.89%). Its answer is the monthly refresh (see [[swe-bench-live]]).
 - **Designed-in refresh.** [[swe-bench-jimenez-2023|SWE-bench]] already noted that its automatic pipeline could collect post-cutoff issues. [[livecodebench]] applies the same idea to contest problems.
 - **Overlap filtering.** [[retro-borgeaud-2021|RETRO]] retrieves from its training set at evaluation time, so it introduces a 13-gram Jaccard filter and separates gains from copying neighbours from gains from general knowledge.
 - **Design choices against leakage.** [[swe-refactor-bench-hong-2026|SWE-Refactor-Bench]] squashes repository history, citing SWE-bench-Live's evidence as precedent.

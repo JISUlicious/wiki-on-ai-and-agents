@@ -30,7 +30,7 @@ Open diffusion LMs are marketed as parallel, non-autoregressive decoders, but th
 
 ## What was measured
 
-Subject: `google/diffusiongemma-26B-A4B-it` — masked discrete-diffusion [[mixture-of-experts]] model, **25.2B total / 3.8B active** (8 of 128 experts), built on Gemma 4, open weights under Apache-2.0. The paper notes "26B-A4B" is **rounded marketing naming** and uses its own tallied 25.2B/3.8B throughout. Shipped decode config: **256-token canvas, up to 48 denoising steps**, `EntropyBoundSampler` with `entropy_bound = 0.1` nats.
+Subject: `google/diffusiongemma-26B-A4B-it` — masked discrete-diffusion [[mixture-of-experts]] model, **25.2B total / 3.8B active** (8 of 128 experts), built on [[gemma|Gemma]] 4, open weights under Apache-2.0. The paper notes "26B-A4B" is **rounded marketing naming** and uses its own tallied 25.2B/3.8B throughout. Shipped decode config: **256-token canvas, up to 48 denoising steps**, `EntropyBoundSampler` with `entropy_bound = 0.1` nats.
 
 Instrumentation is **inference-only**: a forward hook on `EntropyBoundSampler.accept_canvas` records, per accept-call, which canvas positions commit and their per-position entropy over the 262,144-token vocabulary. No weights or sampling decisions are modified. Two resolution caveats the authors are explicit about: commit order is observed at *accept-call* resolution (not denoising-step or wall-clock), and only the *first* accept-call committing a position is recorded.
 

@@ -36,7 +36,7 @@ Experiments use Qwen3-family teachers and students on two agentic environments (
 ## Key points
 
 - **Setup**: 8×H100, trained with Slime; ReOPD training completes within 3 hours. 6.4K DAPO prompts for math, 6.5K NQ+HotpotQA prompts for search; 2K-trajectory SFT cold start each. RL runs only 200 steps.
-- **Math (avg. over AIME24/25, AMC23, Minerva, OlympiadBench, MATH500)**, Qwen3-4B-Instruct-2507 student:
+- **Math (avg. over [[aime|AIME]]24/25, AMC23, Minerva, OlympiadBench, MATH500)**, Qwen3-4B-Instruct-2507 student:
 
 | Teacher | SFT | OPD | ReOPD | Teacher GRPO |
 |---|---|---|---|---|

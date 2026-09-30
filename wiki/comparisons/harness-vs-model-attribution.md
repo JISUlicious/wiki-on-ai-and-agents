@@ -30,7 +30,7 @@ Holding the **model fixed** and swapping only the harness, from the Terminal-Ben
 | Claude Opus 4.6 | KRAFTON **Terminus-KIRA** — 74.7% | Bigai **TongAgents** — 71.9% | **2.8 pts** |
 | (same weights) | LangChain agent — **66.5% (rank 5)** | their earlier scaffold — 52.8% | **13.7 pts** |
 
-A bad-vs-good scaffold swing reaches **~13–15 pts**; a good-vs-good swing is typically **~2–6 pts**. [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026|Zhang et al. 2026]] quantify scaffold-only variation (model held fixed) at **11 pts for GPT-5 and 15 pts for Kimi K2 on SWE-bench Verified**, a **45.9%→55.4%** lift on SWE-bench Pro from swapping the SEAL scaffold for Claude Code, and HAL-leaderboard swings of **up to ~48 pts**. This matches the wiki's controlled result: [[agentic-harness-engineering-lin-2026|AHE]] lifts Terminal-Bench 2 from **69.7%→77.0%** with the model held fixed, beating human-designed Codex (71.9%).
+A bad-vs-good scaffold swing reaches **~13–15 pts**; a good-vs-good swing is typically **~2–6 pts**. [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026|Zhang et al. 2026]] quantify scaffold-only variation (model held fixed) at **11 pts for GPT-5 and 15 pts for Kimi K2 on [[swe-bench-verified|SWE-bench Verified]]**, a **45.9%→55.4%** lift on SWE-bench Pro from swapping the SEAL scaffold for Claude Code, and HAL-leaderboard swings of **up to ~48 pts**. This matches the wiki's controlled result: [[agentic-harness-engineering-lin-2026|AHE]] lifts Terminal-Bench 2 from **69.7%→77.0%** with the model held fixed, beating human-designed Codex (71.9%).
 
 ## Same harness, different model
 

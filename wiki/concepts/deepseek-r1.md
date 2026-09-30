@@ -11,7 +11,7 @@ tags:
   - 2025
 ---
 
-**DeepSeek-R1** refers to both the open-weights reasoning model released by [[deepseek]] in January 2025 and the training recipe that produced it. The work's central empirical claim is that advanced reasoning behaviors — self-reflection, verification, backtracking — can be **incentivized through pure [[reinforcement-learning|reinforcement learning]]** with rule-based outcome rewards, without any human-labeled reasoning trajectories. The result is a model that matches OpenAI's o1 series on math, code, and graduate-level QA benchmarks (AIME 2024 pass@1 = 79.8%, MATH-500 = 97.3%, Codeforces 96.3rd percentile) while being open-weights and accompanied by distilled 7B / 32B / 70B variants. Because the recipe and weights are public, R1 became the substrate for essentially every 2025 [[agentic-rl]] paper that followed.
+**DeepSeek-R1** refers to both the open-weights reasoning model released by [[deepseek]] in January 2025 and the training recipe that produced it. The work's central empirical claim is that advanced reasoning behaviors — self-reflection, verification, backtracking — can be **incentivized through pure [[reinforcement-learning|reinforcement learning]]** with rule-based outcome rewards, without any human-labeled reasoning trajectories. The result is a model that matches [[o1|OpenAI's o1]] series on math, code, and graduate-level QA benchmarks ([[aime|AIME]] 2024 pass@1 = 79.8%, MATH-500 = 97.3%, Codeforces 96.3rd percentile) while being open-weights and accompanied by distilled 7B / 32B / 70B variants. Because the recipe and weights are public, R1 became the substrate for essentially every 2025 [[agentic-rl]] paper that followed.
 
 ## Core mechanism
 

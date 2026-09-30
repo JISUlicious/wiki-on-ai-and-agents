@@ -81,7 +81,7 @@ The model is **not pure linear attention**: KDA layers are interleaved with full
 
 - Long context @128k (Table 5): RULER **84.3** (MLA 81.3, GDN-H 80.5, Kimi Linear w/ RoPE 78.8); MRCR **29.6** (22.6 / 23.9 / 22.0); HELMET-ICL **90.0**; RepoQA **68.5** (63.0 / 63.0 / 66.5); average **54.5** vs 52.2 / 51.2 / 51.8. Two losses: LongBench v2 35.0 (MLA 36.1) and Frames 58.8 (MLA 60.5).
 - Released 5.7T-token checkpoint: RULER **95.4 @128k** and **94.8 @1M**; beats Moonlight (16B/3B, same 5.7T tokens) nearly across the board (e.g. MMLU-Pro base 54.8 vs 42.4).
-- RL (RLVR on in-house math set, identical algorithm/hyperparameters): Kimi Linear's training accuracy grows faster than MLA's and the gap widens; same pattern on MATH500 and AIME 2025 test curves.
+- RL (RLVR on in-house math set, identical algorithm/hyperparameters): Kimi Linear's training accuracy grows faster than MLA's and the gap widens; same pattern on MATH500 and [[aime|AIME]] 2025 test curves.
 - Overall ordering: short-context/SFT Kimi Linear > GDN-H > MLA; long-context Kimi Linear > MLA > GDN-H (GDN-H degrades at length).
 
 **NoPE**

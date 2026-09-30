@@ -150,7 +150,7 @@ At an identical budget, sliding-window truncation lands at **0.18** and [[llmlin
 
 This is a strong negative result for statistical [[prompt-compression]] as a long-horizon execution strategy, and it is the paper's best evidence that the win comes from **structure**, not from **brevity**.
 
-**Error taxonomy on open-weight models** (Gemma-4-31B-it at T=100, score 0.42):
+**Error taxonomy on open-weight models** ([[gemma|Gemma]]-4-31B-it at T=100, score 0.42):
 
 | Failure mode | Share |
 |---|---|

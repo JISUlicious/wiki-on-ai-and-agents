@@ -18,7 +18,7 @@ A deep review of [[sakana-fugu-sakana-ai-2026|Sakana Fugu]] (arXiv:2606.21228, [
 
 ## 1. The thesis
 
-Frontier LLMs from different providers have **specialized** — GPT-5.5 leads math/terminal tasks, Gemini-3.1-Pro leads science (GPQA), Opus-series leads software engineering. Fugu's bet: the next frontier comes not from a bigger single model but from **orchestration as a new scaling axis** — a learned model that reads a query and *dynamically devises an agentic scaffold* over a pool of frontier "worker" agents, reaching performance **beyond any individual worker**. The user calls Fugu like a single model; internally it routes, delegates, and coordinates specialists. New workers can be added to the pool **without retraining** the orchestrator.
+Frontier LLMs from different providers have **specialized** — GPT-5.5 leads math/terminal tasks, Gemini-3.1-Pro leads science ([[gpqa|GPQA]]), Opus-series leads software engineering. Fugu's bet: the next frontier comes not from a bigger single model but from **orchestration as a new scaling axis** — a learned model that reads a query and *dynamically devises an agentic scaffold* over a pool of frontier "worker" agents, reaching performance **beyond any individual worker**. The user calls Fugu like a single model; internally it routes, delegates, and coordinates specialists. New workers can be added to the pool **without retraining** the orchestrator.
 
 ## 2. Two variants — architecturally distinct
 
@@ -49,7 +49,7 @@ SOTA among **publicly accessible models** across **SWE-Bench Pro, [[terminal-ben
 
 The most interpretable evidence is **domain adaptivity** — the routing distribution recovers known specializations without being told: Terminal-Bench→GPT-5.5, GPQA-Diamond→Gemini-3.1-Pro; on multidisciplinary HLE the per-category split is math→GPT-5.5, chemistry/biology→Gemini.
 
-Beyond benchmarks, on **AutoResearch** (Karpathy's iterative GPT-training-optimization task — 123 autonomous experiments, ~14h on one H100), Fugu-Ultra orchestrating multiple models beats single frontier agents on validation bits-per-byte **under an identical scaffold** — so the orchestration itself, not better tooling, drives the gain.
+Beyond benchmarks, on **AutoResearch** ([[andrej-karpathy|Karpathy]]'s iterative GPT-training-optimization task — 123 autonomous experiments, ~14h on one H100), Fugu-Ultra orchestrating multiple models beats single frontier agents on validation bits-per-byte **under an identical scaffold** — so the orchestration itself, not better tooling, drives the gain.
 
 ## 5. Where it sits
 

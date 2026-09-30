@@ -20,7 +20,7 @@ importance: medium
 
 **Liu et al.** — [arXiv:2504.04823](https://arxiv.org/abs/2504.04823), **COLM 2025**.
 
-Models: DeepSeek-R1-Distill-Qwen 1.5B/7B/14B/32B, R1-Distill-LLaMA 8B/70B, QwQ-32B. Tasks: AIME-120, MATH-500, GSM8K, LiveCodeBench.
+Models: DeepSeek-R1-Distill-Qwen 1.5B/7B/14B/32B, R1-Distill-LLaMA 8B/70B, QwQ-32B. Tasks: [[aime|AIME]]-120, MATH-500, GSM8K, LiveCodeBench.
 
 ## Task difficulty scales the damage
 

@@ -83,7 +83,7 @@ The paper is candid about its loss: **at 4B, homogeneous wins** (24 vs 45.6 req/
 
 KV transfer economics, all measured: Qwen3-32B at 8K is ≈2 GB in BF16 (**1 GB in BFP8**); over ~10 GB/s effective RDMA a monolithic transfer costs **100–200 ms, 10–15% of prefill latency**, all charged to TTFT by a naive schedule. Pipelined at 92.3 Gb/s, per-request egress drops to **1.5–49 ms against ~0.9 s of prefill**. The authors note the overlap saves little for a *single* request — its value is letting egress hide behind the *next* request under sustained load, which is where goodput is set. The fused dequant kernel rebuilds a whole request's KV in **~1.5 ms vs 72 ms** for naive elementwise reconstruction, and decode throughput stays **within 1%** of a dequant-free baseline.
 
-**Quality** (MATH500 / AIME24 / AIME25):
+**Quality** (MATH500 / [[aime|AIME]]24 / AIME25):
 
 | Model | Precision | MATH500 | AIME24 | AIME25 |
 |---|---|---|---|---|

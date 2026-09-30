@@ -58,7 +58,7 @@ Reflexion is part of a broader pattern of **self-critique / self-revision** prom
 - Self-consistency (Wang et al. 2022) — multiple samples, vote on the answer.
 - Tree-of-Thoughts (Yao et al. 2023) — explicit search over reasoning paths.
 - [[constitutional-ai|Constitutional AI]] (Anthropic 2022) — LLM critiques itself against principles during training.
-- Reasoning models (OpenAI o1, Claude reasoning, 2024–) — internal CoT/reflection learned via RL.
+- Reasoning models ([[o1|OpenAI o1]], Claude reasoning, 2024–) — internal CoT/reflection learned via RL.
 
 ## Relation to memory management
 

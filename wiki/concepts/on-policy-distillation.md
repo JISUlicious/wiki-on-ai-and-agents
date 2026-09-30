@@ -19,7 +19,7 @@ The distinction matters because off-policy distillation trains on a distribution
 
 ## Three variants in this wiki
 
-**Weak-to-strong** — the teacher is *worse* than the student. [[weak-to-strong-on-policy-distillation-yu-2026|Yu et al.]] build a proxy teacher by logit arithmetic, `softmax(z_base + α(z⁺ − z⁻))`, contrasting a weak positive model against a weak negative one and adding the difference to the strong student's own base logits. A Qwen3-8B student reaches 51.8 on math against 46.5 for plain on-policy distillation, **surpassing the 4B expert supplying the signal (48.8)**. Out of domain the gap is larger: GPQA-Diamond 38.9 → 56.5, while plain OPD *degrades* IFBench below the base model.
+**Weak-to-strong** — the teacher is *worse* than the student. [[weak-to-strong-on-policy-distillation-yu-2026|Yu et al.]] build a proxy teacher by logit arithmetic, `softmax(z_base + α(z⁺ − z⁻))`, contrasting a weak positive model against a weak negative one and adding the difference to the strong student's own base logits. A Qwen3-8B student reaches 51.8 on math against 46.5 for plain on-policy distillation, **surpassing the 4B expert supplying the signal (48.8)**. Out of domain the gap is larger: [[gpqa|GPQA]]-Diamond 38.9 → 56.5, while plain OPD *degrades* IFBench below the base model.
 
 **Self-distillation without supervision** — no external teacher at all. [[on-policy-self-distillation-without-supervision-li-2026|U-OPSD]] derives the correction signal from internal consistency across the model's own rollouts. Non-thinking mode goes 43.57 → 54.31 at 8B, **beating gold-label-supervised OPSD by 2.3 points** even though its pseudo-labels are 13.3% wrong — the signal apparently does not need to be correct so much as *on-distribution*.
 

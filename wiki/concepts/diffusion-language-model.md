@@ -49,7 +49,7 @@ So the honest description is **locally parallel with a global left-to-right drif
 
 ## Costs and where they bite
 
-Committing tokens in parallel hurts most where later steps depend on earlier ones being right. DiffusionGemma trails its autoregressive sibling by 19 points on AIME 2026 (69.1 vs 88.3) and 5 on MMLU Pro, while matching it on constrained JSON. Google concedes diminishing returns under high-QPS serving, since batching already saturates the hardware — the gain is single-stream and latency-sensitive, where [[arithmetic-intensity]] binds.
+Committing tokens in parallel hurts most where later steps depend on earlier ones being right. DiffusionGemma trails its autoregressive sibling by 19 points on [[aime|AIME]] 2026 (69.1 vs 88.3) and 5 on MMLU Pro, while matching it on constrained JSON. Google concedes diminishing returns under high-QPS serving, since batching already saturates the hardware — the gain is single-stream and latency-sensitive, where [[arithmetic-intensity]] binds.
 
 There is also an interpretability cost: the soft-embedding channel moves computation out of natural language, which is why [[how-transparent-is-diffusiongemma-engels-2026]] exists. Its finding is reassuring but conditional — opaque serial depth is 28.6× an AR sibling's if the inter-step bottleneck is opaque, 1.1× if it is interpretable, and the paper argues for the latter by showing the channel survives compression to the top-8 logits with no capability loss.
 

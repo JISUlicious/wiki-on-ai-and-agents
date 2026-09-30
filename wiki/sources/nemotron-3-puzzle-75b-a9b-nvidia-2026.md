@@ -58,8 +58,8 @@ Results hold quality within a point or two nearly everywhere and roughly double 
 
 **Accuracy vs. parent** (Table 3, BF16 / NVFP4; Puzzle vs. Super):
 - MMLU-Pro 82.4 / 82.2 vs. 83.8 / 83.5
-- AIME25 (no tools) 89.7 / 89.9 vs. 92.2 / 89.9; HMMT Feb25 93.4 / 92.9 vs. 94.2 / 93.7
-- GPQA (no tools) 78.6 / 78.0 vs. 80.5 / 79.7; LiveCodeBench 81.1 / 79.9 vs. 82.1 / 81.5; SciCode 40.6 / 40.3 vs. 42.3 / 41.5; HLE 16.5 / 15.7 vs. 18.5 / 17.9
+- [[aime|AIME]]25 (no tools) 89.7 / 89.9 vs. 92.2 / 89.9; HMMT Feb25 93.4 / 92.9 vs. 94.2 / 93.7
+- [[gpqa|GPQA]] (no tools) 78.6 / 78.0 vs. 80.5 / 79.7; LiveCodeBench 81.1 / 79.9 vs. 82.1 / 81.5; SciCode 40.6 / 40.3 vs. 42.3 / 41.5; HLE 16.5 / 15.7 vs. 18.5 / 17.9
 - Long context: RULER 256k 95.1 / 95.3 vs. 96.7 / 96.1; RULER 512k 94.2 / 94.8 vs. 95.7 / 95.3; **RULER 1M 92.2 / 93.2 vs. 93.9 / 93.8** — within 1–2 points
 - Multilingual: MMLU-ProX 77.5 / 76.5 vs. 79.5 / 79.0; WMT24++ 85.2 / 85.1 vs. 86.8 / 86.6
 - **Largest gaps** are on instruction-following and agentic evals — Arena-Hard-V2 (68.6 / 69.0 vs. 72.8 / 72.6) and specific TauBench domains, which the authors call out as most sensitive to aggressive compression and low-precision deployment.

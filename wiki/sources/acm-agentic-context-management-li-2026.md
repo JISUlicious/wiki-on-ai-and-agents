@@ -47,7 +47,7 @@ The catch, which the paper measures rather than assumes: models do not know how 
 | **ACM, base (no training)** | 0.635 / 30.8 / 59k | 0.405 / 88.7 / 42K | 0.508 / 77.6 / 46K |
 | **ACM, post-trained** | **0.727** / 46.2 / 54k | **0.425** / 58.8 / 41K | **0.530** / 79.3 / 50K |
 
-- **The framework alone already beats every baseline** — untrained ACM (0.635 / 0.405 / 0.508) tops ReSum, ACON, and ACE on all three benchmarks. Post-training then adds the large jump: **+27% relative on BrowseComp-Plus** (0.570 → 0.727), **+16% on DeepSearchQA** (0.367 → 0.425), **+8% on SWE-Bench Verified** (0.489 → 0.530) over ReAct.
+- **The framework alone already beats every baseline** — untrained ACM (0.635 / 0.405 / 0.508) tops ReSum, ACON, and ACE on all three benchmarks. Post-training then adds the large jump: **+27% relative on BrowseComp-Plus** (0.570 → 0.727), **+16% on DeepSearchQA** (0.367 → 0.425), **+8% on [[swe-bench-verified|SWE-Bench Verified]]** (0.489 → 0.530) over ReAct.
 - The 9B post-trained model's **0.727 on BrowseComp-Plus essentially matches Gemini3-Flash (0.733) and beats Qwen3.5-397B-A17B (0.653)** — a model the paper describes as ~40× larger.
 - **DeepSearchQA is out-of-domain** (no training data, live web search engine), so the +16% is transfer, not fit.
 - Peak tokens fall against ReAct on all three (63k→54k, 46k→41K, 59k→50K, i.e. 14% / 11% / 15%); the paper summarizes the effect as "around 20%," and the sharpest reductions are against summary agents (e.g. ReSum 79K → 41K on DeepSearchQA). Lower peak tokens means lower KV-cache burden on the serving side as well as less reasoning burden.

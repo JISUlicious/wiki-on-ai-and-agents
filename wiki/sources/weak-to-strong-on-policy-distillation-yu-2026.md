@@ -59,7 +59,7 @@ L_W2S-OPD(π_S) = E_{x∼D, y∼π_S} [ Σ_t KL( π_S(·|s_t) ‖ π_T,α(·|s_t
 | Smaller / Larger | 4B base | 0.6B base | the capability that emerges from scale — **free, no training at all** |
 | Correct / Wrong Hints | 4B conditioned on a correct hint | same 4B on a wrong hint | the instance-level direction toward the solution; shared conditioning cancels the style shift |
 
-**Setup.** Student Qwen3-8B; both W2S-OPD and OPD trained 100 steps under identical config. The RL experts are GRPO on Qwen3-4B — 500 steps on the level-6 subset of DeepMath-103K (math), 300 steps on Eurus-RL-Code (code). Evaluation at temperature 1.0, top-p 1.0; 32 samples/problem on math, 4 on code; Math-Verify for answer checking. Benchmarks: AIME24, AIME25, HMMT25 (Feb.), HMMT25 (Nov.) for math; HumanEval+, MBPP+, LiveCodeBench-V6 for code; GPQA-Diamond and IFBench for out-of-domain.
+**Setup.** Student Qwen3-8B; both W2S-OPD and OPD trained 100 steps under identical config. The RL experts are GRPO on Qwen3-4B — 500 steps on the level-6 subset of DeepMath-103K (math), 300 steps on Eurus-RL-Code (code). Evaluation at temperature 1.0, top-p 1.0; 32 samples/problem on math, 4 on code; Math-Verify for answer checking. Benchmarks: [[aime|AIME]]24, AIME25, HMMT25 (Feb.), HMMT25 (Nov.) for math; HumanEval+, MBPP+, LiveCodeBench-V6 for code; [[gpqa|GPQA]]-Diamond and IFBench for out-of-domain.
 
 ## Results
 

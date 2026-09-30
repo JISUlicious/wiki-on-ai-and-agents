@@ -35,7 +35,7 @@ The result the paper actually defends is narrower than the abstract's, and it is
 
 ## Key points
 
-**Table 1 — Gemma 4 31B-IT backbone**, mean ± stdev over seeds 42/43/44. Held-out test for CO-Bench / S2D / LawBench; benchmark score for AE Math, AlgoTune (speedup ×) and SR (4-domain mean).
+**Table 1 — [[gemma|Gemma]] 4 31B-IT backbone**, mean ± stdev over seeds 42/43/44. Held-out test for CO-Bench / S2D / LawBench; benchmark score for AE Math, AlgoTune (speedup ×) and SR (4-domain mean).
 
 | Method | CO-Bench | S2D | LawBench | AE Math | AlgoTune | SR |
 |---|---|---|---|---|---|---|
@@ -148,4 +148,4 @@ So **~72% of recursion's gain is a plain string of context passed between layers
 
 - [arXiv:2608.24735](https://arxiv.org/abs/2608.24735)
 - Code: https://github.com/minnesotanlp/meta-n
-- ARC-AGI-2 (Chollet, Knoop, Kamradt, Landers, Pinkard), [arXiv:2505.11831](https://arxiv.org/abs/2505.11831)
+- ARC-AGI-2 ([[francois-chollet|Chollet]], Knoop, Kamradt, Landers, Pinkard), [arXiv:2505.11831](https://arxiv.org/abs/2505.11831)

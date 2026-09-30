@@ -2,7 +2,7 @@
 title: Benchmark
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 status: draft
 importance: medium
@@ -18,13 +18,15 @@ Two cautions run through the whole list. A benchmark measures the model *and* wh
 
 - [[glue]] — nine English sentence-level understanding tasks
 - [[squad]] — extractive reading comprehension
+- [[gpqa]] — graduate-level "Google-proof" science questions; Diamond is the standard 198-question subset
+- [[aime]] — competition math, reported by year because older years are contaminated
 - [[mmlu]] — multi-subject multiple choice; also the origin of the single-letter answer readout (see [[cloze-scoring]])
 
 ## Code
 
 - [[humaneval]] — 164 hand-written Python function-completion problems
 - [[livecodebench]] — continuously refreshed contest problems, designed to resist contamination
-- [[swe-bench]] · [[swe-bench-live]] — real GitHub issues, and the monthly-refreshed successor
+- [[swe-bench]] · [[swe-bench-verified]] · [[swe-bench-live]] — real GitHub issues, the 500-task human-verified subset most papers report, and the monthly-refreshed successor
 - [[swe-gym]] · [[swe-smith]] — training environments and task generators for software-engineering agents
 
 ## Agents and environments

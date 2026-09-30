@@ -68,7 +68,7 @@ Trained sparse attention — [[minimax-sparse-attention-lai-2026|MiniMax]]'s 28.
 
 ## Related 2026 sources
 
-- [[language-models-can-control-their-own-attention-ho-2026]] — a fourth answer to *who decides* the sparsity pattern — **the model declares it in its own chain-of-thought** and the engine parses it like a tool call, driving selection cost from O(N) to zero. **Decode-time, not prefill**: attended tokens fall 52.0% on Gemma-4-31B for 1.27 pp of accuracy
+- [[language-models-can-control-their-own-attention-ho-2026]] — a fourth answer to *who decides* the sparsity pattern — **the model declares it in its own chain-of-thought** and the engine parses it like a tool call, driving selection cost from O(N) to zero. **Decode-time, not prefill**: attended tokens fall 52.0% on [[gemma|Gemma]]-4-31B for 1.27 pp of accuracy
 - [[trained-sparse-attention]] — the lineage where the selector is trained in — NSA, MoBA, DeepSeek-V3.2's DSA — and why a retrofit cannot afford the sparsity a trained model can
 - [[native-sparse-attention-yuan-2025]] — three-branch trained sparsity, ACL 2025 best paper; 9× kernel at 64K, no end-to-end number anywhere
 - [[moba-mixture-of-block-attention-lu-2025]] — MoE-style top-k over pooled key blocks; 6.5× at 1M, ~1× at 512K, still O(N²·k/n); deployed for Kimi

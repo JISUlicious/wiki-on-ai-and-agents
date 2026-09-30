@@ -58,7 +58,7 @@ Commits are also not frozen: 4,524 un-accept events across 600 generations, with
 
 ## Generation quality: the tradeoff
 
-Against Gemma 4 26B A4B, its autoregressive sibling at the same size:
+Against [[gemma|Gemma]] 4 26B A4B, its autoregressive sibling at the same size:
 
 | Benchmark | DiffusionGemma | Gemma 4 26B A4B |
 |---|---:|---:|
@@ -67,7 +67,7 @@ Against Gemma 4 26B A4B, its autoregressive sibling at the same size:
 | GPQA Diamond | 73.2 | 82.3 |
 | MMMU Pro | 54.3 | 73.8 |
 
-The 19-point AIME gap is the telling one: multi-step reasoning suffers most when tokens commit in parallel, as you would predict when later steps depend on earlier ones. Google concedes diminishing returns under high-QPS cloud workloads — batching already saturates those GPUs. The win is single-stream, latency-sensitive, local inference, where [[arithmetic-intensity|arithmetic intensity]] binds. Google also highlighted a Sudoku fine-tune, where revising earlier positions after seeing later ones is the whole point.
+The 19-point [[aime|AIME]] gap is the telling one: multi-step reasoning suffers most when tokens commit in parallel, as you would predict when later steps depend on earlier ones. Google concedes diminishing returns under high-QPS cloud workloads — batching already saturates those GPUs. The win is single-stream, latency-sensitive, local inference, where [[arithmetic-intensity|arithmetic intensity]] binds. Google also highlighted a Sudoku fine-tune, where revising earlier positions after seeing later ones is the whole point.
 
 ## As a System One model
 

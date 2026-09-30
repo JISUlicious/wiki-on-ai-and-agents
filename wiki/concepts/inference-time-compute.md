@@ -12,7 +12,7 @@ tags:
   - 2024
 ---
 
-**Inference-time compute** is the 2024–2026 paradigm of spending *more* compute *at decode time* rather than only at pre-training. Two main flavors have emerged: **token-recursion**, where the model emits more reasoning tokens (CoT, o1, [[deepseek-r1]]); and **depth-recursion**, where the model re-applies its weights at the same position ([[looped-transformer]], [[latent-reasoning]], [[recurrent-depth-transformer]]).
+**Inference-time compute** is the 2024–2026 paradigm of spending *more* compute *at decode time* rather than only at pre-training. Two main flavors have emerged: **token-recursion**, where the model emits more reasoning tokens (CoT, [[o1|o1]], [[deepseek-r1]]); and **depth-recursion**, where the model re-applies its weights at the same position ([[looped-transformer]], [[latent-reasoning]], [[recurrent-depth-transformer]]).
 
 - Token-recursion: visible chain-of-thought tokens ([[chain-of-thought-prompting]], [[deepseek-r1]])
 - Depth-recursion: latent loops over hidden states ([[looped-transformer]], [[latent-reasoning]])

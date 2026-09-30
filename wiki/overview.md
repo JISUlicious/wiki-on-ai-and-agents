@@ -66,7 +66,7 @@ Both threads land on the same place: **access**. Proxy networks, resold credenti
 
 
 - **What architecture replaces the Transformer**, if any? State-space models (Mamba, S4) and hybrids ([[retrieval-augmented-generation|retrieval-augmented]] variants) are active research; this wiki doesn't yet have papers on them.
-- **What scales beyond pre-training?** Inference-time scaling via reasoning models (o1-style) suggests new scaling regimes — none in this corpus yet.
+- **What scales beyond pre-training?** Inference-time scaling via reasoning models ([[o1]]-style) suggests new scaling regimes; the corpus now covers them through [[deepseek-r1]], [[large-reasoning-model]] and [[inference-time-compute]].
 - **How faithful is [[chain-of-thought-prompting|CoT]] reasoning?** Lanham et al. 2023 and others suggest chains can be post-hoc rationalizations. Not yet in wiki.
 - **What does scalable [[institutional-alignment]] actually look like in practice?**
 - **Are [[functional-emotions]] a vestigial artifact of training data or actually useful for the Assistant role?** Both are plausible; the 2026 paper doesn't fully settle it.

@@ -37,7 +37,7 @@ Different targets demand different machinery — using one LLM judge for everyth
 
 - **Deterministic validation** — schema/format checks, tool-argument validation, cost budgets. Cheap and exact; *validate, don't judge*.
 - **Execution / verify-by-running** — unit tests, compilers, interpreters. The strongest signal available, and the reason [[code-as-harness|code]] is such a good agent substrate. Used by [[agentcoder-huang-2023|AgentCoder]] and by [[swe-gym-pan-2024|SWE-Gym]], whose verifier is trained on unit-test pass/fail labels.
-- **Learned reward / outcome models** — a model trained on trajectory success labels ([[outcome-based-reward]]), used for **test-time best-of-N** selection: SWE-Gym samples multiple rollouts and picks the verifier-best, pushing SWE-Bench Verified to 32.0%.
+- **Learned reward / outcome models** — a model trained on trajectory success labels ([[outcome-based-reward]]), used for **test-time best-of-N** selection: SWE-Gym samples multiple rollouts and picks the verifier-best, pushing [[swe-bench-verified|SWE-Bench Verified]] to 32.0%.
 - **Process supervision** — grading intermediate reasoning steps rather than final answers.
 - **LLM-as-judge / consistency checks** — flexible, but only as good as the reference supplied.
 - **Internal-state monitoring** — reading what the model *doesn't say*, e.g. the [[global-workspace-theory|J-lens]] catching evaluation-awareness, fabrication, or hidden goals. A distinct modality: it inspects the generator rather than its output.

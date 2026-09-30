@@ -63,7 +63,7 @@ Three paradigms of capability extension: **prompt engineering** (2022–2023, ep
 - **§4.2 [[reinforcement-learning|RL]] with skill libraries — SAGE** (Skill Augmented GRPO for self-Evolution): "Sequential Rollout" preserves skills across chains of similar tasks; a Skill-integrated Reward credits reusable skill creation. On AppWorld: 72.0% TGC, +8.9% abs. over baseline GRPO, −26% steps, −59% tokens.
 - **§4.3 Autonomous skill discovery — SEAgent**: World State Model + Curriculum Generator + specialist-to-generalist training; on five novel OSWorld apps, success 11.3%→34.5% (+23.2 pts over UI-TARS).
 - **§4.4 Structured skill bases — CUA-Skill**: human computer-use expertise encoded as parameterized execution/composition graphs (typed parameters, preconditions, composability); 57.5% SOTA on WindowsAgentArena.
-- **§4.5 Compositional skill synthesis — Agentic Proposing**: dynamic composition of modular reasoning skills; a 30B solver reaches 91.6% on AIME 2025.
+- **§4.5 Compositional skill synthesis — Agentic Proposing**: dynamic composition of modular reasoning skills; a 30B solver reaches 91.6% on [[aime|AIME]] 2025.
 - **§4.6 Skill compilation (multi-agent → single-agent)** — Li 2026: multi-agent systems can be "compiled" into single-agent skill libraries with lower token/latency, but skill-selection accuracy exhibits a **phase transition** beyond a critical library size.
 
 ### §5 Deployment: The Computer-Use Agent ([[computer-use-agent|CUA]]) Stack

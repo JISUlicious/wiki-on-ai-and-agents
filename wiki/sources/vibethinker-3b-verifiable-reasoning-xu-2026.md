@@ -30,7 +30,7 @@ VibeThinker-3B is a compact 3B-parameter dense model from Sina Weibo built to te
 ## Key points
 
 - 3B dense model; Spectrum-to-Signal pipeline = curriculum SFT + multi-domain RL + offline self-distillation.
-- AIME26: 94.3, rising to 97.1 with Claim-Level Reliability Assessment (CLR), a test-time scaling strategy; CLR also lifts BrUMO25 to 99.2.
+- [[aime|AIME]]26: 94.3, rising to 97.1 with Claim-Level Reliability Assessment (CLR), a test-time scaling strategy; CLR also lifts BrUMO25 to 99.2.
 - LiveCodeBench v6: 80.2 Pass@1 (closely trailing GPT-OSS-120B and DeepSeek V3.2 at far larger scale).
 - 96.1% acceptance rate on recent unseen LeetCode contests (out-of-distribution generalization).
 - IFEval 93.4, showing the reasoning boost does not break strict instruction controllability.

@@ -36,7 +36,7 @@ GFlowRL keeps the reward-distribution-matching semantics of trajectory balance a
 
 ## Key points
 
-**Math, dense (Qwen2.5-7B, Avg@16 across AIME24/25, AMC23, MATH500, Minerva, Olympiad):**
+**Math, dense (Qwen2.5-7B, Avg@16 across [[aime|AIME]]24/25, AMC23, MATH500, Minerva, Olympiad):**
 
 | Method | Average |
 |---|---|
@@ -52,7 +52,7 @@ GFlowRL exceeds GRPO by **+8.44** average points. MATH500 goes 54.47 → 76.89; 
 
 **Code, dense (DeepSeek-R1-Distill-Qwen-7B):** LiveCodeBench Avg@16 30.68 → **38.62**; Codeforces rating 886.68 → **1646.21** (19.4% → 88.0% percentile); HumanEval+ 80.90 → **84.93**. Both GFlowNet-style methods open a 200–330 Elo advantage over GRPO.
 
-**Codeforces at 14B — the headline number is confirmed: 2048 Elo.** Beats DeepCoder-14B by +112, FlowRL-14B by +144, and OpenAI o1 (1891) by +157; within **25 Elo of o3-mini (2073)**.
+**Codeforces at 14B — the headline number is confirmed: 2048 Elo.** Beats DeepCoder-14B by +112, FlowRL-14B by +144, and [[o1|OpenAI o1]] (1891) by +157; within **25 Elo of o3-mini (2073)**.
 
 **MoE — the "first to scale across dense and sparse" claim is confirmed and is the paper's strongest result:**
 - Qwen3-30B-A3B reaches **1999 Codeforces Elo with only 3B active parameters** (+108 over o1, within 74 of o3-mini); math average 74.52 → 78.32 (+3.80 over backbone, +2.54 over GRPO).

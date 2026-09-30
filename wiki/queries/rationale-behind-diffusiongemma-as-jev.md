@@ -44,7 +44,7 @@ This is the strongest and least obvious plank, and it comes from an independent 
 | Factual recall | 0.460 | 0.50 |
 | **JSON (constrained)** | **−0.044** | **0.72** |
 
-DiffusionGemma's general liability is a partial left-to-right commit drift — the reason it loses 19 points to its autoregressive sibling on AIME. **In the structured regime that drift disappears** (τ_b indistinguishable from zero) and simultaneity peaks. Running the model as a decision reader puts it in precisely the regime where its defining weakness is absent.
+DiffusionGemma's general liability is a partial left-to-right commit drift — the reason it loses 19 points to its autoregressive sibling on [[aime|AIME]]. **In the structured regime that drift disappears** (τ_b indistinguishable from zero) and simultaneity peaks. Running the model as a decision reader puts it in precisely the regime where its defining weakness is absent.
 
 ### 4. The confidence number is intrinsic rather than self-reported
 

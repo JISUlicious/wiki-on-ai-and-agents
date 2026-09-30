@@ -25,7 +25,7 @@ It is the simpler half of a standing dichotomy in [[verifier|verification]] and 
 
 ## Where it works
 
-Outcome rewards shine wherever the world supplies the label for free — exactly the "verify by running" case in [[verifier]]. [[swe-gym-pan-2024|SWE-Gym]] is the canonical instance: an outcome-supervised verifier trained on trajectory pass/fail labels from unit tests, then used for **test-time best-of-N selection** — sample many rollouts, keep the verifier's pick. That pushed SWE-Bench Verified to **32.0%** and Lite to 26.0%, a new open-weight state of the art at release, with log-linear gains in N.
+Outcome rewards shine wherever the world supplies the label for free — exactly the "verify by running" case in [[verifier]]. [[swe-gym-pan-2024|SWE-Gym]] is the canonical instance: an outcome-supervised verifier trained on trajectory pass/fail labels from unit tests, then used for **test-time best-of-N selection** — sample many rollouts, keep the verifier's pick. That pushed [[swe-bench-verified|SWE-Bench Verified]] to **32.0%** and Lite to 26.0%, a new open-weight state of the art at release, with log-linear gains in N.
 
 The appeal is that the reward is **grounded rather than judged**: no LLM opinion sits between the model and the signal, so there is far less to game than with a rubric judge.
 

@@ -50,7 +50,7 @@ The design note in the source states the invariant that makes step 4 sound: *"Ro
 
 Two admission checks in `policy.py`: total remaining prompt tokens must exceed the threshold, **and** conversation tokens *after excluding the uncached system prefix* must also exceed it. The **system prompt is always prefilled in full**; only conversation tokens are scored and dropped. Both draft and target keep prefix caches, and since v0.5.4 stable system/tool prefixes on the target persist across requests and restarts.
 
-**Draft and target must share a tokenizer.** The integration test asserts `target_vocab_size == draft_vocab_size` and fails loudly otherwise — so this is in-family only, unlike [[cross-family-speculative-prefill-upasani-2026|the cross-family variant]]. Query extractors exist for Qwen3.5, Qwen3.6, Llama, Gemma 4, and Nemotron-H.
+**Draft and target must share a tokenizer.** The integration test asserts `target_vocab_size == draft_vocab_size` and fails loudly otherwise — so this is in-family only, unlike [[cross-family-speculative-prefill-upasani-2026|the cross-family variant]]. Query extractors exist for Qwen3.5, Qwen3.6, Llama, [[gemma|Gemma]] 4, and Nemotron-H.
 
 ## The pair the community recommends, checked
 

@@ -25,7 +25,7 @@ tags:
 **Liyan Tang, Cyrus Rashtchian, Chun-Sung Ferng, Andrew Tomkins, Da-Cheng Juan** ([[google-research|Google Research]]), **Tu Vu** (Google Research; Virginia Tech — corresponding, with Tang) — [arXiv:2608.27454](https://arxiv.org/abs/2608.27454), cs.AI / cs.CL, 27 Aug 2026. CC BY 4.0. Preprint; no venue given.
 
 > [!note] This wiki is an instance of the thing being studied
-> §1 names its inspiration explicitly: *"Inspired by Karpathy (2026)'s perspective on **LLM Wiki**, which advocates compiling experience into persistent, compounding knowledge, we ask: Can agent experience be similarly compiled into persistent knowledge to support long-term skill evolution?"* This vault is that perspective run as a practice rather than a benchmark. The paper is therefore both a source and a mirror, and the honest thing to record is where its design differs from this one — which the section on the ratchet below does.
+> §1 names its inspiration explicitly: *"Inspired by [[andrej-karpathy|Karpathy]] (2026)'s perspective on **LLM Wiki**, which advocates compiling experience into persistent, compounding knowledge, we ask: Can agent experience be similarly compiled into persistent knowledge to support long-term skill evolution?"* This vault is that perspective run as a practice rather than a benchmark. The paper is therefore both a source and a mirror, and the honest thing to record is where its design differs from this one — which the section on the ratchet below does.
 
 ## Summary
 
@@ -92,7 +92,7 @@ Note the honest asterisks the paper supplies itself: Gemini on ALFWorld is 85.9%
 | | Qwen-3.5-4B | 67.5 | **18.1** | 87.3 |
 | | Qwen-3.6-27B | **73.9** | 63.4 | 86.8 |
 
-Transfer runs **upward** as well as downward — a 4B model's skills lift Gemma-4-31B from 33.9 to 73.1 on LiveMath. But the failure case is the instructive one: **Qwen-4B's SpreadSheet skills crater Gemini-3.5-Flash from 50.5% to 18.1%.** The diagnosed cause is that the small model encoded *low-level workarounds* — single-line Python commands, string-conversion rules — that protect a weak model from execution failures while forbidding a strong model from writing end-to-end scripts; plus fragmented diagnostic procedures whose redundant tool calls exhaust the interaction budget. A skill is not neutral procedural knowledge; it can be a scar from a weakness the reader does not have.
+Transfer runs **upward** as well as downward — a 4B model's skills lift [[gemma|Gemma]]-4-31B from 33.9 to 73.1 on LiveMath. But the failure case is the instructive one: **Qwen-4B's SpreadSheet skills crater Gemini-3.5-Flash from 50.5% to 18.1%.** The diagnosed cause is that the small model encoded *low-level workarounds* — single-line Python commands, string-conversion rules — that protect a weak model from execution failures while forbidding a strong model from writing end-to-end scripts; plus fragmented diagnostic procedures whose redundant tool calls exhaust the interaction budget. A skill is not neutral procedural knowledge; it can be a scar from a weakness the reader does not have.
 
 **Ablation (Table 3, Gemini-3.5-Flash, four benchmarks — ALFWorld excluded by early stopping)** — the paper's evidence that the wiki is load-bearing. Removing Skill-Proposer wiki access also removes the Wiki Maintainer, i.e. eliminates persistent accumulation entirely:
 

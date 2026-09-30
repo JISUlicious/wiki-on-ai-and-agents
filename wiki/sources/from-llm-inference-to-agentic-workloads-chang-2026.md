@@ -197,7 +197,7 @@ Four independent proof-of-concept interventions, deliberately not a monolithic s
 
 - [arXiv:2608.15127](https://arxiv.org/abs/2608.15127) — cs.OS. AgentSysBench to be released open source.
 - Serving stack: SGLang v0.5.12, Milvus, jina-embeddings-v3 via TEI, HuggingFace Pipeline, Exa search, Docker; cAdvisor + NVIDIA DCGM Exporter + Prometheus + Grafana for observability.
-- Benchmarks borrowed: SWE-bench Verified, Terminal Bench, WebArena Verified, OSWorld, GAIA, HLE, TaskBench, MS-MARCO, WQA, MCP-Atlas, WildClawBench, MLE-bench.
+- Benchmarks borrowed: [[swe-bench-verified|SWE-bench Verified]], Terminal Bench, WebArena Verified, OSWorld, GAIA, HLE, TaskBench, MS-MARCO, WQA, MCP-Atlas, WildClawBench, MLE-bench.
 - Kwon et al. 2023 (vLLM/PagedAttention); Zheng et al. 2024 (SGLang) — the conventional-inference assumptions the paper argues agentic serving has inherited.
 - Yao et al. 2023 (ReAct); Qin et al. 2023 (ToolBench); Shen et al. 2023 (HuggingGPT) — the agentic patterns instrumented.
 - Pricing sources: E2B (sandbox), Firecrawl (search), and published Claude Opus 4.6 token rates.

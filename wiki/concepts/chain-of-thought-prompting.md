@@ -54,7 +54,7 @@ A defining property: CoT prompting **hurts** small models (they confabulate inco
 - **Self-consistency** (Wang et al. 2022): sample multiple chains, take the majority vote on the final answer.
 - **Tree-of-thoughts** (Yao et al. 2023): explicit search over chains.
 - **Program-of-thoughts** / **PAL** (Chen et al. 2022; Gao et al. 2022): chains are code, executed externally.
-- **Reasoning models** (OpenAI o1 onwards, 2024–): CoT internalized via post-training; models now produce hidden chains and only show final answers.
+- **Reasoning models** ([[o1|OpenAI o1]] onwards, 2024–): CoT internalized via post-training; models now produce hidden chains and only show final answers.
 
 ## Caveat: not necessarily faithful
 

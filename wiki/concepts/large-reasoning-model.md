@@ -15,7 +15,7 @@ importance: medium
 
 # Large Reasoning Model (LRM)
 
-A **large reasoning model** is an LLM that has been post-trained, usually with RL on verifiable rewards, to produce a long [[chain-of-thought]] before it answers. Examples include OpenAI o1, [[deepseek-r1|DeepSeek-R1]] and QwQ-32B. [[reasoning]] is the *capability*: multi-step inference, whether prompted, trained or latent. An LRM is a *class of model* that has that capability built into its weights and default decoding. The wiki's summary of Metis describes LRMs as having absorbed chain-of-thought into the forward pass. A standard LLM, by contrast, reasons step by step only when prompted to.
+A **large reasoning model** is an LLM that has been post-trained, usually with RL on verifiable rewards, to produce a long [[chain-of-thought]] before it answers. Examples include [[o1|OpenAI o1]], [[deepseek-r1|DeepSeek-R1]] and QwQ-32B. [[reasoning]] is the *capability*: multi-step inference, whether prompted, trained or latent. An LRM is a *class of model* that has that capability built into its weights and default decoding. The wiki's summary of Metis describes LRMs as having absorbed chain-of-thought into the forward pass. A standard LLM, by contrast, reasons step by step only when prompted to.
 
 ## In this wiki
 

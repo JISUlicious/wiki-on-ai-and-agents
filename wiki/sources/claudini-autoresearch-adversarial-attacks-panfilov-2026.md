@@ -39,7 +39,7 @@ The pipeline produces SOTA attacks in two white-box settings. Against OpenAI's G
 - Setup: library of 30+ prior methods + fixed-compute evaluation script; agent proposes → implements → evaluates → iterates, growing a method pool.
 - **GPT-OSS-Safeguard-20B**: up to **80% ASR** on CBRN queries (vs. <50% prior).
 - **Meta-SecAlign-70B** (robust model): **100% ASR** via prompt injection (vs. 82% best prior automated).
-- **Cross-task transfer**: attacks optimized on surrogate models (Qwen-2.5-7B, Llama-2-7B, Gemma-7B) for token-forcing transfer directly to prompt injection on a defended model.
+- **Cross-task transfer**: attacks optimized on surrogate models (Qwen-2.5-7B, Llama-2-7B, [[gemma|Gemma]]-7B) for token-forcing transfer directly to prompt injection on a defended model.
 - Argues attacks tailored by autoresearch should be the **minimum bar** for evaluating defenses going forward.
 
 ## Concepts & entities

@@ -13,7 +13,7 @@ tags:
 
 # Sleep-time Compute
 
-Sleep-time compute is the practice of running LLM inference *between* user queries — during otherwise-idle time — to pre-process a persistent context into a re-represented form that makes the next test-time query cheaper. Where standard test-time scaling (o1-style sequential reasoning, parallel sampling) treats each query as stateless and pays full freight on every call, sleep-time compute exploits the fact that most real applications (document QA, coding agents, conversational assistants) carry context across turns. Lin et al. report ~5× [[test-time-compute|test-time compute]] reduction at matched accuracy on Stateful GSM-Symbolic and Stateful AIME, +13%/+18% absolute accuracy gains when sleep-time compute is scaled up, and 2.5× lower average per-query cost on multi-query workloads.
+Sleep-time compute is the practice of running LLM inference *between* user queries — during otherwise-idle time — to pre-process a persistent context into a re-represented form that makes the next test-time query cheaper. Where standard test-time scaling ([[o1|o1]]-style sequential reasoning, parallel sampling) treats each query as stateless and pays full freight on every call, sleep-time compute exploits the fact that most real applications (document QA, coding agents, conversational assistants) carry context across turns. Lin et al. report ~5× [[test-time-compute|test-time compute]] reduction at matched accuracy on Stateful GSM-Symbolic and Stateful [[aime|AIME]], +13%/+18% absolute accuracy gains when sleep-time compute is scaled up, and 2.5× lower average per-query cost on multi-query workloads.
 
 ## Core mechanism
 

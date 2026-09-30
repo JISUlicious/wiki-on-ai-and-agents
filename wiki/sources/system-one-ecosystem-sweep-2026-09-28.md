@@ -37,7 +37,7 @@ Roughly 250 repositories matching jev/systemone appeared in the week. Most are a
 
 **Qwen3.5 + LoRA fine-tunes, the dominant pattern.** Imajev (text and image; #1 on [[jevbench|JevBench]]), JevK5 (Qwen3.5-4B/9B LoRA distilled from Qwen3.6-27B and GPT-6 Luna; 6,101 HF downloads), decider (Mapika; decider-2b has 203k HF downloads, the most of any model in the space), Eikos (finance), lev, Jev-Style, Valen, OmniJev and MedJev. Together AI's **Tev1** belongs here too; its README says its probabilities are "not calibrated confidence."
 
-**Frozen models with no training.** Lichen runs Gemma 4 26B-A4B on llama.cpp and scored 207/231 against Jev's 200/231 on JevBench public items; the author reports p = 0.09. open-medical-jev claims to be within about 2 points of Jev on national medical exams.
+**Frozen models with no training.** Lichen runs [[gemma|Gemma]] 4 26B-A4B on llama.cpp and scored 207/231 against Jev's 200/231 on JevBench public items; the author reports p = 0.09. open-medical-jev claims to be within about 2 points of Jev on national medical exams.
 
 **Encoders.** Fastino's **GLiNER2.5-Decide** (DeBERTa-v3-large, 340M, Apache-2.0) passed 24k downloads within days, takes labels per request, and is not Jev wire-compatible. [[laya|Laya]] upstream grew to 26.8k stars and 15 releases in five days, and is the model every engine PR targets.
 

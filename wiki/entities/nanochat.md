@@ -14,7 +14,7 @@ tags:
 
 # nanochat
 
-Andrej Karpathy's MIT-licensed, minimal end-to-end LLM training harness ([karpathy/nanochat](https://github.com/karpathy/nanochat)). It covers tokenization, pre-training, fine-tuning, evaluation and inference on a single GPU node. The README pitches GPT-2-level capability for about $100 in roughly two hours on an 8×H100 node. In this wiki it plays two roles: a **reference Transformer baseline** for architecture papers, and the **reference loop for "autoresearch" agents**.
+[[andrej-karpathy|Andrej Karpathy]]'s MIT-licensed, minimal end-to-end LLM training harness ([karpathy/nanochat](https://github.com/karpathy/nanochat)). It covers tokenization, pre-training, fine-tuning, evaluation and inference on a single GPU node. The README pitches GPT-2-level capability for about $100 in roughly two hours on an 8×H100 node. In this wiki it plays two roles: a **reference Transformer baseline** for architecture papers, and the **reference loop for "autoresearch" agents**.
 
 ## In this wiki
 

@@ -26,7 +26,7 @@ tags:
 ## What it advances
 
 - First principled way to make compute scale with *input* difficulty rather than being a fixed architectural choice.
-- The conceptual foundation for [[inference-time-compute|test-time-compute scaling]] in its modern (2024–2026) form — long before o1-style explicit-CoT scaling, ACT proposed scaling computation per-input.
+- The conceptual foundation for [[inference-time-compute|test-time-compute scaling]] in its modern (2024–2026) form — long before [[o1|o1]]-style explicit-CoT scaling, ACT proposed scaling computation per-input.
 - Reused in [[universal-transformer-dehghani-2018|Universal Transformer]] (per-position halting), then [[looped-transformers-length-generalization-fan-2024|Fan 2024]] (variable-step loops with confidence-based halting), and the "dynamic iteration" Poisson-sampling strategy in [[loop-think-generalize-2026]].
 
 ## Relation to other concepts

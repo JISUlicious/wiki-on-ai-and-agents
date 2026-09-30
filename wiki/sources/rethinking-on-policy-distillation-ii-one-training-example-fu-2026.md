@@ -72,4 +72,4 @@ Difficulty does not matter: the easy (8/8), medium (4/8) and hard (0/8, **never 
 - Part I: Li et al. 2026, [arXiv:2604.13016](https://arxiv.org/abs/2604.13016).
 - One-shot RLVR: Wang et al. 2026a (the template experiment). GKD: Agarwal et al., ICLR 2024. MiniLLM: Gu et al. 2024. OPD as dense KL-constrained RL: Yang et al. 2026.
 - Armandpour et al. 2026, "Unmasking on-policy distillation", arXiv:2605.10889 — teacher signal stays informative on incorrect rollouts.
-- Data: DAPO-Math-17K, Open-R1 Codeforces, UltraData-SFT-2605, xLAM-function-calling-60K, WildChat. Evaluation: MATH-500, AMC 2023, AIME 2025, LiveCodeBench v6, Multi-IF, BFCL v3. Training framework: veRL.
+- Data: DAPO-Math-17K, Open-R1 Codeforces, UltraData-SFT-2605, xLAM-function-calling-60K, WildChat. Evaluation: MATH-500, AMC 2023, [[aime|AIME]] 2025, LiveCodeBench v6, Multi-IF, BFCL v3. Training framework: veRL.
