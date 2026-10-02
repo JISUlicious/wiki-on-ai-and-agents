@@ -183,3 +183,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[ai-enabled-cyber-operations]] — the report's Appendix A is a table of skills threat actors built, each mapped to a MITRE ATT&CK technique — personas, `MEMORY.md` indexes, and a "dead-end ledger" of confirmed failures never to retry. Ordinary skill patterns, adversarial purpose
 - [[building-an-ai-native-sdlc-plugin]] — a worked design that keeps the auto-invoked skill count at two by moving every human-initiated stage to `disable-model-invocation: true` skills, which cost no routing budget
 - [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss
+- [[getting-started-with-claude-code-mods-osmani-2026]] — Osmani's tutorial on Claude Code mods: in-process JS/TS hook modules shipped as plugins
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
+- [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)

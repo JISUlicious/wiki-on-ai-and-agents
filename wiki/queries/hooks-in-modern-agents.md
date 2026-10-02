@@ -2,7 +2,7 @@
 title: "Hooks and Callbacks in Modern Agent Architecture"
 type: query
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-02
 sources:
   - claude-code.md
   - opencode.md
@@ -136,6 +136,9 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 - [[from-transformer-to-modern-agents]] — historical track from Transformer → modern agents
 - [[agent-three-layer-model]] — where hooks fit in the L1/L2/L3 architecture
 
+> [!note] Update 2026-10-02 — a third kind of Claude Code hook
+> Claude Code v2.1.287 added [[claude-code-mods|mods]]: plugin-shipped JS/TS modules that run in-process and stay resident. Unlike `settings.json` hooks, which run a stateless shell command per event, a mod is middleware. It can observe, rewrite or answer events (`tool.call`, `prompt.submit`, `turn.complete`, `ui.render` and others), keep state, draw UI and register its own tools and commands. The classification above predates mods.
+
 ## References
 
 - [[claude-code-agent-doc-2026]] — primary source for Claude Code's 21 hook events
@@ -145,3 +148,9 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 - [[pi-mono-agent-doc-2026]] — minimal-core stance; 2 in core
 - [[cross-agent-comparison-doc-2026]] — cross-cutting comparison source
 - [[cross-agent-comparison-2026]] — synthesized comparison page
+
+## Related 2026 sources
+
+- [[getting-started-with-claude-code-mods-osmani-2026]] — Osmani's tutorial on Claude Code mods: in-process JS/TS hook modules shipped as plugins
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
+- [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)

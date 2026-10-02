@@ -2,7 +2,7 @@
 title: Agentic Context Engineering
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-02
 sources:
   - agentic-context-engineering-zhang-2025.md
 status: complete
@@ -43,6 +43,13 @@ ACE is the first framework to give a rigorous, ablation-backed account of *why* 
 - Closest precursor is Dynamic Cheatsheet; ACE inherits its agentic spirit while fixing context collapse. Cites GEPA, TextGrad, and Reflexion as related prompt-evolution work.
 - Produced at [[stanford-university]] and [[sambanova]] (with UC Berkeley); senior authors James Zou and Kunle Olukotun.
 
+> [!warning] Contradiction — comprehensive playbooks vs a much shorter prompt
+> ACE prescribes comprehensive, append-mostly playbooks and warns that rewriting causes context collapse. Anthropic reports the opposite move on its own harness: for Claude 5-generation models it **removed over 80% of Claude Code's system prompt "with no measurable loss on our coding evaluations"**, and calls the "central repository" `CLAUDE.md` a common myth ([[new-rules-of-context-engineering-claude-5-shihipar-2026]]). The evaluations are not described, and the claim is about stronger models following judgment rather than rules. So it may be model-dependent, not a refutation of ACE on the models ACE tested. Together with [[why-does-claude-md-keep-growing-chakrabarti-2026|Chakrabarti]]'s field data, the weight of evidence is now against append-mostly as a default.
+
 ## References
 
 - [[agentic-context-engineering-zhang-2025]] — ICLR 2026; [arXiv:2510.04618](https://arxiv.org/abs/2510.04618)
+
+## Related 2026 sources
+
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss

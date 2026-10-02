@@ -2,7 +2,7 @@
 title: "Is Progressive Disclosure All You Need for Long-Context Agents?"
 type: source
 created: 2026-08-04
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - is-progressive-disclosure-all-you-need-he-2026.md
 arxiv_id: "2607.17598"
@@ -107,3 +107,8 @@ The headline is a boundary condition, not a refutation: **"progressive disclosur
 
 - [arXiv:2607.17598](https://arxiv.org/abs/2607.17598)
 </content>
+
+## Related 2026 sources
+
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

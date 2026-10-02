@@ -2,7 +2,7 @@
 title: Skill Optimization
 type: concept
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-09-30
 sources:
   - skillopt-yang-2026.md
   - skillmoo-gong-2026.md
@@ -76,3 +76,7 @@ These connect to the RL-trained memory-operation policies ([[memory-r1]], [[mem-
 - [[skill1-shi-2026]] — Skill1: unified RL over selection/utilization/distillation
 - [[sage-skill-library-wang-2025]] — SAGE: RL skill-library accumulation
 - [[agentic-skills-in-the-wild-liu-2026]] — realistic skill-usage benchmark (the evaluation caveat)
+
+## Related 2026 sources
+
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill

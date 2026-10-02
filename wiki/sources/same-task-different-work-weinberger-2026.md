@@ -2,7 +2,7 @@
 title: "Same Task, Different Work: Prompt-Induced Waste in Coding Agents"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.01347"
 year: 2026
@@ -135,3 +135,8 @@ Experiments, infrastructure, and analysis were carried out with Claude operating
 
 - [arXiv:2608.01347](https://arxiv.org/abs/2608.01347)
 - Benchmark code, fixtures, prompt variants, raw ledgers, analysis: https://github.com/sarelWeinberger/prompt_efficiency
+
+## Related 2026 sources
+
+- [[getting-the-most-out-of-opus-5-5-osmani-2026]] — Osmani on prompting Opus 5.5: define done, drop "think hard", stop rules in CLAUDE.md, subagents
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means

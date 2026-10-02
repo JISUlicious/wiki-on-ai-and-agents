@@ -2,7 +2,7 @@
 title: Agentic Search
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-30
 sources:
   - grep-all-you-need-sen-2026.md
 status: complete
@@ -47,3 +47,7 @@ The concept is named in [[grep-all-you-need-sen-2026]] (Sen et al., 2026) — th
 - [[grep-all-you-need-sen-2026]] — the canonical paper naming and measuring agentic search.
 - [[chronos]] — the authors' custom harness.
 - [[longmemeval]] — benchmark for long-horizon agentic-memory QA.
+
+## Related 2026 sources
+
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

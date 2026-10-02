@@ -2,7 +2,7 @@
 title: Claude Opus 4.8
 type: entity
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - claude-code-dynamic-workflows-harness-2026.md
   - claude-effort-and-ultracode-docs-2026.md
@@ -35,3 +35,7 @@ Part of the [[claude]] family, succeeding the Claude 4.7 Opus / 4.6 Sonnet line.
 - [[claude-code-dynamic-workflows-harness-2026]]
 - [[claude]] — the family page.
 - [[dynamic-workflows]] — the capability Opus 4.8 enables.
+
+## Related 2026 sources
+
+- [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium

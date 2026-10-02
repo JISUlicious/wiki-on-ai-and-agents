@@ -2,7 +2,7 @@
 title: Anthropic
 type: entity
 created: 2026-05-13
-updated: 2026-09-14
+updated: 2026-09-30
 sources:
   - gpt-3-brown-2020.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -49,3 +49,11 @@ Anthropic publishes periodic reports on misuse of Claude: March 2025, August 202
 
 - [[agentic-coding-trends-report-anthropic-2026]] — the 2026 predictions report — useful for its descriptive findings (AI used in ~60% of developer work but only **0–20% fully delegated**, and ~27% of AI-assisted work is newly viable rather than accelerated), with the caveat that it carries no methodology section and every case study is a customer
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the operational counterpart to the Trends Report: six stages, a versioned artifact chain that doubles as the audit trail, and leading/lagging measures for every play. Makes no quantitative claims at all
+- [[building-with-claude-sonnet-5-5-osmani-2026]] — Osmani's Sonnet 5.5 launch guide: spec sheet, pricing, six breaking migration changes from Sonnet 5
+- [[getting-the-most-out-of-opus-5-5-osmani-2026]] — Osmani on prompting Opus 5.5: define done, drop "think hard", stop rules in CLAUDE.md, subagents
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means
+- [[how-we-made-claude-ai-3x-faster-wang-2026]] — Anthropic case study: a Claude-driven two-week sprint made claude.ai ~3x faster using measurable proxies
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[claude-dev]] — claude.dev, Anthropic's developer blog; hub of the posts ingested from it
+- [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
+- [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics

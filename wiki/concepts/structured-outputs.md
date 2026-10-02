@@ -2,7 +2,7 @@
 title: Structured Outputs
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-09-30
 sources:
   - vllm-tool-calling-2025.md
 status: complete
@@ -58,3 +58,7 @@ With `strict: true`, OpenAI applies constrained decoding so the returned JSON is
 - Schema language: [[json-schema]].
 - Extraction counterpart: [[tool-call-parser]].
 - Use case: [[function-calling]].
+
+## Related 2026 sources
+
+- [[unreasonable-effectiveness-of-html-shihipar-2026]] — Shihipar's opinion piece: HTML rather than Markdown for agent output meant for humans

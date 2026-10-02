@@ -48,3 +48,4 @@ Because gains transfer (frozen evolved harnesses also help on [[swe-bench|SWE-be
 
 - [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
 - [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)
+- [[using-claude-code-spending-your-effort-shihipar-2026]] — Shihipar: on Terminal-Bench 3.0, more effort buys verification and edge-case testing, not better approaches

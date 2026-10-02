@@ -2,7 +2,7 @@
 title: Skill Library
 type: concept
 created: 2026-05-16
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - voyager-wang-2023.md
 status: draft
@@ -35,3 +35,4 @@ The skill library is the [[procedural-memory|procedural-memory]] ancestor of the
 
 - [[continualskillbench-guan-2026]] — never-overwriting has its own cost: selection and maintenance burden scaling with a fragmented library. GPT-4o accumulated 384 skills at quality 5.68 vs GPT-5.3-Codex's 205 at 7.94
 - [[catastrophic-remembering]] — the general form of that cost, measured across six papers
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks

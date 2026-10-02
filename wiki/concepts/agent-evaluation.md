@@ -175,3 +175,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
 - [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
 - [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill

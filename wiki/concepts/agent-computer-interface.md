@@ -2,7 +2,7 @@
 title: Agent-Computer Interface (ACI)
 type: concept
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-09-30
 sources:
   - swe-agent-yang-2024.md
 status: draft
@@ -18,3 +18,7 @@ The Agent-Computer Interface (ACI) is the abstraction of a purpose-built tool an
 ## References
 
 - [[swe-agent-yang-2024]]
+
+## Related 2026 sources
+
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

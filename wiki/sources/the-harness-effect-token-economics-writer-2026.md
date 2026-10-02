@@ -75,3 +75,4 @@ Blended parity scorecard (Table 3), baseline → harness:
 ## Related 2026 sources
 
 - [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means

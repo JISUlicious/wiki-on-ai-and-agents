@@ -2,7 +2,7 @@
 title: Guardrailing
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-09-30
 sources:
   - rlhf-christiano-2017.md
   - constitutional-ai-bai-2022.md
@@ -83,3 +83,5 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[claudini-autoresearch-adversarial-attacks-panfilov-2026]] — Claudini Autoresearch Discovers State of the Art Adversarial
 - [[ai-native-sdlc-playbook-anthropic-2026]] — a three-tier enforcement model worth copying: skills advisory, hooks deterministic and self-explaining, managed settings non-overridable by engineers — with autonomy tiered by environment and the agent permitted to act *up to* the production gate but never past it
+- [[getting-started-with-claude-code-mods-osmani-2026]] — Osmani's tutorial on Claude Code mods: in-process JS/TS hook modules shipped as plugins
+- [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)

@@ -2,7 +2,7 @@
 title: "Demystifying Evals for AI Agents"
 type: source
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-30
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.html
 year: 2026
@@ -118,3 +118,4 @@ The appendix surveys frameworks (Harbor for containerized trials, Arize Phoenix/
 ## Related 2026 sources
 
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the same practice placed in a lifecycle: 20–50 real tasks, gate configuration changes on pass rate, make every production incident a permanent eval. Note its unit of 'configuration' — model, prompt, `CLAUDE.md`, skills *and* hooks, i.e. the whole harness
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill

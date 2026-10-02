@@ -2,7 +2,7 @@
 title: "Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding"
 type: source
 created: 2026-08-17
-updated: 2026-09-29
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.11095"
 year: 2026
@@ -205,3 +205,4 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 ## Related 2026 sources
 
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the ratchet **prescribed as practice**: *"when Claude makes a mistake twice, the correction goes into `CLAUDE.md`"*. It does bound the file at one page, but specifies no deletion mechanism, no review cadence and no way to tell which instructions still earn their place — the exact gaps this paper measures. Its comments fix would make that bound enforceable
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss

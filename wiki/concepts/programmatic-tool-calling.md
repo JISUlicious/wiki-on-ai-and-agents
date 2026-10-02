@@ -54,3 +54,4 @@ The sharpest structural result is a scaling wall: Claude Sonnet 5's JSON enumera
 ## Related 2026 sources
 
 - [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

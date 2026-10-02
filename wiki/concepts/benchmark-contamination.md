@@ -2,7 +2,7 @@
 title: Benchmark Contamination
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-09-30
 sources:
   - swe-bench-live-zhang-2025.md
   - swe-bench-jimenez-2023.md
@@ -32,3 +32,7 @@ importance: medium
 ## References
 
 - [[swe-bench-live-zhang-2025]] · [[swe-bench-jimenez-2023]] · [[retro-borgeaud-2021]] · [[swe-refactor-bench-hong-2026]]
+
+## Related 2026 sources
+
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill

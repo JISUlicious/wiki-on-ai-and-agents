@@ -2,7 +2,7 @@
 title: Skill Routing
 type: concept
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources:
   - what-keeps-agent-skills-from-being-reusable-zhang-2026.md
   - at-skills-attention-is-all-you-have-yin-2026.md
@@ -69,3 +69,4 @@ That generalizes a condition [[mind-viruses-papadopoulos-2026|Mind Viruses]] fou
 ## Related 2026 sources
 
 - [[building-an-ai-native-sdlc-plugin]] — the routing-scarcity argument applied: seven skills in the plugin, only two of them competing for selection
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks

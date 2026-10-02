@@ -2,7 +2,7 @@
 title: "Effort (Claude API Docs) — effort levels & ultracode"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - claude-effort-and-ultracode-docs-2026.html
 introduces:
@@ -46,3 +46,7 @@ The authoritative documentation for the **`effort`** parameter — Anthropic's s
 
 - [[reasoning-effort]] · [[ultracode]]
 - _Original source: `sources/claude-effort-and-ultracode-docs-2026.html`_
+
+## Related 2026 sources
+
+- [[using-claude-code-spending-your-effort-shihipar-2026]] — Shihipar: on Terminal-Bench 3.0, more effort buys verification and edge-case testing, not better approaches

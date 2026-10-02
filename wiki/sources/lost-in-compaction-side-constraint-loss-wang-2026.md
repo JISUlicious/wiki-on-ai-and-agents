@@ -2,7 +2,7 @@
 title: "Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.11242"
 authors:
@@ -159,3 +159,4 @@ Further gaps visible from the outside:
 ## Related 2026 sources
 
 - [[compaction-cliff-long-running-agent-memory-zerhoudi-2026]] — the sibling result (CIKM '26), and it **agrees on the fix**: both reject better compactor prompts and propose a cheap classifier *outside* the compactor that reinstates the constraint class verbatim, both landing in a 90–96% band. The 17% vs 53% gap is construct and pressure, not conflict — transient session constraints under 182× compression versus installed config text under 2×. **One genuine conflict**: that paper grounds part of the failure in positional bias, citing lost-in-the-middle, which this paper's monotonic-position finding rules out for this task.
+- [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction

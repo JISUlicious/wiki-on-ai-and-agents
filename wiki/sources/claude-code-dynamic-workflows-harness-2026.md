@@ -2,7 +2,7 @@
 title: "A Harness for Every Task: Dynamic Workflows in Claude Code"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-09-30
 sources:
   - claude-code-dynamic-workflows-harness-2026.html
 authors:
@@ -58,3 +58,7 @@ The post's most cited contribution is its diagnosis of *why* a single context wi
 - [[dynamic-workflows]]
 - [[claude-code-dynamic-workflows-2026]] — the announcement companion.
 - _Original source: `sources/claude-code-dynamic-workflows-harness-2026.html`_
+
+## Related 2026 sources
+
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss

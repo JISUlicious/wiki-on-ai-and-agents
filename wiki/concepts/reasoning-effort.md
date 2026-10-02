@@ -2,7 +2,7 @@
 title: Reasoning Effort (the `effort` parameter)
 type: concept
 created: 2026-06-03
-updated: 2026-09-30
+updated: 2026-10-02
 sources:
   - claude-effort-and-ultracode-docs-2026.md
 status: complete
@@ -35,6 +35,11 @@ For Opus 4.8 / 4.7 / 4.6 and Sonnet 4.6, effort is the recommended control for *
 
 Effort decouples *capability dialing* from *prompt engineering*: instead of padding prompts to coax more reasoning (or trimming them for speed), a caller sets one parameter that scales the whole response budget — including agentic tool-call volume. It is the API substrate beneath [[claude-code|Claude Code]]'s `/effort` menu, whose top entry, **[[ultracode]]**, pairs the `xhigh` level with standing permission to launch [[dynamic-workflows|multi-agent workflows]].
 
+> [!warning] Contradiction — effort defaults changed with the Claude 5.5 models
+> The guidance above (default `high` on all surfaces; start coding and agentic work at `xhigh`) describes the Opus 4.7/4.8 generation. For [[claude-opus-5-5|Opus 5.5]] the default is **`medium`**, and at a given level it thinks more than Opus 5. For [[claude-sonnet-5-5|Sonnet 5.5]] the default is `high` on the API but `medium` in Claude Code, and its levels are recalibrated so old settings do not carry over. Anthropic's 5.5-era advice is to start at `medium` and keep `xhigh`/`max` for work where a gain has been measured.
+>
+> [[using-claude-code-spending-your-effort-shihipar-2026|Spending your effort]] (Anthropic-internal Terminal-Bench 3.0) adds why: higher effort mostly buys verification. "A bug its tests missed" failures fell from 40 to 14 between low and max, while "picked the wrong reading" failures rose from 25 to 47. Treat the `xhigh` recommendation above as specific to the 4.x models.
+
 ## Related
 
 - [[ultracode]] — Claude Code's `xhigh` + auto-workflow mode (not itself an API effort level).
@@ -50,3 +55,8 @@ Effort decouples *capability dialing* from *prompt engineering*: instead of padd
 ## Related 2026 sources
 
 - [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+- [[building-with-claude-sonnet-5-5-osmani-2026]] — Osmani's Sonnet 5.5 launch guide: spec sheet, pricing, six breaking migration changes from Sonnet 5
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means
+- [[using-claude-code-spending-your-effort-shihipar-2026]] — Shihipar: on Terminal-Bench 3.0, more effort buys verification and edge-case testing, not better approaches
+- [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
+- [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics

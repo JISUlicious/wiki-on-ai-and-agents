@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-09-30
+updated: 2026-10-02
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 547 sources, 177 entities, 317 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 559 sources, 181 entities, 318 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -48,6 +48,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[glm-5]] — Z.ai's 744B/40B-active MoE with DSA; SkillMOO backbone, MISA retrofit target, precedes GLM-5.2
 - [[gemma]] — Google's open-weights family (2024–); Gemma 3/4 are frequent test models; Gemma 4 26B A4B underlies DiffusionGemma
 - [[o1]] — OpenAI's first RL-trained reasoning model series; the o1-class bar DeepSeek-R1 and later LRMs are measured against
+- [[claude-opus-5-5]] — Anthropic's Claude 5.5 flagship (Sep 2026): 20% cheaper tokens, 60% cheaper cache reads, default effort medium
+- [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, Sonnet 5 prices, thinking cannot be disabled
 
 ### Agent products (2026 era)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -60,6 +62,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[openai-api]] — OpenAI's API (Chat Completions / Responses / Assistants) — function-calling reference implementation
 - [[vllm]] — High-throughput LLM inference engine; ~25 tool-call parsers
 - [[autogpt]] — Early popular open-source autonomous agent (2023); GAIA co-author
+- [[claude-dev]] — claude.dev, Anthropic's developer blog; hub for its posts in this wiki (vendor-reported figures)
 
 ### System One / typed decision models (2026)
 - [[jev]] — TypeSafe AI's System One model; typed answers with probabilities, generates no text
@@ -336,6 +339,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[planning]] — Agent planning in the loop, as harness control (PEV), and across multiple agents; its limits and failure rates
 - [[quality-diversity]] — Search for many good, diverse solutions (MAP-Elites); the ancestor of the Darwin Gödel Machine's archive
 - [[universal-search]] — Levin's asymptotically optimal but hardwired program search; the predecessor of the Gödel machine's BIOPS
+- [[claude-code-mods]] — Claude Code mods (v2.1.287): in-process, stateful hook modules shipped as plugins
 
 ### Agentic capabilities (2025)
 - [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
@@ -730,6 +734,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Long-context recall (2026-09-15)
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — Korea University: facts encoded as feed-forward residual vectors and regenerated on demand; 50–80% single-fact recall at 2M tokens from 3–5 questions per model, near-constant GPU memory, weak on paraphrased questions
+
+### claude.dev — Anthropic developer blog (ingested 2026-10-02)
+- [[building-with-claude-sonnet-5-5-osmani-2026]] — Sonnet 5.5 launch guide: spec, pricing, six breaking changes from Sonnet 5 (2026-09-28)
+- [[getting-the-most-out-of-opus-5-5-osmani-2026]] — Prompting Opus 5.5: define done, drop "think hard", stop rules, subagents (2026-09-22)
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic task; "40% cheaper" decoded (2026-09-25)
+- [[using-claude-code-spending-your-effort-shihipar-2026]] — More effort buys verification, not better approaches (Terminal-Bench 3.0, Anthropic-internal) (2026-09-25)
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — 80%+ of Claude Code's system prompt cut for Claude 5 models (2026-07-24)
+- [[getting-started-with-claude-code-mods-osmani-2026]] — Claude Code mods tutorial (2026-10-01)
+- [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice (2026-06-03)
+- [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — Claude Code designed around prefix caching (2026-04-30)
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons (2026-04-10)
+- [[how-we-made-claude-ai-3x-faster-wang-2026]] — Claude-driven web-performance sprint; client-side, not model serving (2026-09-23)
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Eval design and overfit-safe hill-climbing (2026-09-28)
+- [[unreasonable-effectiveness-of-html-shihipar-2026]] — Opinion: HTML over Markdown for human-facing agent output (2026-05-20)
 
 ### Newsletter sweep 2026-09-30
 

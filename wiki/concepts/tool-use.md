@@ -58,3 +58,4 @@ See [[function-calling]] for the canonical treatment — the model/application c
 
 - [[programmatic-tool-calling]] — expose tools as typed code stubs instead of JSON schemas — wins on capable models and under parallel fan-out, loses on the 14-model mean
 - [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

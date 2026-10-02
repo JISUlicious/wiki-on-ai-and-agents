@@ -93,3 +93,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
+- [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill

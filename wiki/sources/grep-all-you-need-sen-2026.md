@@ -2,7 +2,7 @@
 title: "Is Grep All You Need? How Agent Harnesses Reshape Agentic Search"
 type: source
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-09-30
 sources:
   - grep-all-you-need-sen-2026.md
 arxiv_id: "2605.15184"
@@ -111,3 +111,7 @@ Mixes increasing amounts of unrelated chat history into each haystack to measure
 - [[react-yao-2022]] — the underlying reason-act loop.
 - [[dpr-karpukhin-2020]] — DPR cited as canonical dense-retrieval baseline.
 - Canonical link: https://arxiv.org/abs/2605.15184
+
+## Related 2026 sources
+
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

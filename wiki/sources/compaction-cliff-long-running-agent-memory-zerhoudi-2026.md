@@ -2,7 +2,7 @@
 title: "The Compaction Cliff in Long-Running AI Agent Memory"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-30
 sources: []
 arxiv_id: "2608.22752"
 venue: CIKM 2026
@@ -224,3 +224,7 @@ Both fixes are the same architectural move — a cheap model outside the compact
 - Liu et al., rate-distortion for composite sources under subsource-dependent fidelity — the formal frame instantiated with knowledge types as subsources.
 - Yao et al., *τ-bench* (retail, airline); *MedQA*; openFDA BOXED WARNING / CONTRAINDICATIONS; *LegalBench* contract-NLI; *BEIR* scifact; *LongMemEval* — evaluation corpora.
 - Liu et al. 2024, "lost in the middle" positional bias; *LongBench*; *RULER* — cited as explanations for compaction loss (but see the conflict with Wang et al. 2026 above).
+
+## Related 2026 sources
+
+- [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction

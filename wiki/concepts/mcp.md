@@ -106,3 +106,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (synthesis: [[mcp-server-architecture-patterns]])
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
+- [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction

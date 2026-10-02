@@ -58,3 +58,7 @@ This is a controlled ablation of the **tool interface** on enterprise work, not 
 ## References
 
 - [arXiv:2609.11999](https://arxiv.org/abs/2609.11999)
+
+## Related 2026 sources
+
+- [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools

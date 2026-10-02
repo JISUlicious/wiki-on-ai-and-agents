@@ -2,7 +2,7 @@
 title: Claude
 type: entity
 created: 2026-05-13
-updated: 2026-09-14
+updated: 2026-09-30
 sources:
   - emotion-concepts-anthropic-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
@@ -34,6 +34,8 @@ Claude is the family of [[decoder-only-transformer|decoder-only Transformer]] LL
 | Claude Sonnet 4.5 | early 2026 (studied in [[emotion-concepts-anthropic-2026]]) |
 | Claude 4.6 Sonnet, Claude 4.7 Opus, Haiku 4.5 | 2025–2026 |
 | [[claude-opus-4-8\|Claude Opus 4.8]] | 2026 — enables [[dynamic-workflows]] in [[claude-code]] |
+| Claude 5 (Opus 5, Sonnet 5) and Claude Fable 5 / 5.1 | 2026 — referenced across this wiki; no dedicated pages yet |
+| [[claude-opus-5-5\|Claude Opus 5.5]], [[claude-sonnet-5-5\|Claude Sonnet 5.5]] | September 2026 — Claude 5.5 family; Haiku 5.5 announced |
 
 Architectural details are not officially disclosed. Like [[gpt-4]], Claude is a closed-weights model accessed via the [[anthropic|Anthropic]] API or the **Claude.ai** product.
 
@@ -68,3 +70,10 @@ Claude appears as:
 ## References
 
 - [[emotion-concepts-anthropic-2026]]
+
+## Related 2026 sources
+
+- [[building-with-claude-sonnet-5-5-osmani-2026]] — Osmani's Sonnet 5.5 launch guide: spec sheet, pricing, six breaking migration changes from Sonnet 5
+- [[getting-the-most-out-of-opus-5-5-osmani-2026]] — Osmani on prompting Opus 5.5: define done, drop "think hard", stop rules in CLAUDE.md, subagents
+- [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means
+- [[how-we-made-claude-ai-3x-faster-wang-2026]] — Anthropic case study: a Claude-driven two-week sprint made claude.ai ~3x faster using measurable proxies

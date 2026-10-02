@@ -7,6 +7,19 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-10-02] ingest | claude.dev (Anthropic developer blog) — 12 sources
+
+Ingested every post in the claude.dev RSS feed (13), except the June 2 dynamic-workflows post, which was already in the wiki from its claude.com copy ([[claude-code-dynamic-workflows-harness-2026]]). The `/mods/` gallery is folded into the mods post; `/terminal/` is a UI view of the blog and has no page. All performance and cost figures are labelled Anthropic-reported.
+
+Created: 12 source pages; [[claude-dev]] (site hub); [[claude-opus-5-5]] and [[claude-sonnet-5-5]] (Opus 5 and Sonnet 5 have no pages, so the predecessors are named in prose); and [[claude-code-mods]], the new Claude Code extension mechanism. [[claude]]'s generation table gained the 5.x rows. 92 backlinks were added.
+
+**Contradictions recorded:**
+- [[reasoning-effort]]: the 4.x guidance ("high" by default on all surfaces, start at xhigh) does not hold for the 5.5 models, which default to medium. Anthropic now advises keeping xhigh for measured gains.
+- [[agentic-context-engineering]]: Anthropic reports cutting over 80% of Claude Code's system prompt for Claude 5 models with no measured loss, against ACE's comprehensive-playbook prescription. Possibly model-dependent.
+- [[claude-code]]: the built-in tool count is ~40 per a source-map writeup but ~20 per Anthropic's April post. Mods were added there, and [[hooks-in-modern-agents]] gained mods as a third kind of hook.
+
+**Worth knowing:** "Opus 5.5 is 40% cheaper" is Anthropic's estimate for typical workloads; the per-token cut alone is −31% on its own example. The "3x faster claude.ai" post is about client-side web performance, not model serving. "Seeing like an agent" partly qualifies Microsoft's bash-beats-typed-tools result: structured tools still win where the harness must parse the output.
+
 ## [2026-09-30] ingest | Newsletter sweep 2026-09-30 — 32 sources
 
 Seven new threads since 2026-09-15: three alphaXiv digests, two NLP "Top AI Papers" issues, and two paywalled "AI Agents Weekly" issues (used by subject line only). Every arXiv ID was checked against its title before download. Skipped one duplicate ([[last-ai-built-by-humans-recursive-self-improvement-duan-2026]]) and one off-domain paper (Navier–Stokes). Two papers exist only on alphaXiv, with no arXiv ID, and are marked as such: [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] and [[recurrent-looped-transformer-zhang-2026]]. Four agents wrote eight pages each, with every number taken from the paper body. The capability-laundering page was written in the main session at abstract level, after a safety filter stopped the subagent partway.

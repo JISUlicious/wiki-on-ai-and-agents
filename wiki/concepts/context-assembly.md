@@ -2,7 +2,7 @@
 title: Context Assembly
 type: concept
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-09-30
 sources:
   - code-as-agent-harness-ning-2026.md
 status: draft
@@ -30,3 +30,8 @@ Context assembly sits above the harness (L1) and below the agent's reasoning loo
 ## References
 
 - [[code-as-agent-harness-ning-2026]]
+
+## Related 2026 sources
+
+- [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss
+- [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
