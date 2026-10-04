@@ -7,6 +7,10 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-10-03] query | Most important component of an AI agent
+
+Question: "what is the most important component of ai agent? List up components of ai agent and choose only one". Not filed (offered). Answer: the **verifier**, meaning a feedback signal anchored to a checkable reference. Evidence: GAVEL (41.2→91.8% from plan checking), the EvoOntology and HCL gate ablations, SIFT's judge-free search gaining nothing, Anthropic's verification-skills claim, and the verification-horizon argument. Caveat: unanchored judges fail (Rehearse, GAUGE, JEV-as-a-Judge). Key pages consulted: [[llm-agent]], [[cognitive-architectures-for-language-agents]], [[harness-vs-model-attribution]], [[verifier]], [[verification-horizon-qwen-2026]], [[llm-as-a-verifier-kwok-2026]].
+
 ## [2026-10-02] ingest | claude.dev (Anthropic developer blog) — 12 sources
 
 Ingested every post in the claude.dev RSS feed (13), except the June 2 dynamic-workflows post, which was already in the wiki from its claude.com copy ([[claude-code-dynamic-workflows-harness-2026]]). The `/mods/` gallery is folded into the mods post; `/terminal/` is a UI view of the blog and has no page. All performance and cost figures are labelled Anthropic-reported.
