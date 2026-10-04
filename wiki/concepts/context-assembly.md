@@ -2,7 +2,7 @@
 title: Context Assembly
 type: concept
 created: 2026-05-29
-updated: 2026-09-30
+updated: 2026-10-04
 sources:
   - code-as-agent-harness-ning-2026.md
 status: draft
@@ -19,7 +19,7 @@ tags: []
 - **Activated skills** — progressively disclosed skill bodies loaded only when a descriptor matches the task.
 - **Dynamic templates + tool surfaces** — system prompt plus tool/[[mcp]] schemas stitched into the window.
 
-Context assembly sits above the harness (L1) and below the agent's reasoning loop (L3), turning [[memory-management|stored memory]] and available capabilities into a single coherent prompt.
+In the three-layer model, context assembly is one of the six L2 design problems, alongside control flow, action surface, [[memory-management|memory management]], persistence and the harness. It sits between the model's own capabilities (L1, above all [[in-context-learning]], which is what lets an assembled prompt change behaviour at all) and the concrete mechanisms that implement it (L3: `CLAUDE.md` loading, skill activation, retrieval, MCP schemas). Its job is to turn stored memory and available capabilities into a single coherent prompt.
 
 ## Related
 

@@ -7,6 +7,13 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-10-04] lint | Overview rewritten; context-assembly layer fixed
+
+- [[overview]] rewritten. It had not been updated since 2026-05-13 and still described a 16-source corpus. It now reflects 559 sources, adds themes on harnesses, verification, memory that does not compound, trusting the numbers, inference efficiency and local inference, and typed decision models, and replaces the obsolete follow-up list with the current gaps (Building effective agents, Lilian Weng's agents post, Russell & Norvig, field-map pages, context-engineering pages). All 115 links resolve.
+- [[context-assembly]] said context assembly "sits above the harness (L1)". That contradicted [[agent-three-layer-model]], where L1 is the model's own capabilities and context assembly and the harness are sibling L2 problems. The sentence was rewritten to match.
+
+Both issues were found while compiling an agent-component taxonomy for the game006 session.
+
 ## [2026-10-03] query | Most important component of an AI agent
 
 Question: "what is the most important component of ai agent? List up components of ai agent and choose only one". Not filed (offered). Answer: the **verifier**, meaning a feedback signal anchored to a checkable reference. Evidence: GAVEL (41.2→91.8% from plan checking), the EvoOntology and HCL gate ablations, SIFT's judge-free search gaining nothing, Anthropic's verification-skills claim, and the verification-horizon argument. Caveat: unanchored judges fail (Rehearse, GAUGE, JEV-as-a-Judge). Key pages consulted: [[llm-agent]], [[cognitive-architectures-for-language-agents]], [[harness-vs-model-attribution]], [[verifier]], [[verification-horizon-qwen-2026]], [[llm-as-a-verifier-kwok-2026]].

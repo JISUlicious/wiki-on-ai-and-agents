@@ -2,75 +2,108 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-05-13
+updated: 2026-10-04
 tags: []
 ---
 
 # Overview
 
-A synthesis of the wiki's current contents. The corpus spans 2017–2026 and traces the rise of [[transformer-architecture|Transformer-based]] language modeling from the original Vaswani et al. paper through the post-GPT-4 agentic and interpretability era.
+A synthesis of the wiki's current contents. The corpus spans 2017–2026. It began with the foundational [[transformer-architecture|Transformer]]-era papers and has since grown mostly in one direction: how LLMs are turned into **agents** — what surrounds the model, how agents remember, how they are checked, and what it costs to run them.
 
 ## Summary
 
-The wiki currently covers **16 ingested sources** and ~100 derived entity/concept pages. The corpus is dominated by foundational LLM research:
+The wiki covers **559 source pages**, **181 entities**, **318 concepts**, **5 comparisons** and **15 filed queries** (as of 2026-10-04). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
-- The [[transformer|Transformer]] (2017) — the architectural foundation underneath everything else.
-- The first wave of pre-trained Transformer LMs — [[bert]] (encoder, masked LM, 2018) and [[gpt-1]] (decoder-only, autoregressive, 2018) — establishing the [[pre-training|pre-train]] + [[fine-tuning|fine-tune]] recipe.
-- The [[gpt-family|GPT scale-up]] — [[gpt-2|GPT-2]] (2019, zero-shot transfer), [[gpt-3|GPT-3]] (2020, [[in-context-learning|in-context learning]] at 175B), [[gpt-4|GPT-4]] (2023, multimodal + RLHF).
-- The [[retrieval-augmented-generation|retrieval]] line — [[dpr|DPR]] (2020), [[rag|RAG]] (2020), [[retro|RETRO]] (2021).
-- The [[llm-agent|agentic]] / reasoning line — [[chain-of-thought-prompting|CoT]] (2022), [[react|ReAct]] (2022), [[reflexion|Reflexion]] (2023).
-- The [[multimodal-llm|multimodal]] extension — [[vit|ViT]] (2020).
-- The current frontier of interpretability / alignment — [[emotion-concepts-anthropic-2026|Emotion Concepts]] (Anthropic 2026), [[agentic-ai-and-the-next-intelligence-explosion|Agentic AI essay]] (2026).
+The corpus now has two layers:
+
+- **The foundations (2017–2023).** The [[transformer|Transformer]]; [[bert]] and [[gpt-1]] with the [[pre-training|pre-train]] + [[fine-tuning|fine-tune]] recipe; the [[gpt-family|GPT scale-up]] and [[in-context-learning]]; [[scaling-laws]] and [[chinchilla-hoffmann-2022|Chinchilla]]; [[instructgpt-ouyang-2022|InstructGPT]] and [[constitutional-ai]]; the [[retrieval-augmented-generation|retrieval]] line ([[dpr]], [[rag]], [[retro]]); and the first agent and reasoning papers ([[chain-of-thought-prompting|CoT]], [[react|ReAct]], [[reflexion|Reflexion]], [[toolformer]]).
+- **The 2026 agent era**, which is now most of the wiki: harnesses and [[claude-code|Claude Code]], [[agent-skills]], memory and [[self-improving-agent|self-improvement]], [[agent-evaluation|evaluation]], inference efficiency and local inference on [[apple-silicon|Apple Silicon]], [[large-reasoning-model|reasoning models]], typed decision models, and misuse.
+
+For a structural map, see [[agent-three-layer-model]] (the wiki's canonical breakdown of an agent) and [[from-transformer-to-modern-agents]] (nine evolutionary tracks converging into 2026 agents).
 
 ## Key Themes
 
 ### 1. The Transformer as universal substrate
 
-Every model in this wiki — text, image, multimodal — is built on the [[transformer-architecture|Transformer]]. The arc 2017–2026 is a story of how broadly that one architecture stretches: [[bert|encoder-only]] for understanding, [[decoder-only-transformer|decoder-only]] for generation, [[transformer|encoder-decoder]] for translation/seq2seq, [[vit|ViT]] for vision, [[multimodal-llm|multimodal extensions]] for everything else. The core invariants — [[self-attention]], [[multi-head-attention]], [[residual-connection|residuals]] + [[layer-normalization]] — change very little across this range.
+Almost every model in this wiki is built on the [[transformer-architecture|Transformer]]: [[bert|encoder-only]] for understanding, [[decoder-only-transformer|decoder-only]] for generation, [[vit|ViT]] for vision, [[multimodal-llm|multimodal extensions]] for everything else. The core invariants — [[self-attention]], [[multi-head-attention]], [[residual-connection|residuals]] and [[layer-normalization]] — change little. The serious alternatives the wiki tracks are [[state-space-model|state-space models]] and hybrids, [[looped-transformer|looped and recurrent-depth models]], and [[diffusion-language-model|diffusion language models]]. All three are still niche next to the decoder-only Transformer.
 
-### 2. Scale as the dominant lever
+### 2. Scale, and then what to do with inference compute
 
-[[scaling-laws|Scaling laws]] (Kaplan 2020, Chinchilla 2022) say loss is a smooth power-law function of parameters, data, and compute. Downstream capabilities follow ([[emergent-abilities|sometimes smoothly, sometimes with apparent emergence]]). The [[gpt-family|GPT family]] is the most legible scaling experiment in the corpus: GPT-1 (117M) → GPT-2 (1.5B) → GPT-3 (175B) → GPT-4 (undisclosed) traces a ~1000×+ expansion that produced [[in-context-learning]], [[chain-of-thought-prompting|CoT reasoning]], and (eventually) commercial-product viability.
+[[scaling-laws|Scaling laws]] (Kaplan 2020, [[chinchilla-hoffmann-2022|Chinchilla]] 2022) made scale the dominant lever, and the [[gpt-family|GPT family]] is the corpus's most legible scaling experiment. Since 2024 the frontier has moved to *inference-time* compute: [[o1]]-style [[large-reasoning-model|reasoning models]], [[deepseek-r1]] and [[inference-time-compute]]. The 2026 sources treat effort as a dial. Higher effort mostly buys verification rather than better approaches ([[reasoning-effort]]).
 
-### 3. The shift from fine-tuning to prompting to agents
+### 3. From fine-tuning to prompting to agents to harnesses
 
-Three regimes, in temporal order:
+- **Fine-tune everything** (2018–2020): one backbone, many task heads ([[bert]], [[gpt-1]]).
+- **Prompt everything** (2020–2022): [[gpt-3]]'s [[in-context-learning|ICL]] and [[chain-of-thought-prompting|CoT]].
+- **Run agents over everything** (2022–): [[react|ReAct]]'s loop with [[tool-use|tool use]], [[reflexion|Reflexion]]'s self-reflection.
+- **Engineer the harness** (2025–): the model is one component, and what surrounds it decides much of the outcome. [[harness-vs-model-attribution]] records scaffold-only swings of 11–15 points on SWE-bench Verified with the model fixed, and a 6.4× harness effect on ARC-AGI-3 (confirmed against ARC Prize's own results). [[agentic-harness-engineering]], [[claude-code]] and [[agent-skills]] are the hub pages.
 
-- **Fine-tune everything** (2018–2020): one pre-trained backbone, many fine-tuned task-specific heads. [[bert]] and [[gpt-1]] popularized this.
-- **Prompt everything** (2020–2022): [[gpt-3]]'s [[in-context-learning|ICL]] meant a single model could be repurposed via prompts. [[chain-of-thought-prompting|CoT]] extended this to multi-step reasoning.
-- **Run agents over everything** (2022–): [[react|ReAct]] introduced the prototypical LLM-agent loop with [[tool-use|tool use]]. [[reflexion|Reflexion]] added cross-episode self-reflection. The frontier in 2026 is robust, long-horizon agentic systems.
+### 4. Retrieval, and memory that does not compound
 
-### 4. Retrieval as a complementary scale axis
+The retrieval thread ([[dpr]], [[rag]], [[retro]]) established **non-parametric memory** as a separate lever. [[retro-borgeaud-2021|RETRO]] showed 7.5B parameters with retrieval matching 175B without it. The 2026 agent literature turned retrieval into *memory* ([[long-term-memory]], [[graph-memory]], [[memory-management]]) and then measured it. Its finding is sobering:
+- Appending skills and memories does **not** compound by itself; it fragments, or grows without bound ([[catastrophic-remembering]]).
+- Unvalidated memories spread mistakes between runs.
+- Budget-matched tests found extraction-based graph memory losing to flat retrieval.
 
-The retrieval thread — [[dpr]] (2020), [[rag]] (2020), [[retro]] (2021) — established that **non-parametric memory** is a real, separate lever. [[retro-borgeaud-2021|RETRO showed 7.5B + retrieval ≈ 175B parametric-only]] — a 25× parameter-efficiency win. Retrieval also addresses [[hallucination]], permits knowledge updates without retraining, and provides inspectable provenance. Modern production LLM systems almost universally use some form of [[retrieval-augmented-generation|RAG]].
+[[self-improving-agent]] was rewritten around these results.
 
-### 5. Alignment, interpretability, and the limits of behaviorism
+### 5. Verification as the bottleneck
 
-The most recent sources point toward a methodological shift:
+The recurring finding across planning, self-improvement, search and evaluation is that what decides success is **whether something checks the result against reality**:
+- A world-model verifier took an 8B planner from 41.2% to 91.8%.
+- Self-improvement loops work only behind an acceptance gate.
+- Plain search beats elaborate harness evolution, but only when something selects the right sample.
 
-- [[rlhf|RLHF]] (and its DPO/RLAIF descendants) align models behaviorally via preferences. This works but doesn't open the black box.
-- [[mechanistic-interpretability]] (Anthropic, Olah and colleagues) aims to reverse-engineer the algorithms inside frontier models. [[emotion-concepts-anthropic-2026|Sofroniew et al. (2026)]] is a striking concrete example: linear "[[functional-emotions|emotion vectors]]" in Claude Sonnet 4.5 causally drive specific alignment failures ([[reward-hacking]], blackmail, [[sycophancy]]).
-- [[agentic-ai-and-the-next-intelligence-explosion|Evans, Bratton & Agüera y Arcas (2026)]] argue the alignment story has to scale to **billions of agents** in social configurations, which [[rlhf]]-style training cannot accomplish alone — proposing [[institutional-alignment|institutional alignment]] (roles, protocols, separation of powers) as a structural complement.
+[[verifier]] and [[verification-horizon-qwen-2026]] are the hubs. The flip side is that unanchored judges fail: [[llm-as-a-judge]] collects the evidence, such as satisfaction ratings that carry no information about task success, and judges picking the worse of two close agents 31% of the time.
 
-The pattern: from behavior management → to circuit-level understanding → to ecosystem-level governance.
+### 6. Trusting the numbers
 
-### 6. The OpenAI → Anthropic diaspora
+A large share of the wiki's work is separating measurement from claim:
+- Vendor figures are labelled as such: [[claude-dev]], [[introducing-system-one-models-and-jev-typesafe-2026|TypeSafe's Jev launch]].
+- [[benchmark-contamination]] and refreshed benchmarks are tracked.
+- Contradictions are recorded and resolved against primary sources where possible, e.g. the ARC-AGI-3 baseline and DeepSeek's released configs.
+- [[quantization-quality]] and [[quantization-safety]] keep genuinely open disputes visible rather than picking a side.
 
-A sociological observation surfaced by the wiki: many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] — [[dario-amodei]], [[jared-kaplan]], [[tom-brown]], [[sam-mccandlish]], [[chris-olah]] — went on to co-found [[anthropic]] (2021). The two labs together set the frontier-LLM agenda from 2018 onward.
+### 7. Inference efficiency, and running models locally
 
-### 7. Misuse, and the access layer as the security boundary
+A substantial cluster covers making inference cheaper:
+- [[sparse-prefill]], [[trained-sparse-attention]] and [[prefix-caching]].
+- [[weight-streaming]] from SSD.
+- [[edge-inference]].
+- The economics of an agentic task, where cache-hit rate and effort dominate cost.
 
-The first misuse source in this wiki, Anthropic's [[anthropic-threat-intelligence-report-september-2026|September 2026 threat report]], changes where the risk sits. Its cyber cases argue the danger is not a single novel exploit but [[ai-enabled-cyber-operations|uplift across the whole kill chain]]: one operator running dozens of victims in parallel, breaches in two to three hours, and attackers using the same [[agent-skills|skills]], memory files and [[multi-agent]] patterns this wiki documents for legitimate agents. Its [[illicit-distillation]] cases argue capability can leave a lab without its safeguards — a distilled student inherits the reasoning but not the refusals.
+Much of it is grounded in local inference on [[apple-silicon|Apple Silicon]] through [[mlx]] and [[metal]]. It records the gaps between vendor speed claims and what a given chip actually does.
 
-Both threads land on the same place: **access**. Proxy networks, resold credentials and stolen API keys feed the cyber operations, the [[influence-operations|influence operations]] and the distillation campaigns alike. The strongest safeguards evidence in the report is about access too: one lab abandoned attempts on Claude Fable and switched to weaker-guarded models. The report is a vendor's self-account, and its allegations against competitor labs are unverified here, which is why every page drawing on it says so.
+### 8. Typed decision models: old mechanism, new packaging
 
+[[jev|Jev]] and the [[system-one-model|System One]] wave sell typed decisions with probabilities instead of text. The wiki traced the mechanism to 2020-era [[cloze-scoring]] (the MMLU readout), and the open reimplementations reached near-parity within days. Independent audits found the central claim, [[calibration]], dataset-dependent and overconfident. As a judge, Jev is well calibrated when a reference anchors the verdict and near chance without one.
 
-- **What architecture replaces the Transformer**, if any? State-space models (Mamba, S4) and hybrids ([[retrieval-augmented-generation|retrieval-augmented]] variants) are active research; this wiki doesn't yet have papers on them.
-- **What scales beyond pre-training?** Inference-time scaling via reasoning models ([[o1]]-style) suggests new scaling regimes; the corpus now covers them through [[deepseek-r1]], [[large-reasoning-model]] and [[inference-time-compute]].
-- **How faithful is [[chain-of-thought-prompting|CoT]] reasoning?** Lanham et al. 2023 and others suggest chains can be post-hoc rationalizations. Not yet in wiki.
-- **What does scalable [[institutional-alignment]] actually look like in practice?**
-- **Are [[functional-emotions]] a vestigial artifact of training data or actually useful for the Assistant role?** Both are plausible; the 2026 paper doesn't fully settle it.
+### 9. Alignment, interpretability, and misuse
 
-## Suggested follow-up sources
+- [[rlhf|RLHF]] aligns behaviour without opening the black box.
+- [[mechanistic-interpretability]] ([[monosemanticity]], [[emotion-concepts-anthropic-2026|emotion vectors]] in Claude Sonnet 4.5) aims to read the algorithms directly.
+- [[institutional-alignment]] proposes governance at the scale of billions of agents.
+- Chain-of-thought is not a complete window: [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]].
 
-To round out the corpus, future ingests could include: Chinchilla scaling laws (Hoffmann et al. 2022), InstructGPT/RLHF (Ouyang et al. 2022), LLaMA (Touvron et al. 2023), [[constitutional-ai|Constitutional AI]] (Bai et al. 2022), Toolformer (Schick et al. 2023), Mixtral / Mistral, Mamba / S4, OpenAI o1 / reasoning models, Anthropic SAE / monosemanticity work.
+On misuse, Anthropic's [[anthropic-threat-intelligence-report-september-2026|September 2026 threat report]] puts the risk in [[ai-enabled-cyber-operations|uplift across the whole kill chain]] and in [[illicit-distillation]]. Both run through **access**: proxies, resold credentials, stolen keys. [[prompt-injection]] remains without a robust defense, and typed outputs narrow it without removing it. The report is a vendor's self-account, and every page drawing on it says so.
+
+### 10. The OpenAI → Anthropic diaspora
+
+Many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] — [[dario-amodei]], [[jared-kaplan]], [[tom-brown]], [[sam-mccandlish]], [[chris-olah]] — went on to co-found [[anthropic]] in 2021. The two labs have set much of the frontier agenda since 2018.
+
+## Open questions
+
+- **Does harness evolution beat plain search at a matched compute budget?** Only one 2026 paper ran the control, with mixed results ([[agentic-harness-engineering]]).
+- **Are typed decision models calibrated where it matters?** Calibration holds on some datasets and question types and fails on others ([[calibration]], [[jev]]).
+- **When does a multi-agent system beat a single agent with the same compute?** [[multi-agent]] holds evidence both ways.
+- **Is 4-bit quantization safe, and is code disproportionately damaged?** Both are still disputed ([[quantization-quality]], [[quantization-safety]]).
+- **What does scalable [[institutional-alignment]] look like in practice?**
+- **Does the always-appending agent loop have a stable fixed point?** [[catastrophic-remembering]] suggests not, without deliberate deletion.
+
+## Gaps worth filling
+
+- **Canonical agent framings:** Anthropic's "Building effective agents" (workflows vs agents) and Lilian Weng's "LLM Powered Autonomous Agents".
+- **Classical agent theory:** the Russell & Norvig agent-type ladder.
+- **Field-map pages:** AI, machine learning, deep learning, and a standalone LLM page.
+- **Context-engineering concepts:** dedicated pages for context engineering, the context window and the system prompt, each currently covered only inside other pages.
+- **Housekeeping:** about 156 one-off broken links remain as placeholders for pages not yet written.
