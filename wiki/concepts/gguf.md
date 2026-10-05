@@ -2,7 +2,7 @@
 title: GGUF
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-05
 sources:
   - which-quantization-kurt-2026.md
 builds-on:
@@ -52,3 +52,7 @@ Unlike k-quants they effectively **require an importance-matrix (imatrix) calibr
 
 - [[which-quantization-kurt-2026]] — a unified evaluation across 13 GGUF formats.
 - llama.cpp PR #1684 (k-quants), PRs #4773 / #5196 (i-quants).
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

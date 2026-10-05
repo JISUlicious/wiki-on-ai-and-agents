@@ -2,7 +2,7 @@
 title: "NeuroPrefetcher: Storage-Aware Sparse LLM Inference via Delta Prefetching"
 type: source
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-05
 sources: []
 arxiv_id: "2608.22643"
 authors:
@@ -270,3 +270,7 @@ Net: the ranking is credible and the mechanism is real; the *magnitude* is again
 - FlexGen: Sheng et al., ICML 2023 — offloading baseline.
 - PRESERVE: Yüzügüler et al., [arXiv:2501.08192](https://arxiv.org/abs/2501.08192); ShadowKV: Sun et al., ICML 2025 — prefetch/KV analogues.
 - Mistral 7B: Jiang et al., [arXiv:2310.06825](https://arxiv.org/abs/2310.06825); Llama 3: Grattafiori et al., [arXiv:2407.21783](https://arxiv.org/abs/2407.21783).
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

@@ -2,7 +2,7 @@
 title: llama.cpp
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-05
 sources:
   - which-quantization-kurt-2026.md
 status: draft
@@ -38,3 +38,4 @@ Useful flags: `-ctk` / `-ctv` set [[kv-cache]] precision (`f16` / `q8_0` / `q4_0
 - [[weight-streaming]] — why a memory-mapped GGUF larger than RAM "runs" but crawls: `mmap` is OS demand paging with no knowledge of what the next token needs. Streaming runtimes read ahead from the router's expert list instead; NeuroPrefetcher's 3.22 vs 0.34 tok/s is measured against exactly this llama.cpp baseline
 - [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] — trails llama.cpp on dense prefill in 7 of 8 configs (by 1–10%) while leading decode 1.04–1.56×; the headline numbers are the single Qwen3-0.6B Q4 cell
 - [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] — the `ggml-blas` CPU path made 1.44× faster at 128-token fp32 prefill with direct-AMX kernels — and 0.82× at 512
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

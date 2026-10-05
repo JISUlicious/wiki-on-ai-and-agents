@@ -2,7 +2,7 @@
 title: Quantization-Conditioned Backdoor
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-05
 sources:
   - exploiting-llm-quantization-egashira-2024.md
   - mind-the-gap-egashira-2025.md
@@ -74,3 +74,7 @@ The pruning result shows the family generalizes: these are **compression-conditi
 ## References
 
 - [[exploiting-llm-quantization-egashira-2024]] · [[mind-the-gap-egashira-2025]]
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

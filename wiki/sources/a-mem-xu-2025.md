@@ -2,7 +2,7 @@
 title: "A-MEM: Agentic Memory for LLM Agents"
 type: source
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-05
 sources:
   - a-mem-xu-2025.md
 arxiv_id: "2502.12110"
@@ -85,3 +85,7 @@ A-MEM is positioned as a 2026-era reference design for self-organizing agent mem
 ## References
 
 _Original source: `sources/a-mem-xu-2025.md`_
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

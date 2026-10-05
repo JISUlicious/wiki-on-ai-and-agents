@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-02
+updated: 2026-10-05
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 559 sources, 181 entities, 318 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 560 sources, 182 entities, 319 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -81,6 +81,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[nanochat]] — Karpathy's minimal LLM training harness; Parcae baseline and reference autoresearch loop
 - [[apple-silicon]] — Apple M-series SoCs; the wiki's local-inference platform (GPU/Metal, AMX/SME, no eGPU path)
 - [[metal]] — Apple's GPU API; what MLX and llama.cpp run on, and what native runtimes like BaseRT target directly
+- [[ollama]] — Local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0 (2026-09-28)
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -428,6 +429,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[maximum-inner-product-search]] — MIPS / vector index serving
 - [[chunked-cross-attention]] — RETRO's mechanism for retrieved-chunk integration
 - [[open-domain-qa]] — Retriever + reader QA from a corpus
+- [[knowledge-graph-extraction]] — Text to knowledge graph: trained, generative-JSON and closed-decision approaches; extraction is lossy
 
 ### Memory management (2023–2026)
 - [[semantic-memory]] — Store of decontextualized facts in agents (MIRIX, Mem-α); sits beside episodic and procedural memory
@@ -734,6 +736,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Long-context recall (2026-09-15)
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — Korea University: facts encoded as feed-forward residual vectors and regenerated on demand; 50–80% single-fact recall at 2M tokens from 3–5 questions per model, near-constant GPU memory, weak on paraphrased questions
+
+### Knowledge-graph extraction (2026-10-05)
+- [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: closed yes/no decisions instead of free-form JSON; 218 vs 504 wrong links on CoNLL04 (author-reported)
 
 ### claude.dev — Anthropic developer blog (ingested 2026-10-02)
 - [[building-with-claude-sonnet-5-5-osmani-2026]] — Sonnet 5.5 launch guide: spec, pricing, six breaking changes from Sonnet 5 (2026-09-28)

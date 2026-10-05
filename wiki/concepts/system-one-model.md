@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-09-30
+updated: 2026-10-05
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -72,7 +72,7 @@ The evaluations are not interchangeable — each was scored on a different set, 
 
 ## Serving: the pattern moved into the engines
 
-Within ten days the interface stopped needing a bespoke server. [[sglang|SGLang]] merged a native `/v1/systemone` route on 2026-09-25 that serves **any chat model**, supports 255 options, and passes TypeSafe's own SDKs. [[vllm|vLLM]] merged the DiffusionGemma read path on 09-22 and has Laya model PRs open. llama.cpp and NVIDIA Dynamo have proposals. A frozen open model on a stock engine is now a complete Jev-compatible service; calibration is the only piece left to the operator.
+Within ten days the interface stopped needing a bespoke server. [[sglang|SGLang]] merged a native `/v1/systemone` route on 2026-09-25 that serves **any chat model**, supports 255 options, and passes TypeSafe's own SDKs. [[vllm|vLLM]] merged the DiffusionGemma read path on 09-22 and has Laya model PRs open. [[ollama|Ollama]] shipped a native `/v1/systemone` route on 2026-09-28 (v0.35.0), serving [[nimble|Nimble]], Tev1 and the image-capable Clef models locally. llama.cpp and NVIDIA Dynamo have proposals. The first downstream application is [[edgextract-markdown-to-knowledge-graph-mansuy-2026|edgextract]], which uses decision models as the extraction step of a knowledge-graph pipeline ([[knowledge-graph-extraction]]). A frozen open model on a stock engine is now a complete Jev-compatible service; calibration is the only piece left to the operator.
 
 The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the top three [[jevbench|JevBench]] places, plus [[laya|Laya]] as the shared encoder. See [[system-one-ecosystem-sweep-2026-09-28]].
 

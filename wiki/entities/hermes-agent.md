@@ -2,7 +2,7 @@
 title: Hermes Agent
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-05
 sources:
   - hermes-agent.md
   - comparison.md
@@ -53,3 +53,7 @@ Concretely:
 
 - [[hermes-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

@@ -2,7 +2,7 @@
 title: Memory Construction
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-05
 sources:
   - mem-alpha-wang-2025.md
 status: draft
@@ -22,3 +22,7 @@ Memory construction is the problem of *building* a structured memory store from 
 ## References
 
 - [[mem-alpha-wang-2025]] — MEM-α: Learning to Construct Memory from Streams via [[reinforcement-learning|Reinforcement Learning]] (Wang 2025).
+
+## Related 2026 sources
+
+- [[knowledge-graph-extraction]] — Knowledge graph extraction: trained, generative and closed-decision approaches, and what extraction loses

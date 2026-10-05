@@ -2,7 +2,7 @@
 title: "EvoOntology: A Self-Evolving Ontology Layer for Data Agents"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-05
 sources:
   - evoontology-self-evolving-ontology-layer-data-agents-chong-2026.md
 arxiv_id: "2609.15779"
@@ -57,3 +57,7 @@ Data agents face an **agent–data gap**: they see heterogeneous tables, files a
 ## References
 
 - [arXiv:2609.15779](https://arxiv.org/abs/2609.15779)
+
+## Related 2026 sources
+
+- [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review

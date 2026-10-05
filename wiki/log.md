@@ -7,6 +7,14 @@ updated: 2026-08-04
 
 # Activity Log
 
+## [2026-10-05] ingest | edgextract (markdown → knowledge graph via closed decisions)
+
+Ingested [raphaelmansuy/edgextract](https://github.com/raphaelmansuy/edgextract) from its README and evaluation spec. The library turns markdown into a knowledge graph by asking a decision model one yes/no question per ontology-legal link, rather than having a chat model write JSON. Created [[edgextract-markdown-to-knowledge-graph-mansuy-2026]], [[knowledge-graph-extraction]] (trained vs generative vs closed-decision extraction; extraction is lossy, per Rusu), and [[ollama]] (mentioned on 12 pages with no page). 22 backlinks added.
+
+**Correction:** Ollama v0.35.0 (2026-09-28) shipped a native `/v1/systemone` route, serving Nimble, Tev1, Clef and Clef Flash. [[system-one-ecosystem-sweep-2026-09-28]] had recorded "nothing found" for Ollama on the day the release came out. The sweep and [[system-one-model]] are updated.
+
+**Results (author-reported, single run):** on CoNLL04 zero-shot, closed decisions kept 218 wrong links against 504 for Mistral Small writing JSON (link precision 0.41 vs 0.27, recall 0.37 vs 0.43). A trained model (SpERT) still wins easily. The README states that its cutoffs are uncalibrated, that link direction can flip (16 reversed), and that there is no coreference. No constrained-decoding baseline was run.
+
 ## [2026-10-04] lint | Overview rewritten; context-assembly layer fixed
 
 - [[overview]] rewritten. It had not been updated since 2026-05-13 and still described a 16-source corpus. It now reflects 559 sources, adds themes on harnesses, verification, memory that does not compound, trusting the numbers, inference efficiency and local inference, and typed decision models, and replaces the obsolete follow-up list with the current gaps (Building effective agents, Lilian Weng's agents post, Russell & Norvig, field-map pages, context-engineering pages). All 115 links resolve.

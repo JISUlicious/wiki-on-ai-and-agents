@@ -2,7 +2,7 @@
 title: "Selective Forgetting: A Graph-Based Memory Framework for Long-Term LLM Agents"
 type: source
 created: 2026-09-07
-updated: 2026-09-30
+updated: 2026-10-05
 sources: []
 arxiv_id: "2608.28978"
 authors:
@@ -180,3 +180,5 @@ The paper's own limitations are unusually candid, in an appendix section address
 ## Related 2026 sources
 
 - [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured
+- [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review
+- [[knowledge-graph-extraction]] — Knowledge graph extraction: trained, generative and closed-decision approaches, and what extraction loses

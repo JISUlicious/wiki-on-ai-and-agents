@@ -2,7 +2,7 @@
 title: "WFM: Wiki Foundation Model for Complex Agentic Reasoning"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-05
 sources:
   - wfm-wiki-foundation-model-agentic-reasoning-dong-2026.md
 arxiv_id: "2609.18182"
@@ -66,3 +66,7 @@ WFM cites [[andrej-karpathy|Karpathy]]'s `llm-wiki` gist as the target represent
 ## References
 
 - [arXiv:2609.18182](https://arxiv.org/abs/2609.18182)
+
+## Related 2026 sources
+
+- [[knowledge-graph-extraction]] — Knowledge graph extraction: trained, generative and closed-decision approaches, and what extraction loses

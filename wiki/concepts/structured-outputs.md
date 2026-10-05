@@ -2,7 +2,7 @@
 title: Structured Outputs
 type: concept
 created: 2026-05-16
-updated: 2026-09-30
+updated: 2026-10-05
 sources:
   - vllm-tool-calling-2025.md
 status: complete
@@ -62,3 +62,4 @@ With `strict: true`, OpenAI applies constrained decoding so the returned JSON is
 ## Related 2026 sources
 
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Shihipar's opinion piece: HTML rather than Markdown for agent output meant for humans
+- [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review

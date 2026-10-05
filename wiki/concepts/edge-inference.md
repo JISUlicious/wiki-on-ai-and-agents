@@ -2,7 +2,7 @@
 title: Edge Inference
 type: concept
 created: 2026-09-10
-updated: 2026-09-10
+updated: 2026-10-05
 sources:
   - llm-in-a-flash-alizadeh-2023.md
   - neuroprefetcher-delta-prefetching-dhar-2026.md
@@ -29,3 +29,7 @@ Running LLMs on a single consumer or embedded device — a laptop, a phone, a Je
 ## Related
 
 - [[apple]] · [[mlx]] · [[llama-cpp]] · [[arithmetic-intensity]] · [[kv-cache]]
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

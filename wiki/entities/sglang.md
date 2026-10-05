@@ -2,7 +2,7 @@
 title: SGLang
 type: entity
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-05
 sources:
   - system-one-ecosystem-sweep-2026-09-28.md
 status: draft
@@ -30,3 +30,7 @@ At the time of writing, vLLM's equivalent server remains example code rather tha
 ## References
 
 - [[system-one-ecosystem-sweep-2026-09-28]]
+
+## Related 2026 sources
+
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

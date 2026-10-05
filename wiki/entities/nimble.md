@@ -2,7 +2,7 @@
 title: Nimble
 type: entity
 created: 2026-09-21
-updated: 2026-09-28
+updated: 2026-10-05
 sources:
   - bespoke-nimble-github-2026.md
 builds-on:
@@ -78,3 +78,8 @@ Nimble takes the harder path. Released two days later, [[openjev]] reaches compa
 ## References
 
 - [[bespoke-nimble-github-2026]]
+
+## Related 2026 sources
+
+- [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review
+- [[ollama]] — Ollama: local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0

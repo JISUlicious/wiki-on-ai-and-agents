@@ -2,7 +2,7 @@
 title: "System One open ecosystem sweep (2026-09-22 to 09-28)"
 type: source
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-05
 sources:
   - https://github.com/sgl-project/sglang/pull/41208
   - https://github.com/vllm-project/vllm/pull/57250
@@ -27,7 +27,8 @@ An aggregation page covering the second week after [[jev|Jev]]'s launch. It was 
 | [[vllm\|vLLM]] | DiffusionGemma structured reads **merged 09-22** (#57250). The `/v1/systemone` server is still example code. Laya model PRs are open (#58429, #58812), and a native-endpoint request was opened 09-28 (#58951) |
 | [[llama-cpp\|llama.cpp]] | Open PRs: a System One library and CLI (#29321), and Laya support (#29363) |
 | NVIDIA Dynamo | Design proposal for a native route, modelled on SGLang's |
-| TGI, Ollama, TensorRT-LLM, MLX | Nothing found |
+| [[ollama\|Ollama]] | **Native `/v1/systemone` shipped in v0.35.0 on 2026-09-28**, the day this sweep ran; missed at the time, added 2026-10-05. Serves Nimble, Tev1, Clef and Clef Flash |
+| TGI, TensorRT-LLM, MLX | Nothing found |
 
 Serving moved into the engines within ten days. In practice you no longer need a separate interposer server.
 
