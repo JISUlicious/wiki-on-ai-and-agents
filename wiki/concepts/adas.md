@@ -2,7 +2,7 @@
 title: ADAS (Automated Design of Agentic Systems)
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-10-07
 sources: []
 status: draft
 importance: medium
@@ -29,3 +29,7 @@ ADAS (Hu, Lu, Clune 2024) frames agent construction itself as an open-ended sear
 
 - [[darwin-godel-machine]]
 - [[self-improving-agent]]
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — Weng: meta-agent search as workflow design

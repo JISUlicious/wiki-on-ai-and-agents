@@ -2,7 +2,7 @@
 title: Long-Context LLM
 type: concept
 created: 2026-05-16
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - em-llm-fountas-2024.md
   - titans-behrouz-2025.md
@@ -55,9 +55,10 @@ Surfaced via newsletter ingests; see [[index]].
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — recall beyond the context window at near-constant memory: facts extracted up front are encoded as feed-forward residual vectors, then regenerated on demand. 50–80% single-fact accuracy at 2M tokens, but from 3–5 questions per model, and routing fails on paraphrased questions
 - [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[lost-in-the-middle-liu-2023]] — U-shaped use of long context (Jul 2023; TACL 2024)
 - [[gemini-1-5-google-2024]] — Gemini 1.5: 128K standard, 1M preview, 10M in research (Feb 2024)
 - [[context-rot]] — degradation as context grows
 - [[context-engineering]] — the practice that responds to it
+- [[gemini-1-5-technical-report-2024]] — Gemini 1.5 report: 99.7% single-needle recall at 1M tokens, but about 60% with 100 needles

@@ -2,7 +2,7 @@
 title: DeepMind (Google DeepMind)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-07
 sources:
   - retro-borgeaud-2021.md
 status: draft
@@ -24,3 +24,7 @@ In this wiki, DeepMind is the origin of [[retro-borgeaud-2021|RETRO]] (2021) and
 ## References
 
 - [[retro-borgeaud-2021]]
+
+## Lineage sources
+
+- [[gemini-1-5]] — Gemini 1.5 (2024)

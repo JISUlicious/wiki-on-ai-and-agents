@@ -23,6 +23,6 @@ Long-term memory refers to information an agent persists across sessions, as opp
 
 - [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — long-term memory as an external vector store (2023)

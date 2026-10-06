@@ -99,7 +99,7 @@ The five documented 2026 agents differ in *which* of these tracks they embed in 
 
 This synthesis draws on ~30 source pages across the wiki. Key starting points: [[transformer]], [[gpt-3]], [[react]], [[reflexion]], [[steering]], [[guardrailing]], [[claude-code]], [[cross-agent-comparison-2026]].
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[large-language-model]] — LLM hub page and lineage
 - [[artificial-intelligence]] — field map

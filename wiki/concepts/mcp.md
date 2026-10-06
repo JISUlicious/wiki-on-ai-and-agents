@@ -108,7 +108,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[chatgpt-plugins]] — OpenAI's 2023 'early attempt' at an AI-facing interface standard
 - [[building-effective-agents-anthropic-2024]] — names MCP as the way to build the augmented LLM (Dec 2024)

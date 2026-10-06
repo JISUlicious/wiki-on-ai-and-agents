@@ -71,6 +71,6 @@ Scope remains narrow: one domain ([[code-generation|code generation]] / AI devel
 - [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026]] — Amazon audit of simulator+judge release gates: ranks agents well, but satisfaction says nothing about task success
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[judging-llm-as-a-judge-zheng-2023]] — LLM-as-a-judge origin (Jun 2023)

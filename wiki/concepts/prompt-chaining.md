@@ -2,7 +2,7 @@
 title: Prompt Chaining
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - ai-chains-wu-2021.md
   - building-effective-agents-anthropic-2024.md
@@ -45,3 +45,7 @@ A chain's **path is fixed in advance** by a human. An agent ([[react|ReAct]] and
 - [[ai-chains-wu-2021]]
 - [[building-effective-agents-anthropic-2024]]
 - [[langchain-readme-2026]]
+
+## Lineage sources
+
+- [[langchain-history-2024-2025]] — LCEL chains as DAGs, and why agents needed cycles

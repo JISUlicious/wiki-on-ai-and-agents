@@ -23,7 +23,7 @@ The Agent-Computer Interface (ACI) is the abstraction of a purpose-built tool an
 
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[building-effective-agents-anthropic-2024]] — 'prompt engineering your tools': the ACI appendix (Dec 2024)
 - [[aima-ch2-intelligent-agents-litman-pitt]] — sensors and actuators in classical agents

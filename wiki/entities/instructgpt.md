@@ -2,7 +2,7 @@
 title: InstructGPT
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-07
 sources:
   - ouyang-instructgpt-2022.md
 family: gpt
@@ -44,3 +44,8 @@ The recipe also became the template for every other lab's assistant model: Claud
 ## References
 
 - [[instructgpt-ouyang-2022]]
+
+## Lineage sources
+
+- [[introducing-chatgpt-openai-2022]] — ChatGPT, 'a sibling model to InstructGPT' (Nov 2022)
+- [[chatgpt]] — its product successor

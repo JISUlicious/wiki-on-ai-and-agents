@@ -2,7 +2,7 @@
 title: Scaling Laws
 type: concept
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - gpt-3-brown-2020.md
 status: complete
@@ -74,3 +74,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[kaplan-vs-chinchilla-vs-skaling]] — side-by-side of all three functional forms, the accuracy tables, and the 10× allocation disagreement at 2×10²⁵ FLOPs
 - [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)
 - [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data
+
+## Lineage sources
+
+- [[scaling-laws-carefully-weng-2026]] — Weng (2026): reconciling Kaplan and Chinchilla; data-constrained laws; how fragile the fits are

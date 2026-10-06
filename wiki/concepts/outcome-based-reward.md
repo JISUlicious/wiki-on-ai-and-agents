@@ -50,7 +50,7 @@ The general caution in [[verifier]] applies with force here: prefer outcome rewa
 - [[swe-gym-pan-2024]] — outcome-supervised verifier; test-time best-of-N.
 - [[memory-r1-yan-2025]] — outcome-based reward applied to memory operations.
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[process-reward-model]] — the step-level counterpart
 - [[lets-verify-step-by-step-lightman-2023]] — the ORM-vs-PRM comparison (May 2023)

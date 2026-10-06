@@ -35,6 +35,6 @@ The two enduring contributions: (1) demonstrating that GPT-3 could be fine-tuned
 
 - [[webgpt-nakano-2021]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[chatgpt-plugins]] — the browsing plugin descended from WebGPT (Mar 2023)

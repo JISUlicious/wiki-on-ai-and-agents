@@ -2,7 +2,7 @@
 title: "Training Compute-Optimal Large Language Models (Chinchilla)"
 type: source
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-07
 sources:
   - hoffmann-chinchilla-2022.md
 arxiv_id: "2203.15556"
@@ -77,3 +77,7 @@ See [[scaling-laws]] for the broader treatment.
 
 _Original source: `sources/hoffmann-chinchilla-2022.md`_
 _Corrects: [[scaling-laws-kaplan-2020]]_
+
+## Lineage sources
+
+- [[scaling-laws-carefully-weng-2026]] — the three Chinchilla fitting methods explained

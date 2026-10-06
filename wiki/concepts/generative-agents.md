@@ -52,6 +52,6 @@ The architecture has no compact, evict, or curate operations — the stream grow
 
 - [[verifiable-social-reasoning-llm-assistants-taubenfeld-2026]] — Google's Fuse: simulated hidden motives; one biased sentence from the user costs models 7.7 points vs 3.6 for humans
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — case study in Weng's 2023 survey

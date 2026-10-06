@@ -2,7 +2,7 @@
 title: Self-Improving Agent
 type: concept
 created: 2026-05-17
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - darwin-godel-machine-zhang-2025.md
   - voyager-wang-2023.md
@@ -95,3 +95,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — Weng's survey of self-improving harnesses (STOP, Self-Harness, AHE, DGM, Meta-Harness), with challenges
+- [[babyagi-variants-nakajima-2023]] — BabyFoxAGI's 2023 'FOXY' self-improving task planner, an informal precursor

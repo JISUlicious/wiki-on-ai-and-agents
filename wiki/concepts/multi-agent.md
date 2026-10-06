@@ -82,7 +82,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
 - [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[subagents]] — context-isolated child agents
 - [[agentic-workflow-patterns]] — orchestrator-workers and parallelization

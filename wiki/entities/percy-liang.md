@@ -25,6 +25,6 @@ Stanford CS professor and director of the Stanford Center for Research on Founda
 ## References
 - [[generative-agents-park-2023]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[lost-in-the-middle-liu-2023]] — Lost in the Middle (2023)

@@ -2,7 +2,7 @@
 title: "BabyAGI (README, original and current)"
 type: source
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - babyagi-archive-readme.md
   - babyagi-readme.md
@@ -34,7 +34,7 @@ importance: medium
 
 ## Summary (original, 2023)
 
-[[babyagi|BabyAGI]] is a minimal "AI-powered task management system" of about 140 lines of Python. It uses OpenAI models plus a vector database (Chroma or Weaviate in the archived README; Pinecone in early versions, from general knowledge). Given an **objective** and an initial task, it loops forever:
+[[babyagi|BabyAGI]] is a minimal "AI-powered task management system" of about 140 lines of Python. It uses OpenAI models plus a vector database (Chroma or Weaviate in the later archived README; **Pinecone** in the first version, per `classic/README.md`; see [[babyagi-variants-nakajima-2023]]). Given an **objective** and an initial task, it loops forever:
 
 1. Pull the first task from the task list.
 2. An **execution agent** completes the task, using results retrieved from the vector store as context.

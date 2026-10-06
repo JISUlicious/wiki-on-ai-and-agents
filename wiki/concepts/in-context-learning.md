@@ -2,7 +2,7 @@
 title: In-Context Learning
 type: concept
 created: 2026-05-13
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - gpt-3-brown-2020.md
 status: complete
@@ -58,7 +58,8 @@ The number of demonstrations gives a small taxonomy:
 
 - [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[prompt-engineering]] — prompt engineering as a discipline
 - [[pre-train-prompt-predict-liu-2021]] — prompting formalized as a paradigm (Jul 2021)
+- [[prompt-engineering-weng-2023]] — few-shot example selection and ordering, and their biases

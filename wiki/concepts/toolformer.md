@@ -41,6 +41,6 @@ The filter assumes that a *helpful* tool call reduces perplexity on subsequent t
 
 - [[toolformer-schick-2023]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — Weng's 2023 survey situates Toolformer among tool-use methods

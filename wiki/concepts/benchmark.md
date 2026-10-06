@@ -70,7 +70,7 @@ See [[agent-benchmark]] for what distinguishes agent evaluation, and [[agent-eva
 
 - [[benchmark-contamination]] · [[agent-benchmark]] · [[agent-evaluation]] · [[harness-vs-model-attribution]] · [[llm-as-a-judge]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[gsm8k]] — GSM8K
 - [[mt-bench]] — MT-Bench

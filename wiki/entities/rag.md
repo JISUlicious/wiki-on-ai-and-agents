@@ -56,6 +56,6 @@ The broader [[retrieval-augmented-generation|RAG paradigm]] became the dominant 
 
 - [[rag-lewis-2020]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[realm]] — REALM (Feb 2020), the pre-training-time predecessor

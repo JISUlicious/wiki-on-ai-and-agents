@@ -2,7 +2,7 @@
 title: Darwin Gödel Machine
 type: concept
 created: 2026-05-17
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - darwin-godel-machine-zhang-2025.md
 status: complete
@@ -39,3 +39,7 @@ Canonical 2025 instance of [[self-improving-agent]]. Inherits the skill-library 
 ## Related 2026 sources
 
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — Weng: harness evolution under a fixed model

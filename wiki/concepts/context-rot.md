@@ -2,7 +2,7 @@
 title: Context Rot
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - lost-in-the-middle-liu-2023.md
   - effective-context-engineering-anthropic-2025.md
@@ -50,3 +50,7 @@ These are the [[context-engineering]] toolkit:
 - [[lost-in-the-middle-liu-2023]]
 - [[effective-context-engineering-anthropic-2025]]
 - [[gemini-1-5-google-2024]]
+
+## Lineage sources
+
+- [[gemini-1-5-technical-report-2024]] — multi-needle recall falls to about 60% at 1M even when single-needle recall is 99.7%

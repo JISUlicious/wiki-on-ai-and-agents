@@ -54,7 +54,7 @@ The Transformer has no predecessor as a *family* (it inherited from RNN-based en
 
 - [[attention-is-all-you-need-vaswani-2017]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[deep-learning]] — the field it belongs to
 - [[large-language-model]] — what it became

@@ -2,7 +2,7 @@
 title: "Self-Harness: Harnesses That Improve Themselves"
 type: source
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-10-07
 sources:
   - self-harness-harnesses-that-improve-themselves-zhang-2026.md
 arxiv_id: "2606.09498"
@@ -49,3 +49,7 @@ The method is an iterative loop with three stages: **Weakness Mining** (identify
 
 - [arXiv:2606.09498](https://arxiv.org/abs/2606.09498) — "Self-Harness: Harnesses That Improve Themselves," Zhang et al., 2026 (Shanghai AI Laboratory).
 - Local source text: `self-harness-harnesses-that-improve-themselves-zhang-2026.md`.
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — surveyed by Weng (2026)

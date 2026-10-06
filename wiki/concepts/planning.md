@@ -39,7 +39,7 @@ importance: medium
 
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — planning as one of three agent components (2023)
 - [[intelligent-agent]] — goal-based agents in the classical typology

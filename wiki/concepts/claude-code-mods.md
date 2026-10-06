@@ -51,6 +51,6 @@ The source itself is slightly inconsistent: the `/mods/` gallery calls mods "sma
 
 - [[getting-started-with-claude-code-mods-osmani-2026]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[claude-code-changelog-2026]] — v2.1.287, published 2026-10-01

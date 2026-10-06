@@ -2,7 +2,7 @@
 title: Indirect Prompt Injection
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-07
 sources:
   - greshake-indirect-injection-2023.md
 builds-on: "[[prompt-injection]]"
@@ -55,3 +55,7 @@ As of the 2024 OWASP LLM Top 10, prompt injection (direct + indirect) is the top
 ## References
 
 - [[indirect-prompt-injection-greshake-2023]]
+
+## Lineage sources
+
+- [[function-calling-api-updates-openai-2023]] — OpenAI's 2023 warning: untrusted tool output can instruct the model

@@ -2,7 +2,7 @@
 title: Prompt Injection
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-07
 sources:
   - greshake-indirect-injection-2023.md
 status: complete
@@ -51,3 +51,7 @@ Distinguishing "instruction" from "data" requires reasoning about *intent*, *tru
 - [[mind-viruses-papadopoulos-2026]] — self-propagating payloads that survive a context wipe by living in the agent's own writable instruction file
 - [[ai-enabled-cyber-operations]] — prompt injection as a route to stolen API keys: attackers compromised AI wrapper services' LiteLLM implementations and OpenClaw deployments to exfiltrate production credentials, then used the stolen access as attack compute and as cover
 - [[jev-research-papers-september-2026]] — typed-decision models narrow injection without removing it: injected state text shifts [[jev|Jev]]'s decision probabilities, and adaptive attacks doubled success from 1.8% to 3.5%
+
+## Lineage sources
+
+- [[chatgpt-plugins-openai-2023]] — red-teamers found 'sophisticated prompt injection' via plugins (2023)

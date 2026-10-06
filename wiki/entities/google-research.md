@@ -29,7 +29,7 @@ In 2023, [[google-brain]] merged with DeepMind to form Google DeepMind, and the 
 - [[attention-is-all-you-need-vaswani-2017]]
 - [[bert-devlin-2018]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[realm]] — REALM (2020)
 - [[ai-chains-wu-2021]] — AI Chains (2021)

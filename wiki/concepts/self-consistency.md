@@ -66,7 +66,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
 - [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[training-verifiers-math-word-problems-cobbe-2021]] — the verifier-reranking baseline (2021)
 - [[gsm8k]] — the benchmark of its headline gains

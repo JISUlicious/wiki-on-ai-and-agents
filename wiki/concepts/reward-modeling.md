@@ -45,7 +45,7 @@ The trained `r̂` then provides a scalar signal for policy optimization (PPO, RL
 - [[rlhf-christiano-2017]]
 - [[instructgpt-ouyang-2022]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[lets-verify-step-by-step-lightman-2023]] — PRM vs ORM comparison; PRM800K
 - [[process-reward-model]] — step-level reward models

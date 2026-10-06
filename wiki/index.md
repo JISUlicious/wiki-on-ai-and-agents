@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-06
+updated: 2026-10-07
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 580 sources, 189 entities, 335 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 590 sources, 189 entities, 335 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -1425,6 +1425,18 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[rl-an-introduction-sutton-barto-2020]] — Sutton & Barto ch. 13: policy gradients and actor–critic
 - [[ai-ml-dl-difference-nvidia-2016]] — NVIDIA's concentric circles AI ⊃ ML ⊃ DL (2016-07-29)
 - [[ai-vs-ml-vs-dl-vs-nn-ibm]] — IBM's AI vs ML vs DL vs neural networks explainer
+
+### Entity deep-dives (ingested 2026-10-07)
+- [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng: harness definition, patterns, harness optimization toward RSI; "loop engineering" (2026-07-04)
+- [[scaling-laws-carefully-weng-2026]] — Lilian Weng: reconciling Kaplan and Chinchilla; data-constrained laws (2026-06-24)
+- [[prompt-engineering-weng-2023]] — Lilian Weng: prompt engineering survey (2023-03-15)
+- [[gemini-1-5-technical-report-2024]] — Gemini 1.5 Pro (MoE) and Flash (distilled); 99.7% single-needle at 1M, about 60% with 100 needles
+- [[introducing-chatgpt-openai-2022]] — ChatGPT launch: InstructGPT sibling, GPT-3.5, RLHF recipe, limitations (Nov 2022)
+- [[function-calling-api-updates-openai-2023]] — OpenAI function calling launch (2023-06-13)
+- [[introducing-gpts-openai-2023]] — GPTs and Actions replace plugins (2023-11-06)
+- [[chatgpt-plugins-wind-down-2024]] — Plugins wound down 2024-03-19 / 2024-04-09 (secondhand)
+- [[babyagi-variants-nakajima-2023]] — BabyAGI classic (Pinecone) and the Bee/Cat/Deer/Elf/Fox variants (Apr–Sep 2023)
+- [[langchain-history-2024-2025]] — LangChain v0.1 (2024-01-08), LangGraph (2024-01-17), 1.0 with middleware (2025-10-22)
 
 ## Comparisons
 

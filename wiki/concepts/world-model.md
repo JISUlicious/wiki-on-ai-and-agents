@@ -56,6 +56,6 @@ Surfaced via newsletter ingests; see [[index]].
 - [[code-world-model-coding-agent-as-world-brain-chen-2026]] — an explicitly **anti-latent** world model: the agent-code loop is the transition function and the video model the observation function. Persistence that latent designs solve with spatial memory is solved here by storing it in a program variable. Note it reports **no quantitative results at all**
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[intelligent-agent]] — model-based agents in the classical typology

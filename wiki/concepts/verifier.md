@@ -89,7 +89,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[training-verifiers-math-word-problems-cobbe-2021]] — origin of trained LLM verifiers (Oct 2021): GSM8K, best-of-N, worth ~30× model size
 - [[lets-verify-step-by-step-lightman-2023]] — process supervision beats outcome supervision on MATH (78.2% vs 72.4%), May 2023

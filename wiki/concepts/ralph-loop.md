@@ -29,6 +29,6 @@ A **Ralph loop** (after Ralph Wiggum) is the practice of running a coding agent 
 - [[oh-my-claude-ultrawork-2026]] · [[ultrawork]]
 - Geoffrey Huntley, "Ralph Wiggum as a 'software engineer'" (2025-07-14) — <https://ghuntley.com/ralph/>
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[claude-code-changelog-2026]] — native /loop arrived 2026-03-06 and /goal 2026-05-11

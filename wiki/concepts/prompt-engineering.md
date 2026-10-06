@@ -2,7 +2,7 @@
 title: Prompt Engineering
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - pre-train-prompt-predict-liu-2021.md
   - effective-context-engineering-anthropic-2025.md
@@ -48,3 +48,7 @@ The agent-skills survey ([[agent-skills-survey-xu-2026]]) gives the progression 
 - [[pre-train-prompt-predict-liu-2021]]
 - [[effective-context-engineering-anthropic-2025]]
 - [[building-effective-agents-anthropic-2024]]
+
+## Lineage sources
+
+- [[prompt-engineering-weng-2023]] — Weng's practitioner survey (2023-03-15)

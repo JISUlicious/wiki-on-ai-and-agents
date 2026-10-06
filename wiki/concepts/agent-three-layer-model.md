@@ -2,7 +2,7 @@
 title: Agent Three-Layer Model
 type: concept
 created: 2026-05-16
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - comparison.md
   - claude-code.md
@@ -225,8 +225,9 @@ Refined across [a critique chain in 2026-05-16 conversations](#) — the 8-featu
 - [[react]] — the dominant L3 control-flow implementation
 - [[hooks-in-modern-agents]] — query synthesis of ~30 hooks across the 5 documented 2026 agents (L2 harness cross-cutter)
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[intelligent-agent]] — classical agent architecture (Russell & Norvig)
 - [[llm-powered-autonomous-agents-weng-2023]] — Weng's 2023 planning / memory / tools model
 - [[artificial-intelligence]] — field map: AI ⊃ ML ⊃ DL ⊃ LLM
+- [[harness-engineering-self-improvement-weng-2026]] — Weng's 2026 harness definition and the OS analogy

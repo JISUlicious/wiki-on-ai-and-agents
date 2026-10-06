@@ -40,7 +40,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 > [!note] Learning without backprop
 > RL policies can be trained with [[backprop-free-learning|backpropagation-free rules]]; see [[diffusing-blame-yamada-2026]] for ED-PPO vs BP-PPO vs DFA-PPO across Brax locomotion and Craftax.
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[actor-critic]] — actor–critic methods (Barto, Sutton & Anderson 1983)
 - [[rl-an-introduction-sutton-barto-2020]] — Sutton & Barto, chapter 13

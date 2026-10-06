@@ -61,6 +61,6 @@ A separately-proposed procedure: take an existing pre-trained Transformer LM, ad
 
 - [[retro-borgeaud-2021]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[realm]] — REALM (Feb 2020), the first retrieval-augmented pre-training

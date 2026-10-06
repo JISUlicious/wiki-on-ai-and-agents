@@ -2,7 +2,7 @@
 title: GPT Family
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-07
 sources:
   - gpt-1-radford-2018.md
 status: complete
@@ -41,3 +41,7 @@ ChatGPT (Nov 2022) is a deployed product based on a fine-tuned GPT-3.5 / GPT-4 â
 ## References
 
 - [[gpt-1-radford-2018]]
+
+## Lineage sources
+
+- [[chatgpt]] â€” the consumer product built on GPT-3.5 and later models

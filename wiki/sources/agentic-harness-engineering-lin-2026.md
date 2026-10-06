@@ -2,7 +2,7 @@
 title: "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses"
 type: source
 created: 2026-05-25
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - agentic-harness-engineering-lin-2026.md
 arxiv_id: "2604.25850"
@@ -105,3 +105,7 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 ## Related 2026 sources
 
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — surveyed by Weng (2026): the three observability pillars

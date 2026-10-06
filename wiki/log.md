@@ -2,10 +2,34 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-06
+updated: 2026-10-07
 ---
 
 # Activity Log
+
+## [2026-10-07] ingest | Deeper on the 7 new entities (12 sources)
+
+Went deeper on [[realm]], [[babyagi]], [[langchain]], [[chatgpt-plugins]], [[chatgpt]], [[gemini-1-5]] and [[lilian-weng]], with 12 new source pages. All seven entity pages were rewritten with timelines, method details and lineage.
+
+**Sources by entity:**
+- **Gemini 1.5:** [[gemini-1-5-technical-report-2024]] (arXiv 2403.05530 v5).
+- **ChatGPT, plugins and successors:** [[introducing-chatgpt-openai-2022]], [[function-calling-api-updates-openai-2023]], [[introducing-gpts-openai-2023]] (all three via Wayback; openai.com returns 403) and [[chatgpt-plugins-wind-down-2024]] (help-center dates quoted secondhand from a GitHub discussion).
+- **BabyAGI:** [[babyagi-variants-nakajima-2023]] (classic README plus five variants, dated by decoding tweet IDs).
+- **LangChain:** [[langchain-history-2024-2025]] (three LangChain blog posts).
+- **Lilian Weng:** [[prompt-engineering-weng-2023]], [[scaling-laws-carefully-weng-2026]] and [[harness-engineering-self-improvement-weng-2026]], all from Lil'Log, a trusted source.
+- **REALM:** no new source; [[realm-guu-2020]] was deepened with method, results and ablation tables from the paper.
+
+**Corrections:**
+- BabyAGI's first vector store was **Pinecone**, confirmed by the classic README; it had been marked as general knowledge.
+- [[realm-guu-2020]] wrongly said DPR appears in REALM's comparison table; DPR came two months later.
+- The Gemini page claimed GA and Nano for the 1M context and 1.0 tiers; neither is in the sources, so both claims were removed.
+
+**Notable finds:**
+- Weng's 2026-07-04 post uses "loop engineering" as an example of workflow design. That is the earliest dated use in the wiki, predating [[nvidia-oo-agents-furgale-2026|NOOA]] (arXiv 2607.20709). It is still not a coinage.
+- Gemini 1.5 recalls a single needle at 99.7% at 1M tokens, but only about 60% when retrieving 100 needles at once. This was added to [[context-rot]].
+- LangChain 1.0's "middleware" (2025-10-22) parallels harness hooks.
+
+**Maintenance:** the "Lineage sources (added 2026-10-06)" headings on 49 pages were renamed to "Lineage sources", so later additions share one section.
 
 ## [2026-10-06] ingest | Batch: 18 lineage gap-fill sources (requested by game006)
 

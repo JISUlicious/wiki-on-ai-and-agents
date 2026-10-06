@@ -105,7 +105,7 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 - [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[claude-code-changelog-2026]] — dated feature timeline: hooks 2025-06-30, subagents 2025-07-24, plugins 2025-10-09, skills 2025-10-16, /loop 2026-03-06, /goal 2026-05-11, mods 2026-10-01
 - [[subagents]] — subagents

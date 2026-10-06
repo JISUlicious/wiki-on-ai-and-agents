@@ -151,7 +151,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[ai-enabled-cyber-operations]] — an exploit-research skill that loads a `MEMORY.md` index before work and appends confirmed dead ends — "institutional memory for exploit R&D"
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — a parametric-style agent memory with verified entry-level deletion: removing 8 of 64 facts leaves the other 56 outputs unchanged
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — sensory, short-term and long-term memory mapped to embeddings, context and vector store (2023)
 - [[effective-context-engineering-anthropic-2025]] — compaction, structured notes and sub-agents (Sep 2025)

@@ -36,7 +36,7 @@ In the three-layer model, context assembly is one of the six L2 design problems,
 - [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[context-engineering]] — the discipline; Anthropic's Sep 2025 definition
 - [[effective-context-engineering-anthropic-2025]] — the source post

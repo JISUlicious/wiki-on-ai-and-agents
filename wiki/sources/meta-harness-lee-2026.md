@@ -2,7 +2,7 @@
 title: "Meta-Harness: End-to-End Optimization of Model Harnesses"
 type: source
 created: 2026-06-03
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - meta-harness-lee-2026.md
 arxiv_id: "2603.28052"
@@ -58,3 +58,7 @@ Empirically the discovered harnesses are strong across three regimes: on online 
 ## Related 2026 sources
 
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — surveyed by Weng (2026)

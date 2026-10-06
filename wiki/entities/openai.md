@@ -2,7 +2,7 @@
 title: OpenAI
 type: entity
 created: 2026-05-13
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - gpt-1-radford-2018.md
 status: complete
@@ -37,8 +37,10 @@ Originally founded as a non-profit research lab focused on safe AGI; restructure
 
 - **Agents API** (product news, AI Agents Weekly 2026-09-12) — public beta of the managed Codex harness: OpenAI runs the loop, compaction near the context limit, on-demand tool search, [[programmatic-tool-calling|programmatic tool calling]], a `multi_agent` setting for parallel subagents, and a choice of hosted, self-hosted or partner sandboxes. The harness itself is the open-source Codex harness. Newsletter-sourced; not independently verified.
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[chatgpt]] — consumer product
 - [[chatgpt-plugins]] — 2023 tool platform
 - [[lilian-weng]] — Lil'Log author
+- [[introducing-chatgpt-openai-2022]] — ChatGPT launch (Nov 2022)
+- [[introducing-gpts-openai-2023]] — GPTs (Nov 2023)

@@ -95,7 +95,7 @@ The engineering post catalogs reusable patterns the script encodes:
 - Engineering: https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code
 - Docs: https://code.claude.com/docs/en/workflows
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[agentic-workflow-patterns]] — the human-written workflows this replaces
 - [[subagents]] — the unit dynamic workflows fan out

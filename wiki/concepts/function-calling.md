@@ -2,7 +2,7 @@
 title: Function Calling
 type: concept
 created: 2026-05-16
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - function-calling-llms-promptingguide.md
   - openai-function-calling-2025.md
@@ -135,6 +135,7 @@ Function calling lives at **L3**: it is the JSON-payload protocol by which the m
 - [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[chatgpt-plugins]] — the manifest-based predecessor (Mar 2023)
+- [[function-calling-api-updates-openai-2023]] — the launch post (2023-06-13): JSON Schema functions, fine-tuned models, tool-output injection warning

@@ -2,7 +2,7 @@
 title: "NVIDIA-labs OO Agents: Native Python Object-Oriented Agents"
 type: source
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-10-07
 sources:
   - nvidia-oo-agents-furgale-2026.md
 arxiv_id: "2607.20709"
@@ -87,3 +87,7 @@ Every model exceeds 91%; six of ten exceed 98%; GPT-5.5 is perfect. The frontier
 ## References
 
 - [arXiv:2607.20709](https://arxiv.org/abs/2607.20709)
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — an earlier dated use of 'loop engineering' (2026-07-04)

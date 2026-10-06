@@ -2,7 +2,7 @@
 title: Needle in a Haystack
 type: concept
 created: 2026-09-29
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - sale-low-bit-estimation-sparse-attention-prefill-ji-2025.md
   - sts-speculative-token-sparsity-yu-2026.md
@@ -39,7 +39,8 @@ NIAH is mostly used as a **sanity check** for methods that drop or approximate a
 - Kamradt, needle-in-a-haystack test harness: [github.com/gkamradt/needle-in-a-haystack](https://github.com/gkamradt/needle-in-a-haystack)
 - Hsieh et al., RULER (2024), [arXiv:2404.06654](https://arxiv.org/abs/2404.06654). Its abstract describes NIAH as widely adopted but only a superficial test of long-context understanding.
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[gemini-1-5-google-2024]] — 99% NIAH recall at 1M tokens (vendor claim, Feb 2024)
 - [[context-rot]] — why single-needle recall overstates effective context
+- [[gemini-1-5-technical-report-2024]] — single vs multi-needle recall at 1M–10M tokens

@@ -2,7 +2,7 @@
 title: "Harness vs. Model: Performance Attribution (factorial studies)"
 type: comparison
 created: 2026-06-22
-updated: 2026-09-30
+updated: 2026-10-07
 sources:
   - cross-agent-comparison-doc-2026.md
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
@@ -126,3 +126,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
 - [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
 - [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — Weng: the harness layer vs core intelligence; STOP and Lin 2026 on model-dependence

@@ -63,6 +63,6 @@ The dual-encoder + MIPS pattern is now standard in semantic search, ColBERT-styl
 
 - [[dpr-karpukhin-2020]]
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[realm]] — REALM (Feb 2020), whose learned retriever DPR simplified

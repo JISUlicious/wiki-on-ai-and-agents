@@ -95,7 +95,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
 
-## Lineage sources (added 2026-10-06)
+## Lineage sources
 
 - [[judging-llm-as-a-judge-zheng-2023]] — the origin paper (Jun 2023): GPT-4 judges agree with humans >80%; position, verbosity and self-enhancement biases; reference-guided judging
 - [[mt-bench]] — the multi-turn judge benchmark

@@ -2,7 +2,7 @@
 title: Context Engineering
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
   - effective-context-engineering-anthropic-2025.md
   - pre-train-prompt-predict-liu-2021.md
@@ -69,3 +69,8 @@ The agent era continues the sequence:
 - [[lost-in-the-middle-liu-2023]]
 - [[agentic-context-engineering-zhang-2025]]
 - [[new-rules-of-context-engineering-claude-5-shihipar-2026]]
+
+## Lineage sources
+
+- [[harness-engineering-self-improvement-weng-2026]] — Weng: 'context engineering will and should become a core part of intelligence'
+- [[langchain-history-2024-2025]] — LangChain 1.0's summarization middleware as compaction

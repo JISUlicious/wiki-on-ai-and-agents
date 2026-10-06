@@ -2,7 +2,7 @@
 title: "Scaling Laws for Neural Language Models"
 type: source
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-07
 sources:
   - kaplan-scaling-2020.md
 arxiv_id: "2001.08361"
@@ -77,3 +77,7 @@ See [[scaling-laws]] for the conceptual treatment.
 
 _Original source: `sources/kaplan-scaling-2020.md`_
 _See also [[chinchilla-hoffmann-2022]] for the corrective re-derivation._
+
+## Lineage sources
+
+- [[scaling-laws-carefully-weng-2026]] — why Kaplan's exponent differs (non-embedding parameter counts)
