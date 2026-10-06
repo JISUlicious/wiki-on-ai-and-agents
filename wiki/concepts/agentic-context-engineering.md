@@ -2,7 +2,7 @@
 title: Agentic Context Engineering
 type: concept
 created: 2026-05-17
-updated: 2026-10-02
+updated: 2026-10-06
 sources:
   - agentic-context-engineering-zhang-2025.md
 status: complete
@@ -53,3 +53,8 @@ ACE is the first framework to give a rigorous, ablation-backed account of *why* 
 ## Related 2026 sources
 
 - [[new-rules-of-context-engineering-claude-5-shihipar-2026]] — Shihipar: Anthropic cut 80%+ of Claude Code's system prompt for Claude 5 models with no measured loss
+
+## Lineage sources (added 2026-10-06)
+
+- [[context-engineering]] — the general concept page
+- [[effective-context-engineering-anthropic-2025]] — Anthropic's definitional post (2025-09-29)

@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-05
+updated: 2026-10-06
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 560 sources, 182 entities, 319 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 580 sources, 189 entities, 335 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -50,6 +50,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[o1]] — OpenAI's first RL-trained reasoning model series; the o1-class bar DeepSeek-R1 and later LRMs are measured against
 - [[claude-opus-5-5]] — Anthropic's Claude 5.5 flagship (Sep 2026): 20% cheaper tokens, 60% cheaper cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, Sonnet 5 prices, thinking cannot be disabled
+- [[gemini-1-5]] — Google Gemini 1.5 (Feb 2024): MoE; 128K standard, 1M preview, 10M in research
+- [[realm]] — Retrieval-augmented pre-training with a learned retriever (Guu 2020); precedes DPR and RAG
 
 ### Agent products (2026 era)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -82,6 +84,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[apple-silicon]] — Apple M-series SoCs; the wiki's local-inference platform (GPU/Metal, AMX/SME, no eGPU path)
 - [[metal]] — Apple's GPU API; what MLX and llama.cpp run on, and what native runtimes like BaseRT target directly
 - [[ollama]] — Local model runner on llama.cpp/GGUF; native /v1/systemone decision models since v0.35.0 (2026-09-28)
+- [[chatgpt]] — OpenAI's consumer chat product (Nov 2022)
+- [[chatgpt-plugins]] — OpenAI's first tool platform (2023-03-23): manifest + OpenAPI, browsing, code interpreter
+- [[babyagi]] — Nakajima's task-driven autonomous agent (Mar 2023)
+- [[langchain]] — LLM app and agent framework (repo created 2022-10-17)
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -125,6 +131,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[karthik-narasimhan]] — Princeton NLP PI; GPT-1 co-author, then ReAct, ToT, Reflexion, SWE-bench, SWE-agent
 - [[ofir-press]] — Princeton NLP researcher; co-author of SWE-bench and SWE-agent; first author of ALiBi
 - [[carlos-jimenez]] — Princeton; first author of SWE-bench, equal-contribution co-author of SWE-agent
+- [[lilian-weng]] — Lil'Log author; "LLM Powered Autonomous Agents" (2023)
 
 ### People — Retrieval / RAG
 - [[patrick-lewis]] — RAG first author; DPR co-author
@@ -291,6 +298,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[on-policy-distillation]] · [[attention-sink]] — supporting concepts
 - [[supervised-fine-tuning]] — SFT: imitation on demonstrations; the supervised branch of fine-tuning, before RLHF/RL
 - [[harnessed-agentic-rl]] — RL through the deployment harness via an endpoint proxy (Agent Lightning, ClawGym II, LEGO-RL)
+- [[actor-critic]] — RL actor + learned critic (Barto, Sutton & Anderson 1983) → PPO/RLHF; dropped by GRPO
+- [[process-reward-model]] — Step-level reward or verifier (Lightman 2023: 78.2% vs ORM 72.4% on MATH)
 
 ### Capabilities and prompting
 - [[in-context-learning]] — Learning from prompt examples (GPT-3)
@@ -310,6 +319,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[metacognition]] — **concept**: the Nelson–Narens two-level account, the monitoring–control gap, and why JOL allocates but cannot rank
 - [[program-of-thoughts]] — PoT (Chen 2022): reasoning written as a program, run by an interpreter; co-origin with PAL
 - [[large-reasoning-model]] — RL-trained long-CoT models (o1, R1, QwQ); how the model class relates to reasoning as a capability
+- [[prompt-engineering]] — Designing the input; formalized by Liu et al. 2021
+- [[context-engineering]] — Curating the token set every turn; Anthropic's Sep 2025 definition
+- [[context-rot]] — Recall degrades as context grows; Lost in the Middle (2023) onward
+- [[prompt-chaining]] — A fixed sequence of LLM calls; AI Chains (2021) → LangChain → Anthropic workflows
 
 ### Agents, tools, and orchestration
 - [[llm-agent]] — LLM in a perception-action loop with tools
@@ -341,6 +354,13 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[quality-diversity]] — Search for many good, diverse solutions (MAP-Elites); the ancestor of the Darwin Gödel Machine's archive
 - [[universal-search]] — Levin's asymptotically optimal but hardwired program search; the predecessor of the Gödel machine's BIOPS
 - [[claude-code-mods]] — Claude Code mods (v2.1.287): in-process, stateful hook modules shipped as plugins
+- [[agentic-workflow-patterns]] — Workflows vs agents; routing, parallelization, orchestrator-workers, evaluator-optimizer (Anthropic 2024)
+- [[subagents]] — Context-isolated child agents; Claude Code custom subagents 2025-07-24
+- [[intelligent-agent]] — Classical (Russell & Norvig) agent: PEAS, environment types, five agent types
+- [[artificial-intelligence]] — Field map: AI ⊃ ML ⊃ DL ⊃ LLM
+- [[machine-learning]] — Learning from data; supervised, self-supervised, RL
+- [[deep-learning]] — Multi-layer neural networks; the post-2012 boom
+- [[large-language-model]] — LLM hub page and lineage anchors
 
 ### Agentic capabilities (2025)
 - [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
@@ -549,6 +569,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[swe-bench-verified]] — 500 human-checked SWE-bench tasks; the wiki's recorded scores, harness swings, contamination gap
 - [[gpqa]] — Expert-written "Google-proof" science questions; Diamond is 198; scores from DeepSeek-R1 to Kimi K3
 - [[aime]] — Competition-math benchmark scored by year (2024/25/26); contamination makes year choice matter
+- [[gsm8k]] — Grade-school math, 8.5K problems (Cobbe 2021)
+- [[mt-bench]] — 80 multi-turn questions graded by an LLM judge (Zheng 2023)
+- [[chatbot-arena]] — Crowdsourced pairwise human-preference platform (LMSYS 2023)
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
@@ -1380,6 +1403,28 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[independent-jev-calibration-audits-2026]] — Seven independent audits: Jev is overconfident and dataset-dependent (2026-09)
 - [[system-one-ecosystem-sweep-2026-09-28]] — Week two: SGLang native route, vLLM merge, JevBench, diffusion abandoned
 - [[jev-research-papers-september-2026]] — Eleven arXiv papers on Jev, incl. prompt injection and a replicated result (abstract-level)
+
+### Lineage gap-fill for game006 (ingested 2026-10-06)
+- [[building-effective-agents-anthropic-2024]] — Anthropic: workflows vs agents, five patterns, ACI (2024-12-19)
+- [[llm-powered-autonomous-agents-weng-2023]] — Lilian Weng: planning / memory / tool use (2023-06-23)
+- [[effective-context-engineering-anthropic-2025]] — Anthropic's definition of context engineering; compaction, notes, sub-agents (2025-09-29)
+- [[lost-in-the-middle-liu-2023]] — U-shaped use of long context (Jul 2023; TACL 2024)
+- [[training-verifiers-math-word-problems-cobbe-2021]] — GSM8K and trained verifiers; worth ~30× model size (Oct 2021)
+- [[lets-verify-step-by-step-lightman-2023]] — Process supervision beats outcome supervision; PRM800K (May 2023)
+- [[judging-llm-as-a-judge-zheng-2023]] — LLM-as-a-judge origin; MT-Bench and Chatbot Arena (Jun 2023)
+- [[claude-code-changelog-2026]] — Claude Code feature dates: hooks, subagents, plugins, skills, /loop, /goal, mods
+- [[ai-chains-wu-2021]] — Prompt chaining origin (Oct 2021; CHI 2022)
+- [[chatgpt-plugins-openai-2023]] — ChatGPT plugins (2023-03-23)
+- [[realm-guu-2020]] — REALM, retrieval-augmented pre-training (2020-02-10)
+- [[pre-train-prompt-predict-liu-2021]] — Prompting survey; four paradigms; prompt engineering defined (2021-07-28)
+- [[gemini-1-5-google-2024]] — Gemini 1.5: 1M-token context (2024-02-15)
+- [[babyagi-nakajima-2023]] — BabyAGI README, original and current (Mar 2023)
+- [[langchain-readme-2026]] — LangChain README; repo created 2022-10-17
+- [[intelligent-agent-wikipedia]] — Russell & Norvig's agent classes (secondary)
+- [[aima-ch2-intelligent-agents-litman-pitt]] — AIMA ch. 2 lecture handout: PEAS, environment types
+- [[rl-an-introduction-sutton-barto-2020]] — Sutton & Barto ch. 13: policy gradients and actor–critic
+- [[ai-ml-dl-difference-nvidia-2016]] — NVIDIA's concentric circles AI ⊃ ML ⊃ DL (2016-07-29)
+- [[ai-vs-ml-vs-dl-vs-nn-ibm]] — IBM's AI vs ML vs DL vs neural networks explainer
 
 ## Comparisons
 

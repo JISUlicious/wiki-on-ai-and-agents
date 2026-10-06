@@ -2,7 +2,7 @@
 title: Model Context Protocol (MCP)
 type: concept
 created: 2026-05-16
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - model-context-protocol-anthropic-2024.md
 status: complete
@@ -107,3 +107,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (synthesis: [[mcp-server-architecture-patterns]])
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
+
+## Lineage sources (added 2026-10-06)
+
+- [[chatgpt-plugins]] — OpenAI's 2023 'early attempt' at an AI-facing interface standard
+- [[building-effective-agents-anthropic-2024]] — names MCP as the way to build the augmented LLM (Dec 2024)

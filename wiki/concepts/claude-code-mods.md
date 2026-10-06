@@ -2,7 +2,7 @@
 title: Claude Code Mods
 type: concept
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-06
 sources:
   - getting-started-with-claude-code-mods-osmani-2026.md
   - claude-code-mods-gallery-2026.md
@@ -50,3 +50,7 @@ The source itself is slightly inconsistent: the `/mods/` gallery calls mods "sma
 ## References
 
 - [[getting-started-with-claude-code-mods-osmani-2026]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[claude-code-changelog-2026]] — v2.1.287, published 2026-10-01

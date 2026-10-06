@@ -2,7 +2,7 @@
 title: Chain-of-Thought Prompting
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - chain-of-thought-wei-2022.md
 status: complete
@@ -63,3 +63,7 @@ CoT looks like the model's reasoning, but research (Lanham et al. 2023; Turpin e
 ## References
 
 - [[chain-of-thought-wei-2022]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[prompt-chaining]] — decomposition across calls rather than within one

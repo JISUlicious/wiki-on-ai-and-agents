@@ -2,7 +2,7 @@
 title: RETRO (Retrieval-Enhanced Transformer)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - retro-borgeaud-2021.md
 family: retrieval-augmented
@@ -60,3 +60,7 @@ A separately-proposed procedure: take an existing pre-trained Transformer LM, ad
 ## References
 
 - [[retro-borgeaud-2021]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[realm]] — REALM (Feb 2020), the first retrieval-augmented pre-training

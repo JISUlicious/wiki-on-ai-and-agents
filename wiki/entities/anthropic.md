@@ -2,7 +2,7 @@
 title: Anthropic
 type: entity
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - gpt-3-brown-2020.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -57,3 +57,8 @@ Anthropic publishes periodic reports on misuse of Claude: March 2025, August 202
 - [[claude-dev]] — claude.dev, Anthropic's developer blog; hub of the posts ingested from it
 - [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics
+
+## Lineage sources (added 2026-10-06)
+
+- [[building-effective-agents-anthropic-2024]] — Building effective agents (Dec 2024)
+- [[effective-context-engineering-anthropic-2025]] — Effective context engineering (Sep 2025)

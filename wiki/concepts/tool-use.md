@@ -2,7 +2,7 @@
 title: Tool Use
 type: concept
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - react-yao-2022.md
   - function-calling-llms-promptingguide.md
@@ -59,3 +59,9 @@ See [[function-calling]] for the canonical treatment — the model/application c
 - [[programmatic-tool-calling]] — expose tools as typed code stubs instead of JSON schemas — wins on capable models and under parallel fan-out, loses on the 14-model mean
 - [[is-bash-all-you-need-enterprise-agents-mak-2026]] — Microsoft: bash alone beats typed tools end-to-end (+5–25 pts, 19–72% fewer tokens); programmatic tool calling mixed
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
+
+## Lineage sources (added 2026-10-06)
+
+- [[training-verifiers-math-word-problems-cobbe-2021]] — Cobbe et al. 2021, calculator annotations
+- [[chatgpt-plugins-openai-2023]] — ChatGPT plugins (2023-03-23), the first consumer tool platform
+- [[llm-powered-autonomous-agents-weng-2023]] — Weng's 2023 tool-use survey (MRKL, TALM, Toolformer, HuggingGPT)

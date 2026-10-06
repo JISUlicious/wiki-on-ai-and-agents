@@ -2,7 +2,7 @@
 title: Agent Skills (Anthropic)
 type: concept
 created: 2026-05-16
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - anthropic-agent-skills-2025.md
   - anthropic-engineering-skills-2025.md
@@ -188,3 +188,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
 - [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)
+
+## Lineage sources (added 2026-10-06)
+
+- [[claude-code-changelog-2026]] — Claude Code skills support in v2.0.20 (2025-10-16)

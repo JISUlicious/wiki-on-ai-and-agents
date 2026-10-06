@@ -2,7 +2,7 @@
 title: RAG (the original system)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - rag-lewis-2020.md
 family: retrieval-augmented
@@ -55,3 +55,7 @@ The broader [[retrieval-augmented-generation|RAG paradigm]] became the dominant 
 ## References
 
 - [[rag-lewis-2020]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[realm]] — REALM (Feb 2020), the pre-training-time predecessor

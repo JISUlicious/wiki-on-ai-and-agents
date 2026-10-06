@@ -2,7 +2,7 @@
 title: World Model
 type: concept
 created: 2026-06-19
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
   - latent-spatial-memory-for-video-world-models-wang-2026.md
@@ -55,3 +55,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[robottt-context-scaling-robot-policies-jiang-2026]] — test-time training as the recurrent state; context scaling to 8K timesteps at flat latency
 - [[code-world-model-coding-agent-as-world-brain-chen-2026]] — an explicitly **anti-latent** world model: the agent-code loop is the transition function and the video model the observation function. Persistence that latent designs solve with spatial memory is solved here by storing it in a program variable. Note it reports **no quantitative results at all**
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+
+## Lineage sources (added 2026-10-06)
+
+- [[intelligent-agent]] — model-based agents in the classical typology

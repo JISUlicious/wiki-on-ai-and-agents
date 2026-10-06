@@ -2,7 +2,7 @@
 title: Reward Modeling
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-06
 sources:
   - christiano-rlhf-2017.md
   - ouyang-instructgpt-2022.md
@@ -44,3 +44,9 @@ The trained `r̂` then provides a scalar signal for policy optimization (PPO, RL
 
 - [[rlhf-christiano-2017]]
 - [[instructgpt-ouyang-2022]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[lets-verify-step-by-step-lightman-2023]] — PRM vs ORM comparison; PRM800K
+- [[process-reward-model]] — step-level reward models
+- [[actor-critic]] — the RL critic, distinct from the reward model

@@ -2,7 +2,7 @@
 title: Toolformer
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-06
 sources:
   - schick-toolformer-2023.md
 builds-on: "[[tool-use]]"
@@ -40,3 +40,7 @@ The filter assumes that a *helpful* tool call reduces perplexity on subsequent t
 ## References
 
 - [[toolformer-schick-2023]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[llm-powered-autonomous-agents-weng-2023]] — Weng's 2023 survey situates Toolformer among tool-use methods

@@ -2,7 +2,7 @@
 title: AutoGPT
 type: entity
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-06
 sources:
   - gaia-mialon-2023.md
 status: draft
@@ -25,3 +25,8 @@ The AutoGPT team co-authored [[gaia]], lending applied agent-engineering perspec
 
 - [[gaia-mialon-2023]]
 - [[llm-agent]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[babyagi]] — its spring-2023 contemporary
+- [[llm-powered-autonomous-agents-weng-2023]] — Weng's survey quotes AutoGPT's system prompt

@@ -2,7 +2,7 @@
 title: Multi-Agent Systems (LLM)
 type: concept
 created: 2026-06-03
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - reaching-agreement-among-reasoning-llm-agents-ruan-2025.md
   - single-agent-vs-multi-agent-tran-2026.md
@@ -81,3 +81,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
 - [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge
+
+## Lineage sources (added 2026-10-06)
+
+- [[subagents]] — context-isolated child agents
+- [[agentic-workflow-patterns]] — orchestrator-workers and parallelization

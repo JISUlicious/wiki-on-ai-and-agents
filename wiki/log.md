@@ -2,10 +2,38 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-08-04
+updated: 2026-10-06
 ---
 
 # Activity Log
+
+## [2026-10-06] ingest | Batch: 18 lineage gap-fill sources (requested by game006)
+
+Batch ingested 18 requested sources (20 source pages: Claude Code's changelog is paired with npm publish dates, and Russell & Norvig has two secondary sources). They fill the gaps listed in the wiki's lineage answer to the game006 session.
+
+- **Priority 1:** [[building-effective-agents-anthropic-2024]], [[llm-powered-autonomous-agents-weng-2023]], [[effective-context-engineering-anthropic-2025]], [[lost-in-the-middle-liu-2023]], [[training-verifiers-math-word-problems-cobbe-2021]], [[lets-verify-step-by-step-lightman-2023]], [[judging-llm-as-a-judge-zheng-2023]], [[claude-code-changelog-2026]].
+- **Priority 2:** [[ai-chains-wu-2021]], [[chatgpt-plugins-openai-2023]], [[realm-guu-2020]], [[pre-train-prompt-predict-liu-2021]], [[gemini-1-5-google-2024]], [[babyagi-nakajima-2023]], [[langchain-readme-2026]].
+- **Priority 3:** [[intelligent-agent-wikipedia]], [[aima-ch2-intelligent-agents-litman-pitt]] (for PEAS, which Wikipedia omits), [[rl-an-introduction-sutton-barto-2020]] (chapter 13 plus historical remarks), [[ai-ml-dl-difference-nvidia-2016]], [[ai-vs-ml-vs-dl-vs-nn-ibm]].
+
+**Pages created (23):**
+- Concepts: [[prompt-chaining]], [[agentic-workflow-patterns]], [[context-engineering]], [[prompt-engineering]], [[context-rot]], [[subagents]], [[process-reward-model]], [[gsm8k]], [[mt-bench]], [[chatbot-arena]], [[actor-critic]], [[intelligent-agent]], [[artificial-intelligence]], [[machine-learning]], [[deep-learning]], [[large-language-model]].
+- Entities: [[realm]], [[babyagi]], [[langchain]], [[chatgpt-plugins]], [[chatgpt]], [[gemini-1-5]], [[lilian-weng]].
+
+**Pages updated:** about 50 hubs gained backlinks under "Lineage sources (added 2026-10-06)". [[claude-code]] gained a dated feature timeline. [[overview]] gaps and [[index]] were updated.
+
+**Fetch notes:**
+- OpenAI's plugins page returned 403, so it was taken from the Wayback snapshot of 2023-03-30.
+- NVIDIA's 2016 URL now redirects to a different article, so it was taken from the Wayback snapshot of 2016-08-01.
+- The current BabyAGI README is a 2024 rewrite; the original is in `babyagi_archive`.
+- The Claude Code CHANGELOG has no dates, so dates come from the npm registry.
+
+**Dates settled:**
+- Claude Code first release 2025-02-24 (`release_date` corrected from 2024-02-29).
+- Hooks 2025-06-30; custom subagents 2025-07-24; plugins 2025-10-09; skills 2025-10-16; `/loop` 2026-03-06; `/goal` 2026-05-11; mods 2026-10-01.
+- REALM 2020-02-10, which precedes DPR and RAG.
+- Lost in the Middle July 2023; TACL 2024 is the journal year.
+
+**Not established:** coinage of "context engineering" (Anthropic's post says the term "has come to prominence"); "prompt engineering" (Liu 2021 formalizes it but does not coin it); "LLM".
 
 ## [2026-10-05] ingest | edgextract (markdown → knowledge graph via closed decisions)
 

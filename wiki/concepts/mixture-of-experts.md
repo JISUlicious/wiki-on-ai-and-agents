@@ -2,7 +2,7 @@
 title: Mixture of Experts (MoE)
 type: concept
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-10-06
 sources:
   - glm-5-2-zai-2026.md
   - nemotron-3-super-nvidia-2026.md
@@ -61,3 +61,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[distributed-training]] — expert parallelism as a fourth dimension alongside DP/TP/PP
 - [[qwen3.8-flash-next]] — 512 experts, 10 routed + 1 shared, 6B activated of 125B — plus a 51B n-gram embedding table offered as a cheaper parameter-scaling axis than more experts
 - [[weight-streaming]] — the 2026 consequence of routing sparsity: because the router names the *k* experts before their weights are needed, a MoE can be run from SSD with only the active experts in RAM and **no accuracy change by construction** — a 397B model on a 48 GB laptop at ~4 tok/s. Dense models cannot do this without a lossy activation predictor
+
+## Lineage sources (added 2026-10-06)
+
+- [[gemini-1-5]] — Gemini 1.5 (Feb 2024), an MoE frontier model

@@ -2,7 +2,7 @@
 title: Cloze Scoring
 type: concept
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-10-06
 sources: []
 status: complete
 importance: high
@@ -78,3 +78,7 @@ The mechanism is 2020-vintage and the latency claim is arithmetic rather than in
 - PET [2001.07676](https://arxiv.org/abs/2001.07676) · MMLU [2009.03300](https://arxiv.org/abs/2009.03300) · MCSB [2210.12353](https://arxiv.org/abs/2210.12353) · Surface form competition [2104.08315](https://arxiv.org/abs/2104.08315)
 - ModernBERT-Large-Instruct [2502.03793](https://arxiv.org/abs/2502.03793) · dLLM-SetScore [2608.14649](https://arxiv.org/abs/2608.14649) · Prophet [2508.19982](https://arxiv.org/abs/2508.19982)
 - Calibration: [2207.05221](https://arxiv.org/abs/2207.05221) · [2303.08774](https://arxiv.org/abs/2303.08774) · [2305.14975](https://arxiv.org/abs/2305.14975) · [2406.08391](https://arxiv.org/abs/2406.08391) · [2605.11845](https://arxiv.org/abs/2605.11845)
+
+## Lineage sources (added 2026-10-06)
+
+- [[pre-train-prompt-predict-liu-2021]] — survey covering cloze vs prefix prompts and answer engineering (2021)

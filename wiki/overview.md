@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-10-04
+updated: 2026-10-06
 tags: []
 ---
 
@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **559 source pages**, **181 entities**, **318 concepts**, **5 comparisons** and **15 filed queries** (as of 2026-10-04). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **580 source pages**, **189 entities**, **335 concepts**, **5 comparisons** and **15 filed queries** (as of 2026-10-06). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -102,8 +102,13 @@ Many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] �
 
 ## Gaps worth filling
 
-- **Canonical agent framings:** Anthropic's "Building effective agents" (workflows vs agents) and Lilian Weng's "LLM Powered Autonomous Agents".
-- **Classical agent theory:** the Russell & Norvig agent-type ladder.
-- **Field-map pages:** AI, machine learning, deep learning, and a standalone LLM page.
-- **Context-engineering concepts:** dedicated pages for context engineering, the context window and the system prompt, each currently covered only inside other pages.
+Filled on 2026-10-06:
+- the canonical agent framings ([[building-effective-agents-anthropic-2024]], [[llm-powered-autonomous-agents-weng-2023]]);
+- classical agent theory ([[intelligent-agent]], [[actor-critic]]);
+- the field map ([[artificial-intelligence]] ⊃ [[machine-learning]] ⊃ [[deep-learning]] ⊃ [[large-language-model]]);
+- [[context-engineering]] and [[prompt-engineering]].
+
+Still open:
+- **Coinage of terms:** the first uses of "LLM", "prompt engineering", "context engineering" and "harness engineering" have no primary source in the wiki.
+- **Context-window pages:** dedicated pages for the context window and the system prompt, each covered only inside other pages.
 - **Housekeeping:** about 156 one-off broken links remain as placeholders for pages not yet written.

@@ -2,7 +2,7 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-10-02
+updated: 2026-10-06
 sources:
   - claude-code.md
   - comparison.md
@@ -10,6 +10,7 @@ sources:
   - claude-code-dynamic-workflows-harness-2026.md
   - claude-effort-and-ultracode-docs-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
+  - claude-code-changelog-2026-10-06.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2025-02-24
@@ -21,7 +22,27 @@ tags:
 
 # Claude Code
 
-Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. Distributed as the `@anthropic/claude-code` npm package. Powered by [[claude|Claude]] models (Opus / Sonnet / Haiku). The CLI maintaining this very wiki is Claude Code.
+Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. Distributed as the `@anthropic-ai/claude-code` npm package. Powered by [[claude|Claude]] models (Opus / Sonnet / Haiku). The CLI maintaining this very wiki is Claude Code.
+
+## Release and feature timeline
+
+From the CHANGELOG plus npm publish dates; see [[claude-code-changelog-2026]].
+
+| Date | Version | Milestone |
+|---|---|---|
+| **2025-02-24** | 0.2.x | First public release (research preview), the first npm publish |
+| 2025-05-22 | 1.0.0 | 1.0 |
+| 2025-06-30 | 1.0.38 | **Hooks** released |
+| 2025-07-24 | 1.0.60 | **Custom [[subagents]]** (`/agents`) |
+| 2025-10-09 | 2.0.12 | **Plugins** and marketplaces |
+| 2025-10-16 | 2.0.20 | **[[agent-skills\|Skills]]** |
+| 2026-03-06 | 2.1.71 | **`/loop`**: recurring prompts |
+| 2026-05-11 | 2.1.139 | **`/goal`**: completion condition checked by an evaluator |
+| 2026-05-28 | — | [[dynamic-workflows]] announced |
+| 2026-10-01 | 2.1.287 | **[[claude-code-mods\|Mods]]** |
+
+> [!success] Resolved: release date
+> **Resolved 2026-10-06:** `release_date` was `2024-02-29`, which was wrong. The first npm publish (2025-02-24) confirms the February 2025 research-preview release.
 
 ## Architecture (per the 2026 sourcemap-snapshot writeup)
 
@@ -83,3 +104,8 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 - [[claude-dev]] — claude.dev, Anthropic's developer blog; hub of the posts ingested from it
 - [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics
+
+## Lineage sources (added 2026-10-06)
+
+- [[claude-code-changelog-2026]] — dated feature timeline: hooks 2025-06-30, subagents 2025-07-24, plugins 2025-10-09, skills 2025-10-16, /loop 2026-03-06, /goal 2026-05-11, mods 2026-10-01
+- [[subagents]] — subagents

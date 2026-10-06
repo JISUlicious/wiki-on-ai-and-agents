@@ -2,7 +2,7 @@
 title: "Hooks and Callbacks in Modern Agent Architecture"
 type: query
 created: 2026-05-17
-updated: 2026-10-02
+updated: 2026-10-06
 sources:
   - claude-code.md
   - opencode.md
@@ -154,3 +154,7 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 - [[getting-started-with-claude-code-mods-osmani-2026]] — Osmani's tutorial on Claude Code mods: in-process JS/TS hook modules shipped as plugins
 - [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
 - [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)
+
+## Lineage sources (added 2026-10-06)
+
+- [[claude-code-changelog-2026]] — Claude Code hooks released in v1.0.38 (2025-06-30); mods in v2.1.287 (2026-10-01)

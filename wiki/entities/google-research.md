@@ -2,7 +2,7 @@
 title: Google Research
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - transformer-vaswani-2017.md
   - bert-devlin-2018.md
@@ -28,3 +28,8 @@ In 2023, [[google-brain]] merged with DeepMind to form Google DeepMind, and the 
 
 - [[attention-is-all-you-need-vaswani-2017]]
 - [[bert-devlin-2018]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[realm]] — REALM (2020)
+- [[ai-chains-wu-2021]] — AI Chains (2021)

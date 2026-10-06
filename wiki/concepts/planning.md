@@ -2,7 +2,7 @@
 title: Planning
 type: concept
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
   - drop-the-hierarchy-and-roles-dochkina-2026.md
@@ -38,3 +38,8 @@ importance: medium
 ## Related 2026 sources
 
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+
+## Lineage sources (added 2026-10-06)
+
+- [[llm-powered-autonomous-agents-weng-2023]] — planning as one of three agent components (2023)
+- [[intelligent-agent]] — goal-based agents in the classical typology

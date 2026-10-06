@@ -2,7 +2,7 @@
 title: WebGPT
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-06
 sources:
   - nakano-webgpt-2021.md
 family: gpt
@@ -34,3 +34,7 @@ The two enduring contributions: (1) demonstrating that GPT-3 could be fine-tuned
 ## References
 
 - [[webgpt-nakano-2021]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[chatgpt-plugins]] — the browsing plugin descended from WebGPT (Mar 2023)

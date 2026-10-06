@@ -2,7 +2,7 @@
 title: LLM-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - langsmith-evaluation-docs.md
@@ -94,3 +94,9 @@ Surfaced via newsletter ingests; see [[index]].
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+
+## Lineage sources (added 2026-10-06)
+
+- [[judging-llm-as-a-judge-zheng-2023]] — the origin paper (Jun 2023): GPT-4 judges agree with humans >80%; position, verbosity and self-enhancement biases; reference-guided judging
+- [[mt-bench]] — the multi-turn judge benchmark
+- [[chatbot-arena]] — crowdsourced pairwise human preference

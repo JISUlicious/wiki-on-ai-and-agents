@@ -2,7 +2,7 @@
 title: DPR (Dense Passage Retriever)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - dpr-karpukhin-2020.md
 family: retrieval
@@ -62,3 +62,7 @@ The dual-encoder + MIPS pattern is now standard in semantic search, ColBERT-styl
 ## References
 
 - [[dpr-karpukhin-2020]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[realm]] — REALM (Feb 2020), whose learned retriever DPR simplified

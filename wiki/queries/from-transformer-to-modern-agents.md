@@ -2,7 +2,7 @@
 title: "From Transformer to Modern AI Agents: Evolutionary Paths"
 type: query
 created: 2026-05-15
-updated: 2026-05-15
+updated: 2026-10-06
 sources:
   - attention-is-all-you-need-vaswani-2017.md
   - gpt-3-brown-2020.md
@@ -98,3 +98,10 @@ The five documented 2026 agents differ in *which* of these tracks they embed in 
 ## References
 
 This synthesis draws on ~30 source pages across the wiki. Key starting points: [[transformer]], [[gpt-3]], [[react]], [[reflexion]], [[steering]], [[guardrailing]], [[claude-code]], [[cross-agent-comparison-2026]].
+
+## Lineage sources (added 2026-10-06)
+
+- [[large-language-model]] — LLM hub page and lineage
+- [[artificial-intelligence]] — field map
+- [[realm]] — retrieval track: REALM (Feb 2020)
+- [[prompt-chaining]] — prompting track: AI Chains (Oct 2021)

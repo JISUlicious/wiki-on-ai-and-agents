@@ -2,7 +2,7 @@
 title: Transformer
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - transformer-vaswani-2017.md
 family: transformer
@@ -53,3 +53,8 @@ The Transformer has no predecessor as a *family* (it inherited from RNN-based en
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[deep-learning]] — the field it belongs to
+- [[large-language-model]] — what it became

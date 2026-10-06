@@ -2,7 +2,7 @@
 title: Self-Consistency
 type: concept
 created: 2026-05-14
-updated: 2026-09-30
+updated: 2026-10-06
 sources:
   - wang-self-consistency-2022.md
 builds-on: "[[chain-of-thought-prompting]]"
@@ -65,3 +65,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[mo-models-mo-problems-model-pool-selection-marjanovic-2026]] — NVIDIA: mixing heterogeneous models degrades routing, voting and judging; single-family pools win
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
 - [[self-organizing-agent-teams-learn-to-reason-together-pappu-2026]] — SAT (Stanford/Together): learned team strategies beat a compute-matched single agent on math (+8.0), not on knowledge
+
+## Lineage sources (added 2026-10-06)
+
+- [[training-verifiers-math-word-problems-cobbe-2021]] — the verifier-reranking baseline (2021)
+- [[gsm8k]] — the benchmark of its headline gains

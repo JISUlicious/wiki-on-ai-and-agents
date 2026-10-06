@@ -2,7 +2,7 @@
 title: LLM Agent
 type: concept
 created: 2026-05-13
-updated: 2026-09-15
+updated: 2026-10-06
 sources:
   - react-yao-2022.md
 status: complete
@@ -82,3 +82,11 @@ Surfaced via newsletter ingests; see [[index]].
 - [[how-ai-agents-reshape-knowledge-work-yang-2026]] — economics of agents vs assistants (Perplexity data)
 - [[hitchhikers-guide-to-agentic-ai-roitman-2026]] — survey/guide: foundations → systems of agentic AI
 - [[proactive-thought-partners-writing-zhang-2026]] — what an agent that speaks up unasked should look like, from a one-week study with 16 writers: 58% of 1,100 suggestions were ignored, and participants valued support that arrives unasked, small tags that fade away, and questions over instructions
+
+## Lineage sources (added 2026-10-06)
+
+- [[llm-powered-autonomous-agents-weng-2023]] — the canonical 2023 survey: planning, memory, tool use
+- [[building-effective-agents-anthropic-2024]] — workflows vs agents; five patterns (Dec 2024)
+- [[agentic-workflow-patterns]] — the pattern vocabulary
+- [[intelligent-agent]] — the classical (Russell & Norvig) agent definition, types and PEAS
+- [[babyagi]] — early task-driven agent (Mar 2023)

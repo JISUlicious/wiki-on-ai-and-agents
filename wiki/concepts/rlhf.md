@@ -2,7 +2,7 @@
 title: RLHF (Reinforcement Learning from Human Feedback)
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-06
 sources:
   - gpt-4-openai-2023.md
 status: complete
@@ -41,3 +41,7 @@ Every major deployed LLM uses some form of RLHF or close cousin: [[gpt-4|GPT-4]]
 ## References
 
 - [[gpt-4-openai-2023]]
+
+## Lineage sources (added 2026-10-06)
+
+- [[actor-critic]] — PPO's value-head critic vs the reward model

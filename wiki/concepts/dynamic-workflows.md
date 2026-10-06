@@ -2,7 +2,7 @@
 title: Dynamic Workflows (Claude Code)
 type: concept
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-10-06
 sources:
   - claude-code-dynamic-workflows-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
@@ -94,3 +94,9 @@ The engineering post catalogs reusable patterns the script encodes:
 - Announcement: https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
 - Engineering: https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code
 - Docs: https://code.claude.com/docs/en/workflows
+
+## Lineage sources (added 2026-10-06)
+
+- [[agentic-workflow-patterns]] — the human-written workflows this replaces
+- [[subagents]] — the unit dynamic workflows fan out
+- [[claude-code-changelog-2026]] — dated /loop (2026-03-06) and /goal (2026-05-11)
