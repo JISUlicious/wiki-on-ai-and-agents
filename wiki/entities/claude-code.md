@@ -12,7 +12,7 @@ sources:
   - anthropic-threat-intelligence-report-september-2026.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
-release_date: 2024-02-29
+release_date: 2025-02-24
 status: complete
 importance: high
 tags:
