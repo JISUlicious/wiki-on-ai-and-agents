@@ -2,7 +2,7 @@
 title: "Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding"
 type: source
 created: 2026-08-17
-updated: 2026-09-30
+updated: 2026-10-08
 sources: []
 arxiv_id: "2608.11095"
 year: 2026
@@ -163,7 +163,7 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 >
 > **They also disagree about what is wrong with a wholesale rewrite.** ACE says rewrites are actively harmful — *context collapse*, with its case study of 18,282 tokens at 66.7% accuracy dropping to 122 tokens at 57.1% in a single rewrite step. This paper says rewrites are **ineffective rather than harmful**: size resets to 59.5% and returns to 91.5% within 10 commits, with regrowth *faster* than before. Same operation, two different diagnoses.
 >
-> The sharpest reconciliation: ACE's **brevity bias** (optimizers like GEPA collapsing to short generic instructions) and this paper's ratchet are *opposite* biases acting on the same artifact. ACE describes machine-optimizer pressure toward too-short; Chakrabarti describes human-and-agent maintainer pressure toward too-long. Both are deviations from the same `D_*`, and the minimum-cover framing here is the first formal target that names what both are missing.
+> The sharpest reconciliation: ACE's **brevity bias** (optimizers like [[gepa|GEPA]] collapsing to short generic instructions) and this paper's ratchet are *opposite* biases acting on the same artifact. ACE describes machine-optimizer pressure toward too-short; Chakrabarti describes human-and-agent maintainer pressure toward too-long. Both are deviations from the same `D_*`, and the minimum-cover framing here is the first formal target that names what both are missing.
 
 > [!success] Resolved contradiction — "capability grows monotonically"
 > [[self-improving-agent]] claims that **"skills, prompts, or scaffold edits are appended; the agent's capability grows monotonically and side-steps the catastrophic forgetting of gradient-based continual learning."** This paper is precisely the rebuttal: side-stepping catastrophic forgetting by appending buys you **catastrophic remembering** instead, and the paper's whole framing is that these are duals, not an escape. Growth is not monotone in capability once instruction-following degrades with constraint count.

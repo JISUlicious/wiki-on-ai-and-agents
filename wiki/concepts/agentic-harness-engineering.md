@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -124,3 +124,4 @@ Surfaced via newsletter ingests; see [[index]].
 ## Lineage sources
 
 - [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng's survey (2026-07-04): harness definition, design patterns, harness optimization as the path to RSI
+- [[gepa]] — prompt-level evolutionary search, later reused for harnesses

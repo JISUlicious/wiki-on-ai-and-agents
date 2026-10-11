@@ -2,7 +2,7 @@
 title: "The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-08
 sources: []
 arxiv_id: "2608.18300"
 year: 2026
@@ -97,7 +97,7 @@ Only discovery-relevant metrics are reported. The framing is that offline alignm
 
 **Takeaways the authors state** — invest in the benchmark before the judge (a modest rationale-annotated set beats a large label-only one, because rationales are what make reasoning-aligned tuning possible); one tuned judge can serve many roles; plan monitoring from day one.
 
-**Stated limitations** — months of controlled experiments, not continuous year-scale operation; one surface (mobile) and one explanation family (similarity-based); RART validated only against a label-only ablation, not against GEPA or TextGrad; the drift-triggered re-tune path has not fired online; criteria definitions and generator/judge model identities withheld; meta-judge and judge share a base model family.
+**Stated limitations** — months of controlled experiments, not continuous year-scale operation; one surface (mobile) and one explanation family (similarity-based); RART validated only against a label-only ablation, not against [[gepa|GEPA]] or TextGrad; the drift-triggered re-tune path has not fired online; criteria definitions and generator/judge model identities withheld; meta-judge and judge share a base model family.
 
 ## What this changes for the judge design rules
 

@@ -2,10 +2,29 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-07
+updated: 2026-10-08
 ---
 
 # Activity Log
+
+## [2026-10-08] ingest | GEPA: Reflective Prompt Evolution Can Outperform RL (requested by analysis-docs)
+
+Ingested [arXiv:2507.19457](https://arxiv.org/abs/2507.19457) (ICLR 2026 Oral) as [[gepa-agrawal-2025]], and Google ADK's optimization docs as [[adk-optimize-docs-2026]].
+
+**Pages created:** [[gepa]], [[prompt-optimization]] (previously a dangling link), [[dspy]] and [[google-adk]].
+
+**Linking:** GEPA was mentioned on 17 pages with no page of its own. The first mention on each is now linked, escaped inside tables. 15 hubs gained backlinks.
+
+**Checked against the paper's tables:** on Qwen3 8B, GEPA beats GRPO (24K rollouts) on 5 of 6 tasks. **GRPO wins AIME-2025 (38.0 vs 32.0)**, so "outperforms GRPO" is not uniform. Most of GEPA's rollout budget goes to validation scoring; train rollouts alone are 79–737. Against MIPROv2 the aggregate gain over baseline is +12–13 vs +5.6.
+
+**Tension recorded, not resolved:** ACE cites GEPA for brevity bias, while the GEPA paper presents shorter prompts as a benefit.
+
+**ADK versions (verified the same day):**
+- **1.24.0** introduced the optimization interfaces, which is what the docs header refers to.
+- **1.27.0** (2026-03-12) added the `adk optimize` CLI and GEPARootAgentPromptOptimizer.
+- **2.3.0** (2026-06-18) added GEPARootAgentOptimizer.
+
+The requester's earlier "2.11.0" was a version in which the optimizer exists, not where it was introduced; analysis-docs corrected it. The wiki spot-checked the PyPI wheels (1.26.0 vs 1.27.0; 2.2.0 vs 2.3.0). The arXiv dates were confirmed through the API.
 
 ## [2026-10-07] ingest | Deeper on the 7 new entities (12 sources)
 

@@ -2,7 +2,7 @@
 title: Reflexion
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-08
 sources:
   - reflexion-shinn-2023.md
 status: complete
@@ -73,3 +73,7 @@ Reflexion was the earliest of the canonical [[memory-management|memory-managemen
 
 - [[reflexion-shinn-2023]]
 - [[memory-management]] — Reflexion's place in the broader lifecycle
+
+## Lineage sources
+
+- [[gepa-agrawal-2025]] — reflection used as an optimizer: GEPA rewrites prompts from trace reflections

@@ -2,7 +2,7 @@
 title: "Reason Wide, Not Deep: Amortizing the Reasoning Premium into Distilled Skills"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-10-08
 sources:
   - reason-wide-not-deep-singh-2026.md
 arxiv_id: "2608.07885"
@@ -74,7 +74,7 @@ Beating the teacher is not paradoxical, and the paper explains why: **a rule agg
 
 Mixed, in both directions: close on ALFWorld and telecom, paired wins retail by ~5 points, **no-think-only wins SSB-Verified by 10 points**. The conclusion the authors draw is deliberately narrow — reasoning traces are *not a prerequisite* — and it has a real operational payoff: the full loop (**deploy cheap agent → collect logs → distill → redeploy**) can run without ever invoking a reasoning model. Their proposed mechanism for the SSB reversal is elegant: reasoning traces record **what the model believed**, while environment feedback in failed no-think trajectories records **what was true**; verbose narratives may anchor the distiller on the former. They flag this as un-isolated, and note each skill was distilled once so distillation variance is uncontrolled.
 
-**vs. an automatic prompt optimizer** — GEPA, 120 metric-call budget, Claude Sonnet 5 reflection:
+**vs. an automatic prompt optimizer** — [[gepa|GEPA]], 120 metric-call budget, Claude Sonnet 5 reflection:
 
 | Domain | no-skill | think | GEPA | Ours | GEPA cost | Our cost |
 |---|---|---|---|---|---|---|

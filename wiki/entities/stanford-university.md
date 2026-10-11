@@ -2,7 +2,7 @@
 title: Stanford University
 type: entity
 created: 2026-05-14
-updated: 2026-09-30
+updated: 2026-10-08
 sources:
   - pennington-glove-2014.md
 status: draft
@@ -23,3 +23,7 @@ US research university. Stanford NLP — directed by [[christopher-manning|Chris
 
 - [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots
 - [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data
+
+## Lineage sources
+
+- [[gepa-agrawal-2025]] — GEPA (2025)

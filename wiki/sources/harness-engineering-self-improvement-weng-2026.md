@@ -2,7 +2,7 @@
 title: "Harness Engineering for Self-Improvement (Lil'Log)"
 type: source
 created: 2026-10-07
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - harness-engineering-self-improvement-weng-2026.md
 authors:
@@ -73,7 +73,7 @@ The result is "closer to runtime and software system design". She draws an opera
   - **[[self-harness-harnesses-that-improve-themselves-zhang-2026|Self-Harness]]:** mine weaknesses into verifier-grounded failure patterns, propose bounded edits, and accept only with no regression on both held-in and held-out data.
   - **[[agentic-harness-engineering-lin-2026|AHE]]:** three observability pillars and seven harness components. The verifier and configuration are read-only to block reward hacking. Every edit is a falsifiable prediction.
 - **Evolutionary search:**
-  - Promptbreeder, GEPA;
+  - Promptbreeder, [[gepa|GEPA]];
   - AlphaEvolve, ThetaEvolve, ShinkaEvolve, DemoEvolve;
   - [[darwin-godel-machine|DGM]]: SWE-bench Verified 20% → 50%, Polyglot 14.2% → 30.7%, with a fixed model;
   - [[hyperagents-zhang-2026|Hyperagents]].

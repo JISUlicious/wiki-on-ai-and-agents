@@ -2,7 +2,7 @@
 title: LangChain
 type: entity
 created: 2026-10-06
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - langchain-readme.md
   - langchain-v0-1-0-2024.md
@@ -55,3 +55,7 @@ The 2025 *middleware* design converges with coding-agent harnesses: compare [[ho
 - [[langchain-readme-2026]]
 - [[langchain-history-2024-2025]]
 - [[ai-chains-wu-2021]]
+
+## Lineage sources
+
+- [[dspy]] — a contrasting framework: compiled, optimized prompts

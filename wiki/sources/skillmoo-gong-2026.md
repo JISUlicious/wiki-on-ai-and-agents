@@ -2,7 +2,7 @@
 title: "SkillMOO: Multi-Objective Optimization of Agent Skills for Software Engineering"
 type: source
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-10-08
 sources:
   - skillmoo-gong-2026.md
 arxiv_id: "2604.09297"
@@ -116,7 +116,7 @@ Key related work cited:
 - SWE-Skills-Bench — finds many public SWE skills provide little benefit / add token overhead
 - SkillRouter — frames skill usage as a retrieval/routing problem over large skill pools
 - EvoSkill, EvoSkills, Meta Context Engineering — pass-rate-only skill-evolution approaches → contrast with [[skill-optimization]]
-- ACE, GEPA, Meta-Harness — adjacent context/prompt/harness optimization
+- ACE, [[gepa|GEPA]], Meta-Harness — adjacent context/prompt/harness optimization
 - LLM-guided Genetic Improvement — closest prior: LLM semantic edits + search-based software evolution (but not on skill bundles)
 - Deb et al. — NSGA-II ([[evolutionary-algorithm]])
 - Scott-Knott ESD — the rank-comparison statistical method

@@ -2,7 +2,7 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-10-06
+updated: 2026-10-08
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
@@ -95,3 +95,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[lets-verify-step-by-step-lightman-2023]] — process supervision beats outcome supervision on MATH (78.2% vs 72.4%), May 2023
 - [[process-reward-model]] — step-level verifiers
 - [[actor-critic]] — the RL ancestor of the generator/critic split
+- [[gepa-agrawal-2025]] — rich evaluator feedback text (μ_f) is GEPA's key ingredient

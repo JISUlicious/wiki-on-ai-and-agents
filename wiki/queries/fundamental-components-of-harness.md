@@ -2,7 +2,7 @@
 title: "Fundamental Components of an LLM Agent Harness"
 type: query
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-10-08
 sources:
   - code-as-agent-harness-ning-2026.md
   - agentic-harness-engineering-lin-2026.md
@@ -41,7 +41,7 @@ The [[code-as-agent-harness-ning-2026|Ning survey]] reorganizes the same surface
 | **Memory & Context Engineering** (§3.2) | What's in the prompt this turn; what persists across turns | Working / semantic / experiential / long-term / multi-agent / compaction. See [[memory-management]] |
 | **Tool Use** (§3.3) | The agent's action and observation layer | Function-oriented (typed APIs), environment-interaction ([[agent-computer-interface]]), verification-driven (tests as tools, [[agentcoder]]), workflow-orchestration ([[mcp]], [[opencode]]) |
 | **Plan-Execute-Verify (PEV) loop** (§3.4) | The cybernetic control loop | Plans-as-contracts → sandboxed execution → deterministic-sensor verification → human-in-the-loop for risky tiers. Cites [[reflexion]], Self-Debugging, LDB, QualityFlow |
-| **Adaptive Optimization (AHE)** (§3.5) | How the harness improves itself | Deep telemetry + Evolution Agent + governed mutation. The frontier discipline ([[agentic-harness-engineering]], [[adas]], Meta-Harness, GEPA, Live-SWE-Agent) |
+| **Adaptive Optimization (AHE)** (§3.5) | How the harness improves itself | Deep telemetry + Evolution Agent + governed mutation. The frontier discipline ([[agentic-harness-engineering]], [[adas]], Meta-Harness, [[gepa\|GEPA]], Live-SWE-Agent) |
 
 These are **operational behaviors**, not files. Mapping is many-to-many: tools live in §3.3 but planning artifacts (PLAN.md) also use the tool layer; memory feeds context-assembly which feeds the LLM call which feeds the PEV loop.
 

@@ -2,7 +2,7 @@
 title: "Agentic Context Engineering: Evolving Contexts for Self-Improving LMs"
 type: source
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-08
 sources:
   - agentic-context-engineering-zhang-2025.md
 arxiv_id: "2510.04618"
@@ -38,7 +38,7 @@ Qizheng Zhang, Changran Hu, et al. (Stanford, SambaNova Systems, UC Berkeley). [
 
 ACE formalizes the model's **prompt/context as an evolving software artifact** rather than a static string or a one-shot summary. The framework treats context as a structured, itemized "playbook" of bullets — each with metadata (id, helpful/harmful counters) and content (a strategy, domain concept, or failure mode) — that accumulates and refines over time. A three-role agentic architecture maintains this playbook: a **Generator** produces a reasoning trajectory on a new query, a **Reflector** critiques that trajectory to extract concrete lessons, and a **Curator** commits those lessons as compact **delta updates** to the playbook via deterministic, non-LLM merge logic. A grow-and-refine step periodically de-duplicates bullets via semantic embeddings.
 
-The delta-update mechanism is the load-bearing idea: by replacing monolithic LLM rewrites with localized, itemized edits, ACE sidesteps both **brevity bias** (where prompt optimizers like GEPA collapse to short generic instructions) and **context collapse** (where iterative full-context rewriting erodes detail — a case study shows context dropping from 18,282 tokens at 66.7% accuracy to 122 tokens at 57.1% in a single rewrite step). Results: **+10.6% on agent benchmarks** (AppWorld) and +8.6% on financial-domain benchmarks, with 86.9% lower adaptation latency on average. On the AppWorld leaderboard, ACE with the open-source DeepSeek-V3.1 matches the top-ranked production agent IBM-CUGA (powered by GPT-4.1) on the overall average and surpasses it on the harder test-challenge split. Conceptually, the paper is the **academic counterpart to industry "agent skills" and memory tooling** ([[anthropic-agent-skills-2025|Anthropic Agent Skills]], [[a-mem-xu-2025|A-MEM]], Dynamic Cheatsheet) — placing prompt-engineering, agent memory, and self-improvement under one rubric.
+The delta-update mechanism is the load-bearing idea: by replacing monolithic LLM rewrites with localized, itemized edits, ACE sidesteps both **brevity bias** (where prompt optimizers like [[gepa|GEPA]] collapse to short generic instructions) and **context collapse** (where iterative full-context rewriting erodes detail — a case study shows context dropping from 18,282 tokens at 66.7% accuracy to 122 tokens at 57.1% in a single rewrite step). Results: **+10.6% on agent benchmarks** (AppWorld) and +8.6% on financial-domain benchmarks, with 86.9% lower adaptation latency on average. On the AppWorld leaderboard, ACE with the open-source DeepSeek-V3.1 matches the top-ranked production agent IBM-CUGA (powered by GPT-4.1) on the overall average and surpasses it on the harder test-challenge split. Conceptually, the paper is the **academic counterpart to industry "agent skills" and memory tooling** ([[anthropic-agent-skills-2025|Anthropic Agent Skills]], [[a-mem-xu-2025|A-MEM]], Dynamic Cheatsheet) — placing prompt-engineering, agent memory, and self-improvement under one rubric.
 
 ## Key Points
 

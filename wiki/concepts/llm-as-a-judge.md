@@ -2,7 +2,7 @@
 title: LLM-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-10-06
+updated: 2026-10-08
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - langsmith-evaluation-docs.md
@@ -31,7 +31,7 @@ Both major platforms ship an alignment feature measuring the judge against human
 | | Mechanism | Minimum labels |
 |---|---|---|
 | **LangSmith** *Align Evaluator* | human-in-the-loop prompt iteration in a playground; **alignment score = % agreement with human experts**; corrections auto-inserted as few-shot examples | **>=20**, balanced; grow to ~100 for production |
-| **MLflow** `judge.align()` | **automated prompt optimization** — MemAlign (default), SIMBA, GEPA (DSPy-backed) | **>=10** traces, >=30% of each class |
+| **MLflow** `judge.align()` | **automated prompt optimization** — MemAlign (default), SIMBA, [[gepa\|GEPA]] (DSPy-backed) | **>=10** traces, >=30% of each class |
 
 > [!warning] Agreement with humans is not the same as tracking success
 > [[gauge-when-not-to-trust-llm-as-a-judge-bodhwani-2026|GAUGE]] (Amazon, 2026) found that 57.5% of conversations humans rated "satisfied" had failed the task, the same as the base failure rate. A judge can agree with human raters and still be anchored to the wrong outcome. The gate ranks agents well overall (ρ = 0.94) but picks the worse of two near-equal agents 31% of the time, and averaging four judges does not help. Calibrate a judge against a verifiable reward before trusting it for close calls.

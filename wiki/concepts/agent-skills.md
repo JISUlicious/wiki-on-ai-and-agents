@@ -2,7 +2,7 @@
 title: Agent Skills (Anthropic)
 type: concept
 created: 2026-05-16
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - anthropic-agent-skills-2025.md
   - anthropic-engineering-skills-2025.md
@@ -194,3 +194,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[claude-code-changelog-2026]] — Claude Code skills support in v2.0.20 (2025-10-16)
 - [[introducing-gpts-openai-2023]] — GPTs (2023): an instructions + knowledge + tools bundle, a consumer precursor
 - [[babyagi-variants-nakajima-2023]] — BabyFoxAGI's chainable 'skills' (2023)
+- [[adk-optimize-docs-2026]] — ADK optimizes skill instructions with GEPA

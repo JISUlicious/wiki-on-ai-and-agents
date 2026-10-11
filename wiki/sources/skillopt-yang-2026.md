@@ -2,7 +2,7 @@
 title: "SkillOpt: Executive Strategy for Self-Evolving Agent Skills"
 type: source
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-10-08
 sources:
   - skillopt-yang-2026.md
 arxiv_id: "2605.23904"
@@ -64,7 +64,7 @@ Empirically the results are near-universal. Across **six benchmarks, seven targe
 - [[skill-md-format]] — The `SKILL.md`/`best_skill.md` packaging the optimized artifact ships in.
 - [[skill-acquisition]] — SkillOpt is a new mode of acquisition (feedback-driven text-space optimization) beyond human-authored / one-shot / RL-trained skills.
 - [[self-improving-agent]] — SkillOpt improves the agent's external state under feedback rather than its weights or scaffold.
-- [[agentic-context-engineering]] — The closest prompt-evolution sibling (and source of the TextGrad/GEPA baselines); see the Relation note below.
+- [[agentic-context-engineering]] — The closest prompt-evolution sibling (and source of the TextGrad/[[gepa|GEPA]] baselines); see the Relation note below.
 - [[agentic-harness-engineering]] — The harness-evolution sibling: evolves the *harness* via telemetry, where SkillOpt evolves a single *skill document*.
 - [[reinforcement-learning]] — SkillOpt borrows RL/SGD vocabulary (rollout batches, learning-rate schedules, momentum-like meta updates) but performs no weight updates and no gradient computation.
 

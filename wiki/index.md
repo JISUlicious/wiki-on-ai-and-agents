@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-07
+updated: 2026-10-08
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 590 sources, 189 entities, 335 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 592 sources, 191 entities, 337 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -88,6 +88,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chatgpt-plugins]] — OpenAI's first tool platform (2023-03-23): manifest + OpenAPI, browsing, code interpreter
 - [[babyagi]] — Nakajima's task-driven autonomous agent (Mar 2023)
 - [[langchain]] — LLM app and agent framework (repo created 2022-10-17)
+- [[dspy]] — Declarative LLM pipelines compiled by prompt optimizers (MIPROv2, GEPA)
+- [[google-adk]] — Google Agent Development Kit; `adk optimize` uses GEPA (experimental)
 
 ### People — Foundational researchers (pre-Transformer)
 - [[sepp-hochreiter]] — LSTM (1997); JKU Linz
@@ -323,6 +325,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[context-engineering]] — Curating the token set every turn; Anthropic's Sep 2025 definition
 - [[context-rot]] — Recall degrades as context grows; Lost in the Middle (2023) onward
 - [[prompt-chaining]] — A fixed sequence of LLM calls; AI Chains (2021) → LangChain → Anthropic workflows
+- [[prompt-optimization]] — Automatic prompt optimization: APE → MIPROv2/TextGrad → GEPA → skills and harnesses
+- [[gepa]] — Genetic-Pareto reflective prompt evolution; beats GRPO on 5 of 6 tasks with up to 35× fewer rollouts
 
 ### Agents, tools, and orchestration
 - [[llm-agent]] — LLM in a perception-action loop with tools
@@ -1438,6 +1442,9 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[babyagi-variants-nakajima-2023]] — BabyAGI classic (Pinecone) and the Bee/Cat/Deer/Elf/Fox variants (Apr–Sep 2023)
 - [[langchain-history-2024-2025]] — LangChain v0.1 (2024-01-08), LangGraph (2024-01-17), 1.0 with middleware (2025-10-22)
 
+### Prompt optimization (ingested 2026-10-08)
+- [[gepa-agrawal-2025]] — GEPA: Reflective Prompt Evolution Can Outperform RL (arXiv 2507.19457, ICLR 2026 Oral)
+- [[adk-optimize-docs-2026]] — Google ADK `adk optimize`: GEPA root-agent and skill instruction optimizers
 ## Comparisons
 
 - [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead

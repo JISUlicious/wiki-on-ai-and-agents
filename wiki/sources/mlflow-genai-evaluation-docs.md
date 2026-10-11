@@ -2,7 +2,7 @@
 title: "MLflow GenAI Evaluation (documentation)"
 type: source
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-08
 sources: []
 year: 2026
 venue: "MLflow documentation"
@@ -42,7 +42,7 @@ Trace-based custom judges are the interesting mechanism: they *"autonomously exp
 
 ## Judge alignment
 
-MLflow's most distinctive feature. `judge.align(traces, optimizer)` requires each trace to carry **both** a judge assessment and human feedback **under the same assessment name**, minimum **10 traces** (recommended >=30% of each class). Optimizers: **MemAlign** (default, dual-memory few-shot), **SIMBA** and **GEPA** (both DSPy). Where LangSmith measures alignment and lets you tune the prompt, **MLflow optimizes the prompt for you**.
+MLflow's most distinctive feature. `judge.align(traces, optimizer)` requires each trace to carry **both** a judge assessment and human feedback **under the same assessment name**, minimum **10 traces** (recommended >=30% of each class). Optimizers: **MemAlign** (default, dual-memory few-shot), **SIMBA** and **[[gepa|GEPA]]** (both DSPy). Where LangSmith measures alignment and lets you tune the prompt, **MLflow optimizes the prompt for you**.
 
 ## Online vs offline
 

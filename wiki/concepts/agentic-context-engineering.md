@@ -2,7 +2,7 @@
 title: Agentic Context Engineering
 type: concept
 created: 2026-05-17
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - agentic-context-engineering-zhang-2025.md
 status: complete
@@ -18,7 +18,7 @@ tags:
 ## Core mechanism
 
 - **Generator / Reflector / Curator triad** — the Generator produces a reasoning trajectory on a new query and flags which existing bullets helped or hurt; the Reflector distills concrete lessons (with optional iterative refinement); the Curator commits those lessons as structured delta items. Separating reflection from curation is shown by ablation to materially lift quality.
-- **Delta updates vs. full-context rewrites** — context is a list of bullets with stable IDs; updates are localized edits and appends rather than monolithic LLM rewrites. This sidesteps both **brevity bias** (where prompt optimizers like GEPA collapse to short generic instructions) and **context collapse** (case study: context drops from 18,282 tokens at 66.7% accuracy to 122 tokens at 57.1% in a single rewrite step).
+- **Delta updates vs. full-context rewrites** — context is a list of bullets with stable IDs; updates are localized edits and appends rather than monolithic LLM rewrites. This sidesteps both **brevity bias** (where prompt optimizers like [[gepa|GEPA]] collapse to short generic instructions) and **context collapse** (case study: context drops from 18,282 tokens at 66.7% accuracy to 122 tokens at 57.1% in a single rewrite step).
 - **+10.6% on AppWorld, +8.6% on financial benchmarks** — with 86.9% lower adaptation latency on average. Open-source DeepSeek-V3.1 + ACE matches GPT-4.1-powered IBM-CUGA on the AppWorld average and surpasses it on the harder test-challenge split.
 - **Bullet-level memory with helpful/harmful counters** — each playbook entry carries metadata (id, helpful/harmful counters) and content (strategy, domain concept, or failure mode), so the Curator can prune systematically rather than via opaque LLM judgment.
 - **Deterministic non-LLM merging logic** — delta items are merged into the playbook by deterministic rules, which is what makes multiple deltas mergeable in parallel for batched adaptation and what keeps adaptation cost and latency bounded. A periodic grow-and-refine step de-duplicates bullets via semantic embeddings.
@@ -59,3 +59,4 @@ ACE is the first framework to give a rigorous, ablation-backed account of *why* 
 - [[context-engineering]] — the general concept page
 - [[effective-context-engineering-anthropic-2025]] — Anthropic's definitional post (2025-09-29)
 - [[harness-engineering-self-improvement-weng-2026]] — Weng situates ACE and Meta Context Engineering in harness optimization
+- [[gepa-agrawal-2025]] — GEPA paper (ICLR 2026): reflective prompt evolution with a Pareto front; ACE's baseline and brevity-bias example

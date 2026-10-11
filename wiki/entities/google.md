@@ -2,7 +2,7 @@
 title: Google
 type: entity
 created: 2026-06-19
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - from-agi-to-asi-genewein-2026.md
 status: draft
@@ -22,3 +22,4 @@ American technology company whose AI research spans [[google-research|Google Res
 ## Lineage sources
 
 - [[gemini-1-5]] — Gemini 1.5 (2024)
+- [[google-adk]] — Agent Development Kit

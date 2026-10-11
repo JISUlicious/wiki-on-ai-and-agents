@@ -2,7 +2,7 @@
 title: "Meta^n: Recursive Self-Improvement through Emergent Depth"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-08
 sources: []
 arxiv_id: "2608.24735"
 year: 2026
@@ -26,7 +26,7 @@ importance: high
 
 The paper's contribution is first a *definition*, and the definition is what makes the empirical claim legible. **Realized meta-depth** is "the highest level whose behavior actually changes over the course of a run, as opposed to the depth its architecture nominally permits," and a **driver** is "a component that controls such modification but itself never modified during a run." Under those terms the existing literature splits in two, and both halves are shallow:
 
-- **Hand-crafted meta-systems** (FunSearch, AlphaEvolve, [[adas|ADAS]], [[meta-harness-lee-2026|Meta-Harness]], PromptBreeder, GEPA) put a frozen search loop outside the solver. "The solver improves; the improver does not. **Realized meta-depth is 1.**"
+- **Hand-crafted meta-systems** (FunSearch, AlphaEvolve, [[adas|ADAS]], [[meta-harness-lee-2026|Meta-Harness]], PromptBreeder, [[gepa|GEPA]]) put a frozen search loop outside the solver. "The solver improves; the improver does not. **Realized meta-depth is 1.**"
 - **Self-referential agents** (Gödel Agent, [[darwin-godel-machine|DGM]], STOP, [[hyperagents-zhang-2026|HyperAgents]]) let the agent edit its own source, "in principle this permits unbounded depth; in practice **every such system holds some driver fixed** to keep from corrupting itself: Gödel Agent's action API, DGM's archive maintenance and parent selection, HyperAgents' outer evaluation loop." Realized depth is capped at **~2.5** — level 1 for editing the solver, level 2 because the edit logic lives inside the edited source, and half-credit for the frozen driver sitting inside every higher level.
 
 The dilemma: "recursing the improver buys depth only at the price of stability, and every extant system resolves the tension by freezing a driver, which caps the very depth the recursion was meant to deliver." **Meta^n dissolves it by inverting what recurses.** One LLM-prompted meta-operation **Ω** is frozen forever; the *input* recurses. Ω reads the traces of the whole solver stack below **together with the code that produced them**, then writes the next layer as (a) a short Python pre-process injecting strategic context before each task and (b) a small library of callable helper functions. Because Ω never mutates it cannot destabilize the system; because its input strictly grows, "each application operates on inputs of strictly higher order than the last." Depth is not fixed — it grows until Ω stops finding improvements — and an evolutionary archive searches over *chains* of layers rather than greedily extending one.

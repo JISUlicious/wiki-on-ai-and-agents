@@ -2,7 +2,7 @@
 title: Skill Optimization
 type: concept
 created: 2026-06-02
-updated: 2026-09-30
+updated: 2026-10-08
 sources:
   - skillopt-yang-2026.md
   - skillmoo-gong-2026.md
@@ -80,3 +80,8 @@ These connect to the RL-trained memory-operation policies ([[memory-r1]], [[mem-
 ## Related 2026 sources
 
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+
+## Lineage sources
+
+- [[gepa]] — GEPA, the reflective evolutionary optimizer many skill optimizers build on or compare against
+- [[adk-optimize-docs-2026]] — Google ADK's GEPARootAgentOptimizer co-optimizes root and skill instructions

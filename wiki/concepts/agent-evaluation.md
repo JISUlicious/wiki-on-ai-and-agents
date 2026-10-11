@@ -2,7 +2,7 @@
 title: Agent Evaluation
 type: concept
 created: 2026-07-07
-updated: 2026-09-30
+updated: 2026-10-08
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - agent-evaluation-readiness-checklist-langchain-2026.md
@@ -93,7 +93,7 @@ The checklist adds a distinction the tools blur: **guardrails ≠ evaluators.** 
 | | Trajectory approach | Judge alignment | Online eval |
 |---|---|---|---|
 | **LangChain** (`agentevals`) | **reference-matching algebra** — `strict`/`unordered`/`subset`/`superset` × tool-arg modes | Align Evaluator, ≥20 labeled examples, % agreement | yes, + backfill |
-| **MLflow** | **LLM judgment over the trace** — `ToolCallCorrectness`, `ToolCallEfficiency` (no reference needed) | `judge.align()`, ≥10 traces, auto-optimizes via MemAlign/SIMBA/GEPA | **LLM judges only** — code scorers excluded |
+| **MLflow** | **LLM judgment over the trace** — `ToolCallCorrectness`, `ToolCallEfficiency` (no reference needed) | `judge.align()`, ≥10 traces, auto-optimizes via MemAlign/SIMBA/[[gepa\|GEPA]] | **LLM judges only** — code scorers excluded |
 | **DeepEval** | decomposed into 6 metrics: Task Completion, Tool Correctness, Argument Correctness, Step Efficiency, **Plan Adherence, Plan Quality** | — | referenceless metrics only |
 | **NVIDIA NeMo** | Tool Call Accuracy (order-ignored) + **Trajectory Evaluation** (order-checked, offline only) | — | "online" = live *generation*, not traffic |
 | **Langfuse** | **no built-in metrics** — hand-written judge prompts; order-insensitive set comparison | — | yes |
@@ -176,3 +176,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
 - [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+
+## Lineage sources
+
+- [[adk-optimize-docs-2026]] — eval-driven agent optimization in Google ADK

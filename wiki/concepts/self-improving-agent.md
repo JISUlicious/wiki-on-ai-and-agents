@@ -2,7 +2,7 @@
 title: Self-Improving Agent
 type: concept
 created: 2026-05-17
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - darwin-godel-machine-zhang-2025.md
   - voyager-wang-2023.md
@@ -100,3 +100,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[harness-engineering-self-improvement-weng-2026]] — Weng's survey of self-improving harnesses (STOP, Self-Harness, AHE, DGM, Meta-Harness), with challenges
 - [[babyagi-variants-nakajima-2023]] — BabyFoxAGI's 2023 'FOXY' self-improving task planner, an informal precursor
+- [[gepa-agrawal-2025]] — learning in language from traces as an alternative to RL weight updates
