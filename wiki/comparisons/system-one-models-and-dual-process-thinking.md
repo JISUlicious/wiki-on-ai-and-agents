@@ -2,7 +2,7 @@
 title: "System One models and System 1 / System 2 thinking"
 type: comparison
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - dual-process-theory-wikipedia.md
@@ -20,7 +20,7 @@ importance: high
 
 # System One models and System 1 / System 2 thinking
 
-How well does the name fit? [[typesafe-ai|TypeSafe]] named [[jev|Jev]]'s category "System One models" after Kahneman's fast system. By October 2026 [[openai-decisions-api|OpenAI]], [[microsoft-decision-1|Microsoft]] and over 100 others ship the same interface ([[system-one-ecosystem-sweep-2026-10-10]]). This page compares the product category with the psychological theory ([[dual-process-theory]]) and with how LLM research already used "System 1" and "System 2".
+How well does the name fit? [[typesafe-ai|TypeSafe]] named [[jev|Jev]]'s category "System One models" after Kahneman's fast system. That is **confirmed in the primary source**: the launch FAQ says "We were inspired by Daniel Kahneman, *Thinking, Fast and Slow*", and explicitly disowns System 1's error-prone connotation ([[system-one-models-vs-system-one-thinking]]). By October 2026 [[openai-decisions-api|OpenAI]], [[microsoft-decision-1|Microsoft]] and over 100 others ship the same interface ([[system-one-ecosystem-sweep-2026-10-10]]). This page compares the product category with the psychological theory ([[dual-process-theory]]) and with how LLM research already used "System 1" and "System 2".
 
 ## Three meanings of "System 1"
 

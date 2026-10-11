@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -44,6 +44,8 @@ What is new is the *packaging*: frontier-scale world knowledge behind a bounded 
 The week after Jev's announcement supplied unusually fast evidence for the "packaging, not architecture" reading. Three independent open implementations appeared within four days, by two different routes — fine-tuning a small autoregressive model ([[nimble]]) and reading an open diffusion model with no training at all ([[openjev]], [[open-jev-diffusiongemma-harness-github-2026|open-jev]]) — and both landed within roughly 3 points of Jev on its own published cases. The shared mechanism is [[logit-scoring]]. Whatever RLCD contributes, the *interface* is clearly not proprietary.
 
 ## The name, and dual-process theory
+
+**Terminology:** TypeSafe coined "System One model" (2026-09-15) for **decision-only** models. Frontier labs use **"decision model"** instead (Microsoft-Decision-1, OpenAI Decisions API). Earlier AI uses of "System 1", for the fast half of paired architectures (SwiftSage 2023, Helix and GR00T N1 2025), were broader. See [[system-one-models-vs-system-one-thinking]].
 
 "System One" borrows **Kahneman's System 1**: fast, automatic judgment, as opposed to slow deliberation ([[dual-process-theory]]). The fit is partial.
 - **It fits** as a cost split (a cheap reflex for the many routine decisions), as a router inside an agent, and as **automaticity**: deliberate competence compiled into one pass ([[distilling-system-2-into-system-1-yu-2024]]).
@@ -117,3 +119,7 @@ The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the
 ## Related 2026 sources
 
 - [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one
+
+## Lineage sources
+
+- [[system-one-models-vs-system-one-thinking]] — name origin verified: TypeSafe credits Kahneman and rejects the error-prone connotation

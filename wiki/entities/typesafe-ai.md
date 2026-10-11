@@ -2,7 +2,7 @@
 title: TypeSafe AI
 type: entity
 created: 2026-09-21
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
 status: draft
@@ -42,3 +42,4 @@ Signups paused on 2026-09-22; no new model or paper; a second product, **Jev Rou
 ## Lineage sources
 
 - [[system-one-ecosystem-sweep-2026-10-10]] — the category after OpenAI and Microsoft joined
+- [[system-one-models-vs-system-one-thinking]] — name origin of "System One models" and "Jev"

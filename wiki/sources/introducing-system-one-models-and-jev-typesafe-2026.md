@@ -2,7 +2,7 @@
 title: "Introducing System One Models and Jev"
 type: source
 created: 2026-09-21
-updated: 2026-09-21
+updated: 2026-10-11
 sources: []
 authors:
   - [[typesafe-ai]]
@@ -62,6 +62,16 @@ The interesting part is not the benchmark table. It is a commercial model whose 
 - [[jev]] · [[typesafe-ai]] · [[system-one-model]] · [[calibration]]
 - [[constrained-decoding]] — the same validity-by-construction guarantee, at the decoding layer of an ordinary LLM.
 - [[llm-as-a-verifier-kwok-2026]] — evidence that the probability signal is already in the logits and discrete decoding discards it.
+
+
+## Name origin (FAQ in the post)
+
+- **Author:** the post is by **Diogo Almeida, founder**. He describes earlier work at OpenAI on instruction following, "the research behind ChatGPT".
+- **"System One Models":** "We were inspired by **Daniel Kahneman, *Thinking, Fast and Slow***. The model class name draws on the distinction between fast, intuitive System 1 thinking and slow, deliberate System 2 reasoning."
+- **The bias connotation is explicitly disowned:** "'System 1 thinking' has also implied error-prone… we believe System One Models can be made more reliable than its alternatives."
+- **"Jev":** named after **William Stanley Jevons**. Like coal after more efficient steam engines, every order-of-magnitude drop in the cost of intelligence "unlocks orders of magnitude more use cases."
+
+Primary text: `sources/introducing-system-one-models-jev-typesafe-blog.md` (fetched 2026-10-11). See [[system-one-models-vs-system-one-thinking]].
 
 ## References
 

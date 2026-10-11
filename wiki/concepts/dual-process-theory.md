@@ -2,7 +2,7 @@
 title: Dual-Process Theory (System 1 / System 2)
 type: concept
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - dual-process-theory-wikipedia.md
   - thinking-fast-and-slow-wikipedia.md
@@ -72,3 +72,7 @@ The 2026 **[[system-one-model|System One model]]** product class is a fifth use.
 - [[from-system-1-to-system-2-survey-li-2025]]
 - [[dualformer-su-2024]]
 - [[system-1x-saha-2024]]
+
+## Lineage sources
+
+- [[system-one-models-vs-system-one-thinking]] — does "System One model" come from System 1? Yes, by TypeSafe's FAQ

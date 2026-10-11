@@ -2,7 +2,7 @@
 title: Daniel Kahneman
 type: entity
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-11
 sources:
   - thinking-fast-and-slow-wikipedia.md
   - dual-process-theory-wikipedia.md
@@ -30,3 +30,7 @@ The labels themselves were coined by Stanovich and West (2000). The book's relia
 ## References
 
 - [[dual-process-theory-wikipedia]]
+
+## Lineage sources
+
+- [[system-one-models-vs-system-one-thinking]] — TypeSafe cites *Thinking, Fast and Slow* as the name source

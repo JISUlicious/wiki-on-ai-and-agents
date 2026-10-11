@@ -2,10 +2,27 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-10
+updated: 2026-10-11
 ---
 
 # Activity Log
+
+## [2026-10-11] query | System One models vs System 1 thinking: name origin
+
+Filed as [[system-one-models-vs-system-one-thinking]].
+
+**Validated the name origin against TypeSafe's primary launch post**, fetched as `introducing-system-one-models-jev-typesafe-blog.md`; the earlier wiki pages had relied on secondary coverage.
+- The FAQ by founder Diogo Almeida: "We were inspired by Daniel Kahneman, *Thinking, Fast and Slow*." It explicitly rejects System 1's error-prone connotation.
+- Jev is named after William Stanley Jevons.
+
+**Qualifications recorded:**
+- the labels were coined by Stanovich & West (2000), not Kahneman;
+- LLM research used "System 1" earlier, in a different sense, a direct answer;
+- whether the phrase "System One model" was used before 2026-09 is not covered.
+
+**Follow-up (first use):** the category name "System One model(s)" first appears with TypeSafe (2026-09-15); no earlier use was found. "System 1" as the label for an AI system's fast component goes back to Expert Iteration (2017), SwiftSage (2023), Figure Helix (2025-02) and GR00T N1 (2025-03), all verified from primary sources.
+
+**Updated:** [[introducing-system-one-models-and-jev-typesafe-2026]] (name-origin section), [[system-one-models-and-dual-process-thinking]], and backlinks on 5 pages.
 
 ## [2026-10-10] ingest | System One models update + dual-process theory
 
