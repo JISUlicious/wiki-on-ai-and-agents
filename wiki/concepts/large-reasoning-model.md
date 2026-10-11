@@ -2,7 +2,7 @@
 title: Large Reasoning Model (LRM)
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-10
 sources:
   - brain-inspired-graph-multi-agent-systems-hao-2026.md
   - agentic-ai-next-intelligence-explosion-evans-2026.md
@@ -36,3 +36,8 @@ Inference-side controls for LRMs are covered in [[test-time-compute]], [[reasoni
 
 - [[brain-inspired-graph-multi-agent-systems-hao-2026]] · [[agentic-ai-next-intelligence-explosion-evans-2026]] · [[when-to-retrieve-during-reasoning-guo-2026]]
 - [[metis-memory-foundation-model-zhang-2026]] · [[primer-in-post-training-reasoning-data-li-2026]] · [[deepseek-r1-2025]]
+
+## Lineage sources
+
+- [[from-system-1-to-system-2-survey-li-2025]] — survey framing reasoning LLMs as System 2
+- [[dual-process-theory]] — the psychology behind the System 1/2 framing

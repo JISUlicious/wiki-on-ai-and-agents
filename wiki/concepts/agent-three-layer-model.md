@@ -2,7 +2,7 @@
 title: Agent Three-Layer Model
 type: concept
 created: 2026-05-16
-updated: 2026-10-07
+updated: 2026-10-10
 sources:
   - comparison.md
   - claude-code.md
@@ -231,3 +231,4 @@ Refined across [a critique chain in 2026-05-16 conversations](#) — the 8-featu
 - [[llm-powered-autonomous-agents-weng-2023]] — Weng's 2023 planning / memory / tools model
 - [[artificial-intelligence]] — field map: AI ⊃ ML ⊃ DL ⊃ LLM
 - [[harness-engineering-self-improvement-weng-2026]] — Weng's 2026 harness definition and the OS analogy
+- [[system-one-models-and-dual-process-thinking]] — decision model as System 1 reflex; the harness supplies System 2 monitoring

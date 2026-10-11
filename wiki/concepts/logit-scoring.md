@@ -2,7 +2,7 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-10-05
+updated: 2026-10-10
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
@@ -94,3 +94,7 @@ Other constraints are structural: the answer space must be small enough to enume
 
 - [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one
 - [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review
+
+## Lineage sources
+
+- [[s1-decision-model-raghavan-2026]] — open single-pass option-letter scoring at 26B

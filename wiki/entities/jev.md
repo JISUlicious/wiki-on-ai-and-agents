@@ -2,7 +2,7 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-09-30
+updated: 2026-10-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
@@ -65,3 +65,10 @@ Where frontier scale does show up is **label-space capacity**: Jev handles 255 o
 ## Related 2026 sources
 
 - [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one
+
+## Lineage sources
+
+- [[system-one-models-and-dual-process-thinking]] — how well 'System One' fits Kahneman's System 1
+- [[s1-decision-model-raghavan-2026]] — open s1 matches Jev's ECE on JevBench (0.083 vs 0.081)
+- [[microsoft-decision-1]] — Microsoft's competitor (Oct 2026)
+- [[openai-decisions-api]] — OpenAI's competitor (Oct 2026)

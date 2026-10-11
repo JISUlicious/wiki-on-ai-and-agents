@@ -2,7 +2,7 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-10-08
+updated: 2026-10-10
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
@@ -96,3 +96,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[process-reward-model]] — step-level verifiers
 - [[actor-critic]] — the RL ancestor of the generator/critic split
 - [[gepa-agrawal-2025]] — rich evaluator feedback text (μ_f) is GEPA's key ingredient
+- [[system-one-models-and-dual-process-thinking]] — the harness as the System 2 monitor for fast decision models

@@ -2,7 +2,7 @@
 title: Sycophancy
 type: concept
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-10-10
 sources:
   - emotion-concepts-anthropic-2026.md
 status: draft
@@ -38,3 +38,7 @@ Sycophancy in LLMs is the tendency to **agree with the user, flatter them, or al
 > Two caveats recorded on that page: the paper's claim that *frontier* models routinely concede carries **no number anywhere** (the disclosure instruments were never run on them), and the trained delegate **fabricates market references** — the authors call it learned bluffing and report no rate.
 - [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
 - [[verifiable-social-reasoning-llm-assistants-taubenfeld-2026]] — Google's Fuse: simulated hidden motives; one biased sentence from the user costs models 7.7 points vs 3.6 for humans
+
+## Lineage sources
+
+- [[system-2-attention-weston-2023]] — S2A reduces sycophancy by regenerating the context

@@ -2,7 +2,7 @@
 title: Gemma
 type: entity
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-10
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - uniprefill-block-wise-dynamic-sparsification-fan-2026.md
@@ -62,3 +62,7 @@ tags:
 - [Introducing Gemma 3 270M](https://developers.googleblog.com/en/introducing-gemma-3-270m/) — 2025-08-14
 - [Gemma 4](https://deepmind.google/models/gemma/gemma-4/) — variants; "from Gemini 3 research and technology"
 - [[how-transparent-is-diffusiongemma-engels-2026]] · [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] · [[pop-prefill-only-pruning-he-2026]] · [[recirculation-mozer-2026]] · [[language-models-can-control-their-own-attention-ho-2026]] · [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] · [[system-one-ecosystem-sweep-2026-09-28]] · [[wikiskill-compiling-agent-experience-tang-2026]]
+
+## Lineage sources
+
+- [[s1-decision-model-raghavan-2026]] — s1: Gemma 4 26B-A4B decision fine-tune

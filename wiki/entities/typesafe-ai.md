@@ -2,7 +2,7 @@
 title: TypeSafe AI
 type: entity
 created: 2026-09-21
-updated: 2026-09-30
+updated: 2026-10-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
 status: draft
@@ -38,3 +38,7 @@ Signups paused on 2026-09-22; no new model or paper; a second product, **Jev Rou
 ## Related 2026 sources
 
 - [[jev-as-a-judge-accept-when-confident-li-2026]] — CMU pre-registered study of Jev as a cheap judge: well calibrated when a reference or pair anchors the verdict, near chance without one
+
+## Lineage sources
+
+- [[system-one-ecosystem-sweep-2026-10-10]] — the category after OpenAI and Microsoft joined

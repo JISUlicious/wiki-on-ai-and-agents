@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-10-06
+updated: 2026-10-10
 tags: []
 ---
 
@@ -74,9 +74,13 @@ A substantial cluster covers making inference cheaper:
 
 Much of it is grounded in local inference on [[apple-silicon|Apple Silicon]] through [[mlx]] and [[metal]]. It records the gaps between vendor speed claims and what a given chip actually does.
 
-### 8. Typed decision models: old mechanism, new packaging
+### 8. Typed decision models: old mechanism, new packaging, now mainstream
 
-[[jev|Jev]] and the [[system-one-model|System One]] wave sell typed decisions with probabilities instead of text. The wiki traced the mechanism to 2020-era [[cloze-scoring]] (the MMLU readout), and the open reimplementations reached near-parity within days. Independent audits found the central claim, [[calibration]], dataset-dependent and overconfident. As a judge, Jev is well calibrated when a reference anchors the verdict and near chance without one.
+[[jev|Jev]] and the [[system-one-model|System One]] wave sell typed decisions with probabilities instead of text.
+- **An old mechanism.** The wiki traced it to 2020-era [[cloze-scoring]] (the MMLU readout), and open reimplementations reached near-parity within days.
+- **Calibration, the central claim, is shaky.** Independent audits found it dataset-dependent and overconfident. As a judge, Jev is well calibrated when a reference anchors the verdict, and near chance without one.
+- **Now mainstream.** By October 2026, OpenAI ([[openai-decisions-api]]) and Microsoft ([[microsoft-decision-1]]) shipped the same interface, and catalogues count over 100 decision models.
+- **The name is borrowed from Kahneman's System 1.** It fits as a cheap, distilled reflex inside a harness that supplies System 2's monitoring. It misleads where "fast" is taken as a kind of cognition rather than zero decoding ([[system-one-models-and-dual-process-thinking]], [[dual-process-theory]]).
 
 ### 9. Alignment, interpretability, and misuse
 

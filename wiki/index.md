@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-08
+updated: 2026-10-10
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 593 sources, 191 entities, 337 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 604 sources, 194 entities, 338 concepts, 6 comparisons, 15 queries.
 
 ## Entities
 
@@ -76,6 +76,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[laya]] — ModernBERT-large 421M encoder; 7.8x faster than Jev, the route that actually won
 - [[kev]] — Jared Palmer's open Qwen-based decision models, 0.8B-27B; most-starred Jev alternative
 - [[sglang]] — Serving engine; first with a native Jev-compatible /v1/systemone route (2026-09-25)
+- [[microsoft-decision-1]] — Microsoft decision model, Qwen3.5-9B post-train on Foundry (2026-10-09, public preview)
+- [[openai-decisions-api]] — OpenAI typed-decision endpoint on gpt-6-luna; predicate / choice / score (public beta, Oct 2026)
 
 ### Software, libraries, and hardware platforms
 - [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
@@ -170,6 +172,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[thariq-shihipar]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
 - [[sid-bidasaria]] — Anthropic MTS; co-author of the dynamic-workflows engineering post
 - [[francois-chollet]] — Keras creator, ARC Prize co-founder; designer of ARC-AGI 1/2/3, the wiki's harness-effect test bed
+- [[daniel-kahneman]] — Psychologist; *Thinking, Fast and Slow* (2011) popularized System 1 / System 2
 
 ### Organizations
 - [[anthropic]] — Founded 2021 by Amodei et al.; Claude family
@@ -625,6 +628,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cloze-scoring]] — The 2019-2025 prior art: PET, the MMLU readout, and its known pathologies
 - [[diffusion-language-model]] — Generating text by denoising a canvas instead of left-to-right
 - [[jevbench]] — De facto System One leaderboard; equal-weight composite, so rank rewards speed and cost
+- [[dual-process-theory]] — System 1 / System 2 in psychology, and the four ways LLM research uses the metaphor
 
 ## Sources
 
@@ -1448,7 +1452,22 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 ### Claude Code mods (ingested 2026-10-08)
 - [[claude-code-mods-docs-2026]] — Official mods docs + built-in mod sources: about 40 events, the $ API, limits, security model (sec-default, managed controls), built-in mods (v2.1.287, 2026-10-01)
+
+### System One update and dual-process theory (ingested 2026-10-10)
+- [[openai-decisions-api-2026]] — OpenAI Decisions API guide: gpt-6-luna, predicate / choice / score, $0.10/M input
+- [[microsoft-decision-1-2026]] — Microsoft-Decision-1 (Foundry blog, plus Register and OrcaRouter): no published ECE
+- [[s1-decision-model-raghavan-2026]] — s1: open Gemma 4 26B decision model; JevBench 0.808, ECE 0.083
+- [[system-one-ecosystem-sweep-2026-10-10]] — 20+ vendors and "more than 100" decision models; convergence on one interface
+- [[dual-process-theory-wikipedia]] — Dual process theory and *Thinking, Fast and Slow* (secondary; includes critiques and replication issues)
+- [[thinking-fast-and-slow-in-llms-hagendorff-2022]] — CRT on LLMs: GPT-3 intuitive errors about 80%, ChatGPT-4 0% (arXiv 2212.05206)
+- [[system-2-attention-weston-2023]] — S2A: regenerate the context before answering (arXiv 2311.11829)
+- [[distilling-system-2-into-system-1-yu-2024]] — Compile System 2 outputs into one pass; works for RaR, S2A, BSM but not CoT on GSM8K (arXiv 2407.06023)
+- [[system-1x-saha-2024]] — Controller mixing fast and slow planners (arXiv 2407.14414)
+- [[dualformer-su-2024]] — One Transformer with fast, slow and auto modes (arXiv 2410.09918)
+- [[from-system-1-to-system-2-survey-li-2025]] — Survey of reasoning LLMs as System 2 (arXiv 2502.17419)
+
 ## Comparisons
+- [[system-one-models-and-dual-process-thinking]] — How "System One models" relate to Kahneman's System 1/2 and to LLM System 1→2 research: where the analogy fits and where it breaks
 
 - [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side

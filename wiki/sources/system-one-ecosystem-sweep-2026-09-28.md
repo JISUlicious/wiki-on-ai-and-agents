@@ -2,7 +2,7 @@
 title: "System One open ecosystem sweep (2026-09-22 to 09-28)"
 type: source
 created: 2026-09-28
-updated: 2026-10-05
+updated: 2026-10-10
 sources:
   - https://github.com/sgl-project/sglang/pull/41208
   - https://github.com/vllm-project/vllm/pull/57250
@@ -70,3 +70,7 @@ Almost every number here is self-reported by the project that benefits from it, 
 
 - [SGLang #41208](https://github.com/sgl-project/sglang/pull/41208) · [vLLM #57250](https://github.com/vllm-project/vllm/pull/57250) · [vLLM #58951](https://github.com/vllm-project/vllm/issues/58951) · [JevBench](https://github.com/fstandhartinger/jevbench)
 - [kev](https://github.com/jaredpalmer/kev) · [JevK5](https://github.com/allebee/jevk5) · [Imajev](https://github.com/mohit67890/imajev) · [Lichen](https://github.com/Mushroom-Systems/lichen) · [GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) · [open-alternative-jev](https://github.com/ikermoel/open-alternative-jev)
+
+## Lineage sources
+
+- [[system-one-ecosystem-sweep-2026-10-10]] — the next sweep

@@ -2,7 +2,7 @@
 title: Reasoning Effort (the `effort` parameter)
 type: concept
 created: 2026-06-03
-updated: 2026-10-02
+updated: 2026-10-10
 sources:
   - claude-effort-and-ultracode-docs-2026.md
 status: complete
@@ -60,3 +60,7 @@ Effort decouples *capability dialing* from *prompt engineering*: instead of padd
 - [[using-claude-code-spending-your-effort-shihipar-2026]] — Shihipar: on Terminal-Bench 3.0, more effort buys verification and edge-case testing, not better approaches
 - [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics
+
+## Lineage sources
+
+- [[dualformer-su-2024]] — auto mode decides how much to think (2024)

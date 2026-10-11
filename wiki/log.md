@@ -2,10 +2,32 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-08
+updated: 2026-10-10
 ---
 
 # Activity Log
+
+## [2026-10-10] ingest | System One models update + dual-process theory
+
+**Searched for new System One models.** Since the 09-28 sweep, the frontier labs entered:
+- [[openai-decisions-api-2026]]: OpenAI Decisions API, public beta, gpt-6-luna, from the official guide.
+- [[microsoft-decision-1-2026]]: Microsoft-Decision-1, Qwen3.5-9B post-train, from the Foundry blog plus The Register and OrcaRouter.
+- [[s1-decision-model-raghavan-2026]]: s1, fully open, Gemma 4 26B. JevBench 0.808 against Jev's 0.835. ECE 0.083 against Jev's 0.081.
+- [[system-one-ecosystem-sweep-2026-10-10]]: the systemonemodels.org catalogue, with 20+ vendors; The Register counts "more than 100".
+
+**Related the category to dual-process theory:**
+- Sources: [[dual-process-theory-wikipedia]] (Stanovich & West coined the names, Kahneman popularized them; critiques; replication issues), [[thinking-fast-and-slow-in-llms-hagendorff-2022]], [[system-2-attention-weston-2023]], [[distilling-system-2-into-system-1-yu-2024]], [[system-1x-saha-2024]], [[dualformer-su-2024]] and [[from-system-1-to-system-2-survey-li-2025]]. All arXiv IDs were verified through the API.
+- Synthesis: [[dual-process-theory]] (concept) and [[system-one-models-and-dual-process-thinking]] (comparison).
+  - **The fit:** a cost split, a router, automaticity as distillation.
+  - **The breaks:** "fast = System 1" is a fallacy the theory warns against, since the speed comes from zero decoding; System One models still make System 1-style errors; monitoring has to live in the harness; the name clashes with LLM research, where any chat model answering directly is already "System 1".
+
+**Entities created:** [[microsoft-decision-1]], [[openai-decisions-api]], [[daniel-kahneman]].
+
+**Updated:** [[system-one-model]] (new sections on the name and on the October entrants), [[overview]] theme 8, and 21 hubs gained backlinks.
+
+**Contradiction recorded:** Microsoft-Decision-1 is "public preview" in Microsoft's post (10-09) but "GA 10-08" in secondary sources.
+
+**Fix:** the HTML conversion helper had hard-coded "Fetched: 2026-10-06" in its source headers. 18 source files fetched on 10-07, 10-08 and 10-10 were corrected from their file modification dates.
 
 ## [2026-10-08] ingest | Claude Code mods: official docs
 

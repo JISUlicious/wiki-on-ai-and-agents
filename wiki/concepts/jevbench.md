@@ -2,7 +2,7 @@
 title: JevBench
 type: concept
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-10
 sources:
   - system-one-ecosystem-sweep-2026-09-28.md
 status: complete
@@ -46,3 +46,7 @@ Two further caveats. Half the hard tier is public and can be trained on — seve
 ## References
 
 - [[system-one-ecosystem-sweep-2026-09-28]] · [JevBench repository](https://github.com/fstandhartinger/jevbench)
+
+## Lineage sources
+
+- [[s1-decision-model-raghavan-2026]] — s1 0.808 / Jev 0.835 / untuned Gemma 4 26B 0.770

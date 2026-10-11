@@ -2,7 +2,7 @@
 title: Knowledge Distillation
 type: concept
 created: 2026-06-19
-updated: 2026-09-30
+updated: 2026-10-10
 sources:
   - deepseek-r1-2025.md
 status: draft
@@ -33,3 +33,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — a measured failure of trajectory distillation: the student copies a planning strategy it cannot execute
 - [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness
 - [[breaking-the-token-ceiling-byte-model-distillation-marathe-2026]] — Meta: token→byte logit distillation; ~1B byte students overtake token students at high compute (extrapolated)
+
+## Lineage sources
+
+- [[distilling-system-2-into-system-1-yu-2024]] — System 2 distillation, the analogue of automaticity

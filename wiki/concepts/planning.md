@@ -2,7 +2,7 @@
 title: Planning
 type: concept
 created: 2026-09-29
-updated: 2026-10-06
+updated: 2026-10-10
 sources:
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
   - drop-the-hierarchy-and-roles-dochkina-2026.md
@@ -43,3 +43,4 @@ importance: medium
 
 - [[llm-powered-autonomous-agents-weng-2023]] — planning as one of three agent components (2023)
 - [[intelligent-agent]] — goal-based agents in the classical typology
+- [[system-1x-saha-2024]] — fast vs slow planning with a controller

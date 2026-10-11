@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-10-05
+updated: 2026-10-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -11,6 +11,11 @@ sources:
   - independent-jev-calibration-audits-2026.md
   - system-one-ecosystem-sweep-2026-09-28.md
   - jev-research-papers-september-2026.md
+  - microsoft-decision-1-foundry-2026.md
+  - openai-decisions-api-guide-2026.md
+  - s1-decision-model-readme.md
+  - systemonemodels-hub.md
+  - dual-process-theory-wikipedia.md
 status: complete
 importance: high
 ---
@@ -37,6 +42,25 @@ On Hacker News, TypeSafe's founder agreed that Jev is essentially a zero-shot cl
 What is new is the *packaging*: frontier-scale world knowledge behind a bounded interface, calibration as the stated training objective, and per-decision pricing that makes it reasonable to call a model inside a loop. That combination is what a classifier fine-tuned per task never offered.
 
 The week after Jev's announcement supplied unusually fast evidence for the "packaging, not architecture" reading. Three independent open implementations appeared within four days, by two different routes — fine-tuning a small autoregressive model ([[nimble]]) and reading an open diffusion model with no training at all ([[openjev]], [[open-jev-diffusiongemma-harness-github-2026|open-jev]]) — and both landed within roughly 3 points of Jev on its own published cases. The shared mechanism is [[logit-scoring]]. Whatever RLCD contributes, the *interface* is clearly not proprietary.
+
+## The name, and dual-process theory
+
+"System One" borrows **Kahneman's System 1**: fast, automatic judgment, as opposed to slow deliberation ([[dual-process-theory]]). The fit is partial.
+- **It fits** as a cost split (a cheap reflex for the many routine decisions), as a router inside an agent, and as **automaticity**: deliberate competence compiled into one pass ([[distilling-system-2-into-system-1-yu-2024]]).
+- **It breaks** on several points:
+  - "Fast = System 1" is a fallacy the theory itself warns about. The speed here comes from zero decoding steps, not a different kind of cognition.
+  - The models still show System 1-style errors: overconfidence, sensitivity to phrasing and option order, and answering a badly framed question anyway.
+  - The *monitoring* role of System 2 has to live in the harness: thresholds, abstain options, escalation.
+- **Naming clash:** in LLM research, an ordinary chat model answering directly is already called "System 1", and reasoning models are "System 2" ([[from-system-1-to-system-2-survey-li-2025]]). The product name narrows "System 1" to typed, text-free, one-pass decisions.
+
+Full comparison: [[system-one-models-and-dual-process-thinking]].
+
+## October 2026: the frontier labs arrive
+
+- **[[openai-decisions-api|OpenAI Decisions API]]** (public beta, about 2026-10-06): gpt-6-luna; predicate, choice and score questions; text and images; $0.10/M input, output free; no calibration claim ([[openai-decisions-api-2026]]).
+- **[[microsoft-decision-1|Microsoft-Decision-1]]** (2026-10-09, public preview): a Qwen3.5-9B post-train on Foundry; no published ECE ([[microsoft-decision-1-2026]]).
+- **[[s1-decision-model-raghavan-2026|s1]]** (2026-10-08): fully open, Gemma 4 26B-A4B. JevBench 0.808 against Jev's 0.835. **ECE 0.083 against Jev's 0.081**.
+- **The catalogue** lists 20+ vendors, including Cloudflare Clef and Clef-omni, Perplexity, Liquid d1, Upstage and Inception. The Register counts "more than 100" ([[system-one-ecosystem-sweep-2026-10-10]]).
 
 ## Where it fits in an agent
 

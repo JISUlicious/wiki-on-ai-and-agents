@@ -2,7 +2,7 @@
 title: Chain-of-Thought Prompting
 type: concept
 created: 2026-05-13
-updated: 2026-10-07
+updated: 2026-10-10
 sources:
   - chain-of-thought-wei-2022.md
 status: complete
@@ -68,3 +68,5 @@ CoT looks like the model's reasoning, but research (Lanham et al. 2023; Turpin e
 
 - [[prompt-chaining]] — decomposition across calls rather than within one
 - [[prompt-engineering-weng-2023]] — CoT variants surveyed (2023)
+- [[thinking-fast-and-slow-in-llms-hagendorff-2022]] — CoT moves GPT-3 from intuitive (System 1) errors to reflective answers on the CRT
+- [[distilling-system-2-into-system-1-yu-2024]] — CoT is the System 2 method that did not distill on GSM8K

@@ -2,7 +2,7 @@
 title: Microsoft
 type: entity
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-10-10
 sources:
   - skillopt-yang-2026.md
 status: draft
@@ -25,3 +25,7 @@ Related: [[microsoft-research]], [[swe-bench-live]], [[magma]], [[openai]]
 - [[swe-bench-live-zhang-2025]]
 - [[magma-yang-2025]]
 - [[skillopt-yang-2026]]
+
+## Lineage sources
+
+- [[microsoft-decision-1]] — decision model (Oct 2026)

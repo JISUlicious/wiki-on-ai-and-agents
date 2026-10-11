@@ -2,7 +2,7 @@
 title: DeepSeek-R1
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-10
 sources:
   - deepseek-r1-2025.md
 status: complete
@@ -35,3 +35,7 @@ Direct ancestor of [[search-r1]] (extends R1-Zero to retrieval), [[memory-r1]] (
 - Weights: <https://huggingface.co/deepseek-ai>
 - GRPO origin: Shao et al. 2024 (DeepSeekMath).
 - Implicit comparison target: OpenAI o1 (2024).
+
+## Lineage sources
+
+- [[from-system-1-to-system-2-survey-li-2025]] — R1 as a System 2 reasoning model

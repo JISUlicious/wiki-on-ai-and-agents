@@ -2,7 +2,7 @@
 title: OpenAI
 type: entity
 created: 2026-05-13
-updated: 2026-10-07
+updated: 2026-10-10
 sources:
   - gpt-1-radford-2018.md
 status: complete
@@ -44,3 +44,4 @@ Originally founded as a non-profit research lab focused on safe AGI; restructure
 - [[lilian-weng]] — Lil'Log author
 - [[introducing-chatgpt-openai-2022]] — ChatGPT launch (Nov 2022)
 - [[introducing-gpts-openai-2023]] — GPTs (Nov 2023)
+- [[openai-decisions-api]] — Decisions API (Oct 2026)

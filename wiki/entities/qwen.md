@@ -2,7 +2,7 @@
 title: Qwen
 type: entity
 created: 2026-08-30
-updated: 2026-09-14
+updated: 2026-10-10
 sources:
   - qwen3.8-flash-next-model-card-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -45,3 +45,7 @@ Its significance is availability at many sizes. The family ships dense models fr
 ## Related 2026 sources
 
 - [[omlx-specprefill-github-2026]] — the community-recommended pair: Qwen3.5-0.8B as SpecPrefill draft for Qwen3.8-27B — same tokenizer (vocab 248,320), both with MTP heads, target is dense
+
+## Lineage sources
+
+- [[microsoft-decision-1]] — Qwen3.5-9B post-train by Microsoft
