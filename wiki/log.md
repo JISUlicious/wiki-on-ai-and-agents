@@ -7,6 +7,27 @@ updated: 2026-10-08
 
 # Activity Log
 
+## [2026-10-08] ingest | Claude Code mods: official docs
+
+Ingested the official mods documentation as [[claude-code-mods-docs-2026]]: nine code.claude.com pages (overview, create, events, interface, api, reference, admin, test, troubleshoot), the `anthropics/claude-code/mods` README, and the 2.1.287–2.1.291 changelog.
+
+**Rewritten:** [[claude-code-mods]], which had been a draft built from the tutorial.
+
+**Contradictions resolved by the docs:**
+- **Sandboxing.** "Mods aren't sandboxed": they run with full user permissions, and "no DOM/Node" only means all access goes through `$`. Callout added on [[claude-code-mods]] and a note on [[getting-started-with-claude-code-mods-osmani-2026]].
+- **Event name.** The reference has a `session.measure` event; there is no `session.usage` event, only a `$.session.usage()` method.
+
+**New facts:**
+- About 40 events, including `prompt.section` (system prompt), `session.compact`, per-request model and effort in `turn.step`, `agent.spawn`, and `plugin.register` (refuse mods).
+- The limits table.
+- The run order (`sec-default` → prepend → user → append → built-in).
+- A user mod can approve `ask`-rule calls, and these skip the auto-mode classifier.
+- Six built-in mods, including `you-should-know` and `plugin-authoring` (Claude writes mods with hot reload).
+- Desktop has had mods since v2.1.286.
+- First-week guard-bypass fixes.
+
+**Backlinks:** 9 hubs.
+
 ## [2026-10-08] ingest | GEPA: Reflective Prompt Evolution Can Outperform RL (requested by analysis-docs)
 
 Ingested [arXiv:2507.19457](https://arxiv.org/abs/2507.19457) (ICLR 2026 Oral) as [[gepa-agrawal-2025]], and Google ADK's optimization docs as [[adk-optimize-docs-2026]].

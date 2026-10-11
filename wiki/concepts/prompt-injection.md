@@ -2,7 +2,7 @@
 title: Prompt Injection
 type: concept
 created: 2026-05-14
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - greshake-indirect-injection-2023.md
 status: complete
@@ -55,3 +55,4 @@ Distinguishing "instruction" from "data" requires reasoning about *intent*, *tru
 ## Lineage sources
 
 - [[chatgpt-plugins-openai-2023]] — red-teamers found 'sophisticated prompt injection' via plugins (2023)
+- [[claude-code-mods-docs-2026]] — in-process mods with user permissions as a supply-chain surface

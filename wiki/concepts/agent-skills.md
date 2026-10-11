@@ -195,3 +195,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[introducing-gpts-openai-2023]] — GPTs (2023): an instructions + knowledge + tools bundle, a consumer precursor
 - [[babyagi-variants-nakajima-2023]] — BabyFoxAGI's chainable 'skills' (2023)
 - [[adk-optimize-docs-2026]] — ADK optimizes skill instructions with GEPA
+- [[claude-code-mods-docs-2026]] — official comparison: mods vs settings hooks vs skills vs MCP

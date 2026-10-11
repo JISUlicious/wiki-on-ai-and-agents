@@ -2,7 +2,7 @@
 title: "Hooks and Callbacks in Modern Agent Architecture"
 type: query
 created: 2026-05-17
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
   - claude-code.md
   - opencode.md
@@ -159,3 +159,4 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 
 - [[claude-code-changelog-2026]] — Claude Code hooks released in v1.0.38 (2025-06-30); mods in v2.1.287 (2026-10-01)
 - [[langchain-history-2024-2025]] — LangChain 1.0 middleware (2025-10-22): hooks in the agent loop
+- [[claude-code-mods-docs-2026]] — mods: the third kind of Claude Code hook. In-process middleware that can rewrite or answer events, including the system prompt, compaction and subagent spawns

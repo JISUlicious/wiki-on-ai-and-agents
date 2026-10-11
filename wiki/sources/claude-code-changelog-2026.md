@@ -2,7 +2,7 @@
 title: "Claude Code changelog and npm release dates (as of 2026-10-06)"
 type: source
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-08
 sources:
   - claude-code-changelog-2026-10-06.md
   - claude-code-npm-release-dates-2026-10-06.md
@@ -60,3 +60,7 @@ importance: high
 ## Concepts & entities
 
 [[claude-code]] · [[subagents]] · [[hooks-in-modern-agents]] · [[claude-code-mods]] · [[agent-skills]] · [[dynamic-workflows]] · [[ralph-loop]] · [[verifier]] · [[anthropic]]
+
+## Lineage sources
+
+- [[claude-code-mods-docs-2026]] — the docs for the 2.1.287 feature

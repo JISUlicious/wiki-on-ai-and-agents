@@ -125,3 +125,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng's survey (2026-07-04): harness definition, design patterns, harness optimization as the path to RSI
 - [[gepa]] — prompt-level evolutionary search, later reused for harnesses
+- [[claude-code-mods-docs-2026]] — a product harness exposing its system prompt, compaction and per-request model and effort as hook points

@@ -2,7 +2,7 @@
 title: "Getting started with Claude Code mods (Osmani 2026)"
 type: source
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-08
 sources:
   - getting-started-with-claude-code-mods-osmani-2026.md
   - claude-code-mods-gallery-2026.md
@@ -68,6 +68,7 @@ A tutorial introducing **mods**, a new [[claude-code|Claude Code]] extension poi
 
 - No performance, latency or adoption data. This is a tutorial, and the API "can change between releases".
 - The sandbox's isolation guarantees are not specified beyond "no DOM and no Node". It is also unclear how `sec-default` constrains user-installed mods.
+  - **Answered 2026-10-08 by the official docs** ([[claude-code-mods-docs-2026]]): "Mods aren't sandboxed". A mod runs with the user's full permissions, and "no DOM and no Node" only means everything goes through the `$` API. `sec-default` protects organization-managed hooks, the system prompt, managed CLAUDE.md, settings and managed MCP tools, and keeps deny rules final. A user mod can still approve `ask`-rule calls, and those skip the auto-mode classifier.
 - Minor inconsistency: the gallery calls mods "small TypeScript functions", while the post says JS *or* TS modules. The gallery's hook lists also omit some events the tutorial's code uses (`session.start`, `ui.render`).
 
 ## References

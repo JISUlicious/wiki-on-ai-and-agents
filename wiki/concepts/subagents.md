@@ -2,7 +2,7 @@
 title: Subagents
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-08
 sources:
   - claude-code-changelog-2026-10-06.md
   - effective-context-engineering-anthropic-2025.md
@@ -49,3 +49,7 @@ Dates are npm publish dates, from [[claude-code-changelog-2026]]:
 - [[claude-code-changelog-2026]]
 - [[effective-context-engineering-anthropic-2025]]
 - [[building-effective-agents-anthropic-2024]]
+
+## Lineage sources
+
+- [[claude-code-mods-docs-2026]] — agent.offer / agent.spawn hooks: withhold subagent types or choose their model

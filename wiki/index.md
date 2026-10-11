@@ -7,7 +7,7 @@ updated: 2026-10-08
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 592 sources, 191 entities, 337 concepts, 5 comparisons, 15 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 593 sources, 191 entities, 337 concepts, 5 comparisons, 15 queries.
 
 ## Entities
 
@@ -357,7 +357,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[planning]] — Agent planning in the loop, as harness control (PEV), and across multiple agents; its limits and failure rates
 - [[quality-diversity]] — Search for many good, diverse solutions (MAP-Elites); the ancestor of the Darwin Gödel Machine's archive
 - [[universal-search]] — Levin's asymptotically optimal but hardwired program search; the predecessor of the Gödel machine's BIOPS
-- [[claude-code-mods]] — Claude Code mods (v2.1.287): in-process, stateful hook modules shipped as plugins
+- [[claude-code-mods]] — In-process plugin middleware for Claude Code (v2.1.287): rewrite or answer tool, prompt, turn, compaction and UI events; not sandboxed
 - [[agentic-workflow-patterns]] — Workflows vs agents; routing, parallelization, orchestrator-workers, evaluator-optimizer (Anthropic 2024)
 - [[subagents]] — Context-isolated child agents; Claude Code custom subagents 2025-07-24
 - [[intelligent-agent]] — Classical (Russell & Norvig) agent: PEAS, environment types, five agent types
@@ -1445,6 +1445,9 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 ### Prompt optimization (ingested 2026-10-08)
 - [[gepa-agrawal-2025]] — GEPA: Reflective Prompt Evolution Can Outperform RL (arXiv 2507.19457, ICLR 2026 Oral)
 - [[adk-optimize-docs-2026]] — Google ADK `adk optimize`: GEPA root-agent and skill instruction optimizers
+
+### Claude Code mods (ingested 2026-10-08)
+- [[claude-code-mods-docs-2026]] — Official mods docs + built-in mod sources: about 40 events, the $ API, limits, security model (sec-default, managed controls), built-in mods (v2.1.287, 2026-10-01)
 ## Comparisons
 
 - [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead
