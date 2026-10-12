@@ -123,3 +123,4 @@ The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the
 ## Lineage sources
 
 - [[system-one-models-vs-system-one-thinking]] — name origin verified: TypeSafe credits Kahneman and rejects the error-prone connotation
+- [[building-system-one-models-air-gapped]] — how to build and run System One models offline

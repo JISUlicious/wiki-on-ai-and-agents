@@ -7,7 +7,7 @@ updated: 2026-10-11
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 604 sources, 194 entities, 338 concepts, 6 comparisons, 16 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 604 sources, 194 entities, 338 concepts, 6 comparisons, 17 queries.
 
 ## Entities
 
@@ -1476,6 +1476,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 
 ## Queries
+- [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist
 - [[system-one-models-vs-system-one-thinking]] — Does "System One model" come from Kahneman's System 1? Yes (TypeSafe FAQ); where it fits and where it diverges
 
 - [[rationale-behind-diffusiongemma-as-jev]] — Why reading a diffusion canvas reproduces Jev, and why the route still lost

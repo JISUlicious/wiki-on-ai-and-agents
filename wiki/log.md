@@ -7,6 +7,22 @@ updated: 2026-10-11
 
 # Activity Log
 
+## [2026-10-11] query | Building System One models in a local, air-gapped environment
+
+Filed as [[building-system-one-models-air-gapped]].
+
+**Four routes:**
+1. a stock engine with a `/v1/systemone` route ([[sglang]], [[ollama]]) plus any open chat model;
+2. open checkpoints (s1, Kev, Nimble, Laya);
+3. a LoRA fine-tune with a proper-scoring loss, soft targets from a local teacher, and fitted temperature;
+4. a small encoder.
+
+Diffusion is not recommended.
+
+**Air-gap checklist:** move every artefact; quantize from bf16 yourself (GGUF backdoor risk); remove hosted pieces (Kev's Modal loop); check licences (Nimble code is unlicensed; Drex is restrictive); calibrate locally; abstain and escalate.
+
+**Gaps:** no independent evaluations for Kev-27B or the catalogue entries.
+
 ## [2026-10-11] query | System One models vs System 1 thinking: name origin
 
 Filed as [[system-one-models-vs-system-one-thinking]].
