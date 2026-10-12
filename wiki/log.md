@@ -7,6 +7,22 @@ updated: 2026-10-12
 
 # Activity Log
 
+## [2026-10-12] ingest | Decision APIs in model servers: code-verified (SGLang, vLLM, Ollama)
+
+Read the actual source of SGLang v0.5.21, vLLM v0.31.0 and `main` (2026-10-12) and Ollama v0.40.3, plus their PRs. Created [[decision-api-server-implementations-2026]] (source) and [[decision-api-server-implementations]] (comparison).
+
+**Key facts:**
+- **SGLang** serves `/v1/systemone` (#41208, released) and its *own* `/v1/decisions` schema, which is not OpenAI's. The read is prefill-only through `score_prompts`.
+- **vLLM** native `/v1/systemone` exists **only on `main`** (#59299, 2026-10-08). It does a 1-token logprob read with an architecture allowlist; the OpenAI Decisions PR is open.
+- **Ollama** serves only tagged decision models, through a new runner `Scorer`.
+- **Confidence differs by server:** `(n·max−1)/(n−1)` vs `1−H/ln K` vs `p_top·label_mass`.
+- **Dedicated heads on SGLang `main`:** pplx-decider (readout in the LM head) and Clef (joint schema head on the embedding path).
+
+**Corrections:**
+- "vLLM is still example code" (09-28 sweep, [[sglang]], air-gapped query) is now outdated for `main`.
+- The air-gapped query implied Ollama serves any GGUF model on `/v1/systemone`; it does not.
+- In drafting, images were first placed in SGLang v0.5.21; they are on `main` only.
+
 ## [2026-10-12] lint | Fact-check of uncommitted pages (ADK integration status, air-gapped query)
 
 Re-validated every claim on [[adk-system-one-integration-status-2026]] and [[building-system-one-models-air-gapped]].

@@ -2,7 +2,7 @@
 title: Ollama
 type: entity
 created: 2026-10-05
-updated: 2026-10-05
+updated: 2026-10-12
 sources:
   - edgextract-markdown-to-knowledge-graph-mansuy-2026.md
 builds-on:
@@ -43,3 +43,7 @@ This makes Ollama one of the first general-purpose serving engines with a built-
 
 - [Ollama v0.35.0 release notes](https://github.com/ollama/ollama/releases/tag/v0.35.0) · [Decision capability docs](https://github.com/ollama/ollama/blob/main/docs/capabilities/decision.mdx)
 - [[edgextract-markdown-to-knowledge-graph-mansuy-2026]]
+
+## Lineage sources
+
+- [[decision-api-server-implementations-2026]] — `/v1/systemone` only for tagged decision models; runner `Scorer` (llama.cpp and MLX) with candidate rows, decision-head fields and pointer heads

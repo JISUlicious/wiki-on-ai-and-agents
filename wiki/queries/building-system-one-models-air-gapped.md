@@ -2,7 +2,7 @@
 title: "Building System One models in a local, air-gapped environment"
 type: query
 created: 2026-10-11
-updated: 2026-10-11
+updated: 2026-10-12
 sources:
   - s1-decision-model-readme.md
   - systemonemodels-hub.md
@@ -33,8 +33,8 @@ There are four routes, from least work to most control. All of them run offline 
 ## Route A: zero training, read the logits
 
 - **[[sglang|SGLang]] ≥ PR #41208 (2026-09-25):** a native `/v1/systemone` route that serves **any chat model**. It handles up to 255 options (two-letter labels past 26) and was validated with TypeSafe's own SDKs on Qwen3.8-27B and Qwen3.5-35B-A3B. A 27B model passed all 32 checks of a community conformance tool.
-- **[[ollama|Ollama]] ≥ v0.35.0 (2026-09-28):** a native `/v1/systemone` route on the [[llama-cpp|llama.cpp]] / GGUF stack, for CPU, Mac or small-GPU hosts. Local requests need no API key.
-- **[[vllm|vLLM]]:** the `/v1/systemone` server is still example code. A native endpoint had been requested as of 2026-09-28.
+- **[[ollama|Ollama]] ≥ v0.35.0 (2026-09-28):** a native `/v1/systemone` route on the [[llama-cpp|llama.cpp]] and MLX runners. It serves **only models tagged as decision models** (Nimble, Tev1, Clef, Clef Flash), not arbitrary chat models, so for Route A use SGLang. Local requests need no API key.
+- **[[vllm|vLLM]]:** native `/v1/systemone` on `main` since 2026-10-08 (#59299), but **not in any release yet** (v0.31.0 has only an example server). It accepts only Qwen3, Qwen3.5 and DiffusionGemma architectures. See [[decision-api-server-implementations]].
 - **The mechanism** ([[logit-scoring]]): enumerate the options, map each to one token, run one forward pass, softmax over only the candidate tokens, and derive confidence from entropy. **Score each question in its own pass** (isolation) rather than putting all answers on one canvas.
 
 Your existing local LLM becomes a decision service with no training. The cost is accuracy, a few points below a tuned model, and calibration that is your job.
@@ -86,7 +86,7 @@ The open projects converged on this recipe, which runs on local GPUs:
 
 | Hardware | Practical choice |
 |---|---|
-| CPU only | Laya (≤ ~20 options; the catalogue lists CPU support), or a small model you convert to GGUF yourself and serve through Ollama or llama.cpp (Route A) |
+| CPU only | Laya (≤ ~20 options; the catalogue lists CPU support), or a small Ollama decision model such as Nimble (Ollama's `/v1/systemone` accepts only tagged decision models, not arbitrary GGUF chat models) |
 | Apple silicon, 32–64 GB | s1 int4 (about 0.8 s on a 32 GB Mac), Nimble's Apple scorer (444 ms on an M5 Pro 64 GB), Kev 0.8B–9B (the catalogue says they run on a Mac) |
 | One 24–48 GB GPU | Kev-9B, Nimble, a Qwen3.5-9B fine-tune via SGLang; s1 in FP8 only on a 48 GB card (26B weights ≈ 26 GB in FP8, plus cache) |
 | A multi-GPU server | Qwen3.8-27B through SGLang (Route A, no training) or Kev-27B / s1 bf16, then your own LoRA (Route C) |
@@ -104,3 +104,7 @@ The open projects converged on this recipe, which runs on local GPUs:
 - [[s1-decision-model-raghavan-2026]] · [[kev]] · [[nimble]] · [[laya]] · [[openjev]] · [[jevbench]]
 - [[sglang]] · [[ollama]] · [[vllm]] · [[system-one-ecosystem-sweep-2026-09-28]] · [[system-one-ecosystem-sweep-2026-10-10]]
 - [[distilling-system-2-into-system-1-yu-2024]] · [[independent-jev-calibration-audits-2026]] · [[system-one-models-and-dual-process-thinking]]
+
+## Lineage sources
+
+- [[decision-api-server-implementations]] — which server to use: SGLang released; vLLM `main` only; Ollama decision models only

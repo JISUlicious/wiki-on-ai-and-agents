@@ -2,7 +2,7 @@
 title: Calibration
 type: concept
 created: 2026-09-21
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - llm-as-a-verifier-kwok-2026.md
@@ -58,3 +58,4 @@ Acting requires a loss function: choose the action minimizing expected loss unde
 
 - [[s1-decision-model-raghavan-2026]] — proper-scoring-rule fine-tune reaches Jev-level ECE
 - [[microsoft-decision-1-2026]] — a frontier decision model shipped without ECE or Brier
+- [[decision-api-server-implementations-2026]] — three servers compute "confidence" three ways; none is calibrated

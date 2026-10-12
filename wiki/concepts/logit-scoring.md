@@ -2,7 +2,7 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
@@ -98,3 +98,4 @@ Other constraints are structural: the answer space must be small enough to enume
 ## Lineage sources
 
 - [[s1-decision-model-raghavan-2026]] — open single-pass option-letter scoring at 26B
+- [[decision-api-server-implementations-2026]] — how SGLang, vLLM and Ollama implement single-token label reads in production servers

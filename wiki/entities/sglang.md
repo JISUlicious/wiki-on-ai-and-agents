@@ -2,7 +2,7 @@
 title: SGLang
 type: entity
 created: 2026-09-28
-updated: 2026-10-05
+updated: 2026-10-12
 sources:
   - system-one-ecosystem-sweep-2026-09-28.md
 status: draft
@@ -22,6 +22,9 @@ PR [#41208](https://github.com/sgl-project/sglang/pull/41208), merged **2026-09-
 This makes SGLang the simplest way to run a Jev-compatible service on your own hardware: a stock engine and an off-the-shelf model, with no fine-tuning and no patched fork. The answers are read off the model's logits — see [[logit-scoring]] — so calibration is still the operator's job.
 
 At the time of writing, vLLM's equivalent server remains example code rather than a built-in endpoint; a native-endpoint request was opened on 2026-09-28.
+
+> [!success] Resolved: vLLM status
+> **Resolved 2026-10-12:** vLLM merged a native `/v1/systemone` on `main` on 2026-10-08 (#59299). It is not yet in a release (v0.31.0 has only the example). SGLang v0.5.21 also serves an SGLang-specific `/v1/decisions`. Code-level details: [[decision-api-server-implementations-2026]].
 
 ## Related
 

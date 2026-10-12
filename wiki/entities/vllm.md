@@ -2,7 +2,7 @@
 title: vLLM
 type: entity
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-12
 sources:
   - vllm-tool-calling-2025.md
 status: complete
@@ -63,3 +63,7 @@ vLLM is the reference serving engine in most published [[quantization]] evaluati
 
 - [[paged-attention]] — the memory-management technique vLLM is built on
 - [[prefix-caching]] — automatic KV reuse across requests
+
+## Lineage sources
+
+- [[decision-api-server-implementations-2026]] — native `/v1/systemone` on `main` since 2026-10-08 (#59299; not in v0.31.0): a 1-token logprob read, Qwen3/3.5 and DiffusionGemma allowlist; OpenAI Decisions PR #60465 open

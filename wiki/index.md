@@ -7,7 +7,7 @@ updated: 2026-10-12
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 605 sources, 194 entities, 338 concepts, 6 comparisons, 17 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 606 sources, 194 entities, 338 concepts, 7 comparisons, 17 queries.
 
 ## Entities
 
@@ -1466,8 +1466,10 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[dualformer-su-2024]] — One Transformer with fast, slow and auto modes (arXiv 2410.09918)
 - [[from-system-1-to-system-2-survey-li-2025]] — Survey of reasoning LLMs as System 2 (arXiv 2502.17419)
 - [[adk-system-one-integration-status-2026]] — Google ADK has no System One support: PR #7235 open; LiteLLM 1.105 supports decisions but ADK's bridge can't reach it (2026-10-12)
+- [[decision-api-server-implementations-2026]] — Code-level: how SGLang v0.5.21, vLLM v0.31.0 and main, and Ollama v0.40.3 implement decision APIs (2026-10-12)
 
 ## Comparisons
+- [[decision-api-server-implementations]] — SGLang vs vLLM vs Ollama decision endpoints (/v1/systemone, /v1/decisions), code-verified 2026-10-12
 - [[system-one-models-and-dual-process-thinking]] — How "System One models" relate to Kahneman's System 1/2 and to LLM System 1→2 research: where the analogy fits and where it breaks
 
 - [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead
