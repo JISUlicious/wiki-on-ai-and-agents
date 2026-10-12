@@ -2,7 +2,7 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-10-11
+updated: 2026-10-12
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
@@ -73,3 +73,4 @@ Where frontier scale does show up is **label-space capacity**: Jev handles 255 o
 - [[microsoft-decision-1]] — Microsoft's competitor (Oct 2026)
 - [[openai-decisions-api]] — OpenAI's competitor (Oct 2026)
 - [[system-one-models-vs-system-one-thinking]] — name origin (Jevons)
+- [[adk-system-one-integration-status-2026]] — Google ADK integration PR #7235 (open, unmerged)

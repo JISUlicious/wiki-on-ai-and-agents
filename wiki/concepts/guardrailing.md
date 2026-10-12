@@ -2,7 +2,7 @@
 title: Guardrailing
 type: concept
 created: 2026-05-14
-updated: 2026-10-08
+updated: 2026-10-12
 sources:
   - rlhf-christiano-2017.md
   - constitutional-ai-bai-2022.md
@@ -89,3 +89,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 ## Lineage sources
 
 - [[claude-code-mods-docs-2026]] — sec-default guard, policy mods, managed controls; mods can approve tool calls before the prompt
+- [[adk-system-one-integration-status-2026]] — LiteLLM proxy guardrail hooks backed by decision models (typesafe, decision_model)

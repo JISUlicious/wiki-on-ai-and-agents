@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-11
+updated: 2026-10-12
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 604 sources, 194 entities, 338 concepts, 6 comparisons, 17 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 605 sources, 194 entities, 338 concepts, 6 comparisons, 17 queries.
 
 ## Entities
 
@@ -1465,6 +1465,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[system-1x-saha-2024]] — Controller mixing fast and slow planners (arXiv 2407.14414)
 - [[dualformer-su-2024]] — One Transformer with fast, slow and auto modes (arXiv 2410.09918)
 - [[from-system-1-to-system-2-survey-li-2025]] — Survey of reasoning LLMs as System 2 (arXiv 2502.17419)
+- [[adk-system-one-integration-status-2026]] — Google ADK has no System One support: PR #7235 open; LiteLLM 1.105 supports decisions but ADK's bridge can't reach it (2026-10-12)
 
 ## Comparisons
 - [[system-one-models-and-dual-process-thinking]] — How "System One models" relate to Kahneman's System 1/2 and to LLM System 1→2 research: where the analogy fits and where it breaks

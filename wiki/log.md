@@ -2,10 +2,41 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-11
+updated: 2026-10-12
 ---
 
 # Activity Log
+
+## [2026-10-12] lint | Fact-check of uncommitted pages (ADK integration status, air-gapped query)
+
+Re-validated every claim on [[adk-system-one-integration-status-2026]] and [[building-system-one-models-air-gapped]].
+
+**Newly verified:**
+- litellm 1.105.0 runtime (`decisions` / `systemone` exist; `typesafe/jev-latest` resolves; chat config is None);
+- ADK's `model_consult` resolves through `LLMRegistry` to a `BaseLlm`;
+- `lite_llm.py` imports `acompletion` only;
+- `Gemma3Ollama` handles `ollama/gemma3*`;
+- langchain, crewai and mongodb integrations exist;
+- default-branch code search has 0 hits for "systemone" and "jev".
+
+**Corrected:**
+- PR #7235's CLA check is now *success* (the "failing CLA" report is outdated).
+- Liquid d1 and Strands Decider have **no licence stated**; the page had listed them as Apache-2.0.
+- "The open projects mostly did not distil from Jev" overreached: Nimble says it did not, and JevK5 distilled from Qwen3.6-27B and the hosted GPT-6 Luna.
+- The sizing table had an unsupported "Kev via Ollama" claim, and a 24 GB GPU cannot hold s1 in FP8 (it needs a 48 GB card).
+
+## [2026-10-12] ingest | Google ADK × System One / Decisions integration status (from analysis-docs)
+
+Created [[adk-system-one-integration-status-2026]] from evidence the analysis-docs session sent. The wiki re-verified it:
+- **PR #7235**, checked through the GitHub API: open, unmerged, 21 files, dirty.
+- **litellm 1.105.0**: `decisions` and `systemone` modules, the `TYPESAFE` provider, TypeSafe, Perplexity and OpenRouter decision transforms, and decision-model guardrail hooks.
+- **ADK 2.11.0**: the LiteLLM prefix allowlist has no `typesafe/`.
+
+**Allowlist:** 16 patterns, as the requester reported. A first draft wrongly "corrected" it; this wiki's extraction regex missed `ollama/(?!gemma3)` and `ai21/`. The analysis-docs session flagged the error, and it was reverted and re-verified. The LiteLLM proxy guardrail hooks are recorded as a LiteLLM feature, distinct from ADK support.
+
+**Narrowed:** "model_consult" moves from "cannot judge" to "not applicable".
+
+**Updated:** [[google-adk]], [[system-one-model]], [[openai-decisions-api]], [[jev]], [[guardrailing]].
 
 ## [2026-10-11] query | Building System One models in a local, air-gapped environment
 

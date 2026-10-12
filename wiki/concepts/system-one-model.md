@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-10-11
+updated: 2026-10-12
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -124,3 +124,4 @@ The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the
 
 - [[system-one-models-vs-system-one-thinking]] — name origin verified: TypeSafe credits Kahneman and rejects the error-prone connotation
 - [[building-system-one-models-air-gapped]] — how to build and run System One models offline
+- [[adk-system-one-integration-status-2026]] — frameworks integrate decision models as tools and callbacks, not chat models: Google ADK PR #7235 (open); LiteLLM 1.105 decisions, systemone and guardrail hooks

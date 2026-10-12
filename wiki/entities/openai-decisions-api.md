@@ -2,7 +2,7 @@
 title: OpenAI Decisions API
 type: entity
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-12
 sources:
   - openai-decisions-api-guide-2026.md
 release_date: 2026-10-06
@@ -32,3 +32,7 @@ It is functionally a hosted [[system-one-model]], mapping onto Jev's Noul / Choi
 
 - [[openai-decisions-api-2026]]
 - [[system-one-ecosystem-sweep-2026-10-10]]
+
+## Lineage sources
+
+- [[adk-system-one-integration-status-2026]] — LiteLLM 1.105 routes decisions to TypeSafe, Perplexity and OpenRouter; Google ADK has no support
