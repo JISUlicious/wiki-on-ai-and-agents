@@ -7,6 +7,27 @@ updated: 2026-10-12
 
 # Activity Log
 
+## [2026-10-12] query | Decision API internals: prompt, output token, confidence
+
+Filed as [[decision-api-internals-prompt-output-confidence]]. Code traced in SGLang v0.5.21, vLLM `main` and Ollama v0.40.3; the excerpts were appended to the source file, now about 2,640 lines.
+
+**Prompts:**
+- SGLang and vLLM write generic wording into a user message rendered with the chat template, thinking off.
+- Ollama replays each decision model's training format (Nimble and Tev1 JSON) with the model's own system prompt.
+
+**Output-token control:**
+- SGLang: prefill-only, `max_new_tokens=0` + `token_ids_logprob`.
+- vLLM: a 1-token greedy decode + `logprob_token_ids` from raw log-softmax (≤128 IDs).
+- Ollama llama.cpp: logit_bias +100 on candidates with top_k = #candidates (the softmax is preserved, label mass is lost).
+- Ollama MLX: unembeds candidate rows only.
+
+**Confidence:**
+- SGLang: `systemone/serving.py` `_choice_confidence` / `_score_confidence`.
+- vLLM: `question_types.py` `answer()`, `p_top × label_mass`.
+- Ollama: `decision/systemone.go` `Answer()`, `1 − H/ln K`.
+
+**Corrected in drafting:** vLLM's yes/no fix is in `reply_line`; PR #60870 was closed unmerged.
+
 ## [2026-10-12] ingest | Decision APIs in model servers: code-verified (SGLang, vLLM, Ollama)
 
 Read the actual source of SGLang v0.5.21, vLLM v0.31.0 and `main` (2026-10-12) and Ollama v0.40.3, plus their PRs. Created [[decision-api-server-implementations-2026]] (source) and [[decision-api-server-implementations]] (comparison).

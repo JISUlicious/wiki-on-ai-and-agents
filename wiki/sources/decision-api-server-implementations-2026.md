@@ -90,3 +90,7 @@ Thresholds tuned on one server's `confidence` **do not transfer** to another, ev
 ## Concepts & entities
 
 [[sglang]] · [[vllm]] · [[ollama]] · [[system-one-model]] · [[logit-scoring]] · [[calibration]] · [[openai-decisions-api]] · [[jev]] · [[nimble]] · [[diffusiongemma]]
+
+## Lineage sources
+
+- [[decision-api-internals-prompt-output-confidence]] — code-level deep dive: prompt, output-token control, confidence

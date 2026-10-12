@@ -35,3 +35,7 @@ A code-verified comparison as of 2026-10-12. Details and evidence: [[decision-ap
 ## References
 
 - [[decision-api-server-implementations-2026]] · [[system-one-model]] · [[logit-scoring]] · [[openai-decisions-api]]
+
+## Lineage sources
+
+- [[decision-api-internals-prompt-output-confidence]] — code-level deep dive: prompt, output-token control, confidence
