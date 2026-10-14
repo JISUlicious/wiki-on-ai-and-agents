@@ -91,6 +91,7 @@ The open projects converged on this recipe, which runs on local GPUs:
 | CPU only | Laya (≤ ~20 options; the catalogue lists CPU support), or a small Ollama decision model such as Nimble (Ollama's `/v1/systemone` accepts only tagged decision models, not arbitrary GGUF chat models) |
 | Apple silicon, 32–64 GB | s1 int4 (about 0.8 s on a 32 GB Mac), Nimble's Apple scorer (444 ms on an M5 Pro 64 GB), Kev 0.8B–9B (the catalogue says they run on a Mac) |
 | One 24–48 GB GPU | Kev-9B, Nimble, a Qwen3.5-9B fine-tune via SGLang; s1 in FP8 only on a 48 GB card (26B weights ≈ 26 GB in FP8, plus cache) |
+| Weight memory, bf16 (Hugging Face parameter counts) | Tev1-4B 9.3 GB · Clef-flash 18.8 GB · Kev-27B, s1, pplx-decider and Clef 51–55 GB · Clef-omni 70.5 GB. Add KV cache. See [[decision-api-server-implementations-2026]]. |
 | A multi-GPU server | Qwen3.8-27B through SGLang (Route A, no training) or Kev-27B / s1 bf16, then your own LoRA (Route C) |
 
 ## Gaps

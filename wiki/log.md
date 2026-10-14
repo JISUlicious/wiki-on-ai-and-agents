@@ -7,6 +7,17 @@ updated: 2026-10-13
 
 # Activity Log
 
+## [2026-10-13] ingest | Decision models on NVIDIA GPUs: weight memory, SGLang release check (from analysis-docs)
+
+analysis-docs supplied evidence, re-verified here:
+- **SGLang v0.5.21:** the tag has `/v1/decisions` (line 1963) and `/v1/systemone` (line 2086). Its release notes list both. The docs' "install a nightly" sentence is stale, rechecked as still present.
+- **Hugging Face parameter counts** for 7 decision checkpoints, used for a weight-memory table (bf16 and ~4-bit).
+- **Ollama v0.40.4-rc0** (#18917) updates llama.cpp for decision models.
+
+Also: the SGLang score-confidence formula is now explicit on the comparison page. SGLang validates only BF16 on an H200, so the pages add a note to recalibrate after quantizing.
+
+Pages updated: [[decision-api-server-implementations-2026]], [[decision-api-server-implementations]], [[building-system-one-models-air-gapped]].
+
 ## [2026-10-13] ingest | Ollama decision models: blog, releases, repos, ollama-python (from analysis-docs)
 
 Created [[ollama-decision-models-2026]] from evidence analysis-docs gathered. Re-verified:

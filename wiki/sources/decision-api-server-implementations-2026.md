@@ -2,7 +2,7 @@
 title: "How SGLang, vLLM and Ollama implement /v1/systemone and /v1/decisions (code-verified, 2026-10-12)"
 type: source
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - decision-api-server-implementations-2026-10-12.md
 year: 2026
@@ -81,10 +81,41 @@ Thresholds tuned on one server's `confidence` **do not transfer** to another, ev
 4. **Dedicated heads are the new frontier:** pplx-decider's readout and Clef's joint schema head. Generic logit reading is the baseline; trained heads get their own route and refuse the generic one.
 5. **Reproducibility hooks:** SGLang pins `prompt_format_version` and can return prompt and label token IDs. vLLM added a cache salt and tracing (#60786). SGLang warns that answers can vary with batch composition and prefix caching.
 
+## GPU memory for the weights (added 2026-10-13)
+
+Parameter counts come from the Hugging Face API (`safetensors.total`, checked 2026-10-13). The figures cover **weights only**, not KV cache, activations or the engine's reserved memory.
+- **bf16:** 2 bytes per parameter.
+- **4-bit:** about 0.55 bytes per parameter (an approximation from analysis-docs).
+
+| Repo | Parameters | bf16 | ~4-bit |
+|---|---|---|---|
+| `togethercomputer/Tev1-4B-experimental` | 4.66B | 9.3 GB | 2.6 GB |
+| `Cloudflare/clef-flash` | 9.41B | 18.8 GB | 5.2 GB |
+| `jaredpalmer/kev-27b` | 25.6B | 51.2 GB | 14.1 GB |
+| `j-raghavan/s1-gemma4-26b-decision` | 25.8B | 51.6 GB | 14.2 GB |
+| `perplexity-ai/pplx-decider-v1-27b` | 26.1B | 52.2 GB | 14.3 GB |
+| `Cloudflare/clef` | 27.4B | 54.7 GB | 15.0 GB |
+| `Cloudflare/clef-omni` | 35.3B | 70.5 GB | 19.4 GB |
+
+**Notes on the table:**
+- **Nimble.** `bespokelabs/Bespoke-Nimble-9B` has no safetensors metadata, which fits it being a LoRA adapter. Its Qwen3.5-9B base implies about 18–19 GB in bf16; this is not verified.
+- **s1 is a mixture-of-experts model (Gemma 4 26B-A4B).** Few parameters are active per token, but all 26B must be held in memory. This fits the wiki's estimate of a 48 GB card for FP8.
+- **bf16 checkpoints over about 26B** need more than one 48 GB card, or an 80 GB card, before cache.
+
+> [!note] Quantization moves the probabilities
+> SGLang's decision-models docs validate only on **one H200 in BF16** (Qwen3.8-27B and Qwen3.5-35B-A3B) and give no quantization guidance. Quantizing (FP8, 4-bit) can shift the label probabilities, so **recalibrate thresholds after quantizing** ([[calibration]]).
+
+**Ollama:** v0.40.4-rc0 (pre-release, 2026-10-12) updates llama.cpp to b11521 "for decision models" (#18917).
+
 ## Caveats
 
 - **Not run.** Read from source only; no server was started.
-- **Stale SGLang note.** SGLang's docs still say "until a release contains it, install a nightly", but v0.5.21 contains it.
+- **Stale SGLang note.** SGLang's decision-models docs page still says "Until a release contains it, install a nightly build" (rechecked 2026-10-13). The release contradicts it:
+  - the v0.5.21 tag has `@app.post("/v1/decisions")` at `srt/entrypoints/http_server.py:1963` and `@app.post("/v1/systemone")` at `:2086`;
+  - analysis-docs found the same lines in the PyPI `manylinux` wheel;
+  - the v0.5.21 release notes (2026-10-02) list both: a "New Decisions API (`/v1/decisions`)" and #41208, which "also ships the `/v1/decisions` route it builds on".
+
+  Treat the docs sentence as written before the release. The wheel has no `clef` or `decider` code, which confirms that pplx-decider and Clef are on `main` only.
 - **CI at merge.** SGLang PR #42183 showed failing CI badges in its body when merged.
 
 ## Concepts & entities
