@@ -2,7 +2,7 @@
 title: Ollama
 type: entity
 created: 2026-10-05
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - edgextract-markdown-to-knowledge-graph-mansuy-2026.md
 builds-on:
@@ -47,3 +47,4 @@ This makes Ollama one of the first general-purpose serving engines with a built-
 ## Lineage sources
 
 - [[decision-api-server-implementations-2026]] — `/v1/systemone` only for tagged decision models; runner `Scorer` (llama.cpp and MLX) with candidate rows, decision-head fields and pointer heads
+- [[ollama-decision-models-2026]] — blog (2026-09-29), v0.35.0 Nimble and Tev1, v0.35.1 Clef and Clef Flash (multimodal), MLX support 2026-10-03; ollama-python 0.6.3 `systemone()`; Jev is not in the library

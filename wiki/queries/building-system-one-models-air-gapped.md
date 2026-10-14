@@ -2,7 +2,7 @@
 title: "Building System One models in a local, air-gapped environment"
 type: query
 created: 2026-10-11
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
   - s1-decision-model-readme.md
   - systemonemodels-hub.md
@@ -33,7 +33,7 @@ There are four routes, from least work to most control. All of them run offline 
 ## Route A: zero training, read the logits
 
 - **[[sglang|SGLang]] ≥ PR #41208 (2026-09-25):** a native `/v1/systemone` route that serves **any chat model**. It handles up to 255 options (two-letter labels past 26) and was validated with TypeSafe's own SDKs on Qwen3.8-27B and Qwen3.5-35B-A3B. A 27B model passed all 32 checks of a community conformance tool.
-- **[[ollama|Ollama]] ≥ v0.35.0 (2026-09-28):** a native `/v1/systemone` route on the [[llama-cpp|llama.cpp]] and MLX runners. It serves **only models tagged as decision models** (Nimble, Tev1, Clef, Clef Flash), not arbitrary chat models, so for Route A use SGLang. Local requests need no API key.
+- **[[ollama|Ollama]] ≥ v0.35.0 (2026-09-28; Clef in v0.35.1):** a native `/v1/systemone` route on the [[llama-cpp|llama.cpp]] and MLX runners. It serves **only models tagged as decision models** (Nimble, Tev1, Clef, Clef Flash), not arbitrary chat models, so for Route A use SGLang. Local requests need no API key.
 - **[[vllm|vLLM]]:** native `/v1/systemone` on `main` since 2026-10-08 (#59299), but **not in any release yet** (v0.31.0 has only an example server). It accepts only Qwen3, Qwen3.5 and DiffusionGemma architectures. See [[decision-api-server-implementations]].
 - **The mechanism** ([[logit-scoring]]): enumerate the options, map each to one token, run one forward pass, softmax over only the candidate tokens, and derive confidence from entropy. **Score each question in its own pass** (isolation) rather than putting all answers on one canvas.
 
@@ -44,10 +44,12 @@ Your existing local LLM becomes a decision service with no training. The cost is
 | Model | Base / size | Licence (as recorded) | Notes |
 |---|---|---|---|
 | [[s1-decision-model-raghavan-2026\|s1]] | Gemma 4 26B-A4B | Apache-2.0; open weights, **data, code and eval** | JevBench 0.808. int4 GGUF via Ollama (about 17 GB) runs on a 32 GB Mac at about 0.8 s/decision. FP8 on one RTX PRO 6000: 28 ms. |
-| [[kev\|Kev]] | Qwen3.5 / 3.8, 0.8B–27B | Apache-2.0 | Fitted temperature ships with each checkpoint; drop-in for TypeSafe's SDK. **Its fine-tune loop runs on Modal (hosted): replace it for air-gapped use.** Kev-4B ranks only 31st on JevBench; no independent figure for 27B. |
-| [[nimble\|Nimble]] | Qwen3.5-9B LoRA | weights Apache-2.0; **GitHub code had no licence** | Flat schemas only (enums of 1–26, booleans); prompt cap 2,048 tokens. Its Apple-silicon scorer parallelizes fields, its CUDA scorer does not. |
+| [[kev\|Kev]] | Qwen3.5 / 3.8, **0.5B–27B** (seven sizes on HF, `jaredpalmer/kev-*`) | Apache-2.0 (kev-4b verified) | Fitted temperature ships with each checkpoint; drop-in for TypeSafe's SDK. **Its fine-tune loop runs on Modal (hosted): replace it for air-gapped use.** Kev-4B ranks only 31st on JevBench; no independent figure for 27B. |
+| [[nimble\|Nimble]] | Qwen3.5-9B LoRA (`bespokelabs/Bespoke-Nimble-9B`, plus v2, v3 and 27B-v3) | weights Apache-2.0; **GitHub code had no licence** | Flat schemas only (enums of 1–26, booleans); prompt cap 2,048 tokens. Its Apple-silicon scorer parallelizes fields, its CUDA scorer does not. |
 | [[laya\|Laya]] | ModernBERT-large 421M; mmBERT-base 322M (100+ languages) | Apache-2.0 | GGUF, CoreML, ONNX and MLX conversions exist. **Route by option count: fine under ~20 options, collapses on 77+** (Banking77 46% vs Jev 80%). |
-| Others listed by the catalogue (unverified here) | Cloudflare Clef / Clef-flash / Clef-omni; Perplexity pplx-decider-27b; Fastino GLiNER2.5-Decide (340M encoder) | Apache-2.0 per the catalogue ([[system-one-ecosystem-sweep-2026-10-10]]) | Check each licence and model card before relying on them. |
+| Cloudflare Clef / Clef-flash / Clef-omni | Qwen3.8-27B / Qwen3.5-9B / Qwen3-Omni-30B-A3B (HF `Cloudflare/clef`, `clef-flash`, `clef-omni`) | **Apache-2.0 (Hugging Face metadata, verified)** | Ollama tags `clef`, `clef-flash` (v0.35.1+, images). Clef-omni (audio and video) is not in Ollama's list. |
+| Together Tev1 4B / 0.8B experimental | Qwen3.5-4B / 0.8B (`togethercomputer/Tev1-*-experimental`) | **none declared on Hugging Face**, so check before use | Ollama `tev1`, `tev1:0.8b`; max 24 options |
+| Others listed by the catalogue (unverified here) | Perplexity pplx-decider-27b; Fastino GLiNER2.5-Decide (340M encoder) | Apache-2.0 per the catalogue ([[system-one-ecosystem-sweep-2026-10-10]]) | Check each licence and model card before relying on them. |
 | Open weights, licence unstated | Liquid d1-3B, d1-omni-600M (catalogue); Strands Decider 2B ("open source", per The Register) | **unknown** | Confirm the licence before use. Nace's Drex is under a restrictive licence that limits commercial use. |
 
 **A gateway option:** [[openjev|OpenJev]] serves several models behind one Jev-compatible API, so TypeSafe's SDK works unchanged with only a base-URL swap. Its README recommends a hosted service run by its own author; ignore that in an air-gapped deployment.
@@ -108,3 +110,4 @@ The open projects converged on this recipe, which runs on local GPUs:
 ## Lineage sources
 
 - [[decision-api-server-implementations]] — which server to use: SGLang released; vLLM `main` only; Ollama decision models only
+- [[ollama-decision-models-2026]] — repo names, licences, Ollama tags and sizes; ollama-python `systemone()`; TypeSafe SDK via `TYPESAFE_BASE_URL=http://localhost:11434`

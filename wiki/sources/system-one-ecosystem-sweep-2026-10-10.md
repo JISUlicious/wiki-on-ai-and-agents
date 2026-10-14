@@ -2,7 +2,7 @@
 title: "System One ecosystem sweep (2026-10-10)"
 type: source
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-13
 sources:
   - systemonemodels-hub.md
   - microsoft-decision-1-register-2026.md
@@ -71,3 +71,7 @@ The open, fully reproducible [[s1-decision-model-raghavan-2026|s1]] (Gemma 4 26B
 ## Concepts & entities
 
 [[system-one-model]] · [[openai-decisions-api]] · [[microsoft-decision-1]] · [[kev]] · [[laya]] · [[jev]] · [[calibration]] · [[logit-scoring]] · [[dual-process-theory]]
+
+## Lineage sources
+
+- [[ollama-decision-models-2026]] — Clef, Clef-flash and Clef-omni Apache-2.0 confirmed from HF metadata; Tev1 declares no licence

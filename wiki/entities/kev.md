@@ -2,7 +2,7 @@
 title: Kev
 type: entity
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-13
 sources:
   - https://github.com/jaredpalmer/kev
   - system-one-ecosystem-sweep-2026-09-28.md
@@ -22,7 +22,7 @@ A family of open [[system-one-model|System One]] decision models by Jared Palmer
 
 ## What it offers
 
-- Four sizes: Kev-0.8B, 4B and 9B from Qwen3.5 base models with a shared recipe; Kev-27B from Qwen3.8-27B's post-trained release. See [[qwen]].
+- Four sizes at first: Kev-0.8B, 4B and 9B from Qwen3.5 base models with a shared recipe; Kev-27B from Qwen3.8-27B's post-trained release. **By 2026-10-13 Hugging Face lists seven:** `jaredpalmer/kev-0.5b`, `0.6b`, `0.8b`, `4b`, `8b`, `9b`, `27b`. kev-4b is Apache-2.0 on Qwen/Qwen3.5-4B-Base; the others weren't checked ([[ollama-decision-models-2026]]). See [[qwen]].
 - `noul`, `choice` and `score` questions in one request. **Questions share the text but cannot read each other** — the isolation that [[logit-scoring]] records as the safe configuration.
 - A temperature fitted on held-out data ships with each checkpoint, so probabilities are calibrated by default.
 - Drop-in for Jev: TypeSafe's Python SDK works against a Kev server unchanged.
@@ -51,3 +51,7 @@ The README is candid that this is not a controlled comparison, since Jev's train
 ## References
 
 - [jaredpalmer/kev](https://github.com/jaredpalmer/kev) · [[system-one-ecosystem-sweep-2026-09-28]]
+
+## Lineage sources
+
+- [[ollama-decision-models-2026]] — Hugging Face repos: seven Kev sizes (0.5B–27B)

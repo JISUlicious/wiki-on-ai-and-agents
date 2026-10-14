@@ -2,10 +2,26 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-12
+updated: 2026-10-13
 ---
 
 # Activity Log
+
+## [2026-10-13] ingest | Ollama decision models: blog, releases, repos, ollama-python (from analysis-docs)
+
+Created [[ollama-decision-models-2026]] from evidence analysis-docs gathered. Re-verified:
+- the blog's 91 ms quote (M5 Max, Pac-Man example, runtime unstated);
+- the v0.35.0 and v0.35.1 release notes;
+- Hugging Face licences, bases and creation dates for Nimble, Kev, Tev1 and Clef (all three);
+- seven Kev repos;
+- `systemone()` in the ollama-python 0.6.3 wheel;
+- Ollama library pages, where `jev` returns 404.
+
+Download sizes are recorded as reported, not re-verified.
+
+**Updated:** [[kev]] (seven sizes, not four), [[nimble]], [[ollama]], [[building-system-one-models-air-gapped]] (repo names; Clef Apache-2.0 confirmed from HF; Tev1 has no licence declared), [[system-one-ecosystem-sweep-2026-10-10]].
+
+**Noted, not reconciled:** the Clef HF repos were created on 2026-09-30, a day after Ollama v0.35.1 shipped them.
 
 ## [2026-10-12] query | Decision API internals: prompt, output token, confidence
 
