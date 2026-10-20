@@ -2,7 +2,7 @@
 title: "Attention Residuals (Technical Report)"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-10-20
 sources:
   - attention-residuals-kimi-team-2026.pdf
 arxiv_id: "2603.15031"
@@ -53,3 +53,7 @@ To control the memory and communication cost of attending over all prior layers 
 
 - [[moonshot-ai]] — the publishing lab; AttnRes and KDA converge in Kimi K3
 - [[linear-attention]] — the sibling Kimi Team line
+
+## Lineage sources
+
+- [[depth-memory-gonzalez-martinez-2026]] — places AttnRes in a unifying depth-memory framework (an *explicit* depth mixer) and benchmarks it: Block AttnRes has the best 400M zero-shot average, while LDM has lower perplexity. Concept page: [[attention-residuals]].

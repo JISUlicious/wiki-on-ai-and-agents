@@ -2,7 +2,7 @@
 title: "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-20
 sources:
   - deepseek-v4.1-flash-kv-cache-compression-deepseek-2026.md
 arxiv_id: "2609.19969"
@@ -33,7 +33,7 @@ A 552B-backbone multimodal [[mixture-of-experts|MoE]] model (plus 196B Engram lo
 - **FP4 main KV.** E2M1 with one E4M3 scale per 16 channels (NVFP4 without its global scale), added by QAT in post-training and quantized after RoPE. SWA KV stays in FP8 because it is sensitive to quantization. The indexer was already FP4 (MXFP4) in V4.
 - **Bounded replay.** Exact SWA reconstruction needs L × n_win tokens; bounded replay uses only the last n_win and accepts approximate states. This is applied to both the encoder (a cache miss) and the decoder (every prefill). The paper reports "negligible" or "barely compromises" quality degradation but gives **no number** for it.
 - **Persistent cache.** SWA KV moves to a pool that uses 10% of host DRAM and has a TTL of minutes. Global KV keeps a guaranteed lifetime of at least 72 h on SSD.
-- **Other architecture.** Single-Pass mHC halves activation traffic by using the previous block's input-mixing coefficients. Engram has two modules at layers 1 and 14. DSpark replaces MTP as the drafter (3 blocks, window 128, 5 draft positions), trained after pretraining with the backbone frozen. Head-wise Muon is used, and a Sinkhorn-balanced update is used for the embeddings and Engram tables.
+- **Other architecture.** Single-Pass [[hyper-connections|mHC]] halves activation traffic by using the previous block's input-mixing coefficients. Engram has two modules at layers 1 and 14. DSpark replaces MTP as the drafter (3 blocks, window 128, 5 draft positions), trained after pretraining with the backbone frozen. Head-wise Muon is used, and a Sinkhorn-balanced update is used for the embeddings and Engram tables.
 - **Training.** 45T multimodal tokens with a batch of 100.6M tokens. Sparse attention is trained from scratch at 64K with no dense warm-up, and context is extended to 1M at 34T tokens.
 - **Base results (Table 1, vs V4-Pro-Base).** MMLU-Pro 74.1 vs 73.5, MATH 61.1 vs 64.5, **SimpleQA-verified 42.3 vs 55.2**, MultiLoKo 45.5 vs 50.9.
 - **Post-trained results (§5.3.2).** Codeforces 3471 vs V4-Flash 3289. DeepSWE v1.1 74.2 vs 54.4. Terminal-Bench 2.1 90.6. GPQA Diamond 90.9 vs 89.9. Raising reasoning effort from 25 to 100 lifts Terminal-Bench 2.1 from 82.4 to 90.6 at about 2.5× the output tokens.

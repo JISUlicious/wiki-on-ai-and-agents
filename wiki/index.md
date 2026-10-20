@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-13
+updated: 2026-10-20
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 607 sources, 194 entities, 338 concepts, 7 comparisons, 18 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 608 sources, 194 entities, 342 concepts, 7 comparisons, 18 queries.
 
 ## Entities
 
@@ -259,6 +259,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[additive-attention]] — The original Bahdanau attention (2014); pre-Transformer
 - [[positional-encoding]] — Injecting order without recurrence
 - [[residual-connection]] — Skip connections for deep network training
+- [[depth-mixing]] — The third mixing axis (after sequence and channel): learned replacements for the fixed residual sum (mHC, AttnRes, Gated Residual, LDM)
+- [[attention-residuals]] — AttnRes: softmax attention over earlier layer outputs; Full vs Block; ships in Kimi K3
+- [[hyper-connections]] — HC/mHC: expanded residual stream with learned read/mix/write maps; mHC in DeepSeek-V4
+- [[linear-depth-memory]] — LDM: per-token matrix memory over layers, updated by exact recursive least squares; lowest perplexity vs mHC/AttnRes at 400M–1.5B
 - [[layer-normalization]] — Standard normalization in Transformers
 - [[lstm]] — Long short-term memory; pre-Transformer dominant
 - [[recurrent-neural-network]] — RNN family
@@ -1199,6 +1203,7 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Architecture, model internals & tech reports**
 - [[massive-activations-attention-sinks-sun-2026]] — anatomy of massive activations and attention sinks (Sun et al. 2026)
 - [[attention-residuals-kimi-team-2026]] — attention residuals (Kimi team technical report 2026)
+- [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)
 - [[nemotron-3-super-nvidia-2026]] — Nemotron 3 Super: MoE hybrid Mamba-Transformer for agentic reasoning (NVIDIA 2026)

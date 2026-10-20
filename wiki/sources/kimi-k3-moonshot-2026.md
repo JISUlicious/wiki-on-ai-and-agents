@@ -2,7 +2,7 @@
 title: "Kimi K3: Open Frontier Intelligence"
 type: source
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-10-20
 sources:
   - kimi-k3-moonshot-2026.md
 arxiv_id: "2607.24653"
@@ -27,7 +27,7 @@ importance: high
 
 Kimi K3 is a **2.78T-parameter** native-multimodal [[mixture-of-experts]] model with **104.2B activated parameters** and a **1M-token context window**, released open-weight by [[moonshot-ai]]. The paper's framing is that the open ecosystem has been scaling [[test-time-compute|test-time compute]] (reasoning, [[agentic-rl|agentic RL]]) but has stalled on the pre-training axis around the 1T-parameter class; K3 pushes both axes at once, taking the pre-trained foundation to "3T-class" scale while doing RL at 1M context.
 
-The architecture scales information flow along three axes. **Sequence**: a hybrid attention stack of 3 Kimi Delta Attention (KDA) layers per 1 Gated MLA layer (69 KDA + 24 MLA layers total, plus a trailing global-attention layer), inheriting KDA from [[kimi-linear-kimi-team-2025]] — the delta rule with a channel-wise forget gate, chunkwise-parallel, and a fine-grained low-rank decay logit. **Depth**: Attention Residuals ([[attention-residuals-kimi-team-2026]]) let each module attend over the embedding and preceding block outputs via learned pseudo-queries, replacing purely sequential residual accumulation; K3 uses the *Block* AttnRes variant with 8 blocks of 12 layers (9 including the embedding), cutting overhead from O(Ld) to O(Nd). **Width**: *Stable LatentMoE*, which routes in a compact latent space (ℓ = 3584, 0.5× the 7168 hidden dim) so that expanding routing multiplicity does not blow up communication and expert-weight traffic — 896 routed experts with 16 active per token, plus 2 shared experts.
+The architecture scales information flow along three axes. **Sequence**: a hybrid attention stack of 3 Kimi Delta Attention (KDA) layers per 1 Gated MLA layer (69 KDA + 24 MLA layers total, plus a trailing global-attention layer), inheriting KDA from [[kimi-linear-kimi-team-2025]] — the delta rule with a channel-wise forget gate, chunkwise-parallel, and a fine-grained low-rank decay logit. **Depth**: [[attention-residuals|Attention Residuals]] ([[attention-residuals-kimi-team-2026]]) let each module attend over the embedding and preceding block outputs via learned pseudo-queries, replacing purely sequential residual accumulation; K3 uses the *Block* AttnRes variant with 8 blocks of 12 layers (9 including the embedding), cutting overhead from O(Ld) to O(Nd). **Width**: *Stable LatentMoE*, which routes in a compact latent space (ℓ = 3584, 0.5× the 7168 hidden dim) so that expanding routing multiplicity does not blow up communication and expert-weight traffic — 896 routed experts with 16 active per token, plus 2 shared experts.
 
 Post-training is RL across coding, general-agent, reasoning and knowledge domains at multiple reasoning-effort levels (low/high/max), consolidated back into one model via multi-teacher [[on-policy-distillation|on-policy distillation]]. Results: K3 is consistently ahead of the other open and proprietary models in the paper's suite ([[claude-opus-4-8|Claude Opus 4.8]], GPT-5.5, GLM-5.2) while trailing Claude Fable 5 and GPT-5.6 Sol overall. The paper is candid that research-level reasoning (CritPt 23.4, HLE-Full 43.5/56.0) is the weakest area.
 

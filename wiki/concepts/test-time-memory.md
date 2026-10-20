@@ -2,7 +2,7 @@
 title: Test-Time Memory
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-20
 sources:
   - titans-behrouz-2025.md
 status: draft
@@ -19,6 +19,8 @@ Test-time memory refers to memory whose parameters are updated at *inference* ti
 - [[neural-long-term-memory]] — The substrate that test-time memory updates operate on.
 - [[online-learning]] — Conceptually adjacent: both update parameters from a live data stream.
 - [[memory-management]] — One pole (in-weights, mutable at test time) of the design space.
+
+- [[linear-depth-memory]] — the regression view of associative memory moved from the sequence axis to the depth axis: a per-token memory updated layer by layer, solved exactly with recursive least squares ([[depth-memory-gonzalez-martinez-2026]]).
 
 ## References
 

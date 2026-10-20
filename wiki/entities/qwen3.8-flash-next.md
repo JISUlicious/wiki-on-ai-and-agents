@@ -2,7 +2,7 @@
 title: Qwen3.8-Flash-Next
 type: entity
 created: 2026-08-30
-updated: 2026-08-30
+updated: 2026-10-20
 sources:
   - qwen3.8-flash-next-model-card-2026.md
 family: qwen
@@ -32,7 +32,7 @@ An open-weight multimodal MoE from [[qwen|Qwen]] ([[alibaba|Alibaba]]), released
 - **Qwen Sparse Attention (QSA)** — the global layers are themselves sparse, using an MQA indexer (4 query heads, 1 shared key head, head dim 128) with a budget of **512 blocks / 2,048 tokens**. Selection is at *micro-block* rather than per-token granularity, which the card credits for the long-context latency gain. 24 query heads : 2 KV heads ([[grouped-query-attention|GQA]]), head dim 256, of which **only 64 dims are rotary**.
 - **MoE** — 512 experts, 10 routed + 1 shared, intermediate 640.
 - **N-gram embedding** — a 20M-entry bigram/trigram table indexed at layer 2.
-- **Gated Residual** — 4 branches with bottleneck rank 320, modulating widened [[residual-stream|residual streams]] via a data-dependent read gate and a per-branch scalar write gate. A direct descendant of the same idea as [[attention-residuals-kimi-team-2026|AttnRes]]: the residual stream stops being a plain unweighted sum.
+- **Gated Residual** — 4 branches with bottleneck rank 320, modulating widened [[residual-stream|residual streams]] via a data-dependent read gate and a per-branch scalar write gate. A direct descendant of the same idea as [[attention-residuals-kimi-team-2026|AttnRes]]: the residual stream stops being a plain unweighted sum. See [[depth-mixing]].
 - **MTP** — 1 layer, trained multi-step.
 - Vision encoder: depth 27, hidden 1152, patch 16, spatial merge 2.
 

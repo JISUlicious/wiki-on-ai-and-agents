@@ -2,7 +2,7 @@
 title: Residual Stream
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-20
 sources:
   - global-workspace-in-language-models-anthropic-2026.md
 builds-on:
@@ -97,3 +97,4 @@ Nothing privileges the stream's coordinate axes — individual dimensions are mo
 
 - [[qwen3.8-flash-next]] — Gated Residual — 4 branches, rank 320, with a data-dependent read gate and per-branch scalar write gate; the residual stream stops being a plain unweighted sum
 - [[recirculation-mozer-2026]] — a training-free inference-time change that feeds deep-layer representations back through the stack, so early layers see contextualized states they normally could not
+- [[depth-memory-gonzalez-martinez-2026]] — takes the "shared memory every layer reads from and writes to" framing literally. [[linear-depth-memory|LDM]] adds a matrix memory stream next to the residual stream; removing the residual stream itself makes it worse than PreLN. See [[depth-mixing]].

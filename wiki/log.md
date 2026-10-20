@@ -2,10 +2,35 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-13
+updated: 2026-10-20
 ---
 
 # Activity Log
+
+## [2026-10-20] ingest | Depth Memory (González-Martínez, Nazari, Rusch, Liu 2026)
+
+Ingested `sources/depth-memory-gonzalez-martinez-2026.md` ([arXiv:2610.18809](https://arxiv.org/abs/2610.18809)).
+
+Pages created:
+- [[depth-memory-gonzalez-martinez-2026]]
+- [[depth-mixing]]
+- [[linear-depth-memory]]
+- [[attention-residuals]]
+- [[hyper-connections]]
+
+Pages updated:
+- [[residual-connection]]: new "depth mixing" section
+- [[residual-stream]], [[linear-attention]], [[test-time-memory]], [[attention-residuals-kimi-team-2026]]: backlinks
+- [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]], [[kimi-k3-moonshot-2026]], [[qwen3.8-flash-next]], [[moonshot-ai]]: concept links
+
+Key takeaways:
+- **The framework.** Depth mixing is a memory problem: streams with Read and Write operators. PreLN, mHC and AttnRes are special cases of it.
+- **LDM.** A residual stream plus a matrix memory, updated by exact recursive least squares. It gives the lowest perplexity at 400M and 1.5B (val 9.15 vs 9.25 for mHC and 9.26 for Block AttnRes) for about 1% more parameters.
+- **Caveats.** Zero-shot accuracy is only competitive: Block AttnRes is best at 400M. Results are limited to 1.6B parameters.
+- **Cost.** [[linear-depth-memory]] gained a "Quality, not memory savings" section:
+  - per-token working state about 9× the residual (8·D memory plus P), against 4·D for mHC;
+  - extra peak training memory, as the paper itself says;
+  - no KV-cache or context-length cost.
 
 ## [2026-10-13] ingest | Decision models on NVIDIA GPUs: weight memory, SGLang release check (from analysis-docs)
 

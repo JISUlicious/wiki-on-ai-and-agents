@@ -2,7 +2,7 @@
 title: Moonshot AI
 type: entity
 created: 2026-07-28
-updated: 2026-09-14
+updated: 2026-10-20
 sources:
   - flash-kda-moonshot-2026.md
   - attention-residuals-kimi-team-2026.md
@@ -24,7 +24,7 @@ tags:
 |---|---|
 | [[kimi-linear-kimi-team-2025\|Kimi Linear]] | introduces **Kimi Delta Attention (KDA)**, a [[linear-attention]] mechanism refining Gated DeltaNet with finer-grained gating |
 | [[flash-kda-moonshot-2026\|FlashKDA]] | the CUTLASS kernel implementation of KDA — ~2× over the `flash-linear-attention` baseline on H20, MIT licensed |
-| [[attention-residuals-kimi-team-2026\|Attention Residuals (AttnRes)]] | replaces fixed unit-weight residual accumulation with softmax attention over preceding layer outputs |
+| [[attention-residuals-kimi-team-2026\|Attention Residuals (AttnRes)]] ([[attention-residuals\|concept]]) | replaces fixed unit-weight residual accumulation with softmax attention over preceding layer outputs |
 
 | [[kimi-k3-moonshot-2026\|Kimi K3]] | the flagship: 2.78T-parameter native-multimodal MoE, 104.2B activated, 1M context, open weights |
 
