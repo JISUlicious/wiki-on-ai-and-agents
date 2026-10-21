@@ -2,7 +2,7 @@
 title: GLM-5
 type: entity
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-21
 sources:
   - skillmoo-gong-2026.md
   - misa-mixture-of-indexer-sparse-attention-zhou-2026.md
@@ -40,3 +40,7 @@ It extends the GLM-4.5 line (355B / 32B active) by roughly doubling total parame
 - [GLM-5: from Vibe Coding to Agentic Engineering, arXiv:2602.15763](https://arxiv.org/abs/2602.15763) — DSA, asynchronous RL infrastructure
 - [zai-org/GLM-5 README](https://github.com/zai-org/GLM-5) — 744B / 40B active, 28.5T tokens, scaling from GLM-4.5
 - [[skillmoo-gong-2026]] · [[misa-mixture-of-indexer-sparse-attention-zhou-2026]] · [[skillreducer-gao-2026]]
+
+## Lineage sources
+
+- [[harness2-recursive-agent-harnessing-xu-2026]] — a frozen executor in Harness². One harness-improvement step lifts it +11.5 on WorkBuddy and +11.8 pts on LAB (under OpenCode), past base Gemini 3.5 Flash.

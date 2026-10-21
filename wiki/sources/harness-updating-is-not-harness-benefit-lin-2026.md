@@ -2,7 +2,7 @@
 title: "Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-10-21
 sources:
   - harness-updating-is-not-harness-benefit-lin-2026.md
 arxiv_id: "2605.30621"
@@ -46,3 +46,7 @@ The two findings are sharp. Harness-updating is **flat across capability tiers**
 
 - [arXiv:2605.30621](https://arxiv.org/abs/2605.30621) — Lin, Wu, et al., 2026
 - Source text: `sources/harness-updating-is-not-harness-benefit-lin-2026.md`
+
+## Lineage sources
+
+- [[harness2-recursive-agent-harnessing-xu-2026]] — agrees on the editor side (a same-model editor still helps, from GLM-5 to Claude Opus 5). On the executor side, the weaker of its two executors (GLM-5) gains more on WorkBuddy and LAB, a tension with this paper's non-monotonic benefit curve.

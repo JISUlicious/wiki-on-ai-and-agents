@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-10-08
+updated: 2026-10-21
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -126,3 +126,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng's survey (2026-07-04): harness definition, design patterns, harness optimization as the path to RSI
 - [[gepa]] — prompt-level evolutionary search, later reused for harnesses
 - [[claude-code-mods-docs-2026]] — a product harness exposing its system prompt, compaction and per-request model and effort as hook points
+- [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² (Google Research): online [[recursive-agent-harnessing]] with no ground truth. Propose–Probe–Compose edits eight file components, and a library of evidence-backed lessons guides later tasks. Up to +11.5 on WorkBuddy, +11.8 pts on LAB.

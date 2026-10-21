@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 608 sources, 194 entities, 342 concepts, 7 comparisons, 18 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 609 sources, 195 entities, 343 concepts, 7 comparisons, 18 queries.
 
 ## Entities
 
@@ -181,6 +181,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[deepmind]] — UK AI lab; merged with Google Brain in 2023
 - [[google-brain]] — Google's deep-learning research org until merger
 - [[google-research]] — Google's broader research org
+- [[harness2]] — Harness² (Google Research, Apache-2.0): open-source recursive agent-harnessing framework; OpenCode/Codex executors
 - [[fair]] — Facebook AI Research / Meta AI
 - [[nous-research]] — Decentralized AI research collective; Hermes models / agent
 - [[z-ai]] — Zhipu AI; maker of the GLM model family (GLM-5.2)
@@ -417,6 +418,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
+- [[recursive-agent-harnessing]] — RSI on the agent harness at two levels: refine this task's execution harness (Propose–Probe–Compose) and update the improvement harness for future tasks
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
 - [[adaptive-thinking]] — Spending thinking budget per-request rather than uniformly; what `effort` controls
 - [[reasoning-effort]] — the `effort` parameter (low/medium/high/xhigh/max); behavioral signal over all token spend
@@ -1178,6 +1180,7 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[effective-strategies-asynchronous-swe-agents-geng-2026]] — strategies for asynchronous software-engineering agents (Geng et al. 2026)
 - [[dive-into-claude-code-design-space-liu-2026]] — design space of today's and future AI agent systems, anchored on Claude Code (Liu, MBZUAI 2026)
 - [[meta-harness-lee-2026]] — Meta-Harness: end-to-end optimization of model harnesses (Lee et al. 2026)
+- [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² (Google Research, arXiv:2610.14224): no-ground-truth online harness improvement; up to +11.5 WorkBuddy / +11.8 pts LAB (2026-10-09)
 - [[natural-language-agent-harnesses-pan-2026]] — natural-language agent harnesses (Pan et al. 2026)
 - [[composer-2-technical-report-cursor-2026]] — Composer 2 technical report (Cursor 2026)
 - [[structuredagent-andor-tree-planning-lobo-2026]] — StructuredAgent: AND/OR-tree planning for long-horizon web tasks (Lobo et al. 2026)

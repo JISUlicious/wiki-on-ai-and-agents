@@ -2,7 +2,7 @@
 title: "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses"
 type: source
 created: 2026-05-25
-updated: 2026-10-07
+updated: 2026-10-21
 sources:
   - agentic-harness-engineering-lin-2026.md
 arxiv_id: "2604.25850"
@@ -109,3 +109,4 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 ## Lineage sources
 
 - [[harness-engineering-self-improvement-weng-2026]] — surveyed by Weng (2026): the three observability pillars
+- [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² adopts AHE's file-level harness decomposition and extends it to eight components by adding a middleware plugin.

@@ -2,7 +2,7 @@
 title: "Meta-Harness: End-to-End Optimization of Model Harnesses"
 type: source
 created: 2026-06-03
-updated: 2026-10-07
+updated: 2026-10-21
 sources:
   - meta-harness-lee-2026.md
 arxiv_id: "2603.28052"
@@ -62,3 +62,4 @@ Empirically the discovered harnesses are strong across three regimes: on online 
 ## Lineage sources
 
 - [[harness-engineering-self-improvement-weng-2026]] — surveyed by Weng (2026)
+- [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² uses Meta-Harness as its offline baseline. Harness² (online, no training split) beats it on WorkBuddy and JobBench in all four configurations, and on LAB in three of four. Meta-Harness uses more compute at k = 5.

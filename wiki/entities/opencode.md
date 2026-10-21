@@ -2,7 +2,7 @@
 title: opencode
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-21
 sources:
   - opencode.md
   - comparison.md
@@ -55,3 +55,7 @@ opencode (`sst/opencode`, npm package `opencode-ai`, binary `opencode`) is an op
 ## Related 2026 sources
 
 - [[illicit-distillation]] — named in Anthropic's 2026 report: DeepSeek allegedly tagged OpenCode users by request strings and relayed them to Claude Opus, and Xiaomi replayed OpenCode sessions through Claude for training data
+
+## Lineage sources
+
+- [[harness2-recursive-agent-harnessing-xu-2026]] — the default executor substrate and editor runtime in Harness²

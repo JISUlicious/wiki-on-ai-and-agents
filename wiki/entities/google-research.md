@@ -2,7 +2,7 @@
 title: Google Research
 type: entity
 created: 2026-05-13
-updated: 2026-10-06
+updated: 2026-10-21
 sources:
   - transformer-vaswani-2017.md
   - bert-devlin-2018.md
@@ -33,3 +33,4 @@ In 2023, [[google-brain]] merged with DeepMind to form Google DeepMind, and the 
 
 - [[realm]] — REALM (2020)
 - [[ai-chains-wu-2021]] — AI Chains (2021)
+- [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² (2026), an open-source recursive agent-harnessing framework ([[harness2]])

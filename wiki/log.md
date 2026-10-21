@@ -2,10 +2,39 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 # Activity Log
+
+## [2026-10-21] ingest | Harness²: Recursive Agent Harnessing for an Open World (Google Research)
+
+Ingested `sources/harness2-recursive-agent-harnessing-xu-2026.md` ([arXiv:2610.14224](https://arxiv.org/abs/2610.14224)). Code was read from `google-research/harness2` at `1cfe254` (prompts, roles, library, selection).
+
+Pages created:
+- [[harness2-recursive-agent-harnessing-xu-2026]]
+- [[harness2]]
+- [[recursive-agent-harnessing]]
+
+Pages updated:
+- [[agentic-harness-engineering]], [[self-improving-agent]]
+- [[meta-harness-lee-2026]], [[agentic-harness-engineering-lin-2026]], [[harness-continual-learning-kang-2026]], [[harness-updating-is-not-harness-benefit-lin-2026]]
+- [[harness-engineering-self-improvement-weng-2026]], [[last-ai-built-by-humans-recursive-self-improvement-duan-2026]]
+- [[google-research]], [[opencode]], [[glm-5]], [[claude-opus-4-8]]
+
+Key takeaways:
+- **The method.** Two levels of recursion, with no weight updates and no ground truth:
+  - task-level Propose–Probe–Compose, which proposes invariant and domain edits to eight file components, probes them on the same task, and composes only the edits the evidence supports;
+  - harnessing-level library updates that guide future edits.
+- **Results.** One step improved all 12 configurations, by up to +11.5 on WorkBuddy, +4.5 on JobBench and +11.8 pts on LAB. A same-model editor also works.
+- **Caveats.** The JobBench judge is the same model as the editor (Claude Opus 4.8). Results are self-reported. The README warns that the executor has unrestricted network access and Codex runs with its sandbox disabled.
+- **Tension.** Harness² has the weaker executor gaining more, while [[harness-updating-is-not-harness-benefit-lin-2026]] finds harness benefit non-monotonic across solver tiers. This is noted, not a contradiction.
+- **Follow-up detail, from the code:**
+  - **Task setup:** no generated tasks; probes are same-task re-runs within one request.
+  - **Budget:** k costs about 4k executor runs per request.
+  - **Selection:** only among the k composed outputs. This corrects an earlier draft line that said the base output was in the pool.
+  - **Composer:** its weighing rules for evidence.
+  - **Integration:** OpenCode and Codex run as headless CLI subprocesses, with components written as native files (plugin on OpenCode, hooks on Codex).
 
 ## [2026-10-20] ingest | Depth Memory (González-Martínez, Nazari, Rusch, Liu 2026)
 
