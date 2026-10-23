@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-21
+updated: 2026-10-23
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 609 sources, 195 entities, 343 concepts, 7 comparisons, 18 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 609 sources, 195 entities, 343 concepts, 7 comparisons, 19 queries.
 
 ## Entities
 
@@ -1488,6 +1488,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 
 ## Queries
+- [[kv-cache-size-vs-active-parameters]] — KV bytes = (P_KV/d)·T·B·b: only the K/V projection weights count. Dense MHA gives T*≈6d; GQA ÷H/G; MLA latent; MoE experts never enter the cache
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist
 - [[system-one-models-vs-system-one-thinking]] — Does "System One model" come from Kahneman's System 1? Yes (TypeSafe FAQ); where it fits and where it diverges

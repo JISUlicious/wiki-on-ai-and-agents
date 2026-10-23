@@ -2,7 +2,7 @@
 title: Multi-Head Latent Attention
 type: concept
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-10-23
 sources:
   - deepseek-v3.2-sparse-attention-deepseek-2025.md
   - native-sparse-attention-yuan-2025.md
@@ -37,3 +37,7 @@ importance: medium
 
 - [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
 - [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU
+
+## Lineage sources
+
+- [[kv-cache-size-vs-active-parameters]] — MLA caches `L·(d_c + d_R)` per token. The same `c_tok = P_proj/d` identity holds for the latent down-projection

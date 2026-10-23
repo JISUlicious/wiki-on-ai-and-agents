@@ -2,10 +2,23 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-21
+updated: 2026-10-23
 ---
 
 # Activity Log
+
+## [2026-10-23] query | How KV-cache size relates to (active) parameter count
+
+Filed as [[kv-cache-size-vs-active-parameters]].
+
+- **Key identity:** cached elements per token = K/V projection parameters ÷ d_model.
+- **Dense MHA:** about P/(6d) per token, so the cache equals the weights at T* ≈ 6d.
+- **Other designs:** GQA divides it by H/G, MLA caches a latent, hybrid linear attention drops most layers, and MoE experts never enter it.
+- **Checks:** T* values check against the wiki's Llama table (25.7K, 122K, 431K). Qwen3.8-Flash-Next ≈ 488K, computed from its recorded config.
+
+Backlinks: [[kv-cache]], [[mixture-of-experts]], [[grouped-query-attention]], [[multi-head-latent-attention]], [[quantization-performance]].
+
+Gap: MLA has no primary source (DeepSeek-V2 isn't ingested), and nothing on MQA, KV quantization (KIVI, KVQuant), eviction or cross-layer sharing as primary sources. Candidates were listed for the user.
 
 ## [2026-10-21] ingest | Harness²: Recursive Agent Harnessing for an Open World (Google Research)
 

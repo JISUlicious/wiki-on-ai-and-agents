@@ -2,7 +2,7 @@
 title: Grouped-Query Attention (GQA)
 type: concept
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-10-23
 sources:
   - grouped-query-attention-ainslie-2023.md
 builds-on:
@@ -58,3 +58,7 @@ Its prefill-adjacent benefit is indirect but real: a smaller KV cache frees HBM,
 ## Related 2026 sources
 
 - [[qwen3.8-flash-next]] — 24 Q : 2 KV with only 64 of 256 head dims rotary — an aggressive instance of the GQA-plus-hybrid profile Bertsch et al. flag as costly under context extension
+
+## Lineage sources
+
+- [[kv-cache-size-vs-active-parameters]] — worked equations: GQA divides `c_tok` by H/G. `T*` (where cache = weights): Llama-2-7B ≈ 25.7K, Llama-3-8B ≈ 122K, Llama-3-70B ≈ 431K

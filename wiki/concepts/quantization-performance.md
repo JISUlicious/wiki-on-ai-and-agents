@@ -2,7 +2,7 @@
 title: "Quantization Performance: Memory, Prefill (pp) and Decode (tg)"
 type: concept
 created: 2026-07-07
-updated: 2026-09-09
+updated: 2026-10-23
 sources:
   - llm-inference-roofline-yuan-2024.md
   - marlin-frantar-2024.md
@@ -176,3 +176,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] — the generation step that dwarfs every format choice on prefill: M5 over M4 is 3.3–4.1× TTFT at 4,096 tokens, and 4-bit gains slightly *more* than BF16. Also: on M4 GPUs FP8 matmul is emulated at 0.87–0.94× FP16 ([[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026|Rigel]], 2026), so there is no precision lever for prefill on M4
 - [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] — the M4 Max GPU measured: tiled fp16 `matmul2d` **14.80 TFLOP/s at 2048³**, ≈46% of the scalar-ALU roofline; **fp8 E4M3 at 0.871–0.941× fp16** — one-byte operands yet slower, so unpack overhead with no low-precision datapath. Only fp16 and fp8 are measured; no BF16 or INT8 row exists in the paper. Fused FlashAttention is a *negative* result, 3.6–9× slower than decomposed
 - [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] — the CPU path: hand-written fp32 AMX GEMM on an M1, 1.17× over Accelerate's best and **1.44× llama.cpp prefill at 128 tokens — reversing to 0.82× at 512**; fp32 only, never compared to Metal; int8 declared "not a lever" on M1 AMX
+
+## Lineage sources
+
+- [[kv-cache-size-vs-active-parameters]] — derives this page's `kv_bytes` formula from parameter counts, and the batch-1 decode crossover `T > b_w·P_active / (b_kv·c_tok)`

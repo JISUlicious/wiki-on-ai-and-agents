@@ -2,7 +2,7 @@
 title: KV-Cache
 type: concept
 created: 2026-05-16
-updated: 2026-09-30
+updated: 2026-10-23
 sources:
   - em-llm-fountas-2024.md
 status: draft
@@ -55,3 +55,7 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 - [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU
 - [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
+
+## Lineage sources
+
+- [[kv-cache-size-vs-active-parameters]] — the cached elements per token equal the K/V projection parameters divided by d. Covers the dense-MHA `T* ≈ 6d` crossover, GQA/MLA/hybrid reductions, and why MoE active parameters predict compute but not cache size
