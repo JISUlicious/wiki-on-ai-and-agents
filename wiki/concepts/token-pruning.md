@@ -2,7 +2,7 @@
 title: Token Pruning
 type: concept
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-10-23
 sources:
   - lazyllm-dynamic-token-pruning-fu-2024.md
   - discovering-the-gems-in-early-layers-shi-2024.md
@@ -65,3 +65,7 @@ The MInference row is the [[sparse-prefill|attention-share]] rule in one number:
 ## References
 
 - [[lazyllm-dynamic-token-pruning-fu-2024]] · [[discovering-the-gems-in-early-layers-shi-2024]] · [[sliminfer-dynamic-token-pruning-long-2025]] · [[probe-and-skip-self-predictive-token-skipping-wu-2026]] · [[claa-cross-layer-attention-aggregation-mcdanel-2026]]
+
+## Lineage sources
+
+- [[kv-cache-eviction]] — the prefill-everything-then-forget counterpart: StreamingLLM, H2O and SnapKV, now with primary sources.

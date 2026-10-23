@@ -7,7 +7,7 @@ updated: 2026-10-23
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 609 sources, 195 entities, 343 concepts, 7 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 621 sources, 200 entities, 348 concepts, 7 comparisons, 19 queries.
 
 ## Entities
 
@@ -44,6 +44,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[qwen-2-5]] — Alibaba's Sep-2024 open model generation (0.5B–72B); default backbone for agentic-RL and memory work
 - [[llama-3]] — Meta's third open-weights generation; Llama-3.1-8B is the standard long-context/inference test bed
 - [[deepseek-v3]] — DeepSeek's 671B/37B-active MoE; base model of DeepSeek-R1
+- [[deepseek-v2]] — DeepSeek's 236B/21B MoE (May 2024) that introduced MLA and DeepSeekMoE
 - [[claude-3-5-sonnet]] — Anthropic's June-2024 Sonnet; default closed coding-agent backbone and expert-trajectory source
 - [[glm-5]] — Z.ai's 744B/40B-active MoE with DSA; SkillMOO backbone, MISA retrofit target, precedes GLM-5.2
 - [[gemma]] — Google's open-weights family (2024–); Gemma 3/4 are frequent test models; Gemma 4 26B A4B underlies DiffusionGemma
@@ -182,6 +183,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[google-brain]] — Google's deep-learning research org until merger
 - [[google-research]] — Google's broader research org
 - [[harness2]] — Harness² (Google Research, Apache-2.0): open-source recursive agent-harnessing framework; OpenCode/Codex executors
+- [[mistral-7b]] — Mistral AI's 7B (2023): GQA plus sliding-window attention with a rolling-buffer KV cache
+- [[jamba]] — AI21's attention:Mamba 1:7 hybrid MoE (52B/12B); 4 GB KV at 256K vs Mixtral's 32 GB
+- [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
+- [[ai21-labs]] — Israeli lab; Jamba hybrid Transformer-Mamba
 - [[fair]] — Facebook AI Research / Meta AI
 - [[nous-research]] — Decentralized AI research collective; Hermes models / agent
 - [[z-ai]] — Zhipu AI; maker of the GLM model family (GLM-5.2)
@@ -529,6 +534,11 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[linear-attention]] — Fixed-size recurrent state vs growing KV cache; KDA, the 3:1 hybrid, and why nobody ships pure linear attention
 - [[flash-attention]] — IO-aware **exact** attention; more FLOPs, ~9× less HBM traffic, memory quadratic → linear
 - [[grouped-query-attention]] — MHA↔MQA interpolation via 5% uptraining; a KV-cache/decode win, explicitly *not* a prefill one
+- [[multi-query-attention]] — one shared K/V head for all query heads (Shazeer 2019): h-fold smaller cache, about 12× faster decoding; how much quality it costs is contested
+- [[sliding-window-attention]] — attend only to the last W tokens; rolling-buffer cache O(W); needs sinks if applied after training
+- [[kv-cache-quantization]] — K per-channel, V per-token: KIVI (2-bit, tuning-free) vs KVQuant (pre-RoPE, non-uniform, 10M context)
+- [[kv-cache-eviction]] — keep a subset of tokens' KV: StreamingLLM sinks, H2O heavy hitters, SnapKV observation window; irreversible
+- [[cross-layer-kv-sharing]] — share K/V across layers: CLA2 (2×, <1% PPL), YOCO (one global cache, about L×)
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
 - [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
 - [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
@@ -1206,6 +1216,18 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 **Architecture, model internals & tech reports**
 - [[massive-activations-attention-sinks-sun-2026]] — anatomy of massive activations and attention sinks (Sun et al. 2026)
 - [[attention-residuals-kimi-team-2026]] — attention residuals (Kimi team technical report 2026)
+- [[deepseek-v2-deepseek-ai-2024]] — DeepSeek-V2 (arXiv:2405.04434): MLA primary source; 34.6K KV elements/token, 4% of MHA (2024)
+- [[fast-transformer-decoding-one-write-head-shazeer-2019]] — Shazeer: multi-query attention and the decode bandwidth analysis (arXiv:1911.02150, 2019)
+- [[mistral-7b-jiang-2023]] — Mistral 7B: GQA + SWA (W=4096), rolling buffer (arXiv:2310.06825, 2023)
+- [[jamba-hybrid-transformer-mamba-lieber-2024]] — Jamba: 1:7 attention:Mamba + MoE, 256K context (arXiv:2403.19887, 2024)
+- [[kivi-2bit-kv-cache-quantization-liu-2024]] — KIVI: tuning-free 2-bit KV quantization (ICML 2024)
+- [[kvquant-10-million-context-kv-quantization-hooper-2024]] — KVQuant: <0.1 PPL at 3-bit, 10M context (NeurIPS 2024)
+- [[you-only-cache-once-yoco-sun-2024]] — YOCO: decoder-decoder with one global KV cache; 30× faster prefill at 512K (2024)
+- [[cross-layer-attention-kv-cache-brandon-2024]] — CLA: share KV across adjacent layers; 2× smaller cache at <1% PPL (2024)
+- [[streamingllm-attention-sinks-xiao-2023]] — StreamingLLM: attention sinks + recent window, 4M-token streaming (ICLR 2024)
+- [[h2o-heavy-hitter-oracle-zhang-2023]] — H2O: heavy-hitter KV eviction at a 20% budget (NeurIPS 2023)
+- [[snapkv-li-2024]] — SnapKV: observation-window prompt KV compression; 380K tokens on one A100 (2024)
+- [[key-value-compress-kv-cache-compression-survey-2025]] — KV-compression taxonomy by layers/heads/tokens/hidden (CICC 2025)
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)

@@ -2,7 +2,7 @@
 title: Microsoft Research
 type: entity
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-23
 sources:
   - swe-bench-live-zhang-2025.md
   - magma-yang-2025.md
@@ -28,3 +28,7 @@ Recent agent-era contributions include [[swe-bench-live]] — a continuously upd
 - [[swe-bench-live-zhang-2025]]
 - [[magma-yang-2025]]
 - [[microsoft]]
+
+## Lineage sources
+
+- [[you-only-cache-once-yoco-sun-2024]] — YOCO (with Tsinghua): decoder-decoder design with one global KV cache.

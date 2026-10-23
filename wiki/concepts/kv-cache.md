@@ -59,3 +59,11 @@ The cache is a memory consumer independent of parameter count, scaling with cont
 ## Lineage sources
 
 - [[kv-cache-size-vs-active-parameters]] — the cached elements per token equal the K/V projection parameters divided by d. Covers the dense-MHA `T* ≈ 6d` crossover, GQA/MLA/hybrid reductions, and why MoE active parameters predict compute but not cache size
+- **KV-compression primary sources (2026-10-23 batch):**
+  - [[multi-query-attention]] ([[fast-transformer-decoding-one-write-head-shazeer-2019]]) and [[multi-head-latent-attention]] ([[deepseek-v2-deepseek-ai-2024]]): fewer or compressed heads;
+  - [[cross-layer-kv-sharing]] ([[cross-layer-attention-kv-cache-brandon-2024|CLA]], [[you-only-cache-once-yoco-sun-2024|YOCO]]): fewer layers;
+  - [[sliding-window-attention]] ([[mistral-7b-jiang-2023]]) and [[kv-cache-eviction]] ([[streamingllm-attention-sinks-xiao-2023|StreamingLLM]], [[h2o-heavy-hitter-oracle-zhang-2023|H2O]], [[snapkv-li-2024|SnapKV]]): fewer tokens;
+  - [[kv-cache-quantization]] ([[kivi-2bit-kv-cache-quantization-liu-2024|KIVI]], [[kvquant-10-million-context-kv-quantization-hooper-2024|KVQuant]]): fewer bits;
+  - hybrids ([[jamba]]): fewer attention layers.
+
+  Map: [[key-value-compress-kv-cache-compression-survey-2025]].

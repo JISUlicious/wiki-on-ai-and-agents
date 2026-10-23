@@ -2,7 +2,7 @@
 title: Linear Attention
 type: concept
 created: 2026-07-28
-updated: 2026-10-20
+updated: 2026-10-23
 sources:
   - kimi-linear-kimi-team-2025.md
   - flash-kda-moonshot-2026.md
@@ -90,3 +90,7 @@ Kimi Linear states them: finite-state capacity still caps exact recall (hence th
 - [[qwen3.8-flash-next]] — 36 of 48 layers are Gated DeltaNet, with the other 12 sparse — the same 3:1 linear-to-full ratio Kimi Linear reached independently
 - [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — the uncomfortable measurement: Gated DeltaNet's [[arithmetic-intensity|arithmetic intensity]] at decode is **0.87 FLOP/byte** against MHSA+GQA's ~1 and an H100 ridge point of 25.6 — **subquadratic models are *more* memory-bound at decode than the Transformers they replace**. A fixed-size state is a capacity win and an intensity loss, because every layer reads and writes its whole state matrix on every token regardless of sequence length
 - [[depth-memory-gonzalez-martinez-2026]] — linear attention over *layers* instead of tokens: [[linear-depth-memory|LDM]] keeps an outer-product memory of earlier layer outputs and solves its regression exactly with RLS. Exact solving is affordable because layers already run sequentially; the delta rule and outer-product updates trail RLS in its ablations.
+
+## Lineage sources
+
+- [[jamba-hybrid-transformer-mamba-lieber-2024]] — an early production hybrid (attention:Mamba 1:7), the precursor to the 3:1 KDA and Gated DeltaNet hybrids. [[you-only-cache-once-yoco-sun-2024|YOCO]] uses gated retention in its self-decoder.

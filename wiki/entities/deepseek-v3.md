@@ -2,7 +2,7 @@
 title: DeepSeek-V3
 type: entity
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-23
 sources:
   - deepseek-r1-2025.md
   - scalable-moe-training-megatron-core-yan-2026.md
@@ -10,6 +10,7 @@ sources:
   - skillreducer-gao-2026.md
   - swe-bench-live-zhang-2025.md
 family: deepseek
+predecessor: [[deepseek-v2]]
 parameters: 671B total / 37B active
 status: draft
 importance: medium
@@ -20,6 +21,10 @@ tags:
 # DeepSeek-V3
 
 Large [[mixture-of-experts]] language model from [[deepseek|DeepSeek]], described in a technical report of December 2024. It has **671B total parameters with 37B activated per token** and was pre-trained on 14.8T tokens. In this wiki it matters mainly as **the base model underneath [[deepseek-r1|DeepSeek-R1]]**, and secondly as a reference-scale MoE for training and inference systems work.
+
+## Lineage
+
+Inherits [[multi-head-latent-attention|MLA]] and DeepSeekMoE from [[deepseek-v2|DeepSeek-V2]] (236B / 21B), and scales to 671B / 37B.
 
 ## In this wiki
 

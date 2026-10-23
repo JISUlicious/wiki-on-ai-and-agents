@@ -5,6 +5,7 @@ created: 2026-07-27
 updated: 2026-10-23
 sources:
   - grouped-query-attention-ainslie-2023.md
+  - fast-transformer-decoding-one-write-head-shazeer-2019.md
 builds-on:
   - [[attention-mechanism]]
 status: complete
@@ -62,3 +63,4 @@ Its prefill-adjacent benefit is indirect but real: a smaller KV cache frees HBM,
 ## Lineage sources
 
 - [[kv-cache-size-vs-active-parameters]] — worked equations: GQA divides `c_tok` by H/G. `T*` (where cache = weights): Llama-2-7B ≈ 25.7K, Llama-3-8B ≈ 122K, Llama-3-70B ≈ 431K
+- [[multi-query-attention]] — GQA's G = 1 endpoint. Primary source [[fast-transformer-decoding-one-write-head-shazeer-2019]]; includes a contradiction callout on how much quality MQA costs (small in Shazeer 2019, large in DeepSeek-V2's 7B ablation).

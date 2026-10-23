@@ -180,3 +180,4 @@ Surfaced via newsletter ingests; see [[index]].
 ## Lineage sources
 
 - [[kv-cache-size-vs-active-parameters]] — derives this page's `kv_bytes` formula from parameter counts, and the batch-1 decode crossover `T > b_w·P_active / (b_kv·c_tok)`
+- [[kv-cache-quantization]] — KIVI and KVQuant are now ingested as primary sources ([[kivi-2bit-kv-cache-quantization-liu-2024]], [[kvquant-10-million-context-kv-quantization-hooper-2024]]).

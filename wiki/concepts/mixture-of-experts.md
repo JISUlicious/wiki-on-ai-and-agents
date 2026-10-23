@@ -67,3 +67,4 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[gemini-1-5]] — Gemini 1.5 (Feb 2024), an MoE frontier model
 - [[gemini-1-5-technical-report-2024]] — Gemini 1.5 Pro, a sparse MoE
 - [[kv-cache-size-vs-active-parameters]] — experts never enter the KV cache: `c_tok = P_KV/d` depends only on the attention configuration, so MoE becomes bound by KV bandwidth at shorter contexts than a dense model of the same total size
+- [[deepseek-v2-deepseek-ai-2024]] — DeepSeekMoE (2 shared + 160 routed, 6 active) plus MLA. [[jamba-hybrid-transformer-mamba-lieber-2024]]: Mixtral and Jamba have similar active parameters but KV caches 8× apart; experts don't set the cache ([[kv-cache-size-vs-active-parameters]]).

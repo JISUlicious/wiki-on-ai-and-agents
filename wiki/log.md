@@ -7,6 +7,34 @@ updated: 2026-10-23
 
 # Activity Log
 
+## [2026-10-23] ingest | Batch: 12 KV-cache sources (head sharing, MLA, quantization, eviction, cross-layer, hybrids)
+
+Batch-ingested 12 arXiv papers. Three parallel readers extracted the facts; key numbers were spot-checked against the PDFs.
+
+Sources:
+- **Head sharing and latent attention:** [[deepseek-v2-deepseek-ai-2024]], [[fast-transformer-decoding-one-write-head-shazeer-2019]]
+- **Sliding windows and hybrids:** [[mistral-7b-jiang-2023]], [[jamba-hybrid-transformer-mamba-lieber-2024]]
+- **Quantization:** [[kivi-2bit-kv-cache-quantization-liu-2024]], [[kvquant-10-million-context-kv-quantization-hooper-2024]]
+- **Cross-layer sharing:** [[you-only-cache-once-yoco-sun-2024]], [[cross-layer-attention-kv-cache-brandon-2024]]
+- **Eviction and sinks:** [[streamingllm-attention-sinks-xiao-2023]], [[h2o-heavy-hitter-oracle-zhang-2023]], [[snapkv-li-2024]]
+- **Survey:** [[key-value-compress-kv-cache-compression-survey-2025]]
+
+Pages created:
+- **Entities:** [[deepseek-v2]], [[mistral-7b]], [[jamba]], [[mistral-ai]], [[ai21-labs]]
+- **Concepts:** [[multi-query-attention]], [[sliding-window-attention]], [[kv-cache-quantization]], [[kv-cache-eviction]], [[cross-layer-kv-sharing]]
+
+Pages updated:
+- [[kv-cache]], [[attention-sink]] (primary source added), [[multi-head-latent-attention]] (primary source; the 93.3% figure re-scoped)
+- [[grouped-query-attention]], [[state-space-model]], [[mixture-of-experts]], [[token-pruning]], [[sparse-prefill]], [[linear-attention]], [[quantization-performance]]
+- [[noam-shazeer]], [[deepseek]], [[deepseek-v3]] (predecessor link), [[microsoft-research]]
+- [[kv-cache-size-vs-active-parameters]]: MLA gap resolved; new mechanisms linked
+
+Contradiction (callout on [[multi-query-attention]] and the Shazeer source): MQA's quality cost is small in Shazeer 2019 (−0.2 BLEU, beam-4 better) but large in DeepSeek-V2's 7B ablation (MMLU 37.9 vs 45.2).
+
+Notes:
+- **DeepSeek-V2's numbers need scoping.** The 93.3% KV cut and 5.76× throughput are against DeepSeek 67B, a different dense GQA model, and the throughput includes FP8 weights and about 6-bit KV. The like-for-like MLA result is 4% of MHA's cache, at higher quality.
+- **Mistral 7B's claim isn't backed by an ablation.** Its "8× … without impacting the model quality" has no ablation in the paper.
+
 ## [2026-10-23] query | How KV-cache size relates to (active) parameter count
 
 Filed as [[kv-cache-size-vs-active-parameters]].

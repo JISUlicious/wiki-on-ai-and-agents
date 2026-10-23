@@ -2,7 +2,7 @@
 title: Sparse Prefill
 type: concept
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-10-23
 sources:
   - speculative-prefill-liu-2025.md
   - lazyllm-dynamic-token-pruning-fu-2024.md
@@ -75,3 +75,7 @@ It is orthogonal to [[prefix-caching]] (skip repeated content), [[chunked-prefil
 - [[pop-prefill-only-pruning-he-2026]] — the **model-axis** family this page did not have: keep every token, skip the last third of layers at prefill only. Training-free, 1.36× at 2K prompts
 - [[fast-forward-predictive-ffn-sparsity-prefill-gautam-2026]] — same axis, FFN width instead of depth; trained predictor + compensator; 1.44× at 2–4K, <6% LongBench loss
 - [[sts-speculative-token-sparsity-yu-2026]] — **does not belong here** — decode-only despite the name; filed under [[sparse-attention]] with [[specattn-speculating-sparse-attention-shah-2025]]. Recorded so the misfiling is not repeated
+
+## Lineage sources
+
+- [[kv-cache-eviction]] — [[snapkv-li-2024|SnapKV]] compresses prompt KV once at prefill, but leaves prefill compute unchanged.

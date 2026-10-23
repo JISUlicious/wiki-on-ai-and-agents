@@ -78,7 +78,7 @@ Two MoE models with the same attention configuration have the same cache, whethe
 
 | Design | Cached elements per token | Example |
 |---|---|---|
-| [[multi-head-latent-attention\|MLA]] | `L·(d_c + d_R)`: a shared latent plus a small decoupled RoPE key | DeepSeek-V2: −93.3% KV against DeepSeek 67B. DeepSeek-V3's 512 + 64 per layer is from its released config, not yet in the wiki. |
+| [[multi-head-latent-attention\|MLA]] | `L·(d_c + d_R)`: a shared latent plus a small decoupled RoPE key | [[deepseek-v2-deepseek-ai-2024\|DeepSeek-V2]]: d_c = 512, d_R = 64, 60 layers → 34.6K elements/token, which is 4% of an MHA MoE of the same size (Table 9). The headline −93.3% is against a different dense model. |
 | Hybrid linear attention | only the global layers cache per token; [[linear-attention]] layers hold a fixed state of `O(H·d_k·d_v)`, independent of `T` | [[kimi-linear-kimi-team-2025\|Kimi Linear]] (3:1): up to −75% KV |
 | GQA + hybrid | `c_tok = 2·12·2·256 = 12,288` (24 KiB/token, bf16) | [[qwen3.8-flash-next\|Qwen3.8-Flash-Next]]: 12 global layers, 2 KV heads, head dim 256; 6B active → `T* ≈ 488K`, against ≈ 122K for dense Llama-3-8B |
 
@@ -119,9 +119,14 @@ KV bytes = (P_KV / d) · T · B · b_kv
 
 ## Gaps
 
-- **No primary MLA source yet.** MLA's per-layer size comes from DeepSeek's configs, not a wiki source; the [[multi-head-latent-attention]] page cites only the 93.3% figure, second-hand.
+- **Resolved 2026-10-23:** MLA now has its primary source, [[deepseek-v2-deepseek-ai-2024]].
 - **Approximation:** `P ≈ 12Ld²` is the textbook dense estimate. The `T*` table uses real parameter counts instead.
-- **Not modelled:** sliding-window attention, cross-layer KV sharing (YOCO, CLA, DeepSeek-V4.1's cross-layer reuse) and KV eviction (H2O, SnapKV), which shrink or prune `c_tok·T` further.
+- **Not modelled here, but now in the wiki:**
+  - [[sliding-window-attention]] caps T per layer at W;
+  - [[cross-layer-kv-sharing]] (CLA, YOCO) removes layers from the sum;
+  - [[kv-cache-eviction]] (StreamingLLM, H2O, SnapKV) shrinks T;
+  - [[kv-cache-quantization]] (KIVI, KVQuant) lowers b_kv;
+  - [[jamba]] makes the layer-ratio point: 4 GB vs Mixtral's 32 GB at similar active parameters.
 
 ## References
 

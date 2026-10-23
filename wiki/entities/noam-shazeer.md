@@ -2,9 +2,10 @@
 title: Noam Shazeer
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-23
 sources:
   - transformer-vaswani-2017.md
+  - fast-transformer-decoding-one-write-head-shazeer-2019.md
 status: draft
 importance: high
 tags:
@@ -24,3 +25,7 @@ At the time of the Transformer paper, Shazeer was at [[google-brain]].
 ## References
 
 - [[attention-is-all-you-need-vaswani-2017]]
+
+## Lineage sources
+
+- [[fast-transformer-decoding-one-write-head-shazeer-2019]] — sole author; introduces [[multi-query-attention]] (2019).

@@ -9,13 +9,20 @@ sources:
   - misa-mixture-of-indexer-sparse-attention-zhou-2026.md
   - kimi-linear-kimi-team-2025.md
   - normalized-low-rank-adaptation-kang-2026.md
+  - deepseek-v2-deepseek-ai-2024.md
 status: draft
 importance: medium
 ---
 
 # Multi-Head Latent Attention
 
-**Multi-Head Latent Attention (MLA)** is the attention variant introduced with DeepSeek-V2. Instead of caching full per-head keys and values, it compresses them into a shared low-rank **latent vector** and caches that. The DeepSeek-V2 abstract credits MLA with cutting the [[kv-cache]] by 93.3% relative to DeepSeek 67B. Like [[grouped-query-attention]], it trades some of the per-head independence of [[multi-head-attention]] for a smaller decode-time memory footprint, but it gets there by compressing keys and values rather than by sharing them across heads.
+**Multi-Head Latent Attention (MLA)** is the attention variant introduced with DeepSeek-V2. Instead of caching full per-head keys and values, it compresses them into a shared low-rank **latent vector** and caches that. The primary source is [[deepseek-v2-deepseek-ai-2024|DeepSeek-V2]] ([[deepseek-v2]]), whose abstract credits it with cutting the [[kv-cache]] by 93.3% relative to DeepSeek 67B.
+- **That 93.3% compares different models:** DeepSeek 67B is a separate dense GQA model.
+- **The like-for-like result is in its Table 9:**
+  - MLA caches **4% (large) and 14% (small)** of what MHA does in the same MoE, while scoring *higher* on MMLU and BBH.
+  - Per token per layer, MLA caches the latent `d_c = 512` plus a decoupled RoPE key `d_h^R = 64`, about `(9/2)·d_h`, "equal to GQA with only 2.25 groups".
+  - Over 60 layers that is 34.6K elements per token.
+- **No full K/V needed:** the up-projections are absorbed into the query and output projections, so full K/V are never materialized. Like [[grouped-query-attention]], it trades some of the per-head independence of [[multi-head-attention]] for a smaller decode-time memory footprint, but it gets there by compressing keys and values rather than by sharing them across heads.
 
 ## In this wiki
 
