@@ -61,3 +61,4 @@ ViT was the first definitive proof that the [[transformer-architecture|Transform
 ## References
 
 - [[vit-dosovitskiy-2020]]
+- [[convolutional-neural-network]] — the architecture ViT displaced; CNN feature hierarchy compared with transformers in [[layer-depth-hierarchy-cnn-vs-llm]]

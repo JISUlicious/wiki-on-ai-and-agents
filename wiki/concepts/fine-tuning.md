@@ -5,6 +5,7 @@ created: 2026-05-13
 updated: 2026-10-27
 sources:
   - bert-devlin-2018.md
+  - transferable-features-deep-nets-yosinski-2014.md
 status: complete
 importance: high
 ---
@@ -37,3 +38,4 @@ The general "fine-tuning" terminology has expanded considerably:
 ## Lineage sources
 
 - [[fine-tuning-hardware-requirements-local-llms]] — how much memory each fine-tuning method needs on 2026 local models, by hardware tier
+- [[transferable-features-deep-nets-yosinski-2014]] — the CNN-era origin: early layers transfer, late layers are task-specific; transfer-then-fine-tune beats training from scratch (+1.6–2.1%) ([[transfer-learning]])

@@ -7,6 +7,29 @@ updated: 2026-10-27
 
 # Activity Log
 
+## [2026-10-27] ingest | CNN feature hierarchy and BERT probing; layer-depth comparison filed
+
+The user asked how the neuron-explorer depth survey compares with CNNs, where early layers detect detail and later layers larger patterns. I answered, then ingested the primary sources:
+- Zeiler & Fergus (arXiv:1311.2901);
+- Yosinski et al. (arXiv:1411.1792);
+- Feature Visualization (Distill 2017);
+- Zoom In (Distill 2020);
+- Tenney et al. (arXiv:1905.05950).
+
+I filed the answer as [[layer-depth-hierarchy-cnn-vs-llm]], citing these sources in place of general knowledge. Its argument:
+- the rule that early layers are general and late layers are specific to the output holds in both;
+- CNN depth means spatial extent, while transformer attention is global from layer 1;
+- an LLM's vocabulary output makes its hierarchy an hourglass, not a ladder;
+- read-side and write-side evidence must not be mixed.
+
+Pages created: [[visualizing-understanding-convnets-zeiler-2013]], [[transferable-features-deep-nets-yosinski-2014]], [[feature-visualization-olah-2017]], [[zoom-in-circuits-olah-2020]], [[bert-rediscovers-nlp-pipeline-tenney-2019]], [[feature-hierarchy]], [[convolutional-neural-network]], [[transfer-learning]], [[feature-visualization]], [[circuits]], [[probing]], [[alexnet]], [[inceptionv1]], [[nick-cammarata]], [[layer-depth-hierarchy-cnn-vs-llm]].
+
+Pages updated: [[chris-olah]], [[polysemanticity]], [[superposition]], [[monosemanticity]] (the Cammarata 2020 → 2026 lineage), [[mechanistic-interpretability]], [[bert]], [[deep-learning]], [[yoshua-bengio]], [[vit]], [[fine-tuning]], [[openai]], [[google-research]], [[goodfire]], [[neuron-explorer]], [[neuron-explorer-lyramakesmusic-2026]], [[discovering-the-gems-in-early-layers-shi-2024]], [[residual-stream]].
+
+Caveats:
+- **Venues from outside the papers:** ECCV 2014 for Zeiler and ACL 2019 for Tenney.
+- **Missing figure text:** the per-layer captions in Feature Visualization were not captured by text extraction. The CNN progression is sourced from Zeiler and from Zoom In instead.
+
 ## [2026-10-27] ingest | neuron-explorer (lyramakesmusic) and reactions to "evil Qwen"
 
 Ingested the GitHub repo lyramakesmusic/neuron-explorer (README, NOTES.md, research_log.md), which is a steering-first MLP-neuron explorer for Qwen3.5-4B. At the user's request, also collected reactions, mostly to the 2026-10-24 "evil qwen" post (L14 N8949 +1 / L13 N7956 −1; about 3.9M views):

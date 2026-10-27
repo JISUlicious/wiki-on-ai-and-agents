@@ -2,9 +2,10 @@
 title: BERT
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-27
 sources:
   - bert-devlin-2018.md
+  - bert-rediscovers-nlp-pipeline-tenney-2019.md
 family: bert
 predecessor: "[[transformer]]"
 successors: []
@@ -48,6 +49,15 @@ BERT is encoder-only and trained for representation, not generation. Its success
 
 BERT is later used as a building block for retrieval: [[dpr|DPR (Karpukhin et al. 2020)]] uses two BERT encoders as a question encoder and a passage encoder for [[dense-retrieval|dense retrieval]], which in turn enables [[rag]] and [[retro]].
 
+## What its layers encode
+
+Probing the frozen layers recovers the classical NLP pipeline in order ([[bert-rediscovers-nlp-pipeline-tenney-2019]]):
+- part-of-speech first, then sentence structure, entities and semantic roles, with coreference last;
+- syntax is localised in a few layers, while semantics is spread across nearly all of them;
+- BERT-base and BERT-large place each task at the same *relative* depth.
+
+See [[feature-hierarchy]].
+
 ## Results (at release)
 
 - GLUE: 80.5 (+7.7 over prior SOTA)
@@ -59,3 +69,4 @@ BERT is later used as a building block for retrieval: [[dpr|DPR (Karpukhin et al
 ## References
 
 - [[bert-devlin-2018]]
+- [[bert-rediscovers-nlp-pipeline-tenney-2019]]

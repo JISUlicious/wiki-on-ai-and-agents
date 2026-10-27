@@ -6,6 +6,8 @@ updated: 2026-10-27
 sources:
   - emotion-concepts-anthropic-2026.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - zoom-in-circuits-olah-2020.md
+  - feature-visualization-olah-2017.md
 status: complete
 importance: high
 ---
@@ -76,3 +78,4 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[hope-hilbert-operator-progressive-encoding-mobahi-2026]] — neurons as rank-1 Hilbert–Schmidt operators; data-free deconstruction from BatchNorm statistics
 - [[neuron-explorer-lyramakesmusic-2026]] — steering-first neuron explorer for Qwen3.5-4B (labels every neuron by what it writes, with random-direction controls); spawned the viral [[evil-qwen]] two-neuron recipe
+- Vision-era roots, now ingested: [[visualizing-understanding-convnets-zeiler-2013]], [[feature-visualization-olah-2017]] and [[zoom-in-circuits-olah-2020]] (the [[circuits]] claims). Layer-depth comparison with LLMs: [[layer-depth-hierarchy-cnn-vs-llm]]

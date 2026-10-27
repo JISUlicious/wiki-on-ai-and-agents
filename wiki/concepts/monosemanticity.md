@@ -6,6 +6,7 @@ updated: 2026-10-27
 sources:
   - cunningham-sparse-autoencoders-2023.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - zoom-in-circuits-olah-2020.md
 status: draft
 importance: medium
 ---
@@ -28,6 +29,7 @@ Monosemanticity is the **interpretability goal**: if you can decompose a network
 >   - about 90% of Qwen3-32B neuron **poles** have one main job, about 7% have two related jobs, and 2–4% are unexplained;
 >   - the trick is to treat each neuron's positive and negative poles as separate units, use long context, and look at what the neuron writes;
 >   - the figures are preliminary.
+> - **Lineage:** Cammarata co-authored [[zoom-in-circuits-olah-2020|Zoom In]] (2020), whose first claim was that features, often single neurons, are readable units in vision models. The same essay documented polysemantic neurons. "Already clean" extends that claim to LLM neurons.
 > - **Criticism:** Neel Nanda reportedly said the claim stretches "readable" too far.
 > - **Mixed evidence from [[neuron-explorer-lyramakesmusic-2026]]:**
 >   - Supporting: about 20% of Qwen3.5-4B L22 neurons steer a theme stronger than any random control.
@@ -47,3 +49,4 @@ The [[emotion-concepts-anthropic-2026|Anthropic 2026 emotion-concepts paper]] is
 
 - [[sparse-autoencoders-cunningham-2023]]
 - [[neuron-explorer-lyramakesmusic-2026]] — neuron-level steering evidence; reports the "already clean" claim secondhand
+- [[zoom-in-circuits-olah-2020]]

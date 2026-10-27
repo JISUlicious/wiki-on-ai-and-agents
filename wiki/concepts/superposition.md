@@ -6,6 +6,7 @@ updated: 2026-10-27
 sources:
   - cunningham-sparse-autoencoders-2023.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - zoom-in-circuits-olah-2020.md
 status: draft
 importance: medium
 ---
@@ -26,6 +27,7 @@ If superposition is real, the neuron is the wrong unit of analysis for interpret
 
 ## Evidence
 
+- **First mechanistic sighting, vision (2020).** In [[zoom-in-circuits-olah-2020|Zoom In]], a pure car neuron in InceptionV1 (mixed4c) is spread across dog-detecting neurons in the next layer. The authors' explanation: high-dimensional spaces allow only *n* orthogonal vectors but "exponentially many almost orthogonal vectors".
 - **Toy models** (Elhage 2022): controlled experiments confirm small networks adopt superposition under sparsity pressure.
 - **SAE recoveries** ([[sparse-autoencoders-cunningham-2023|Cunningham 2023]], Anthropic 2023–2024): in real LLMs, SAEs recover thousands of clean monosemantic features from polysemantic neuron activations.
 - **Counterpoint (2026):** Goodfire's "already clean" essay argues most neuron *poles* are readable; see the contradiction note on [[monosemanticity]]. [[neuron-explorer-lyramakesmusic-2026]] finds Qwen3.5-4B's output weights almost orthogonal (9,216 columns in 2,560 dimensions), with thin cluster structure. It also finds mid-layer neurons barely more distinctive than random directions, which fits features spread across many neurons there.
@@ -35,3 +37,4 @@ If superposition is real, the neuron is the wrong unit of analysis for interpret
 
 - [[sparse-autoencoders-cunningham-2023]]
 - [[neuron-explorer-lyramakesmusic-2026]]
+- [[zoom-in-circuits-olah-2020]]

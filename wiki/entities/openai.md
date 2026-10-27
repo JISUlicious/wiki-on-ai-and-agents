@@ -2,9 +2,10 @@
 title: OpenAI
 type: entity
 created: 2026-05-13
-updated: 2026-10-10
+updated: 2026-10-27
 sources:
   - gpt-1-radford-2018.md
+  - zoom-in-circuits-olah-2020.md
 status: complete
 importance: high
 tags:
@@ -45,3 +46,4 @@ Originally founded as a non-profit research lab focused on safe AGI; restructure
 - [[introducing-chatgpt-openai-2022]] — ChatGPT launch (Nov 2022)
 - [[introducing-gpts-openai-2023]] — GPTs (Nov 2023)
 - [[openai-decisions-api]] — Decisions API (Oct 2026)
+- [[zoom-in-circuits-olah-2020]] — OpenAI Circuits essay (2020): features, circuits and universality in InceptionV1

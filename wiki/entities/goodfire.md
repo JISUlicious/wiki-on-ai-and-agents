@@ -17,7 +17,7 @@ importance: low
 Goodfire is an AI interpretability company. In this wiki it appears through two contributions to [[neuron-explorer]]:
 
 - **Steering fork of [[vllm]]** (RhizoNymph/vllm). It supports [[steering]] per request through a table of steering rows and a per-token index, and it is compatible with CUDA graphs. neuron-explorer runs its sweeps on it.
-- **"Neural Networks Are Already Clean"** (Nick Cammarata, 2026-10-15). The essay argues that most neurons are already readable once each neuron's **positive and negative poles** are treated as separate units. Its methods include separating SwiGLU sign regimes, using raw activation scales, reading long context, steering, and a "blind maximum" test with two agents. A gallery of 1,000 written-up Qwen3-32B neuron profiles accompanies it.
+- **"Neural Networks Are Already Clean"** ([[nick-cammarata|Nick Cammarata]], 2026-10-15). The essay argues that most neurons are already readable once each neuron's **positive and negative poles** are treated as separate units. Its methods include separating SwiGLU sign regimes, using raw activation scales, reading long context, steering, and a "blind maximum" test with two agents. A gallery of 1,000 written-up Qwen3-32B neuron profiles accompanies it.
 
 > [!note] Source status
 > - The essay is not ingested. Its headline numbers reach the wiki only through press coverage: about 90% of Qwen3-32B neuron poles have one main job, about 7% have two related jobs, and 2–4% are unexplained.

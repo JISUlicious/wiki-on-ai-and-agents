@@ -7,7 +7,7 @@ updated: 2026-10-27
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 640 sources, 219 entities, 352 concepts, 8 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 645 sources, 222 entities, 358 concepts, 9 comparisons, 19 queries.
 
 ## Entities
 
@@ -202,6 +202,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[evil-qwen]] — viral 2026-10-24 recipe: L14 N8949 +1 / L13 N7956 −1 flips Qwen3.5-4B hostile; replications show refusal 90% → 8%
 - [[lyra-c]] — independent mech-interp researcher (@_lyraaaa_), author of neuron-explorer
 - [[goodfire]] — interpretability company: steering fork of vLLM; Cammarata's "Neural Networks Are Already Clean" essay
+- [[alexnet]] — 2012 ImageNet-winning 8-layer convnet; ZFNet fix; reference net for CNN feature-hierarchy and transfer studies
+- [[inceptionv1]] — GoogLeNet: the reference model of CNN interpretability (curve detectors, 4e:55, cars in superposition)
+- [[nick-cammarata]] — Circuits co-author (OpenAI, 2020) → Goodfire "already clean" essay (2026)
 - [[albert-gu]] — S4 and Mamba author (Stanford → CMU)
 - [[tri-dao]] — FlashAttention and Mamba/Mamba-2 author (Princeton)
 - [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
@@ -562,6 +565,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[flow-matching]] — velocity-prediction generative objective (rectified flow); UniMate's training objective
 - [[humanoid-motion-tracking]] — physics policies that follow kinematic motion; the generator → tracker split; SONIC scaling
 - [[gated-deltanet]] — gated delta rule: Mamba-2 decay + DeltaNet overwrite; online-SGD view; in Qwen3.8-Flash-Next and the base of KDA
+- [[feature-hierarchy]] — how features change with layer depth: CNN ladder (edges → textures → parts → objects) vs LLM hourglass
+- [[convolutional-neural-network]] — convnets: growing receptive field forces a spatial hierarchy; first networks studied neuron by neuron
+- [[transfer-learning]] — reuse pretrained features; early layers general, late layers task-specific (Yosinski)
+- [[feature-visualization]] — explain a unit by an input that makes it fire: dataset examples, deconvnet, optimization
+- [[circuits]] — features + weights as readable subgraphs; equivariance, unioning over cases, superposition
+- [[probing]] — classifiers on frozen layers: what is encoded where (edge probing, linear readout)
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
 - [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
 - [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
@@ -1270,6 +1279,11 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[griffin-gated-linear-recurrences-de-2024]] — Griffin/Hawk (arXiv:2402.19427): RG-LRU + local MQA (2024)
 - [[xlstm-extended-lstm-beck-2024]] — xLSTM (arXiv:2405.04517): exponential gating + matrix memory (2024)
 - [[neuron-explorer-lyramakesmusic-2026]] — neuron-explorer repo + research log (per-neuron steering of Qwen3.5-4B, depth survey, steer lens) and reactions to the evil-Qwen post (2026-10)
+- [[visualizing-understanding-convnets-zeiler-2013]] — Zeiler & Fergus (arXiv:1311.2901): deconvnet layer visualizations, edges → objects, per-layer linear readout (2013)
+- [[transferable-features-deep-nets-yosinski-2014]] — Yosinski et al. (arXiv:1411.1792): general → specific transition by layer; mid-network co-adaptation (NIPS 2014)
+- [[feature-visualization-olah-2017]] — Olah, Mordvintsev & Schubert (Distill): feature visualization by optimization, diversity, regularization (2017)
+- [[zoom-in-circuits-olah-2020]] — Olah et al. (Distill Circuits): features, circuits, universality; curve detectors; cars in superposition (2020)
+- [[bert-rediscovers-nlp-pipeline-tenney-2019]] — Tenney et al. (arXiv:1905.05950): edge probing finds POS → syntax → semantics → coreference in BERT layers (2019)
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)
@@ -1542,6 +1556,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[ollama-decision-models-2026]] — Ollama decision models: blog (2026-09-29), v0.35.0/0.35.1, HF repos and licences (Tev1 undeclared), ollama-python systemone()
 
 ## Comparisons
+- [[layer-depth-hierarchy-cnn-vs-llm]] — CNN layer hierarchy vs transformer LLMs: general → specific holds in both; spatial ladder vs hourglass ending in vocabulary; read vs write evidence
 - [[fine-tuning-hardware-requirements-local-llms]] — memory to train or fine-tune 2026 local LLMs: method rules (16–18×P / 8×P / 2×P / 0.5×P), Qwen3.5 and Gemma 4 tables, hardware tiers, MoE total-parameter rule
 - [[decision-api-server-implementations]] — SGLang vs vLLM vs Ollama decision endpoints (/v1/systemone, /v1/decisions), code-verified 2026-10-12
 - [[system-one-models-and-dual-process-thinking]] — How "System One models" relate to Kahneman's System 1/2 and to LLM System 1→2 research: where the analogy fits and where it breaks

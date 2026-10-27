@@ -2,10 +2,12 @@
 title: Deep Learning
 type: concept
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-27
 sources:
   - ai-ml-dl-difference-nvidia-2016.md
   - ai-ml-dl-nn-ibm.md
+  - visualizing-understanding-convnets-zeiler-2013.md
+  - transferable-features-deep-nets-yosinski-2014.md
 status: draft
 importance: high
 ---
@@ -31,8 +33,11 @@ Data passes forward through layers of weighted connections. The error is **back-
 ## Related
 
 [[machine-learning]] · [[large-language-model]] · [[transformer-architecture]] · [[recurrent-neural-network]] · [[pre-training]] · [[artificial-intelligence]]
+[[convolutional-neural-network]] · [[feature-hierarchy]] · [[transfer-learning]] · [[alexnet]]
 
 ## References
 
 - [[ai-ml-dl-difference-nvidia-2016]]
 - [[ai-vs-ml-vs-dl-vs-nn-ibm]]
+- [[visualizing-understanding-convnets-zeiler-2013]]
+- [[transferable-features-deep-nets-yosinski-2014]]

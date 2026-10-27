@@ -56,3 +56,4 @@ Details are in [[neuron-explorer-lyramakesmusic-2026]].
 ## References
 
 - [[neuron-explorer-lyramakesmusic-2026]]
+- [[layer-depth-hierarchy-cnn-vs-llm]]

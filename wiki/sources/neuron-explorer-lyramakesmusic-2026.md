@@ -150,3 +150,4 @@ See [[evil-qwen]] for the full episode.
 - [[qwen]] · [[vllm]] · [[mcp]] · [[claude-code]]
 
 _Original source: `sources/neuron-explorer-lyramakesmusic-2026.md`; reactions: `sources/neuron-explorer-reactions-2026-10.md`_
+- [[layer-depth-hierarchy-cnn-vs-llm]] — the depth survey compared with the CNN feature hierarchy

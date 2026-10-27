@@ -2,10 +2,12 @@
 title: Google Research
 type: entity
 created: 2026-05-13
-updated: 2026-10-21
+updated: 2026-10-27
 sources:
   - transformer-vaswani-2017.md
   - bert-devlin-2018.md
+  - bert-rediscovers-nlp-pipeline-tenney-2019.md
+  - feature-visualization-olah-2017.md
 status: draft
 importance: high
 tags:
@@ -34,3 +36,5 @@ In 2023, [[google-brain]] merged with DeepMind to form Google DeepMind, and the 
 - [[realm]] — REALM (2020)
 - [[ai-chains-wu-2021]] — AI Chains (2021)
 - [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² (2026), an open-source recursive agent-harnessing framework ([[harness2]])
+- [[bert-rediscovers-nlp-pipeline-tenney-2019]] — edge probing finds the NLP pipeline order inside BERT (2019)
+- [[feature-visualization-olah-2017]] — Google Brain/Research Distill guide to feature visualization (2017)

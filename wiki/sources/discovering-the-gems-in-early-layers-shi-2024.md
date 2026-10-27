@@ -110,3 +110,4 @@ Averages hide large per-dataset swings. On LLaMA 3.1 at k=1024, NarrativeQA fall
 - SnapKV: Li et al., 2024, arXiv:2404.14469 · H2O: Zhang et al., 2023 (NeurIPS 36)
 - Needle in a Haystack: Kamradt, 2024, `gkamradt/LLMTest_NeedleInAHaystack`
 - LongBench: Bai et al., 2023, arXiv:2308.14508
+- [[layer-depth-hierarchy-cnn-vs-llm]] — the search / identify / prepare-output stages compared with CNN layer hierarchies
