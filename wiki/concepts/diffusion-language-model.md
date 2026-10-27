@@ -2,7 +2,7 @@
 title: Diffusion Language Model
 type: concept
 created: 2026-09-22
-updated: 2026-09-30
+updated: 2026-10-24
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - neither-parallel-nor-sequential-diffusiongemma-asaria-2026.md
@@ -70,3 +70,7 @@ Because a masked diffusion model's native operation is *filling declared holes*,
 ## Related 2026 sources
 
 - [[thinking-with-looped-flows-suleymanzade-2026]] — Looped flows: train looped reasoners with flow-matching losses; ARC-AGI-1 58.8 pass@2 at 5–7M parameters
+
+## Lineage sources
+
+- [[text-to-motion]] — the same denoising machinery for 3D motion: MDM's x₀-prediction, Kimodo's separated guidance, ARDY's autoregressive windows, and UniMate's [[flow-matching]]

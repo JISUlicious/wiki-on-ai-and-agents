@@ -2,7 +2,7 @@
 title: MIT
 type: entity
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-10-24
 sources:
   - lilo-grand-2023.md
 status: draft
@@ -23,3 +23,7 @@ The Massachusetts Institute of Technology. Its CSAIL and Brain & Cognitive Scien
 ## References
 
 - [[lilo-grand-2023]]
+
+## Lineage sources
+
+- [[unimate-unified-skeleton-animation-mou-2026]] — co-author (Zhiyang Dou) on UniMate

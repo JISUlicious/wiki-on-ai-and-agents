@@ -2,7 +2,7 @@
 title: Princeton University
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-24
 sources:
   - dpr-karpukhin-2020.md
 status: draft
@@ -22,3 +22,7 @@ US research university. Princeton's NLP group (PrincetonNLP), led by [[danqi-che
 ## References
 
 - [[dpr-karpukhin-2020]]
+
+## Lineage sources
+
+- [[unimate-unified-skeleton-animation-mou-2026]] — UniMate (SIGGRAPH Asia 2026): one text-to-animation model for any rigged skeleton

@@ -2,7 +2,7 @@
 title: PPO (Proximal Policy Optimization)
 type: concept
 created: 2026-05-16
-updated: 2026-10-07
+updated: 2026-10-24
 sources:
   - memory-r1-yan-2025.md
 status: draft
@@ -31,3 +31,4 @@ Proximal Policy Optimization (PPO) is a policy-gradient reinforcement learning a
 
 - [[actor-critic]] — PPO is an actor–critic policy-gradient method
 - [[introducing-chatgpt-openai-2022]] — PPO in ChatGPT's training
+- [[sonic-supersizing-motion-tracking-luo-2025]] — PPO in Isaac Lab scaled to 21k GPU-hours to train a 42M-parameter humanoid tracking policy ([[humanoid-motion-tracking]])

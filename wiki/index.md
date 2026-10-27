@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-23
+updated: 2026-10-24
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 621 sources, 200 entities, 348 concepts, 7 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 627 sources, 206 entities, 351 concepts, 7 comparisons, 19 queries.
 
 ## Entities
 
@@ -185,6 +185,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[harness2]] — Harness² (Google Research, Apache-2.0): open-source recursive agent-harnessing framework; OpenCode/Codex executors
 - [[mistral-7b]] — Mistral AI's 7B (2023): GQA plus sliding-window attention with a rolling-buffer KV cache
 - [[jamba]] — AI21's attention:Mamba 1:7 hybrid MoE (52B/12B); 4 GB KV at 256K vs Mixtral's 32 GB
+- [[unimate]] — Princeton et al.: text-to-animation for any rigged skeleton (flow matching, topology-aware DiT); MIT code, CC BY-NC checkpoints
+- [[kimodo]] — NVIDIA kinematic motion diffusion (700 h mocap, 282M): text + keyframe/end-effector/root constraints; SOMA, G1, SMPL-X
+- [[ardy]] — NVIDIA/ETH real-time autoregressive motion diffusion; 33 ms windows; Kimodo's streaming successor
+- [[sonic]] — NVIDIA GEAR humanoid motion-tracking foundation policy (42M, 99.2% real-G1 success)
+- [[mdm]] — Human Motion Diffusion Model (2022): the x₀-predicting, CFG text-to-motion template
+- [[tmr]] — contrastive text–motion embedding; the standard motion-generation evaluator
 - [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
 - [[ai21-labs]] — Israeli lab; Jamba hybrid Transformer-Mamba
 - [[fair]] — Facebook AI Research / Meta AI
@@ -539,6 +545,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[kv-cache-quantization]] — K per-channel, V per-token: KIVI (2-bit, tuning-free) vs KVQuant (pre-RoPE, non-uniform, 10M context)
 - [[kv-cache-eviction]] — keep a subset of tokens' KV: StreamingLLM sinks, H2O heavy hitters, SnapKV observation window; irreversible
 - [[cross-layer-kv-sharing]] — share K/V across layers: CLA2 (2×, <1% PPL), YOCO (one global cache, about L×)
+- [[text-to-motion]] — generating 3D skeletal motion from text (+ kinematic constraints): MDM → Kimodo/ARDY → UniMate; evaluation pitfalls
+- [[flow-matching]] — velocity-prediction generative objective (rectified flow); UniMate's training objective
+- [[humanoid-motion-tracking]] — physics policies that follow kinematic motion; the generator → tracker split; SONIC scaling
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
 - [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
 - [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
@@ -1228,6 +1237,12 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[h2o-heavy-hitter-oracle-zhang-2023]] — H2O: heavy-hitter KV eviction at a 20% budget (NeurIPS 2023)
 - [[snapkv-li-2024]] — SnapKV: observation-window prompt KV compression; 380K tokens on one A100 (2024)
 - [[key-value-compress-kv-cache-compression-survey-2025]] — KV-compression taxonomy by layers/heads/tokens/hidden (CICC 2025)
+- [[unimate-unified-skeleton-animation-mou-2026]] — UniMate (arXiv:2609.05415, SIGGRAPH Asia 2026): one model animates diverse skeletons
+- [[kimodo-kinematic-motion-diffusion-nvidia-2026]] — Kimodo tech report (arXiv:2603.15546) + repo: controllable motion at 700 h; benchmark leak and metric fixes (2026)
+- [[ardy-autoregressive-motion-diffusion-zhao-2026]] — ARDY (arXiv:2607.08741, ACM TOG 2026): interactive real-time motion diffusion
+- [[sonic-supersizing-motion-tracking-luo-2025]] — SONIC (arXiv:2511.07820): scaling humanoid motion tracking to 42M params / 100M frames
+- [[human-motion-diffusion-model-tevet-2022]] — MDM (arXiv:2209.14916, ICLR 2023): diffusion for text-to-motion
+- [[tmr-text-to-motion-retrieval-petrovich-2023]] — TMR (arXiv:2305.00976, ICCV 2023): contrastive text-to-motion retrieval
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)

@@ -2,7 +2,7 @@
 title: UC Berkeley
 type: entity
 created: 2026-05-16
-updated: 2026-10-08
+updated: 2026-10-24
 sources:
   - memgpt-packer-2023.md
   - sleep-time-compute-lin-2025.md
@@ -33,3 +33,4 @@ The MemGPT group spun out as [[letta]] in 2024 to productize stateful agent runt
 ## Lineage sources
 
 - [[gepa-agrawal-2025]] — GEPA (2025)
+- [[unimate-unified-skeleton-animation-mou-2026]] — co-author (Jiahui Lei) on UniMate

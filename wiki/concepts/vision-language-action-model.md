@@ -2,7 +2,7 @@
 title: Vision-Language-Action Model
 type: concept
 created: 2026-05-17
-updated: 2026-09-30
+updated: 2026-10-24
 sources:
   - magma-yang-2025.md
 status: complete
@@ -42,3 +42,7 @@ VLAs collapse the perception → planning → control pipeline into a single lea
 ## Related 2026 sources
 
 - [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots
+
+## Lineage sources
+
+- [[sonic-supersizing-motion-tracking-luo-2025]] — GR00T N1.5 drives the SONIC whole-body tracker through a shared FSQ token. Tokens beat explicit SMPL poses (68% vs 27%) as the VLA → controller interface

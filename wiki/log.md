@@ -2,10 +2,32 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-23
+updated: 2026-10-24
 ---
 
 # Activity Log
+
+## [2026-10-24] ingest | UniMate + Kimodo repos and related motion-generation papers (batch of 6)
+
+Ingested the two requested GitHub repos with their papers, plus four related papers:
+- [Friedrich-M/UniMate](https://github.com/Friedrich-M/UniMate) at `b78c780`, with arXiv:2609.05415
+- [nv-tlabs/kimodo](https://github.com/nv-tlabs/kimodo) at `e1c219c`, with arXiv:2603.15546
+- **Related:** ARDY (arXiv:2607.08741), SONIC (arXiv:2511.07820), MDM (arXiv:2209.14916), TMR (arXiv:2305.00976)
+
+README and changelog snapshots are kept in `sources/repos/`. Two parallel readers did the extraction; key numbers were spot-checked.
+
+Pages created:
+- **Sources (6):** [[unimate-unified-skeleton-animation-mou-2026]], [[kimodo-kinematic-motion-diffusion-nvidia-2026]], [[ardy-autoregressive-motion-diffusion-zhao-2026]], [[sonic-supersizing-motion-tracking-luo-2025]], [[human-motion-diffusion-model-tevet-2022]], [[tmr-text-to-motion-retrieval-petrovich-2023]]
+- **Entities (6):** [[unimate]], [[kimodo]], [[ardy]], [[sonic]], [[mdm]], [[tmr]]
+- **Concepts (3):** [[text-to-motion]], [[flow-matching]], [[humanoid-motion-tracking]]
+
+Pages updated: [[nvidia]], [[princeton-university]], [[uc-berkeley]], [[mit]], [[ppo]], [[vision-language-action-model]], [[t5]], [[diffusion-language-model]]
+
+Notes:
+- **UniML3D's size differs by source:** 13,006 sequences in the paper, 13,769 clips / 7,430 skeletons in the README. Both are recorded.
+- **Kimodo's changelog records a benchmark data leak:** BONES-SEED test sequences were in RP-v1.1's training set. v1.2 retrains; overview R@3 falls 83.32 → 79.83.
+- **SONIC never mentions Kimodo.** The link is only Kimodo's README demo.
+- **SONIC's venue is unconfirmed.** "Science Robotics" comes from secondary coverage, not the paper.
 
 ## [2026-10-23] ingest | Batch: 12 KV-cache sources (head sharing, MLA, quantization, eviction, cross-layer, hybrids)
 
