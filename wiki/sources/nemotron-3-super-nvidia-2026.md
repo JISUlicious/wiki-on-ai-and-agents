@@ -2,7 +2,7 @@
 title: "Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning"
 type: source
 created: 2026-06-03
-updated: 2026-09-30
+updated: 2026-10-27
 sources:
   - nemotron-3-super-nvidia-2026.md
 arxiv_id: "2604.12374"
@@ -50,3 +50,7 @@ The model was pre-trained on **25 trillion tokens** (two phases: 80% broad cover
 ## Related 2026 sources
 
 - [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3
+
+## Lineage sources
+
+- [[mamba-2-transformers-are-ssms-dao-2024]] — the Mamba(-2) layer family in this hybrid; Mamba-2's own ablation found about 10% attention layers optimal ([[mamba]])

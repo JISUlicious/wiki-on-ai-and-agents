@@ -2,7 +2,7 @@
 title: Sepp Hochreiter
 type: entity
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-27
 sources:
   - hochreiter-lstm-1997.md
 status: draft
@@ -18,3 +18,7 @@ Austrian computer scientist; first author of "[[long-short-term-memory-hochreite
 ## References
 
 - [[long-short-term-memory-hochreiter-1997]]
+
+## Lineage sources
+
+- [[xlstm-extended-lstm-beck-2024]] — last author of xLSTM (JKU Linz / NXAI), the 2024 scaling-up of his 1997 LSTM

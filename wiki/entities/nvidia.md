@@ -42,3 +42,4 @@ tags:
   - [[ardy]] ([[ardy-autoregressive-motion-diffusion-zhao-2026]]): its real-time successor;
   - [[sonic]] ([[sonic-supersizing-motion-tracking-luo-2025]]): GEAR's scaled humanoid tracking policy.
 - [[dgx-spark]] — the 128 GB unified-memory desktop. Fits bf16 LoRA of Qwen3.5-35B-A3B after a shard-by-shard loading fix ([[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]]).
+- [[gated-delta-networks-yang-2024]] — Gated DeltaNet (NVIDIA, ICLR 2025): the gated delta rule used in Qwen3.8-Flash-Next and the base of KDA

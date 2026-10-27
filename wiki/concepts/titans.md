@@ -2,7 +2,7 @@
 title: Titans
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-27
 sources:
   - titans-behrouz-2025.md
 status: complete
@@ -36,3 +36,7 @@ Titans contributes the **parametric memory** branch to [[memory-management]]: *w
 ## References
 
 - [[titans-behrouz-2025]] — Behrouz, Zhong, Mirrokni, *Titans: Learning to Memorize at Test Time*, 2025 ([arXiv:2501.00663](https://arxiv.org/abs/2501.00663))
+
+## Lineage sources
+
+- [[gated-delta-networks-yang-2024]] — the gated delta rule is one SGD step per token with weight decay, the same test-time-learning view Titans generalizes ([[gated-deltanet]])

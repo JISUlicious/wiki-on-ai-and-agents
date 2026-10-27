@@ -7,7 +7,7 @@ updated: 2026-10-27
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 632 sources, 209 entities, 351 concepts, 8 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 639 sources, 215 entities, 352 concepts, 8 comparisons, 19 queries.
 
 ## Entities
 
@@ -194,6 +194,12 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[unsloth]] — fine-tuning library with custom kernels; publishes per-model VRAM tables (Qwen3.5, Gemma 4)
 - [[llama-factory]] — unified fine-tuning framework; README rule: full 18x, pure bf16 8x, LoRA 2x, QLoRA4 x/2 GB
 - [[dgx-spark]] — NVIDIA GB10 desktop with 128 GB unified memory; fits bf16 LoRA of Qwen3.5-35B-A3B
+- [[mamba]] — Gu & Dao's selective SSM (2023) and Mamba-2/SSD (2024); attention-free scaling, 5× inference throughput
+- [[rwkv]] — open recurrent LM family; RWKV-7 "Goose" generalized delta rule, Apache-2.0
+- [[griffin]] — DeepMind RG-LRU + local attention (Hawk = pure recurrence); Llama-2 parity on 300B tokens
+- [[xlstm]] — Hochreiter group's extended LSTM (sLSTM + mLSTM matrix memory)
+- [[albert-gu]] — S4 and Mamba author (Stanford → CMU)
+- [[tri-dao]] — FlashAttention and Mamba/Mamba-2 author (Princeton)
 - [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
 - [[ai21-labs]] — Israeli lab; Jamba hybrid Transformer-Mamba
 - [[fair]] — Facebook AI Research / Meta AI
@@ -265,7 +271,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[decoder-only-transformer]] — The dominant variant for modern LLMs
 - [[mixture-of-experts]] — Sparse expert routing; decouples total capacity from per-token compute (active vs total params)
 - [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA)
-- [[state-space-model]] — Linear-time recurrent sequence models (Mamba); often hybridized with attention/MoE
+- [[state-space-model]] — Fixed-state linear recurrences: S4 → Mamba → Mamba-2 (SSD = linear attention) → Gated DeltaNet; recall limit and hybrids (rewritten from primary sources 2026-10-27)
 - [[encoder-decoder]] — Two-stack architecture for seq2seq tasks
 - [[attention-mechanism]] — Query/key/value weighted aggregation
 - [[self-attention]] — Intra-sequence attention; defining op of Transformers
@@ -551,6 +557,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[text-to-motion]] — generating 3D skeletal motion from text (+ kinematic constraints): MDM → Kimodo/ARDY → UniMate; evaluation pitfalls
 - [[flow-matching]] — velocity-prediction generative objective (rectified flow); UniMate's training objective
 - [[humanoid-motion-tracking]] — physics policies that follow kinematic motion; the generator → tracker split; SONIC scaling
+- [[gated-deltanet]] — gated delta rule: Mamba-2 decay + DeltaNet overwrite; online-SGD view; in Qwen3.8-Flash-Next and the base of KDA
 - [[paged-attention]] — OS-style KV paging; utilization 20–38% → 96.3%, 2–4× throughput, ref-counted prefix sharing
 - [[prefix-caching]] — reuse KV so repeated prompt content is never prefilled twice; exact (RadixAttention) vs modular (Prompt Cache)
 - [[cross-model-kv-cache-transfer]] — reuse KV across *different* models so a router swap skips prefill; closed-form linear map, 4–25×, but 2 of 6 pairs fail
@@ -1251,6 +1258,13 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[llama-factory-hardware-requirement-2026]] — LLaMA-Factory hardware table by method × size (README, 2026)
 - [[mlx-lm-lora-docs-2026]] — MLX-LM LoRA/QLoRA on Apple silicon: memory levers, Qwen3.5 peak RAM (2026)
 - [[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]] — DGX Spark bf16 LoRA of a 67 GB MoE: the 2× loading peak on unified memory (2026)
+- [[s4-structured-state-spaces-gu-2021]] — S4 (arXiv:2111.00396): HiPPO + NPLR structured SSM; first to solve Path-X (2021)
+- [[mamba-selective-state-spaces-gu-2023]] — Mamba (arXiv:2312.00752): selective SSM + hardware-aware scan (2023)
+- [[mamba-2-transformers-are-ssms-dao-2024]] — Mamba-2 / SSD (arXiv:2405.21060): SSMs = masked linear attention; ~10% attention hybrids best (2024)
+- [[gated-delta-networks-yang-2024]] — Gated DeltaNet (arXiv:2412.06464, ICLR 2025): gating + delta rule; hybrids beat Transformers on retrieval (2024)
+- [[rwkv-7-goose-peng-2025]] — RWKV-7 Goose (arXiv:2503.14456): vector-gated delta rule; Qwen2.5-3B parity on ⅓ the tokens (2025)
+- [[griffin-gated-linear-recurrences-de-2024]] — Griffin/Hawk (arXiv:2402.19427): RG-LRU + local MQA (2024)
+- [[xlstm-extended-lstm-beck-2024]] — xLSTM (arXiv:2405.04517): exponential gating + matrix memory (2024)
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)

@@ -2,7 +2,7 @@
 title: Qwen3.8-Flash-Next
 type: entity
 created: 2026-08-30
-updated: 2026-10-20
+updated: 2026-10-27
 sources:
   - qwen3.8-flash-next-model-card-2026.md
 family: qwen
@@ -92,3 +92,7 @@ Part of the [[qwen|Qwen]] family; the architecture line (`qwen4_exp`) is new rat
 - [[persistent-state-dataflow-accelerator-linear-attention-decode-gupta-2026]] — an FPGA accelerator targeting this architecture's GDN layers specifically — it cites 'Qwen3-Next uses 75% GDN layers', matching this page's 36-of-48 split
 - [[trained-sparse-attention]] — what the sparse-attention layers in this hybrid are, and why token-axis retrofits fit it better than attention-axis ones
 - [[uniprefill-block-wise-dynamic-sparsification-fan-2026]] — the hybrid-architecture rule, measured on the sibling Qwen3-Next-80B-A3B: sparse attention ≤1.11×, [[token-pruning|token pruning]] 1.08–1.68× and negative below 16K
+
+## Lineage sources
+
+- [[gated-delta-networks-yang-2024]] — primary source for the Gated DeltaNet layers that make up 36 of its 48 layers ([[gated-deltanet]])

@@ -2,7 +2,7 @@
 title: Stanford University
 type: entity
 created: 2026-05-14
-updated: 2026-10-08
+updated: 2026-10-27
 sources:
   - pennington-glove-2014.md
 status: draft
@@ -27,3 +27,4 @@ US research university. Stanford NLP — directed by [[christopher-manning|Chris
 ## Lineage sources
 
 - [[gepa-agrawal-2025]] — GEPA (2025)
+- [[s4-structured-state-spaces-gu-2021]] — S4 (Gu, Goel, Ré; HazyResearch), the structured state-space layer

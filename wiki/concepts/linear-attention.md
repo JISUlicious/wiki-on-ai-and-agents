@@ -2,7 +2,7 @@
 title: Linear Attention
 type: concept
 created: 2026-07-28
-updated: 2026-10-23
+updated: 2026-10-27
 sources:
   - kimi-linear-kimi-team-2025.md
   - flash-kda-moonshot-2026.md
@@ -94,3 +94,4 @@ Kimi Linear states them: finite-state capacity still caps exact recall (hence th
 ## Lineage sources
 
 - [[jamba-hybrid-transformer-mamba-lieber-2024]] — an early production hybrid (attention:Mamba 1:7), the precursor to the 3:1 KDA and Gated DeltaNet hybrids. [[you-only-cache-once-yoco-sun-2024|YOCO]] uses gated retention in its self-decoder.
+- **Primary sources (2026-10-27):** [[mamba-2-transformers-are-ssms-dao-2024]] proves SSMs equal masked linear attention (SSD). [[gated-delta-networks-yang-2024]] is the gated delta rule behind KDA; see [[gated-deltanet]]. [[rwkv-7-goose-peng-2025]] adds vector gates and a vector learning rate. [[xlstm-extended-lstm-beck-2024]]'s mLSTM is gated linear attention with an exponential input gate.

@@ -2,7 +2,7 @@
 title: LSTM (Long Short-Term Memory)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-27
 sources:
   - hochreiter-lstm-1997.md
 builds-on: "[[recurrent-neural-network]]"
@@ -41,3 +41,7 @@ The cell update is `c_t = f_t ⊙ c_{t-1} + i_t ⊙ c̃_t`, and the hidden state
 ## References
 
 - [[long-short-term-memory-hochreiter-1997]]
+
+## Lineage sources
+
+- [[xlstm-extended-lstm-beck-2024]] — [[xlstm]] (2024): exponential gating plus matrix memory; 1.3B beats Mamba and Llama in perplexity and extrapolates 2K → 16K

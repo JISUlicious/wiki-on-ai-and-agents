@@ -2,7 +2,7 @@
 title: "Attention to Mamba: A Recipe for Cross-Architecture Distillation"
 type: source
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-10-27
 sources:
   - attention-to-mamba-cross-architecture-distillation-moudgil-2026.md
 arxiv_id: "2604.14191"
@@ -49,3 +49,7 @@ This Apple/MILA/Flatiron work presents a recipe for distilling a pretrained Atte
 
 - [arXiv:2604.14191](https://arxiv.org/abs/2604.14191)
 - Source text: `sources/attention-to-mamba-cross-architecture-distillation-moudgil-2026.md`
+
+## Lineage sources
+
+- [[mamba-selective-state-spaces-gu-2023]] · [[mamba-2-transformers-are-ssms-dao-2024]] — the primary sources for the distillation target ([[mamba]])

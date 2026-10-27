@@ -2,7 +2,7 @@
 title: Recurrent Neural Network (RNN)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-27
 sources:
   - hochreiter-lstm-1997.md
 status: draft
@@ -26,3 +26,7 @@ RNNs persist where streaming / online inference matters (online ASR, time-series
 ## References
 
 - [[long-short-term-memory-hochreiter-1997]]
+
+## Lineage sources
+
+- [[state-space-model]] — the modern linear-recurrence revival: S4 → Mamba → Mamba-2 → Gated DeltaNet, plus RWKV-7, Griffin and xLSTM, all with primary sources

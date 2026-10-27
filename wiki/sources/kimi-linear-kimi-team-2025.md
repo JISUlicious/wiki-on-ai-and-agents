@@ -2,7 +2,7 @@
 title: "Kimi Linear: An Expressive, Efficient Attention Architecture"
 type: source
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-10-27
 sources:
   - kimi-linear-kimi-team-2025.md
 arxiv_id: "2510.26692"
@@ -124,3 +124,7 @@ The model is **not pure linear attention**: KDA layers are interleaved with full
 - Code: https://github.com/MoonshotAI/Kimi-Linear
 - KDA kernels: https://github.com/fla-org/flash-linear-attention/tree/main/fla/ops/kda
 - Checkpoint: https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct
+
+## Lineage sources
+
+- [[gated-delta-networks-yang-2024]] — primary source for the Gated DeltaNet rule that KDA extends with a channel-wise gate ([[gated-deltanet]])

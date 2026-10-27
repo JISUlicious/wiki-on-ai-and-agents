@@ -2,7 +2,7 @@
 title: Carnegie Mellon University
 type: entity
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-10-27
 sources:
   - swe-gym-pan-2024.md
 status: draft
@@ -25,3 +25,7 @@ CMU faculty (e.g., [[graham-neubig]]) contribute to the modern agent ecosystem t
 
 - [[swe-gym-pan-2024]]
 - [[graham-neubig]]
+
+## Lineage sources
+
+- [[mamba-selective-state-spaces-gu-2023]] — Mamba ([[albert-gu]], CMU) with [[tri-dao]] (Princeton)

@@ -2,7 +2,7 @@
 title: "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
 type: source
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-10-27
 sources:
   - flash-attention-dao-2022.md
 arxiv_id: "2205.14135"
@@ -62,3 +62,7 @@ The IO analysis is the formal core: FlashAttention needs Θ(N²d²M⁻¹) HBM ac
 ## References
 
 - [arXiv:2205.14135](https://arxiv.org/abs/2205.14135)
+
+## Lineage sources
+
+- [[tri-dao]] — the same author's Mamba and Mamba-2 apply FlashAttention's IO-aware lesson to recurrences: the state stays in SRAM, and SSD becomes tensor-core matmuls

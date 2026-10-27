@@ -2,7 +2,7 @@
 title: Jamba
 type: entity
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-27
 sources:
   - jamba-hybrid-transformer-mamba-lieber-2024.md
 tags:
@@ -28,3 +28,7 @@ The authors' ablations found pure Mamba fails at in-context format-following, an
 ## References
 
 - [[jamba-hybrid-transformer-mamba-lieber-2024]]
+
+## Lineage sources
+
+- [[mamba-selective-state-spaces-gu-2023]] — primary source for the Mamba layers Jamba interleaves 7:1 with attention ([[mamba]])

@@ -2,7 +2,7 @@
 title: Test-Time Memory
 type: concept
 created: 2026-05-16
-updated: 2026-10-20
+updated: 2026-10-27
 sources:
   - titans-behrouz-2025.md
 status: draft
@@ -25,3 +25,7 @@ Test-time memory refers to memory whose parameters are updated at *inference* ti
 ## References
 
 - [[titans-behrouz-2025]] — Titans: Learning to Memorize at Test Time (Behrouz et al., Google 2025).
+
+## Lineage sources
+
+- [[gated-deltanet]] — each token is one online SGD step on ½‖S k − v‖² (learning rate β, decay α): test-time memory inside a linear-RNN layer

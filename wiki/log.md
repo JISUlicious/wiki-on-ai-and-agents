@@ -7,6 +7,28 @@ updated: 2026-10-27
 
 # Activity Log
 
+## [2026-10-27] ingest | State-space models and linear RNNs: 7 primary sources; state-space-model page rewritten
+
+At the user's request, after finding the wiki's SSM coverage thin (no primary sources), ingested seven papers:
+- S4 (arXiv:2111.00396), Mamba (arXiv:2312.00752), Mamba-2/SSD (arXiv:2405.21060), Gated DeltaNet (arXiv:2412.06464)
+- RWKV-7 (arXiv:2503.14456), Griffin (arXiv:2402.19427), xLSTM (arXiv:2405.04517)
+
+Two parallel readers did the extraction; key numbers were spot-checked.
+
+Pages created:
+- **Sources (7):** [[s4-structured-state-spaces-gu-2021]], [[mamba-selective-state-spaces-gu-2023]], [[mamba-2-transformers-are-ssms-dao-2024]], [[gated-delta-networks-yang-2024]], [[rwkv-7-goose-peng-2025]], [[griffin-gated-linear-recurrences-de-2024]], [[xlstm-extended-lstm-beck-2024]]
+- **Entities (6):** [[mamba]], [[rwkv]], [[griffin]], [[xlstm]], [[albert-gu]], [[tri-dao]]
+- **Concept (1):** [[gated-deltanet]]
+
+Rewritten: [[state-space-model]], now with the lineage table, the fixed-state recall limitation, the hybrid table and state-vs-KV memory.
+
+Pages updated: [[linear-attention]], [[lstm]], [[sepp-hochreiter]], [[deepmind]], [[kimi-linear-kimi-team-2025]], [[qwen3.8-flash-next]], [[jamba]], [[nemotron-3-super-nvidia-2026]], [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]], [[flash-attention-dao-2022]], [[titans]], [[test-time-memory]], [[recurrent-neural-network]], [[stanford-university]], [[cmu]], [[princeton-university]], [[nvidia]].
+
+Notes:
+- **Venues not in the paper texts:** S4 (ICLR 2022), Mamba (COLM 2024) and Mamba-2 (ICML 2024) are from external records. Gated DeltaNet's ICLR 2025 is stated in the paper.
+- **Griffin's token ratio is stated inconsistently:** "over 6 times" in some places, "roughly 7 times" in others; the actual ratio is 6.7×.
+- **Adoption claims come from other wiki sources:** the Gated DeltaNet paper names no production adopters. Its use in Qwen3.8-Flash-Next and KDA comes from those sources.
+
 ## [2026-10-27] ingest | Hardware requirements for training and fine-tuning current local LLMs (search-driven)
 
 Searched and saved six primary sources:
