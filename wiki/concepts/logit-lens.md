@@ -2,9 +2,10 @@
 title: Logit Lens
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-27
 sources:
   - global-workspace-in-language-models-anthropic-2026.md
+  - neuron-explorer-lyramakesmusic-2026.md
 builds-on:
   - [[residual-stream]]
 status: draft
@@ -37,6 +38,12 @@ Concretely, in [[global-workspace-in-language-models-anthropic-2026]]'s comparis
 
 The J-lens is described by its authors as "a principled refinement of the logit lens" — it replaces the identity assumption with an empirically measured linear map, correcting for representational drift across layers, and uniquely includes effects on **future** token positions.
 
+## Steer lens (2026)
+
+[[neuron-explorer]] pairs the logit lens of a neuron's output column with a **steer lens**. The steer lens pushes the neuron ±0.8 (in units of the residual norm), measures the change in next-token log-probability over a few contexts, and so includes indirect paths that the logit lens misses.
+- **Example:** for Qwen3.5-4B L22 N5344, the logit lens shows only "indicator", while the steer lens surfaces "responsible".
+- **Wreckage matches the lens:** the token "wreckage" a neuron produces at very high dose matches its logit-lens readout ([[neuron-explorer-lyramakesmusic-2026]]).
+
 ## Related
 
 - [[residual-stream]] — the object all lenses read.
@@ -46,3 +53,4 @@ The J-lens is described by its authors as "a principled refinement of the logit 
 ## References
 
 - [[global-workspace-in-language-models-anthropic-2026]] — the logit-lens comparison and the refinement argument.
+- [[neuron-explorer-lyramakesmusic-2026]] — steer lens vs logit lens on single neurons

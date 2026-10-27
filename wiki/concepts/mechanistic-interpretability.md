@@ -2,9 +2,10 @@
 title: Mechanistic Interpretability
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-27
 sources:
   - emotion-concepts-anthropic-2026.md
+  - neuron-explorer-lyramakesmusic-2026.md
 status: complete
 importance: high
 ---
@@ -74,3 +75,4 @@ Nearly every technique here operates on the [[residual-stream]] — the per-posi
 Surfaced via newsletter ingests; see [[index]].
 
 - [[hope-hilbert-operator-progressive-encoding-mobahi-2026]] — neurons as rank-1 Hilbert–Schmidt operators; data-free deconstruction from BatchNorm statistics
+- [[neuron-explorer-lyramakesmusic-2026]] — steering-first neuron explorer for Qwen3.5-4B (labels every neuron by what it writes, with random-direction controls); spawned the viral [[evil-qwen]] two-neuron recipe

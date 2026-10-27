@@ -2,7 +2,7 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-10-08
+updated: 2026-10-27
 sources:
   - claude-code.md
   - comparison.md
@@ -11,6 +11,7 @@ sources:
   - claude-effort-and-ultracode-docs-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
   - claude-code-changelog-2026-10-06.md
+  - neuron-explorer-lyramakesmusic-2026.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2025-02-24
@@ -110,3 +111,4 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 - [[claude-code-changelog-2026]] — dated feature timeline: hooks 2025-06-30, subagents 2025-07-24, plugins 2025-10-09, skills 2025-10-16, /loop 2026-03-06, /goal 2026-05-11, mods 2026-10-01
 - [[subagents]] — subagents
 - [[claude-code-mods-docs-2026]] — official mods docs: about 40 events, the $ API, the security model, built-in mods (v2.1.287, 2026-10-01)
+- [[neuron-explorer-lyramakesmusic-2026]] — the `claude` CLI embedded as an in-app research agent over an MCP server (with a home-folder shell); the research log was co-written with a coding agent

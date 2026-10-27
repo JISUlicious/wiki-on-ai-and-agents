@@ -74,3 +74,4 @@ Distinguishes **access consciousness** (functional: reportable, reasoned-with, a
 ## Related 2026 sources
 
 - [[j-space-cognition-suite]] — a downstream skill package reading this paper as an operating protocol. Its digest is faithful on the mechanism; the inferential step from *models have a workspace* to *telling a model it has one improves performance* is its own, and this paper does not test it
+- [[evil-qwen]] — Sauers (secondhand): single-neuron steering makes the residual stream "more J-lens-shaped" without adding workspace capacity

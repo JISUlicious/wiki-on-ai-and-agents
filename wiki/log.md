@@ -7,6 +7,25 @@ updated: 2026-10-27
 
 # Activity Log
 
+## [2026-10-27] ingest | neuron-explorer (lyramakesmusic) and reactions to "evil Qwen"
+
+Ingested the GitHub repo lyramakesmusic/neuron-explorer (README, NOTES.md, research_log.md), which is a steering-first MLP-neuron explorer for Qwen3.5-4B. At the user's request, also collected reactions, mostly to the 2026-10-24 "evil qwen" post (L14 N8949 +1 / L13 N7956 −1; about 3.9M views):
+- replications: occcat (176-cell sweep, stronger L16 N8927), sarvkk (refusal 90% → 8%) and dahara1 (llama.cpp control vectors, survive Q4);
+- ports: Gemma, GGUF, Coral NPU and Apple Silicon;
+- X commentary and AlphaSignal coverage.
+
+Raw sources: `sources/neuron-explorer-lyramakesmusic-2026.md` and `sources/neuron-explorer-reactions-2026-10.md`.
+
+Pages created: [[neuron-explorer-lyramakesmusic-2026]], [[neuron-explorer]], [[evil-qwen]], [[lyra-c]], [[goodfire]].
+
+Pages updated: [[steering]] (new section on neuron-level steering), [[monosemanticity]] (contradiction callout), [[superposition]], [[logit-lens]] (steer lens), [[steering-vectors]], [[mechanistic-interpretability]], [[ai-safety]], [[vllm]], [[mcp]], [[claude-code]], [[qwen]], [[global-workspace-in-language-models-anthropic-2026]].
+
+Contradictions:
+- **Monosemanticity.** Cammarata's "about 90% of neuron poles have one job" vs the wiki's position that neurons are rarely monosemantic. The essay is known only through press.
+- **Additive push vs clamp.** Replicators describe the recipe differently.
+
+Caveats: the findings are self-published and not peer-reviewed. The Olmo, Gemma and Qwen3-8B neuron claims are secondhand, via an aggregator post.
+
 ## [2026-10-27] ingest | State-space models and linear RNNs: 7 primary sources; state-space-model page rewritten
 
 At the user's request, after finding the wiki's SSM coverage thin (no primary sources), ingested seven papers:

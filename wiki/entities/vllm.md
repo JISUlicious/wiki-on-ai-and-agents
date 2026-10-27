@@ -2,9 +2,10 @@
 title: vLLM
 type: entity
 created: 2026-05-16
-updated: 2026-10-12
+updated: 2026-10-27
 sources:
   - vllm-tool-calling-2025.md
+  - neuron-explorer-lyramakesmusic-2026.md
 status: complete
 importance: high
 tags:
@@ -67,3 +68,4 @@ vLLM is the reference serving engine in most published [[quantization]] evaluati
 ## Lineage sources
 
 - [[decision-api-server-implementations-2026]] — native `/v1/systemone` on `main` since 2026-10-08 (#59299; not in v0.31.0): a 1-token logprob read, Qwen3/3.5 and DiffusionGemma allowlist; OpenAI Decisions PR #60465 open
+- [[neuron-explorer-lyramakesmusic-2026]] — Goodfire's steering fork (RhizoNymph/vllm): per-request steering rows, CUDA-graph safe; ~3.8k tok/s on a 4090 for Qwen3.5-4B with 2–7% steering overhead

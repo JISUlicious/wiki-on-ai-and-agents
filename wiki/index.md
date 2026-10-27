@@ -7,7 +7,7 @@ updated: 2026-10-27
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 639 sources, 215 entities, 352 concepts, 8 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 640 sources, 219 entities, 352 concepts, 8 comparisons, 19 queries.
 
 ## Entities
 
@@ -198,6 +198,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[rwkv]] — open recurrent LM family; RWKV-7 "Goose" generalized delta rule, Apache-2.0
 - [[griffin]] — DeepMind RG-LRU + local attention (Hawk = pure recurrence); Llama-2 parity on 300B tokens
 - [[xlstm]] — Hochreiter group's extended LSTM (sLSTM + mLSTM matrix memory)
+- [[neuron-explorer]] — Lyra C's steering-first neuron browser for Qwen3.5-4B: every MLP neuron pushed ±, rollouts kept, random-direction controls, Claude CLI over MCP
+- [[evil-qwen]] — viral 2026-10-24 recipe: L14 N8949 +1 / L13 N7956 −1 flips Qwen3.5-4B hostile; replications show refusal 90% → 8%
+- [[lyra-c]] — independent mech-interp researcher (@_lyraaaa_), author of neuron-explorer
+- [[goodfire]] — interpretability company: steering fork of vLLM; Cammarata's "Neural Networks Are Already Clean" essay
 - [[albert-gu]] — S4 and Mamba author (Stanford → CMU)
 - [[tri-dao]] — FlashAttention and Mamba/Mamba-2 author (Princeton)
 - [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
@@ -1265,6 +1269,7 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[rwkv-7-goose-peng-2025]] — RWKV-7 Goose (arXiv:2503.14456): vector-gated delta rule; Qwen2.5-3B parity on ⅓ the tokens (2025)
 - [[griffin-gated-linear-recurrences-de-2024]] — Griffin/Hawk (arXiv:2402.19427): RG-LRU + local MQA (2024)
 - [[xlstm-extended-lstm-beck-2024]] — xLSTM (arXiv:2405.04517): exponential gating + matrix memory (2024)
+- [[neuron-explorer-lyramakesmusic-2026]] — neuron-explorer repo + research log (per-neuron steering of Qwen3.5-4B, depth survey, steer lens) and reactions to the evil-Qwen post (2026-10)
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)

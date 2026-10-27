@@ -2,10 +2,11 @@
 title: Steering Vectors
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-27
 sources:
   - turner-activation-engineering-2023.md
   - contrastive-activation-addition-rimsky-2023.md
+  - neuron-explorer-lyramakesmusic-2026.md
 status: draft
 importance: medium
 ---
@@ -33,6 +34,7 @@ Where the vector comes from varies by method:
 - [[activation-engineering-turner-2023]]
 - [[contrastive-activation-addition-rimsky-2023]]
 - See [[steering]] for the unified treatment.
+- [[neuron-explorer-lyramakesmusic-2026]] — a single MLP neuron's output column `W_down[:, n]` used as the steering vector; [[evil-qwen]] ports it to llama.cpp control vectors
 
 > [!note] Substrate
 > Steering vectors are directions in the [[residual-stream]]; adding them works because that stream is a purely **additive** channel under pre-norm architectures. See [[residual-stream]] for why norm placement matters.

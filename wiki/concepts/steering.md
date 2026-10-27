@@ -2,7 +2,7 @@
 title: Steering
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-27
 sources:
   - turner-activation-engineering-2023.md
   - zou-representation-engineering-2023.md
@@ -10,6 +10,7 @@ sources:
   - rimsky-contrastive-activation-addition-2023.md
   - li-inference-time-intervention-2023.md
   - emotion-concepts-anthropic-2026.md
+  - neuron-explorer-lyramakesmusic-2026.md
 status: complete
 importance: high
 ---
@@ -72,6 +73,19 @@ For comparison, the **guardrailing** cluster works on different surfaces:
 
 The 2024–2026 frontier increasingly **stacks** guardrailing and steering. [[claude|Claude]]'s training pipeline ([[constitutional-ai]]) is guardrail-class but informed by interpretability work; [[emotion-concepts-anthropic-2026|Sofroniew et al. 2026]] shows that *post-training shifts emotion-vector activations* (the safety effect of RLHF/CAI is partly *implemented* as activation shifts that look like steering). The two surfaces converge.
 
+## Neuron-level steering (2026)
+
+The methods above find *directions*. [[neuron-explorer]] instead steers along **individual MLP neurons**: adding `v` to neuron n's activation equals adding `v·W_down[:, n]` to the residual stream. Practical lessons from its Qwen3.5-4B sweeps ([[neuron-explorer-lyramakesmusic-2026]]):
+
+- **Size the push relative to the residual norm, not the neuron's activation range.**
+  - Text stays coherent below about 0.75× the median residual norm and turns to gibberish past about 1.5×, for neurons and random directions alike.
+  - Real neuron directions break text sooner than random ones of the same size.
+- **Always run random-direction controls.**
+  - Persona and maker flips ("I am Grok", "trained by Google") also come from random pushes.
+  - What marks a real neuron is one theme that shows up across several different prompts.
+- **What a neuron writes depends on depth.** Early-layer neurons steer topics, middle layers steer discourse and stance words, and late layers steer lexical families.
+- **Small models can be steered into unsafe behaviour.** [[evil-qwen]]: two neurons at dose ±1 cut Qwen3.5-4B's refusal rate from 90% to 8% in a replication, while perplexity stayed moderate.
+
 ## Open problems
 
 - **Compositionality**: can you stack five behavior steers without interactions ruining all of them?
@@ -88,3 +102,4 @@ The 2024–2026 frontier increasingly **stacks** guardrailing and steering. [[cl
 - [[sparse-autoencoders-cunningham-2023]] — SAE foundation
 - [[inference-time-intervention-li-2023]] — ITI
 - [[emotion-concepts-anthropic-2026]] — Steering applied to functional emotions in Claude Sonnet 4.5
+- [[neuron-explorer-lyramakesmusic-2026]] — Per-neuron steering sweeps on Qwen3.5-4B; the [[evil-qwen]] two-neuron recipe
