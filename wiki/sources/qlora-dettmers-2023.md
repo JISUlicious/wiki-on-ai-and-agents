@@ -2,7 +2,7 @@
 title: "QLoRA: Efficient Finetuning of Quantized LLMs"
 type: source
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-10-27
 sources: []
 arxiv_id: "2305.14314"
 venue: NeurIPS 2023 (Oral)
@@ -51,3 +51,7 @@ Finetunes a **65B model on a single 48GB GPU** while preserving full 16-bit fine
 ## References
 
 - [arXiv:2305.14314](https://arxiv.org/abs/2305.14314)
+
+## Lineage sources
+
+- [[unsloth-qwen3.5-fine-tune-guide-2026]] — a model-specific exception: Unsloth advises against 4-bit QLoRA on Qwen3.5 (dense and MoE) because of "higher than normal quantization differences", while endorsing it for Gemma 4. Contradiction callout on that page; see [[fine-tuning-hardware-requirements-local-llms]].

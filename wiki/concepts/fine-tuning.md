@@ -2,7 +2,7 @@
 title: Fine-Tuning
 type: concept
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-10-27
 sources:
   - bert-devlin-2018.md
 status: complete
@@ -33,3 +33,7 @@ The general "fine-tuning" terminology has expanded considerably:
 ## References
 
 - [[bert-devlin-2018]]
+
+## Lineage sources
+
+- [[fine-tuning-hardware-requirements-local-llms]] — how much memory each fine-tuning method needs on 2026 local models, by hardware tier

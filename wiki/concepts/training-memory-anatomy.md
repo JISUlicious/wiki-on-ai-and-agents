@@ -2,7 +2,7 @@
 title: Training Memory Anatomy
 type: concept
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-10-27
 sources:
   - zero-memory-optimization-rajbhandari-2019.md
   - reducing-activation-recomputation-korthikanti-2022.md
@@ -107,3 +107,7 @@ The LoRA row is worth dwelling on: parameter-efficient finetuning is powerful le
 Surfaced via newsletter ingests; see [[index]].
 
 - [[soap-muon-and-beyond-khona-2026]] — Muon eliminates the second moment (1 state vs AdamW's 2) while SOAP *adds* 2·in²+2·out² — state-elimination vs state-inflation against the 12-of-16-bytes baseline
+
+## Lineage sources
+
+- [[fine-tuning-hardware-requirements-local-llms]] — the practical side of this page for 2026 local models: full fine-tuning ≈ 16–18×P GB, pure bf16 ≈ 8×P, LoRA ≈ 2×P, QLoRA ≈ 0.5×P (LLaMA-Factory). Covers Qwen3.5 and Gemma 4 VRAM tables and hardware tiers.

@@ -2,7 +2,7 @@
 title: Gemma
 type: entity
 created: 2026-09-30
-updated: 2026-10-10
+updated: 2026-10-27
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - uniprefill-block-wise-dynamic-sparsification-fan-2026.md
@@ -66,3 +66,4 @@ tags:
 ## Lineage sources
 
 - [[s1-decision-model-raghavan-2026]] — s1: Gemma 4 26B-A4B decision fine-tune
+- [[unsloth-gemma-4-fine-tune-guide-2026]] — Gemma 4 fine-tuning VRAM: E2B 8–10 GB, E4B LoRA 17 GB, 31B QLoRA 22 GB, 26B-A4B LoRA > 40 GB

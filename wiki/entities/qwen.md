@@ -2,7 +2,7 @@
 title: Qwen
 type: entity
 created: 2026-08-30
-updated: 2026-10-10
+updated: 2026-10-27
 sources:
   - qwen3.8-flash-next-model-card-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -49,3 +49,4 @@ Its significance is availability at many sizes. The family ships dense models fr
 ## Lineage sources
 
 - [[microsoft-decision-1]] — Qwen3.5-9B post-train by Microsoft
+- [[unsloth-qwen3.5-fine-tune-guide-2026]] — Qwen3.5 bf16 LoRA VRAM by size (3 → 256 GB); avoid 4-bit QLoRA. [[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]]: 35B-A3B bf16 LoRA on DGX Spark.

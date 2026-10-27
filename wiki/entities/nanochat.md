@@ -2,7 +2,7 @@
 title: nanochat
 type: entity
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-27
 sources:
   - parcae-scaling-laws-looped-2026.md
   - rehearse-confidence-cliff-autoresearch-ji-2026.md
@@ -31,3 +31,7 @@ Its value to both uses is the same: it is small and cheap enough that a full tra
 
 - [karpathy/nanochat](https://github.com/karpathy/nanochat) — README (scope, ~$100 / 8×H100 claim, MIT license)
 - [[parcae-scaling-laws-looped-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]]
+
+## Lineage sources
+
+- [[fine-tuning-hardware-requirements-local-llms]] — puts nanochat's 8×H100 pretraining cost next to what local fine-tuning needs

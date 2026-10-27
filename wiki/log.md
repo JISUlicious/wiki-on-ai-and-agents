@@ -2,10 +2,39 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-24
+updated: 2026-10-27
 ---
 
 # Activity Log
+
+## [2026-10-27] ingest | Hardware requirements for training and fine-tuning current local LLMs (search-driven)
+
+Searched and saved six primary sources:
+- the Unsloth Qwen3.5 and Gemma 4 guides (HTML converted to markdown);
+- the LLaMA-Factory README hardware table;
+- the MLX-LM `LORA.md` docs;
+- the sciences44 MLX Qwen3.5 experiment;
+- an NVIDIA DGX Spark forum thread.
+
+Pages created:
+- **Comparison:** [[fine-tuning-hardware-requirements-local-llms]]
+- **Sources:** [[unsloth-qwen3.5-fine-tune-guide-2026]], [[unsloth-gemma-4-fine-tune-guide-2026]], [[llama-factory-hardware-requirement-2026]], [[mlx-lm-lora-docs-2026]], [[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]]
+- **Entities:** [[unsloth]], [[llama-factory]], [[dgx-spark]]
+
+Pages updated: [[training-memory-anatomy]], [[lora]], [[qlora-dettmers-2023]], [[fine-tuning]], [[mlx]], [[apple-silicon]], [[gemma]], [[qwen]], [[nanochat]], [[nvidia]], [[mixture-of-experts]].
+
+Key points:
+- **Method rules:** full fine-tuning ≈ 16–18×P GB, pure bf16 ≈ 8×P, LoRA ≈ 2×P, QLoRA-4 ≈ 0.5×P.
+- **MoE training needs total parameters resident:** Qwen3.5-35B-A3B bf16 LoRA is 74 GB.
+- **Unified-memory loading can peak at 2× the model size.**
+
+Contradiction: Unsloth advises against 4-bit QLoRA on Qwen3.5, against the general QLoRA result and third-party 4-bit 35B-A3B claims (callout on the Unsloth Qwen3.5 source page).
+
+Rejected: third-party Gemma 4 VRAM figures that conflict with Unsloth's (E4B LoRA 8 GB, 26B QLoRA 12 GB).
+
+Follow-up (same day): added §3a and §3b to [[fine-tuning-hardware-requirements-local-llms]], and updated [[dgx-spark]].
+- **§3a, LoRA on MoE:** memory scales with total parameters, compute with active parameters, and adapter size with which modules are targeted.
+- **§3b, DGX Spark vs H100:** the Spark has more memory (128 vs 80 GB) but about 12× less bandwidth and roughly 8× less BF16 compute (estimated). Spark figures come from a review and the Hot Chips deck; H100 figures are datasheet values.
 
 ## [2026-10-24] ingest | UniMate + Kimodo repos and related motion-generation papers (batch of 6)
 

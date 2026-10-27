@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-24
+updated: 2026-10-27
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 627 sources, 206 entities, 351 concepts, 7 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 632 sources, 209 entities, 351 concepts, 8 comparisons, 19 queries.
 
 ## Entities
 
@@ -191,6 +191,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sonic]] — NVIDIA GEAR humanoid motion-tracking foundation policy (42M, 99.2% real-G1 success)
 - [[mdm]] — Human Motion Diffusion Model (2022): the x₀-predicting, CFG text-to-motion template
 - [[tmr]] — contrastive text–motion embedding; the standard motion-generation evaluator
+- [[unsloth]] — fine-tuning library with custom kernels; publishes per-model VRAM tables (Qwen3.5, Gemma 4)
+- [[llama-factory]] — unified fine-tuning framework; README rule: full 18x, pure bf16 8x, LoRA 2x, QLoRA4 x/2 GB
+- [[dgx-spark]] — NVIDIA GB10 desktop with 128 GB unified memory; fits bf16 LoRA of Qwen3.5-35B-A3B
 - [[mistral-ai]] — French open-weight lab; Mistral 7B, Mixtral
 - [[ai21-labs]] — Israeli lab; Jamba hybrid Transformer-Mamba
 - [[fair]] — Facebook AI Research / Meta AI
@@ -1243,6 +1246,11 @@ Surfaced from three months of alphaXiv and NLP-newsletter digests (ingested 2026
 - [[sonic-supersizing-motion-tracking-luo-2025]] — SONIC (arXiv:2511.07820): scaling humanoid motion tracking to 42M params / 100M frames
 - [[human-motion-diffusion-model-tevet-2022]] — MDM (arXiv:2209.14916, ICLR 2023): diffusion for text-to-motion
 - [[tmr-text-to-motion-retrieval-petrovich-2023]] — TMR (arXiv:2305.00976, ICCV 2023): contrastive text-to-motion retrieval
+- [[unsloth-qwen3.5-fine-tune-guide-2026]] — Unsloth Qwen3.5 guide: bf16 LoRA 3–256 GB by size; avoid 4-bit QLoRA (2026)
+- [[unsloth-gemma-4-fine-tune-guide-2026]] — Unsloth Gemma 4 guide: E4B LoRA 17 GB, 31B QLoRA 22 GB, 26B-A4B LoRA > 40 GB (2026)
+- [[llama-factory-hardware-requirement-2026]] — LLaMA-Factory hardware table by method × size (README, 2026)
+- [[mlx-lm-lora-docs-2026]] — MLX-LM LoRA/QLoRA on Apple silicon: memory levers, Qwen3.5 peak RAM (2026)
+- [[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]] — DGX Spark bf16 LoRA of a 67 GB MoE: the 2× loading peak on unified memory (2026)
 - [[depth-memory-gonzalez-martinez-2026]] — Depth Memory (ELLIS/MPI Tübingen, arXiv:2610.18809): unifies PreLN, mHC and AttnRes as Read/Write streams; proposes LDM (2026-10-13)
 - [[attention-to-mamba-cross-architecture-distillation-moudgil-2026]] — recipe for distilling attention models into Mamba (Moudgil et al. 2026)
 - [[scalable-moe-training-megatron-core-yan-2026]] — scalable MoE training with Megatron Core (Yan et al. 2026)
@@ -1515,6 +1523,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[ollama-decision-models-2026]] — Ollama decision models: blog (2026-09-29), v0.35.0/0.35.1, HF repos and licences (Tev1 undeclared), ollama-python systemone()
 
 ## Comparisons
+- [[fine-tuning-hardware-requirements-local-llms]] — memory to train or fine-tune 2026 local LLMs: method rules (16–18×P / 8×P / 2×P / 0.5×P), Qwen3.5 and Gemma 4 tables, hardware tiers, MoE total-parameter rule
 - [[decision-api-server-implementations]] — SGLang vs vLLM vs Ollama decision endpoints (/v1/systemone, /v1/decisions), code-verified 2026-10-12
 - [[system-one-models-and-dual-process-thinking]] — How "System One models" relate to Kahneman's System 1/2 and to LLM System 1→2 research: where the analogy fits and where it breaks
 

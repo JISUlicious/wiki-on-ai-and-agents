@@ -2,7 +2,7 @@
 title: NVIDIA
 type: entity
 created: 2026-06-19
-updated: 2026-10-24
+updated: 2026-10-27
 sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
   - nemotron-3-super-nvidia-2026.md
@@ -41,3 +41,4 @@ tags:
   - [[kimodo]] ([[kimodo-kinematic-motion-diffusion-nvidia-2026]]): text and constraint motion diffusion trained on 700 h of mocap;
   - [[ardy]] ([[ardy-autoregressive-motion-diffusion-zhao-2026]]): its real-time successor;
   - [[sonic]] ([[sonic-supersizing-motion-tracking-luo-2025]]): GEAR's scaled humanoid tracking policy.
+- [[dgx-spark]] — the 128 GB unified-memory desktop. Fits bf16 LoRA of Qwen3.5-35B-A3B after a shard-by-shard loading fix ([[dgx-spark-bf16-lora-qwen3.5-35b-a3b-forum-2026]]).

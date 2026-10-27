@@ -2,7 +2,7 @@
 title: Apple Silicon
 type: entity
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-27
 sources:
   - above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026.md
   - rigel-metal-tensor-compute-path-m4-max-kumaresan-2026.md
@@ -38,3 +38,7 @@ tags:
 ## References
 
 - [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] · [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] · [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] · [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] · [[omlx-specprefill-github-2026]]
+
+## Lineage sources
+
+- [[mlx-lm-lora-docs-2026]] — fine-tuning on unified memory: 16 GB Macs handle LoRA ≤ 2–4B at batch 1 with 4 layers ([[fine-tuning-hardware-requirements-local-llms]])
