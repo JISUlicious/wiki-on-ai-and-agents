@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 712 sources, 236 entities, 367 concepts, 9 comparisons, 20 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 742 sources, 245 entities, 381 concepts, 9 comparisons, 21 queries.
 
 ## Entities
 
@@ -57,6 +57,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[realm]] — Retrieval-augmented pre-training with a learned retriever (Guu 2020); precedes DPR and RAG
 
 ### Agent products (2026 era)
+- [[cursor]] — AI code editor; search history documented
+- [[llamaindex]] — LLM data framework
+- [[pinecone]] — Vector database
+- [[github-copilot]] — Codex-powered assistant (2021)
+- [[openai-codex]] — 2021 code model
+- [[atlas]] — Retrieval-augmented few-shot model (2022)
+- [[gorilla]] — API-calling model (2023)
+- [[toolllm]] — Real-world API framework (2023)
+- [[aider]] — Terminal pair-programming tool
 - [[eliza]] — 1966 conversation program by Weizenbaum
 - [[crewai]] — Multi-agent framework (repo Oct 2023)
 - [[openai-agents-sdk]] — OpenAI's framework, successor to Swarm (Mar 2025)
@@ -377,6 +386,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gepa]] — Genetic-Pareto reflective prompt evolution; beats GRPO on 5 of 6 tasks with up to 35× fewer rollouts
 
 ### Agents, tools, and orchestration
+- [[repo-map]] — Ranked codebase summary as context
+- [[self-rag]]
+- [[corrective-rag]]
+- [[hyde]]
+- [[graphrag]]
+- [[contextual-retrieval]]
+- [[late-chunking]]
+- [[mrkl]]
+- [[talm]]
+- [[tool-search]]
+- [[code-interpreter]]
+- [[project-memory]]
+- [[vector-database]]
+- [[llm-wiki]]
 - [[bdi-agent]] — Belief-Desire-Intention agents (classical)
 - [[strips]] — 1971 planning system (paper not read)
 - [[a2a]] — Google's agent-to-agent protocol (Apr 2025)
@@ -858,6 +881,39 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[how-we-made-claude-ai-3x-faster-wang-2026]] — Claude-driven web-performance sprint; client-side, not model serving (2026-09-23)
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Eval design and overfit-safe hill-climbing (2026-09-28)
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Opinion: HTML over Markdown for human-facing agent output (2026-05-20)
+
+### Context and tool history (ingested 2026-11-01)
+
+- [[cherny-agentic-search-statements]]
+- [[cursor-semantic-search-blog-2025]]
+- [[cursor-docs-search-history]]
+- [[cursor-fast-regex-search-2026]]
+- [[cursor-early-changelog]]
+- [[aider-repo-map-2023]]
+- [[drqa-chen-2017]]
+- [[atlas-izacard-2022]]
+- [[self-rag-asai-2023]]
+- [[crag-yan-2024]]
+- [[hyde-gao-2022]]
+- [[graphrag-edge-2024]]
+- [[late-chunking-gunther-2024]]
+- [[mrkl-karpas-2022]]
+- [[talm-parisi-2022]]
+- [[gorilla-patil-2023]]
+- [[toolllm-qin-2023]]
+- [[codex-chen-2021]]
+- [[contextual-retrieval-anthropic-2024]]
+- [[advanced-tool-use-anthropic-2025]]
+- [[writing-tools-for-agents-anthropic-2025]]
+- [[tool-use-ga-anthropic-2024]]
+- [[introducing-github-copilot-2021]]
+- [[devday-openai-2023]]
+- [[structured-outputs-openai-2024]]
+- [[claude-code-latent-space-2025]]
+- [[llm-wiki-karpathy-2026]]
+- [[bfcl-berkeley-leaderboard]]
+- [[vector-database-pinecone]]
+- [[aider-readme-2026]]
 
 ### AI agent history (ingested 2026-11-01)
 
@@ -1686,6 +1742,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 ## Queries
 
+- [[context-and-tools-influence-evidence]] — Evidence for RAG, tool use and context engineering, graded
 - [[ai-agent-influence-graph]] — Dated items and evidence-graded influence edges for AI agent history
 - [[kv-cache-size-vs-active-parameters]] — KV bytes = (P_KV/d)·T·B·b: only the K/V projection weights count. Dense MHA gives T*≈6d; GQA ÷H/G; MLA latent; MoE experts never enter the cache
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed

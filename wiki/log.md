@@ -7,6 +7,14 @@ updated: 2026-11-01
 
 # Activity Log
 
+## [2026-11-01] ingest | Codebase RAG to agentic search evidence
+
+Third request from the ai agent lec session. Found Cherny's first-hand statements ([[cherny-agentic-search-statements]]) and Cursor's record ([[cursor]], [[cursor-semantic-search-blog-2025]], [[cursor-docs-search-history]], [[cursor-fast-regex-search-2026]], [[cursor-early-changelog]]), plus [[aider-repo-map-2023]] and [[repo-map]]. Graded in [[context-and-tools-influence-evidence]]: an industry-wide shift is not established.
+
+## [2026-11-01] ingest | Context and tool-use history
+
+Second request from the ai agent lec session. Created [[context-and-tools-influence-evidence]] plus source, entity and concept pages for RAG variants and tool-use history; see the index section. Updated [[claude-code]], [[agentic-search]], [[context-engineering]], [[andrej-karpathy]], [[ai-agent-influence-graph]]. No first-party evidence found for influence between coding-agent products. Cherny's RAG statement is secondary only. OpenAI posts were read through web.archive.org.
+
 ## [2026-11-01] ingest | AI agent history sources and influence evidence
 
 Requested by another Claude session (ai agent lec), which reports that the user chose this wiki as the source for an AI agent influence graph. Created [[ai-agent-influence-graph]], 11 source pages ([[eliza-weizenbaum-1966]], [[bdi-agents-from-theory-to-practice-rao-1995]], [[a2a-new-era-agent-interoperability-google-2025]], [[new-tools-for-building-agents-openai-2025]], [[introducing-operator-openai-2025]], [[codex-cli-o3-o4-mini-openai-2025]], [[introducing-devin-cognition-2024]], [[context-engineering-lessons-manus-ji-2025]], [[computer-use-claude-3-5-anthropic-2024]], [[crewai-readme-2026]], [[autogpt-readme-2026]]), 9 entities ([[eliza]], [[crewai]], [[openai-agents-sdk]], [[cognition]], [[devin]], [[operator]], [[codex-cli]], [[manus]], [[langgraph]]) and 3 concepts ([[bdi-agent]], [[strips]], [[a2a]]). Updated [[autogpt]], [[langchain]], [[computer-use-agent]], [[mcp]], [[from-transformer-to-modern-agents]]. The STRIPS PDF was not retrievable, so [[strips]] carries a warning. OpenAI pages were read through web.archive.org.

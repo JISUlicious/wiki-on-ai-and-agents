@@ -2,7 +2,7 @@
 title: Andrej Karpathy
 type: entity
 created: 2026-09-30
-updated: 2026-10-29
+updated: 2026-11-01
 sources:
   - parcae-scaling-laws-looped-2026.md
   - rehearse-confidence-cliff-autoresearch-ji-2026.md
@@ -63,3 +63,5 @@ AI researcher and educator. His own site describes him as a founding member of [
 - [[corpusmap-follow-the-entities-jeong-2026]] — CorpusMap (KAIST/Microsoft) uses the LLM Wiki gist as a baseline: it scored below raw-corpus agentic search for 3 of 4 GPT models (with 0.63× tokens), while entity pages linked to every source document gained 6.4–11.7 points
 - [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured
 - [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours
+
+See [[llm-wiki]].

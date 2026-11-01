@@ -128,3 +128,5 @@ These already have wiki pages: [[context-engineering]], [[agentic-harness-engine
 ## Related
 
 [[from-transformer-to-modern-agents]] · [[common-features-of-modern-agents]] · [[llm-agent]]
+
+Continued in [[context-and-tools-influence-evidence]].

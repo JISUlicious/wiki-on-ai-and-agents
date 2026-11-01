@@ -2,7 +2,7 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-10-27
+updated: 2026-11-01
 sources:
   - claude-code.md
   - comparison.md
@@ -112,3 +112,9 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 - [[subagents]] — subagents
 - [[claude-code-mods-docs-2026]] — official mods docs: about 40 events, the $ API, the security model, built-in mods (v2.1.287, 2026-10-01)
 - [[neuron-explorer-lyramakesmusic-2026]] — the `claude` CLI embedded as an in-app research agent over an MCP server (with a home-folder shell); the research log was co-written with a coding agent
+
+## Origins
+
+The team describes an API experiment with "no master plan" in [[claude-code-latent-space-2025]]. Its first changelog mention of [[mcp|MCP]] is 0.2.31 (2025-03-05). No first-party statement found credits ReAct, SWE-agent, [[aider|Aider]] or Cursor. See [[context-and-tools-influence-evidence]].
+
+On dropping RAG, see [[cherny-agentic-search-statements]].
