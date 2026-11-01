@@ -7,6 +7,22 @@ updated: 2026-10-30
 
 # Activity Log
 
+## [2026-10-30] ingest | Qwen-Scope: Turning Sparse Features into Development Tools for LLMs
+
+Ingested arXiv 2605.11887 (Qwen Team, Alibaba, May 2026) from the full PDF text. **Qwen-Scope** is 14 groups of all-layer residual-stream TopK SAEs over 7 backbones: Qwen3-1.7B/8B/30B-A3B and Qwen3.5-2B/9B/27B/35B-A3B. Widths are 16× the hidden size, plus 64× variants for the MoE models; L0 is 50 or 100.
+
+The paper presents SAEs as development tools:
+- qualitative steering;
+- benchmark redundancy estimated without running models (ρ≈0.85 vs performance-based redundancy; 63% of GSM8K's features are covered by MATH);
+- a rule-based toxicity classifier from SAE features (F1>0.90 in English);
+- safety-data synthesis targeting features (99.74% coverage; safety accuracy 77.75 vs 72.00 for random synthesis at 8k);
+- SASFT (>50% less code-switching);
+- SAE-steered repetition rollouts as RL negatives (repetition falls faster; capability results mixed).
+
+**Flagged:** steering has no quantitative evaluation; the classifier and synthesis lack probe or baseline comparisons; the release reports no SAE quality metrics; the license restricts use to scientific purposes.
+
+Pages created: [[qwen-scope-sparse-features-development-tools-deng-2026]], [[qwen-scope]]. Pages updated: [[sparse-autoencoder]], [[steering]], [[mechanistic-interpretability]], [[qwen]], [[alibaba]], [[index]].
+
 ## [2026-10-30] ingest | Genie 4: A New Generation of World Simulation (Google DeepMind)
 
 Ingested DeepMind's Genie 4 announcement (27 Oct 2026) and its companion Google blog post, saved together as `sources/genie-4-new-generation-of-world-simulation-deepmind-2026.md`. The Genie 3 post (Aug 2025) was checked for the predecessor's facts.

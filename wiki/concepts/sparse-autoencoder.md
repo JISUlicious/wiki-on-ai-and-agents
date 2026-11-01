@@ -2,9 +2,10 @@
 title: Sparse Autoencoder (SAE)
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-10-30
 sources:
   - cunningham-sparse-autoencoders-2023.md
+  - qwen-scope-sparse-features-development-tools-deng-2026.md
 builds-on: "[[mechanistic-interpretability]]"
 status: complete
 importance: high
@@ -66,3 +67,5 @@ This is the modern foundation of the [[steering]] toolkit. [[representation-engi
 - [[sparse-autoencoders-cunningham-2023]] — the foundational LLM-SAE paper
 - See [[steering]] and [[mechanistic-interpretability]] for the broader contexts.
 - Anthropic's Towards Monosemanticity (Oct 2023) and Scaling Monosemanticity (May 2024) — the production-scale SAE work; not yet ingested.
+- [[qwen-scope-sparse-features-development-tools-deng-2026]]: [[qwen-scope|Qwen-Scope]] (Alibaba, May 2026), all-layer TopK SAEs for 7 Qwen3/3.5 backbones, MoE included. It uses SAEs as development tools for steering, evaluation without running models, toxicity classification, safety-data synthesis, an SFT loss against code-switching, and steered negative rollouts in RL.
+- [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]]: in 13 open [[transcoder|transcoders]], the faithful and seed-stable features are mostly single MLP neurons; the rest barely move from initialization (TopK)

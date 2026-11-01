@@ -7,7 +7,7 @@ updated: 2026-10-30
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 696 sources, 224 entities, 364 concepts, 9 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 697 sources, 225 entities, 364 concepts, 9 comparisons, 19 queries.
 
 ## Entities
 
@@ -662,6 +662,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[representation-engineering]] — RepE: top-down reading/writing of representations
 - [[inference-time-intervention]] — ITI: per-head intervention on truthful directions
 - [[sparse-autoencoder]] — Decomposes activations into sparse monosemantic features
+- [[qwen-scope]] — Alibaba's open all-layer SAE suite for Qwen3/3.5 (14 groups, 7 backbones incl. MoE), May 2026
 - [[polysemanticity]] — Single neuron responding to multiple unrelated features
 - [[superposition]] — Encoding more features than dimensions via interference
 - [[monosemanticity]] — Single neuron / feature with one consistent meaning
@@ -905,6 +906,7 @@ Surfaced from four NLP-newsletter "Top AI Papers" digests (Sep 28 – Oct 25) an
 - [[genrec-llm-recommendation-ranker-netflix-li-2026]] — GenRec (Netflix): text-described history into an adapted LM ranker
 - [[kuaishou-explorer-llm-rec-challenge-cao-2026]] — Kuaishou LLM-Rec Challenge 2026: reasoning generative recommendation
 - [[vela-user-behavior-as-supervision-xiao-2026]] — Vela: behaviour histories as tasks; general gain is confounded by teacher distillation
+- [[qwen-scope-sparse-features-development-tools-deng-2026]] — Qwen-Scope: SAEs as development tools for steering, benchmark redundancy (ρ≈0.85), toxicity F1>0.9, safety synthesis, SASFT, SAE-steered RL negatives (Qwen, May 2026)
 - [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]] — Anthropic/Georgia Tech: many late-layer transcoder features are single MLP neurons
 
 ### Newsletter sweep 2026-09-30

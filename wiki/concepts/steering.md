@@ -2,7 +2,7 @@
 title: Steering
 type: concept
 created: 2026-05-14
-updated: 2026-10-27
+updated: 2026-10-30
 sources:
   - turner-activation-engineering-2023.md
   - zou-representation-engineering-2023.md
@@ -85,6 +85,14 @@ The methods above find *directions*. [[neuron-explorer]] instead steers along **
   - What marks a real neuron is one theme that shows up across several different prompts.
 - **What a neuron writes depends on depth.** Early-layer neurons steer topics, middle layers steer discourse and stance words, and late layers steer lexical families.
 - **Small models can be steered into unsafe behaviour.** [[evil-qwen]]: two neurons at dose ±1 cut Qwen3.5-4B's refusal rate from 90% to 8% in a replication, while perplexity stayed moderate.
+
+## SAE features as training signals (2026)
+
+[[qwen-scope-sparse-features-development-tools-deng-2026|Qwen-Scope]] moves SAE steering from inference into training:
+- **SASFT** adds an auxiliary loss that holds language-feature activations down, which roughly halves unwanted code-switching.
+- In RL, one rollout per group is *steered toward* repetition features to create rare negatives. The repetition rate falls much faster than with vanilla RL, but general-capability results are mixed.
+
+Its inference-time steering demos (suppressing a Chinese feature, activating a classical-Chinese feature) are qualitative only.
 
 ## Open problems
 
