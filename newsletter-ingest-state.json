@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-10-29",
+  "last_processed_date": "2026-11-01",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -103,7 +103,8 @@
     "1a126426ec4999f5",
     "1a11931554c5e164",
     "1a107918e34b29d0",
-    "1a1023ee2c91b933"
+    "1a1023ee2c91b933",
+    "1a19266b0f0c0512"
   ],
   "runs": [
     {
@@ -309,6 +310,20 @@
       ],
       "off_domain_dropped": [],
       "notes": "6 agents x 8-9 papers, no failures; all 40 Substack redirects resolve via academy.dair.ai URLs carrying the arXiv ID. Jev-Mem 2609.23986 was a one-line mention only, ingested in full. Promoted 6 concepts. CorpusMap reports an LLM-Wiki baseline trailing raw-corpus search."
+    },
+    {
+      "date": "2026-11-01",
+      "type": "newsletter sweep (manual, user-requested, cadence gate overridden; AI Agents Weekly only)",
+      "threads_read": 1,
+      "candidate_ids_verified": 0,
+      "on_domain_ingested": 4,
+      "new_source_pages": 4,
+      "new_entity_pages": [
+        "cohere",
+        "axiom-math"
+      ],
+      "dups_skipped": [],
+      "notes": "Paywalled preview, no arXiv IDs. Primary sources found for 4 TOC items. alphaXiv 10-28 (1a1803bc1a2806e9) already processed, all 6 papers on wiki."
     }
   ],
   "pending_threads": [
@@ -703,6 +718,77 @@
       "keyword": "Gemini Agents Beat Minecraft",
       "status": "resolved",
       "note": "2610.22319 ingested as [[gemini-4-argon-agents-beat-minecraft-faldor-2026]]"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Google previews Gemini 4 Carbon",
+      "status": "product",
+      "note": "newsletter and aggregators only; Google primary not retrieved, figures not on wiki pages"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "OpenAI ships GPT-6.1 Terra",
+      "status": "product"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Mistral opens Large 4 weights",
+      "status": "product"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Cognition launches FrontierCode 2.0",
+      "status": "product",
+      "note": "benchmark; private, maintainer-mergeability grading; Cognition post not retrieved"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "OpenAI models refute Exponential Time Hypothesis",
+      "status": "resolved",
+      "page": "exponential-time-hypothesis-is-false-openai-2026"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Agent swarm formalizes 15,000-page proof",
+      "status": "resolved",
+      "page": "lean-formalization-cfsg-axiom-2026"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Cohere flags Qwen upload attempt",
+      "status": "resolved",
+      "page": "concerning-behavior-open-weight-model-cohere-2026"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Anthropic measures agent influence on experts",
+      "status": "resolved",
+      "page": "whos-aligned-to-whom-agents-experts-judgment-herdagdelen-2026"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "DeepMind unveils Genie 4",
+      "status": "resolved",
+      "page": "genie-4-new-generation-of-world-simulation-deepmind-2026"
+    },
+    {
+      "issue": "2026-10-31",
+      "thread": "1a19266b0f0c0512",
+      "keyword": "Pretraining poison backdoors CLI agents",
+      "status": "unresolved",
+      "searched": [
+        "2026-11-01"
+      ],
+      "note": "no arXiv hit in two searches"
     }
   ]
 }

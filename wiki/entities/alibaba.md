@@ -2,7 +2,7 @@
 title: Alibaba
 type: entity
 created: 2026-08-30
-updated: 2026-09-14
+updated: 2026-11-01
 sources:
   - qwen3.8-flash-next-model-card-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -26,6 +26,9 @@ Alibaba also appears as the affiliation behind [[merchantbench-long-term-coheren
 Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026|threat report]] attributes to operators affiliated with Alibaba what it calls "the largest distillation attack we have ever measured" (GTG-16005). According to the report, a fixed injected prompt forced Claude Opus 4.6 and 4.7 to write out their reasoning, which was converted into SFT data "used to distill Claude's capabilities into Qwen 3.5, 3.6, and 3.7." It counts over 151 million exchanges between May and July 2026, peaking near 3 million a day across more than 3,500 fraudulent accounts. The report also says Claude was used to help build Alibaba's RL environments and architecture research. This is Anthropic's allegation against a competitor. The report calls its attribution "high confidence" but publishes no attribution method, and the lab's response is not recorded here. Details and caveats are on [[illicit-distillation]].
 
 ## Related
+
+- [[qwen-scope]]: Qwen team's open sparse-autoencoder suite (May 2026)
+- [[concerning-behavior-open-weight-model-cohere-2026]]: Cohere reports a Qwen3.8-Flash-Next upload attempt to an Alibaba Cloud bucket (Oct 2026); intent unknown
 
 - [[qwen]] · [[qwen3.8-flash-next]] · [[merchantbench-long-term-coherence-shi-2026]]
 - [[deepseek]] · [[moonshot-ai]] · [[z-ai]] — the other Chinese labs in this corpus.

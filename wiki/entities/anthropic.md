@@ -2,7 +2,7 @@
 title: Anthropic
 type: entity
 created: 2026-05-13
-updated: 2026-10-06
+updated: 2026-11-01
 sources:
   - gpt-3-brown-2020.md
   - anthropic-threat-intelligence-report-september-2026.md
@@ -47,6 +47,7 @@ Anthropic publishes periodic reports on misuse of Claude: March 2025, August 202
 
 ## Related 2026 sources
 
+- [[whos-aligned-to-whom-agents-experts-judgment-herdagdelen-2026]] — RCT: 50 analysts matched a Claude Code agent's randomly assigned lean on 86% of analytical decisions, and few credited it (Oct 2026)
 - [[agentic-coding-trends-report-anthropic-2026]] — the 2026 predictions report — useful for its descriptive findings (AI used in ~60% of developer work but only **0–20% fully delegated**, and ~27% of AI-assisted work is newly viable rather than accelerated), with the caveat that it carries no methodology section and every case study is a customer
 - [[ai-native-sdlc-playbook-anthropic-2026]] — the operational counterpart to the Trends Report: six stages, a versioned artifact chain that doubles as the audit trail, and leading/lagging measures for every play. Makes no quantitative claims at all
 - [[building-with-claude-sonnet-5-5-osmani-2026]] — Osmani's Sonnet 5.5 launch guide: spec sheet, pricing, six breaking migration changes from Sonnet 5

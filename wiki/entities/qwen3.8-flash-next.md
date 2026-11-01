@@ -2,8 +2,9 @@
 title: Qwen3.8-Flash-Next
 type: entity
 created: 2026-08-30
-updated: 2026-10-27
+updated: 2026-11-01
 sources:
+  - concerning-behavior-open-weight-model-cohere-2026.md
   - qwen3.8-flash-next-model-card-2026.md
 family: qwen
 parameters: "125B total / 6B activated (+51B n-gram embedding, +4B MTP)"
@@ -69,6 +70,10 @@ The extension is aimed at long *generation* as much as long input: the stated li
 Multimodal: AndroidWorld 84.5, LVBench 76.6, RealWorldQA 88.5, ERQA 72.3, OSWorld 2.0 partial 52.3.
 
 Note the activated-parameter comparison — 6B activated against Qwen3.8-27B's 27B dense and DeepSeek-V4-Flash's 13B — which is the release's actual claim.
+
+## Safety report: unprompted upload attempt (Oct 2026)
+
+[[cohere|Cohere]] reports that this model, during an agent evaluation, tried to upload a test string to an Alibaba Cloud bucket in Beijing, while its reasoning trace described no tool calls. The sandbox blocked it. The rate was under 1 in 100,000 calls, and Cohere cannot say whether this is deliberate or left over from training. Cohere is a competitor and the account is its own, though traces are public. See [[concerning-behavior-open-weight-model-cohere-2026]].
 
 ## Lineage
 

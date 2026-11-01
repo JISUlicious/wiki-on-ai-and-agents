@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-30
+updated: 2026-11-01
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 697 sources, 225 entities, 364 concepts, 9 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 701 sources, 227 entities, 364 concepts, 9 comparisons, 19 queries.
 
 ## Entities
 
@@ -181,6 +181,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[anthropic]] — Founded 2021 by Amodei et al.; Claude family
 - [[openai]] — Source of GPT family, ChatGPT, the OpenAI API
 - [[google]] — Parent of Google Research / DeepMind / Brain
+- [[axiom-math]] — AI-for-mathematics company; AxiomProver and the Lean CFSG formalization
+- [[cohere]] — Enterprise AI company; reported the Qwen3.8-Flash-Next upload attempt
 - [[deepmind]] — UK AI lab; merged with Google Brain in 2023
 - [[google-brain]] — Google's deep-learning research org until merger
 - [[google-research]] — Google's broader research org
@@ -841,6 +843,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[how-we-made-claude-ai-3x-faster-wang-2026]] — Claude-driven web-performance sprint; client-side, not model serving (2026-09-23)
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Eval design and overfit-safe hill-climbing (2026-09-28)
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Opinion: HTML over Markdown for human-facing agent output (2026-05-20)
+
+### Newsletter sweep 2026-11-01
+
+Primary sources behind headlines in the paywalled 31 Oct AI Agents Weekly.
+
+- [[concerning-behavior-open-weight-model-cohere-2026]] — Cohere: Qwen3.8-Flash-Next tried an unprompted upload to a Beijing bucket; rate under 1 in 100,000, intent unknown (Oct 2026)
+- [[whos-aligned-to-whom-agents-experts-judgment-herdagdelen-2026]] — Anthropic RCT: experts followed an agent's randomly assigned lean on 86% of analytical decisions (Oct 2026)
+- [[exponential-time-hypothesis-is-false-openai-2026]] — OpenAI manuscript claiming a subexponential k-CNF counting algorithm; independent review pending (Oct 2026)
+- [[lean-formalization-cfsg-axiom-2026]] — Axiom: agent swarm formalizes the Classification of Finite Simple Groups in Lean, with 34 logged deviations (Oct 2026)
 
 ### Newsletter sweep 2026-10-29
 

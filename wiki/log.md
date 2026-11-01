@@ -2,10 +2,20 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-30
+updated: 2026-11-01
 ---
 
 # Activity Log
+
+## [2026-11-01] ingest | Newsletter sweep: 4 primary sources behind AI Agents Weekly (31 Oct)
+
+Ran the newsletter runbook on the user's "ingest from mail inbox", overriding the 7-day cadence gate (3 days since the 2026-10-29 cursor). **One new thread:** AI Agents Weekly, 31 Oct, a paywalled preview with no arXiv IDs. The other thread found, alphaXiv 28 Oct, was already processed and all six of its papers have pages. No new "Top AI Papers" issue had arrived.
+
+Four TOC items had reachable primary sources and were ingested: [[concerning-behavior-open-weight-model-cohere-2026]], [[whos-aligned-to-whom-agents-experts-judgment-herdagdelen-2026]], [[exponential-time-hypothesis-is-false-openai-2026]], [[lean-formalization-cfsg-axiom-2026]]. New entities: [[cohere]], [[axiom-math]]. Updated: [[qwen3.8-flash-next]], [[openai]], [[anthropic]], [[alibaba]], [[index]].
+
+**Corrections against coverage:** the 86% deferral figure applies to four analytical decisions; the registered effect on the final recommendation was not significant (p = 0.069). The ETH paper's own theorem claims more than the headline (SETH, Gap-ETH and NSETH too), and it remains under expert examination. Axiom's pages disagree on 100 vs 108 milestones.
+
+**Not ingested:** Gemini 4 Carbon, GPT-6.1 Terra, Mistral Large 4 and FrontierCode 2.0 are recorded in the watchlist as product news; no vendor primary was retrieved for them, so their figures are newsletter-only and not written to pages. "Pretraining poison backdoors CLI agents" is unresolved after two searches. Genie 4 was already ingested.
 
 ## [2026-10-30] ingest | Qwen-Scope: Turning Sparse Features into Development Tools for LLMs
 

@@ -2,7 +2,7 @@
 title: OpenAI
 type: entity
 created: 2026-05-13
-updated: 2026-10-27
+updated: 2026-11-01
 sources:
   - gpt-1-radford-2018.md
   - zoom-in-circuits-olah-2020.md
@@ -36,6 +36,7 @@ Originally founded as a non-profit research lab focused on safe AGI; restructure
 
 ## Related 2026 sources
 
+- [[exponential-time-hypothesis-is-false-openai-2026]] — Manuscript from an internal model claiming to refute ETH; Lean formalization published, expert review under way (Oct 2026)
 - **Agents API** (product news, AI Agents Weekly 2026-09-12) — public beta of the managed Codex harness: OpenAI runs the loop, compaction near the context limit, on-demand tool search, [[programmatic-tool-calling|programmatic tool calling]], a `multi_agent` setting for parallel subagents, and a choice of hosted, self-hosted or partner sandboxes. The harness itself is the open-source Codex harness. Newsletter-sourced; not independently verified.
 
 ## Lineage sources
