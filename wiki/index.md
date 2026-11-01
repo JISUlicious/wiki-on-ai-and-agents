@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-29
+updated: 2026-10-30
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 695 sources, 222 entities, 364 concepts, 9 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 696 sources, 224 entities, 364 concepts, 9 comparisons, 19 queries.
 
 ## Entities
 
@@ -52,6 +52,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[claude-opus-5-5]] — Anthropic's Claude 5.5 flagship (Sep 2026): 20% cheaper tokens, 60% cheaper cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, Sonnet 5 prices, thinking cannot be disabled
 - [[gemini-1-5]] — Google Gemini 1.5 (Feb 2024): MoE; 128K standard, 1M preview, 10M in research
+- [[genie-3]] — DeepMind Genie 3 (Aug 2025): the first real-time interactive world model; 720p/24fps, consistent for a few minutes, promptable world events
+- [[genie-4]] — DeepMind Genie 4 (Oct 2026): real-time world model with native audio and dialogue, steered by Gemini in the loop; research preview
 - [[realm]] — Retrieval-augmented pre-training with a learned retriever (Guu 2020); precedes DPR and RAG
 
 ### Agent products (2026 era)
@@ -888,6 +890,7 @@ Surfaced from four NLP-newsletter "Top AI Papers" digests (Sep 28 – Oct 25) an
 *Multi-agent scaling and automated science*
 - [[agensh-scaling-organizational-intelligence-1024-agents-zhan-2026]] — Agensh (Microsoft): orchestrator-free, up to 1,024 coding agents; single runs
 - [[gitswarm-decentralized-compounding-inference-shah-2026]] — GitSwarm (Meta MSL): agents share one Git repo; 5 concurrent workers, not hundreds
+- [[gemini-4-argon-agents-beat-minecraft-faldor-2026]] — four Gemini 4 Argon agents defeat the Ender Dragon in 27h14m (one run, Easy)
 - [[scaling-discovery-requires-forgetting-tan-2026]] — periodic reset from the best candidate beats ever-growing history
 - [[agentic-scientist-orchestrating-coding-agents-lange-2026]] — The Agentic Scientist (Sakana): staged pipeline + rubric meta-controller
 - [[discoveryrsi-recursively-learning-discover-hypotheses-zhong-2026]] — DiscoveryRSI: hypothesis trees → Harbor tasks; LLM-judged quality gains
@@ -1525,6 +1528,7 @@ Surfaced from the NLP-newsletter "Top AI Papers of the Week" digest (May 31 – 
 
 Surfaced from the alphaXiv weekly digest (ingested 2026-06-19).
 
+- [[genie-4-new-generation-of-world-simulation-deepmind-2026]] — Genie 4 announcement (DeepMind blog, 27 Oct 2026): native audio, Gemini 3.8 Flash in the loop, Argon robot demo; no metrics
 - [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026]] — Cosmos 3: omnimodal world model (mixture-of-transformers) for Physical AI; SOTA T2I/I2V + robot policy (NVIDIA 2026)
 - [[oprd-on-policy-representation-distillation-yang-2026]] — OPRD: distill by aligning intermediate hidden states on student trajectories; +2.7pt, −54% peak memory (Yang et al., ZJU/Ant 2026)
 - [[agents-last-exam-sun-2026]] — ALE: long-horizon professional-task agent benchmark with verifiable outputs; frontier agents <1% full-pass (Sun et al., UC Berkeley 2026)

@@ -2,10 +2,26 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-29
+updated: 2026-10-30
 ---
 
 # Activity Log
+
+## [2026-10-30] ingest | Genie 4: A New Generation of World Simulation (Google DeepMind)
+
+Ingested DeepMind's Genie 4 announcement (27 Oct 2026) and its companion Google blog post, saved together as `sources/genie-4-new-generation-of-world-simulation-deepmind-2026.md`. The Genie 3 post (Aug 2025) was checked for the predecessor's facts.
+
+Genie 4 is a real-time interactive world model with:
+- native audio and interactive dialogue;
+- better photorealism and human simulation;
+- Gemini 3.8 Flash as an in-loop planner and verifier;
+- a Gemini 4 Argon to Genie robot-simulation demo (Apptronik Apollo playing checkers).
+
+It is a research preview for trusted testers only, with **no metrics, architecture or resolution/fps disclosed**.
+
+**Flagged:** secondary coverage says sessions last "up to two minutes, double Genie 3". That claim is absent from both Google posts and conflicts with Genie 3's own "a few minutes". It is noted as unconfirmed.
+
+Pages created: [[genie-4-new-generation-of-world-simulation-deepmind-2026]], [[genie-4]], [[genie-3]]. Pages updated: [[world-model]], [[deepmind]], [[gemini-4-argon-agents-beat-minecraft-faldor-2026]], [[index]].
 
 ## [2026-10-29] ingest | Newsletter sweep: 50 papers (NLP Top AI Papers Sep 28 – Oct 25; alphaXiv Oct 8–28)
 

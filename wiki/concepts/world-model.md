@@ -2,12 +2,13 @@
 title: World Model
 type: concept
 created: 2026-06-19
-updated: 2026-10-06
+updated: 2026-10-30
 sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
   - latent-spatial-memory-for-video-world-models-wang-2026.md
   - learn-from-your-own-latents-korchinski-2026.md
   - agentic-world-modeling-foundations-capabilities-laws-chu-2026.md
+  - genie-4-new-generation-of-world-simulation-deepmind-2026.md
 status: draft
 importance: medium
 tags:
@@ -26,6 +27,7 @@ A **world model** is a learned internal model of an environment's dynamics — i
 - **Physical AI / robotics** — [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026|Cosmos 3]] (NVIDIA): an *omnimodal* world model unifying perception, reasoning, simulation, and action generation for robot policies.
 - **Video world models** — [[latent-spatial-memory-for-video-world-models-wang-2026|Mirage]]: a video world model with a **latent spatial memory** for 3D-consistent generation at far lower GPU cost than RGB-memory baselines.
 - **Theory of latent prediction** — [[learn-from-your-own-latents-korchinski-2026]]: a sample-complexity argument for *why* predicting your own latents (JEPA-style) is exponentially more data-efficient than token prediction.
+- **Real-time interactive pixel world models**: DeepMind's [[genie-3|Genie 3]] (2025) and [[genie-4|Genie 4]] (2026) generate photorealistic worlds frame by frame, which users navigate and edit with text. Genie 4 adds native audio and dialogue. A Gemini agent steers it in the loop, which DeepMind calls a step toward **hybrid world models**: language or code models plan, and a pixel model renders. See [[genie-4-new-generation-of-world-simulation-deepmind-2026]]. There are no published metrics.
 - **Agentic world modeling** — [[agentic-world-modeling-foundations-capabilities-laws-chu-2026]]: foundations/capabilities/laws for world models built for agents.
 
 ## Why it matters
@@ -55,6 +57,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[robottt-context-scaling-robot-policies-jiang-2026]] — test-time training as the recurrent state; context scaling to 8K timesteps at flat latency
 - [[code-world-model-coding-agent-as-world-brain-chen-2026]] — an explicitly **anti-latent** world model: the agent-code loop is the transition function and the video model the observation function. Persistence that latent designs solve with spatial memory is solved here by storing it in a program variable. Note it reports **no quantitative results at all**
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
+
+- [[genie-4-new-generation-of-world-simulation-deepmind-2026]]: Genie 4 (DeepMind, Oct 2026), a real-time world model with native audio and Gemini in the loop. Announcement only, no numbers.
 
 ## Lineage sources
 

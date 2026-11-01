@@ -2,7 +2,7 @@
 title: DeepMind (Google DeepMind)
 type: entity
 created: 2026-05-13
-updated: 2026-10-27
+updated: 2026-10-30
 sources:
   - retro-borgeaud-2021.md
 status: draft
@@ -26,6 +26,8 @@ In this wiki, DeepMind is the origin of [[retro-borgeaud-2021|RETRO]] (2021) and
 - [[retro-borgeaud-2021]]
 
 ## Lineage sources
+
+- [[genie-4]]: Genie 4 (Oct 2026), a real-time interactive world model with native audio; successor to [[genie-3]] (Aug 2025). See [[genie-4-new-generation-of-world-simulation-deepmind-2026]].
 
 - [[gemini-1-5]] — Gemini 1.5 (2024)
 - [[griffin-gated-linear-recurrences-de-2024]] — Griffin and Hawk (2024): RG-LRU recurrence plus local attention; matches Llama-2 on about 1/7 of the tokens ([[griffin]])
