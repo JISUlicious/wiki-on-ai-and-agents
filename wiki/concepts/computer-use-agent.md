@@ -2,8 +2,10 @@
 title: Computer-Use Agent
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-11-01
 sources:
+  - introducing-operator-openai-2025.md
+  - computer-use-claude-3-5-anthropic-2024.md
   - ui-tars-2-wang-2025.md
   - magma-yang-2025.md
 status: complete
@@ -42,3 +44,10 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[preact-computer-using-agents-li-2026]] — PreAct: compile CUA runs into replayable state machines
 - [[s-agent-spatial-tool-use-dai-2026]] — S-Agent: VLM spatial tool-use over evolving 3D scenes
+- [[evolving-agent-interfaces-agashe-2026]] — Agent S4: evolved interface repositories for Qwen3.8-27B; OSWorld V2 binary 21.3% (harness + seed account for most of the gain)
+- [[anyact-universal-action-self-evolving-agents-xu-2026]] — AnyAct: GUI + shell + MCP action layer with tool-reliability tracking; OSMCP 77.27% (tools built with the task set in view)
+
+## Product launches
+
+- [[computer-use-claude-3-5-anthropic-2024|Claude computer use]]: public beta, 22 Oct 2024.
+- [[operator|Operator]]: research preview, 23 Jan 2025; its model later powered the Responses API computer-use tool.

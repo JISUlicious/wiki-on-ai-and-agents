@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 701 sources, 227 entities, 364 concepts, 9 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 712 sources, 236 entities, 367 concepts, 9 comparisons, 20 queries.
 
 ## Entities
 
@@ -57,6 +57,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[realm]] — Retrieval-augmented pre-training with a learned retriever (Guu 2020); precedes DPR and RAG
 
 ### Agent products (2026 era)
+- [[eliza]] — 1966 conversation program by Weizenbaum
+- [[crewai]] — Multi-agent framework (repo Oct 2023)
+- [[openai-agents-sdk]] — OpenAI's framework, successor to Swarm (Mar 2025)
+- [[cognition]] — Company behind Devin
+- [[devin]] — Cognition's software-engineering agent (Mar 2024)
+- [[operator]] — OpenAI's browser agent (Jan 2025)
+- [[codex-cli]] — OpenAI's terminal coding agent (Apr 2025)
+- [[manus]] — General-purpose agent from Butterfly Effect (Mar 2025)
+- [[langgraph]] — LangChain's state-graph agent library (Jan 2024)
 - [[claude-code]] — Anthropic's terminal coding agent
 - [[opencode]] — sst/opencode, server-architected open-source coding agent
 - [[pi-mono]] — badlogic's minimalist coding agent (7 tools)
@@ -368,6 +377,9 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gepa]] — Genetic-Pareto reflective prompt evolution; beats GRPO on 5 of 6 tasks with up to 35× fewer rollouts
 
 ### Agents, tools, and orchestration
+- [[bdi-agent]] — Belief-Desire-Intention agents (classical)
+- [[strips]] — 1971 planning system (paper not read)
+- [[a2a]] — Google's agent-to-agent protocol (Apr 2025)
 - [[llm-agent]] — LLM in a perception-action loop with tools
 - [[agent-three-layer-model]] — Three-layer model (L1 LLM capabilities / L2 agent architecture / L3 implementation)
 - [[mcp]] — Model Context Protocol (Anthropic 2024): agent ↔ tool/data standard
@@ -408,6 +420,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[rl-environment-synthesis]] — generating verifiable RL environments/gyms automatically (AutoGym, VERA, SkillGym, AutoEnvScaling, …)
 - [[context-compaction]] — when/what/who compacts an agent's context; learned compaction and KV-cache costs
 - [[generative-recommendation]] — LLMs as recommenders: Semantic-ID decoding, catalog scoring heads, behaviour supervision
+
 
 ### Agentic capabilities (2025)
 - [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
@@ -637,6 +650,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chatbot-arena]] — Crowdsourced pairwise human-preference platform (LMSYS 2023)
 - [[programbench]] — build-a-program-from-scratch benchmark; scores not comparable across papers (different subsets/metrics)
 
+
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
 - [[hallucination-detection]] — Detecting/localizing hallucinated content; single-step LLM-judge vs process-based (PROBE) framings
@@ -673,6 +687,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[residual-stream]] — The per-position additive channel every layer reads/writes; substrate for all lens/steering/SAE techniques (incl. pre-norm vs post-norm)
 - [[logit-lens]] — Decoding the residual stream mid-computation via the unembedding; the J-lens's predecessor
 - [[transcoder]] — sparse replacement for an MLP layer; many late-layer features turn out to be single neurons (2026)
+
 
 ### Datasets and corpora
 - [[c4]] — Colossal Clean Crawled Corpus (T5)
@@ -843,6 +858,20 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[how-we-made-claude-ai-3x-faster-wang-2026]] — Claude-driven web-performance sprint; client-side, not model serving (2026-09-23)
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Eval design and overfit-safe hill-climbing (2026-09-28)
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Opinion: HTML over Markdown for human-facing agent output (2026-05-20)
+
+### AI agent history (ingested 2026-11-01)
+
+- [[eliza-weizenbaum-1966]] — ELIZA (CACM, Jan 1966)
+- [[bdi-agents-from-theory-to-practice-rao-1995]] — Rao & Georgeff on BDI agents (ICMAS 1995)
+- [[introducing-devin-cognition-2024]] — Devin announcement (2024-03-12)
+- [[computer-use-claude-3-5-anthropic-2024]] — Claude computer use (2024-10-22)
+- [[introducing-operator-openai-2025]] — Operator research preview (2025-01-23)
+- [[new-tools-for-building-agents-openai-2025]] — Responses API and Agents SDK (2025-03-11)
+- [[a2a-new-era-agent-interoperability-google-2025]] — A2A announcement (2025-04-09)
+- [[codex-cli-o3-o4-mini-openai-2025]] — Codex CLI announcement (2025-04-16)
+- [[context-engineering-lessons-manus-ji-2025]] — Lessons from building Manus (2025-07-18)
+- [[crewai-readme-2026]] — CrewAI README
+- [[autogpt-readme-2026]] — AutoGPT README
 
 ### Newsletter sweep 2026-11-01
 
@@ -1657,6 +1686,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 ## Queries
 
+- [[ai-agent-influence-graph]] — Dated items and evidence-graded influence edges for AI agent history
 - [[kv-cache-size-vs-active-parameters]] — KV bytes = (P_KV/d)·T·B·b: only the K/V projection weights count. Dense MHA gives T*≈6d; GQA ÷H/G; MLA latent; MoE experts never enter the cache
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist

@@ -2,7 +2,7 @@
 title: "From Transformer to Modern AI Agents: Evolutionary Paths"
 type: query
 created: 2026-05-15
-updated: 2026-10-06
+updated: 2026-11-01
 sources:
   - attention-is-all-you-need-vaswani-2017.md
   - gpt-3-brown-2020.md
@@ -105,3 +105,5 @@ This synthesis draws on ~30 source pages across the wiki. Key starting points: [
 - [[artificial-intelligence]] — field map
 - [[realm]] — retrieval track: REALM (Feb 2020)
 - [[prompt-chaining]] — prompting track: AI Chains (Oct 2021)
+
+For dated influence edges with page-level evidence, see [[ai-agent-influence-graph]].

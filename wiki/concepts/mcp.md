@@ -2,7 +2,7 @@
 title: Model Context Protocol (MCP)
 type: concept
 created: 2026-05-16
-updated: 2026-10-27
+updated: 2026-11-01
 sources:
   - model-context-protocol-anthropic-2024.md
   - neuron-explorer-lyramakesmusic-2026.md
@@ -114,3 +114,7 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[chatgpt-plugins]] — OpenAI's 2023 'early attempt' at an AI-facing interface standard
 - [[building-effective-agents-anthropic-2024]] — names MCP as the way to build the augmented LLM (Dec 2024)
+
+## Lineage
+
+The [specification](https://modelcontextprotocol.io/specification/2025-06-18) says MCP "takes some inspiration from" the Language Server Protocol. Google positions [[a2a|A2A]] as its complement, and the [[openai-agents-sdk|OpenAI Agents SDK]] supports it as a tool type.

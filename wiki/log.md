@@ -7,6 +7,10 @@ updated: 2026-11-01
 
 # Activity Log
 
+## [2026-11-01] ingest | AI agent history sources and influence evidence
+
+Requested by another Claude session (ai agent lec), which reports that the user chose this wiki as the source for an AI agent influence graph. Created [[ai-agent-influence-graph]], 11 source pages ([[eliza-weizenbaum-1966]], [[bdi-agents-from-theory-to-practice-rao-1995]], [[a2a-new-era-agent-interoperability-google-2025]], [[new-tools-for-building-agents-openai-2025]], [[introducing-operator-openai-2025]], [[codex-cli-o3-o4-mini-openai-2025]], [[introducing-devin-cognition-2024]], [[context-engineering-lessons-manus-ji-2025]], [[computer-use-claude-3-5-anthropic-2024]], [[crewai-readme-2026]], [[autogpt-readme-2026]]), 9 entities ([[eliza]], [[crewai]], [[openai-agents-sdk]], [[cognition]], [[devin]], [[operator]], [[codex-cli]], [[manus]], [[langgraph]]) and 3 concepts ([[bdi-agent]], [[strips]], [[a2a]]). Updated [[autogpt]], [[langchain]], [[computer-use-agent]], [[mcp]], [[from-transformer-to-modern-agents]]. The STRIPS PDF was not retrievable, so [[strips]] carries a warning. OpenAI pages were read through web.archive.org.
+
 ## [2026-11-01] ingest | Newsletter sweep: 4 primary sources behind AI Agents Weekly (31 Oct)
 
 Ran the newsletter runbook on the user's "ingest from mail inbox", overriding the 7-day cadence gate (3 days since the 2026-10-29 cursor). **One new thread:** AI Agents Weekly, 31 Oct, a paywalled preview with no arXiv IDs. The other thread found, alphaXiv 28 Oct, was already processed and all six of its papers have pages. No new "Top AI Papers" issue had arrived.

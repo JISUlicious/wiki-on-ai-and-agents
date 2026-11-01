@@ -2,8 +2,9 @@
 title: AutoGPT
 type: entity
 created: 2026-05-17
-updated: 2026-10-07
+updated: 2026-11-01
 sources:
+  - autogpt-readme-2026.md
   - gaia-mialon-2023.md
 status: draft
 importance: medium
@@ -32,3 +33,5 @@ The AutoGPT team co-authored [[gaia]], lending applied agent-engineering perspec
 - [[llm-powered-autonomous-agents-weng-2023]] — Weng's survey quotes AutoGPT's system prompt
 - [[babyagi-variants-nakajima-2023]] — BabyAGI's 2023 variants
 - [[langchain-history-2024-2025]] — LangChain: AgentExecutor runs 'the same logic' as AutoGPT
+
+See [[autogpt-readme-2026]]; the original agent is now "AutoGPT Classic". Evidence on its influences is in [[ai-agent-influence-graph]].
