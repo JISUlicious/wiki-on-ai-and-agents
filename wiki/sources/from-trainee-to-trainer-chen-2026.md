@@ -2,7 +2,7 @@
 title: "From Trainee to Trainer: LLM-Designed Training Environment for RL with Multi-Agent Reasoning"
 type: source
 created: 2026-06-22
-updated: 2026-06-22
+updated: 2026-10-29
 sources:
   - from-trainee-to-trainer-chen-2026.md
 arxiv_id: "2606.17682"
@@ -42,6 +42,7 @@ With **Qwen3-4B as the backbone**, the framework achieves the strongest aggregat
 - [[reinforcement-learning]] / [[agentic-rl]] — multi-stage RL training pipelines for LLM policies.
 - [[self-improving-agent]] — the policy improves its own future training environment (trainee → trainer).
 - [[multi-agent]] — MAPF-FrozenLake is a multi-agent path-finding testbed.
+- [[rl-environment-synthesis]]: concept page comparing automatic environment and gym generation pipelines.
 
 ## References
 

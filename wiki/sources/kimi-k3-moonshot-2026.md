@@ -2,7 +2,7 @@
 title: "Kimi K3: Open Frontier Intelligence"
 type: source
 created: 2026-08-04
-updated: 2026-10-20
+updated: 2026-10-29
 sources:
   - kimi-k3-moonshot-2026.md
 arxiv_id: "2607.24653"
@@ -117,6 +117,7 @@ Post-training is RL across coding, general-agent, reasoning and knowledge domain
 - [[distributed-training]] — MoonEP expert-parallel training with balanced expert execution.
 - [[kv-cache]] — state-aware [[prefix-caching|prefix caching]] for KDA; external KV-cache retention in the RL rollout system.
 - [[quantization-performance]] — post-training QAT with MoE expert weights in MXFP4 and their input activations in MXFP8.
+- [[programbench]]: benchmark page; scores across papers use different subsets and metrics.
 
 ## References
 

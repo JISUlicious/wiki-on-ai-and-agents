@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-09-30",
+  "last_processed_date": "2026-10-29",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -91,7 +91,19 @@
     "1a0d1fc47b8c8393",
     "1a0bfd5bc231b613",
     "1a0bab5b521b241b",
-    "1a0a7dbed7425c88"
+    "1a0a7dbed7425c88",
+    "1a1803bc1a2806e9",
+    "1a173dcbcc1b95d3",
+    "1a16ed294012acd6",
+    "1a1615469077d8f9",
+    "1a14fe1d6124f5bb",
+    "1a14a9ea51872f35",
+    "1a1380978574d05f",
+    "1a12b13130fd58a4",
+    "1a126426ec4999f5",
+    "1a11931554c5e164",
+    "1a107918e34b29d0",
+    "1a1023ee2c91b933"
   ],
   "runs": [
     {
@@ -283,6 +295,20 @@
         "2609.recurrent-looped-transformer"
       ],
       "notes": "4 agents x 8 papers. Capability-laundering page written by main session after a safety filter stopped the subagent. Promoted [[metal]] (3 inbound links). WFM flagged: self-described unmeasured cells."
+    },
+    {
+      "date": "2026-10-29",
+      "type": "newsletter sweep (manual; 4 alphaXiv digests + 4 NLP Top-Papers + 4 AI Agents Weekly by subject line only)",
+      "threads_read": 12,
+      "candidate_ids_verified": 51,
+      "on_domain_ingested": 50,
+      "new_source_pages": 50,
+      "new_concept_pages": 6,
+      "dups_skipped": [
+        "2610.14224"
+      ],
+      "off_domain_dropped": [],
+      "notes": "6 agents x 8-9 papers, no failures; all 40 Substack redirects resolve via academy.dair.ai URLs carrying the arXiv ID. Jev-Mem 2609.23986 was a one-line mention only, ingested in full. Promoted 6 concepts. CorpusMap reports an LLM-Wiki baseline trailing raw-corpus search."
     }
   ],
   "pending_threads": [
@@ -642,6 +668,41 @@
         "2026-09-15"
       ],
       "note": "searched 2026-09-15 on arxiv.org: no match"
+    },
+    {
+      "issue": "2026-10-03",
+      "thread": "1a1023ee2c91b933",
+      "keyword": "Gemini 4 Argon, OpenAI Dots, GPT-6.1 Sol, Claude Sonnet 5.5, Pi 1.0, Claude Code Mods",
+      "status": "product",
+      "note": "subject line only (paywalled preview); product news"
+    },
+    {
+      "issue": "2026-10-10",
+      "thread": "1a126426ec4999f5",
+      "keyword": "Claude Haiku 5.5, Gemini Agent, Mistral Large 4, Decisions API, Personal Agent Protocol",
+      "status": "product",
+      "note": "subject line only (paywalled preview); product news"
+    },
+    {
+      "issue": "2026-10-17",
+      "thread": "1a14a9ea51872f35",
+      "keyword": "Muse Spark Open, OpenCode 2.0, Nemotron 3.5 Super VL, OpenRouter",
+      "status": "product",
+      "note": "subject line only (paywalled preview); product news"
+    },
+    {
+      "issue": "2026-10-24",
+      "thread": "1a16ed294012acd6",
+      "keyword": "Claude Duet, Kimi K3.1 Pro, MiniMax M3.1 Flash, Recursive Flint, DeepSeek DeepInfer, Ramp",
+      "status": "product",
+      "note": "subject line only (paywalled preview); product news"
+    },
+    {
+      "issue": "2026-10-17",
+      "thread": "1a14a9ea51872f35",
+      "keyword": "Gemini Agents Beat Minecraft",
+      "status": "resolved",
+      "note": "2610.22319 ingested as [[gemini-4-argon-agents-beat-minecraft-faldor-2026]]"
     }
   ]
 }

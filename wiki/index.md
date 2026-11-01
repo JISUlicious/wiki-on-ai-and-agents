@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-10-27
+updated: 2026-10-29
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 645 sources, 222 entities, 358 concepts, 9 comparisons, 19 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 695 sources, 222 entities, 364 concepts, 9 comparisons, 19 queries.
 
 ## Entities
 
@@ -277,7 +277,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[transformer-architecture]] — The architectural pattern: attention-only sequence model
 - [[decoder-only-transformer]] — The dominant variant for modern LLMs
 - [[mixture-of-experts]] — Sparse expert routing; decouples total capacity from per-token compute (active vs total params)
-- [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA)
+- [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA, Genie 3/4)
 - [[state-space-model]] — Fixed-state linear recurrences: S4 → Mamba → Mamba-2 (SSD = linear attention) → Gated DeltaNet; recall limit and hybrids (rewritten from primary sources 2026-10-27)
 - [[encoder-decoder]] — Two-stack architecture for seq2seq tasks
 - [[attention-mechanism]] — Query/key/value weighted aggregation
@@ -400,6 +400,10 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[machine-learning]] — Learning from data; supervised, self-supervised, RL
 - [[deep-learning]] — Multi-layer neural networks; the post-2012 boom
 - [[large-language-model]] — LLM hub page and lineage anchors
+- [[recursive-self-improvement]] — loops where a system improves the thing that improves it; harness-side, weight-side and mixed variants (2026)
+- [[rl-environment-synthesis]] — generating verifiable RL environments/gyms automatically (AutoGym, VERA, SkillGym, AutoEnvScaling, …)
+- [[context-compaction]] — when/what/who compacts an agent's context; learned compaction and KV-cache costs
+- [[generative-recommendation]] — LLMs as recommenders: Semantic-ID decoding, catalog scoring heads, behaviour supervision
 
 ### Agentic capabilities (2025)
 - [[agentic-rl]] — Training agents end-to-end with RL on multi-step tool-use / reasoning traces
@@ -627,6 +631,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gsm8k]] — Grade-school math, 8.5K problems (Cobbe 2021)
 - [[mt-bench]] — 80 multi-turn questions graded by an LLM judge (Zheng 2023)
 - [[chatbot-arena]] — Crowdsourced pairwise human-preference platform (LMSYS 2023)
+- [[programbench]] — build-a-program-from-scratch benchmark; scores not comparable across papers (different subsets/metrics)
 
 ### Behavior, safety, interpretability
 - [[hallucination]] — Confident fabrication
@@ -662,6 +667,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[global-workspace-theory]] — GWT + the emergent **J-space** in Claude (Jacobian lens): a broadcast internal workspace for reportable, reasoning-relevant thought; doubles as a silent-thought monitor
 - [[residual-stream]] — The per-position additive channel every layer reads/writes; substrate for all lens/steering/SAE techniques (incl. pre-norm vs post-norm)
 - [[logit-lens]] — Decoding the residual stream mid-computation via the unembedding; the J-lens's predecessor
+- [[transcoder]] — sparse replacement for an MLP layer; many late-layer features turn out to be single neurons (2026)
 
 ### Datasets and corpora
 - [[c4]] — Colossal Clean Crawled Corpus (T5)
@@ -832,6 +838,71 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[how-we-made-claude-ai-3x-faster-wang-2026]] — Claude-driven web-performance sprint; client-side, not model serving (2026-09-23)
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Eval design and overfit-safe hill-climbing (2026-09-28)
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Opinion: HTML over Markdown for human-facing agent output (2026-05-20)
+
+### Newsletter sweep 2026-10-29
+
+Surfaced from four NLP-newsletter "Top AI Papers" digests (Sep 28 – Oct 25) and four alphaXiv digests (Oct 8–28). Grouped by theme.
+
+*Harness engineering*
+- [[harness-as-a-language-minimalist-agent-framework-li-2026]] — JAZ (MIT): one `invoke` primitive; beats Letta by only 1.7 points on all of StuLife (the +8 is a subset)
+- [[harness-learning-generalizable-test-time-adaptation-zhang-2026]] — RL-trained proposer edits harness code; a 4B proposer beats its 35B-A3B teacher on mean quality
+- [[hermes-harness-engineering-dev-primitives-jin-2026]] — HERMES: a resident LLM per repo component; migration 6.5→31.0% vs Codex
+- [[object-oriented-harness-li-2026]] — OO-Harness (Google Cloud AI/UIUC): evolved harness subclasses + router; AutomationBench 61.6→77.4
+- [[reharness-recurrent-harness-agentic-continual-learning-xiao-2026]] — ReHarness: backward revision of retrieved reflections, strictly online
+- [[longharness-stateful-evidence-management-huang-2026]] — LongHarness: evidence–conclusion coevolution over 100M-token corpora (gains vs BM25 direct reasoning)
+- [[veriharness-scaling-agentic-verification-zhang-2026]] — VeriHarness: disagreement resolver + consensus challenger; selection alone gives most of the gain
+- [[jevagentharness-decision-models-share-control-zhu-2026]] — JevAgentHarness: threshold-gated delegation to decision models; 81–89% savings in-distribution only
+
+*Context, cache and memory*
+- [[context-language-models-shao-2026]] — CLMs (UW/Meta): the model edits its own context as a file; Suffix Cache Reuse
+- [[autocompact-learning-when-to-compact-zhang-2026]] — AutoCompact: compaction as a learned policy; +9.2 SWE-bench Verified
+- [[cache-engineering-for-agents-fu-2026]] — drop/repos KV-cache operations + AKV engine; −27.7% cost vs summarization
+- [[jev-mem-system-one-agentic-memory-jiang-2026]] — Jev-Mem: a System One controller runs memory; LoCoMo lead leans on the Adversarial category
+- [[memorytax-bitter-lesson-agent-memory-peng-2026]] — MemoryTax: coding agents searching raw history vs Mem0/Zep; confounded by photo captions
+- [[memt-1-0-memory-native-evolution-li-2026]] — MemT-1.0: token-level persistent state, successor to Metis; competitive with RAG
+- [[in-parameter-memory-survey-huang-2026]] — survey of in-parameter memory as a composable parameter-like object
+- [[continuous-memory-machines-regan-2026]] — CMM (Sakana): CTM + short/long matrix memories; best on sort/maze/regression, ties on copy/recall
+- [[corpusmap-follow-the-entities-jeong-2026]] — CorpusMap: entity-page navigation layer; beats an LLM-Wiki baseline, which itself trailed raw search
+
+*Self-improvement and continual learning*
+- [[recursive-self-improvement-multi-agent-self-supervision-lee-2026]] — MASS (Berkeley/Sakana): one model as agent, evaluator and optimizer; gains on research benchmarks only
+- [[terminal-rsi-recursive-self-improving-terminal-agents-yang-2026]] — Terminal-RSI (Tencent): SFT/PPO alternation; Terminal-Bench avg 20.68→50.58
+- [[are-self-evolving-agents-continual-learners-chen-2026]] — GDM/Mila: plasticity vs stability r = −0.72 across ReasoningBank, GEPA, Meta-Harness
+- [[agent-plasticity-measuring-self-improvement-singh-2026]] — Agent Plasticity (Meta MSL): gain per learning dollar with frozen weights
+- [[coding-agents-strong-prompt-optimizers-singh-2026]] — CASD: one coding-agent pass over trajectory logs beats GEPA; "22× cheaper" is vs SkillOpt only
+- [[evolving-agent-interfaces-agashe-2026]] — Agent S4 (Simular): evolved interfaces; evolution itself adds +1.86 pp on OSWorld V2
+- [[anyact-universal-action-self-evolving-agents-xu-2026]] — AnyAct: GUI + command + task APIs with retrieved tools
+- [[tasteful-agent-taste-bench-pan-2026]] — Taste-Bench: decision forks; best model 59.7%
+
+*RL environments and agent training*
+- [[autogym-blueprint-first-verifiable-agent-gyms-noronha-2026]] — AutoGym (Amazon AGI): blueprint-first gym generation; no held-out eval
+- [[vera-verifiable-environments-agentic-co-evolution-liu-2026]] — VERA (NVIDIA): >9,000 restartable sandboxes; model + harness co-evolution
+- [[skillgym-internalizing-human-skills-ge-2026]] — SkillGym: 2,756 envs from human skills; SFT only
+- [[autoenvscaling-data-flywheel-terminal-agents-yu-2026]] — AutoEnvScaling (Microsoft): terminal agent builds envs; like-for-like gain +6.1
+- [[mimesis-user-simulators-training-environments-phan-2026]] — MIMESIS (Meta MSL): 9B user simulator from human conversations
+- [[critical-state-rl-trainable-states-tool-use-chen-2026]] — Critical-State RL (Salesforce): train only the critical tool call; +14.3 pp BFCL missing-function
+- [[sharpening-tax-in-post-training-oh-2026]] — Sharpening Tax (Meta MSL): post-training loses large-K coverage on agentic tasks
+- [[logra-low-rank-gradient-sketches-rl-zhang-2026]] — LoGRA (NVIDIA): full-weight RL in less memory than LoRA; no accuracy advantage
+- [[hybrid-reasoning-agents-zou-2026]] — HybridAgent: latent reasoning with text tool calls; 35–55% fewer tokens
+
+*Multi-agent scaling and automated science*
+- [[agensh-scaling-organizational-intelligence-1024-agents-zhan-2026]] — Agensh (Microsoft): orchestrator-free, up to 1,024 coding agents; single runs
+- [[gitswarm-decentralized-compounding-inference-shah-2026]] — GitSwarm (Meta MSL): agents share one Git repo; 5 concurrent workers, not hundreds
+- [[scaling-discovery-requires-forgetting-tan-2026]] — periodic reset from the best candidate beats ever-growing history
+- [[agentic-scientist-orchestrating-coding-agents-lange-2026]] — The Agentic Scientist (Sakana): staged pipeline + rubric meta-controller
+- [[discoveryrsi-recursively-learning-discover-hypotheses-zhong-2026]] — DiscoveryRSI: hypothesis trees → Harbor tasks; LLM-judged quality gains
+- [[sage-a1-5-capability-composition-shanghai-ai-lab-2026]] — Sage-A1.5: long-horizon research agent with delegated parallel investigations
+- [[llm-discovered-quantum-circuits-gu-2026]] — Anthropic/Harvard/QuEra: OpenEvolve + Claude Mythos 5 finds cheaper reversible circuits
+
+*Research ideation, RAG, recommendation, interpretability*
+- [[ideaanchor-literature-to-research-ideas-chen-2026]] — IdeaAnchor: RL on rubrics mined from published papers (rewards reconstruction, not novelty)
+- [[priced-guidance-future-research-ideas-wen-2026]] — Priced Guidance: bits of guidance needed to recover a real research idea
+- [[rethinking-knowledge-retrieval-rag-survey-sunil-2026]] — RAG survey; citations stop around May 2025
+- [[graph-engineering-llm-agents-system-intelligence-feng-2026]] — Graph Engineering: tasks, agents and runtime state as linked graphs
+- [[genrec-llm-recommendation-ranker-netflix-li-2026]] — GenRec (Netflix): text-described history into an adapted LM ranker
+- [[kuaishou-explorer-llm-rec-challenge-cao-2026]] — Kuaishou LLM-Rec Challenge 2026: reasoning generative recommendation
+- [[vela-user-behavior-as-supervision-xiao-2026]] — Vela: behaviour histories as tasks; general gain is confounded by teacher distillation
+- [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]] — Anthropic/Georgia Tech: many late-layer transcoder features are single MLP neurons
 
 ### Newsletter sweep 2026-09-30
 
@@ -1568,6 +1639,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 
 ## Queries
+
 - [[kv-cache-size-vs-active-parameters]] — KV bytes = (P_KV/d)·T·B·b: only the K/V projection weights count. Dense MHA gives T*≈6d; GQA ÷H/G; MLA latent; MoE experts never enter the cache
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist

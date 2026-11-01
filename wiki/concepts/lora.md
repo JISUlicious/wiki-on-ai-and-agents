@@ -2,7 +2,7 @@
 title: LoRA (Low-Rank Adaptation)
 type: concept
 created: 2026-06-19
-updated: 2026-10-27
+updated: 2026-10-29
 sources:
   - understanding-lora-as-knowledge-memory-back-2026.md
 status: draft
@@ -26,3 +26,4 @@ LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning method that free
 ## Lineage sources
 
 - [[fine-tuning-hardware-requirements-local-llms]] — bf16 LoRA VRAM for current models: Qwen3.5 0.8B → 27B = 3 / 5 / 10 / 22 / 56 GB; 35B-A3B MoE 74 GB; Gemma 4 E4B 17 GB ([[unsloth-qwen3.5-fine-tune-guide-2026]], [[unsloth-gemma-4-fine-tune-guide-2026]])
+- [[logra-low-rank-gradient-sketches-rl-zhang-2026]] — LoGRA vs LoRA-256 in RL: less memory (7.18 vs 13.21 GiB) but LoRA wins Pass@1 and speed

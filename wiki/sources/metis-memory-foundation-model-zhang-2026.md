@@ -2,7 +2,7 @@
 title: "Metis: Memory Foundation Model"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-10-29
 sources: []
 arxiv_id: "2607.26760"
 authors:
@@ -134,6 +134,7 @@ The paper is unusually candid; most of this is self-reported.
 
 ## Related
 
+- [[memt-1-0-memory-native-evolution-li-2026]] — the successor (MemT-1.0, Oct 2026): token selection replaced by Gated DeltaNet-2 updates, plus Mixture-of-Storage.
 - [[memory-management]] — the paper's target: replace the whole external memory lifecycle with in-architecture state.
 - [[long-term-memory]] · [[memory-construction]] — construction here is a forward-pass write into `M_t`, not a text record.
 - [[neural-long-term-memory]] · [[titans]] — the closest architectural relatives; Titans is cited in the fast-weight/TTT lineage, and Metis's contrast is that it targets *multi-step interaction* memory rather than long-context modeling within one sequence.

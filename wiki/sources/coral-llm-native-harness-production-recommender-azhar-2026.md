@@ -2,7 +2,7 @@
 title: "CORAL: An LLM-Native Harness for Production Recommender Systems"
 type: source
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-10-29
 sources: []
 arxiv_id: "2609.02730"
 venue: RecSys '26 OARS Workshop
@@ -150,7 +150,7 @@ Additional reading caveats that matter for citing this:
 
 ## Concept gaps
 
-- No page for **recommender systems** at all — retrieval/ranking/serving multi-stage architecture, the thing being optimized here.
+- No page for **recommender systems** at all (LLM-based recommendation is covered by [[generative-recommendation]]) — retrieval/ranking/serving multi-stage architecture, the thing being optimized here.
 - No page for **A/B testing / online experimentation** as an agent feedback signal, which is the mechanism that makes this loop different from a benchmark loop.
 - No page for **constrained optimization / feasible-set projection** as a harness safety primitive (the pattern of an LLM proposing and a deterministic solver guaranteeing).
 - No page for **agents acting on live production systems** as a category distinct from benchmark agents.

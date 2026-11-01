@@ -2,7 +2,7 @@
 title: Recursive Agent Harnessing
 type: concept
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - harness2-recursive-agent-harnessing-xu-2026.md
 status: draft
@@ -59,6 +59,7 @@ The step can be widened (parallel: k candidates per scope, k compositions) or de
 ## Related
 
 - [[agentic-harness-engineering]] · [[self-improving-agent]] · [[harness-continual-learning-kang-2026]] · [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] · [[last-ai-built-by-humans-recursive-self-improvement-duan-2026]]
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## References
 

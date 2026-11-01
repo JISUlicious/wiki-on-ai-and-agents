@@ -2,7 +2,7 @@
 title: Context Engineering
 type: concept
 created: 2026-10-06
-updated: 2026-10-08
+updated: 2026-10-29
 sources:
   - effective-context-engineering-anthropic-2025.md
   - pre-train-prompt-predict-liu-2021.md
@@ -61,6 +61,9 @@ The agent era continues the sequence:
 ## Related
 
 [[prompt-engineering]] · [[context-rot]] · [[context-assembly]] · [[agentic-context-engineering]] · [[long-context-llm]] · [[memory-management]] · [[subagents]] · [[agent-skills]]
+- [[genrec-llm-recommendation-ranker-netflix-li-2026]]: Netflix recommender moving "from feature engineering to context engineering"; compacting the verbalized history from about 5K to 1.7K tokens with negligible quality loss
+- [[context-language-models-shao-2026]] · [[cache-engineering-for-agents-fu-2026]] · [[autocompact-learning-when-to-compact-zhang-2026]] — context management moved into the model (free edits of a context file), into the KV cache (drop/repos without re-prefill), or into a learned compaction policy (+9.2 on SWE-bench Verified)
+- [[context-compaction]]: concept page on when, what and who compacts agent context, and what compaction loses.
 
 ## References
 

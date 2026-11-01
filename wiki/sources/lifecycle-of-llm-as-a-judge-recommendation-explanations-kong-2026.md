@@ -2,7 +2,7 @@
 title: "The Lifecycle of LLM-as-a-Judge for Large-Scale Recommendation Explanations"
 type: source
 created: 2026-09-05
-updated: 2026-10-08
+updated: 2026-10-29
 sources: []
 arxiv_id: "2608.18300"
 year: 2026
@@ -126,6 +126,7 @@ Two connections to the *known limits* section. The [[rehearse-confidence-cliff-a
 - [[guardrailing]] — the gate role: an output-boundary guardrail that drops rather than serves.
 - [[continual-learning]] — the "lifelong agent" framing; the proposed future memory-based tuner would consolidate rationales incrementally instead of full re-tunes.
 - [[reward-hacking]] — the paper anchors to human labels at every phase because of judge biases (position, verbosity, self-preference), but does not measure them.
+- [[generative-recommendation]]: concept page comparing LLM recommendation designs (Semantic IDs vs catalog scoring) and LLMs around recommenders.
 
 ## Related
 

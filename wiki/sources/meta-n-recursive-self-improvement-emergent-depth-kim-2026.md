@@ -2,7 +2,7 @@
 title: "Meta^n: Recursive Self-Improvement through Emergent Depth"
 type: source
 created: 2026-09-05
-updated: 2026-10-08
+updated: 2026-10-29
 sources: []
 arxiv_id: "2608.24735"
 year: 2026
@@ -143,6 +143,7 @@ So **~72% of recursion's gain is a plain string of context passed between layers
 - [[arc-agi-3-arc-prize-foundation-2026]] — the successor benchmark in the same series; this paper uses ARC-AGI-2 (120 puzzles, pass@2, GPT-5.2 only).
 - [[harness-vs-model-attribution]] — the same-model-at-every-level control is exactly the attribution design that page asks for, and the limitation section names the untested asymmetric case.
 - **No wiki page yet:** `arc-agi` (benchmark family), realized meta-depth (this paper's concept), OpenEvolve, Gödel Agent (Yin et al. 2024), FunSearch, AlphaEvolve, PromptBreeder, GEPA, CO-Bench, AlgoTune, Symptom2Disease, LawBench, symbolic regression as a benchmark, University of Minnesota.
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## References
 

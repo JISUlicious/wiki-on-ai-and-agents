@@ -2,7 +2,7 @@
 title: Long-Context LLM
 type: concept
 created: 2026-05-16
-updated: 2026-10-07
+updated: 2026-10-29
 sources:
   - em-llm-fountas-2024.md
   - titans-behrouz-2025.md
@@ -62,3 +62,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[context-rot]] — degradation as context grows
 - [[context-engineering]] — the practice that responds to it
 - [[gemini-1-5-technical-report-2024]] — Gemini 1.5 report: 99.7% single-needle recall at 1M tokens, but about 60% with 100 needles
+- [[longharness-stateful-evidence-management-huang-2026]] — LongHarness: harness-level answer to 100M-token corpora; direct BM25+256K reasoning tops out at 23.2% on OfficeQA Pro V1

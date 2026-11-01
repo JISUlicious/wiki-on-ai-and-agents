@@ -2,7 +2,7 @@
 title: "Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement"
 type: source
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-10-29
 sources: []
 arxiv_id: "2609.01481"
 authors:
@@ -139,7 +139,7 @@ The paper has **no dedicated limitations section** — this is the clearest gap 
 
 - No page for **evidence-bundle / structured claim-ledger handoff** between agent roles as a distinct alternative to transcript passing.
 - No page for **autonomous software development** as a task category (multi-day, PRD-to-product), distinct from [[swe-agent]] patch generation.
-- No page for **GameCraft-Bench**, **FrontierSWE** or **ProgramBench**.
+- No page for **GameCraft-Bench** or **FrontierSWE**. ProgramBench now has [[programbench]].
 
 ## References
 

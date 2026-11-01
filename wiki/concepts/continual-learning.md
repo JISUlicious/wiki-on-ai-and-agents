@@ -2,7 +2,7 @@
 title: Continual Learning
 type: concept
 created: 2026-08-17
-updated: 2026-09-15
+updated: 2026-10-29
 sources:
   - continualskillbench-guan-2026.md
   - why-does-claude-md-keep-growing-chakrabarti-2026.md
@@ -43,3 +43,5 @@ Neither the parametric nor the non-parametric route currently consolidates. Grad
 ## Related 2026 sources
 
 - [[continual-learning-mechanisms-compose-long-horizon-memorization-zhang-2026]] — mechanisms compose: 28× better retention over 100 sequential tasks, with replay and merged LoRA more than additive — at the cost of general capability
+- [[reharness-recurrent-harness-agentic-continual-learning-xiao-2026]] — ReHarness: backward revision of retrieved reflections in a strict online stream; beats raw-context and ACE/Mem0/GEPA baselines on CL-Bench, MemoryBench, MemoryArena
+- [[are-self-evolving-agents-continual-learners-chen-2026]] — GDM/Mila: ReasoningBank, GEPA, Meta-Harness on four drifting streams; plasticity vs stability r = −0.72 (n = 12); shared-prompt edits interfere and overwrite, similarity retrieval collides

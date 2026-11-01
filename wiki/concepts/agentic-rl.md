@@ -2,7 +2,7 @@
 title: Agentic RL
 type: concept
 created: 2026-05-17
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - deepseek-r1-2025.md
   - search-r1-jin-2025.md
@@ -29,6 +29,7 @@ Agentic RL is the post-training paradigm that turned LLMs from one-shot responde
 ## Relation to other concepts
 
 Sits adjacent to [[rlhf]] (preference-fitting on short chats) and [[constitutional-ai]] (rule-based preferences), but optimizes a different objective: long-trace task success. Subsumes the tool-use-RL recipe of [[search-r1]] and the reasoning-RL recipe of [[deepseek-r1]]. Compose with [[grpo]] and [[ppo]] as optimizers, with [[chain-of-thought]] as the surface form inside `<think>`, and with [[swe-gym]] / [[swe-bench-live]] as the training and evaluation surfaces for coding agents. Compare to [[self-improving-agent]] approaches like [[darwin-godel-machine]] which evolve scaffolds without weight updates.
+- [[rl-environment-synthesis]] — automatic generation of the environments and verifiers agentic RL trains on (AutoGym, VERA, AutoEnvScaling, Agent-World and others).
 
 ## References
 
@@ -49,3 +50,10 @@ Surfaced via newsletter ingests; see [[index]].
 - [[harness-r1-learning-to-edit-runtime-harnesses-shao-2026]] — RL applied to the harness instead of the policy, with the target agent frozen
 - [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
 - [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails
+- [[autoenvscaling-data-flywheel-terminal-agents-yu-2026]] — proposer agent builds terminal RL envs from solver rollouts; +4.3–7.4 TB2.1 over matched static pool
+- [[vera-verifiable-environments-agentic-co-evolution-liu-2026]] — 9,000+ stage-restartable rubric sandboxes; alternating GRPO / harness-skill edits
+- [[autogym-blueprint-first-verifiable-agent-gyms-noronha-2026]] — blueprint-first gym generation with steerable difficulty (no held-out RL eval)
+- [[mimesis-user-simulators-training-environments-phan-2026]] — trained 9B user simulator as RL environment; frontier 'users' inflate τ-bench success ~20 pp
+- [[critical-state-rl-trainable-states-tool-use-chen-2026]] — nested sampling picks the one trainable call; +14.3 pp BFCL miss_func
+- [[sharpening-tax-in-post-training-oh-2026]] — base models out-cover post-trained ones at pass@128 on agentic benchmarks (36/42 cases)
+- [[logra-low-rank-gradient-sketches-rl-zhang-2026]] — full-weight RL with low-rank gradient sketches; −45.7% memory at 7B

@@ -2,7 +2,7 @@
 title: Polysemanticity
 type: concept
 created: 2026-05-14
-updated: 2026-10-27
+updated: 2026-10-29
 sources:
   - cunningham-sparse-autoencoders-2023.md
   - zoom-in-circuits-olah-2020.md
@@ -28,3 +28,4 @@ The breakthrough fix is to decompose neuron activations into a sparse, overcompl
 
 - [[sparse-autoencoders-cunningham-2023]]
 - [[zoom-in-circuits-olah-2020]]
+- [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]]: gated-MLP neurons are polysemantic over their full activation range, but clean at top activations in late layers. Many [[transcoder]] features just copy them.

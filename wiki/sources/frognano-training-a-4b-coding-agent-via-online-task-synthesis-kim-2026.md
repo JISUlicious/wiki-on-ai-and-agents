@@ -2,7 +2,7 @@
 title: "FrogNano: Training a 4B Coding Agent via Online Task Synthesis"
 type: source
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-10-29
 sources:
   - frognano-training-a-4b-coding-agent-via-online-task-synthesis-kim-2026.md
 arxiv_id: "2609.07925"
@@ -66,6 +66,7 @@ tags:
 - [[lego-rl-harness-native-reinforcement-learning-coding-agents-du-2026]] — RL through real harnesses, where FrogNano uses a single bespoke one.
 - [[agenticqwen-small-agentic-lms-with-dual-data-flywheels-lyu-2026]] · [[agent-world-real-world-environment-synthesis-dong-2026]] — other small-agent and environment-synthesis recipes.
 - [[swe-bench]] · [[terminal-bench]] · [[swe-agent]] · [[swe-gym]] · [[claude-code]] · [[minimax]] · [[verifier]] · [[test-time-compute]] · [[llm-as-a-judge]].
+- [[rl-environment-synthesis]]: concept page comparing automatic environment and gym generation pipelines.
 
 ## References
 

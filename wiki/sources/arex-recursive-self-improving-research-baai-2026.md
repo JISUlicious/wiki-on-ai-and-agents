@@ -2,7 +2,7 @@
 title: "AREX: Towards a Recursively Self-Improving Agent for Deep Research"
 type: source
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-10-29
 sources:
   - arex-recursive-self-improving-research-baai-2026.md
 arxiv_id: "2607.21461"
@@ -67,6 +67,7 @@ The third component is **Autonomous Context Updating (ACU)**: a learned `update_
 - [[long-context-llm]] — motivating tension: retaining the full 128K history distracts subsequent reasoning, while indiscriminate truncation discards evidence needed for later verification.
 - [[outcome-based-reward]] — the sparse terminal reward is exactly what step-aware supervision is introduced to compensate for.
 - [[agent-evaluation]] — evaluated on BrowseComp, GAIA, xbench-DeepSearch-2510, DeepSearchQA, WideSearch, and HLE-with-tools.
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## References
 

@@ -2,7 +2,7 @@
 title: "Agora: Git as Shared Memory for Collective AutoResearch"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - agora-git-shared-memory-collective-autoresearch-zhang-2026.md
 arxiv_id: "2609.18094"
@@ -55,6 +55,7 @@ The paper is a **system description plus a case study**, not a controlled evalua
 - [[agentic-ai-next-intelligence-explosion-evans-2026]] — cited as the institutional framing for agent research communities.
 - [[claude-code]] · [[andrej-karpathy]] — worker harness; autoresearch lineage.
 - [[state-space-model]] — the target architecture's SSM blocks.
+- [[gitswarm-decentralized-compounding-inference-shah-2026]] — the later comparable system: GitSwarm uses one Git parent per contribution plus `informed_by=` references and reports baselines, whereas Agora is a single case study.
 
 ## References
 

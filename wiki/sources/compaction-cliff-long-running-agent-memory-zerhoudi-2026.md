@@ -2,7 +2,7 @@
 title: "The Compaction Cliff in Long-Running AI Agent Memory"
 type: source
 created: 2026-09-05
-updated: 2026-09-30
+updated: 2026-10-29
 sources: []
 arxiv_id: "2608.22752"
 venue: CIKM 2026
@@ -212,7 +212,7 @@ Both fixes are the same architectural move — a cheap model outside the compact
 - [[knowledge-graph]] — noted as complementary: a graph can host typed items as labelled nodes with no extraction step, since rules already live as natural-language strings.
 
 > [!note] Concept gaps this page could not link
-> No wiki page yet for **τ-bench** (used here for both retail and airline behavioral evaluation), **context compaction** as a first-class concept distinct from [[prompt-compression]], **constraint preservation / typed memory**, or **rate-distortion theory for composite sources** (the paper's formal frame, after Liu et al.). AgentArtifactCorpus and SafetyMed are new released datasets with no page.
+> No wiki page yet for **τ-bench** (used here for both retail and airline behavioral evaluation), **constraint preservation / typed memory**, or **rate-distortion theory for composite sources** (the paper's formal frame, after Liu et al.). AgentArtifactCorpus and SafetyMed are new released datasets with no page. Context compaction as a first-class concept now has [[context-compaction]].
 
 ## References
 

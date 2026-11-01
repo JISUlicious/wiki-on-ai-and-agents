@@ -2,7 +2,7 @@
 title: "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-10-29
 sources: []
 arxiv_id: "2607.28568"
 authors:
@@ -110,6 +110,7 @@ Hold the adapter, swap the model: +20 pp Match-SOTA. Hold the model, swap the ha
 - [[claude-code]] · [[claude-opus-4-8]] — general-purpose harness/model baselines in the comparison tables.
 - [[tsinghua-university]] · [[zhejiang-university]] · [[shanghai-jiao-tong-university]] — affiliations.
 - [[mle-bench]] — the primary benchmark.
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## References
 

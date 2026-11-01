@@ -2,7 +2,7 @@
 title: "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026.md
 authors:
@@ -47,6 +47,7 @@ Two hybrid sliding-window/global-attention [[mixture-of-experts]] models: **Pro*
 - [[code-as-harness]] · [[harness-vs-model-attribution]] — multi-harness training is aimed at harness-independent skill.
 - [[terminal-bench]] · [[osworld]] · [[swe-bench-verified]] — evaluations.
 - Related infrastructure: [[molt-pytorch-native-agentic-rl-framework-hu-2026]] and [[composer-2-technical-report-cursor-2026]] (routing replay), [[lego-rl-harness-native-reinforcement-learning-coding-agents-du-2026]], and [[clawgym-ii-black-box-rl-agent-harness-song-2026]] (mix-harness training).
+- [[programbench]]: benchmark page; scores across papers use different subsets and metrics.
 
 ## What it does not show
 

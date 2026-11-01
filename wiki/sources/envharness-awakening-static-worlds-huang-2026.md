@@ -2,7 +2,7 @@
 title: "EnvHarness: Awakening Static Worlds for Agent Learning"
 type: source
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-29
 sources: []
 arxiv_id: "2608.19880"
 year: 2026
@@ -140,6 +140,7 @@ EnvHarness is the environment-side mirror of [[agentic-harness-engineering]]: th
 - [[reward-hacking]] — the Contract that blocks `git reset`/`checkout` and the "guesses URLs" case are shortcut-closing, the same instinct as reward-hack guards.
 - [[rethinking-evaluation-harness-evolution-wang-2026]] — the matched-budget standard; largely met here.
 - [[google]] · [[qwen]] · [[claude]] — Google Cloud AI Research authorship; Qwen3.6 27B, Qwen3-8B-base, and Claude Sonnet 4.6 as policies.
+- [[rl-environment-synthesis]]: concept page comparing automatic environment and gym generation pipelines.
 
 ## References
 

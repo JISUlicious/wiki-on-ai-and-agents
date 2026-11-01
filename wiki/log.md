@@ -2,10 +2,43 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-10-27
+updated: 2026-10-29
 ---
 
 # Activity Log
+
+## [2026-10-29] ingest | Newsletter sweep: 50 papers (NLP Top AI Papers Sep 28 – Oct 25; alphaXiv Oct 8–28)
+
+Ran the newsletter runbook. The cadence gate passed (29 days since the 2026-09-30 cursor). **12 new threads**: 4 alphaXiv digests, 4 NLP "Top AI Papers" and 4 AI Agents Weekly. AI Agents Weekly issues are paywalled previews, so they were recorded by subject line only, as product news. **51 candidate IDs**: all 40 Substack redirects resolved through academy.dair.ai URLs that carry the arXiv ID, and **all 51 were verified against `citation_title`**. One duplicate was skipped: Harness^2, 2610.14224. Jev-Mem (2609.23986) had only a one-line mention on [[jev-research-papers-september-2026]] and now has its own page. **50 papers were ingested from full PDF text** by six thematic agents, with no failures. See the "Newsletter sweep 2026-10-29" section of [[index]].
+
+**Themes.** Harness engineering dominates again; a third of the digest items have "harness" in the name. Examples: [[object-oriented-harness-li-2026|OO-Harness]], [[harness-learning-generalizable-test-time-adaptation-zhang-2026|Harness Learning]], [[hermes-harness-engineering-dev-primitives-jin-2026|HERMES]], [[reharness-recurrent-harness-agentic-continual-learning-xiao-2026|ReHarness]]. Other themes:
+- context and cache control: [[context-language-models-shao-2026|CLMs]], [[cache-engineering-for-agents-fu-2026|cache engineering]];
+- RL environment synthesis;
+- multi-agent scaling: [[agensh-scaling-organizational-intelligence-1024-agents-zhan-2026|Agensh]], [[gitswarm-decentralized-compounding-inference-shah-2026|GitSwarm]];
+- automated science.
+
+**The newsletter blurbs overstated or misattributed more than half the papers**; each case has a "Newsletter vs paper" callout on its page. The biggest:
+- **GitSwarm** runs 5 concurrent workers, not "hundreds". The 100 and 500 figures are episode budgets.
+- **Agent S4's** "3.8×" is mostly harness and seed; evolution itself adds +1.86 pp on OSWorld V2.
+- **VERA-27B** scores *below* GPT-5.6-Sol and Opus 4.8. Its abstract says it surpasses them, and the newsletter repeats that.
+- **CASD's** "22× cheaper" holds only against SkillOpt; against GEPA it is about 1.3×.
+- **JAZ's** "+8% over Letta" is a subset; on all of StuLife it is +1.7.
+- **HERMES's** −26.2% cost is HERMES against itself, not against the baselines.
+- **MASS** gains only on research benchmarks; it drops on Terminal-Bench and SWE-bench Verified.
+- **Vela's** general-capability gain disappears without the teacher's trajectories (Vela-RFT: 0.0).
+- **MemoryTax** is confounded: the agents got photo captions and the memory methods did not.
+- **Wrong affiliations:** CLMs (UW first, not Meta), Harness Learning (JHU/CMU) and VeriHarness (first author at Cambridge).
+
+**Bearing on this wiki.**
+- [[corpusmap-follow-the-entities-jeong-2026|CorpusMap]] used Karpathy's LLM-Wiki pattern as a baseline. It scored *below* raw-corpus agentic search for 3 of 4 GPT models while using fewer tokens. The paper credits fixed entity pages, per-fact attribution and links back to raw documents.
+- [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026|Shabalin et al.]] find that many late-layer transcoder features are single MLP neurons. This was added, scoped, to the open contradiction on [[monosemanticity]]. It supports "neurons are a stronger unit than assumed" at top activations in late layers, but does not overturn [[superposition]].
+- [[sharpening-tax-in-post-training-oh-2026|Sharpening Tax]] agrees with [[understanding-reasoning-pretraining-posttraining-shen-2026]] that RL post-training leaves pass@k flat or lower. No new contradictions.
+
+**Concepts promoted** (each had ≥3 linking pages): [[recursive-self-improvement]], [[rl-environment-synthesis]], [[context-compaction]], [[generative-recommendation]], [[transcoder]], [[programbench]]. The ProgramBench page warns that scores across papers use different subsets and metrics.
+
+**Hubs updated:** [[agentic-harness-engineering]], [[self-improving-agent]], [[continual-learning]], [[context-engineering]], [[long-term-memory]], [[memory-management]], [[agentic-rl]], [[multi-agent]], [[quality-diversity]], [[computer-use-agent]], [[prompt-optimization]], [[sparse-autoencoder]], [[polysemanticity]], [[retrieval-augmented-generation]], [[andrej-karpathy]], [[sakana-ai]]. [[agora-git-shared-memory-collective-autoresearch-zhang-2026|Agora]] now links GitSwarm.
+
+**Still proposed, not created:** `recursive-language-model`, `in-parameter-memory`, `user-simulator`, `research-ideation`, `openevolve`, `claude-mythos-5`, `google-cloud-ai-research`, `netflix`, `kuaishou`, `simular`.
 
 ## [2026-10-27] ingest | CNN feature hierarchy and BERT probing; layer-depth comparison filed
 

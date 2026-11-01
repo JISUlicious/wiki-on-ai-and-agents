@@ -2,7 +2,7 @@
 title: Self-Improving Agent
 type: concept
 created: 2026-05-17
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - darwin-godel-machine-zhang-2025.md
   - voyager-wang-2023.md
@@ -52,6 +52,7 @@ Canonical instance is [[darwin-godel-machine]]; precursors are [[voyager]] (skil
 
 > [!warning] Contradiction — self-improving scaffolds vs. plain test-time search
 > [[rethinking-evaluation-harness-evolution-wang-2026]] argues that scaffold self-improvement is a *search procedure*, and that when compared against simple search at matched budgets it does not win: evolved harnesses **67.4** vs **72.3** for plain parallel sampling on Terminal-Bench 2.1, with held-out gains of only +0.6. This does not refute self-improvement generally (it tests scaffold evolution, not [[darwin-godel-machine|weight- or code-level]] variants, on one benchmark the authors admit may not be harness-sensitive), but it does mean **reported scaffold-improvement gains need a matched-compute search baseline** before they can be attributed to the improvement mechanism itself.
+- [[recursive-self-improvement]] — the narrower recursive claim: persistent updates that also change how later improvements are made (Duan et al. autonomy scale, realized meta-depth).
 
 ## References
 
@@ -95,6 +96,12 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+- [[discoveryrsi-recursively-learning-discover-hypotheses-zhong-2026]] — DiscoveryRSI: credit-weighted SFT + harness replay over hypothesis trees; LLM-judged quality 4.86→5.39 over two rounds
+- [[agentic-scientist-orchestrating-coding-agents-lange-2026]] — Sakana's AI Scientist successor: meta-controller + rubric gates over CLI coding agents; one co-written ALIFE 2026 paper
+- [[recursive-self-improvement-multi-agent-self-supervision-lee-2026]] — MASS (Berkeley/Sakana): homogeneous RSI via self-optimized multi-agent workflows + SFT; Qwen3.6-27B, 1.2–1.6× score/token on 4 research benchmarks, but regresses on TB 2.0 and SWE-bench Verified
+- [[terminal-rsi-recursive-self-improving-terminal-agents-yang-2026]] — Terminal-RSI (Tencent): SFT-on-verified-rewrites ↔ critic-inheriting PPO, 5 stages; TB macro 20.68→50.58%, no compute-matched controls
+- [[agent-plasticity-measuring-self-improvement-singh-2026]] — Agent Plasticity (Meta MSL): held-out gain per $ of learning; endpoint (Fable 5) ≠ efficiency (GPT-5.6 Sol); artifact reuse is the first bottleneck
+- [[evolving-agent-interfaces-agashe-2026]] — Agent S4 (Simular): meta-agent evolves CUA interface repositories; OSWorld V2 21.3%, but evolution adds only +1.86 pp over the hand-written seed
 
 ## Lineage sources
 

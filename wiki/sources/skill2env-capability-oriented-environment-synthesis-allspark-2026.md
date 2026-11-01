@@ -2,7 +2,7 @@
 title: "Skill2Env: Capability-Oriented Environment Synthesis from Skills for General Agents"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - skill2env-capability-oriented-environment-synthesis-allspark-2026.md
 arxiv_id: "2609.33772"
@@ -53,6 +53,7 @@ Source pool: more than 47K public skill folders from ClawHub ([[openclaw]]'s reg
 - [[llm-as-a-judge]] — the rubric items that are not programmatically checkable.
 - [[kimi-k3-moonshot-2026]] (synthesizer) · [[glm-5-2]] (baseline) · [[openclaw]].
 - [[skill-evaluation]] — SkillsBench measures skill use directly.
+- [[rl-environment-synthesis]]: concept page comparing automatic environment and gym generation pipelines.
 
 ## What it does not show
 

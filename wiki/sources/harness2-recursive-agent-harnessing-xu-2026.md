@@ -2,7 +2,7 @@
 title: "Harness²: Recursive Agent Harnessing for an Open World"
 type: source
 created: 2026-10-21
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - harness2-recursive-agent-harnessing-xu-2026.md
 tags:
@@ -243,3 +243,4 @@ It is told to "read it — do not answer from this message alone". Its weighing 
 [[harness2]] · [[recursive-agent-harnessing]] · [[agentic-harness-engineering]] · [[self-improving-agent]] · [[google-research]] · [[opencode]] · [[glm-5]] · [[claude-opus-4-8]] · [[meta-harness-lee-2026]]
 
 _Original source: `sources/harness2-recursive-agent-harnessing-xu-2026.md` (PDF: `sources/harness2-recursive-agent-harnessing-xu-2026.pdf`). Code read from a shallow clone of the repo at `1cfe254`._
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.

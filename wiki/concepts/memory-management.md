@@ -2,7 +2,7 @@
 title: Memory Management
 type: concept
 created: 2026-05-16
-updated: 2026-10-06
+updated: 2026-10-29
 sources:
   - reflexion-shinn-2023.md
   - generative-agents-park-2023.md
@@ -143,6 +143,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[zero-mem-zero-token-memory-operations-xiao-2026]] — **zero LLM tokens** outside the final answer, against LightMem's 877,086 — memory-operation time down 57.6% while scoring highest
 - [[memharness-memory-is-reconstructed-not-replayed-wu-2026]] — reconstruct-or-reject rather than replay; verbatim replay lands **22–24 points below plain GRPO**
 - [[metis-memory-foundation-model-zhang-2026]] — memory states and operations moved *into* the architecture as fast weights — but scoring 26.74 against full-context's 65.03, so not a replacement
+- [[memt-1-0-memory-native-evolution-li-2026]] — Metis's successor: Gated DeltaNet-2 token-level updates plus Mixture-of-Storage; beats parametric baselines but only "competitive with" RAG
+- [[memorytax-bitter-lesson-agent-memory-peng-2026]] — the memory *writer* caps every reader: Zep's GPT-4o-mini graph gives 43–45% to any reader, Opus 5.5's graph 66–87%
 - [[lost-in-compaction-side-constraint-loss-wang-2026]] — compactors retain only **17%** of session constraints; some retain 0.0%
 - [[catastrophic-remembering]] — the cross-cutting failure these four circle
 - [[selective-forgetting-graph-based-memory-rusu-2026]] — graph *retrieval* loses to a flat vector baseline at matched budget (F1 0.417 vs 0.468), but graph *forgetting* works — 9.8% of nodes pruned with F1 unchanged

@@ -2,7 +2,7 @@
 title: "Lost in Compaction: Evaluating Side-Constraint Loss under Context Compaction"
 type: source
 created: 2026-08-17
-updated: 2026-09-30
+updated: 2026-10-29
 sources: []
 arxiv_id: "2608.11242"
 authors:
@@ -145,6 +145,7 @@ Further gaps visible from the outside:
 - [[instruction-tuning]] — the upper bound (93–99.7% compliance when the SC is present) shows models follow these fine; the failure is upstream of following.
 - [[memory-management]] · [[long-term-memory]] — the negative space of this paper: SCs are explicitly *not* durable memory, which is why nothing else catches them. A memory system that persisted session constraints would be an alternative fix.
 - [[llm-agent]] — the deployment setting throughout.
+- [[context-compaction]]: concept page on when, what and who compacts agent context, and what compaction loses.
 
 ## References
 

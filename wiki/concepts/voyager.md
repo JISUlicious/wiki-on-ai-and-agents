@@ -2,7 +2,7 @@
 title: Voyager
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-10-29
 sources:
   - voyager-wang-2023.md
 status: complete
@@ -38,6 +38,7 @@ Voyager has no consolidate or compact operation — the library is append-only b
 - **vs. [[reflexion]]** — Reflexion stores natural-language self-critiques in episodic memory and replays them as context; Voyager stores *executable artifacts* in procedural memory and re-imports them. Reflexion improves the next attempt at the same task; Voyager grows a permanent capability.
 - **vs. [[generative-agents]]** — Generative agents consolidate observations into abstract reflections (declarative memory); Voyager consolidates trial-and-error into reusable subroutines (procedural memory). Different memory subsystems, different consolidation primitives.
 - **vs. [[react]] / [[autogpt]]** — These pick from a fixed tool set per episode and discard the trajectory. Voyager extends the tool set itself across episodes, which is why giving AutoGPT access to Voyager's library closes much of the gap.
+- **vs. [[gemini-4-argon-agents-beat-minecraft-faldor-2026|Gemini 4 Argon team (2026)]]** — same Mineflayer-program action space, but no curriculum or skill library: four general coding agents beat the Ender Dragon, with shared helpers emerging in team memory.
 
 ## References
 

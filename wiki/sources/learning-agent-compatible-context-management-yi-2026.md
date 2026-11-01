@@ -2,7 +2,7 @@
 title: "Learning Agent-Compatible Context Management for Long-Horizon Tasks (AdaCoM)"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-10-29
 sources:
   - learning-agent-compatible-context-management-yi-2026.md
 arxiv_id: "2605.30785"
@@ -42,6 +42,7 @@ Across diverse agents on web search and deep research benchmarks, AdaCoM improve
 - [[memory-management]] — pruning stale content while preserving constraints/progress.
 - [[reinforcement-learning]] — GRPO end-to-end optimization against outcome reward.
 - [[retrieval-augmented-generation]] — web search / deep research agent setting.
+- [[context-compaction]]: concept page on when, what and who compacts agent context, and what compaction loses.
 
 ## References
 

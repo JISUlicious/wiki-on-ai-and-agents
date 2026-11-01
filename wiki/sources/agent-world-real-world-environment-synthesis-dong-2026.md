@@ -2,7 +2,7 @@
 title: "Agent-World: Real-World Environment Synthesis"
 type: source
 created: 2026-06-03
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - agent-world-real-world-environment-synthesis-dong-2026.md
 arxiv_id: "2604.18292"
@@ -44,6 +44,7 @@ Training robust general-purpose agents is bottlenecked by the lack of realistic,
 - [[agent-benchmark]]
 - [[llm-agent]]
 - [[agentic-rl]]
+- [[rl-environment-synthesis]]: concept page comparing automatic environment and gym generation pipelines.
 
 ## References
 

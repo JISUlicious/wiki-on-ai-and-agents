@@ -2,7 +2,7 @@
 title: Prompt Optimization (automatic)
 type: concept
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-10-29
 sources:
   - gepa-agrawal-2025.md
   - pre-train-prompt-predict-liu-2021.md
@@ -33,6 +33,7 @@ Using an algorithm, usually an LLM in a search loop, to **write and improve prom
 - **2025-10:** [[agentic-context-engineering|ACE]] moves from optimizing prompts to evolving an itemized context playbook, criticizing brevity bias and context collapse.
 - **2026:** optimization targets widen to skills ([[skill-optimization]]) and harness code ([[agentic-harness-engineering]], [[meta-harness-lee-2026]]). Weng describes the progression as instruction prompts → structured context → workflow → harness code → optimizer code ([[harness-engineering-self-improvement-weng-2026]]).
 - **2026:** frameworks ship it. [[google-adk|Google ADK]] `adk optimize` runs GEPA on root-agent instructions (1.27.0, March 2026), and skill instructions are added in 2.3.0 (June 2026) ([[adk-optimize-docs-2026]]). MLflow offers GEPA and SIMBA via DSPy for judge alignment.
+- **2026-08:** **CASD** — a stock coding agent doing one offline corpus-statistics pass beats GEPA on 3/4 agentic benchmarks under matched data (+16.6 vs +10.9 pp) ([[coding-agents-strong-prompt-optimizers-singh-2026]]).
 
 ## Recurring lessons
 

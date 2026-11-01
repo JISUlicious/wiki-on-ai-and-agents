@@ -2,7 +2,7 @@
 title: Sakana AI
 type: entity
 created: 2026-05-17
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - darwin-godel-machine-zhang-2025.md
   - sakana-fugu-sakana-ai-2026.md
@@ -37,3 +37,4 @@ Fugu and the Darwin [[godel-machine|Gödel Machine]] share the lab's signature b
 ## Related 2026 sources
 
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
+- [[agentic-scientist-orchestrating-coding-agents-lange-2026]] — The Agentic Scientist (AI Scientist v3): rubric-gated orchestration of coding agents; co-scientist for [[diffusing-blame-yamada-2026]]

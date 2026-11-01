@@ -2,11 +2,12 @@
 title: Monosemanticity
 type: concept
 created: 2026-05-14
-updated: 2026-10-27
+updated: 2026-10-29
 sources:
   - cunningham-sparse-autoencoders-2023.md
   - neuron-explorer-lyramakesmusic-2026.md
   - zoom-in-circuits-olah-2020.md
+  - sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026.md
 status: draft
 importance: medium
 ---
@@ -34,6 +35,12 @@ Monosemanticity is the **interpretability goal**: if you can decompose a network
 > - **Mixed evidence from [[neuron-explorer-lyramakesmusic-2026]]:**
 >   - Supporting: about 20% of Qwen3.5-4B L22 neurons steer a theme stronger than any random control.
 >   - Against: single mid-layer neurons are barely more distinctive than random directions.
+> - **Partial support, carefully scoped ([[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]], Anthropic Fellows / Anthropic, 2026-10):**
+>   - The paper uses the same sign-split view, one encoder and decoder per neuron sign.
+>   - Across 13 open per-layer transcoders (Gemma, Qwen and Llama, 1B–27B, all dense), many [[transcoder]] features are "neurons in disguise". In the Gemma family (1B→27B) they are 6–37% of the dictionary but 58–83% of activations in **late layers**, and the pattern recurs in the other models.
+>   - These neuron features carry essentially all of the transcoder's Jacobian match to the MLP (≈0.3, vs ≈0.05 for the rest). They are also most of the features that recur across training seeds.
+>   - Neurons look as monosemantic as transcoder features only at their **top activations**. Over the broad activation range they stay polysemantic. They also miss fine-grained concepts such as bigrams (the dictionary feature fires on 75.6% of target bigrams, neurons on about 0%).
+>   - **Reading:** this supports "neurons are a stronger unit than assumed" in late layers and at high activation. It does not support "neurons are clean" in general, and it does not overturn [[superposition]].
 > - **Status:** both claims are recorded here. Neither is settled in the wiki's sources.
 
 ## The Anthropic monosemanticity papers
@@ -50,3 +57,4 @@ The [[emotion-concepts-anthropic-2026|Anthropic 2026 emotion-concepts paper]] is
 - [[sparse-autoencoders-cunningham-2023]]
 - [[neuron-explorer-lyramakesmusic-2026]] — neuron-level steering evidence; reports the "already clean" claim secondhand
 - [[zoom-in-circuits-olah-2020]]
+- [[sparsified-mlps-vs-transcoders-neurons-in-disguise-shabalin-2026]]: transcoder features that duplicate single MLP neurons (late layers, 13 open transcoders)

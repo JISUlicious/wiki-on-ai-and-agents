@@ -2,7 +2,7 @@
 title: "Research papers on Jev and System One models (September 2026)"
 type: source
 created: 2026-09-28
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - https://arxiv.org/abs/2609.28613
   - https://arxiv.org/abs/2609.29429
@@ -41,7 +41,7 @@ An aggregation page. In the two weeks after its 2026-09-15 launch, about a dozen
 - **Open-Jev Judgments on CallScreenBench** — Ren et al., [arXiv:2609.23959](https://arxiv.org/abs/2609.23959). "JevLite" is Qwen3-4B read over two label logits for scam-call screening. AUROC .974 and calibration error .052, against a pre-registered non-inferiority margin.
 - *PixelJev* ([arXiv:2609.29283](https://arxiv.org/abs/2609.29283)): extends the candidate-set readout to images, and notes that accuracy gains do not guarantee calibration.
 - *NumericJev* ([arXiv:2609.28587](https://arxiv.org/abs/2609.28587)): numerical outputs via multiway decision trees.
-- *Jev-Mem* ([arXiv:2609.23986](https://arxiv.org/abs/2609.23986)): a System One model deciding what an agent's memory keeps.
+- *Jev-Mem* ([arXiv:2609.23986](https://arxiv.org/abs/2609.23986)): a System One model deciding what an agent's memory keeps. Full page: [[jev-mem-system-one-agentic-memory-jiang-2026]].
 - *JEV and Laya as decision layers for penetration-testing harnesses* ([arXiv:2609.28940](https://arxiv.org/abs/2609.28940)): an exploratory case study with n = 1.
 
 ## The pattern across them

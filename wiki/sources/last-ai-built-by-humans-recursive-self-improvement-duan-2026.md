@@ -2,7 +2,7 @@
 title: "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement"
 type: source
 created: 2026-09-15
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - last-ai-built-by-humans-recursive-self-improvement-duan-2026.md
 arxiv_id: "2609.11873"
@@ -78,7 +78,7 @@ Under this reading, [[reflexion]] (listed as a precursor on the concept page) is
 
 ## Related
 
-- [[self-improving-agent]] · [[darwin-godel-machine]] · [[godel-machine]]: the concept pages. There is no `recursive-self-improvement` page; [[self-improving-agent]] carries the concept for now.
+- [[self-improving-agent]] · [[darwin-godel-machine]] · [[godel-machine]]: the concept pages. The survey's definition and scale are summarized on [[recursive-self-improvement]].
 - [[meta-n-recursive-self-improvement-emergent-depth-kim-2026]]: its "frozen driver caps realized meta-depth" is the same observation as this survey's "external controls" column (Table 7), made at the level of mechanism.
 - [[self-improvements-in-modern-agentic-systems-ren-2026]]: the companion survey. Ren classifies by *what is modified* (θ vs scaffold); Duan classifies by *who decides*. Both surveys are needed to place a system.
 - [[ai4ai-bench-algorithmic-design-chi-2026]] · [[frontis-ma1-ai4ai-recursive-self-improvement-yang-2026]] · [[arex-recursive-self-improving-research-baai-2026]]: AI-for-AI and research agents, mostly L2 under this scheme.

@@ -2,7 +2,7 @@
 title: "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses"
 type: source
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026.md
 arxiv_id: "2609.24972"
@@ -76,6 +76,7 @@ The trade is explicit: **RRSI posts the smallest evolve-set gain of any evolved 
 - [[benchmark-contamination]] — the leakage critic is a pre-scoring contamination screen for harness edits.
 - [[harness-continual-learning-kang-2026]] — a parallel guarded-commit gate; both find unrestricted acceptance ends worst.
 - [[evo-bench-can-language-models-improve-agent-harness-huang-2026]] · [[prime-agent-self-improving-rlm-harness-karten-2026]] — cited prior work on the evolve-to-transfer gap.
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## References
 

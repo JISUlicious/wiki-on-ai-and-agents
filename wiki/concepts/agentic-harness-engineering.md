@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -120,6 +120,15 @@ Surfaced via newsletter ingests; see [[index]].
 - [[rrsi-regularized-recursive-self-improvement-agent-harnesses-xia-2026]] — RRSI (Google): regularized harness evolution; smallest in-sample gain, best out-of-distribution (43.6 vs 39.7 baseline)
 - [[sol-pi-scaling-auto-research-loops-efficient-agent-harness-liu-2026]] — SoL-Pi (NVIDIA): auto-research for token efficiency; −49% tokens at 94% of the Pi harness's score
 - [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness
+- [[graph-engineering-llm-agents-system-intelligence-feng-2026]]: survey placing harness engineering on a ladder (prompt, context, harness, loop, then "graph engineering" over tasks, agents and state)
+- [[harness-as-a-language-minimalist-agent-framework-li-2026]] — JAZ (MIT): one `invoke` primitive, history as a REPL variable; prompt-only beats Letta on far recall (69.9 vs 61.8) and ACE on AppWorld (74.2 vs 69.9)
+- [[harness-learning-generalizable-test-time-adaptation-zhang-2026]] — RL-trained 4B proposer edits harness code; 0.32→0.62 on unseen Reasoning Gym families, transfers HotpotQA→MuSiQue/2Wiki
+- [[hermes-harness-engineering-dev-primitives-jin-2026]] — HERMES: a resident LLM per repo component; +12.4 pp over matched SWE harnesses, Codex 6.5→31.0 on SWE Refactor Bench
+- [[object-oriented-harness-li-2026]] — OO-Harness: evolve a subclass hierarchy plus router instead of one global harness; beats Meta-Harness and AHE, near-tied with AAH
+- [[reharness-recurrent-harness-agentic-continual-learning-xiao-2026]] — ReHarness: backward revision of retrieved reflections under a strict stream; 0.240 normalized gain vs 0.168 for raw context
+- [[longharness-stateful-evidence-management-huang-2026]] — LongHarness: evidence–conclusion coevolution over 100M-token corpora; +12.0 over Claude Code (V1), +18.9 over Codex (V2), single runs
+- [[veriharness-scaling-agentic-verification-zhang-2026]] — VeriHarness: same-model verifier harness (disagreement resolver + consensus challenger); +6.2/+6.4 over a single rollout from a 10-rollout pool
+- [[jevagentharness-decision-models-share-control-zhu-2026]] — JevAgentHarness: delegate multiple-choice harness decisions to a System One model behind fitted thresholds; −14.2% cost with no task lost
 
 ## Lineage sources
 

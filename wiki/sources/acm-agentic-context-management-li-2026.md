@@ -2,7 +2,7 @@
 title: "ACM: Agentic Context Management for Long Horizon Tasks"
 type: source
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-10-29
 sources:
   - acm-agentic-context-management-li-2026.md
 arxiv_id: "2607.23809"
@@ -81,6 +81,7 @@ Generic distillation from a strong teacher **underperforms the untrained ACM age
 - [[can-lms-actually-retrieve-in-context-gollapudi-2026]] — the retrieval-side complement: in-context retrieval degrades at scale, which is why ACM routes recall through an external keyed store plus a querier LLM rather than trusting long-context attention.
 - [[agent-evaluation]] — the Pass@4 vs. Pass⁴ analysis is a consistency-vs-capability decomposition of long-horizon agent scoring.
 - [[self-improving-agent]] — the post-training pipeline internalizes a harness-level behavior into model weights, moving context management from scaffolding into the policy.
+- [[context-compaction]]: concept page on when, what and who compacts agent context, and what compaction loses.
 
 ## References
 

@@ -2,7 +2,7 @@
 title: Retrieval-Augmented Generation (RAG)
 type: concept
 created: 2026-05-13
-updated: 2026-10-06
+updated: 2026-10-29
 sources:
   - rag-lewis-2020.md
 status: complete
@@ -72,6 +72,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[prompt-compression]] — task-agnostic compression is query-independent, so a compressed document needn't be recompressed per query
 - [[stair-structure-aware-retriever-kumar-2026]] — retrieval by table of contents: Recall@1 82.6 vs 76.9 for DSI on 18 books, with output constrained to valid section titles
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — retrieval where the stored item is a feed-forward residual vector that regenerates a sentence, not the text itself. Beats top-3 chunk retrieval at long lengths on narrative recall, but loses 1 of 8 vs 7 of 8 when questions share few words with the facts. It is never compared with storing the same extracted sentences as text
+- [[rethinking-knowledge-retrieval-rag-survey-sunil-2026]]: broad RAG survey (efficiency, defensive, interactive, reasoning axes); literature stops around mid-2025
 
 ## Lineage sources
 

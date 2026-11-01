@@ -2,7 +2,7 @@
 title: "Harness Engineering for Self-Improvement (Lil'Log)"
 type: source
 created: 2026-10-07
-updated: 2026-10-21
+updated: 2026-10-29
 sources:
   - harness-engineering-self-improvement-weng-2026.md
 authors:
@@ -101,6 +101,7 @@ For lineage, it ties the 2023 component model (planning, memory, tools) to the 2
 ## Concepts & entities
 
 [[agentic-harness-engineering]] · [[self-improving-agent]] · [[context-engineering]] · [[agentic-context-engineering]] · [[subagents]] · [[darwin-godel-machine]] · [[adas]] · [[verifier]] · [[harness-vs-model-attribution]] · [[lilian-weng]]
+- [[recursive-self-improvement]]: concept page for RSI definitions, autonomy levels and recurring caveats across papers.
 
 ## Lineage sources
 

@@ -2,7 +2,7 @@
 title: Quality-Diversity
 type: concept
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-10-29
 sources:
   - darwin-godel-machine-zhang-2025.md
 status: draft
@@ -37,3 +37,5 @@ The same concern with keeping diversity alive shows up on the training side. [[v
 ## Related 2026 sources
 
 - [[agora-git-shared-memory-collective-autoresearch-zhang-2026]] — Agora (NVIDIA): a Git DAG as shared memory for 13 autoresearch agents; 98% of the gain came in the first 6 hours
+- [[llm-discovered-quantum-circuits-gu-2026]] — OpenEvolve + Claude Mythos 5 with separate algorithm-family islands; 7/8 quantum-circuit tasks improved, up to 39× TQ-cost
+- [[scaling-discovery-requires-forgetting-tan-2026]] — exploration collapse inside long autoresearch sessions; forgetting restores edit size and reasoning
