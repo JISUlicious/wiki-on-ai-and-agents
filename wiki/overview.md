@@ -120,4 +120,4 @@ Filled on 2026-11-02:
 Still open:
 - **Coinage of terms:** the first uses of "LLM", "prompt engineering" and "context engineering" have no primary source in the wiki. For "harness engineering", the earliest use found is [[my-ai-adoption-journey-hashimoto-2026|Hashimoto]] (2026-02-05), which doesn't prove it was the first.
 - **Context-window pages:** dedicated pages for the context window and the system prompt, each covered only inside other pages.
-- **Housekeeping:** about 156 one-off broken links remain as placeholders for pages not yet written.
+- **Primary sources for model pages:** [[llama]] has no primary source, and 28 of 63 model pages have no lineage fields. Some of those are family heads where none applies.

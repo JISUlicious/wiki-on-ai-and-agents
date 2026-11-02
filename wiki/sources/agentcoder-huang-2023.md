@@ -37,7 +37,7 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 
 - **Three agents, two of them LLMs.** Programmer and Test-Designer are LLM-backed; the Test-Executor is a deterministic Python harness that owns the local execution environment. This is a strict separation between *generation* (probabilistic) and *verification* (mechanical).
 - **Independence of test generation from code.** The Test-Designer is prompted from the problem spec alone, never sees the candidate code, and is explicitly instructed to produce three test classes: basic functionality, edge cases (empty/boundary/extreme inputs), and large-scale inputs (scalability).
-- **Iterative test-driven loop.** Executor runs tests → if all pass, return to user; if any fail, hand failures + error messages back to Programmer → Programmer refines → re-execute. Loop bounded by an iteration budget. This is the prototype of the [[verification-driven-tool-use]] pattern catalogued by the survey.
+- **Iterative test-driven loop.** Executor runs tests → if all pass, return to user; if any fail, hand failures + error messages back to Programmer → Programmer refines → re-execute. Loop bounded by an iteration budget. This is the prototype of the verification driven tool use pattern catalogued by the survey.
 - **Chain-of-Thought scaffolding inside the Programmer.** Four-stage CoT (understand → select method → pseudocode → code) is the only intra-agent prompting trick; the rest of the gains come from architecture.
 - **Token efficiency as a first-class metric.** MetaGPT (5 agents), ChatDev (7 agents), and AgentVerse pay heavy inter-agent communication cost; AgentCoder achieves higher pass@1 at ~30–40% of the token budget by keeping the agent count minimal.
 - **Headline results (pass@1).** HumanEval **96.3%** (GPT-4) / 77.4% (GPT-3.5); MBPP **91.8%** (GPT-4) / 89.1% (GPT-3.5); also evaluated on HumanEval-ET and MBPP-ET extended-test variants where it leads by even larger margins.
@@ -46,19 +46,19 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 
 ## Entities
 
-- [[dong-huang]] — first author, HKU.
+- Dong Huang — first author, HKU.
 - [[hku]] — University of Hong Kong, three of six authors.
 - [[shanghai-jiao-tong-university]] — Shanghai Jiao Tong University (Qingwen Bu).
 - [[kings-college-london]] — Jie M. Zhang.
-- [[university-of-sussex]] — Michael Luck.
+- University of Sussex — Michael Luck.
 - [[gpt-4]] — primary backbone for headline results.
-- [[gpt-3.5-turbo]] — secondary backbone, shows largest relative gains.
+- GPT-3.5 Turbo — secondary backbone, shows largest relative gains.
 - [[metagpt]] — primary multi-agent baseline (5 agents).
 - [[chatdev]] — multi-agent baseline (7 agents).
-- [[agentverse]] — multi-agent baseline.
+- AgentVerse — multi-agent baseline.
 - [[reflexion]] — single-agent self-refinement baseline.
 - [[humaneval]] — primary benchmark.
-- [[mbpp]] — primary benchmark.
+- MBPP — primary benchmark.
 
 ## Concepts
 
@@ -66,11 +66,11 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 - [[code-as-harness]] — AgentCoder's executor agent is a paradigmatic instance.
 - [[code-generation]] — task domain.
 - [[multi-agent]] — three-agent collaboration pattern.
-- [[verification-driven-tool-use]] — executor-as-verifier loop.
+- verification driven tool use — executor-as-verifier loop.
 - [[chain-of-thought]] — used inside the Programmer Agent.
 - [[plan-execute-verify-loop]] — the higher-level pattern AgentCoder instantiates.
-- [[self-refinement]] — what AgentCoder's loop generalises beyond.
-- [[test-driven-development]] — the software-engineering analogue the paper draws from.
+- self refinement — what AgentCoder's loop generalises beyond.
+- test driven development — the software-engineering analogue the paper draws from.
 
 ## Notable Quotes
 
@@ -89,4 +89,4 @@ Within the [[code-as-agent-harness-ning-2026]] survey, AgentCoder is the single 
 - arXiv: [2312.13010](https://arxiv.org/abs/2312.13010)
 - Source file: `sources/agentcoder-huang-2023.md`
 - Cited by: [[code-as-agent-harness-ning-2026]] (most-cited paper in survey body, 19 references; canonical generate–test–debug exemplar in §3.4 Plan–Execute–Verify).
-- Compared against in this paper: [[metagpt]], [[chatdev]], [[agentverse]], [[reflexion]], Self-Debugging, Self-Collaboration, CodeCoT, INTERVENOR.
+- Compared against in this paper: [[metagpt]], [[chatdev]], AgentVerse, [[reflexion]], Self-Debugging, Self-Collaboration, CodeCoT, INTERVENOR.

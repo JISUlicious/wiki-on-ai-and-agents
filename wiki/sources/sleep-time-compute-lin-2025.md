@@ -67,7 +67,7 @@ This paper sits in the [[memgpt]] / Letta line of work and gives direct theoreti
 - [[memgpt]] — predecessor line of work at Letta
 - [[test-time-compute]] — the framing this paper extends
 - [[chain-of-thought-prompting|chain-of-thought]] — the kind of computation moved to sleep-time
-- [[agentic-ai]] — application setting (coding agents, conversational assistants)
+- agentic ai — application setting (coding agents, conversational assistants)
 
 ## Notable Quotes
 

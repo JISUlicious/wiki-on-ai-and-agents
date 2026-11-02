@@ -32,14 +32,14 @@ importance: high
 **Source file**: [[skillmoo-gong-2026]]
 **arXiv**: [arXiv:2604.09297](https://arxiv.org/abs/2604.09297) (v2, 17 May 2026, cs.SE)
 **Authors**: Jingzhi Gong (jingzhi.gong@kcl.ac.uk), Ruizhen Gu, Zhiwei Fei, Yazhuo Cao, Lukas Twist, Alina Geiger, Shuo Han, Dominik Sobania, Federica Sarro, Jie M. Zhang
-**Affiliations**: [[kings-college-london|King's College London]] (Gong, Cao, Twist, Zhang); [[queens-university-belfast|Queen's University Belfast]] (Gu); [[nanjing-university|Nanjing University]] (Fei); [[johannes-gutenberg-university-mainz|Johannes Gutenberg University Mainz]] (Geiger); [[university-college-london|University College London]] (Han, Sarro); [[university-of-duisburg-essen|University of Duisburg-Essen]] (Sobania)
+**Affiliations**: [[kings-college-london|King's College London]] (Gong, Cao, Twist, Zhang); Queen's University Belfast (Gu); Nanjing University (Fei); Johannes Gutenberg University Mainz (Geiger); University College London (Han, Sarro); University of Duisburg-Essen (Sobania)
 **Year**: 2026
 
 ## Summary
 
 SkillMOO reframes the configuration of [[agent-skills|agent skills]] for software engineering (SE) as a **multi-objective search problem**. Current practice treats skill bundles as static, hand-crafted assets — or, in the recent wave of skill-evolution work, optimizes them on **pass rate alone**. Gong et al. argue this is insufficient: a skill can raise task success while substantially inflating token cost or injecting misleading guidance. SkillMOO instead treats a task-specific **skill bundle** (a subset or edited version of the skills exposed to a coding agent) as a candidate solution and evolves it through a two-agent solver–optimizer loop. A *task solver* agent runs the SE task and records pass rate, cost, runtime, and failure traces; a *skill optimizer* agent reads that evidence and proposes edits — **pruning, substitution, reordering, adding, or rewriting** skill content — to improve the pass/cost tradeoff. Candidate bundles are then ranked by **NSGA-II** non-dominated sorting with crowding-distance tie-breaking on two explicit objectives, `min [−pass(b), cost(b)]`, and the survivors breed the next generation.
 
-This positions SkillMOO as the **cost-aware, multi-objective counterpart to [[skillopt-yang-2026|SkillOpt]]'s single-objective text-edit optimization**: where SkillOpt (and contemporaries like EvoSkill, EvoSkills, and Meta Context Engineering) iteratively rewrites skills to push a single pass-rate objective, SkillMOO keeps an explicit Pareto front trading verifier pass rate against LLM inference cost, and refuses to hide token/runtime tradeoffs behind a pass-rate-only score. Evaluated across all 16 SE tasks in [[skillsbench|SkillsBench]] with [[glm-5|GLM-5]] driving both agents, SkillMOO achieves the **top pass-rate rank on 11 of 12 non-zero-pass tasks**, with cost reductions of **up to 31.7%** over static bundles and pass-rate gains of **up to +21 percentage points**. An analysis of 38 filtered skill edits finds that pruning and substitution — not adding guidance — dominate the successful operations, motivating a new class of **cost-aware, search-based skill engineering** ([[search-based-software-engineering|SBSE]] for skills).
+This positions SkillMOO as the **cost-aware, multi-objective counterpart to [[skillopt-yang-2026|SkillOpt]]'s single-objective text-edit optimization**: where SkillOpt (and contemporaries like EvoSkill, EvoSkills, and Meta Context Engineering) iteratively rewrites skills to push a single pass-rate objective, SkillMOO keeps an explicit Pareto front trading verifier pass rate against LLM inference cost, and refuses to hide token/runtime tradeoffs behind a pass-rate-only score. Evaluated across all 16 SE tasks in SkillsBench with [[glm-5|GLM-5]] driving both agents, SkillMOO achieves the **top pass-rate rank on 11 of 12 non-zero-pass tasks**, with cost reductions of **up to 31.7%** over static bundles and pass-rate gains of **up to +21 percentage points**. An analysis of 38 filtered skill edits finds that pruning and substitution — not adding guidance — dominate the successful operations, motivating a new class of **cost-aware, search-based skill engineering** (SBSE for skills).
 
 ## Method: The Solver–Optimizer Loop
 
@@ -53,7 +53,7 @@ The framing explicitly distinguishes SkillMOO from skill **discovery** or **rout
 
 ## Experimental Setup
 
-- **Benchmark**: all 16 SE tasks in [[skillsbench|SkillsBench]] (categories span info retrieval, build repair, code migration, performance optimization, ML reproduction, data engineering, etc.). Bundle sizes range from 1 to 8 skills per task.
+- **Benchmark**: all 16 SE tasks in SkillsBench (categories span info retrieval, build repair, code migration, performance optimization, ML reproduction, data engineering, etc.). Bundle sizes range from 1 to 8 skills per task.
 - **Verifier hardening**: SkillsBench's default test coverage is minimal, so all tasks were expanded to **≥40 tests** via GPT-5.4, generated independently per task without access to skill content, manually validated, and applied uniformly across all three compared methods; compile/build gates were preserved as model-independent ground truth.
 - **Model**: [[glm-5|GLM-5]] for both the task solver and skill optimizer agents (chosen for cost-to-capability ratio and API availability).
 - **Budget**: population size 4, 3 generations, 900 s timeout per candidate; per-candidate evaluation costs $0.10–$14 (USD at GLM-5 pricing), keeping per-task optimization overhead practical ($1–$15 and under three hours).
@@ -76,13 +76,13 @@ The framing explicitly distinguishes SkillMOO from skill **discovery** or **rout
 ## Entities Mentioned
 
 - [[kings-college-london]] — primary affiliation (Gong, Cao, Twist, Zhang)
-- [[university-college-london]] — Han, Sarro
-- [[queens-university-belfast]] — Gu
-- [[nanjing-university]] — Fei
-- [[johannes-gutenberg-university-mainz]] — Geiger
-- [[university-of-duisburg-essen]] — Sobania
+- University College London — Han, Sarro
+- Queen's University Belfast — Gu
+- Nanjing University — Fei
+- Johannes Gutenberg University Mainz — Geiger
+- University of Duisburg-Essen — Sobania
 - [[glm-5]] — the LLM driving both the task solver and skill optimizer agents
-- [[skillsbench]] — the SE-task benchmark used for all evaluation (16 tasks)
+- SkillsBench — the SE-task benchmark used for all evaluation (16 tasks)
 
 ## Concepts Discussed
 
@@ -91,9 +91,9 @@ The framing explicitly distinguishes SkillMOO from skill **discovery** or **rout
 - [[skill-md-format]] — the SKILL.md packaging that skill edits (rewrite, prune sections) operate on
 - [[skill-library]] — the available skill pool from which bundles are sampled and edited
 - [[swe-bench]] — the canonical SE-agent benchmark; SkillsBench's SE tasks are the closer evaluation surface here
-- [[evolutionary-algorithm]] / **NSGA-II** — the genetic survivor-selection algorithm (non-dominated sorting + crowding distance) driving Pareto selection
-- [[multi-objective-optimization]] — the bi-objective `[−pass, cost]` formulation and Pareto/hypervolume analysis
-- [[search-based-software-engineering]] — the SBSE/AI4SE framing the paper situates itself within
+- evolutionary algorithm / **NSGA-II** — the genetic survivor-selection algorithm (non-dominated sorting + crowding distance) driving Pareto selection
+- multi objective optimization — the bi-objective `[−pass, cost]` formulation and Pareto/hypervolume analysis
+- search based software engineering — the SBSE/AI4SE framing the paper situates itself within
 - [[skillopt-yang-2026|SkillOpt]] — the **single-objective sibling**: text-edit skill optimization on pass rate alone; SkillMOO is its cost-aware, multi-objective counterpart
 
 ## Notable Quotes
@@ -112,11 +112,11 @@ _Original source: `sources/skillmoo-gong-2026.md`_
 _arXiv: [arXiv:2604.09297](https://arxiv.org/abs/2604.09297) (v2, 2026-05-17, cs.SE)_
 
 Key related work cited:
-- SkillsBench — first systematic paired evaluation of skills across diverse tasks → [[skillsbench]]
+- SkillsBench — first systematic paired evaluation of skills across diverse tasks → SkillsBench
 - SWE-Skills-Bench — finds many public SWE skills provide little benefit / add token overhead
 - SkillRouter — frames skill usage as a retrieval/routing problem over large skill pools
 - EvoSkill, EvoSkills, Meta Context Engineering — pass-rate-only skill-evolution approaches → contrast with [[skill-optimization]]
 - ACE, [[gepa|GEPA]], Meta-Harness — adjacent context/prompt/harness optimization
 - LLM-guided Genetic Improvement — closest prior: LLM semantic edits + search-based software evolution (but not on skill bundles)
-- Deb et al. — NSGA-II ([[evolutionary-algorithm]])
+- Deb et al. — NSGA-II (evolutionary algorithm)
 - Scott-Knott ESD — the rank-comparison statistical method

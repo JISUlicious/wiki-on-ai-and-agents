@@ -63,14 +63,14 @@ A useful framing for the 2025 RL-trained-memory cluster:
 
 ## Entities Mentioned
 
-- [[anuttacon]] (industry affiliation; sponsor of first author's internship)
-- [[uc-san-diego]] (academic affiliation)
+- Anuttacon (industry affiliation; sponsor of first author's internship)
+- UC San Diego (academic affiliation)
 - [[stanford-university]] (co-author affiliation)
 - [[memgpt]] (baseline architecture; source of core-memory pattern)
 - [[mem0]] (cited baseline memory system)
 - [[mirix]] (cited baseline; motivates the "even GPT-4o struggles with complex memory tools" argument)
-- [[qwen-3]] (Qwen3-4B backbone, Qwen3-32B reward judge)
-- [[gpt-4-1-mini]] (ablation comparison)
+- [[qwen|Qwen3]] (Qwen3-4B backbone, Qwen3-32B reward judge)
+- GPT-4.1 mini (ablation comparison)
 
 ## Concepts Discussed
 
@@ -82,7 +82,7 @@ A useful framing for the 2025 RL-trained-memory cluster:
 - [[long-context-llm]]
 - [[semantic-memory]]
 - [[episodic-memory-llm]]
-- [[core-memory]]
+- core memory
 - [[tool-use]]
 - [[retrieval-augmented-generation]]
 - [[bm25]]

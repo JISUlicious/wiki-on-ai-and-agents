@@ -23,7 +23,7 @@ importance: high
 
 ## Summary
 
-[[openai]]'s official guide to function calling (a.k.a. tool calling) — the mechanism by which OpenAI models interface with external systems beyond their training data. The guide covers both API surfaces: the older **[[chat-completions-api|Chat Completions]]** endpoint and the newer **[[responses-api|Responses API]]** (released March 2025), which unifies capabilities previously split across Chat Completions and the Assistants API.
+[[openai]]'s official guide to function calling (a.k.a. tool calling) — the mechanism by which OpenAI models interface with external systems beyond their training data. The guide covers both API surfaces: the older **Chat Completions** endpoint and the newer **[[responses-api|Responses API]]** (released March 2025), which unifies capabilities previously split across Chat Completions and the Assistants API.
 
 The doc walks through the canonical 5-step workflow (provide tools → receive tool calls → execute → return results → final response), the JSON-schema tool definition format, strict mode for guaranteed schema compliance, parallel tool calls, streaming events, and advanced features like custom tools with Lark/Regex grammars and `tool_search` for large tool catalogs. It also distinguishes custom user-defined functions from OpenAI's growing set of built-in tools (web search, code execution, file search, [[mcp|MCP]] server integration).
 

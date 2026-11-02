@@ -64,9 +64,9 @@ The technical core is **credit assignment that splits one terminal reward `r(τ)
 
 ## Entities Mentioned
 
-- [[university-of-science-and-technology-of-china]] — lead affiliation (Shi, Wang, Zhang)
-- [[meituan]] — industry collaborator (Chen, Lu, Miao, Gu, Cai)
-- [[national-university-of-singapore]]
+- University of Science and Technology of China — lead affiliation (Shi, Wang, Zhang)
+- Meituan — industry collaborator (Chen, Lu, Miao, Gu, Cai)
+- National University of Singapore
 - [[qwen-2-5]] — Qwen2.5-7B-Instruct base policy for Skill1 and all baselines
 - [[alfworld]] — text-based household benchmark; Skill1 reaches 97.5% avg
 - [[webshop]] — online-shopping simulator benchmark

@@ -42,7 +42,7 @@ To explain why such a minimal method works, the authors trace the gains to a *pr
 
 ## Concepts & entities
 
-- [[self-distillation]] / [[knowledge-distillation]] — the core method (distilling from own samples)
+- self distillation / [[knowledge-distillation]] — the core method (distilling from own samples)
 - [[code-generation]] — the target task
 - [[supervised-fine-tuning]], [[reinforcement-learning]] (the alternative SSD complements)
 - [[reasoning]] (thinking-variant models tested)

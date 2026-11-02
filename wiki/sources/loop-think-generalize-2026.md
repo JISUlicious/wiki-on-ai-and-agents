@@ -53,7 +53,7 @@ This is the canonical 2026 paper anchoring the **"Recurrent-Depth Transformer"**
 - [[chain-of-thought-prompting]] — the explicit-token alternative this paper positions itself against; RDTs do compositional multi-hop reasoning *without* CoT.
 - [[inference-time-compute]] — depth extrapolation is achieved by scaling recurrent iterations `R` at inference, a parameter-free form of [[test-time-compute|test-time compute]].
 - [[grokking]] — the delayed-generalization phenomenon that structures the three-stage training dynamic observed for systematic generalization.
-- [[compositional-generalization]] — the umbrella property the paper tries to instill: systematic generalization + depth extrapolation.
+- compositional generalization — the umbrella property the paper tries to instill: systematic generalization + depth extrapolation.
 
 ## Notable Quotes
 

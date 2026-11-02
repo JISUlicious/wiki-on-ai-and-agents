@@ -74,7 +74,7 @@ The DGM is the first paper to make the Gödel-machine vision concretely empirica
 
 - [[darwin-godel-machine]] — the system itself
 - [[self-improving-agent]] — the pattern this work canonicalises
-- [[open-ended-evolution]] / open-endedness — archive-based exploration framework (Stanley, Lehman, Clune lineage)
+- open ended evolution / open-endedness — archive-based exploration framework (Stanley, Lehman, Clune lineage)
 - [[llm-agent]] — agent architecture pattern (coding-agent variant)
 - [[meta-learning]] — broader framing (DGM as a self-referential meta-learner)
 - [[quality-diversity]] — algorithmic inheritance for the archive

@@ -47,8 +47,8 @@ DeepSeek released the R1 family under open weights on [[huggingface|Hugging Face
 ## Entities Mentioned
 
 - [[deepseek]] (org) — Chinese lab that authored and released the model.
-- [[deepseek-v3]] / [[deepseek-v3-base]] — the base model that R1 / R1-Zero are trained from.
-- [[deepseek-r1-zero]] — the pure-RL intermediate model.
+- [[deepseek-v3]] / [[deepseek-v3|DeepSeek-V3-Base]] — the base model that R1 / R1-Zero are trained from.
+- [[deepseek-r1|DeepSeek-R1-Zero]] — the pure-RL intermediate model.
 - [[deepseek-r1]] — the production multi-stage model.
 - [[openai]] / [[o1]] — implicit comparison target (o1-class reasoning).
 
@@ -61,11 +61,11 @@ DeepSeek released the R1 family under open weights on [[huggingface|Hugging Face
 - [[chain-of-thought-prompting]] / long-CoT reasoning.
 - [[self-reflection]] / self-verification / backtracking.
 - [[reasoning]]
-- [[rule-based-rewards]] vs. neural reward models.
+- rule based rewards vs. neural reward models.
 - [[reward-hacking]] — explicit motivation for avoiding neural reward models on reasoning data.
 - [[knowledge-distillation]] — for the 7B / 32B / 70B distilled variants.
-- [[supervised-fine-tuning|SFT]] (cold-start) and [[rejection-sampling]] within the multi-stage pipeline.
-- Benchmarks: [[aime]], [[math-500]], [[codeforces]], [[livecodebench]], [[swe-bench]], [[gpqa]], [[mmlu-pro]].
+- [[supervised-fine-tuning|SFT]] (cold-start) and rejection sampling within the multi-stage pipeline.
+- Benchmarks: [[aime]], MATH-500, codeforces, [[livecodebench]], [[swe-bench]], [[gpqa]], MMLU-Pro.
 
 ## Notable Quotes
 

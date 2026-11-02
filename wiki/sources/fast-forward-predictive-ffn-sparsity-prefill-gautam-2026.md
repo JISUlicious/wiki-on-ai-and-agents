@@ -232,7 +232,7 @@ The paper's own last paragraph closes the loop back to [[weight-streaming]]: loa
 - [[longbench]] · [[long-context-llm]] · [[mmlu]] — evaluation.
 - [[arithmetic-intensity]] · [[llm-inference-roofline-yuan-2024]] · [[prefill-decode-aware-evaluation-ai-accelerators-usami-2026]] — the compute-bound-prefill premise, and the reason the FFN share sets the ceiling.
 - [[knowledge-distillation]] — the compensator is sub-layer distillation to the dense FFN.
-- [[edge-inference]] · [[hardware-accelerator]] · [[nvidia]] · [[qualcomm]] (no page) — the target is Qualcomm NPUs; the evidence is A100/A5000.
+- [[edge-inference]] · [[hardware-accelerator]] · [[nvidia]] · Qualcomm (no page) — the target is Qualcomm NPUs; the evidence is A100/A5000.
 - [[llama]] · [[qwen]] — models. [[layer-skipping]] — the paper's own "layer skipping" citations (FFN-SkipLLM, He 2025, Luo 2025) are the decode-side relatives of POP.
 - [[prompt-compression]] · [[llmlingua-jiang-2023]] · [[flash-attention]] — the "complementary directions" the intro sets aside.
 

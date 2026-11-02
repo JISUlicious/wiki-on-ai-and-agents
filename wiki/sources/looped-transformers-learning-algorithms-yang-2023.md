@@ -45,7 +45,7 @@ The work bridges the gap between Giannou et al.'s (2023) hand-constructed theory
 
 ## Entities
 
-- [[uw-madison]] — institutional affiliation of all four authors.
+- UW-Madison — institutional affiliation of all four authors.
 - [[kangwook-lee]] — co-author; Wisconsin faculty working on ICL and looped/recurrent transformer theory.
 - [[dimitris-papailiopoulos]] — co-author; Wisconsin faculty working on transformer learnability.
 - Robert Nowak — co-author, Wisconsin (statistical learning theory). Liu Yang — first author, then PhD student at Wisconsin.

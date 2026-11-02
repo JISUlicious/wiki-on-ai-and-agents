@@ -55,7 +55,7 @@ To demonstrate practicality, the authors build **SiliconFriend**, an AI-companio
 ## Entities Mentioned
 
 - [[chatgpt]] — closed-source backbone
-- [[chatglm]] — open-source bilingual 6.2B backbone, GLM family
+- ChatGLM — open-source bilingual 6.2B backbone, GLM family
 - BELLE — LLaMA-7B-derived open-source bilingual backbone (instruction-tuned via ChatGPT-synthesized data)
 - [[llama]] — base for BELLE
 - [[faiss]] — vector index for memory retrieval
@@ -68,12 +68,12 @@ To demonstrate practicality, the authors build **SiliconFriend**, an AI-companio
 - [[memorybank]]
 - [[ebbinghaus-forgetting]]
 - [[memory-management]]
-- [[memory-decay]]
+- memory decay
 - [[long-term-memory]]
 - [[dpr|dense passage retrieval]] — retrieval substrate
 - [[lora]] — used for psychological-dialogue fine-tuning of open-source backbones (rank 16, 3 epochs on A100)
 - [[rag]] — broader family the retrieval step belongs to
-- [[user-modeling]] — global user portrait as evolving summary
+- user modeling — global user portrait as evolving summary
 
 ## Notable Quotes
 

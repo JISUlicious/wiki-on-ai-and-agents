@@ -45,11 +45,11 @@ To go from "global minimizer = preconditioned GD" to "training converges to it,"
 
 ## Entities
 
-- [[khashayar-gatmiry]] (MIT)
+- Khashayar Gatmiry (MIT)
 - [[nikunj-saunshi]] (Google Research)
-- [[sashank-reddi]] (Google Research)
-- [[stefanie-jegelka]] (MIT)
-- [[sanjiv-kumar]] (Google Research)
+- Sashank Reddi (Google Research)
+- Stefanie Jegelka (MIT)
+- Sanjiv Kumar (Google Research)
 - [[mit]]
 - [[google-research]]
 
@@ -58,9 +58,9 @@ To go from "global minimizer = preconditioned GD" to "training converges to it,"
 - [[looped-transformer]] — the architecture under study; a single attention block applied $L$ times with shared weights.
 - [[gradient-descent-as-icl]] — the hypothesis that transformers implement gradient descent in-context; this paper turns the hypothesis into a theorem for the looped, linear, Gaussian setting.
 - [[in-context-learning]] — the broader phenomenon being explained.
-- [[optimization-theory]] — gradient flow analysis on a non-convex landscape via a Polyak-Łojasiewicz-style gradient-dominance bound.
+- optimization theory — gradient flow analysis on a non-convex landscape via a Polyak-Łojasiewicz-style gradient-dominance bound.
 - [[linear-attention|linear self-attention]] — the attention variant used (no softmax), which makes the closed-form analysis tractable.
-- [[preconditioned-gradient-descent]] — the iterative algorithm the model converges to implementing.
+- preconditioned gradient descent — the iterative algorithm the model converges to implementing.
 
 ## Quotes
 

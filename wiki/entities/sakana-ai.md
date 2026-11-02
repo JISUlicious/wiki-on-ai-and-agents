@@ -21,7 +21,7 @@ Sakana's work on the [[darwin-godel-machine]] (a [[self-improving-agent]] that r
 - [[sakana-fugu-sakana-ai-2026|Sakana Fugu]] (2026) — a family of **[[learned-orchestration|learned-orchestrator]]** models that coordinate a team of frontier LLM workers via query-adaptive agentic scaffolds; trained with SFT + sep-CMA-ES evolutionary strategies + RL. See [[sakana-fugu-review]].
 - [[darwin-godel-machine]] — open-ended self-modifying coding agent ([[darwin-godel-machine-zhang-2025]]).
 - Research on evolutionary model merging and population-based training.
-- Collaborations with [[jeff-clune]] and [[robert-lange]] on open-ended search.
+- Collaborations with [[jeff-clune]] and Robert Lange on open-ended search.
 
 Fugu and the Darwin [[godel-machine|Gödel Machine]] share the lab's signature bet: **evolutionary / population-based** methods over monolithic scaling — applied to *coordination* (Fugu) and *self-modification* (DGM) respectively.
 
@@ -38,3 +38,4 @@ Fugu and the Darwin [[godel-machine|Gödel Machine]] share the lab's signature b
 
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
 - [[agentic-scientist-orchestrating-coding-agents-lange-2026]] — The Agentic Scientist (AI Scientist v3): rubric-gated orchestration of coding agents; co-scientist for [[diffusing-blame-yamada-2026]]
+- [[continuous-memory-machines-regan-2026]] — Continuous Memory Machines, building on Sakana's Continuous Thought Machine

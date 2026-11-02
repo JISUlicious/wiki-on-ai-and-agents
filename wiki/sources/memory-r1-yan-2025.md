@@ -67,10 +67,10 @@ Empirically, with only **152 training QA pairs**, Memory-R1 outperforms strong h
 
 ## Entities Mentioned
 
-- [[ludwig-maximilian-university-of-munich]]
-- [[technical-university-of-munich]]
-- [[university-of-cambridge]]
-- [[university-of-edinburgh]]
+- Ludwig Maximilian University of Munich
+- Technical University of Munich
+- University of Cambridge
+- University of Edinburgh
 - [[mem0]] — primary baseline; Memory-R1 inherits its operator set
 - [[a-mem]] — heuristic agentic-memory baseline
 - [[memgpt]] — earlier CRUD-style memory system
@@ -83,14 +83,14 @@ Empirically, with only **152 training QA pairs**, Memory-R1 outperforms strong h
 - [[memory-r1]] — the framework introduced here
 - [[rl-memory-policy]] — the new paradigm of RL-trained memory operations
 - [[memory-management]] — what to add/update/delete/keep
-- [[memory-eviction]] — DELETE as a learned action rather than a heuristic
-- [[memory-distillation]] — filtering retrieved memories before reasoning
+- memory eviction — DELETE as a learned action rather than a heuristic
+- memory distillation — filtering retrieved memories before reasoning
 - [[reinforcement-learning]]
 - [[ppo]]
 - [[grpo]]
 - [[llm-agent]]
 - [[retrieval-augmented-generation]]
-- [[multi-session-dialogue]]
+- multi session dialogue
 - [[outcome-based-reward]]
 
 ## Notable Quotes

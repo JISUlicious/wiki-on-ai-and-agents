@@ -118,9 +118,9 @@ Three findings deserve to survive this specific paper. The **soul-file result** 
 - [[generative-agents]] — prior work on emergent social dynamics in agent populations.
 - [[anthropic]] — affiliation (Anthropic and the Anthropic Fellows Program); Claude models refused to act as the payload mutator.
 - [[deepseek]], [[google]], [[openai]] — models swept for susceptibility (DeepSeek V3.2, Gemini 3 Flash / 3.1 Pro, GPT-5.4).
-- [[mind-virus]] — the paper's central construct; no page yet.
-- [[subliminal-learning]] — the related propagation channel repeatedly cited as the untested alternative; no page yet.
-- [[moltbook]] — the real agent social network scanned for in-the-wild spread; no page yet.
+- mind virus — the paper's central construct; no page yet.
+- subliminal learning — the related propagation channel repeatedly cited as the untested alternative; no page yet.
+- Moltbook — the real agent social network scanned for in-the-wild spread; no page yet.
 
 ## References
 

@@ -43,7 +43,7 @@ Taken together with [[anthropic-agent-skills-2025|Anthropic's Agent Skills]] and
 - **Two invocation modes**: **explicit** (`/skills` command or `$`-mention in the prompt) and **implicit** (Codex matches the task to the skill `description` — so descriptions should front-load trigger words and scope).
 - **`agents/openai.yaml`** (optional) sets UI metadata (`display_name`, icons, `brand_color`, `default_prompt`), invocation policy (`allow_implicit_invocation`, default `true`), and tool/MCP dependencies (e.g., declaring an [[mcp|MCP]] server the skill needs).
 - **Skills vs. plugins**: skills are the authoring format for reusable workflows; **plugins** are the installable distribution unit (one or more skills, optionally with app mappings + MCP config). `$skill-creator` scaffolds new skills; `$skill-installer` adds curated ones locally.
-- **Availability**: Codex CLI, IDE extension, and Codex app. Skill changes auto-detected; `~/.codex/config.toml` `[[skills.config]]` entries can disable a skill without deleting it.
+- **Availability**: Codex CLI, IDE extension, and Codex app. Skill changes auto-detected; `~/.codex/config.toml` ``skills.config`` entries can disable a skill without deleting it.
 - **Convergent with Anthropic**: directory + `SKILL.md` + `name`/`description` + progressive disclosure + bundled scripts — the same contract, independently implemented.
 
 ## Comparison: Anthropic vs. OpenAI Codex Agent Skills

@@ -3,7 +3,8 @@ title: ADAS (Automated Design of Agentic Systems)
 type: concept
 created: 2026-05-21
 updated: 2026-10-07
-sources: []
+sources:
+  - harness-engineering-self-improvement-weng-2026.md
 status: draft
 importance: medium
 tags: []

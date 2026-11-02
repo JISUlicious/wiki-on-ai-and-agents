@@ -139,3 +139,5 @@ Function calling lives at **L3**: it is the JSON-payload protocol by which the m
 
 - [[chatgpt-plugins]] — the manifest-based predecessor (Mar 2023)
 - [[function-calling-api-updates-openai-2023]] — the launch post (2023-06-13): JSON Schema functions, fine-tuned models, tool-output injection warning
+- [[tool-use-ga-anthropic-2024]]
+- [[devday-openai-2023]]

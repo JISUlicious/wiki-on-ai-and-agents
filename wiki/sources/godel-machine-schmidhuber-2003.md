@@ -25,7 +25,7 @@ importance: high
 **arXiv:** [arXiv:cs/0309048](https://arxiv.org/abs/cs/0309048) (v1 Sep 2003; v5 Dec 2006)
 **Tech report:** TR IDSIA-19-03
 **Author:** [[jurgen-schmidhuber]] (single author)
-**Affiliations:** [[idsia]] (Lugano), [[tu-munich]]
+**Affiliations:** IDSIA (Lugano), TU Munich
 **Year:** 2003 (revised through 2006)
 
 ## Summary
@@ -50,8 +50,8 @@ This paper is the direct theoretical ancestor of the [[darwin-godel-machine]] (Z
 ## Entities
 
 - [[jurgen-schmidhuber]] — sole author; long-standing program on metalearning, self-modifying policies, and universal search culminating in this paper
-- [[idsia]] — Schmidhuber's lab in Lugano; primary affiliation on the tech report
-- [[tu-munich]] — Schmidhuber's secondary affiliation (TU München)
+- IDSIA — Schmidhuber's lab in Lugano; primary affiliation on the tech report
+- TU Munich — Schmidhuber's secondary affiliation (TU München)
 
 ## Concepts
 

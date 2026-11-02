@@ -28,7 +28,7 @@ importance: high
 
 This paper establishes the first **approximation rate** for [[looped-transformer]]s — Transformers whose fixed-size block is recursively applied `r` times via weight-tying. Building on the modulus-of-continuity framework used for looped ReLU networks (Zhang et al., 2023), the authors prove that a single-block Looped Transformer with two heads, head size 1, and width `O(d)` can approximate any continuous permutation-equivariant sequence-to-sequence function on `[0,1]^{d×N}`, with error that shrinks as the loop count `r` grows (Theorem 3.6). Crucially, the bound involves not one but **three** moduli of continuity: a standard *sequence* modulus `ω_f`, plus *contextual* `ω_f^{cont}` and *token* `ω_f^{tok}` moduli that are specific to the looped architecture. The construction proceeds in three internal stages — token-wise quantization, contextual-mapping via inner-product sequence IDs, and function-value mapping — all packed into a single Transformer block. A universal-approximation corollary follows under infinite-precision weights.
 
-The contextual/token-modulus dependence reveals an **intrinsic structural limitation**: weight-tied feed-forward layers cannot exactly memorize a sequence of target embeddings `{y_k}`, leaving a residual error bounded only by the maximum gap between adjacent targets (Lemma 4.1). The authors fix this by making the FFN scaling depend on the loop index — `FF(X) → η(t) ⊙ FF(X)` — and prove that this **Timestep-Modulated Looped Transformer (TMLT)** memorizes labels *exactly* (Theorem 4.2). To avoid blowing up parameter count, `η(t)` is generated from a shared MLP over a sinusoidal [[timestep-encoding]] (the same form used in Transformer positional embeddings and DiT-style adaptive normalization), and applied to RMSNorm gains and attention/FFN output scales. Experiments on Sudoku, Countdown, edit-distance, longest common subsequence, in-context decision trees, and WikiText-103 confirm: more loops helps, and timestep encoding gives additional consistent gains — empirically validating the theoretical limitation and matching the earlier empirical finding by [[yang-2023]]-style work that conditioning loops on `t` matters.
+The contextual/token-modulus dependence reveals an **intrinsic structural limitation**: weight-tied feed-forward layers cannot exactly memorize a sequence of target embeddings `{y_k}`, leaving a residual error bounded only by the maximum gap between adjacent targets (Lemma 4.1). The authors fix this by making the FFN scaling depend on the loop index — `FF(X) → η(t) ⊙ FF(X)` — and prove that this **Timestep-Modulated Looped Transformer (TMLT)** memorizes labels *exactly* (Theorem 4.2). To avoid blowing up parameter count, `η(t)` is generated from a shared MLP over a sinusoidal [[timestep-encoding]] (the same form used in Transformer positional embeddings and DiT-style adaptive normalization), and applied to RMSNorm gains and attention/FFN output scales. Experiments on Sudoku, Countdown, edit-distance, longest common subsequence, in-context decision trees, and WikiText-103 confirm: more loops helps, and timestep encoding gives additional consistent gains — empirically validating the theoretical limitation and matching the earlier empirical finding by Yang (2023)-style work that conditioning loops on `t` matters.
 
 ## Key Points
 
@@ -46,8 +46,8 @@ The contextual/token-modulus dependence reveals an **intrinsic structural limita
 
 ## Entities
 
-- [[kevin-xu]] (first author, University of Tokyo)
-- [[issei-sato]] (advisor, University of Tokyo)
+- Kevin Xu (first author, University of Tokyo)
+- Issei Sato (advisor, University of Tokyo)
 - [[university-of-tokyo]]
 - Venue: ICML 2025 (PMLR 267)
 
@@ -55,12 +55,12 @@ The contextual/token-modulus dependence reveals an **intrinsic structural limita
 
 - [[looped-transformer]] — main object of study; this paper provides the canonical expressivity-bound result.
 - [[timestep-encoding]] — the proposed fix; sinusoidal-PE-derived per-loop scaling that elevates a vanilla looped Transformer to TMLT.
-- [[universal-approximation]] — Corollary 3.7 extends universality results (Yun et al., 2020; Kajitsuka & Sato, 2024) to the weight-tied looped setting.
+- universal approximation — Corollary 3.7 extends universality results (Yun et al., 2020; Kajitsuka & Sato, 2024) to the weight-tied looped setting.
 - [[transformer-architecture]] — the underlying block being recursed.
-- [[weight-tying]] — the structural constraint that makes Looped Transformers parameter-efficient but introduces the contextual/token modulus dependence.
-- [[modulus-of-continuity]] — the quantitative regularity measure on which the rate hinges; three variants are newly defined here.
+- weight tying — the structural constraint that makes Looped Transformers parameter-efficient but introduces the contextual/token modulus dependence.
+- modulus of continuity — the quantitative regularity measure on which the rate hinges; three variants are newly defined here.
 - [[chain-of-thought]] / [[reasoning]] — Looped Transformers are positioned as an alternative inductive bias for reasoning vs. CoT prompting.
-- [[adaptive-instance-normalization]] / DiT — inspiration for the time-conditional RMSNorm gains.
+- adaptive instance normalization / DiT — inspiration for the time-conditional RMSNorm gains.
 
 ## Notable Quotes
 

@@ -151,8 +151,8 @@ The paper has no dedicated limitations section, so these are observed rather tha
 - [[long-context-llm]] — 25,384 PDF pages and 55M+ document characters across the corpus, though evidence is scattered rather than concatenated.
 - [[agent-computer-interface]] — the workspace root plus file-system/SQL/code/document/video tools is the ACI under test.
 - [[gaia]], [[osworld]], [[swe-bench]], [[terminal-bench]] — sibling agent benchmarks; DataSpace differs in demanding a complete typed table as the terminal action.
-- `[[text-to-sql]]` — **no page yet**; the source paradigm the whole builder pipeline transforms away from.
-- `[[data-agent]]` — **no page yet**; the paper's central object of study.
+- `text-to-SQL` — **no page yet**; the source paradigm the whole builder pipeline transforms away from.
+- `data agent` — **no page yet**; the paper's central object of study.
 
 ## References
 

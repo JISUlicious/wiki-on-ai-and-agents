@@ -51,8 +51,8 @@ CaP is the seminal "code for acting" work in embodied settings: it elevates code
 ## Entities
 
 - [[google]]
-- [[google-robotics]]
-- [[jacky-liang]]
+- Google Robotics
+- Jacky Liang
 
 ## Concepts
 

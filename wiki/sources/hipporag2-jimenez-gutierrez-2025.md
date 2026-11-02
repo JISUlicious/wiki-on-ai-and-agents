@@ -54,16 +54,16 @@ Across seven benchmarks spanning factual (NaturalQuestions, PopQA), sense-making
 
 - [[ohio-state-university]] (OSU NLP Group — primary affiliation)
 - [[bernal-jimenez-gutierrez]] (lead author; also lead on original HippoRAG)
-- [[yu-su]] (senior author)
+- Yu Su (senior author)
 - NV-Embed-v2 — primary dense-retrieval baseline
 
 ## Concepts Discussed
 
 - [[hipporag-2]] — this paper's contribution
-- [[graph-memory]] / [[knowledge-graph-memory]] — memory paradigm
+- [[graph-memory]] / [[graph-memory]] — memory paradigm
 - [[memory-management]] for LLM systems
-- [[personalized-pagerank]] — retrieval primitive
-- [[associative-memory]]
+- personalized pagerank — retrieval primitive
+- associative memory
 - [[retrieval-augmented-generation]] (baseline paradigm being extended)
 - [[open-domain-qa]] (evaluation surface)
 - Sense-making vs. associativity vs. factual memory (the three axes the paper evaluates)

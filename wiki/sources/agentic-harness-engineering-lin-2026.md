@@ -57,14 +57,14 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 
 ## Entities
 
-- [[jiahang-lin]] (first author, Fudan University, intern at Shanghai Qiji Zhifeng)
-- [[shichun-liu]], [[chengjun-pan]] (co-first authors)
-- [[tao-gui]], [[zhenhua-han]] (corresponding authors)
-- [[xuanjing-huang]], [[yu-gang-jiang]] (Fudan PIs)
+- Jiahang Lin (first author, Fudan University, intern at Shanghai Qiji Zhifeng)
+- Shichun Liu, Chengjun Pan (co-first authors)
+- Tao Gui, Zhenhua Han (corresponding authors)
+- Xuanjing Huang, Yu-Gang Jiang (Fudan PIs)
 - [[fudan-university]], [[peking-university]] (institutions)
 - [[terminal-bench]] (primary evaluation, v2)
 - [[swe-bench]] (transfer evaluation, verified split)
-- [[gpt-5]] (GPT-5.4 high used as base for all three role agents)
+- GPT-5 (GPT-5.4 high used as base for all three role agents)
 
 ## Concepts
 
@@ -73,11 +73,11 @@ This is the canonical reference work cited by the [[code-as-agent-harness-ning-2
 - [[self-improving-agent]] — AHE is a concrete instance at the harness level
 - [[darwin-godel-machine]] — direct intellectual ancestor; AHE narrows the mutation target from agent to harness
 - [[agent-three-layer-model]] — AHE evolves all three layers (prompt = strategy, tools/middleware = harness, memory = state)
-- [[observability]] — the paper's central organizing principle
-- [[coding-agent]]
+- observability — the paper's central organizing principle
+- coding agent
 - [[long-term-memory]] (one of the four evolved components)
-- [[middleware]]
-- [[telemetry-driven-evolution]]
+- middleware
+- telemetry driven evolution
 
 ## Notable Quotes
 

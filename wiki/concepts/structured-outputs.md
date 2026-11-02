@@ -63,3 +63,7 @@ With `strict: true`, OpenAI applies constrained decoding so the returned JSON is
 
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Shihipar's opinion piece: HTML rather than Markdown for agent output meant for humans
 - [[edgextract-markdown-to-knowledge-graph-mansuy-2026]] — edgextract: markdown to a knowledge graph via closed yes/no decisions on a local decision model; uncertain links go to review
+
+## Lineage sources
+
+- [[structured-outputs-openai-2024]]

@@ -42,7 +42,7 @@ This paper is the **canonical origin of input-adaptive depth** in neural network
 
 ## Entities
 
-- [[alex-graves]] (author)
+- Alex Graves (author)
 - [[deepmind]] (Google DeepMind, affiliation)
 
 ## Concepts

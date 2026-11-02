@@ -82,7 +82,7 @@ Bold totals are derived from Table 3 (sum of the three SALE stages ÷ FA2) and a
 | | Llama-3.1-8B: FA2 | MInfer | Flex | Sparge | **SALE** | Qwen2.5-32B: FA2 | MInfer | Flex | Sparge | **SALE** |
 |---|---|---|---|---|---|---|---|---|---|---|
 | [[longbench\|LongBench]] avg (16 tasks) | 48.77 | 47.03 | 46.18 | 47.48 | **48.39** | 50.85 | 51.29 | 49.88 | 50.57 | **51.30** |
-| [[infinitebench\|InfiniteBench]] avg (5 tasks) | 37.75 | 27.47 | 33.55 | 35.83 | **37.11** | 28.66 | 30.70 | 29.50 | 28.02 | **30.92** |
+| InfiniteBench avg (5 tasks) | 37.75 | 27.47 | 33.55 | 35.83 | **37.11** | 28.66 | 30.70 | 29.50 | 28.02 | **30.92** |
 | InfiniteBench Retrieve.KV | 55.60 | 20.00 | 38.00 | 47.20 | **56.40** | 4.00 | 7.60 | 4.80 | 4.60 | 5.40 |
 | [[needle-in-a-haystack\|NIAH]] avg (Llama only) | 96.1% | 94.1% | 94.5% | 95.0% | **96.0%** | — | — | — | — | — |
 | Attention speedup at 64K | 1.00× | 1.07× | 2.21× | 3.11× | **3.36×** | 1.00× | 1.25× | 1.39× | 2.55× | **3.28×** |
@@ -144,7 +144,7 @@ So SALE is **never net-negative in this data** — unlike MInference (0.07× at 
 - [[fast-prefill-fpga-sparse-attention-jayanth-2026]] — sparse prefill attention on FPGA; a different answer to SALE's INT4-hardware dependency.
 - [[sts-speculative-token-sparsity-yu-2026]] · [[specattn-speculating-sparse-attention-shah-2025]] — the two *draft-model* estimators ingested alongside this one. Both run inside a [[speculative-decoding]] loop and measure only **decode**-side gains (STS claims a prefill mode but never times it), so they are the decode counterparts, not competitors, of SALE.
 - [[llama]] · [[qwen]] · [[nvidia]] · [[peking-university]]
-- [[needle-in-a-haystack]] · [[infinitebench]] — `infinitebench` has no page yet.
+- [[needle-in-a-haystack]] · InfiniteBench — `infinitebench` has no page yet.
 
 ## References
 

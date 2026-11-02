@@ -147,7 +147,7 @@ No limitations section in the paper; these are observed:
 - [[verifier]] — the simulator itself is the verifier; correctness is an economic outcome rather than a checked answer.
 - [[reflection-mechanism]], [[self-reflection]] — agents that formed wrong beliefs (traffic concentration, wrong endpoint) failed to revise them for hundreds of simulated days.
 - [[gaia]], [[osworld]], [[terminal-bench]], [[swe-bench]] — bounded-task siblings; MerchantBench's contrast class.
-- `[[long-horizon-agent]]` — **no page yet**; the paper's core capability construct ("Long-Term Coherence") has no home concept in this wiki.
+- `long horizon agent` — **no page yet**; the paper's core capability construct ("Long-Term Coherence") has no home concept in this wiki.
 
 ## References
 

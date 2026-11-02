@@ -58,22 +58,22 @@ Headline results on **LOCOMO** (long-term conversational memory benchmark, ~26K 
 
 ## Entities Mentioned
 
-- [[mem0-ai]] (org behind the system; corresponding author `research@mem0.ai`)
+- [[mem0|Mem0 AI]] (org behind the system; corresponding author `research@mem0.ai`)
 - [[memgpt]] (baseline)
 - [[memorybank]] (baseline)
 - [[a-mem]] (baseline)
 - [[zep]] (baseline)
-- [[langmem]] (baseline)
-- [[openai-chatgpt-memory]] (baseline)
-- [[gpt-4o-mini]] (extractor/updater LLM)
-- [[neo4j]] (graph backend for Mem0^g)
+- LangMem (baseline)
+- ChatGPT memory (baseline)
+- GPT-4o mini (extractor/updater LLM)
+- Neo4j (graph backend for Mem0^g)
 - [[locomo]] (evaluation benchmark)
 
 ## Concepts Discussed
 
 - [[mem0]]
 - [[memory-management]]
-- [[cross-session-memory]]
+- cross session memory
 - [[memory-consolidation]]
 - [[graph-memory]]
 - [[llm-agent]]

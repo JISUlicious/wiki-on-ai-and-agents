@@ -32,7 +32,7 @@ tags:
 ## Relation to other concepts
 
 - [[looped-transformer]] / [[universal-transformer]] / [[recurrent-depth-transformer]] — all use ACT-style or ACT-inspired halting.
-- [[overthinking]] (in [[loop-think-generalize-2026]]) — the failure mode that ACT-style halting is designed to mitigate.
+- overthinking (in [[loop-think-generalize-2026]]) — the failure mode that ACT-style halting is designed to mitigate.
 - [[inference-time-compute]] — the modern umbrella concept ACT prefigures.
 
 ## References

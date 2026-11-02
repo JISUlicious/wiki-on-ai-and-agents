@@ -43,7 +43,7 @@ The framework is instantiated by extending the Darwin [[godel-machine|Gödel Mac
 
 ## Concepts & entities
 
-[[self-improving-agent]] · [[recursive-self-improvement]] · [[darwin-godel-machine]] · [[meta-learning]] · [[llm-agent]] · [[multi-agent]] · [[open-endedness]] · [[code-as-harness]] · [[ai-safety]] · [[fair]]
+[[self-improving-agent]] · [[recursive-self-improvement]] · [[darwin-godel-machine]] · [[meta-learning]] · [[llm-agent]] · [[multi-agent]] · open endedness · [[code-as-harness]] · [[ai-safety]] · [[fair]]
 
 ## References
 

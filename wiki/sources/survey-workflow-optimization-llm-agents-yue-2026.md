@@ -51,7 +51,7 @@ Beyond the static/dynamic axis, the survey adds two more organizing dimensions �
 - [[multi-agent-memory|multi-agent]] — ACGs include multi-agent topologies and inter-agent information flow.
 - [[code-as-harness]] — Workflows interleave code execution and verification as graph nodes.
 - [[agentic-context-engineering]] — Related to optimizing what flows through the agent's workflow.
-- [[pin-yu-chen|Pin-Yu Chen]] — Corresponding author (IBM Research).
+- Pin-Yu Chen — Corresponding author (IBM Research).
 
 ## References
 

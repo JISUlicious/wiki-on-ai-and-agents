@@ -50,7 +50,7 @@ A skill is a **directory** whose entry point is a [[skill-md-format|SKILL.md]] f
 
 ## Reading the matrix
 
-**Three genuine SKILL.md-format adopters.** Only [[openai-codex-skills-2025|OpenAI Codex]] and Google's **Gemini CLI Extensions** match Anthropic on all the defining traits — portable files, instructions + bundled code, on-demand loading. Codex literally uses `SKILL.md` (divergence is cosmetic: `.agents/skills` path vs `.claude/skills`, an `agents/openai.yaml` metadata file, ties to the [[agents-md|AGENTS.md]] ecosystem). Gemini CLI Extensions bundle what Google's own docs call "Agent Skills — a specialized set of instructions and workflows the model activates only when needed."
+**Three genuine SKILL.md-format adopters.** Only [[openai-codex-skills-2025|OpenAI Codex]] and Google's **Gemini CLI Extensions** match Anthropic on all the defining traits — portable files, instructions + bundled code, on-demand loading. Codex literally uses `SKILL.md` (divergence is cosmetic: `.agents/skills` path vs `.claude/skills`, an `agents/openai.yaml` metadata file, ties to the AGENTS.md ecosystem). Gemini CLI Extensions bundle what Google's own docs call "Agent Skills — a specialized set of instructions and workflows the model activates only when needed."
 
 **Hosted-config equivalents.** OpenAI **GPTs** and Google **Gems** are the closest *in spirit* (instructions + knowledge + actions) but furthest in *portability* — they're proprietary, hosted, single-platform, and not loaded on demand into an arbitrary agent. GPTs predate everything (Nov 2023) as the original "instructions + knowledge + tools" bundle.
 

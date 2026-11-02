@@ -193,7 +193,7 @@ The mechanism implies a specific, cheap discipline that costs nothing to adopt a
 - [[bad-memory-prompt-injection-agentic-gadgil-2026]] — an angle nothing currently connects: an instruction nobody can justify deleting is also a *trust* surface. Imperfect recall means stale injected instructions are the hardest ones to remove.
 - [[continual-learning|catastrophic forgetting]] — the paper defines its central term, [[catastrophic-remembering]], as this concept's inverse.
 - [[continual-learning]] — the paper positions prompt maintenance as continual learning over text and notes nobody has built its analogue of rehearsal or regularization.
-- `[[instruction-following]]` — **no page yet**; IFEval and WildIFEval both hang off it.
+- `instruction following` — **no page yet**; IFEval and WildIFEval both hang off it.
 
 ## References
 

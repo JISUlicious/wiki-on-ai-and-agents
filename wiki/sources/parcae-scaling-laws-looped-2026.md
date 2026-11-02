@@ -31,7 +31,7 @@ Parcae is the canonical 2026 scaling-laws paper for **looped language models** �
 
 The Parcae recipe stabilizes the loop with three load-bearing fixes: (1) a **negative-diagonal parameterization of A** discretized via ZOH / Euler with a learned step `Δ`, mechanically forcing `ρ(A) < 1` so the residual cannot explode; (2) a **prelude LayerNorm on the input injection `e`** to prevent the late-stage loss spikes that occur after ~170k steps; (3) **per-sequence depth sampling within a micro-batch** so the expectation over the variable-depth distribution `Λ` is faithfully estimated, plus parameterizing `Λ` by `µ_rec` alone (not `µ_bwd`) to preserve extrapolation to depths outside the training distribution. With these in place, residual normalization (Pre/Post-Norm hacks) is no longer needed.
 
-Using the stabilized architecture, the paper establishes the first clean **scaling laws for looping** as an orthogonal axis to parameters and data. At fixed parameter count, FLOP-optimal training scales **looping and data in tandem** following empirical power laws (Chinchilla-style parabolic + parametric fits). At test time, additional loops yield a **saturating exponential decay** in loss toward an irreducible floor set by the training law, and the two laws unify into a single closed-form predictor accurate to ~1% on held-out 140M and 370M models. End-to-end, a 770M Parcae model matches a 1.3B Transformer on the [[core-benchmark|CORE]] benchmark; at 1.3B / 100B tokens, Parcae beats parameter-matched Transformers by 2.99 / 1.18 points on Core / Core-Extended and reduces validation perplexity by 4.3–9.2%. Against the prior RDM looped baseline, Parcae reduces validation PPL by up to 6.3% (and WikiText PPL by 9.1%).
+Using the stabilized architecture, the paper establishes the first clean **scaling laws for looping** as an orthogonal axis to parameters and data. At fixed parameter count, FLOP-optimal training scales **looping and data in tandem** following empirical power laws (Chinchilla-style parabolic + parametric fits). At test time, additional loops yield a **saturating exponential decay** in loss toward an irreducible floor set by the training law, and the two laws unify into a single closed-form predictor accurate to ~1% on held-out 140M and 370M models. End-to-end, a 770M Parcae model matches a 1.3B Transformer on the CORE benchmark; at 1.3B / 100B tokens, Parcae beats parameter-matched Transformers by 2.99 / 1.18 points on Core / Core-Extended and reduces validation perplexity by 4.3–9.2%. Against the prior RDM looped baseline, Parcae reduces validation PPL by up to 6.3% (and WikiText PPL by 9.1%).
 
 This is the load-bearing reference for the [[openmythos]] open-source looped-LM stack, which reimplements the Parcae recipe.
 
@@ -54,8 +54,8 @@ This is the load-bearing reference for the [[openmythos]] open-source looped-LM 
 
 ## Entities
 
-- **Authors:** Hayden Prairie, Zachary Novack, [[taylor-berg-kirkpatrick]], [[daniel-fu]] (Daniel Y. Fu)
-- **Affiliations:** [[ucsd]] (University of California, San Diego); [[together-ai]] (Prairie and Fu are joint UCSD / Together AI)
+- **Authors:** Hayden Prairie, Zachary Novack, Taylor Berg-Kirkpatrick, Daniel Fu (Daniel Y. Fu)
+- **Affiliations:** UCSD (University of California, San Diego); Together AI (Prairie and Fu are joint UCSD / Together AI)
 - **Companion blog / open-source channel:** Sandy Research (`sandyresearch.github.io`) — Daniel Fu's group; basis for the [[openmythos]] open-source reimplementation.
 - **Baselines:** RDM ([[recurrent-depth-transformer|recurrent-depth model]], Geiping et al. 2025); [[nanochat]] ([[andrej-karpathy]]).
 
@@ -66,7 +66,7 @@ This is the load-bearing reference for the [[openmythos]] open-source looped-LM 
 - [[scaling-laws]] — extended to looping as a third axis alongside N and D.
 - [[parameter-sharing]] — looping is the extreme case (one block reused T times).
 - [[inference-time-compute]] / test-time scaling — looping as a knob for per-token adaptive compute.
-- [[linear-time-invariant-system]] / dynamical systems view of residual streams — the analytical lens.
+- linear time invariant system / dynamical systems view of residual streams — the analytical lens.
 - [[layer-normalization]] — Parcae's prelude norm on `e`.
 - [[chinchilla-hoffmann-2022|Chinchilla scaling laws]] — methodological template (parabolic + parametric Huber fits, L-BFGS).
 - [[latent-reasoning]] — looped models as a substrate for reasoning in latent space (cited as motivation).

@@ -63,7 +63,7 @@ The paper also proposes an **Active Retrieval** mechanism: rather than waiting f
 
 - **MIRIX AI** — the startup behind the system (Yu Wang, Xi Chen).
 - **UCSD**, **NYU Stern** — author affiliations via email domains.
-- **Gemini** ([[gemini]]) — used as multimodal backbone for screenshot processing.
+- **Gemini** (Gemini) — used as multimodal backbone for screenshot processing.
 - **GPT-4.1-mini** — used as backbone for LOCOMO experiments.
 - **SigLIP** — vision encoder used as the RAG retrieval baseline.
 - Baseline systems compared: [[mem0]], [[memgpt]] (MemGPT/Letta), **LangMem**, [[zep]], **Memobase**, **A-Mem** ([[a-mem-xu-2025]]).
@@ -72,16 +72,16 @@ The paper also proposes an **Active Retrieval** mechanism: rather than waiting f
 
 - [[mirix]] — the six-component, eight-agent memory architecture introduced here.
 - [[multi-agent-memory]] — Meta Memory Manager + six Memory Managers + Chat Agent coordination pattern.
-- [[memory-typology]] — six-way decomposition: Core / Episodic / Semantic / Procedural / Resource / Knowledge Vault.
+- memory typology — six-way decomposition: Core / Episodic / Semantic / Procedural / Resource / Knowledge Vault.
 - [[episodic-memory-llm]] — time-stamped events with structured fields.
 - [[semantic-memory]] — abstract concepts and entity knowledge.
 - [[procedural-memory]] — how-to workflows and scripts.
 - [[memory-management]] — controlled rewrites, capacity thresholds, deduplication.
 - [[cognitive-architectures-for-language-agents]] (CoALA) — referenced as the source of structured memory taxonomy that MIRIX operationalizes.
-- [[active-retrieval]] — topic-generation-then-retrieve mechanism (versus reactive "search your memory" calls).
-- [[multimodal-memory]] — screenshot ingestion with abstraction (no raw image retention).
+- active retrieval — topic-generation-then-retrieve mechanism (versus reactive "search your memory" calls).
+- multimodal memory — screenshot ingestion with abstraction (no raw image retention).
 - [[locomo]] — long-form conversation benchmark; MIRIX SOTA.
-- [[screenshotvqa]] — new benchmark introduced by the paper.
+- ScreenshotVQA — new benchmark introduced by the paper.
 
 ## Notable Quotes
 

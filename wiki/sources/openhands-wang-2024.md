@@ -52,7 +52,7 @@ OpenHands (formerly **OpenDevin**) is an open-source, MIT-licensed platform for 
 
 Architecturally, OpenHands is a clean reference implementation of the **code-as-harness** pattern. It is built around three components: (1) an *agent abstraction* whose `step` function maps an event stream of past actions/observations to a next action; (2) an *event stream* that records every `Action`/`Observation` pair; and (3) a Docker-sandboxed *agent runtime* exposing three primitives — an IPython server (`IPythonRunCellAction`), a bash shell (`CmdRunAction`), and a Playwright Chromium browser (`BrowseInteractiveAction`). On top of these primitives sits an **AgentSkills** library (Python tools auto-imported into IPython, e.g. `edit_file`, `scroll_up/down`, `parse_image`, `parse_pdf`) and an `AgentDelegateAction` for **multi-agent delegation** (the generalist `CodeActAgent` can hand off web tasks to a specialised `BrowsingAgent`).
 
-Empirically, OpenHands ships with 15 integrated benchmarks spanning software (SWE-Bench, HumanEvalFix, BIRD, ML-Bench, BioCoder, Gorilla APIBench, ToolQA), web (WebArena, MiniWoB++), and miscellaneous assistance (GAIA, [[gpqa|GPQA]], AgentBench, MINT, EDA, ProofWriter). The headline result: a single unmodified `CodeActAgent v1.8` on `claude-3-5-sonnet` reaches **26.7% on SWE-Bench Lite** without any benchmark-specific prompt engineering, competitive with specialist systems like SWE-Agent, AutoCodeRover, and Aider — while also scoring 79.3% on HumanEvalFix (0-shot), 47.5% on ML-Bench, 64.4% on BioCoder, 29.7% on APIBench, and 15.3% on GAIA. The paper's broader contribution is sociological as much as technical: OpenHands has become the de-facto open-source SWE-agent baseline that every subsequent paper compares against, and the platform underpins [[swe-gym]] and the [[all-hands-ai]] commercial offering.
+Empirically, OpenHands ships with 15 integrated benchmarks spanning software (SWE-Bench, HumanEvalFix, BIRD, ML-Bench, BioCoder, Gorilla APIBench, ToolQA), web (WebArena, MiniWoB++), and miscellaneous assistance (GAIA, [[gpqa|GPQA]], AgentBench, MINT, EDA, ProofWriter). The headline result: a single unmodified `CodeActAgent v1.8` on `claude-3-5-sonnet` reaches **26.7% on SWE-Bench Lite** without any benchmark-specific prompt engineering, competitive with specialist systems like SWE-Agent, AutoCodeRover, and Aider — while also scoring 79.3% on HumanEvalFix (0-shot), 47.5% on ML-Bench, 64.4% on BioCoder, 29.7% on APIBench, and 15.3% on GAIA. The paper's broader contribution is sociological as much as technical: OpenHands has become the de-facto open-source SWE-agent baseline that every subsequent paper compares against, and the platform underpins [[swe-gym]] and the All Hands AI commercial offering.
 
 ## Key Points
 
@@ -67,14 +67,14 @@ Empirically, OpenHands ships with 15 integrated benchmarks spanning software (SW
 - **Generalist competitiveness.** Same CodeActAgent (no system-prompt changes) is competitive across software (26.7% SWE-Bench Lite), web (14.5–22.0% WebArena), and assistance (15.3% GAIA) categories.
 - **Comparison table (Tab. 1).** OpenHands is the only framework in the field with checkmarks across every column: GUI, standardized tool library, sandboxed code execution, web browser, multi-agent, human-AI collaboration, AgentHub, evaluation framework, and agent QC.
 - **Community scale.** At paper time: 32K GitHub stars, 2.1K+ contributions from 188+ contributors. Has since become the canonical open-source SWE-agent baseline.
-- **Commercial spinoff.** [[all-hands-ai]] is the company founded by Neubig and Robert Brennan that maintains OpenHands and offers hosted/enterprise versions.
+- **Commercial spinoff.** All Hands AI is the company founded by Neubig and Robert Brennan that maintains OpenHands and offers hosted/enterprise versions.
 
 ## Entities
 
 - [[graham-neubig]] — senior author; CMU and All Hands AI.
 - Xingyao Wang — first author, UIUC and All Hands AI; also lead author of the original CodeAct paper.
 - [[cmu]] — major contributor lab (Neubig group).
-- [[all-hands-ai]] — commercial spinoff hosting and maintaining OpenHands.
+- All Hands AI — commercial spinoff hosting and maintaining OpenHands.
 - UIUC, Yale, UC Berkeley, KAUST, ANU, HCMUT, Alibaba, Contextual AI — co-author affiliations.
 
 ## Concepts

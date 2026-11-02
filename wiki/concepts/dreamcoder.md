@@ -3,7 +3,8 @@ title: DreamCoder
 type: concept
 created: 2026-05-29
 updated: 2026-05-29
-sources: []
+sources:
+  - lilo-grand-2023.md
 status: draft
 importance: medium
 tags:

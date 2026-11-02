@@ -58,7 +58,7 @@ The delta-update mechanism is the load-bearing idea: by replacing monolithic LLM
 ## Concepts
 
 - [[agentic-context-engineering]] — the named framework introduced here.
-- [[self-evolving-context]] — the broader paradigm of treating context as a dynamic artifact.
+- self evolving context — the broader paradigm of treating context as a dynamic artifact.
 - [[agent-skills]] — industry-side counterpart (Anthropic) to ACE's playbook idea.
 - [[memory-management]] — closely related: bullets-with-counters resemble structured agent memory entries.
 - [[in-context-learning]] — ACE pushes ICL into a long-horizon, accumulating regime.

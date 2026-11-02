@@ -42,7 +42,7 @@ Voyager is the first LLM-powered embodied lifelong learning agent in Minecraft. 
 
 The skill library is the paper's canonical contribution to agent memory systems: it functions as a *growing procedural memory* of learned behaviors stored as compositional, interpretable code. When the curriculum proposes a new task, top-k relevant skills are retrieved by embedding similarity and injected into the GPT-4 code-generation prompt, enabling complex skills (e.g., `craftIronPickaxe`) to be synthesized by composing simpler ones (e.g., `craftStick`, `smeltIronIngot`, `makeFurnace`). Because skills are added rather than overwritten, the agent's capabilities compound monotonically over time, side-stepping the catastrophic forgetting that hobbles gradient-based continual-learning approaches.
 
-Empirically, Voyager dominates prior LLM-agent baselines ([[react]], [[reflexion]], AutoGPT) in [[minedojo]]: 3.3× more unique items obtained, 2.3× longer map traversal, and key tech-tree milestones unlocked up to 15.3× faster. It is the only method to reach the diamond tier of the Minecraft tech tree. In zero-shot transfer to a new Minecraft world, the learned skill library lets Voyager solve novel tasks (Diamond Pickaxe, Golden Sword, Lava Bucket, Compass) from scratch where baselines fail outright — and giving AutoGPT access to Voyager's skill library substantially improves its success, isolating the skill library itself as the load-bearing component.
+Empirically, Voyager dominates prior LLM-agent baselines ([[react]], [[reflexion]], AutoGPT) in MineDojo: 3.3× more unique items obtained, 2.3× longer map traversal, and key tech-tree milestones unlocked up to 15.3× faster. It is the only method to reach the diamond tier of the Minecraft tech tree. In zero-shot transfer to a new Minecraft world, the learned skill library lets Voyager solve novel tasks (Diamond Pickaxe, Golden Sword, Lava Bucket, Compass) from scratch where baselines fail outright — and giving AutoGPT access to Voyager's skill library substantially improves its success, isolating the skill library itself as the load-bearing component.
 
 ## Key Points
 
@@ -60,7 +60,7 @@ Empirically, Voyager dominates prior LLM-agent baselines ([[react]], [[reflexion
 - NVIDIA, Caltech, UT Austin, Stanford, UW Madison — author affiliations
 - [[gpt-4]] — primary reasoning backbone (gpt-4-0314)
 - GPT-3.5 (gpt-3.5-turbo-0301) — auxiliary NLP / embedding-target generation
-- [[minedojo]] — Minecraft simulation framework
+- MineDojo — Minecraft simulation framework
 - Mineflayer — JavaScript bot API used as the action space
 
 ## Concepts Discussed
@@ -71,8 +71,8 @@ Empirically, Voyager dominates prior LLM-agent baselines ([[react]], [[reflexion
 - [[memory-management]] — broader category this work sits within
 - [[llm-agent]] — agent architecture pattern
 - [[embodied-agent]] — sub-pattern for grounded / world-interacting agents
-- [[automatic-curriculum]] — open-ended exploration strategy
-- [[iterative-prompting]] / [[self-verification]] — self-improving code-generation loop
+- automatic curriculum — open-ended exploration strategy
+- iterative prompting / self verification — self-improving code-generation loop
 - [[chain-of-thought-prompting|chain-of-thought]] — used inside the code-generation prompt
 - [[in-context-learning]] — mechanism by which retrieved skills shape new code
 - [[react]], [[reflexion]] — baseline agent designs Voyager beats

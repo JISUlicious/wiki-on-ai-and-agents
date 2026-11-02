@@ -3,7 +3,9 @@ title: Cloze Scoring
 type: concept
 created: 2026-09-22
 updated: 2026-10-06
-sources: []
+sources:
+  - independent-jev-calibration-audits-2026.md
+  - pre-train-prompt-predict-liu-2021.md
 status: complete
 importance: high
 ---

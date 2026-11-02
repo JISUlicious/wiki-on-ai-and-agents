@@ -30,7 +30,7 @@ importance: high
 
 # Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning
 
-[arXiv:2503.09516](https://arxiv.org/abs/2503.09516) · COLM 2025 · Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Ö. Arık, Dong Wang, Hamed Zamani, Jiawei Han ([[uiuc]], [[umass]], [[google]] Cloud AI Research)
+[arXiv:2503.09516](https://arxiv.org/abs/2503.09516) · COLM 2025 · Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Ö. Arık, Dong Wang, Hamed Zamani, Jiawei Han ([[uiuc]], UMass, [[google]] Cloud AI Research)
 
 ## Summary
 
@@ -54,7 +54,7 @@ On seven QA benchmarks (NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, Musique,
 ## Entities
 
 - [[uiuc]] — Bowen Jin, Zhenrui Yue, Dong Wang, Jiawei Han (Department of Computer Science)
-- [[umass]] — Hansi Zeng, Hamed Zamani (Center for Intelligent Information Retrieval)
+- UMass — Hansi Zeng, Hamed Zamani (Center for Intelligent Information Retrieval)
 - [[google]] — Jinsung Yoon, Sercan Ö. Arık (Google Cloud AI Research; see also [[google-research]])
 
 ## Concepts
@@ -68,7 +68,7 @@ On seven QA benchmarks (NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, Musique,
 - [[tool-use]] — search is treated as the canonical tool; the recipe generalizes
 - [[chain-of-thought]] — `<think>` segments instantiate CoT inside the search loop
 - [[deepseek-r1]] — direct ancestor; Search-R1 is positioned as DeepSeek-R1-Zero extended to retrieval
-- [[exact-match]] — reward signal
+- exact match — reward signal
 
 ## Quotes
 

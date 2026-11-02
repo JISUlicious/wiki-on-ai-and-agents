@@ -58,7 +58,7 @@ The motivation is explicitly **contamination resistance**: because static benchm
 - **Evidence of overfitting to SWE-bench repos**: Resolved rate is 22.96% on the 216 instances from repos that appear in original SWE-bench vs. 18.89% on the 1,103 instances from novel repos — despite the novel-repo set being structurally simpler.
 - **Recency does not predict difficulty**: Resolved rate is roughly flat across 2024Q1–2025Q1 issue creation quarters, suggesting the benchmark provides a stable signal as it refreshes.
 - **Patch-difficulty heatmap**: Single-file patches under 5 lines are solved ~48% of the time; success falls below 10% once a patch touches 3+ files or >100 lines.
-- **Three agents evaluated**: [[openhands]] (with CodeAct, 60-iter cap), [[swe-agent]] (100 LLM-call cap), [[agentless]] (localize-then-repair, single sample without reranking).
+- **Three agents evaluated**: [[openhands]] (with CodeAct, 60-iter cap), [[swe-agent]] (100 LLM-call cap), Agentless (localize-then-repair, single sample without reranking).
 - **Four models evaluated**: GPT-4o (`gpt-4o-2024-11-20`), GPT-4.1 (`gpt-4.1-2025-04-14`), Claude 3.7 Sonnet (`claude-3-7-sonnet-20250219`), DeepSeek V3 (`DeepSeek-V3-0324`).
 
 ## Entities Mentioned
@@ -73,9 +73,9 @@ The motivation is explicitly **contamination resistance**: because static benchm
 - [[swe-gym]] — referenced as a manual-curation comparison (200+ hours of env setup).
 - [[llm-agent]] — the system class under evaluation (OpenHands, SWE-agent, Agentless).
 - [[benchmark-contamination]] — the central concern the design targets.
-- [[docker]] — per-instance reproducible execution environments.
+- Docker — per-instance reproducible execution environments.
 - [[react|ReAct]] — RepoLaunch's setup agent follows a Thought→Action→Observation loop.
-- Benchmarks compared: [[swe-bench-verified]], [[multi-swe-bench]], [[swe-smith]], [[livecodebench]].
+- Benchmarks compared: [[swe-bench-verified]], Multi-SWE-bench, [[swe-smith]], [[livecodebench]].
 
 ## Notable Quotes
 

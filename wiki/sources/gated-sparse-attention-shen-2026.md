@@ -41,7 +41,7 @@ with a learnable per-head bias b^I_j (a learned threshold) and a sigmoid head we
 
 **3. Dual gating (Eqs. 9–10).** The value gate **G2** is per source token, element-wise: `V′_s = V_s ⊙ σ(h_s W^g_V)`. The output gate **G1** is per query token, **per head**, element-wise: `O^gated_{t,h} = O^sparse_{t,h} ⊙ σ(h_t W^g_{O,h})`. Gate biases are initialised so σ ≈ 0.5. G1 is the sink-removal mechanism: a head can output nothing by driving its gate to zero instead of parking softmax mass on token 1 (Theorem 4). Both placements are Qiu et al.'s recommendations; GSA adds nothing to the gate design itself.
 
-So, to the question "what gate, gating what": the gates are the **G1/G2 sigmoid gates of Gated Attention** ([[gated-attention]], no page yet), gating **values** (per token) and **per-head attention outputs** (per query) inside a single sparse path — not a mix between a sparse branch and a dense or sliding one, and unlike [[native-sparse-attention-yuan-2025|NSA]]'s three-branch gate, nothing here selects *between* attention paths.
+So, to the question "what gate, gating what": the gates are the **G1/G2 sigmoid gates of Gated Attention** (gated attention, no page yet), gating **values** (per token) and **per-head attention outputs** (per query) inside a single sparse path — not a mix between a sparse branch and a dense or sliding one, and unlike [[native-sparse-attention-yuan-2025|NSA]]'s three-branch gate, nothing here selects *between* attention paths.
 
 **Parameter overhead** (Table 2): indexer Q 0.4%, indexer K 0.1%, head weights negligible, G2 0.8%, G1 3.1% (it is head-specific) — **~4.4%** per attention layer.
 
@@ -141,7 +141,7 @@ The authors': below ~4K the indexer's overhead exceeds the sparse saving, so a d
 - [[trained-sparse-attention]] — GSA is a **from-scratch** member of the lineage, next to NSA on the axis; MoBA (adapt) and DSA (adapt, ~1T tokens) are the other positions, and [[misa-mixture-of-indexer-sparse-attention-zhou-2026|MISA]] is a training-free retrofit *onto* DSA models.
 - [[deepseek-v3.2-sparse-attention-deepseek-2025]] — the indexer GSA modifies (ReLU → sigmoid, fixed k → adaptive k_t); [[flashmemory-lookahead-sparse-attention-wang-2026]] — DeepSeek's own next step for the indexer.
 - [[native-sparse-attention-yuan-2025]] — the other from-scratch design, whose gate mixes three branches; GSA's gates mix nothing. [[moba-mixture-of-block-attention-lu-2025]] — not compared.
-- [[attention-sink]] · [[gated-attention]] (no page yet; Qiu et al. 2025, the source of G1/G2) · [[qwen3.8-flash-next]] — the Qwen line that ships Qiu-style gating in production.
+- [[attention-sink]] · gated attention (no page yet; Qiu et al. 2025, the source of G1/G2) · [[qwen3.8-flash-next]] — the Qwen line that ships Qiu-style gating in production.
 - [[sparse-attention]] · [[sparse-prefill]] · [[minference-dynamic-sparse-attention-jiang-2024]] — the training-free side, and the attention-share rule that decides what a 12× attention number is worth.
 - [[flash-attention]] · [[kv-cache]] · [[long-context-llm]] · [[arithmetic-intensity]] · [[grouped-query-attention]] · [[rope-scaling]]
 - [[mmlu]] · [[humaneval]] · [[ruler]]

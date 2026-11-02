@@ -52,28 +52,28 @@ SWE-bench rapidly became the de facto LM-as-software-engineer evaluation. Its co
 ## Entities
 
 - [[carlos-jimenez]] — first author, Princeton
-- [[john-yang]] — co-first author, Princeton
-- [[alexander-wettig]] — Princeton
+- John Yang — co-first author, Princeton
+- Alexander Wettig — Princeton
 - [[shunyu-yao]] — Princeton (also of [[react]] and Reflexion fame)
 - [[ofir-press]] — Princeton
 - [[karthik-narasimhan]] — Princeton (senior author)
-- [[kexin-pei]] — University of Chicago
+- Kexin Pei — University of Chicago
 - [[princeton-university]] — primary affiliation
-- [[princeton-language-and-intelligence]] — sub-institute hosting the work
-- [[university-of-chicago]] — Pei's affiliation
-- [[swe-llama]] — fine-tuned CodeLlama variants released alongside the benchmark
+- Princeton Language and Intelligence — sub-institute hosting the work
+- University of Chicago — Pei's affiliation
+- SWE-Llama — fine-tuned CodeLlama variants released alongside the benchmark
 
 ## Concepts
 
 - [[swe-bench]] — the canonical benchmark this paper defines
-- [[swe-bench-lite]] — 300-instance subset
+- [[swe-bench|SWE-bench Lite]] — 300-instance subset
 - [[swe-bench-live]] — contamination-resistant successor benchmark
 - [[swe-gym]] — training environment that builds on SWE-bench-style task construction
 - [[llm-agent]] — SWE-bench became the proving ground for agentic coding systems
 - [[code-generation]] — the broader task family SWE-bench reframes at the repo level
 - [[agent-benchmark]] — SWE-bench is the prototype repo-scale agent benchmark
 - [[bm25]] — sparse retrieval used for the baseline context-selection setup
-- [[codellama]] — base model for SWE-Llama
+- CodeLlama — base model for SWE-Llama
 - [[lora]] — parameter-efficient fine-tuning used for SWE-Llama
 - [[humaneval]] — the prior coding benchmark SWE-bench contrasts itself against
 

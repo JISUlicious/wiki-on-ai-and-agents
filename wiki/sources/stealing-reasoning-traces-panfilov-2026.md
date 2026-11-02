@@ -111,8 +111,8 @@ The durable contribution is not the specific attack — that is patched — but 
 - [[red-teaming]] — attack vector 4 recovers hazardous reasoning behind a benign final answer, a blind spot for output-only red-teaming.
 - [[llm-as-a-judge]] — used to classify recovered PII and credentials at scale.
 - [[anthropic]], [[openai]], [[google]] — the three affected ecosystems; all three received disclosure and shipped mitigations.
-- [[encrypted-reasoning-trace]] — the artifact itself; no page yet.
-- [[jailbreaking]] — attack vector 4; no page yet.
+- encrypted reasoning trace — the artifact itself; no page yet.
+- jailbreaking — attack vector 4; no page yet.
 
 ## References
 

@@ -55,14 +55,14 @@ A-MEM is positioned as a 2026-era reference design for self-organizing agent mem
 
 ## Entities Mentioned
 
-- [[rutgers-university]] (lead author affiliation)
+- Rutgers University (lead author affiliation)
 - [[memgpt]] (baseline)
 - [[memorybank]] (baseline)
 - [[mem0]] (baseline class — graph-database memory)
 - [[llama-3]] (eval foundation model)
 - [[qwen-2-5]] (eval foundation model)
-- [[gpt-4o]] (eval foundation model)
-- [[claude-3-5-haiku]] (Appendix eval)
+- GPT-4o (eval foundation model)
+- Claude 3.5 Haiku (Appendix eval)
 
 ## Concepts Discussed
 
@@ -72,7 +72,7 @@ A-MEM is positioned as a 2026-era reference design for self-organizing agent mem
 - [[memory-management]]
 - [[llm-agent]]
 - [[retrieval-augmented-generation]]
-- [[agentic-rag]]
+- agentic rag
 - [[long-term-memory]]
 - [[dense-retrieval|embedding retrieval]]
 
