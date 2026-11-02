@@ -2,7 +2,7 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-10-29
+updated: 2026-11-02
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
@@ -88,6 +88,10 @@ Surfaced via newsletter ingests; see [[index]].
 - [[arex-recursive-self-improving-research-baai-2026]] — verification gating the transition *between* research rounds (Accept/Refine/Restart), exploiting the discover-vs-verify asymmetry
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
+
+## Completion checks
+
+[[false-success]] pulls together evidence that transcript-reading judges are weak at catching false completion claims, and that seeing the agent's own report biases them. See [[harness-extension-and-goal-loop-axes]] for what this means for goal commands.
 
 ## Lineage sources
 

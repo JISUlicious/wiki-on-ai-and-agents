@@ -49,6 +49,21 @@ importance: medium
 - **Proactive triggers look like a third thing.** Cron, heartbeats, `/loop` and standing intents decide when work *starts*, not when it may stop. Hermes's docs contrast timer-driven `/loop` with judge-driven `/goal`, and OpenClaw's say a goal is not a cron job or standing order.
 - **"Guardrail" overstates extensions.** Pi's security doc locates safety in limiting access, such as isolation, and its permission extensions are only examples. An extension point is not itself a guardrail.
 
+## Does a separate judge help?
+
+**Not established. No study found compares goal commands or measures a separate judge inside a coding-agent goal loop.** The nearest evidence is indirect, and it suggests that what the checker can see matters more than whether it is separate.
+
+- **Self-report is weak.** [[false-success]] reaches 45–48% of failures in some tau2-bench domains and 75.8% in one AppWorld coding-agent subset ([[false-success-llm-agents-advani-2026]]). This counts against relying on self-report alone, but those agents had no goal command's audit prompt.
+- **A separate LLM reading the transcript is also weak.** Judges in the same paper reached at most AUROC 0.65, or 0.54 on AppWorld traces. They scored recorded runs after the fact.
+- **Seeing the claim biases the checker.** Withholding the report raised misreport recall by 13.3 to 43.4 points in GUI-agent judging ([[self-report-leakage-gui-agent-judging-zhu-2026]]). Claude Code's evaluator and OpenCode's reviewer read a conversation that includes the agent's words. Whether the effect carries over is an open inference; OpenCode's prompt does say a claim is not evidence.
+- **Deterministic gates have a formal advantage.** With a deterministic gate and a judge combined by conjunction, a judge can't raise false accepts ([[bounded-loops-agent-harnesses-bhardwaj-2026]]). Hermes runs gates before its judge, but this result concerns gates in general and does not test Hermes.
+- **Gates can fail too.** The same paper found 47 vacuous gates in its 69-loop catalogue. Its "independent gate the worker cannot write to" is also stricter than a test command in a repo the agent can edit, a gap this wiki infers for Hermes-style gates. The paper doesn't examine Hermes.
+- **Agents can check the wrong target.** [[deploybench-research-artifact-deployment-wang-2026|DeployBench]] attributes 102 of 181 failures to self-stops after weaker checks.
+
+So "self-report vs separate judge" may be the wrong primary distinction. A better question for each product is what evidence the checker reads: the agent's claim, the transcript, or independently observed state. This reframing is this wiki's synthesis.
+
+A direct test would run the same tasks through self-report, transcript judge, blind judge and deterministic gate, with hidden state as ground truth, and report false accepts, false rejects and added cost.
+
 ## Grading
 
 | Claim | Grade |
@@ -58,10 +73,14 @@ importance: medium
 | Claude Code has a `/proactive` alias | Confirmed by the changelog (2.1.105), though the current docs pages checked omit it |
 | Pi hosts a goal loop as an extension, via pi-goal | Package and source read; not run |
 | Two completion schools: self-report with audit vs separate reviewer | This wiki's synthesis, from the requesting session; no source states it |
+| A separate judge improves goal-loop outcomes | Not measured in any study found |
+| Self-report and transcript judges are both unreliable | Measured in other settings; transfer to goal loops is inference |
+| What the checker can see matters most | This wiki's synthesis |
 | Harness engineering has two axes | Hypothesis, unsupported by any source found |
 
 ## References
 
 - [[agent-goal-loops-extension-docs-2026]] · [[goal-command-lineage-repos-2026]]
+- [[false-success-llm-agents-advani-2026]] · [[self-report-leakage-gui-agent-judging-zhu-2026]] · [[bounded-loops-agent-harnesses-bhardwaj-2026]] · [[deploybench-research-artifact-deployment-wang-2026]]
 - [[harness-engineering-for-coding-agent-users-bockeler-2026]]
 - [[claude-code-changelog-2026]] · [[ralph-loop]] · [[hooks-in-modern-agents]] · [[plugins-hooks-harness-influence-evidence]]

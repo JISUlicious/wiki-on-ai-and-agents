@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 754 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 758 sources, 245 entities, 383 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -490,6 +490,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
 - [[guides-and-sensors]] — Böckeler's model of harness controls: feedforward and feedback, computational and inferential
+- [[false-success]] — An agent claims completion while the environment shows failure; prevalence and why judges miss it
 - [[recursive-agent-harnessing]] — RSI on the agent harness at two levels: refine this task's execution harness (Propose–Probe–Compose) and update the improvement harness for future tasks
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
 - [[adaptive-thinking]] — Spending thinking budget per-request rather than uniformly; what `effort` controls
@@ -1701,6 +1702,10 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[agent-goal-loops-extension-docs-2026]] — Goal commands, proactive triggers and extension surfaces checked at pinned repo revisions (2026-11-02)
 - [[goal-command-lineage-repos-2026]] — Ralph to native goal commands: Codex, OpenCode, pi-goal and Claude Code at pinned revisions (2026-11-02)
 - [[agent-capabilities-check-2026-11]] — MCP, sandbox, tools and sub-agents rechecked for five coding agents (2026-11-02)
+- [[false-success-llm-agents-advani-2026]] — False success in 11,755 trajectories; LLM judges reach at most AUROC 0.65 (2026-06)
+- [[self-report-leakage-gui-agent-judging-zhu-2026]] — Withholding an agent's self-report raises misreport recall by 13–43 points (2026-10)
+- [[bounded-loops-agent-harnesses-bhardwaj-2026]] — Independent gates, vacuous and self-attested checks, proved loop guarantees (2026)
+- [[deploybench-research-artifact-deployment-wang-2026]] — 51 deployment tasks; 102 of 181 failures are self-stops after weaker checks (2026-06)
 - [[scaling-laws-carefully-weng-2026]] — Lilian Weng: reconciling Kaplan and Chinchilla; data-constrained laws (2026-06-24)
 - [[prompt-engineering-weng-2023]] — Lilian Weng: prompt engineering survey (2023-03-15)
 - [[gemini-1-5-technical-report-2024]] — Gemini 1.5 Pro (MoE) and Flash (distilled); 99.7% single-needle at 1M, about 60% with 100 needles
