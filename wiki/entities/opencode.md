@@ -2,7 +2,7 @@
 title: opencode
 type: entity
 created: 2026-05-14
-updated: 2026-10-21
+updated: 2026-11-02
 sources:
   - opencode.md
   - comparison.md
@@ -46,6 +46,8 @@ opencode (`sst/opencode`, npm package `opencode-ai`, binary `opencode`) is an op
 - **Permissions**: pattern-rule engine, persisted per project, `Permission.ask/reply` over SSE.
 - **Memory**: session summaries; snapshot side-git for revert; durable sessions.
 - **Skills format**: SKILL.md; walks `~/.claude/skills/`, `.agents/skills/`, and project dirs.
+
+**Goals and schedules:** `/goal` (2026-10-29) is an in-tree plugin with a no-tools reviewer step, capped at 50 rounds. Scheduled tasks (2026-10-28) are experimental. See [[goal-command-lineage-repos-2026]].
 
 ## References
 

@@ -38,7 +38,7 @@ Total: **7 built-in tools**. Compare to [[claude-code|Claude Code]]'s ~40.
 - Permission popups
 - MCP
 
-No built-in goal command was found on 2026-11-02, although the `agent_before_settle` extension event can request a continuation. The extension API documents 40 event names, against 2 tool hooks in agent core. See [[agent-goal-loops-extension-docs-2026]].
+No built-in goal command was found on 2026-11-02, although the `agent_before_settle` extension event can request a continuation. The extension API documents 40 event names, against 2 tool hooks in agent core. See [[agent-goal-loops-extension-docs-2026]]. The third-party `@tian.zuo/pi-goal` adds one through `agent_settled`; see [[goal-command-lineage-repos-2026]].
 
 Everything refused is expected to be implemented as a **TypeScript Extension** or installed as a **Pi Package**. The sibling repo **pi-skills** packages skills in the `SKILL.md` format, explicitly designed to interoperate with Claude Code, Codex CLI, Amp, and Droid.
 

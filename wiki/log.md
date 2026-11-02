@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] ingest | Goal and loop command lineage
+
+Sixth request from the ai agent lec session, checked independently. Filed [[goal-command-lineage-repos-2026]] and updated [[harness-extension-and-goal-loop-axes]], [[agent-goal-loops-extension-docs-2026]], [[ralph-loop]], [[pi-mono]], [[opencode]] and [[codex-cli]]. Corrected two earlier statements: Claude Code's `/proactive` alias is confirmed by its changelog, and the real Pi goal extension uses `agent_settled`, not the `agent_before_settle` event this wiki had inferred. The completion-schools grouping is recorded as synthesis.
+
 ## [2026-11-02] ingest | Harness extension and goal-loop evidence
 
 Fifth request from the ai agent lec session, checked independently at pi `c9f4c7b9fc`, hermes-agent `5aa8df742c` and openclaw `28a93a00ac`. Filed [[harness-extension-and-goal-loop-axes]] with [[agent-goal-loops-extension-docs-2026]], [[harness-engineering-for-coding-agent-users-bockeler-2026]] and [[guides-and-sensors]]. The two-axis framing is recorded as the user's hypothesis. Contradiction: [[fundamental-components-of-harness]] and [[hooks-in-modern-agents]] understated Pi's hook surface; both corrected, along with Hermes's hook count. Updated [[pi-mono]], [[hermes-agent]], [[openclaw]] and [[ralph-loop]].

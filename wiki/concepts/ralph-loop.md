@@ -34,4 +34,5 @@ A **Ralph loop** (after Ralph Wiggum) is the practice of running a coding agent 
 ## Lineage sources
 
 - [[agent-goal-loops-extension-docs-2026]] — goal commands compared at pinned revisions
+- [[goal-command-lineage-repos-2026]] — from Huntley through Anthropic's `ralph-wiggum` plugin (2025-11-16) to native goal commands
 - [[claude-code-changelog-2026]] — native /loop arrived 2026-03-06 and /goal 2026-05-11

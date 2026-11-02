@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 751 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 752 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -1698,6 +1698,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng: harness definition, patterns, harness optimization toward RSI; "loop engineering" (2026-07-04)
 - [[harness-engineering-for-coding-agent-users-bockeler-2026]] — Böckeler: outer harness as guides and sensors, computational and inferential (2026-04-02)
 - [[agent-goal-loops-extension-docs-2026]] — Goal commands, proactive triggers and extension surfaces checked at pinned repo revisions (2026-11-02)
+- [[goal-command-lineage-repos-2026]] — Ralph to native goal commands: Codex, OpenCode, pi-goal and Claude Code at pinned revisions (2026-11-02)
 - [[scaling-laws-carefully-weng-2026]] — Lilian Weng: reconciling Kaplan and Chinchilla; data-constrained laws (2026-06-24)
 - [[prompt-engineering-weng-2023]] — Lilian Weng: prompt engineering survey (2023-03-15)
 - [[gemini-1-5-technical-report-2024]] — Gemini 1.5 Pro (MoE) and Flash (distilled); 99.7% single-needle at 1M, about 60% with 100 needles

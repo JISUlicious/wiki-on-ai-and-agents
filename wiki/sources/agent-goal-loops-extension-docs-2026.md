@@ -21,7 +21,7 @@ Read on 2026-11-02 at [earendil-works/pi](https://github.com/earendil-works/pi) 
 
 | Agent | First seen | Who decides the goal is done | Location |
 |---|---|---|---|
-| Codex CLI | 0.128.0, 2026-04-30 | Not checked. The notes list "model tools" and "runtime continuation". | [release notes](https://github.com/openai/codex/releases/tag/rust-v0.128.0) |
+| Codex CLI | 0.128.0, 2026-04-30 | The working model, after a completion audit; see [[goal-command-lineage-repos-2026]]. | [release notes](https://github.com/openai/codex/releases/tag/rust-v0.128.0) |
 | [[hermes-agent]] | 2026-05-01 | Shell quality gates run first; an auxiliary judge model then decides. Judge failures count as `continue`, with the turn budget as backstop. | commit `265bd59c1d`; `website/docs/user-guide/features/goals.md`; `hermes_cli/goals.py` |
 | [[claude-code]] | 2.1.139, 2026-05-11 | The small fast model, as evaluator. It calls no tools and judges only what the conversation shows. | [goal docs](https://code.claude.com/docs/en/goal); [[claude-code-changelog-2026]] |
 | [[openclaw]] | 2026-05-29 | The working model, through `update_goal`, or the operator through `/goal complete`. | commit `a509c48f0e`; `docs/tools/goal.md`; `src/agents/tools/goal-tools.ts` |
@@ -30,7 +30,7 @@ Read on 2026-11-02 at [earendil-works/pi](https://github.com/earendil-works/pi) 
 - Hermes's doc says its goal is "directly inspired by" Codex CLI 0.128.0's `/goal`, with an independent implementation. It credits its quality gates to Prime-Agent's bounded autonomous mode.
 - Claude Code's doc calls `/goal` a wrapper around a session-scoped prompt-based Stop hook.
 - OpenClaw's doc says a goal is not a reminder, cron job or standing order. It names no inspiration. "Judge", "evaluator", "verifier" and "verdict" do not appear in `goal.md` or in 36 goal-named TypeScript files. Other files may still add a check, so the code path is not fully traced.
-- Pi's `agent_before_settle` handler can return `continue: true` to request one continuation for that boundary (`docs/extensions.md`). No Pi example uses it to pursue a goal.
+- Pi's `agent_before_settle` handler can return `continue: true` to request one continuation for that boundary (`docs/extensions.md`). No Pi example uses it to pursue a goal. The third-party `pi-goal` uses `agent_settled` instead; see [[goal-command-lineage-repos-2026]].
 
 ## Proactive triggers
 
@@ -43,7 +43,7 @@ Read on 2026-11-02 at [earendil-works/pi](https://github.com/earendil-works/pi) 
 | OpenClaw | Standing intents | doc first committed 2026-07-28 | `28630a9a65`; event-conditioned, not clock-based |
 | OpenClaw | Proactive check job | undated here | `docs/gateway/heartbeat.md`; every 30 minutes by default after explicit setup |
 
-Hermes's `loops.md` mentions a Claude Code `/proactive` alias. The Claude Code scheduled-tasks and commands pages do not mention one, so that detail is unconfirmed. Claude Code's own `/loop` dates from 2026-03-06.
+Hermes's `loops.md` mentions a Claude Code `/proactive` alias. The Claude Code scheduled-tasks and commands pages do not mention one, but its changelog does (2.1.105); see [[goal-command-lineage-repos-2026]]. Claude Code's own `/loop` dates from 2026-03-06.
 
 ## Extension surfaces
 
