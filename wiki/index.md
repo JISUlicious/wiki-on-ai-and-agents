@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 753 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 754 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -1288,6 +1288,7 @@ Surfaced from four NLP-newsletter "Top AI Papers" digests (Sep 28 – Oct 25) an
 ### Agentic capabilities (2023, 2025–2026)
 - [[gaia-mialon-2023]] — GAIA general-assistant benchmark (Mialon et al. 2023)
 - [[deepseek-r1-2025]] — DeepSeek-R1: RL elicits emergent reasoning (DeepSeek 2025)
+- [[deepseekmath-shao-2024]] — DeepSeekMath: 51.7% on MATH; introduces GRPO, which replaces PPO's critic with a group baseline (2024-02-05)
 - [[search-r1-jin-2025]] — Search-R1: RL for multi-turn search (Jin et al. 2025)
 - [[magma-yang-2025]] — Magma: unified VLA foundation model (Yang et al., CVPR 2025)
 - [[swe-gym-pan-2024]] — SWE-Gym training env + verifier inference scaling (Pan et al., ICML 2025)

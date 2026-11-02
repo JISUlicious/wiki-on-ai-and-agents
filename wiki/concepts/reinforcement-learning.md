@@ -2,16 +2,26 @@
 title: Reinforcement Learning
 type: concept
 created: 2026-05-21
-updated: 2026-10-06
+updated: 2026-11-02
 sources:
   - deepseek-r1-2025.md
+  - rl-an-introduction-sutton-barto-2020.md
+  - deepseekmath-shao-2024.pdf
 status: draft
 importance: high
-tags:
-  - rl
 ---
 
+# Reinforcement Learning
+
 **Reinforcement learning (RL)** is the umbrella family of methods that optimize a policy by interacting with an environment and maximizing cumulative reward. In the LLM era, RL has resurfaced as the dominant tool for post-training: aligning models to human preferences ([[rlhf]], [[rlaif]]), eliciting reasoning ([[deepseek-r1]]), and training agents against executable rewards ([[agentic-rl]], [[search-r1]]).
+
+## Why baselines and critics matter
+
+[[rl-an-introduction-sutton-barto-2020|Sutton & Barto]] describe policy gradient methods as learning a parameterized policy directly. REINFORCE is the Monte Carlo form, and subtracting a baseline reduces variance without adding bias. When a learned value function also assesses the action through a one-step return, it is a critic, which adds bias but greatly reduces variance ([[actor-critic]]).
+
+LLM post-training mostly varies this choice of baseline. [[ppo]] uses a learned critic, while [[grpo]] replaces it with the mean reward of a sampled group. Treating GRPO as a return to sample-based baselines is this wiki's framing. See [[policy-optimization-methods]].
+
+## Variants in this wiki
 
 - Classic algorithms: policy gradient, [[ppo]], [[grpo]]
 - Preference-based variants: [[rlhf]], [[rlaif]], [[dpo]] (offline analog)
@@ -21,6 +31,8 @@ tags:
 Related: [[rlhf]], [[ppo]], [[grpo]], [[agentic-rl]], [[deepseek-r1]], [[search-r1]]
 
 ## References
+- [[rl-an-introduction-sutton-barto-2020]]
+- [[deepseekmath-shao-2024]]
 - [[deepseek-r1-2025]]
 
 ## Related 2026 sources

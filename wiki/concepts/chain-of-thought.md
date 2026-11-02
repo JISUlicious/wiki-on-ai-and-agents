@@ -2,11 +2,11 @@
 title: Chain-of-Thought
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
-sources: []
+updated: 2026-11-02
+sources:
+  - chain-of-thought-wei-2022.md
 status: draft
 importance: medium
-tags: []
 ---
 
 # Chain-of-Thought
@@ -24,6 +24,7 @@ Chain-of-thought (CoT) is the technique of prompting an LLM to produce intermedi
 
 ## References
 
+- [[chain-of-thought-wei-2022]]
 - [[chain-of-thought-prompting]]
 - [[latent-reasoning]]
 

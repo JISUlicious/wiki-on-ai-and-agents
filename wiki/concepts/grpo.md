@@ -2,15 +2,33 @@
 title: GRPO (Group Relative Policy Optimization)
 type: concept
 created: 2026-05-16
-updated: 2026-10-08
+updated: 2026-11-02
 sources:
+  - deepseekmath-shao-2024.pdf
   - memory-r1-yan-2025.md
 status: draft
 importance: medium
-tags: []
 ---
 
-Group Relative Policy Optimization (GRPO) is a reinforcement learning algorithm introduced by DeepSeek for training language models, closely related to but architecturally distinct from [[ppo|PPO]]. Where PPO requires a learned value function (critic) to estimate per-token advantages, GRPO eliminates the critic entirely and instead uses *group-relative* normalization: for each prompt the policy samples a group of `G` candidate responses, each is scored by the reward model, and the advantage of each response is computed as its reward minus the group mean (often divided by the group standard deviation). This removes the memory cost of a separate value network — significant for LLM-scale models — and tends to produce more stable updates because the baseline is empirically derived from on-policy samples rather than a moving learned estimate. GRPO has rapidly become a default for LLM RL fine-tuning on tasks with verifiable or model-scored rewards.
+# GRPO (Group Relative Policy Optimization)
+
+GRPO is a [[reinforcement-learning|reinforcement learning]] algorithm introduced in [[deepseekmath-shao-2024|DeepSeekMath]] (Shao et al., February 2024) and made widely known by [[deepseek-r1-2025|DeepSeek-R1]]. It is a variant of [[ppo|PPO]] that removes the value model.
+
+## How it works
+
+For each question:
+
+1. Sample a group of `G` outputs from the current policy.
+2. Score each output with a reward model or a rule-based check.
+3. Normalize within the group: `(rᵢ − mean(r)) / std(r)`. With outcome supervision, every token in an output gets that output's value as its advantage.
+4. Update with PPO's clipped objective, minus a KL term against a reference policy.
+
+The original paper gives two reasons for dropping the critic. A value model is usually about as large as the policy, and a per-token value function is hard to train when usually only the last token is rewarded. It also argues that within-group comparison suits reward models trained on comparisons between outputs.
+
+## Limits
+
+- **Sampling cost.** The saved value model is paid for with `G` rollouts per question. [[gepa-agrawal-2025|GEPA]] reports beating GRPO's 24K rollouts on 5 of 6 tasks with far fewer, although GRPO wins on AIME.
+- **Reward quality still decides the outcome.** Removing the critic doesn't address [[reward-hacking]], and a group whose rewards are all equal has no contrast to learn from. The second point is this wiki's reading of the formula, not a claim from the paper.
 
 ## Where it appears
 
@@ -21,7 +39,9 @@ Group Relative Policy Optimization (GRPO) is a reinforcement learning algorithm 
 
 ## References
 
-- `memory-r1-yan-2025.md`
+- [[deepseekmath-shao-2024]]
+- [[deepseek-r1-2025]]
+- [[memory-r1-yan-2025]]
 
 ## Related 2026 sources
 

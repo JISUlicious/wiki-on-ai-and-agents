@@ -2,11 +2,15 @@
 title: Agent Benchmark
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
-sources: []
+updated: 2026-11-02
+sources:
+  - gaia-mialon-2023.md
+  - swe-bench-jimenez-2023.md
+  - terminal-bench-benchmarking-agents-cli-merrill-2026.md
+  - alphaeval-evaluating-agents-in-production-lu-2026.md
+  - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
 status: draft
 importance: medium
-tags: []
 ---
 
 # Agent Benchmark
@@ -17,6 +21,23 @@ Agent benchmarks are evaluation suites designed to measure LLM-based **agents** 
 - Coverage spans general assistant tasks, software engineering, GUI/computer use, and long-context memory.
 - Reliability and contamination resistance are recurring concerns (see [[swe-bench-live]] for a "live" variant).
 - Often paired with a reference scaffold so the benchmark also implicitly evaluates the harness.
+
+## What the suites measure
+
+| Benchmark | Scope | Reported result |
+|---|---|---|
+| [[gaia]] | 466 tool-using assistant questions | Humans 92%, GPT-4 with plugins about 15% at release |
+| [[swe-bench]] | 2,294 real GitHub issues | Under 4% at release; [[swe-bench-verified\|Verified]] now reported around 70–80% |
+| [[terminal-bench]] | 89 hard command-line tasks | Under 65%; top is Codex CLI + GPT-5.2 at 63% |
+| [[alphaeval-evaluating-agents-in-production-lu-2026\|AlphaEval]] | 94 production tasks from 7 companies | Best 64.41 of 100 |
+
+These figures come from different dates and scoring rules, so they can't rank the suites against each other.
+
+## What the score actually measures
+
+An agent benchmark scores a model and harness together. AlphaEval puts the same Opus 4.6 at 64.41 through Claude Code and 53.45 through Codex. [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026|Zhang et al.]] propose either locking the harness or varying it as a controlled factor. Terminal-Bench lists model and scaffold pairs explicitly for this reason. See [[harness-vs-model-attribution]].
+
+For how runs are graded, see [[agent-evaluation]].
 
 ## Related
 
@@ -29,8 +50,11 @@ Agent benchmarks are evaluation suites designed to measure LLM-based **agents** 
 
 ## References
 
-- [[gaia]]
-- [[swe-bench]]
+- [[gaia-mialon-2023]]
+- [[swe-bench-jimenez-2023]]
+- [[terminal-bench-benchmarking-agents-cli-merrill-2026]]
+- [[alphaeval-evaluating-agents-in-production-lu-2026]]
+- [[stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026]]
 
 ## Related 2026 sources
 

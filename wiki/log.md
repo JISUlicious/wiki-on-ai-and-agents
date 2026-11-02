@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] ingest | DeepSeekMath and high-traffic concept pages
+
+Gap-filling step 2. Filed [[deepseekmath-shao-2024]], the original GRPO paper. Rebuilt [[grpo]], [[swe-bench]] and [[agent-benchmark]], extended [[reinforcement-learning]], and gave the [[chain-of-thought]] alias its source. Also removed tags that named concepts.
+
 ## [2026-11-02] ingest | Five-agent capability recheck
 
 Gap-filling step 1. Filed [[agent-capabilities-check-2026-11]] and rebuilt the stale rows of [[cross-agent-comparison-2026]]. Contradiction: Pi and OpenClaw no longer refuse MCP, and OpenClaw no longer inherits from Pi as the page said. Updated [[common-features-of-modern-agents]], [[openclaw]] and [[opencode]].
