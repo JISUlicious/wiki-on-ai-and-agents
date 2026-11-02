@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] ingest | Five-agent capability recheck
+
+Gap-filling step 1. Filed [[agent-capabilities-check-2026-11]] and rebuilt the stale rows of [[cross-agent-comparison-2026]]. Contradiction: Pi and OpenClaw no longer refuse MCP, and OpenClaw no longer inherits from Pi as the page said. Updated [[common-features-of-modern-agents]], [[openclaw]] and [[opencode]].
+
 ## [2026-11-02] ingest | Goal and loop command lineage
 
 Sixth request from the ai agent lec session, checked independently. Filed [[goal-command-lineage-repos-2026]] and updated [[harness-extension-and-goal-loop-axes]], [[agent-goal-loops-extension-docs-2026]], [[ralph-loop]], [[pi-mono]], [[opencode]] and [[codex-cli]]. Corrected two earlier statements: Claude Code's `/proactive` alias is confirmed by its changelog, and the real Pi goal extension uses `agent_settled`, not the `agent_before_settle` event this wiki had inferred. The completion-schools grouping is recorded as synthesis.

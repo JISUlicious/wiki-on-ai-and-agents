@@ -17,7 +17,7 @@ tags:
 
 # opencode
 
-opencode (`sst/opencode`, npm package `opencode-ai`, binary `opencode`) is an open-source, provider-agnostic coding agent built by the SST + terminal.shop team. Tagline: "the open source AI coding agent."
+opencode (`anomalyco/opencode`, formerly `sst/opencode`; npm package `opencode-ai`, binary `opencode`) is an open-source, provider-agnostic coding agent built by the SST + terminal.shop team. Tagline: "the open source AI coding agent."
 
 ## Architecture
 
