@@ -2,7 +2,7 @@
 title: "Hooks and Callbacks in Modern Agent Architecture"
 type: query
 created: 2026-05-17
-updated: 2026-10-08
+updated: 2026-11-02
 sources:
   - claude-code.md
   - opencode.md
@@ -108,8 +108,8 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 | [[claude-code]] | **First-class in harness** | ~21 named events | Can affect permissions; routes to user prompts, agent forks, or HTTP webhooks |
 | [[openclaw]] | **Plugin-system only** | ~24 named events | Broadest surface but observational (synchronous handlers) |
 | [[opencode]] | Plugin-system only | ~18 named events | Plugins registered via `opencode.json` |
-| [[hermes-agent]] | Plugin-system | ~6 lifecycle hooks | Used internally for self-editing curator |
-| [[pi-mono]] | **None in core** (deliberate) | 2 in core | Only `beforeToolCall` / `afterToolCall`; rest via extensions (the "no X" manifesto) |
+| [[hermes-agent]] | Plugin-system | 46 in `VALID_HOOKS` (2026-11-02; was ~6) | Includes `pre_verify`, which can keep the agent going; see [[agent-goal-loops-extension-docs-2026]] |
+| [[pi-mono]] | **Extension layer** | 2 in agent core; 40 extension events (2026-11-02) | `beforeToolCall` / `afterToolCall` in `packages/agent`; the coding agent documents the rest in `docs/extensions.md`, see [[agent-goal-loops-extension-docs-2026]] |
 
 ### 2. What hooks can DO — observational → modifying → blocking → compositional
 
@@ -121,8 +121,8 @@ This connects to [[memory-management]] (the compaction lifecycle operation) and 
 ## Cross-cutting framings
 
 - The [[agent-three-layer-model]] classifies hooks as L3 implementations under L2 [[guardrailing|harness]], with cross-cutting edges to L2 control-flow.
-- [[common-features-of-modern-agents]] does *not* count hooks among the 8 universal features — because [[pi-mono]] refuses them in core. Near-universal but not strictly baseline.
-- The 5 hooks in the **Loop Hooks** graph view (`scripts/evolution-graph.html`) — SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop — are the **canonical subset**. Every agent except [[pi-mono]] has equivalents. The 25+ others are agent-specific extensions of the same architectural idea.
+- [[common-features-of-modern-agents]] does *not* count hooks among the 8 universal features — because [[pi-mono]] keeps them out of its agent core. Near-universal but not strictly baseline.
+- The 5 hooks in the **Loop Hooks** graph view (`scripts/evolution-graph.html`) — SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop — are the **canonical subset**. [[pi-mono]] has close equivalents through extensions (`session_start`, `input`, `tool_call`, `tool_result`, `agent_before_settle`), a mapping made by this wiki. The 25+ others are agent-specific extensions of the same architectural idea.
 
 ## Gaps and interesting omissions
 

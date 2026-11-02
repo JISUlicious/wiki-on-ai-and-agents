@@ -2,7 +2,7 @@
 title: Word Embeddings
 type: concept
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-11-02
 sources:
   - mikolov-word2vec-2013.md
   - mikolov-skipgram-2013.md
@@ -20,7 +20,7 @@ The breakthrough in 2013 was demonstrating that **[[distributional-semantics|dis
 
 - **[[word2vec]]** (Mikolov et al. 2013): predict word from context (CBOW) or context from word (Skip-gram). Trained with [[negative-sampling]] or hierarchical softmax.
 - **[[glove|GloVe]]** (Pennington et al. 2014): factorize the global word-word co-occurrence matrix via weighted least squares. An algebraic alternative to word2vec's online prediction objective.
-- **FastText** (Bojanowski et al. 2016): word2vec at the character-n-gram level — handles out-of-vocabulary words and morphology.
+- **FastText** (Bojanowski et al. 2016): word2vec at the character-n-gram level — handles out-of-vocabulary words and morphology. For n-gram lookup tables in modern LLMs, see [[n-grams-and-llm-embedding-layers]].
 
 All three produce **static** embeddings: one vector per word type, regardless of context. The next wave — **contextual embeddings** — gives each word *instance* its own vector based on surrounding sentence:
 

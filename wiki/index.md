@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 742 sources, 245 entities, 381 concepts, 9 comparisons, 21 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 751 sources, 245 entities, 382 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -489,6 +489,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
+- [[guides-and-sensors]] — Böckeler's model of harness controls: feedforward and feedback, computational and inferential
 - [[recursive-agent-harnessing]] — RSI on the agent harness at two levels: refine this task's execution harness (Propose–Probe–Compose) and update the improvement harness for future tasks
 - [[dynamic-workflows]] — Claude Code writes its own multi-agent harness as a JS orchestration script per task (Anthropic 2026)
 - [[adaptive-thinking]] — Spending thinking budget per-request rather than uniformly; what `effort` controls
@@ -1695,6 +1696,8 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 ### Entity deep-dives (ingested 2026-10-07)
 - [[harness-engineering-self-improvement-weng-2026]] — Lilian Weng: harness definition, patterns, harness optimization toward RSI; "loop engineering" (2026-07-04)
+- [[harness-engineering-for-coding-agent-users-bockeler-2026]] — Böckeler: outer harness as guides and sensors, computational and inferential (2026-04-02)
+- [[agent-goal-loops-extension-docs-2026]] — Goal commands, proactive triggers and extension surfaces checked at pinned repo revisions (2026-11-02)
 - [[scaling-laws-carefully-weng-2026]] — Lilian Weng: reconciling Kaplan and Chinchilla; data-constrained laws (2026-06-24)
 - [[prompt-engineering-weng-2023]] — Lilian Weng: prompt engineering survey (2023-03-15)
 - [[gemini-1-5-technical-report-2024]] — Gemini 1.5 Pro (MoE) and Flash (distilled); 99.7% single-needle at 1M, about 60% with 100 needles
@@ -1727,6 +1730,13 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[adk-system-one-integration-status-2026]] — Google ADK has no System One support: PR #7235 open; LiteLLM 1.105 supports decisions but ADK's bridge can't reach it (2026-10-12)
 - [[decision-api-server-implementations-2026]] — Code-level: how SGLang v0.5.21, vLLM v0.31.0 and main, and Ollama v0.40.3 implement decision APIs (2026-10-12)
 - [[ollama-decision-models-2026]] — Ollama decision models: blog (2026-09-29), v0.35.0/0.35.1, HF repos and licences (Tev1 undeclared), ollama-python systemone()
+- [[my-ai-adoption-journey-hashimoto-2026]] — Hashimoto's "harness engineering", earliest found use of the phrase (2026-02-05)
+- [[harness-engineering-openai-2026]] — OpenAI's harness engineering post; metadata only, page blocked (2026-02-11)
+- [[pi-coding-agent-zechner-2025]] — Zechner's write-up of Pi as a minimal reaction to Claude Code (2025-11-30)
+- [[agent-products-repo-history-2026]] — Git-history dates and stated borrowing for Pi, Hermes Agent and OpenClaw
+- [[hermes-agent-self-evolution-nous-2026]] — Nous repository optimizing Hermes skills with DSPy and GEPA (2026)
+- [[claude-code-hooks-origin-2025]] — Issue #712, v1.0.38 and team statements on where hooks came from (2025)
+- [[langchain-callbacks-middleware-history]] — LangChain callbacks (2023-01-04) and middleware (2025-09-07) first commits
 
 ## Comparisons
 - [[layer-depth-hierarchy-cnn-vs-llm]] — CNN layer hierarchy vs transformer LLMs: general → specific holds in both; spatial ladder vs hourglass ending in vocabulary; read vs write evidence
@@ -1764,3 +1774,6 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[methods-to-speed-up-prompt-processing]] — Prefill levers ranked (skip / shrink / cheapen), plus the three things that help decode but *not* prompt processing: weight-only quantization, GQA, and chunked prefill
 - [[llm-memory-and-compute-bottlenecks]] — Four-quadrant sub-step breakdown (training/inference × memory/compute); the 16Ψ accounting, `sbh(34+5as/h)`, and the roofline table
 - [[building-an-ai-native-sdlc-plugin]] — **query (guide)**: a Claude Code plugin implementing Anthropic's AI-Native SDLC Playbook — which play goes in a skill, hook, agent or managed setting; interviewed intent and spec; portable vs Claude-Code-only skills checked against the Agent Skills spec; a skeleton that passes `claude plugin validate --strict`; evals with a no-plugin baseline
+- [[n-grams-and-llm-embedding-layers]] — What n-grams are and why LLMs add n-gram lookup tables to early layers; Engram results, limits and shipped models
+- [[plugins-hooks-harness-influence-evidence]] — Graded evidence on Pi, Hermes and OpenClaw dates and relations, the hook lineage, and the origin of "harness engineering"
+- [[harness-extension-and-goal-loop-axes]] — Tests the hypothesis that harness engineering splits into extension and goal-loop axes; useful by purpose, not independent

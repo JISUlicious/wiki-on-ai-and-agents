@@ -2,7 +2,7 @@
 title: Ralph Loop
 type: concept
 created: 2026-09-29
-updated: 2026-10-06
+updated: 2026-11-02
 sources:
   - oh-my-claude-ultrawork-2026.md
 status: draft
@@ -19,6 +19,8 @@ A **Ralph loop** (after Ralph Wiggum) is the practice of running a coding agent 
 - **The same pressure as the official features.** A Ralph loop, ultrawork's completion gates ("stops only when all todos complete") and Anthropic's official [[dynamic-workflows]] and [[ultracode]] all push against the same failure: a single agent in one context window stalls on large, multi-part work.
 - **A harness pattern in its simplest form.** Keeping state in the filesystem (plans, notes, git) rather than in the context window is the "PLAN.md as control object" pattern that [[code-as-agent-harness-ning-2026]] describes under planning. See [[code-as-harness]] and [[plan-execute-verify-loop]].
 
+- **Native goal commands.** Codex CLI, [[hermes-agent]], [[claude-code]] and [[openclaw]] all shipped a goal command between 2026-04-30 and 2026-05-29. Hermes describes its own as a Ralph loop. They differ on who decides completion; see [[harness-extension-and-goal-loop-axes]].
+
 ## Related
 
 - [[ultrawork]] · [[oh-my-claude]] · [[claude-code]] · [[dynamic-workflows]] · [[ultracode]]
@@ -31,4 +33,5 @@ A **Ralph loop** (after Ralph Wiggum) is the practice of running a coding agent 
 
 ## Lineage sources
 
+- [[agent-goal-loops-extension-docs-2026]] — goal commands compared at pinned revisions
 - [[claude-code-changelog-2026]] — native /loop arrived 2026-03-06 and /goal 2026-05-11

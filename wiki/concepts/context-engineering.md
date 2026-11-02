@@ -2,7 +2,7 @@
 title: Context Engineering
 type: concept
 created: 2026-10-06
-updated: 2026-11-01
+updated: 2026-11-02
 sources:
   - effective-context-engineering-anthropic-2025.md
   - pre-train-prompt-predict-liu-2021.md
@@ -41,6 +41,8 @@ The guiding principle: find "the smallest possible set of high-signal tokens tha
 The agent era continues the sequence:
 5. **context engineering** (2025);
 6. **harness engineering** ([[agentic-harness-engineering]], 2026).
+
+Steps 5 and 6 are this wiki's extension of Liu et al., not a succession any source claims. See [[plugins-hooks-harness-influence-evidence]].
 
 ## Techniques (Anthropic's list, with wiki pages)
 

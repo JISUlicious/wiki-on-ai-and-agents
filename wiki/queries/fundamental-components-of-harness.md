@@ -2,7 +2,7 @@
 title: "Fundamental Components of an LLM Agent Harness"
 type: query
 created: 2026-05-27
-updated: 2026-10-08
+updated: 2026-11-02
 sources:
   - code-as-agent-harness-ning-2026.md
   - agentic-harness-engineering-lin-2026.md
@@ -13,6 +13,9 @@ tags:
 ---
 
 # Fundamental Components of an LLM Agent Harness
+
+> [!warning] Contradiction
+> This page called [[pi-mono]] the minimalist exception with 2 hooks. Those two are only the `beforeToolCall` and `afterToolCall` hooks in Pi's agent-core package. As of 2026-11-02, the shipped coding agent documents 40 extension event names, and Pi added MCP on 2026-09-29. See [[agent-goal-loops-extension-docs-2026]] and [[agent-products-repo-history-2026]].
 
 Drawing on the two canonical 2026 frameworks ([[code-as-agent-harness-ning-2026]] survey + [[agentic-harness-engineering-lin-2026]]) plus the [[agent-three-layer-model]] L2 decomposition. The components cluster three ways — by **operational artifact** (what files / services exist), by **mechanism category** (what they do), and by **cross-cutting concern** (what they touch).
 
@@ -79,7 +82,7 @@ Synthesizing the three views, **eight components are universal across all the pr
 4. **System prompt + context-assembly pipeline** — what's prepended every turn; auto-loaded `CLAUDE.md` / `AGENTS.md` / [[agent-skills]]; retrieved snippets; dynamic slot-fills.
 5. **Memory subsystem** — short-term (in-context summary, compaction) + long-term (sessions, skills, knowledge). See [[memory-management]].
 6. **Permission / safety layer** — rule engine + refusal classifier + human-approval prompts + [[constitutional-ai]] principles + plan-mode gates.
-7. **Hooks** — inline interceptors at every lifecycle point. Universal in 4 of 5 documented 2026 agents; [[pi-mono]] is the minimalist exception with 2 hooks. See [[hooks-in-modern-agents]] for the full ~30-hook taxonomy.
+7. **Hooks** — inline interceptors at every lifecycle point. Present in all 5 documented 2026 agents, though [[pi-mono]] keeps only 2 tool hooks in its agent-core package and exposes the rest through extensions. See [[hooks-in-modern-agents]] for the full ~30-hook taxonomy.
 8. **Persistence** — JSONL session trees, SQLite event logs, snapshot git. Required for replay, sharing, sub-agent forking.
 
 Two additional components are **near-universal**:
@@ -103,20 +106,22 @@ Convention from [[agent-three-layer-model]]: assign each cross-cutter to its **p
 
 ## How the 5 documented 2026 agents instantiate these
 
+Pi and Hermes hook counts were rechecked on 2026-11-02. Other cells are from the original 2026 sources and may be out of date.
+
 | Component | claude-code | opencode | pi-mono | hermes-agent | openclaw |
 |---|---|---|---|---|---|
 | System prompt | embedded | template | embedded | dynamic | template |
 | Tool set | 15+ built-in | plugin-based | **7 only** | ~12 + sub-agents | extensible |
 | Sandbox | OS adapter | none in core | none | 7 backends | Docker tiers |
 | Memory | session + skills | event log | JSONL only | SQLite + curator | per-channel |
-| Hooks | 21 events | 18 events | **2 events** | 6 lifecycle | 24 events |
+| Hooks | 21 events | 18 events | **2 in agent core; 40 via extensions** | 46 plugin hooks | 24 events |
 | Sub-agents | first-class | optional | refused | orchestrator-style | optional |
 | Telemetry | structured logs | event log | minimal | curator-driven | per-channel |
 | Persistence | JSONL tree | SQLite | JSONL | SQLite | per-channel |
 
 Page links: [[claude-code]], [[opencode]], [[pi-mono]], [[hermes-agent]], [[openclaw]].
 
-[[pi-mono]] is the **minimalist control**: it explicitly refuses 4 of the 10 components (sandbox, sub-agents, rich hooks, MCP-in-core). [[claude-code]] and [[openclaw]] are at the maximalist end. The 2026 Ning survey argues the maximalist end is where autonomy gains live.
+[[pi-mono]] is the **minimalist control**: it leaves sandboxing and sub-agents out of core, and its hook surface sits in the extension layer rather than in agent core. [[claude-code]] and [[openclaw]] are at the maximalist end. The 2026 Ning survey argues the maximalist end is where autonomy gains live.
 
 ## The conceptual takeaway
 

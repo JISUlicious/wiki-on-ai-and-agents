@@ -2,13 +2,13 @@
 title: Hermes Agent
 type: entity
 created: 2026-05-14
-updated: 2026-10-05
+updated: 2026-11-02
 sources:
   - hermes-agent.md
   - comparison.md
 family: agent-product
 parameters: "n/a (provider-agnostic, OpenAI-format chat completions)"
-release_date: 2025
+release_date: 2026-02-25
 status: complete
 importance: medium
 tags:
@@ -16,6 +16,9 @@ tags:
 ---
 
 # Hermes Agent
+
+> [!note] Dates
+> The repository began 2025-07-22. The 2026-02-25 launch date comes from secondary sources only. See [[agent-products-repo-history-2026]].
 
 Hermes Agent (`NousResearch/hermes-agent`) is **[[nous-research|Nous Research]]**'s open-source, self-improving AI agent. Python-based. Runs as either an interactive terminal (`hermes`) or a persistent multi-platform messaging daemon (`hermes gateway`). Tagline from its README:
 
@@ -48,6 +51,8 @@ Concretely:
 - **MCP**: first-class (stdio / HTTP / SSE).
 - **Skills**: SKILL.md (Anthropic-inspired + agentskills.io compatible); bundled + optional skills.
 - **Tools**: 25+ built-in including memory, session_search, terminal, delegate, kanban.
+
+**Goal and trigger features:** `/goal` (2026-05-01) runs shell gates and then an auxiliary judge. `/heartbeat`, `/loop` and cron start work on a schedule. See [[agent-goal-loops-extension-docs-2026]].
 
 ## References
 

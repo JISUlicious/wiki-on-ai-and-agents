@@ -2,10 +2,24 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-01
+updated: 2026-11-02
 ---
 
 # Activity Log
+
+## [2026-11-02] ingest | Harness extension and goal-loop evidence
+
+Fifth request from the ai agent lec session, checked independently at pi `c9f4c7b9fc`, hermes-agent `5aa8df742c` and openclaw `28a93a00ac`. Filed [[harness-extension-and-goal-loop-axes]] with [[agent-goal-loops-extension-docs-2026]], [[harness-engineering-for-coding-agent-users-bockeler-2026]] and [[guides-and-sensors]]. The two-axis framing is recorded as the user's hypothesis. Contradiction: [[fundamental-components-of-harness]] and [[hooks-in-modern-agents]] understated Pi's hook surface; both corrected, along with Hermes's hook count. Updated [[pi-mono]], [[hermes-agent]], [[openclaw]] and [[ralph-loop]].
+
+## [2026-11-02] ingest | Plugins, hooks and harness engineering evidence
+
+Fourth request from the ai agent lec session. Filed [[plugins-hooks-harness-influence-evidence]] with [[my-ai-adoption-journey-hashimoto-2026]], [[harness-engineering-openai-2026]], [[pi-coding-agent-zechner-2025]], [[agent-products-repo-history-2026]], [[hermes-agent-self-evolution-nous-2026]], [[claude-code-hooks-origin-2025]] and [[langchain-callbacks-middleware-history]].
+
+**Contradictions recorded:** [[pi-mono]]'s 2024-12-01 date had no support and is corrected. [[openclaw]]'s "embeds pi-mono" stopped being true on 2026-05-27. Updated [[hermes-agent]] and [[context-engineering]], whose ladder steps 5 and 6 are now marked as this wiki's own extension.
+
+## [2026-11-02] query | N-grams and n-gram embeddings in LLMs
+
+Question: "what is ngram and advantage of using ngram for llm encoding layer". Filed as [[n-grams-and-llm-embedding-layers]]. Key pages consulted: [[word-embeddings]], [[byte-pair-encoding]], [[qwen3.8-flash-next]], [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]], [[memory-attention-kang-2026]]. Also read the Engram paper directly (arXiv:2601.07372); it has no source page yet.
 
 ## [2026-11-01] ingest | Codebase RAG to agentic search evidence
 

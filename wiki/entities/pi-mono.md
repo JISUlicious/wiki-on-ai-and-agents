@@ -2,13 +2,13 @@
 title: pi (pi-mono coding agent)
 type: entity
 created: 2026-05-14
-updated: 2026-09-30
+updated: 2026-11-02
 sources:
   - pi-mono.md
   - comparison.md
 family: agent-product
 parameters: "n/a (provider-agnostic)"
-release_date: 2024-12-01
+release_date: 2025-10-22
 status: complete
 importance: medium
 tags:
@@ -16,6 +16,9 @@ tags:
 ---
 
 # pi (pi-mono coding agent)
+
+> [!warning] Contradiction
+> This page earlier gave a 2024-12-01 release date, with no support found. The monorepo began 2025-08-09, the coding agent 2025-10-17, and its first npm release was 2025-10-22. Pi also added MCP on 2026-09-29, reversing its earlier stance. See [[agent-products-repo-history-2026]].
 
 pi (`@earendil-works/pi-coding-agent`, binary `pi`) is a hand-crafted minimal terminal coding agent by **[[mario-zechner|Mario Zechner]] ("badlogic")**, distributed from the `earendil-works/pi-mono` monorepo. Among the documented 2026 agents, pi is the **minimalist** — it ships only what's strictly needed and pushes everything else into extensions.
 
@@ -34,6 +37,8 @@ Total: **7 built-in tools**. Compare to [[claude-code|Claude Code]]'s ~40.
 - Background bash
 - Permission popups
 - MCP
+
+No built-in goal command was found on 2026-11-02, although the `agent_before_settle` extension event can request a continuation. The extension API documents 40 event names, against 2 tool hooks in agent core. See [[agent-goal-loops-extension-docs-2026]].
 
 Everything refused is expected to be implemented as a **TypeScript Extension** or installed as a **Pi Package**. The sibling repo **pi-skills** packages skills in the `SKILL.md` format, explicitly designed to interoperate with Claude Code, Codex CLI, Amp, and Droid.
 
