@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] lint | Overview refresh
+
+Gap-filling step 4. Updated [[overview]] with current counts, product convergence, [[false-success]], Qwen-Scope, open questions and remaining gaps.
+
 ## [2026-11-02] ingest | Evidence on completion judging
 
 Gap-filling step 3. Searched for measurements of separate goal judges and found no direct study. Filed [[false-success-llm-agents-advani-2026]], [[self-report-leakage-gui-agent-judging-zhu-2026]], [[bounded-loops-agent-harnesses-bhardwaj-2026]], [[deploybench-research-artifact-deployment-wang-2026]] and [[false-success]]. Updated [[harness-extension-and-goal-loop-axes]] and [[verifier]].

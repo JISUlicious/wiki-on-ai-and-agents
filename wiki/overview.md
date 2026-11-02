@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-10-10
+updated: 2026-11-02
 tags: []
 ---
 
@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **580 source pages**, **189 entities**, **335 concepts**, **5 comparisons** and **15 filed queries** (as of 2026-10-06). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **758 source pages**, **245 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -38,6 +38,8 @@ Almost every model in this wiki is built on the [[transformer-architecture|Trans
 - **Run agents over everything** (2022–): [[react|ReAct]]'s loop with [[tool-use|tool use]], [[reflexion|Reflexion]]'s self-reflection.
 - **Engineer the harness** (2025–): the model is one component, and what surrounds it decides much of the outcome. [[harness-vs-model-attribution]] records scaffold-only swings of 11–15 points on SWE-bench Verified with the model fixed, and a 6.4× harness effect on ARC-AGI-3 (confirmed against ARC Prize's own results). [[agentic-harness-engineering]], [[claude-code]] and [[agent-skills]] are the hub pages.
 
+The products have also converged. All five agents the wiki tracks now document [[mcp|MCP]] support, reversing a split recorded in May ([[cross-agent-comparison-2026]]). Between April and October 2026, native goal commands arrived in Codex, Hermes, Claude Code, OpenClaw and OpenCode, descending from the 2025 [[ralph-loop]] ([[goal-command-lineage-repos-2026]]). Whether "extension guardrails" and "goal loops" form two axes of harness engineering is a hypothesis, tested in [[harness-extension-and-goal-loop-axes]], and no source found states it. Influence between products is mostly undocumented, so [[ai-agent-influence-graph]] and its evidence pages grade each edge.
+
 ### 4. Retrieval, and memory that does not compound
 
 The retrieval thread ([[dpr]], [[rag]], [[retro]]) established **non-parametric memory** as a separate lever. [[retro-borgeaud-2021|RETRO]] showed 7.5B parameters with retrieval matching 175B without it. The 2026 agent literature turned retrieval into *memory* ([[long-term-memory]], [[graph-memory]], [[memory-management]]) and then measured it. Its finding is sobering:
@@ -55,6 +57,8 @@ The recurring finding across planning, self-improvement, search and evaluation i
 - Plain search beats elaborate harness evolution, but only when something selects the right sample.
 
 [[verifier]] and [[verification-horizon-qwen-2026]] are the hubs. The flip side is that unanchored judges fail: [[llm-as-a-judge]] collects the evidence, such as satisfaction ratings that carry no information about task success, and judges picking the worse of two close agents 31% of the time.
+
+[[false-success]] sharpens this for agents. Agents often claim completion when the environment shows failure, LLM judges reading the trajectory reached at most AUROC 0.65, and seeing the agent's own report biases the judge. These results come from post-hoc tests in other settings; no study found measures a judge inside a coding-agent goal loop.
 
 ### 6. Trusting the numbers
 
@@ -87,6 +91,7 @@ Much of it is grounded in local inference on [[apple-silicon|Apple Silicon]] thr
 - [[rlhf|RLHF]] aligns behaviour without opening the black box.
 - [[mechanistic-interpretability]] ([[monosemanticity]], [[emotion-concepts-anthropic-2026|emotion vectors]] in Claude Sonnet 4.5) aims to read the algorithms directly.
 - [[institutional-alignment]] proposes governance at the scale of billions of agents.
+- [[qwen-scope|Qwen-Scope]] releases open [[sparse-autoencoder|sparse autoencoders]] for Qwen3 and 3.5, and argues they can be development tools, although its steering claims are qualitative.
 - Chain-of-thought is not a complete window: [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]].
 
 On misuse, Anthropic's [[anthropic-threat-intelligence-report-september-2026|September 2026 threat report]] puts the risk in [[ai-enabled-cyber-operations|uplift across the whole kill chain]] and in [[illicit-distillation]]. Both run through **access**: proxies, resold credentials, stolen keys. [[prompt-injection]] remains without a robust defense, and typed outputs narrow it without removing it. The report is a vendor's self-account, and every page drawing on it says so.
@@ -99,6 +104,7 @@ Many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] �
 
 - **Does harness evolution beat plain search at a matched compute budget?** Only one 2026 paper ran the control, with mixed results ([[agentic-harness-engineering]]).
 - **Are typed decision models calibrated where it matters?** Calibration holds on some datasets and question types and fails on others ([[calibration]], [[jev]]).
+- **Does a separate completion judge improve agent outcomes?** Self-report and transcript judges both look weak, and the direct comparison hasn't been run ([[harness-extension-and-goal-loop-axes]]).
 - **When does a multi-agent system beat a single agent with the same compute?** [[multi-agent]] holds evidence both ways.
 - **Is 4-bit quantization safe, and is code disproportionately damaged?** Both are still disputed ([[quantization-quality]], [[quantization-safety]]).
 - **What does scalable [[institutional-alignment]] look like in practice?**
@@ -106,13 +112,12 @@ Many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] �
 
 ## Gaps worth filling
 
-Filled on 2026-10-06:
-- the canonical agent framings ([[building-effective-agents-anthropic-2024]], [[llm-powered-autonomous-agents-weng-2023]]);
-- classical agent theory ([[intelligent-agent]], [[actor-critic]]);
-- the field map ([[artificial-intelligence]] ⊃ [[machine-learning]] ⊃ [[deep-learning]] ⊃ [[large-language-model]]);
-- [[context-engineering]] and [[prompt-engineering]].
+Filled on 2026-11-02:
+- current capabilities of the five tracked agents ([[agent-capabilities-check-2026-11]]);
+- the original GRPO paper ([[deepseekmath-shao-2024]]);
+- evidence on completion claims ([[false-success]]).
 
 Still open:
-- **Coinage of terms:** the first uses of "LLM", "prompt engineering", "context engineering" and "harness engineering" have no primary source in the wiki.
+- **Coinage of terms:** the first uses of "LLM", "prompt engineering" and "context engineering" have no primary source in the wiki. For "harness engineering", the earliest use found is [[my-ai-adoption-journey-hashimoto-2026|Hashimoto]] (2026-02-05), which doesn't prove it was the first.
 - **Context-window pages:** dedicated pages for the context window and the system prompt, each covered only inside other pages.
 - **Housekeeping:** about 156 one-off broken links remain as placeholders for pages not yet written.
