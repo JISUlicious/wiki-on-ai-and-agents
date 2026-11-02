@@ -18,13 +18,13 @@ Google's open-source (Apache 2.0) terminal agent. Its [README](https://github.co
 
 ## Status as of November 2026
 
-- **Free and consumer access moved.** Free individual access and Google AI Pro and Ultra moved to **Antigravity CLI** (`agy`) on 18 June 2026.
+- **Free and consumer access moved.** Free individual access and Google AI Pro and Ultra moved to [[antigravity-cli|Antigravity CLI]] (`agy`) on 18 June 2026. Google says it lacks 1:1 parity at first, and enterprise licences keep Gemini CLI, so it is a partial replacement.
 - **Not tuned for current models.** The README says it isn't optimized for the Gemini 4 series.
 - **Don't benchmark with it.** The README says its harness gives unrepresentative scores for Gemini 4+. [[harness-vs-model-attribution]] covers why that matters. Results in this wiki that use Gemini CLI should be read with the model version and date in mind.
 
 ## Capabilities
 
-Its docs list [[mcp|MCP]] servers, Agent Skills, hooks, sandboxing and checkpointing. Subagents and remote subagents are marked experimental. No goal command was found at this revision by filename or by a separate keyword search; see [[goal-command-lineage-repos-2026]].
+Its docs list [[mcp|MCP]] servers, Agent Skills, hooks, sandboxing and checkpointing. Subagents and remote subagents are marked experimental. No goal command was found at this revision by filename or by a separate keyword search; see [[goal-command-lineage-repos-2026]]. Antigravity CLI does have one, so this says little about Google overall.
 
 ## References
 

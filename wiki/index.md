@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 760 sources, 246 entities, 383 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 761 sources, 247 entities, 383 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -74,6 +74,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[operator]] — OpenAI's browser agent (Jan 2025)
 - [[codex-cli]] — OpenAI's terminal coding agent (Apr 2025)
 - [[gemini-cli]] — Google's open-source terminal agent, now limited to enterprise Code Assist; consumer use moved to Antigravity CLI
+- [[antigravity-cli]] — Google's consumer terminal agent since 2026; documented self-reported `/goal`, no public source
 - [[manus]] — General-purpose agent from Butterfly Effect (Mar 2025)
 - [[langgraph]] — LangChain's state-graph agent library (Jan 2024)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -1705,6 +1706,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[agent-goal-loops-extension-docs-2026]] — Goal commands, proactive triggers and extension surfaces checked at pinned repo revisions (2026-11-02)
 - [[goal-command-lineage-repos-2026]] — Ralph to native goal commands: Codex, OpenCode, pi-goal and Claude Code at pinned revisions (2026-11-02)
 - [[agent-capabilities-check-2026-11]] — MCP, sandbox, tools and sub-agents rechecked for five coding agents (2026-11-02)
+- [[antigravity-cli-docs-2026-11]] — Antigravity CLI transition, goal command, hooks and schedules from docs and changelog (2026-11-02)
 - [[false-success-llm-agents-advani-2026]] — False success in 11,755 trajectories; LLM judges reach at most AUROC 0.65 (2026-06)
 - [[self-report-leakage-gui-agent-judging-zhu-2026]] — Withholding an agent's self-report raises misreport recall by 13–43 points (2026-10)
 - [[bounded-loops-agent-harnesses-bhardwaj-2026]] — Independent gates, vacuous and self-attested checks, proved loop guarantees (2026)

@@ -40,6 +40,7 @@ Read on 2026-11-02 at [openai/codex](https://github.com/openai/codex) `a09812981
 - **Codex CLI:** `codex-rs/ext/goal` is an in-tree extension built on `codex_extension_api`. `templates/goals/continuation.md` tells the working model to treat completion as unproven and audit the evidence. The model then calls `update_goal`, whose status is limited to complete, blocked, or paused at the user's request. "Judge", "evaluator" and "verdict" do not appear in the crate's source, though "verifiers" appears in the template, in another sense. Files outside the crate were not checked.
 - **OpenCode:** `packages/core/src/plugin/goal.ts` is an in-tree plugin, described in a comment as a "Stop-hook style loop". `goal/judge.txt` tells a reviewer step not to call tools or continue the work, and says the assistant's claim is not evidence. `MAX_ROUNDS` is 50 and `MAX_STALLS` is 3. The call is `ctx.session.generate({ sessionID, prompt })`, so it is a separate step on the same session. Whether it uses a different model was not established.
 - **Pi:** no first-party goal command. The third-party `@tian.zuo/pi-goal` says it follows Codex's goal architecture using Pi's extension primitives. Its source queues continuations from `agent_settled`, and `agent_before_settle` does not appear in its `index.ts` or `src/runtime.ts`. The model marks completion through `update_goal`. It was read, not run.
+- **Antigravity CLI:** Google's consumer agent has a documented `/goal` with self-reported completion and a goal stop hook; its source isn't public. See [[antigravity-cli-docs-2026-11]].
 - **Gemini CLI:** no file named for a goal or Ralph at this revision, and the requesting session's keyword search of docs and commands also found none. Hooks exist, including `AfterAgent`.
 
 ## Three-turn blocked rule
@@ -56,7 +57,7 @@ Cursor Automations: the requesting session had search snippets only, and they we
 ## Concepts & entities
 
 - [[harness-extension-and-goal-loop-axes]] · [[ralph-loop]] · [[hooks-in-modern-agents]]
-- [[codex-cli]] · [[opencode]] · [[pi-mono]] · [[claude-code]] · [[hermes-agent]] · [[openclaw]]
+- [[antigravity-cli]] · [[codex-cli]] · [[opencode]] · [[pi-mono]] · [[claude-code]] · [[hermes-agent]] · [[openclaw]]
 
 ## References
 

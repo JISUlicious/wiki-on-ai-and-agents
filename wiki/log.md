@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] ingest | Antigravity CLI evidence
+
+Seventh request from the ai agent lec session, checked against Google's post, docs and changelog. Filed [[antigravity-cli]] and [[antigravity-cli-docs-2026-11]]. Its code is not public, so its goal command is graded from documentation only. Updated [[harness-extension-and-goal-loop-axes]], [[goal-command-lineage-repos-2026]], [[gemini-cli]] and [[overview]].
+
 ## [2026-11-02] ingest | LLaMA, Huntley's Ralph post and Gemini CLI
 
 Gap-filling step 6. Filed [[llama-touvron-2023]], [[ralph-wiggum-software-engineer-huntley-2025]] and [[gemini-cli]]. The Gemini CLI README now restricts the tool to enterprise Code Assist and warns against benchmarking Gemini 4+ with it. Updated [[llama]], [[ralph-loop]] and [[overview]].

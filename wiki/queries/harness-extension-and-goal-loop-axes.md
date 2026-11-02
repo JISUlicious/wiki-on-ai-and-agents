@@ -28,7 +28,7 @@ importance: medium
 - **Claude Code builds its goal on a hook.** Its docs call `/goal` a wrapper around a prompt-based Stop hook, so here the goal loop is an extension-point use.
 - **Hermes has both routes.** Its `pre_verify` plugin hook can also keep the agent going, separately from `/goal`.
 - **Pi has a real third-party case.** `@tian.zuo/pi-goal` says it follows Codex's goal architecture using Pi's extension primitives. It queues continuations from `agent_settled`, not the `agent_before_settle` event this page first pointed to.
-- **Four implementations sit on such a surface, of different kinds.** Claude Code uses a Stop hook, Codex an in-tree extension crate, OpenCode an in-tree plugin and pi-goal a third-party extension. Hermes and OpenClaw implement goals in core, and Codex's crate dates from after its `/goal` shipped, so this is not a universal or original design.
+- **Five implementations sit on such a surface, of different kinds.** Antigravity CLI documents a goal stop hook, though its code isn't public. Claude Code uses a Stop hook, Codex an in-tree extension crate, OpenCode an in-tree plugin and pi-goal a third-party extension. Hermes and OpenClaw implement goals in core, and Codex's crate dates from after its `/goal` shipped, so this is not a universal or original design.
 - **One existing model covers both.** In [[guides-and-sensors|Böckeler's terms]], a shell gate is a computational sensor and a goal judge is an inferential one. That mapping is this wiki's. Böckeler does not discuss goal commands, and her "steering loop" is a human improving the harness.
 
 ## What the split hides
@@ -43,8 +43,9 @@ importance: medium
 | OpenClaw | Working model or operator | No separate judge found; code path not fully traced |
 | Codex CLI | Working model after a completion audit | No separate judge found in `ext/goal` |
 | pi-goal (third party) | Working model or user | No judge found in its main files |
+| [[antigravity-cli\|Antigravity CLI]] | Working model, after mapping deliverables to evidence | None described in docs; no source available |
 
-- **That suggests two completion schools.** Codex, OpenClaw and pi-goal rely on the working model reporting completion, with audit instructions in at least Codex and OpenClaw. Hermes, Claude Code and OpenCode add a separate check. This grouping is a synthesis, and "separate" does not always mean a different model.
+- **That suggests two completion schools.** Codex, OpenClaw, Antigravity CLI and pi-goal rely on the working model reporting completion, with audit instructions in at least Codex, OpenClaw and Antigravity CLI. Hermes, Claude Code and OpenCode add a separate check. This grouping is a synthesis, and "separate" does not always mean a different model.
 - **Failure behaviour differs too.** Hermes's judge fails open, so a broken judge means more work until the turn budget stops it.
 - **Proactive triggers look like a third thing.** Cron, heartbeats, `/loop` and standing intents decide when work *starts*, not when it may stop. Hermes's docs contrast timer-driven `/loop` with judge-driven `/goal`, and OpenClaw's say a goal is not a cron job or standing order.
 - **"Guardrail" overstates extensions.** Pi's security doc locates safety in limiting access, such as isolation, and its permission extensions are only examples. An extension point is not itself a guardrail.
@@ -80,7 +81,7 @@ A direct test would run the same tasks through self-report, transcript judge, bl
 
 ## References
 
-- [[agent-goal-loops-extension-docs-2026]] · [[goal-command-lineage-repos-2026]]
+- [[agent-goal-loops-extension-docs-2026]] · [[goal-command-lineage-repos-2026]] · [[antigravity-cli-docs-2026-11]]
 - [[false-success-llm-agents-advani-2026]] · [[self-report-leakage-gui-agent-judging-zhu-2026]] · [[bounded-loops-agent-harnesses-bhardwaj-2026]] · [[deploybench-research-artifact-deployment-wang-2026]]
 - [[harness-engineering-for-coding-agent-users-bockeler-2026]]
 - [[claude-code-changelog-2026]] · [[ralph-loop]] · [[hooks-in-modern-agents]] · [[plugins-hooks-harness-influence-evidence]]

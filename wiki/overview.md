@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **760 source pages**, **246 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **761 source pages**, **247 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -38,7 +38,7 @@ Almost every model in this wiki is built on the [[transformer-architecture|Trans
 - **Run agents over everything** (2022–): [[react|ReAct]]'s loop with [[tool-use|tool use]], [[reflexion|Reflexion]]'s self-reflection.
 - **Engineer the harness** (2025–): the model is one component, and what surrounds it decides much of the outcome. [[harness-vs-model-attribution]] records scaffold-only swings of 11–15 points on SWE-bench Verified with the model fixed, and a 6.4× harness effect on ARC-AGI-3 (confirmed against ARC Prize's own results). [[agentic-harness-engineering]], [[claude-code]] and [[agent-skills]] are the hub pages.
 
-The products have also converged. All five agents the wiki tracks now document [[mcp|MCP]] support, reversing a split recorded in May ([[cross-agent-comparison-2026]]). Between April and October 2026, native goal commands arrived in Codex, Hermes, Claude Code, OpenClaw and OpenCode, descending from the 2025 [[ralph-loop]] ([[goal-command-lineage-repos-2026]]). Whether "extension guardrails" and "goal loops" form two axes of harness engineering is a hypothesis, tested in [[harness-extension-and-goal-loop-axes]], and no source found states it. Influence between products is mostly undocumented, so [[ai-agent-influence-graph]] and its evidence pages grade each edge.
+The products have also converged. All five agents the wiki tracks now document [[mcp|MCP]] support, reversing a split recorded in May ([[cross-agent-comparison-2026]]). Between April and October 2026, native goal commands arrived in Codex, Hermes, Claude Code, OpenClaw and OpenCode, and Antigravity CLI also documents one, descending from the 2025 [[ralph-loop]] ([[goal-command-lineage-repos-2026]]). Whether "extension guardrails" and "goal loops" form two axes of harness engineering is a hypothesis, tested in [[harness-extension-and-goal-loop-axes]], and no source found states it. Influence between products is mostly undocumented, so [[ai-agent-influence-graph]] and its evidence pages grade each edge.
 
 ### 4. Retrieval, and memory that does not compound
 
