@@ -7,6 +7,10 @@ updated: 2026-11-02
 
 # Activity Log
 
+## [2026-11-02] ingest | LLaMA, Huntley's Ralph post and Gemini CLI
+
+Gap-filling step 6. Filed [[llama-touvron-2023]], [[ralph-wiggum-software-engineer-huntley-2025]] and [[gemini-cli]]. The Gemini CLI README now restricts the tool to enterprise Code Assist and warns against benchmarking Gemini 4+ with it. Updated [[llama]], [[ralph-loop]] and [[overview]].
+
 ## [2026-11-02] lint | Broken links, orphans and missing sources
 
 Gap-filling step 5. Of 155 one-off broken link targets, 6 were retargeted to existing pages and 148 became plain text, since none was substantive enough for its own page. [[context-window]] stays as the one deliberate placeholder, and the 4 Mermaid `[["..."]]` matches are not links. Linked the 5 orphaned sources from [[function-calling]], [[structured-outputs]], [[mixture-of-experts]] and [[sakana-ai]]. Added sources to [[dreamcoder]], [[cloze-scoring]] and [[adas]]. Left for later: sources for [[llama]], [[online-learning]] and [[strips]], and model lineage fields, which need primary verification.

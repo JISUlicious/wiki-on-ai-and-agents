@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **758 source pages**, **245 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **760 source pages**, **246 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -120,4 +120,4 @@ Filled on 2026-11-02:
 Still open:
 - **Coinage of terms:** the first uses of "LLM", "prompt engineering" and "context engineering" have no primary source in the wiki. For "harness engineering", the earliest use found is [[my-ai-adoption-journey-hashimoto-2026|Hashimoto]] (2026-02-05), which doesn't prove it was the first.
 - **Context-window pages:** dedicated pages for the context window and the system prompt, each covered only inside other pages.
-- **Primary sources for model pages:** [[llama]] has no primary source, and 28 of 63 model pages have no lineage fields. Some of those are family heads where none applies.
+- **Lineage fields:** 28 of 63 model pages have no lineage fields. Some of those are family heads where none applies.

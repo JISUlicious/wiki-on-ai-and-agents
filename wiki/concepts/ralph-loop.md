@@ -5,6 +5,7 @@ created: 2026-09-29
 updated: 2026-11-02
 sources:
   - oh-my-claude-ultrawork-2026.md
+  - ralph-wiggum-software-engineer-huntley-2025.html
 status: draft
 importance: low
 ---
@@ -29,7 +30,7 @@ A **Ralph loop** (after Ralph Wiggum) is the practice of running a coding agent 
 ## References
 
 - [[oh-my-claude-ultrawork-2026]] · [[ultrawork]]
-- Geoffrey Huntley, "Ralph Wiggum as a 'software engineer'" (2025-07-14) — <https://ghuntley.com/ralph/>
+- [[ralph-wiggum-software-engineer-huntley-2025]]
 
 ## Lineage sources
 

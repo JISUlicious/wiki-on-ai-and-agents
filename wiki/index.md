@@ -7,7 +7,7 @@ updated: 2026-11-01
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 758 sources, 245 entities, 383 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 760 sources, 246 entities, 383 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -73,6 +73,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[devin]] — Cognition's software-engineering agent (Mar 2024)
 - [[operator]] — OpenAI's browser agent (Jan 2025)
 - [[codex-cli]] — OpenAI's terminal coding agent (Apr 2025)
+- [[gemini-cli]] — Google's open-source terminal agent, now limited to enterprise Code Assist; consumer use moved to Antigravity CLI
 - [[manus]] — General-purpose agent from Butterfly Effect (Mar 2025)
 - [[langgraph]] — LangChain's state-graph agent library (Jan 2024)
 - [[claude-code]] — Anthropic's terminal coding agent
@@ -1290,6 +1291,8 @@ Surfaced from four NLP-newsletter "Top AI Papers" digests (Sep 28 – Oct 25) an
 - [[gaia-mialon-2023]] — GAIA general-assistant benchmark (Mialon et al. 2023)
 - [[deepseek-r1-2025]] — DeepSeek-R1: RL elicits emergent reasoning (DeepSeek 2025)
 - [[deepseekmath-shao-2024]] — DeepSeekMath: 51.7% on MATH; introduces GRPO, which replaces PPO's critic with a group baseline (2024-02-05)
+- [[llama-touvron-2023]] — LLaMA: 7B–65B on public data; 13B beats GPT-3 on most benchmarks (2023-02-27)
+- [[ralph-wiggum-software-engineer-huntley-2025]] — Huntley's Ralph post and the plugin that adapted it (2025-07-14)
 - [[search-r1-jin-2025]] — Search-R1: RL for multi-turn search (Jin et al. 2025)
 - [[magma-yang-2025]] — Magma: unified VLA foundation model (Yang et al., CVPR 2025)
 - [[swe-gym-pan-2024]] — SWE-Gym training env + verifier inference scaling (Pan et al., ICML 2025)

@@ -2,8 +2,9 @@
 title: LLaMA
 type: entity
 created: 2026-07-07
-updated: 2026-07-07
-sources: []
+updated: 2026-11-02
+sources:
+  - llama-touvron-2023.pdf
 family: llama
 release_date: 2023-02-24
 status: draft
@@ -29,10 +30,9 @@ This "open-weights base model" role is what makes the [[harness-vs-model-attribu
 
 ## Lineage
 
-The family has iterated through several generations (LLaMA → Llama 2 → Llama 3 and successors), broadly scaling data and context length, adding instruct/chat-tuned variants alongside base checkpoints, and shifting licence terms toward permissive-but-conditional commercial use. Individual generation pages (`llama-2`, `llama-3`) can be split out from here as sources warrant.
+The first release ([[llama-touvron-2023|Touvron et al., 2023]]) ranged from 7B to 65B and trained on about 1.4T tokens of public data. LLaMA-13B beat [[gpt-3|GPT-3]] on most benchmarks at a tenth of the size, and the models went to the research community, rather than being openly licensed from the start.
 
-> [!note] Draft
-> Created during a lint pass as a gap-fill: `[[llama]]` was the most-referenced missing page in the wiki (4 inbound links across [[meta]] and three source pages) despite 279 ingested sources. Deserves proper treatment — per-generation parameter counts, training-token budgets, licence history, and the Llama-2 / Llama-3 technical reports as first-class sources.
+The family has iterated through several generations (LLaMA → Llama 2 → Llama 3 and successors), broadly scaling data and context length, adding instruct/chat-tuned variants alongside base checkpoints, and shifting licence terms toward permissive-but-conditional commercial use. Individual generation pages (`llama-2`, `llama-3`) can be split out from here as sources warrant.
 
 ## Related
 
@@ -42,4 +42,4 @@ The family has iterated through several generations (LLaMA → Llama 2 → Llama
 
 ## References
 
-- Referenced across the corpus; no dedicated LLaMA technical report ingested yet (see draft note).
+- [[llama-touvron-2023]]
