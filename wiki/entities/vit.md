@@ -2,7 +2,7 @@
 title: ViT (Vision Transformer)
 type: entity
 created: 2026-05-13
-updated: 2026-05-13
+updated: 2026-11-03
 sources:
   - vit-dosovitskiy-2020.md
 family: transformer
@@ -47,7 +47,7 @@ The Vision Transformer (ViT) is the image-classification model introduced in "[[
 
 | Predecessor | Successor |
 |---|---|
-| [[transformer]] (Vaswani 2017) | Downstream multimodal models (CLIP, ALIGN, Flamingo, GPT-4V) all use a ViT-style image encoder. Self-supervised variants (DINO, MAE, BEiT). |
+| [[transformer]] (Vaswani 2017) | Downstream multimodal models (CLIP, ALIGN, Flamingo, GPT-4V) all use a ViT-style image encoder (see [[clip]]). Self-supervised variants (DINO, [[dinov2\|DINOv2]], MAE, BEiT). |
 
 ViT was the first definitive proof that the [[transformer-architecture|Transformer]] is a *general* sequence model — not a language model — and is the architectural ancestor of every modern vision-language model.
 

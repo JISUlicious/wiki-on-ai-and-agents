@@ -2,10 +2,11 @@
 title: Word Embeddings
 type: concept
 created: 2026-05-14
-updated: 2026-11-02
+updated: 2026-11-03
 sources:
   - mikolov-word2vec-2013.md
   - mikolov-skipgram-2013.md
+  - platonic-representation-hypothesis-jepas-balestriero-2026.md
 status: complete
 importance: high
 ---
@@ -33,7 +34,10 @@ By 2019, contextual embeddings dominated NLP tasks, but static word vectors rema
 
 Word embeddings were the first proof-of-concept that **continuous, learned representations of language are tractable and transferable**. Every later representation — sentence embeddings, [[dense-retrieval|dense passage retrieval]], multimodal alignments (CLIP), and the input embeddings of every modern LLM — descends from this thread.
 
+One early finding has a 2026 sequel. Embeddings trained separately on two languages are related by a linear map, even by a rotation that can be found without any parallel text. [[platonic-representation-hypothesis-jepas-balestriero-2026]] extends that to image and text encoders, proving when they agree up to one rotation (see [[platonic-representation-hypothesis]]).
+
 ## References
 
 - [[efficient-estimation-of-word-representations-mikolov-2013]]
 - [[distributed-representations-of-words-and-phrases-mikolov-2013]]
+- [[platonic-representation-hypothesis-jepas-balestriero-2026]]

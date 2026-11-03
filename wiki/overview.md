@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-11-02
+updated: 2026-11-03
 tags: []
 ---
 
@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017â€“2026. It beg
 
 ## Summary
 
-The wiki covers **761 source pages**, **247 entities**, **383 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-02). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **762 source pages**, **250 entities**, **385 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-03). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -108,6 +108,7 @@ Many co-authors of [[gpt-2-radford-2019|GPT-2]] and [[gpt-3-brown-2020|GPT-3]] â
 - **When does a multi-agent system beat a single agent with the same compute?** [[multi-agent]] holds evidence both ways.
 - **Is 4-bit quantization safe, and is code disproportionately damaged?** Both are still disputed ([[quantization-quality]], [[quantization-safety]]).
 - **What does scalable [[institutional-alignment]] look like in practice?**
+- **Is next-token prediction an inefficient route to shared representations?** A 2026 theorem says the choice of positive pairs, not scale, decides whether models of different modalities converge, and a 109M text [[jepa|JEPA]] out-aligns 72B LLMs with a vision model. The result comes from JEPA proponents and is unreplicated ([[platonic-representation-hypothesis]]).
 - **Does the always-appending agent loop have a stable fixed point?** [[catastrophic-remembering]] suggests not, without deliberate deletion.
 
 ## Gaps worth filling

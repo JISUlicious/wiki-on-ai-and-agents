@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-11-01
+updated: 2026-11-03
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 761 sources, 247 entities, 383 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 762 sources, 250 entities, 385 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -16,6 +16,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[transformer-decoder]] — Decoder-only Transformer for Wikipedia (Liu 2018), architectural ancestor of GPT
 - [[bert]] — Bidirectional encoder, MLM pre-training (Devlin 2018)
 - [[t5]] — Text-to-text encoder-decoder Transformer; introduced the C4 corpus (Raffel 2019)
+- [[clip]] — OpenAI's contrastive image–text encoders (2021); 400M pairs, zero-shot classification
+- [[dinov2]] — Meta's self-supervised ViT image encoders (2023); the reference vision model for the PRH
 
 ### Models — GPT family
 - [[gpt-1]] — First GPT, 117M params (Radford 2018)
@@ -130,6 +132,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[dzmitry-bahdanau]] — Soft attention (2014)
 - [[kyunghyun-cho]] — NMT pioneer; NYU
 - [[yoshua-bengio]] — Turing Award winner; Mila Montreal
+- [[yann-lecun]] — Turing Award winner; convolutional nets, JEPA; NYU, ex-Meta/FAIR, AMI Labs
 
 ### People — Transformer / pre-training era
 - [[ashish-vaswani]] — Transformer first author
@@ -302,6 +305,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[decoder-only-transformer]] — The dominant variant for modern LLMs
 - [[mixture-of-experts]] — Sparse expert routing; decouples total capacity from per-token compute (active vs total params)
 - [[world-model]] — Learned model of environment dynamics; predict latent states, not just tokens (Cosmos 3, Mirage, JEPA, Genie 3/4)
+- [[jepa]] — Joint-Embedding Predictive Architecture: predict embeddings, not tokens or pixels (LeCun 2022)
 - [[state-space-model]] — Fixed-state linear recurrences: S4 → Mamba → Mamba-2 (SSD = linear attention) → Gated DeltaNet; recall limit and hybrids (rewritten from primary sources 2026-10-27)
 - [[encoder-decoder]] — Two-stack architecture for seq2seq tasks
 - [[attention-mechanism]] — Query/key/value weighted aggregation
@@ -650,6 +654,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 
 ### Multimodal
 - [[multimodal-llm]] — LLMs accepting / producing multiple modalities
+- [[platonic-representation-hypothesis]] — models of different modalities converge to one representation; proved for JEPAs in 2026
 
 ### Benchmarks
 - [[glue]] — General NLP understanding suite
@@ -805,6 +810,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[memex-rl-wang-2026]] — Memex(RL): indexed experience memory, compress-without-discard + RL read/write (Wang et al., Accenture 2026)
 
 ### Frontier-era (2026)
+- [[platonic-representation-hypothesis-jepas-balestriero-2026]] — Platonic Representation Theorem for JEPAs; a 109M text JEPA out-aligns 72B LLMs with DINOv2 (Balestriero & LeCun, Oct 2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
 - [[global-workspace-in-language-models-anthropic-2026]] — The J-space: an emergent global workspace in Claude, via the Jacobian lens (Gurnee/Sofroniew/Lindsey et al., Anthropic, 2026-07-06)
 - [[diffusing-blame-yamada-2026]] — Dale-compliant dual-stream networks trained without backprop via Error Diffusion; task-dependent credit-assignment bottlenecks (Sakana AI, ALIFE 2026)

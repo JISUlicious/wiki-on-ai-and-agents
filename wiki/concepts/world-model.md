@@ -2,13 +2,14 @@
 title: World Model
 type: concept
 created: 2026-06-19
-updated: 2026-10-30
+updated: 2026-11-03
 sources:
   - cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026.md
   - latent-spatial-memory-for-video-world-models-wang-2026.md
   - learn-from-your-own-latents-korchinski-2026.md
   - agentic-world-modeling-foundations-capabilities-laws-chu-2026.md
   - genie-4-new-generation-of-world-simulation-deepmind-2026.md
+  - platonic-representation-hypothesis-jepas-balestriero-2026.md
 status: draft
 importance: medium
 tags:
@@ -27,6 +28,7 @@ A **world model** is a learned internal model of an environment's dynamics — i
 - **Physical AI / robotics** — [[cosmos-3-omnimodal-world-models-for-physical-ai-nvidia-2026|Cosmos 3]] (NVIDIA): an *omnimodal* world model unifying perception, reasoning, simulation, and action generation for robot policies.
 - **Video world models** — [[latent-spatial-memory-for-video-world-models-wang-2026|Mirage]]: a video world model with a **latent spatial memory** for 3D-consistent generation at far lower GPU cost than RGB-memory baselines.
 - **Theory of latent prediction** — [[learn-from-your-own-latents-korchinski-2026]]: a sample-complexity argument for *why* predicting your own latents (JEPA-style) is exponentially more data-efficient than token prediction.
+- **Representation theory, with a caveat** — [[platonic-representation-hypothesis-jepas-balestriero-2026]] proves that [[jepa|JEPAs]] trained on different modalities converge to one representation up to a rotation (see [[platonic-representation-hypothesis]]). Its analysis uses an identity predictor, so it explicitly does **not** cover the action-conditioned JEPAs used as world models.
 - **Real-time interactive pixel world models**: DeepMind's [[genie-3|Genie 3]] (2025) and [[genie-4|Genie 4]] (2026) generate photorealistic worlds frame by frame, which users navigate and edit with text. Genie 4 adds native audio and dialogue. A Gemini agent steers it in the loop, which DeepMind calls a step toward **hybrid world models**: language or code models plan, and a pixel model renders. See [[genie-4-new-generation-of-world-simulation-deepmind-2026]]. There are no published metrics.
 - **Agentic world modeling** — [[agentic-world-modeling-foundations-capabilities-laws-chu-2026]]: foundations/capabilities/laws for world models built for agents.
 
@@ -39,6 +41,7 @@ World models are the bridge between language agents and **embodied / physical AI
 - [[latent-reasoning]] — reasoning in continuous latent space; world models predict latent *states*.
 - [[memory-management]] — Mirage's "latent spatial memory" is a world-model-specific memory substrate.
 - [[scaling-laws]] — latent-prediction objectives change the data-efficiency frontier.
+- [[jepa]] — LeCun's joint-embedding predictive architecture, the latent-prediction family behind several world-model proposals.
 
 ## References
 

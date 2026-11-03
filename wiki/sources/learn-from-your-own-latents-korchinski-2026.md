@@ -2,7 +2,7 @@
 title: "Learn from your own latents and not from tokens: A sample-complexity theory"
 type: source
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-11-03
 sources:
   - learn-from-your-own-latents-korchinski-2026.md
 arxiv_id: "2605.27734"
@@ -40,7 +40,8 @@ Using a tractable **probabilistic context-free grammar** that generates visible 
 
 - [[latent-reasoning]] — predicting internal latent representations rather than surface tokens.
 - [[scaling-laws]] — sample-complexity / data-efficiency separations.
-- JEPA, data2vec, world models, H-JEPA — discussed in text; no dedicated wiki pages.
+- [[jepa]] · [[world-model]]: the latent-prediction family this paper analyses. data2vec and H-JEPA have no dedicated pages.
+- [[platonic-representation-hypothesis-jepas-balestriero-2026]]: a 2026 paper that reaches a related conclusion (JEPAs beat next-token prediction on efficiency) from cross-modal alignment rather than sample complexity.
 
 ## References
 

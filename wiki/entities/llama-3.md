@@ -2,12 +2,13 @@
 title: Llama 3
 type: entity
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-11-03
 sources:
   - a-mem-xu-2025.md
   - memory-r1-yan-2025.md
   - trianglemix-decoding-time-contribution-sparsity-he-2025.md
   - probe-process-benchmark-hallucination-detection-2026.md
+  - platonic-representation-hypothesis-jepas-balestriero-2026.md
 family: llama
 predecessor: [[llama]]
 release_date: 2024-04-18
@@ -26,6 +27,7 @@ Third generation of [[meta|Meta]]'s open-weights [[llama|LLaMA]] family. Llama 3
 - **Memory systems.** [[memory-r1-yan-2025|Memory-R1]] uses LLaMA-3.1-8B-Instruct as its main backbone. [[a-mem-xu-2025|A-MEM]] evaluates on Llama 3.2 1B/3B alongside [[qwen-2-5|Qwen2.5]].
 - **Fine-tuning baseline.** In [[probe-process-benchmark-hallucination-detection-2026|PROBE]], an SFT'd Llama-3.1-8B beats frontier models at evidence finding (see [[llama]]).
 - **Inference-efficiency test bed.** Most prefill-sparsity and token-pruning papers here report on Llama 3 / 3.1 8B. [[minference-dynamic-sparse-attention-jiang-2024|MInference]] uses the long-context LLaMA-3-8B-262K / -1M variants. [[trianglemix-decoding-time-contribution-sparsity-he-2025|TriangleMix]], [[speculative-prefill-liu-2025|Speculative Prefill]] and [[sliminfer-dynamic-token-pruning-long-2025|SlimInfer]] use Llama 3.1. [[cross-family-speculative-prefill-upasani-2026|Cross-family speculative prefill]] pairs a Llama-3.2-1B draft with a Llama-3.1-8B target. See [[sparse-prefill]] and [[token-pruning]].
+- **Cross-modal alignment baseline.** In [[platonic-representation-hypothesis-jepas-balestriero-2026]], Llama-3-8B and -70B are measured against [[dinov2|DINOv2]] on the [[platonic-representation-hypothesis]] benchmark; Llama-3-70B scores .151, below a 109M good-view [[jepa|JEPA]] (.184). LLaMA-3-8B is also the language model inside the LLaVA recaptioner that wrote most of that paper's training text.
 - **Quantization.** Llama 3.x appears throughout the measurements in [[quantization-quality]] and [[quantization-performance]].
 
 ## Lineage
@@ -40,4 +42,4 @@ It inherits the dense [[decoder-only-transformer]] recipe of LLaMA / Llama 2 (th
 
 - [Meta, "Introducing Meta Llama 3" (2024-04-18)](https://ai.meta.com/blog/meta-llama-3/) — release date, 8B/70B
 - [The Llama 3 Herd of Models, arXiv:2407.21783](https://arxiv.org/abs/2407.21783) — 405B dense, up to 128K context
-- [[a-mem-xu-2025]] · [[memory-r1-yan-2025]] · [[trianglemix-decoding-time-contribution-sparsity-he-2025]] · [[probe-process-benchmark-hallucination-detection-2026]]
+- [[a-mem-xu-2025]] · [[memory-r1-yan-2025]] · [[platonic-representation-hypothesis-jepas-balestriero-2026]] · [[trianglemix-decoding-time-contribution-sparsity-he-2025]] · [[probe-process-benchmark-hallucination-detection-2026]]
