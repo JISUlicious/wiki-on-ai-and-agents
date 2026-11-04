@@ -2,7 +2,7 @@
 title: "Evil Qwen (two-neuron steering, 2026)"
 type: entity
 created: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-03
 sources:
   - neuron-explorer-reactions-2026-10.md
   - neuron-explorer-lyramakesmusic-2026.md
@@ -61,6 +61,10 @@ Most reactions are known only through the AGTP aggregator post and short X repli
 > - The Olmo, Gemma and Qwen3-8B neuron claims come only from secondary reporting.
 > - "Evil" is measured by hostile-word lexicons and LLM judges, not human evaluation.
 > - Replicators differ on whether the push is additive or a clamp; see the contradiction note in [[neuron-explorer-lyramakesmusic-2026]].
+
+## Contrast: editing the weights instead
+
+One replicator found the Evil Qwen push **cannot be merged into the weights**: it is an *added* vector, and the down-projection has no bias to hold it. [[weight-space-programming-takehi-2026|Weight-Space Programming]] (MIT CSAIL, Nov 2026) shows the complementary operation on a smaller sibling, Qwen3.5-0.8B. [[gpt-6-astra|GPT-6 Astra]] *removed* a looping direction from the MLP output columns of layers 15 and 19 (131,072 weights). Projecting a direction out is a linear change to the weight matrix, so it is baked in and needs no hook. Both results locate a behaviour in a direction written by mid-layer MLPs; neither reports human evaluation.
 
 ## References
 

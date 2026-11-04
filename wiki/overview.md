@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **762 source pages**, **250 entities**, **385 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-03). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **764 source pages**, **252 entities**, **386 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-03). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
@@ -91,6 +91,7 @@ Much of it is grounded in local inference on [[apple-silicon|Apple Silicon]] thr
 - [[rlhf|RLHF]] aligns behaviour without opening the black box.
 - [[mechanistic-interpretability]] ([[monosemanticity]], [[emotion-concepts-anthropic-2026|emotion vectors]] in Claude Sonnet 4.5) aims to read the algorithms directly.
 - [[institutional-alignment]] proposes governance at the scale of billions of agents.
+- [[weight-space-programming|Weight-Space Programming]] (Nov 2026) has a frontier LLM edit a model's weights directly: removing one looping direction (0.016% of weights) lifted Qwen3.5-0.8B's MATH-500 from 7.9% to 48.1%. It unlocked an ability the loops hid; on a model that didn't loop it added nothing.
 - [[qwen-scope|Qwen-Scope]] releases open [[sparse-autoencoder|sparse autoencoders]] for Qwen3 and 3.5, and argues they can be development tools, although its steering claims are qualitative.
 - Chain-of-thought is not a complete window: [[not-all-llm-reasoning-visible-in-cot-baherwani-2026]].
 

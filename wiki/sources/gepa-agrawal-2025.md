@@ -2,7 +2,7 @@
 title: "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning"
 type: source
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-11-03
 sources:
   - gepa-agrawal-2025.md
 arxiv_id: "2507.19457"
@@ -40,7 +40,7 @@ importance: high
 
 **Source**: `sources/gepa-agrawal-2025.md` ([arXiv:2507.19457](https://arxiv.org/abs/2507.19457)). The text read is the **ICLR 2026 (Oral)** version.
 
-**Authors**: Lakshya A Agrawal, Shangyin Tan, Dilara Soylu, Noah Ziems, Rishi Khare, Krista Opsahl-Ong, Arnav Singhvi, Herumb Shandilya, Michael J Ryan, Meng Jiang, Christopher Potts, Koushik Sen, Alexandros G. Dimakis, [[ion-stoica|Ion Stoica]], Dan Klein, Matei Zaharia, Omar Khattab.
+**Authors**: Lakshya A Agrawal, Shangyin Tan, Dilara Soylu, Noah Ziems, Rishi Khare, Krista Opsahl-Ong, Arnav Singhvi, Herumb Shandilya, Michael J Ryan, Meng Jiang, Christopher Potts, Koushik Sen, Alexandros G. Dimakis, [[ion-stoica|Ion Stoica]], Dan Klein, Matei Zaharia, [[omar-khattab|Omar Khattab]].
 - Affiliations: [[uc-berkeley|UC Berkeley]], [[stanford-university|Stanford]], BespokeLabs.ai, Notre Dame, Databricks, [[mit|MIT]].
 
 **Dates**: v1 published 2025-07-25; v2 2026-02-14. Both were verified with the arXiv API: v2 is the latest, with the comment "Accepted to ICLR 2026 (Oral)".

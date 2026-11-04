@@ -2,11 +2,12 @@
 title: Qwen
 type: entity
 created: 2026-08-30
-updated: 2026-10-30
+updated: 2026-11-03
 sources:
   - qwen3.8-flash-next-model-card-2026.md
   - anthropic-threat-intelligence-report-september-2026.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - weight-space-programming-takehi-2026.md
 family: qwen
 status: draft
 importance: high
@@ -45,6 +46,7 @@ Its significance is availability at many sizes. The family ships dense models fr
 
 ## Related 2026 sources
 
+- [[weight-space-programming-takehi-2026]] — GPT-6 Astra edits 0.016% of Qwen3.5-0.8B's weights to remove a thinking loop the model card warns about; MATH-500 7.9% → 48.1% (see [[weight-space-programming]])
 - [[omlx-specprefill-github-2026]] — the community-recommended pair: Qwen3.5-0.8B as SpecPrefill draft for Qwen3.8-27B — same tokenizer (vocab 248,320), both with MTP heads, target is dense
 
 ## Lineage sources

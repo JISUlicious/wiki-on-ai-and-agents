@@ -2,7 +2,7 @@
 title: "Harness vs. Model: Performance Attribution (factorial studies)"
 type: comparison
 created: 2026-06-22
-updated: 2026-10-07
+updated: 2026-11-03
 sources:
   - cross-agent-comparison-doc-2026.md
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
@@ -110,7 +110,7 @@ Surfaced via newsletter ingests; see [[index]].
 > The reasoning below — that 38.3% is itself harnessed — is right. The conclusion is wrong: 7.8% is Sol's **Semi-Private** score, while NVIDIA's 85.1% and the 13.33% baseline are both on the **Public** set. The ~11× multiple therefore crosses game sets, and 6.4× is the like-for-like figure (see the resolved callout above). Kept below for the record.
 
 > [!note] Update 2026-09-07 — a third number, and it points the other way
-> OpenAI's **GPT-6 Astra launch comparison** reports **GPT-5.6 Sol at 7.8%** on ARC-AGI-3. That is a third independent figure for the same raw model, and it sits next to Prime Agent's **7.0%** ("ARC harness") rather than its 38.3% ("Responses API").
+> OpenAI's **[[gpt-6-astra|GPT-6 Astra]] launch comparison** reports **GPT-5.6 Sol at 7.8%** on ARC-AGI-3. That is a third independent figure for the same raw model, and it sits next to Prime Agent's **7.0%** ("ARC harness") rather than its 38.3% ("Responses API").
 >
 > The most likely reconciliation: **38.3% is itself a harnessed number** — the Responses API supplies its own agentic loop — while ~7–8% is the genuinely raw baseline, and NVIDIA's 13.3% is a fourth measurement condition. If the raw Sol baseline is ~7.8%, NVIDIA's 85.1% is roughly an **11× harness effect, larger than the 6.4× originally recorded**, not smaller.
 >

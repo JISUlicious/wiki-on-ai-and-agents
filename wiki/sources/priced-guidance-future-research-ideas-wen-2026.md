@@ -2,7 +2,7 @@
 title: "Priced Guidance: Can Language Models Generate Future Research Ideas?"
 type: source
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-03
 sources:
   - priced-guidance-future-research-ideas-wen-2026.md
 arxiv_id: "2610.04976"
@@ -34,7 +34,7 @@ Asking whether a model *can* produce a future paper's idea runs into a tiny prob
 
 ## Key points
 
-- **Test set:** 87 recent Top-1 Hugging Face Daily Papers. Generators: Opus 5, Fable 5.1, GPT-6 Astra, GPT-5.6 Sol, GLM 5.3.
+- **Test set:** 87 recent Top-1 Hugging Face Daily Papers. Generators: Opus 5, Fable 5.1, [[gpt-6-astra|GPT-6 Astra]], GPT-5.6 Sol, GLM 5.3.
 - **Median cost (Essence judge):** Fable 5.1 lowest at **69.9 bits**, then 70.4 and 71.6 for the next two. GLM 5.3 needs 102.4.
 - A uniform **ensemble** of Fable 5.1, Opus 5 and Astra reaches **55.8 bits**, which is 14.1 bits or about 18,000× better on the probability bound.
 - **For scale:** compressing the same gold summary *verbatim* costs 1,147 bits with GLM 5.3 and 5,712 bits with gzip.

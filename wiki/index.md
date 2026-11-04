@@ -7,7 +7,7 @@ updated: 2026-11-03
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 762 sources, 250 entities, 385 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 764 sources, 252 entities, 386 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -24,6 +24,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[gpt-2]] — 1.5B params, zero-shot transfer thesis (Radford 2019)
 - [[gpt-3]] — 175B params, in-context learning emerges (Brown 2020)
 - [[gpt-4]] — Multimodal, RLHF-aligned, undisclosed architecture (OpenAI 2023)
+- [[gpt-6-astra]] — OpenAI's 2026 frontier model; reads and edits network weights directly in the Weight-Space Programming post
 - [[llama]] — Meta's open-weights model family; the default base model across the research corpus
 - [[instructgpt]] — GPT-3 + SFT/RLHF; direct predecessor of ChatGPT (Ouyang 2022)
 - [[webgpt]] — GPT-3 fine-tuned to operate a web browser (Nakano 2021)
@@ -192,6 +193,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[nikunj-saunshi]] — Google Research; "latent thoughts" framing (Saunshi 2025, Gatmiry 2024)
 
 ### People — Other
+- [[omar-khattab]] — DSPy and ColBERT creator; MIT CSAIL; senior author of Weight-Space Programming
 - [[blaise-aguera-y-arcas]] — Google research VP; Paradigms of Intelligence team
 - [[james-evans]] — Computational social scientist; UChicago + Santa Fe Institute
 - [[mario-zechner]] — pi-mono creator; "badlogic"
@@ -703,6 +705,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 ### Steering and interpretability (internal-mechanism safety)
 - [[steering]] — Umbrella: inference-time activation interventions
 - [[guardrailing]] — Paired umbrella: external boundary enforcement
+- [[weight-space-programming]] — A general LLM reads and edits network weights directly, no gradients (MIT CSAIL, Nov 2026)
 - [[activation-engineering]] — Activation-level intervention framework
 - [[activation-addition]] — Adding steering vectors to residual stream
 - [[steering-vectors]] — Learned direction vectors used for activation addition
@@ -810,6 +813,8 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[memex-rl-wang-2026]] — Memex(RL): indexed experience memory, compress-without-discard + RL read/write (Wang et al., Accenture 2026)
 
 ### Frontier-era (2026)
+- [[weight-space-programming-takehi-2026]] — GPT-6 Astra reads, fixes and writes network weights; removes Qwen3.5-0.8B's looping direction, MATH-500 7.9% → 48.1% (Takehi et al., MIT CSAIL, Nov 2026)
+- [[gpt-6-astra-edits-qwen-weights-runtimewire-2026]] — Runtime Wire news report on the Weight-Space Programming post (Nov 2026)
 - [[platonic-representation-hypothesis-jepas-balestriero-2026]] — Platonic Representation Theorem for JEPAs; a 109M text JEPA out-aligns 72B LLMs with DINOv2 (Balestriero & LeCun, Oct 2026)
 - [[emotion-concepts-anthropic-2026]] — Functional emotions in Claude Sonnet 4.5 (Anthropic)
 - [[global-workspace-in-language-models-anthropic-2026]] — The J-space: an emergent global workspace in Claude, via the Jacobian lens (Gurnee/Sofroniew/Lindsey et al., Anthropic, 2026-07-06)

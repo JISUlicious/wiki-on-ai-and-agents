@@ -2,10 +2,14 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-02
+updated: 2026-11-03
 ---
 
 # Activity Log
+
+## [2026-11-03] ingest | Weight-Space Programming (GPT-6 Astra edits Qwen weights)
+
+Ingested `sources/gpt-6-astra-edits-qwen-weights-runtimewire-2026.md` (Runtime Wire news) and its primary source `sources/weight-space-programming-takehi-2026.md` (Takehi, Teoh, Zhang and Khattab, MIT CSAIL blog post, 2026-11-02). Pages created: [[weight-space-programming-takehi-2026]], [[gpt-6-astra-edits-qwen-weights-runtimewire-2026]], [[weight-space-programming]], [[gpt-6-astra]], [[omar-khattab]]. Pages updated: [[evil-qwen]], [[qwen]], [[gemma]], [[mechanistic-interpretability]], [[recursive-self-improvement]], [[sycophancy]], [[mit]], [[qwen-scope-sparse-features-development-tools-deng-2026]], [[dspy]], [[meta-harness-lee-2026]], [[gepa-agrawal-2025]], [[harness-vs-model-attribution]], [[priced-guidance-future-research-ideas-wen-2026]], [[overview]], [[index]]. Key takeaways: GPT-6 Astra read and wrote small networks' weights without gradients and removed a looping direction from Qwen3.5-0.8B (131,072 weights), lifting MATH-500 from 7.9% to 48.1%, but only with 50 forward passes; it could not improve Gemma 3 270M, which doesn't loop. Contrasted with [[evil-qwen]]: that push is an activation hook that cannot be merged into weights, while this edit is baked in. Minor discrepancy: the article says no independent replication; the blog reports a Hugging Face rebuild and re-evaluation of the released edit (not of the method).
 
 ## [2026-11-03] ingest | Proving and Improving the Platonic Representation Hypothesis with JEPAs
 

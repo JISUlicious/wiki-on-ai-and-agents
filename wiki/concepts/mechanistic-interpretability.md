@@ -2,12 +2,13 @@
 title: Mechanistic Interpretability
 type: concept
 created: 2026-05-13
-updated: 2026-10-30
+updated: 2026-11-03
 sources:
   - emotion-concepts-anthropic-2026.md
   - neuron-explorer-lyramakesmusic-2026.md
   - zoom-in-circuits-olah-2020.md
   - feature-visualization-olah-2017.md
+  - weight-space-programming-takehi-2026.md
 status: complete
 importance: high
 ---
@@ -79,4 +80,5 @@ Surfaced via newsletter ingests; see [[index]].
 - [[hope-hilbert-operator-progressive-encoding-mobahi-2026]] — neurons as rank-1 Hilbert–Schmidt operators; data-free deconstruction from BatchNorm statistics
 - [[neuron-explorer-lyramakesmusic-2026]] — steering-first neuron explorer for Qwen3.5-4B (labels every neuron by what it writes, with random-direction controls); spawned the viral [[evil-qwen]] two-neuron recipe
 - Vision-era roots, now ingested: [[visualizing-understanding-convnets-zeiler-2013]], [[feature-visualization-olah-2017]] and [[zoom-in-circuits-olah-2020]] (the [[circuits]] claims). Layer-depth comparison with LLMs: [[layer-depth-hierarchy-cnn-vs-llm]]
+- [[weight-space-programming-takehi-2026]] — [[weight-space-programming|Weight-Space Programming]]: GPT-6 Astra reads small networks' weights (finding induction heads unprompted) and removes a looping direction from Qwen3.5-0.8B; failed to read sycophancy from weights alone
 - [[qwen-scope-sparse-features-development-tools-deng-2026]]: Qwen-Scope, an open SAE suite for Qwen3/3.5 framed as model-development tooling rather than post-hoc analysis

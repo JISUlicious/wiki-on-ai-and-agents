@@ -2,7 +2,7 @@
 title: DSPy
 type: entity
 created: 2026-10-08
-updated: 2026-10-08
+updated: 2026-11-03
 sources:
   - gepa-agrawal-2025.md
 status: draft
@@ -13,7 +13,7 @@ tags:
 
 # DSPy
 
-An open-source framework (Khattab et al., 2022 and 2024; Stanford-originated) for writing LLM pipelines as **declarative modules**, which are then *compiled*: an optimizer tunes their prompts and demonstrations against a metric. The GEPA paper's reference is "DSPy: Compiling declarative language model calls into state-of-the-art pipelines."
+An open-source framework ([[omar-khattab|Khattab]] et al., 2022 and 2024; Stanford-originated) for writing LLM pipelines as **declarative modules**, which are then *compiled*: an optimizer tunes their prompts and demonstrations against a metric. The GEPA paper's reference is "DSPy: Compiling declarative language model calls into state-of-the-art pipelines."
 
 - **Optimizers in or around DSPy:** few-shot bootstrapping; **MIPROv2** (Opsahl-Ong et al. 2024, joint instruction and example search via Bayesian optimization); SIMBA; and **[[gepa|GEPA]]**, which the GEPA paper says "has been integrated into the DSPy… framework".
 - **In this wiki:**

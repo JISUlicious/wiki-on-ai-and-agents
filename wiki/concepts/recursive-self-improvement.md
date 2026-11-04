@@ -2,7 +2,7 @@
 title: Recursive Self-Improvement
 type: concept
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-03
 sources:
   - last-ai-built-by-humans-recursive-self-improvement-duan-2026.md
   - harness-engineering-self-improvement-weng-2026.md
@@ -60,4 +60,5 @@ The survey calls effective L5 (better successors under matched budgets and indep
 ## Related
 
 - [[self-improving-agent]] · [[recursive-agent-harnessing]] · [[darwin-godel-machine]] · [[agentic-harness-engineering]] · [[agentic-rl]] · [[rl-environment-synthesis]]
+- [[weight-space-programming]] — a proposed route in which a model edits its own or a successor's weights directly instead of writing training code; speculative in [[weight-space-programming-takehi-2026]], with no experiment
 - [[agent-plasticity-measuring-self-improvement-singh-2026]] · [[on-the-fragility-of-self-improving-agents-ye-2026]] · [[from-agi-to-asi-genewein-2026]] (RSI as one of four AGI→ASI pathways)

@@ -2,7 +2,7 @@
 title: Gemma
 type: entity
 created: 2026-09-30
-updated: 2026-10-27
+updated: 2026-11-03
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - uniprefill-block-wise-dynamic-sparsification-fan-2026.md
@@ -14,6 +14,7 @@ sources:
   - wikiskill-compiling-agent-experience-tang-2026.md
   - exploiting-llm-quantization-egashira-2024.md
   - q-resafe-chen-2025.md
+  - weight-space-programming-takehi-2026.md
 family: gemma
 parameters: 270M to 31B across generations
 release_date: 2024-02-21
@@ -41,6 +42,7 @@ tags:
 - **Hybrid attention limits prefill tricks.** Per UniPrefill, Gemma-3-12B has 48 layers in a 5:1 sliding-window : global pattern, so only 8 layers are quadratic. Sparse attention gains least there (1.49× TTFT at 128K against 2.26× on LLaMA-3.1-8B), and it runs at a net loss at 4K. [[methods-to-speed-up-prompt-processing]] recommends token pruning instead for this kind of model. See [[sparse-attention]].
 - **Gemma 4 26B A4B as the MoE workhorse.** It is DiffusionGemma's matched autoregressive sibling: its opaque serial depth is 28.6× naively and 1.1× once the inter-step bottleneck is counted. It is the only model [[weight-streaming|TurboFieldfare]] streams. Lichen runs it frozen on llama.cpp for [[jev|Jev]]-style decisions ([[system-one-ecosystem-sweep-2026-09-28]]). See [[mixture-of-experts]].
 - **Gemma 4 31B as the open-weight agent baseline.** It serves as a backbone or comparand in WikiSkill (33.9 → 73.1 on LiveMath with skills transferred from a 4B model), [[meta-n-recursive-self-improvement-emergent-depth-kim-2026|Meta^n]], [[evomal-self-poisoning-self-evolving-coding-agents-wu-2026|EvoMal]] and [[evo-bench-can-language-models-improve-agent-harness-huang-2026|Evo-Bench]].
+- **A negative control for weight editing.** In [[weight-space-programming-takehi-2026]], Gemma 3 270M is where [[weight-space-programming|Weight-Space Programming]] failed: it rarely loops, so no edit moved MATH-500 by more than a point. Fine-tuned copies were also used to test whether GPT-6 Astra could spot a sycophant from weights alone (it could not without attention patterns).
 - **Unstable where architecture is unusual.** Recirculation finds Gemma 4 E2B/E4B sweeps unstable, which it attributes to cross-layer KV sharing and per-layer embeddings. Training-free looping gives no robust gain on Gemma 3.
 
 ## Lineage

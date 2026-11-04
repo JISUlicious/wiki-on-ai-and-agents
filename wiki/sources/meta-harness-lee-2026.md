@@ -2,7 +2,7 @@
 title: "Meta-Harness: End-to-End Optimization of Model Harnesses"
 type: source
 created: 2026-06-03
-updated: 2026-10-21
+updated: 2026-11-03
 sources:
   - meta-harness-lee-2026.md
 arxiv_id: "2603.28052"
@@ -46,7 +46,7 @@ Empirically the discovered harnesses are strong across three regimes: on online 
 - [[code-as-harness]] — harness treated as searchable, optimizable code
 - [[llm-agent]], [[reasoning]], [[code-generation]]
 - [[terminal-bench]], retrieval-augmented generation, context management
-- [[stanford-university]], [[mit]] (Omar Khattab), KRAFTON (Kangwook Lee)
+- [[stanford-university]], [[mit]] ([[omar-khattab|Omar Khattab]]), KRAFTON (Kangwook Lee)
 - [[chelsea-finn]], Omar Khattab
 
 ## References

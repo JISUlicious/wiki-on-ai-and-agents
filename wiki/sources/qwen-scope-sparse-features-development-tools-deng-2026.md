@@ -2,7 +2,7 @@
 title: "Qwen-Scope: Turning Sparse Features into Development Tools for Large Language Models"
 type: source
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-03
 sources:
   - qwen-scope-sparse-features-development-tools-deng-2026.md
 arxiv_id: "2605.11887"
@@ -91,6 +91,7 @@ The paper's thesis is that SAEs should be **development tools, not only post-hoc
 - [[evil-qwen]] · [[neuron-explorer-lyramakesmusic-2026]]: community steering of Qwen internals.
 - [[supervised-fine-tuning]] · [[grpo]]: post-training uses.
 - [[mmlu]] · [[gsm8k]]: benchmark-overlap analysis.
+- [[weight-space-programming-takehi-2026]]: the same failure (repetition loops in small Qwen models) located as a direction and removed by a direct weight edit rather than RL.
 
 ## References
 
