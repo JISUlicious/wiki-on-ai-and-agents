@@ -2,9 +2,10 @@
 title: Prompt Injection
 type: concept
 created: 2026-05-14
-updated: 2026-10-08
+updated: 2026-11-04
 sources:
   - greshake-indirect-injection-2023.md
+  - terminal-mac-govijr-github.md
 status: complete
 importance: high
 ---
@@ -34,7 +35,7 @@ Direct and indirect prompt injection together top the **OWASP LLM Top 10** as th
 - **Output classifiers**: a separate model checks the output for compliance. Adds latency; can be bypassed.
 - **Structured tool-use APIs**: don't let the model run free-form actions; restrict to a defined toolbox with typed arguments. Limits blast radius but doesn't prevent the injection.
 - **Prompt-boundary tokens with training**: train the model to take the system prompt as inviolable. Helps but doesn't eliminate.
-- **Capability containment**: don't give the agent sensitive permissions (file write, network access) unless absolutely needed. Defense-in-depth.
+- **Capability containment**: don't give the agent sensitive permissions (file write, network access) unless absolutely needed. Defense-in-depth. Running a computer-use agent in a separate VM is one form: [[terminal-mac]] keeps the host's files, clipboard and signed-in sessions out of the agent's reach, though its guest still has internet access by default ([[terminal-mac-govijr-github]]).
 - **Data labels with model awareness** (Anthropic XML tags, OpenAI dev-prompt): mark trusted vs. untrusted regions and train the model to respect the distinction. State of the art in 2026 but still partial.
 
 ## Why it's an unsolved problem
@@ -50,6 +51,7 @@ Distinguishing "instruction" from "data" requires reasoning about *intent*, *tru
 - [[stealing-reasoning-traces-panfilov-2026]] — injections hidden entirely inside encrypted reasoning blocks, invisible in the visible transcript
 - [[mind-viruses-papadopoulos-2026]] — self-propagating payloads that survive a context wipe by living in the agent's own writable instruction file
 - [[ai-enabled-cyber-operations]] — prompt injection as a route to stolen API keys: attackers compromised AI wrapper services' LiteLLM implementations and OpenClaw deployments to exfiltrate production credentials, then used the stolen access as attack compute and as cover
+- [[terminal-mac-govijr-github]] — a separate macOS VM for computer-use agents as containment; the README says it is not network-isolated or hardened against hostile code
 - [[jev-research-papers-september-2026]] — typed-decision models narrow injection without removing it: injected state text shifts [[jev|Jev]]'s decision probabilities, and adaptive attacks doubled success from 1.8% to 3.5%
 
 ## Lineage sources

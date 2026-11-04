@@ -2,7 +2,7 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-11-01
+updated: 2026-11-04
 sources:
   - claude-code.md
   - comparison.md
@@ -12,6 +12,7 @@ sources:
   - anthropic-threat-intelligence-report-september-2026.md
   - claude-code-changelog-2026-10-06.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - terminal-mac-govijr-github.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2025-02-24
@@ -102,6 +103,7 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
 - [[unreasonable-effectiveness-of-html-shihipar-2026]] — Shihipar's opinion piece: HTML rather than Markdown for agent output meant for humans
 - [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)
+- [[terminal-mac-govijr-github]] — a third-party plugin marketplace in one GitHub repo (`/plugin install terminal-mac --marketplace govijr/terminal-mac`) bundling an MCP server and a skill for driving a separate macOS VM
 - [[claude-dev]] — claude.dev, Anthropic's developer blog; hub of the posts ingested from it
 - [[claude-opus-5-5]] — Claude Opus 5.5 (Sep 2026): cheaper tokens and cache reads, default effort medium
 - [[claude-sonnet-5-5]] — Claude Sonnet 5.5 (2026-09-28): 1M context, same prices as Sonnet 5, stricter thinking semantics

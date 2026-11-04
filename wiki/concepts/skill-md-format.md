@@ -2,7 +2,7 @@
 title: SKILL.md Format (Agent Skills)
 type: concept
 created: 2026-05-14
-updated: 2026-09-30
+updated: 2026-11-04
 sources:
   - claude-code.md
   - opencode.md
@@ -12,6 +12,7 @@ sources:
   - anthropic-agent-skills-2025.md
   - agentskills-io-spec-2025.md
   - openai-codex-skills-2025.md
+  - terminal-mac-govijr-github.md
 status: complete
 importance: high
 ---
@@ -104,4 +105,5 @@ The trade-off: skills are *prompt-engineering artifacts*, not executable code. T
 ## Related 2026 sources
 
 - [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)
+- [[terminal-mac-govijr-github]] — a tool that versions its skill with the binary: `terminal-mac skills get` prints the SKILL.md matching the installed release, so an `AGENTS.md` can point to it instead of copying it
 - [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks

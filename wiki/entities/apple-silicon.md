@@ -2,13 +2,14 @@
 title: Apple Silicon
 type: entity
 created: 2026-09-29
-updated: 2026-10-27
+updated: 2026-11-04
 sources:
   - above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026.md
   - rigel-metal-tensor-compute-path-m4-max-kumaresan-2026.md
   - exploring-llms-mlx-m5-neural-accelerators-apple-2025.md
   - basert-native-metal-inference-apple-silicon-rathnayaka-2026.md
   - omlx-specprefill-github-2026.md
+  - terminal-mac-govijr-github.md
 status: draft
 importance: medium
 tags:
@@ -31,13 +32,17 @@ tags:
 
 [[mlx]] (Apple's framework) and [[llama-cpp]] are the two incumbents. [[basert-native-metal-inference-apple-silicon-rathnayaka-2026|BaseRT]] is a native-Metal challenger that is competitive on decode but trails both on dense prefill. [[omlx-specprefill-github-2026|oMLX]] is a menu-bar inference server with SpecPrefill, mixed-precision quantization and an SSD-spilled [[kv-cache]]. See [[edge-inference]] for the broader picture.
 
+## Virtual Macs for agents
+
+Apple's Virtualization framework runs full macOS guests on Apple silicon. [[terminal-mac]] uses it to give [[computer-use-agent|computer-use agents]] a separate Mac to operate, with screen capture and input handled by a helper inside the guest ([[terminal-mac-govijr-github]]).
+
 ## Related
 
 - [[apple]] · [[mlx]] · [[llama-cpp]] · [[edge-inference]] · [[weight-streaming]] · [[quantization-performance]] · [[hardware-accelerator]] · [[arithmetic-intensity]]
 
 ## References
 
-- [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] · [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] · [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] · [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] · [[omlx-specprefill-github-2026]]
+- [[above-the-inner-loop-m1-amx-prefill-gemm-bhan-2026]] · [[rigel-metal-tensor-compute-path-m4-max-kumaresan-2026]] · [[exploring-llms-mlx-m5-neural-accelerators-apple-2025]] · [[basert-native-metal-inference-apple-silicon-rathnayaka-2026]] · [[omlx-specprefill-github-2026]] · [[terminal-mac-govijr-github]]
 
 ## Lineage sources
 

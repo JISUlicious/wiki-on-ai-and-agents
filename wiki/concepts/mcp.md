@@ -2,10 +2,11 @@
 title: Model Context Protocol (MCP)
 type: concept
 created: 2026-05-16
-updated: 2026-11-01
+updated: 2026-11-04
 sources:
   - model-context-protocol-anthropic-2024.md
   - neuron-explorer-lyramakesmusic-2026.md
+  - terminal-mac-govijr-github.md
 status: complete
 importance: high
 tags:
@@ -108,6 +109,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[mcp-server-architecture-patterns-rodrigues-2026]] — five recurring MCP server design patterns (synthesis: [[mcp-server-architecture-patterns]])
 - [[evoontology-self-evolving-ontology-layer-data-agents-chong-2026]] — EvoOntology: a gated, self-evolving ontology served over MCP to data agents; +17.8 on DDR-Bench, gate is the key ablation
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
+- [[terminal-mac-govijr-github]] — [[terminal-mac]]: a computer-use MCP server (screenshot, click, drag, scroll, type, key, status) whose actions run inside a separate macOS VM
 - [[neuron-explorer-lyramakesmusic-2026]] — an interpretability UI exposed as an MCP server to the Claude CLI (read neurons, steer/ablate the live model, drive the map)
 
 ## Lineage sources

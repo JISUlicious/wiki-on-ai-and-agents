@@ -2,10 +2,14 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-03
+updated: 2026-11-04
 ---
 
 # Activity Log
+
+## [2026-11-04] ingest | terminal-mac (Govijr, GitHub)
+
+Ingested `sources/terminal-mac-govijr-github.md` (README of github.com/govijr/terminal-mac) and `sources/terminal-mac-govijr-github-docs.md` (its AGENT.md, VALIDATION.md and SKILL.md). Pages created: [[terminal-mac-govijr-github]], [[terminal-mac]]. Pages updated: [[computer-use-agent]], [[mcp]], [[agent-skills]], [[skill-md-format]], [[claude-code]], [[apple-silicon]], [[prompt-injection]], [[overview]], [[index]]. Key takeaways: a Swift tool that runs a real macOS guest under Apple Virtualization and lets computer-use agents drive it over MCP through a helper inside the guest, so the host's pointer, clipboard and sessions are untouched; a terminal viewer streams the guest screen. Not network-isolated by default, and its validation notes record no live guest run yet. Contradiction noted: VALIDATION.md describes Developer ID signatures while the README and later commits say releases are self-signed.
 
 ## [2026-11-03] ingest | Weight-Space Programming (GPT-6 Astra edits Qwen weights)
 

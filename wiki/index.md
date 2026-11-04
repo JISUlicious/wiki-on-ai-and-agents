@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-11-03
+updated: 2026-11-04
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 764 sources, 252 entities, 386 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 765 sources, 253 entities, 386 concepts, 9 comparisons, 24 queries.
 
 ## Entities
 
@@ -75,6 +75,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[cognition]] — Company behind Devin
 - [[devin]] — Cognition's software-engineering agent (Mar 2024)
 - [[operator]] — OpenAI's browser agent (Jan 2025)
+- [[terminal-mac]] — Open-source macOS VM for computer-use agents on Apple silicon, driven over MCP (Govijr, Nov 2026)
 - [[codex-cli]] — OpenAI's terminal coding agent (Apr 2025)
 - [[gemini-cli]] — Google's open-source terminal agent, now limited to enterprise Code Assist; consumer use moved to Antigravity CLI
 - [[antigravity-cli]] — Google's consumer terminal agent since 2026; documented self-reported `/goal`, no public source
@@ -937,6 +938,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[introducing-devin-cognition-2024]] — Devin announcement (2024-03-12)
 - [[computer-use-claude-3-5-anthropic-2024]] — Claude computer use (2024-10-22)
 - [[introducing-operator-openai-2025]] — Operator research preview (2025-01-23)
+- [[terminal-mac-govijr-github]] — terminal-mac repo: separate macOS VM for computer-use agents, MCP + skill; no live guest run yet (2026-11-03)
 - [[new-tools-for-building-agents-openai-2025]] — Responses API and Agents SDK (2025-03-11)
 - [[a2a-new-era-agent-interoperability-google-2025]] — A2A announcement (2025-04-09)
 - [[codex-cli-o3-o4-mini-openai-2025]] — Codex CLI announcement (2025-04-16)
