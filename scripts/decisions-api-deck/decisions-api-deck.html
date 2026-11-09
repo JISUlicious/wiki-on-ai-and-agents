@@ -290,6 +290,19 @@ pre.code .b { font-weight: 600; }
 .col h3 { font: 800 36px/1.15 var(--font-display); margin-top: 18px; }
 .col p { font: 400 28px/1.42 var(--font-body); color: var(--ink-2); margin-top: 14px; }
 .col .method { font: 800 30px/1.2 var(--font-display); color: var(--red); margin-top: 22px; }
+.cols3.uc h3 { margin-top: 0; font-size: 34px; }
+.cols3.uc p { font-size: 27px; }
+.cols3.uc .col { padding-top: 22px; }
+.pc { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; }
+.pc > div { border-top: 6px solid var(--ink); padding-top: 26px; }
+.pc > div.hot { border-color: var(--red); }
+.pc h3 { font: 800 38px/1.1 var(--font-display); margin-bottom: 18px; }
+.pc ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.pc li { display: grid; grid-template-columns: 40px 1fr; font: 400 29px/1.35 var(--font-body); color: var(--ink-2); }
+.pc li span { font: 900 32px/1.1 var(--font-display); }
+.pc li.p span { color: var(--red); }
+.pc li.c span { color: var(--grey); }
+.pc li.c:first-of-type, .pc li.p + li.c { margin-top: 12px; }
 .col code, .lead code, .note code { font: 400 .9em var(--font-mono); background: var(--paper); padding: 2px 8px; }
 
 /* ===========================================
@@ -343,7 +356,7 @@ pre.code .b { font-weight: 600; }
 /* ===========================================
    LANGUAGE TOGGLE (EN / 한국어)
    =========================================== */
-.lang-toggle { position: fixed; z-index: 10002; top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px));
+.lang-toggle {
   display: flex; border: 2px solid var(--ink); background: var(--slide-bg); }
 .lang-toggle button { border: 0; background: transparent; color: var(--ink); font: 800 14px var(--font-display); letter-spacing: .08em;
   padding: 8px 12px; cursor: pointer; min-width: 44px; min-height: 36px; }
@@ -363,13 +376,41 @@ html[lang="ko"] .kicker { letter-spacing: .12em; }
 .edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
 .edit-toggle.active { background: var(--red); }
 body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); outline-offset: 4px; }
+
+/* ===========================================
+   TOP CONTROLS + PRESENTER NOTES (N)
+   Notes sit under the stage; the stage rescales to the space left.
+   =========================================== */
+:root { --notes-h: max(180px, 34vh); }
+.top-controls { position: fixed; z-index: 10002; top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px)); display: flex; gap: 8px; }
+.notes-toggle { border: 2px solid var(--ink); background: var(--slide-bg); color: var(--ink); font: 800 14px var(--font-display); letter-spacing: .08em;
+  padding: 8px 12px; cursor: pointer; min-height: 40px; }
+.notes-toggle[aria-pressed="true"] { background: var(--ink); color: var(--slide-bg); }
+.notes-toggle:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+body.notes-on .deck-viewport { bottom: var(--notes-h); }
+body.notes-on .counter { bottom: calc(var(--notes-h) + 14px); }
+.notes-panel { position: fixed; left: 0; right: 0; bottom: 0; height: var(--notes-h); z-index: 999; overflow-y: auto;
+  background: var(--slide-bg); color: var(--ink); border-top: 3px solid var(--ink);
+  padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(18px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  font: 400 17px/1.55 var(--font-body); word-break: keep-all; }
+.notes-panel .np-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; font: 700 12px var(--font-mono); letter-spacing: .14em; color: var(--red); }
+.notes-panel .np-head span:last-child { color: var(--grey); letter-spacing: .04em; }
+.notes-panel .np-body { max-width: 1100px; }
+.notes-panel ul { list-style: none; }
+.notes-panel ul ul { margin: 2px 0 4px 22px; font-size: 15.5px; color: var(--ink-2); }
+.notes-panel li { position: relative; padding-left: 16px; }
+.notes-panel li::before { content: ""; position: absolute; left: 0; top: .72em; width: 7px; height: 2px; background: var(--red); }
+.notes-panel ul ul li::before { background: var(--grey); }
+.notes-panel code { font: 400 .9em var(--font-mono); background: var(--paper); padding: 1px 5px; }
+.notes-panel .np-q { display: inline-block; font: 800 11px var(--font-display); color: var(--slide-bg); background: var(--ink); padding: 2px 6px; margin-right: 4px; vertical-align: 2px; }
 </style>
-<div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button></div>
+<div class="top-controls"><button type="button" class="notes-toggle" id="notesToggle" aria-pressed="false" aria-controls="notesPanel" title="Presenter notes (N)">NOTES</button><div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button></div></div>
 <div class="edit-hotzone"></div>
 <button class="edit-toggle" id="editToggle" title="Edit mode (E)">EDIT</button>
 <div class="progress" id="progress"></div>
 <div class="counter" id="counter"></div>
 
+<aside class="notes-panel" id="notesPanel" aria-label="Presenter notes" hidden><div class="np-head"><span>NOTES</span><span id="notesNum"></span></div><div class="np-body" id="notesBody"></div></aside>
 <div class="deck-viewport"><main class="deck-stage" id="deckStage">
 
 <!-- ========== 1. TITLE ========== -->
@@ -462,6 +503,59 @@ body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); o
   <div class="foot"><span>Decisions API · SystemOne API</span><span>05</span></div>
 </section>
 
+<!-- ========== TRADE-OFFS ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Trade-offs · generation vs decisions</div>
+    <h2 class="title reveal d1">Generate to reason,<br><span class="r">decide to choose.</span></h2>
+    <div class="pc">
+      <div class="reveal d2"><h3>LLM generation</h3><ul><li class="p"><span>+</span>Open-ended answers, rationales, code</li><li class="p"><span>+</span>Multi-step reasoning: math, logic, derivations</li><li class="p"><span>+</span>Answers you did not think to list</li><li class="c"><span>−</span>Pays per output token; slower with length</li><li class="c"><span>−</span>Format errors, off-list answers, parsing</li><li class="c"><span>−</span>"90% sure" is just more generated text</li></ul></div>
+      <div class="reveal d3 hot"><h3>Decisions API</h3><ul><li class="p"><span>+</span>One pass: ~100 ms, input tokens only</li><li class="p"><span>+</span>Always a valid answer from your list</li><li class="p"><span>+</span>A probability per option, ready for thresholds</li><li class="c"><span>−</span>No rationale to show an auditor</li><li class="c"><span>−</span>Only declared options; add "none of the above"</li><li class="c"><span>−</span>Weak when the answer must be derived (math, code)</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>06</span></div>
+</section>
+
+<!-- ========== USE CASE PATTERN ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Use cases · the pattern</div>
+    <h2 class="title reveal d1">Accept when confident,<br><span class="r">escalate when unsure.</span></h2>
+    <div class="pipe reveal d2" style="margin-top:56px">
+      <div class="box">Decision model<small>one cheap pass</small></div><div class="arrow">→</div>
+      <div class="box ink">confidence ≥ τ ?<small>τ fitted on your own labels</small></div><div class="arrow">→</div>
+      <div class="box hot">Accept<small>68.5% of cases</small></div>
+      <div class="arrow" style="font:700 26px var(--font-display);color:var(--grey)">or</div>
+      <div class="box">Escalate<small>31.5% → LLM or human,<br>holding 85% of the errors</small></div>
+    </div>
+    <div class="cols3" style="margin-top:56px">
+      <div class="col hot reveal d3"><div class="big r">93.4%</div><p>Cascade accuracy, vs <b>92.5%</b> for GPT-6 alone</p></div>
+      <div class="col reveal d4"><div class="big">41%</div><p>of GPT-6's fee for that accuracy</p></div>
+      <div class="col reveal d5"><div class="big">−14.2%</div><p>Agent cost with a per-decision threshold; no task outcome changed</p></div>
+    </div>
+    <div class="mono reveal d6" style="margin-top:auto;font-size:19px;line-height:1.5;color:var(--grey)">Sources: 68.5 · 31.5 · 85 · 93.4 vs 92.5 · 41% — Li et al., "JEV-as-a-Judge", arXiv:2609.26550 (τ = 0.9, 1,610 pairs)<br>−14.2% — Zhu et al., "JevAgentHarness", arXiv:2610.21412 (500 tasks)</div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>07</span></div>
+</section>
+
+<!-- ========== USE CASES ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Use cases · where it fits</div>
+    <h2 class="title reveal d1">Anywhere software picks<br><span class="r">from a known list.</span></h2>
+    <div class="cols3 uc" style="margin-top:56px;row-gap:44px">
+      <div class="col reveal d2"><h3>Triage &amp; routing</h3><p>Tickets and incidents to a team; <b>Jev Router</b> picks the model and reasoning effort per request.</p></div>
+      <div class="col reveal d3"><h3>Classification</h3><p>Xbox Research sorted <b>10,000+ feedback items</b> at GPT-5-level quality, 80–100× faster.</p></div>
+      <div class="col reveal d4"><h3>Agent control</h3><p>Which tool, which arguments, stop or go on. Jev took <b>27%</b> of tool choices, cost <b>−14.2%</b>.</p></div>
+      <div class="col reveal d5"><h3>Agent memory</h3><p>Jev-Mem types, links and routes memories: build <b>6.6×</b> faster, queries <b>−37%</b>.</p></div>
+      <div class="col reveal d6"><h3>Judging</h3><p>JEV-as-a-Judge: <b>277×</b> cheaper per verdict than GPT-6, close on readable verdicts.</p></div>
+      <div class="col reveal d7"><h3>Extraction</h3><p>edgextract asks one yes/no per possible graph link; unsure links go to <b>human review</b>.</p></div>
+    </div>
+    <div class="mono reveal d6" style="margin-top:auto;font-size:19px;line-height:1.5;color:var(--grey)">Sources: Microsoft Foundry Blog, 2026-10-09 (Xbox Research) · Zhu et al., arXiv:2610.21412 · Jiang et al., "Jev-Mem", arXiv:2609.23986<br>Li et al., "JEV-as-a-Judge", arXiv:2609.26550 · edgextract, github.com/raphaelmansuy/edgextract · Jev Router, OpenRouter, 2026-09-25</div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>08</span></div>
+</section>
+
 <!-- ========== 7. ALGORITHM ========== -->
 <section class="slide">
   <div class="frame">
@@ -475,7 +569,7 @@ body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); o
       <div class="step reveal d6"><div class="n">5</div><h3>Softmax</h3><p>Normalise over the labels only → probabilities → typed answer.</p></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>06</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>09</span></div>
 </section>
 
 <!-- ========== 8. THREE QUESTION TYPES ========== -->
@@ -489,7 +583,7 @@ body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); o
       <div class="col reveal d4"><div class="big mono" style="font-size:64px">p(yes)</div><h3>noul (predicate)</h3><p>Probability a statement is true.<br><code>refund → 0.997</code></p></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>07</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>10</span></div>
 </section>
 
 <!-- ========== 9. PROMPT RENDERING ========== -->
@@ -506,7 +600,7 @@ body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); o
 Answer with the letter of one option only.
 <span class="g">&lt;&#8204;|im_start|&#8204;&gt;assistant  &lt;think&gt;&lt;/think&gt;</span>  <span class="r">▮ ← read the next-token distribution here</span></pre>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>08</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>11</span></div>
 </section>
 
 <!-- ========== TRAINING: OPEN RECIPES ========== -->
@@ -520,7 +614,7 @@ Answer with the letter of one option only.
       <div class="col hot reveal d4"><h3>s1</h3><div class="mono" style="font-size:22px;color:var(--grey);margin-top:8px">j-raghavan · Gemma 4 26B-A4B</div><div class="method">Proper-scoring loss</div><p>Base model as teacher, blended with gold labels. ECE 0.083 on JevBench, against Jev's 0.081.</p></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>09</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>12</span></div>
 </section>
 
 <!-- ========== 10. ENGINE: SGLANG ========== -->
@@ -541,7 +635,7 @@ Answer with the letter of one option only.
       <div class="fact reveal d6"><div class="k">Also</div><div class="v"><code>/v1/decisions</code> in its own format (not OpenAI-compatible)</div></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>10</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>13</span></div>
 </section>
 
 <!-- ========== 11. ENGINE: VLLM ========== -->
@@ -562,7 +656,7 @@ Answer with the letter of one option only.
       <div class="fact reveal d6"><div class="k">Status</div><div class="v"><code>/v1/systemone</code> in v0.32.0; OpenAI-compatible <code>/v1/decisions</code> in v0.33.0rc3</div></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>11</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>14</span></div>
 </section>
 
 <!-- ========== 12. ENGINE: OLLAMA ========== -->
@@ -582,7 +676,7 @@ Answer with the letter of one option only.
       <div class="fact reveal d5"><div class="k">Confidence</div><div class="v">Per model: mostly <code>(n·max − 1)/(n − 1)</code>, entropy for some</div></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>12</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>15</span></div>
 </section>
 
 <!-- ========== 14. REAL REQUEST ========== -->
@@ -600,7 +694,7 @@ Answer with the letter of one option only.
     "urgency": { "type": <span class="r">"score"</span>,  "instructions": "How urgent is this ticket?",
                  "criteria": ["Routine", "Soon", "Urgent"] } } }</pre>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>13</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>16</span></div>
 </section>
 
 <!-- ========== 15. REAL RESPONSE ========== -->
@@ -627,7 +721,7 @@ Answer with the letter of one option only.
       </div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>14</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>17</span></div>
 </section>
 
 <!-- ========== 17. TAKEAWAYS ========== -->
@@ -641,7 +735,7 @@ Answer with the letter of one option only.
       <div class="reveal d4"><span>03</span><div>Probabilities over the options you give<em>A probability does not guarantee a right answer.</em></div></div>
     </div>
   </div>
-  <div class="foot"><span>Decisions API · SystemOne API</span><span>15</span></div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>18</span></div>
 </section>
 
 </main></div>
@@ -682,7 +776,7 @@ class SlidePresentation {
     let x0 = null;
     addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
     addEventListener('touchend', e => {
-      if (x0 === null || document.body.classList.contains('editing') || e.target.closest('.lang-toggle, .edit-toggle, .edit-hotzone')) { x0 = null; return; }
+      if (x0 === null || document.body.classList.contains('editing') || e.target.closest('.top-controls, .notes-panel, .edit-toggle, .edit-hotzone')) { x0 = null; return; }
       const dx = e.changedTouches[0].clientX - x0;
       if (Math.abs(dx) > 40) this.show(this.i + (dx < 0 ? 1 : -1));
       else if (e.changedTouches[0].clientX > innerWidth / 2) this.show(this.i + 1); /* tap right half = next */
@@ -692,6 +786,7 @@ class SlidePresentation {
   }
   wheel() {
     addEventListener('wheel', e => {
+      if (e.target.closest && e.target.closest('.notes-panel')) return;
       if (this.wheelLock || Math.abs(e.deltaY) < 20) return;
       this.wheelLock = true; setTimeout(() => this.wheelLock = false, 700);
       this.show(this.i + (e.deltaY > 0 ? 1 : -1));
@@ -758,8 +853,8 @@ document.addEventListener('keydown', e => {
    Each text element remembers its English HTML; KO maps that text to Korean.
    Elements without a Korean entry (code, API names, numbers) stay in English.
    =========================================== */
-const KO = {"One forward pass. A probability over the answers you listed. No text generated.": "텍스트를 생성하는 대신에 주어진 선택지에서 하나의 결정을 내립니다. 각 결정에는 confidence score가 제공됩니다.", "An LLM does one thing:<br><span class=\"r\">score every possible next token.</span>": "LLM의 동작 방식:<br><span class=\"r\">다음에 올 토큰의 가능성을 예측</span>", "\"The customer is asking for a ▮\"": "\"사용자가 요청하는 것은 ▮\"", "refund": "환불", "new": "새", "replacement": "교환", "…150k more": "…", "One forward pass gives a probability for <b>every token in the vocabulary</b>.<br><br> Everything else (chat, completions, decisions) is a choice about <b>what to do with that distribution</b>.": "매 forward pass마다 <b>vocabulary의 모든 토큰</b>의 확률을 계산합니다.<br><br>LLM의 동작은 <b>이 확률의 분포</b>에서 시작합니다.", "Sample a token. Append it.<br><span class=\"r\">Repeat N times.</span>": "토큰 샘플링.<br><span class=\"r\">N회 반복.</span>", "You pay <b>per output token</b>, latency grows <b>with answer length</b>, and the answer still has to be <b>parsed</b>.": "<b>토큰 출력 당 비용</b> 발생, <b>생성 시간</b> 증가, <b>parsing</b> 필요", "List the answers first.<br><span class=\"r\">Read the distribution once.</span>": "선택지를 제공하고,<br><span class=\"r\">분포를 단 한 번만 계산.</span>", "Same model. <span class=\"r\">Different contract.</span>": "같은 모델, <span class=\"r\">다른 활용.</span>", "Free text, token by token": "제한 없는 텍스트를 토큰 하나씩 생성", "One label from your list + probabilities": "제공된 목록에서 하나의 label과 그 확률을 제공", "Per output token": "input 및 output 토큰 당 비용", "Input tokens only (OpenAI: $0.10 / 1M)": "input 토큰만", "Wrong format, off-list answers": "양식 불일치, 선택지에 없는 항목 답변", "Off-list answer is impossible": "선택지 안에 있는 것만 답변", "Rationales, free text, unlisted answers": "추론, 긴 텍스트 답변, 선택지 이외의 답변", "Five steps, <span class=\"r\">one pass per question.</span>": "결정을 내리는<br><span class=\"r\">다섯 단계</span>", "One prompt per question: state + question + lettered options.": "질문 하나 당 프롬프트 하나를 구성: 상태 + 질의 + 라벨이 달린 선택지", "Each label (<span class=\"mono\">A</span>, <span class=\"mono\">B</span>, <span class=\"mono\">C</span>) must be exactly one token, or the model is refused.": "토큰 하나짜리 라벨인지 검증. 토큰 하나를 넘으면 거절", "Prefill. The shared state prefix is cached across questions.": "prefill. 공유되는 상태 접두사는 cached됨", "Take the logits at the answer position; drop all other tokens.": "선택지에 포함되어있는 모델 출력 수치 (logits)만 추려냄", "Normalise over the labels only → probabilities → typed answer.": "선택지들만 가지고 정규화 → 확률 계산 → 답변 선택", "Pick one listed option.<br><code>team → \"billing\"</code>": "하나의 선택지를 고름<br><code>team → \"billing\"</code>", "Expected level on an ordered scale.<br><code>urgency → 0.815</code>": "정해진 단계에 대한 기댓값<br><code>urgency → 0.815</code>", "Probability a statement is true.<br><code>refund → 0.997</code>": "주어진 항목이 참일 가능성<br><code>refund → 0.997</code>", "The question becomes <span class=\"r\">a multiple-choice prompt.</span>": "질문을 <span class=\"r\">객관식 프롬프트로</span> 변환", "▮ ← read the next-token distribution here": "▮ ← 이 위치에 올 다음 토큰의 분포를 얻는다.", "Jev's training is secret.<br><span class=\"r\">Three open recipes aren't.</span>": "기존 모델에서<br><span class=\"r\">추가 학습</span>", "Near-identical examples where one fact flips the answer. Cross-entropy over the label logits; 2,676 examples.": "Near-identical examples: 작은 차이로 답변이 뒤바뀔 수 있는 문제들로 훈련", "A temperature fitted on held-out data ships with every checkpoint, so probabilities come calibrated by default.": "모델이 본 적 없는 데이터로 확률을 보정해서 제공", "Base model as teacher, blended with gold labels. ECE 0.083 on JevBench, against Jev's 0.081.": "정답뿐 아니라 '얼마나 확신해야 하는지'까지 학습", "<b>Any chat model</b> that passes the template and one-token-label checks": "Chat template이 포함된 <b>모든 모델</b>에서 사용 가능. one-token-label 체크 진행", "Its own generic wording; <code>A:</code>…<code>Z:</code>, then two-letter labels up to 255 options": "<code>A:</code> … <code>Z:</code> 형태로 라벨링하여 최대 255개의 선택지 제공", "Forced off; always-reasoning templates are refused": "강제 비활성화", "<code>/v1/decisions</code> in its own format (not OpenAI-compatible)": "<code>/v1/systemone</code>과 더불어 독자 규격의 <code>/v1/decisions</code> 제공", "Reuses the <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> machinery: label logprobs over the full vocabulary.": "label의 logprob을 제공하던 기존 <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> 기능을 재사용", "Raw logprobs taken before temperature, label IDs picked out with <code class=\"mono\" style=\"font-size:26px\">logprob_token_ids</code>.": "decode 한 번으로 temperature 적용 전의 logprob을 얻고, label 토큰만 골라냄", "An allowlist: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>": "특정 모델들: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>", "Generic wording like SGLang; at most 26 options": "SGLang처럼 일반적인 label 사용, 최대 26개", "<code>enable_thinking: false</code> required": "<code>enable_thinking: false</code> 설정 필요", "<code>/v1/systemone</code> in v0.32.0; OpenAI-compatible <code>/v1/decisions</code> in v0.33.0rc3": "v0.32.0에서 <code>/v1/systemone</code> 정식 제공, v0.33.0rc3에서 OpenAI 호환 <code>/v1/decisions</code> 추가", "State + all questions as one JSON object, then <code class=\"mono\" style=\"font-size:26px\">Requested field: \"team\"</code>.": "상태와 질문을 하나의 JSON 객체로 제공", "Only tagged decision models: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>": "decision model로 명시된 모델만 가능: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>", "Since v0.40.4, llama.cpp's own <code>/v1/systemone</code>; prompt and temperature stored in the model file": "llama.cpp 자체 <code>/v1/systemone</code> 사용. 프롬프트 형식과 temperature는 모델 파일에 저장", "Prefill, then unembed <b>only the candidate rows</b>": "prefill 후 <b>선택지 토큰의 logit만</b> 계산", "One ticket, <span class=\"r\">three typed questions.</span>": "실전 <span class=\"r\">예시</span>", "841 tokens in. <span class=\"r\">4 tokens out.</span>": "입력 841 토큰, <span class=\"r\">출력 4 토큰</span>", "<b>team (choice) = 'billing'</b><br>The option with the highest probability, 0.985.": "<b>team (choice) = 'billing'</b><br>가장 높은 확률을 가진 선택지", "<b>refund (noul) = 0.997</b><br>p(true) for \"asks for a refund\".": "<b>refund (noul) = 0.997</b><br>사용자가 환불을 요청했을 확률", "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193. An expected level, not a label.": "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193, 긴급도의 기댓값", "<b>urgency confidence = 0.046</b><br>The distribution is nearly flat, so the precise-looking score is a guess.": "<b>urgency confidence = 0.046</b><br>분포가 대체로 균등하여 낮은 confidence", "Don't generate.<br><span class=\"r\">Read.</span>": "Completion이 아닌 <span class=\"r\">Decision</span>", "Same LLM, one forward pass<em>Reads next-token probabilities instead of generating text: no output-token cost, fast.</em>": "같은 LLM으로, 단 한 번의 forward pass<em>텍스트를 생성하지 않고 다음 토큰 확률만 읽음. 출력 토큰 비용 없이 빠르게.</em>", "Use the LLM as is, or train it further<em>As is: general chat models on SGLang and vLLM / Trained: Nimble, Kev, s1, which also learn how sure to be.</em>": "기존 LLM을 그대로 쓰거나, 추가 학습을 하거나<em>그대로: SGLang·vLLM의 일반 chat model / 추가 학습: Nimble·Kev·s1, 확신의 정도까지 학습</em>", "Probabilities over the options you give<em>A probability does not guarantee a right answer.</em>": "주어진 선택지에서 구하는 확률<em>확률이 정답을 보장하지는 않음.</em>"};
-const I18N_SEL = 'h2, pre.code > .r, .sub, .lead, .note, .box, .col h3, .col p, .step h3, .step p, .verb, .verb-sub, .fact .k, .fact .v, th, td, .list-big > div > div, .foot > span:first-child, .tokens span, .thr .line span, .thr small, .frame > .mono, .hbars > .mono, .hbars > .kicker, .hbar > span:first-child';
+const KO = {"One forward pass. A probability over the answers you listed. No text generated.": "텍스트를 생성하는 대신에 주어진 선택지에서 하나의 결정을 내립니다. 각 결정에는 confidence score가 제공됩니다.", "An LLM does one thing:<br><span class=\"r\">score every possible next token.</span>": "LLM의 동작 방식:<br><span class=\"r\">다음에 올 토큰의 가능성을 예측</span>", "\"The customer is asking for a ▮\"": "\"사용자가 요청하는 것은 ▮\"", "refund": "환불", "new": "새", "replacement": "교환", "…150k more": "…", "One forward pass gives a probability for <b>every token in the vocabulary</b>.<br><br> Everything else (chat, completions, decisions) is a choice about <b>what to do with that distribution</b>.": "매 forward pass마다 <b>vocabulary의 모든 토큰</b>의 확률을 계산합니다.<br><br>LLM의 동작은 <b>이 확률의 분포</b>에서 시작합니다.", "Sample a token. Append it.<br><span class=\"r\">Repeat N times.</span>": "토큰 샘플링.<br><span class=\"r\">N회 반복.</span>", "You pay <b>per output token</b>, latency grows <b>with answer length</b>, and the answer still has to be <b>parsed</b>.": "<b>토큰 출력 당 비용</b> 발생, <b>생성 시간</b> 증가, <b>parsing</b> 필요", "List the answers first.<br><span class=\"r\">Read the distribution once.</span>": "선택지를 제공하고,<br><span class=\"r\">분포를 단 한 번만 계산.</span>", "Same model. <span class=\"r\">Different contract.</span>": "같은 모델, <span class=\"r\">다른 활용.</span>", "Free text, token by token": "제한 없는 텍스트를 토큰 하나씩 생성", "One label from your list + probabilities": "제공된 목록에서 하나의 label과 그 확률을 제공", "Per output token": "input 및 output 토큰 당 비용", "Input tokens only (OpenAI: $0.10 / 1M)": "input 토큰만", "Wrong format, off-list answers": "양식 불일치, 선택지에 없는 항목 답변", "Off-list answer is impossible": "선택지 안에 있는 것만 답변", "Rationales, free text, unlisted answers": "추론, 긴 텍스트 답변, 선택지 이외의 답변", "Five steps, <span class=\"r\">one pass per question.</span>": "결정을 내리는<br><span class=\"r\">다섯 단계</span>", "One prompt per question: state + question + lettered options.": "질문 하나 당 프롬프트 하나를 구성: 상태 + 질의 + 라벨이 달린 선택지", "Each label (<span class=\"mono\">A</span>, <span class=\"mono\">B</span>, <span class=\"mono\">C</span>) must be exactly one token, or the model is refused.": "토큰 하나짜리 라벨인지 검증. 토큰 하나를 넘으면 거절", "Prefill. The shared state prefix is cached across questions.": "prefill. 공유되는 상태 접두사는 cached됨", "Take the logits at the answer position; drop all other tokens.": "선택지에 포함되어있는 모델 출력 수치 (logits)만 추려냄", "Normalise over the labels only → probabilities → typed answer.": "선택지들만 가지고 정규화 → 확률 계산 → 답변 선택", "Pick one listed option.<br><code>team → \"billing\"</code>": "하나의 선택지를 고름<br><code>team → \"billing\"</code>", "Expected level on an ordered scale.<br><code>urgency → 0.815</code>": "정해진 단계에 대한 기댓값<br><code>urgency → 0.815</code>", "Probability a statement is true.<br><code>refund → 0.997</code>": "주어진 항목이 참일 가능성<br><code>refund → 0.997</code>", "The question becomes <span class=\"r\">a multiple-choice prompt.</span>": "질문을 <span class=\"r\">객관식 프롬프트로</span> 변환", "▮ ← read the next-token distribution here": "▮ ← 이 위치에 올 다음 토큰의 분포를 얻는다.", "Jev's training is secret.<br><span class=\"r\">Three open recipes aren't.</span>": "기존 모델에서<br><span class=\"r\">추가 학습</span>", "Near-identical examples where one fact flips the answer. Cross-entropy over the label logits; 2,676 examples.": "Near-identical examples: 작은 차이로 답변이 뒤바뀔 수 있는 문제들로 훈련", "A temperature fitted on held-out data ships with every checkpoint, so probabilities come calibrated by default.": "모델이 본 적 없는 데이터로 확률을 보정해서 제공", "Base model as teacher, blended with gold labels. ECE 0.083 on JevBench, against Jev's 0.081.": "정답뿐 아니라 '얼마나 확신해야 하는지'까지 학습", "<b>Any chat model</b> that passes the template and one-token-label checks": "Chat template이 포함된 <b>모든 모델</b>에서 사용 가능. one-token-label 체크 진행", "Its own generic wording; <code>A:</code>…<code>Z:</code>, then two-letter labels up to 255 options": "<code>A:</code> … <code>Z:</code> 형태로 라벨링하여 최대 255개의 선택지 제공", "Forced off; always-reasoning templates are refused": "강제 비활성화", "<code>/v1/decisions</code> in its own format (not OpenAI-compatible)": "<code>/v1/systemone</code>과 더불어 독자 규격의 <code>/v1/decisions</code> 제공", "Reuses the <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> machinery: label logprobs over the full vocabulary.": "label의 logprob을 제공하던 기존 <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> 기능을 재사용", "Raw logprobs taken before temperature, label IDs picked out with <code class=\"mono\" style=\"font-size:26px\">logprob_token_ids</code>.": "decode 한 번으로 temperature 적용 전의 logprob을 얻고, label 토큰만 골라냄", "An allowlist: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>": "특정 모델들: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>", "Generic wording like SGLang; at most 26 options": "SGLang처럼 일반적인 label 사용, 최대 26개", "<code>enable_thinking: false</code> required": "<code>enable_thinking: false</code> 설정 필요", "<code>/v1/systemone</code> in v0.32.0; OpenAI-compatible <code>/v1/decisions</code> in v0.33.0rc3": "v0.32.0에서 <code>/v1/systemone</code> 정식 제공, v0.33.0rc3에서 OpenAI 호환 <code>/v1/decisions</code> 추가", "State + all questions as one JSON object, then <code class=\"mono\" style=\"font-size:26px\">Requested field: \"team\"</code>.": "상태와 질문을 하나의 JSON 객체로 제공", "Only tagged decision models: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>": "decision model로 명시된 모델만 가능: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>", "Since v0.40.4, llama.cpp's own <code>/v1/systemone</code>; prompt and temperature stored in the model file": "llama.cpp 자체 <code>/v1/systemone</code> 사용. 프롬프트 형식과 temperature는 모델 파일에 저장", "Prefill, then unembed <b>only the candidate rows</b>": "prefill 후 <b>선택지 토큰의 logit만</b> 계산", "One ticket, <span class=\"r\">three typed questions.</span>": "실전 <span class=\"r\">예시</span>", "841 tokens in. <span class=\"r\">4 tokens out.</span>": "입력 841 토큰, <span class=\"r\">출력 4 토큰</span>", "<b>team (choice) = 'billing'</b><br>The option with the highest probability, 0.985.": "<b>team (choice) = 'billing'</b><br>가장 높은 확률을 가진 선택지", "<b>refund (noul) = 0.997</b><br>p(true) for \"asks for a refund\".": "<b>refund (noul) = 0.997</b><br>사용자가 환불을 요청했을 확률", "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193. An expected level, not a label.": "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193, 긴급도의 기댓값", "<b>urgency confidence = 0.046</b><br>The distribution is nearly flat, so the precise-looking score is a guess.": "<b>urgency confidence = 0.046</b><br>분포가 대체로 균등하여 낮은 confidence", "Don't generate.<br><span class=\"r\">Read.</span>": "Completion이 아닌 <span class=\"r\">Decision</span>", "Same LLM, one forward pass<em>Reads next-token probabilities instead of generating text: no output-token cost, fast.</em>": "같은 LLM으로, 단 한 번의 forward pass<em>텍스트를 생성하지 않고 다음 토큰 확률만 읽음. 출력 토큰 비용 없이 빠르게.</em>", "Use the LLM as is, or train it further<em>As is: general chat models on SGLang and vLLM / Trained: Nimble, Kev, s1, which also learn how sure to be.</em>": "기존 LLM을 그대로 쓰거나, 추가 학습을 하거나<em>그대로: SGLang·vLLM의 일반 chat model / 추가 학습: Nimble·Kev·s1, 확신의 정도까지 학습</em>", "Probabilities over the options you give<em>A probability does not guarantee a right answer.</em>": "주어진 선택지에서 구하는 확률<em>확률이 정답을 보장하지는 않음.</em>", "Generate to reason,<br><span class=\"r\">decide to choose.</span>": "추론은 생성으로,<br><span class=\"r\">선택은 결정으로</span>", "<span>+</span>Open-ended answers, rationales, code": "<span>+</span>자유 형식 답변, 이유 설명, 코드", "<span>+</span>Multi-step reasoning: math, logic, derivations": "<span>+</span>여러 단계 추론: 수학, 논리, 유도", "<span>+</span>Answers you did not think to list": "<span>+</span>미리 정하지 않은 답", "<span>−</span>Pays per output token; slower with length": "<span>−</span>출력 토큰 당 비용, 길수록 느림", "<span>−</span>Format errors, off-list answers, parsing": "<span>−</span>형식 오류, 선택지 밖 답, parsing 필요", "<span>−</span>\"90% sure\" is just more generated text": "<span>−</span>\"90% 확신\"도 생성된 텍스트일 뿐", "<span>+</span>One pass: ~100 ms, input tokens only": "<span>+</span>forward pass 1회: 약 100 ms, input 토큰만 과금", "<span>+</span>Always a valid answer from your list": "<span>+</span>항상 선택지 안의 답", "<span>+</span>A probability per option, ready for thresholds": "<span>+</span>선택지별 확률, 임계값 적용 가능", "<span>−</span>No rationale to show an auditor": "<span>−</span>감사용 이유 설명 없음", "<span>−</span>Only declared options; add \"none of the above\"": "<span>−</span>정해진 선택지만, \"해당 없음\" 필요", "<span>−</span>Weak when the answer must be derived (math, code)": "<span>−</span>계산이 필요한 답에 약함 (수학, 코드)", "Anywhere software picks<br><span class=\"r\">from a known list.</span>": "정해진 목록에서 고르는<br><span class=\"r\">모든 곳에</span>", "Triage &amp; routing": "분류·배정", "Tickets and incidents to a team; <b>Jev Router</b> picks the model and reasoning effort per request.": "티켓·장애를 담당 팀에 배정. <b>Jev Router</b>는 요청마다 모델과 추론 강도 선택", "Classification": "분류", "Xbox Research sorted <b>10,000+ feedback items</b> at GPT-5-level quality, 80–100× faster.": "Xbox Research, <b>피드백 1만 건 이상</b>을 GPT-5 수준 품질로 80–100배 빠르게 분류", "Agent control": "agent 제어", "Which tool, which arguments, stop or go on. Jev took <b>27%</b> of tool choices, cost <b>−14.2%</b>.": "어떤 tool, 어떤 인자, 계속할지. Jev가 tool 선택의 <b>27%</b> 담당, 비용 <b>−14.2%</b>", "Agent memory": "agent 메모리", "Jev-Mem types, links and routes memories: build <b>6.6×</b> faster, queries <b>−37%</b>.": "Jev-Mem, 메모리 분류·연결·라우팅. 구축 <b>6.6배</b> 빠르게, 질의 <b>−37%</b>", "Judging": "평가", "JEV-as-a-Judge: <b>277×</b> cheaper per verdict than GPT-6, close on readable verdicts.": "JEV-as-a-Judge, 판정당 GPT-6보다 <b>277배</b> 저렴. 텍스트에서 바로 읽히는 판정은 비슷한 수준", "Extraction": "추출", "edgextract asks one yes/no per possible graph link; unsure links go to <b>human review</b>.": "edgextract, 그래프 연결마다 yes/no 하나. 불확실하면 <b>사람이 검토</b>", "Accept when confident,<br><span class=\"r\">escalate when unsure.</span>": "저렴하고 빠른 결정<br><span class=\"r\">수용 또는 위임</span>", "Decision model<small>one cheap pass</small>": "Decision model<small>저렴한 한 번의 계산</small>", "confidence ≥ τ ?<small>τ fitted on your own labels</small>": "confidence ≥ τ ?<small>τ는 내 데이터로 맞춤</small>", "Accept<small>68.5% of cases</small>": "수용<small>전체의 68.5%</small>", "Escalate<small>31.5% → LLM or human,<br>holding 85% of the errors</small>": "위임<small>31.5% → LLM 또는 사람,<br>오류의 85% 포함</small>", "or": "또는", "Cascade accuracy, vs <b>92.5%</b> for GPT-6 alone": "cascade 정확도, GPT-6 단독 <b>92.5%</b>", "of GPT-6's fee for that accuracy": "같은 정확도에 GPT-6 비용의 41%", "Agent cost with a per-decision threshold; no task outcome changed": "결정별 임계값 적용 시 agent 비용, 과제 결과 변화 없음"};
+const I18N_SEL = 'h2, .pc li, .pipe > .arrow, pre.code > .r, .sub, .lead, .note, .box, .col h3, .col p, .step h3, .step p, .verb, .verb-sub, .fact .k, .fact .v, th, td, .list-big > div > div, .foot > span:first-child, .tokens span, .thr .line span, .thr small, .frame > .mono, .hbars > .mono, .hbars > .kicker, .hbar > span:first-child';
 const norm = s => s.replace(/\s+/g, ' ').trim();
 const i18nEls = [...document.querySelectorAll(I18N_SEL)].map(el => ({ el, en: el.innerHTML }));
 function setLang(lang) {
@@ -778,6 +873,33 @@ document.addEventListener('keydown', e => {
 let startLang = 'en';
 try { startLang = localStorage.getItem('decisions-api-deck-lang') || 'en'; } catch (e) {}
 setLang(startLang === 'ko' ? 'ko' : 'en');
+/* ===========================================
+   PRESENTER NOTES (Korean keywords), toggled with the NOTES button or N
+   =========================================== */
+const NOTES = ["<ul><li>SystemOne API(<code>/v1/systemone</code>, TypeSafe Jev) = Decisions API(<code>/v1/decisions</code>, OpenAI)</li><li>텍스트 생성 X → 선택지 중 하나 + 확률</li><li>결정마다 confidence score</li></ul>", "<ul><li>다음 토큰 확률 분포, vocabulary 전체</li><li>forward pass 1회 = 분포 1개</li><li>chat / completion / decision = 분포 활용 방식의 차이</li><li>숫자는 설명용 예시</li><li><span class=\"np-q\">Q</span> logit 계산 경로: hidden state h × 출력 행렬(unembedding, LM head) → logit(토큰당 1개) → ÷ temperature → softmax<ul><li><code>logit(i) = W[i] · h</code>, 행 하나 = 토큰 하나</li><li>판단은 h를 만드는 층에서, 출력 행렬은 점수만</li></ul></li></ul>", "<ul><li>prefill 1회 + decode N회</li><li>출력 토큰 비용, 답 길이만큼 지연, parsing 필요</li></ul>", "<ul><li>state + 질문 + 선택지 미리 정의</li><li>prefill 후 한 번 읽기, decode 0회</li><li>결과: 형식이 정해진 값 + 확률</li><li>Jev 70–500 ms / OpenAI 입력 토큰만 과금 / self-hosted: SGLang, vLLM, Ollama</li></ul>", "<ul><li>출력: 자유 텍스트 vs label + 확률</li><li>비용: input만 (OpenAI $0.10 / 1M)</li><li>실패: 선택지 밖 답 불가</li><li>못 하는 것: 추론 설명, 긴 답변, 목록 밖 답</li></ul>", "<ul><li>대체 X, 역할 분담: 추론·설명은 생성, 목록 중 선택은 결정</li><li>생성 +: 자유 형식, 이유 설명, 여러 단계 추론(수학·논리), 목록에 없는 답</li><li>생성 −: 출력 토큰 비용·지연, 형식 오류·parsing, \"90% 확신\" = 생성된 텍스트일 뿐(보정 X)</li><li>결정 +: forward pass 1회(약 100 ms), input만 과금, 항상 목록 안 답, 선택지별 확률 → 임계값</li><li>결정 −: 이유 설명 X(감사), 선언된 선택지만 → \"해당 없음\" 추가, 계산이 필요한 답에 약함</li></ul>", "<ul><li>cascade: decision model 먼저 → confidence ≥ τ 수용 / 미만 위임(LLM 또는 사람)</li><li>τ = 내 라벨 데이터로 맞춤, 엔진·모델·버전마다 confidence 다름 → 그대로 옮기지 않기</li><li>JEV-as-a-Judge (arXiv:2609.26550): τ = 0.9, 1,610쌍<ul><li>68.5% 수용 / 31.5% 위임, 위임분에 오류 85%</li><li>정확도 93.4% vs GPT-6 단독 92.5%, 비용 41%</li></ul></li><li>JevAgentHarness (arXiv:2610.21412): 결정 지점별 임계값, 비용 −14.2%, 500개 과제 결과 변화 없음</li><li><span class=\"np-q\">Q</span> 임계값 없으면? → −19점</li></ul>", "<ul><li>공통점: 답이 미리 정한 목록 안에 있음</li><li>분류·배정: 티켓·장애 → 팀 / Jev Router(OpenRouter, 2026-09-25) 요청마다 모델·추론 강도</li><li>분류: Xbox Research 피드백 1만+ 건, GPT-5 수준, 80–100배 빠름 (Microsoft Foundry Blog, 2026-10-09)</li><li>agent 제어: tool·인자·계속/중단, tool 선택 27%, 비용 −14.2% (arXiv:2610.21412)</li><li>agent 메모리: Jev-Mem(arXiv:2609.23986) 분류·연결·라우팅, 구축 6.6배, 질의 −37%</li><li>평가: JEV-as-a-Judge 판정당 277배 저렴, 텍스트에서 바로 읽히는 판정은 근접</li><li>추출: edgextract 그래프 연결마다 yes/no, 불확실 → 사람 검토</li></ul>", "<ul><li>Render → Check labels → Forward pass(prefill, state 캐시) → Keep labels → Softmax</li><li>예: logit A 8.1 / B 3.9 / C 2.0 → 0.983 / 0.015 / 0.002</li><li>SGLang·vLLM은 logprob을 읽음, 라벨끼리 재정규화하면 동일</li><li><span class=\"np-q\">Q</span> one-token-label 검사: prompt vs prompt+label 토큰화 비교, 새 토큰 정확히 1개, 모든 엔진·매 요청<ul><li>라벨 = 엔진이 붙인 A/B/C, 0–9, yes/no (사용자 선택지 이름 X)</li></ul></li></ul>", "<ul><li>같은 메커니즘, p 읽는 법 3가지</li><li>choice = argmax / score = Σ i·pᵢ (정해진 단계에 대한 기댓값, 값 하나) / noul = p(yes)</li><li>질문마다 라벨·p 별도 (A/B/C, 0/1/2, yes/no)</li></ul>", "<ul><li>SGLang 실제 렌더링</li><li>빈 <code>&lt;think&gt;&lt;/think&gt;</code> = thinking 강제 off</li><li>assistant 첫 토큰 자리에서 분포 읽기</li><li><span class=\"np-q\">Q</span> state = 판단 대상 입력 데이터 ≈ LLM/agent의 context<ul><li>지시 X, 판단할 사실만</li><li>state 1개 → 질문 여러 개, 캐시 재사용</li><li>prompt injection: 확률은 흔들려도 선택지 밖 답은 불가</li></ul></li></ul>", "<ul><li>Jev(RLCD) 비공개 ↔ 공개 레시피 3개</li><li>Nimble: contrastive pairs, 작은 차이로 답이 뒤바뀌는 예시 쌍(승인자 Mira ↔ Noah), 2,676개, Qwen3.5-9B LoRA</li><li>Kev: fitted temperature, 본 적 없는(held-out) 데이터로 확률 보정</li><li>s1: proper-scoring loss, '얼마나 확신해야 하는지'까지 학습, ECE 0.083 vs Jev 0.081</li><li><span class=\"np-q\">Q</span> 보정 temperature vs sampling temperature: 계산은 같음(logit ÷ T) / 정하는 사람·목적이 다름 / 가중치·답 불변, 확률만 조정</li><li><span class=\"np-q\">Q</span> s1: soft label(기존 모델 분포 + 정답 라벨), 과신 벌점, 선택지 순서 섞기, 약 10만 개, 정확도 0.808 vs Jev 0.835</li></ul>", "<ul><li>prefill only, 새 토큰 0개</li><li>기존 <code>/v1/score</code> 재사용</li><li>chat template 있는 모든 모델 + 전용 decision model(pplx-decider, Clef, Kev)</li><li><code>A:</code>…<code>Z:</code> → <code>AA:</code>…, 최대 255개</li><li>thinking 강제 off</li><li>confidence <code>(n·max(q) − 1)/(n − 1)</code>, label_mass 별도 필드</li><li><code>/v1/systemone</code> + 독자 규격 <code>/v1/decisions</code></li><li><span class=\"np-q\">Q</span> chat template: Jinja만, 항상 추론하는 template 거절, 가짜 답변으로 답 위치 확인</li><li><span class=\"np-q\">Q</span> label_mass: 재정규화 전 라벨 확률의 합(예: 0.90), 낮으면 \"어느 선택지도 아님\" 경고</li><li><span class=\"np-q\">Q</span> <code>/v1/score</code> vs decision API: 저수준 기능 vs 제품 계약<ul><li>직접 해야 하는 것: 프롬프트, 토큰 ID, 검사, 답 변환</li><li>이식성: 토큰 ID(모델 종속) vs 이름(모든 엔진)</li><li>전용 head 모델(pplx-decider, Clef)은 토큰 API로 표현 불가</li><li>비유: raw completion vs structured output</li></ul></li><li><span class=\"np-q\">Q</span> <code>/v1/decisions</code>(SGLang): options/levels/yes_no, confidence 없음, OpenAI 클라이언트 비호환</li></ul>", "<ul><li>greedy decode 1회, 토큰 버림</li><li>temperature 적용 전 logprob, label 토큰만</li><li>특정 모델: Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</li><li>최대 26개</li><li><code>enable_thinking: false</code></li><li><code>p_top × label_mass</code>, <code>argmax_is_label</code></li><li>v0.32.0 <code>/v1/systemone</code>, v0.33.0rc3 OpenAI 호환 <code>/v1/decisions</code></li></ul>", "<ul><li>모델이 학습한 프롬프트 재현</li><li>state + 질문 = JSON 하나 (Nimble 형식)</li><li>decision model만: Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</li><li>llama.cpp 자체 <code>/v1/systemone</code>(v0.40.4~), 프롬프트 형식·temperature는 모델 파일(GGUF)에 (이전: +100 logit bias)</li><li>MLX: 선택지 토큰의 logit만 계산(출력 행렬의 행 몇 개), label_mass 없음</li><li>confidence 모델별: 대부분 TypeSafe 공식, 일부 엔트로피, d1은 p_max</li><li>버전 고정: v0.40.4에서 공식 변경, 같은 분포에 0.922 → 0.978</li></ul>", "<ul><li><code>POST /v1/systemone</code>, Ollama + nimble</li><li>state: 티켓 1개 / 질문: team(choice), refund(noul), urgency(score)</li><li><span class=\"np-q\">Q</span> 질문은 누가?<ul><li>대개 개발자가 코드에 고정(함수 시그니처처럼), state만 바뀜, 질문별 임계값</li><li>agent: 질문 틀 고정, 선택지는 실행 중 채움(사용 가능한 tool 목록)</li><li>JevAgentHarness: 결정 지점 8개, 지점별 임계값, tool 선택 27%, 비용 −14.2%, 결과 변화 없음 / 임계값 없으면 −19점</li><li>LLM 즉석 질문: 임계값 없음 → 위험</li></ul></li></ul>", "<ul><li>team = 'billing' 0.985 (argmax)</li><li>refund 0.997 = 환불을 요청했을 확률</li><li>urgency score 0.815 = 기댓값, 단계 선택 X</li><li>urgency confidence 0.046 = 거의 균등 → 0.815는 사실상 추측, 소수점 ≠ 신뢰</li><li>주의: v0.40.4 이전 기록, confidence는 예전 엔트로피 공식 값</li></ul>", "<ul><li>같은 LLM, forward pass 1회, 출력 토큰 비용 X</li><li>그대로(SGLang·vLLM chat model) or 추가 학습(Nimble·Kev·s1)</li><li>확률 ≠ 정답 보장</li><li>마무리: 버전 고정, 임계값은 내 데이터로, Jev도 독립 감사에서 과신</li></ul>"];
+const notesPanel = document.getElementById('notesPanel'), notesToggle = document.getElementById('notesToggle');
+function renderNotes() {
+  document.getElementById('notesBody').innerHTML = NOTES[deck.i] || '';
+  document.getElementById('notesNum').textContent = String(deck.i + 1).padStart(2, '0') + ' / ' + deck.slides.length;
+  notesPanel.scrollTop = 0;
+}
+function setNotes(on) {
+  notesPanel.hidden = !on;
+  document.body.classList.toggle('notes-on', on);
+  notesToggle.setAttribute('aria-pressed', String(on));
+  deck.scale();
+  try { localStorage.setItem('decisions-api-deck-notes', on ? '1' : '0'); } catch (e) {}
+}
+const baseShow = deck.show.bind(deck);
+deck.show = n => { baseShow(n); renderNotes(); };
+notesToggle.addEventListener('click', e => { e.stopPropagation(); setNotes(notesPanel.hidden); });
+document.addEventListener('keydown', e => {
+  if ((e.key === 'n' || e.key === 'N') && e.target.getAttribute('contenteditable') !== 'true') setNotes(notesPanel.hidden);
+});
+let startNotes = false;
+try { startNotes = localStorage.getItem('decisions-api-deck-notes') === '1'; } catch (e) {}
+renderNotes(); setNotes(startNotes);
 </script>
+
 </body>
 </html>
