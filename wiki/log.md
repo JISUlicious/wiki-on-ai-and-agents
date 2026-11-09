@@ -2,10 +2,18 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-04
+updated: 2026-11-09
 ---
 
 # Activity Log
+
+## [2026-11-09] query | Decision API worked example
+
+Question: "Search for the example for prompt to answer of decision api/systemone api or build an example of prompt to answer with real example". Filed as [[decision-api-worked-example]]. Key pages consulted: [[decision-api-internals-prompt-output-confidence]], [[decision-api-server-implementations]], [[ollama-decision-models-2026]], [[decision-api-server-implementations-2026]]. Real Ollama/Nimble request and response, prompts rebuilt from SGLang and Ollama code, response arithmetic recomputed. Not run live (no local decision server).
+
+## [2026-11-09] query | Decision APIs vs language models, and server implementations
+
+Question: "describe decisions API/systemone api works compared to language models. Compare how llm inference server sw implemented those features". Not filed. Key pages consulted: [[system-one-model]], [[jev]], [[openai-decisions-api]], [[decision-api-server-implementations]], [[decision-api-internals-prompt-output-confidence]], [[sglang]], [[vllm]], [[ollama]], [[openjev]], [[independent-jev-calibration-audits-2026]]. Gap: server comparison is code-verified only to 2026-10-12 (vLLM release status of `/v1/systemone` and PR #60465 unknown since).
 
 ## [2026-11-04] ingest | terminal-mac (Govijr, GitHub)
 

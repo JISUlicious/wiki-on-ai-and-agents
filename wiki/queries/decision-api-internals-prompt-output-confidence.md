@@ -2,7 +2,7 @@
 title: "Decision API internals: prompt construction, output-token control, confidence (SGLang, vLLM, Ollama)"
 type: query
 created: 2026-10-12
-updated: 2026-10-12
+updated: 2026-11-09
 sources:
   - decision-api-server-implementations-2026-10-12.md
 status: complete
@@ -102,6 +102,10 @@ That is why Ollama only serves tagged decision models, while the other two serve
   - So the same yes/no question is literally a different prompt.
 - **Option-order dependence.** Every server maps options to labels in request order; none shuffles. Two-letter labels past 26 (SGLang) "can make answers depend on option order" (#41208).
 - **Nondeterminism.** SGLang notes answers "can vary with batch composition and prefix caching".
+
+## Worked example
+
+- [[decision-api-worked-example]] — one real request traced through prompt, label read and confidence
 
 ## References
 

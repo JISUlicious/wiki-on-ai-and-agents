@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-11-04
+updated: 2026-11-09
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 765 sources, 253 entities, 386 concepts, 9 comparisons, 24 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 765 sources, 253 entities, 386 concepts, 9 comparisons, 25 queries.
 
 ## Entities
 
@@ -1781,6 +1781,7 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[context-and-tools-influence-evidence]] — Evidence for RAG, tool use and context engineering, graded
 - [[ai-agent-influence-graph]] — Dated items and evidence-graded influence edges for AI agent history
 - [[kv-cache-size-vs-active-parameters]] — KV bytes = (P_KV/d)·T·B·b: only the K/V projection weights count. Dense MHA gives T*≈6d; GQA ÷H/G; MLA latent; MoE experts never enter the cache
+- [[decision-api-worked-example]] — Worked example: real Ollama/Nimble request → SGLang and Nimble prompts → label read → three servers' confidence on the same probabilities
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist
 - [[system-one-models-vs-system-one-thinking]] — Does "System One model" come from Kahneman's System 1? Yes (TypeSafe FAQ); where it fits and where it diverges

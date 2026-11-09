@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 created: 2026-05-12
-updated: 2026-11-04
+updated: 2026-11-09
 tags: []
 ---
 
@@ -12,7 +12,7 @@ A synthesis of the wiki's current contents. The corpus spans 2017–2026. It beg
 
 ## Summary
 
-The wiki covers **765 source pages**, **253 entities**, **386 concepts**, **9 comparisons** and **24 filed queries** (as of 2026-11-04). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
+The wiki covers **765 source pages**, **253 entities**, **386 concepts**, **9 comparisons** and **25 filed queries** (as of 2026-11-09). Since the 16-source seed corpus of May 2026, most growth has come from weekly newsletter sweeps of arXiv and lab blogs, plus targeted ingests.
 
 The corpus now has two layers:
 
