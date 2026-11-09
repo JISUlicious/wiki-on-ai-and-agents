@@ -7,6 +7,10 @@ updated: 2026-11-09
 
 # Activity Log
 
+## [2026-11-09] query | Filed: decision APIs vs language models
+
+Filed the earlier answer to "describe decisions API/systemone api works compared to language models. Compare how llm inference server sw implemented those features" (logged below as not filed) as [[decision-api-vs-llm-and-server-implementations]]. Linked from [[decision-api-worked-example]] and [[decision-api-server-implementations]].
+
 ## [2026-11-09] query | Decision API worked example
 
 Question: "Search for the example for prompt to answer of decision api/systemone api or build an example of prompt to answer with real example". Filed as [[decision-api-worked-example]]. Key pages consulted: [[decision-api-internals-prompt-output-confidence]], [[decision-api-server-implementations]], [[ollama-decision-models-2026]], [[decision-api-server-implementations-2026]]. Real Ollama/Nimble request and response, prompts rebuilt from SGLang and Ollama code, response arithmetic recomputed. Not run live (no local decision server).

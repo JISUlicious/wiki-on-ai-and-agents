@@ -2,7 +2,7 @@
 title: "Decision APIs in model servers: SGLang vs vLLM vs Ollama"
 type: comparison
 created: 2026-10-12
-updated: 2026-10-13
+updated: 2026-11-09
 sources:
   - decision-api-server-implementations-2026-10-12.md
 status: complete
@@ -49,3 +49,4 @@ Around 4-bit, that drops to about a quarter. Recalibrate after quantizing; SGLan
 ## Lineage sources
 
 - [[decision-api-internals-prompt-output-confidence]] — code-level deep dive: prompt, output-token control, confidence
+- [[decision-api-vs-llm-and-server-implementations]] — how decision APIs differ from language models, with this comparison in context

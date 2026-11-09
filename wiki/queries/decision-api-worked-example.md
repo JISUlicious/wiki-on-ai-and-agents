@@ -150,7 +150,7 @@ A threshold such as "act above 0.95" would pass on SGLang, fail on Ollama, and d
 ## Related
 
 - [[system-one-model]] · [[logit-scoring]] · [[jev]] · [[openai-decisions-api]] · [[nimble]] · [[ollama]] · [[sglang]] · [[vllm]]
-- [[decision-api-internals-prompt-output-confidence]] · [[decision-api-server-implementations]]
+- [[decision-api-internals-prompt-output-confidence]] · [[decision-api-server-implementations]] · [[decision-api-vs-llm-and-server-implementations]]
 
 ## References
 
