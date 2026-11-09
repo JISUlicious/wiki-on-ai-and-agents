@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Decisions API Deck</title>
+<!-- Fonts: Archivo (display), Nunito (body), JetBrains Mono (code) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===========================================
+   THEME: Swiss Modern
+   Change these variables to restyle the whole deck
+   =========================================== */
+:root {
+  color-scheme: light;
+  --stage-bg: #e9e9e6;
+  --slide-bg: #ffffff;
+  --ink: #0b0b0b;
+  --ink-2: #333333;
+  --grey: #8b8b88;
+  --rule: #d9d9d5;
+  --paper: #f4f4f1;
+  --red: #ff3300;
+  --font-display: 'Archivo', 'Noto Sans KR', sans-serif;
+  --font-body: 'Nunito', 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Noto Sans KR', monospace;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===========================================
+   FIXED STAGE BASE (viewport-base.css, verbatim)
+   =========================================== */
+/* ===========================================
+   FIXED 16:9 STAGE: MANDATORY BASE STYLES
+   Include this ENTIRE file in every presentation.
+   Slides are authored at 1920×1080 and scaled as a whole.
+   =========================================== */
+
+/* 1. Lock the browser viewport */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 2. Full-window deck viewport */
+.deck-viewport {
+    position: fixed;
+    inset: env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 3. Fixed 16:9 design canvas.
+   JavaScript sets transform: translate(...) scale(...). */
+.deck-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background: var(--slide-bg, #fff);
+}
+
+/* 4. Slides stack inside the fixed stage.
+   Content must be laid out at 1920×1080, not reflowed per device. */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--slide-bg, #fff);
+}
+
+.slide.active,
+.slide.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* 5. Keep media inside authored slide bounds */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 6. Presentation chrome stays outside the slide design system */
+.deck-controls {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* 7. Print one fixed-size slide per page */
+@media print {
+    html,
+    body {
+        width: 1920px;
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-viewport {
+        position: static;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-stage {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none !important;
+        background: none;
+    }
+
+    .slide {
+        position: relative;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 1920px;
+        height: 1080px;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .slide:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .deck-controls {
+        display: none !important;
+    }
+}
+
+/* 8. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+}
+
+
+/* ===========================================
+   SLIDE FRAME + VISIBLE GRID
+   Every slide sits on a 160px column grid with 160px side margins.
+   =========================================== */
+.slide { font-family: var(--font-body); color: var(--ink); }
+.slide::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(to right, rgba(0,0,0,.055) 1px, transparent 1px);
+  background-size: 160px 100%;
+}
+.frame { position: absolute; inset: 110px 160px 130px 160px; display: flex; flex-direction: column; }
+.kicker { font: 800 22px/1 var(--font-display); letter-spacing: .24em; text-transform: uppercase; color: var(--red); margin-bottom: 28px; }
+.title { font: 900 92px/.95 var(--font-display); letter-spacing: -.035em; }
+.title .r { color: var(--red); }
+.lead { font: 400 36px/1.4 var(--font-body); color: var(--ink-2); max-width: 1180px; margin-top: 30px; }
+.lead b { color: var(--ink); font-weight: 700; }
+.mono { font-family: var(--font-mono); font-variant-ligatures: none; font-feature-settings: "calt" 0, "liga" 0; }
+.red { color: var(--red); }
+
+/* Footer chrome: deck name left, page number right */
+.foot { position: absolute; left: 160px; right: 160px; bottom: 56px; display: flex; justify-content: space-between;
+  font: 500 18px var(--font-display); letter-spacing: .18em; text-transform: uppercase; color: var(--grey); }
+
+/* ===========================================
+   ANIMATIONS: staggered slide-in on the active slide
+   =========================================== */
+.reveal { opacity: 0; transform: translateX(-36px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .d1 { transition-delay: .08s; } .slide.visible .d2 { transition-delay: .18s; }
+.slide.visible .d3 { transition-delay: .28s; } .slide.visible .d4 { transition-delay: .38s; }
+.slide.visible .d5 { transition-delay: .48s; } .slide.visible .d6 { transition-delay: .58s; }
+.slide.visible .d7 { transition-delay: .68s; }
+/* Bars grow when the slide becomes visible */
+.grow { transform: scaleX(0); transform-origin: left; transition: transform 1.1s var(--ease) .35s; }
+.slide.visible .grow { transform: scaleX(1); }
+.growy { transform: scaleY(0); transform-origin: bottom; transition: transform 1.1s var(--ease) .3s; }
+.slide.visible .growy { transform: scaleY(1); }
+
+/* ===========================================
+   SLIDE 1: TITLE
+   =========================================== */
+.s-title h1 { position: absolute; left: 150px; top: 200px; font: 900 200px/.88 var(--font-display); letter-spacing: -.045em; }
+.s-title h1 span { color: var(--red); }
+.s-title .aka { position: absolute; left: 160px; top: 600px; font: 800 52px var(--font-display); color: var(--red); letter-spacing: -.01em; }
+.s-title .sub { position: absolute; left: 160px; top: 700px; width: 900px; font: 400 38px/1.35 var(--font-body); color: var(--ink-2); }
+.s-title .kicker { position: absolute; left: 160px; top: 120px; }
+.vbars { position: absolute; right: 160px; top: 220px; width: 480px; height: 640px; display: flex; align-items: flex-end; gap: 28px; }
+.vbars div { flex: 1; background: var(--ink); }
+.vbars .win { background: var(--red); }
+.vlabels { position: absolute; right: 160px; top: 880px; width: 480px; display: flex; gap: 28px; font: 800 26px var(--font-display); }
+.vlabels div { flex: 1; }
+
+/* ===========================================
+   HORIZONTAL PROBABILITY BARS (slides 2, 12)
+   =========================================== */
+.hbars { display: flex; flex-direction: column; gap: 22px; }
+.hbar { display: grid; grid-template-columns: 300px 1fr 130px; align-items: center; gap: 28px; font: 700 34px var(--font-mono); }
+.hbar .track { height: 44px; background: var(--paper); position: relative; }
+.hbar .fill { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+.hbar.win .fill { background: var(--red); }
+.hbar .val { text-align: right; font-weight: 400; }
+.hbar.dim { color: var(--grey); }
+.hbar.dim .fill { background: var(--rule); }
+
+/* ===========================================
+   PIPELINE ROW (slides 3, 4)
+   =========================================== */
+.pipe { display: flex; align-items: stretch; gap: 0; margin-top: 70px; }
+.pipe .box { border: 3px solid var(--ink); padding: 30px 34px; font: 700 32px/1.25 var(--font-display); min-width: 250px; display: flex; flex-direction: column; justify-content: center; }
+.pipe .box small { display: block; font: 400 24px/1.35 var(--font-body); color: var(--ink-2); margin-top: 10px; }
+.pipe .box.hot { background: var(--red); border-color: var(--red); color: #fff; }
+.pipe .box.hot small { color: #fff; }
+.pipe .box.ink { background: var(--ink); color: #fff; }
+.pipe .box.ink small { color: #ddd; }
+.pipe .arrow { width: 70px; display: flex; align-items: center; justify-content: center; font: 900 44px var(--font-display); color: var(--red); }
+.tokens { display: flex; gap: 10px; margin-top: 54px; flex-wrap: nowrap; }
+.tokens span { font: 400 30px var(--font-mono); padding: 12px 18px; background: var(--paper); border-bottom: 4px solid var(--ink);
+  opacity: 0; transform: translateY(14px); transition: opacity .35s, transform .35s; }
+.slide.visible .tokens span { opacity: 1; transform: none; }
+.tokens .n { background: none; border: 0; color: var(--red); font-weight: 600; }
+
+/* ===========================================
+   TABLES (slides 5, 11)
+   =========================================== */
+table.sw { border-collapse: collapse; width: 100%; margin-top: 46px; }
+table.sw th { text-align: left; font: 800 24px var(--font-display); letter-spacing: .14em; text-transform: uppercase; padding: 0 24px 18px 0; border-bottom: 4px solid var(--ink); }
+table.sw th.r { color: var(--red); }
+table.sw td { font: 400 30px/1.3 var(--font-body); padding: 20px 24px 20px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.sw td:first-child { font: 800 26px var(--font-display); letter-spacing: .02em; color: var(--grey); text-transform: uppercase; width: 230px; padding-top: 24px; }
+table.sw td.hl { color: var(--ink); font-weight: 700; }
+table.sw.eng td { font-size: 31px; padding: 16px 24px 16px 0; }
+table.sw.eng td:first-child { width: 260px; font-size: 22px; padding-top: 20px; }
+
+/* ===========================================
+   NUMBERED STEPS (slide 7)
+   =========================================== */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; margin-top: 70px; }
+.step { border-top: 6px solid var(--ink); padding-top: 26px; }
+.step .n { font: 900 110px/1 var(--font-display); color: var(--red); letter-spacing: -.04em; }
+.step h3 { font: 800 32px/1.15 var(--font-display); margin-top: 22px; }
+.step p { font: 400 28px/1.4 var(--font-body); color: var(--ink-2); margin-top: 14px; }
+
+/* ===========================================
+   CODE BLOCKS (slides 9, 12)
+   =========================================== */
+pre.code { font-variant-ligatures: none; font-feature-settings: "calt" 0, "liga" 0; background: var(--paper); border-left: 8px solid var(--ink); padding: 34px 40px; font: 400 27px/1.5 var(--font-mono); color: var(--ink); white-space: pre; overflow: hidden; }
+pre.code .r { color: var(--red); font-weight: 600; }
+pre.code .g { color: var(--grey); }
+pre.code .b { font-weight: 600; }
+
+/* ===========================================
+   THREE-COLUMN CARDS (slides 6, 8, 16)
+   =========================================== */
+.cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 70px; }
+.col { border-top: 6px solid var(--ink); padding-top: 30px; }
+.col.hot { border-color: var(--red); }
+.col .big { font: 900 92px/1 var(--font-display); letter-spacing: -.04em; }
+.col .big.r { color: var(--red); }
+.col h3 { font: 800 36px/1.15 var(--font-display); margin-top: 18px; }
+.col p { font: 400 28px/1.42 var(--font-body); color: var(--ink-2); margin-top: 14px; }
+.col .method { font: 800 30px/1.2 var(--font-display); color: var(--red); margin-top: 22px; }
+.col code, .lead code, .note code { font: 400 .9em var(--font-mono); background: var(--paper); padding: 2px 8px; }
+
+/* ===========================================
+   ENGINE SLIDES (8–10): name block left, facts right
+   =========================================== */
+.engine { position: absolute; inset: 110px 160px 130px 160px; display: grid; grid-template-columns: 640px 1fr; gap: 80px; }
+.engine .name { font: 900 150px/.9 var(--font-display); letter-spacing: -.05em; }
+.engine .ver { font: 600 26px var(--font-mono); color: var(--grey); margin-top: 26px; }
+.engine .verb { font: 800 50px/1.08 var(--font-display); color: var(--red); margin-top: 60px; letter-spacing: -.015em; }
+.engine .verb-sub { font: 400 30px/1.4 var(--font-body); color: var(--ink-2); margin-top: 20px; }
+.facts { display: flex; flex-direction: column; justify-content: center; }
+.fact { display: grid; grid-template-columns: 210px 1fr; gap: 30px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
+.fact:first-child { border-top: 4px solid var(--ink); }
+.fact .k { font: 800 21px var(--font-display); letter-spacing: .16em; text-transform: uppercase; color: var(--grey); padding-top: 8px; }
+.fact .v { font: 400 30px/1.38 var(--font-body); }
+.fact .v code { font: 400 26px var(--font-mono); background: var(--paper); padding: 2px 8px; }
+
+/* ===========================================
+   STATEMENT / TAKEAWAY SLIDES
+   =========================================== */
+.statement { font: 900 116px/.98 var(--font-display); letter-spacing: -.04em; max-width: 1500px; }
+.statement .r { color: var(--red); }
+.list-big { margin-top: 60px; display: flex; flex-direction: column; gap: 34px; }
+.list-big > div { display: grid; grid-template-columns: 90px 1fr; font: 700 44px/1.2 var(--font-display); letter-spacing: -.01em; }
+.list-big > div > span { color: var(--red); font-weight: 900; }
+.list-big em { font: 400 30px/1.4 var(--font-body); font-style: normal; color: var(--ink-2); display: block; margin-top: 8px; }
+
+/* Annotation callouts */
+.note { font: 400 28px/1.42 var(--font-body); color: var(--ink-2); border-left: 6px solid var(--red); padding-left: 26px; }
+.note b { color: var(--ink); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; }
+
+/* Threshold slide: big numbers on a scale */
+.thr { position: relative; margin-top: 90px; height: 330px; }
+.thr .axis { position: absolute; left: 0; right: 0; top: 230px; height: 4px; background: var(--ink); }
+.thr .line { position: absolute; top: 0; bottom: 60px; width: 4px; background: var(--red); }
+.thr .line span { position: absolute; top: -48px; left: -10px; white-space: nowrap; font: 800 24px var(--font-display); letter-spacing: .14em; color: var(--red); text-transform: uppercase; }
+.thr .pt { position: absolute; top: 190px; width: 80px; text-align: center; transform: translateX(-40px); }
+.thr .pt i { display: block; width: 36px; height: 36px; margin: 2px auto 0; border-radius: 50%; background: var(--ink); }
+.thr .pt.pass i { background: var(--red); }
+.thr .pt b { position: absolute; top: 60px; left: 50%; transform: translateX(-50%); font: 900 54px var(--font-display); white-space: nowrap; }
+.thr .pt small { position: absolute; top: 128px; left: 50%; transform: translateX(-50%); font: 700 24px var(--font-mono); white-space: nowrap; color: var(--ink-2); }
+.thr .tick { position: absolute; top: 250px; font: 400 22px var(--font-mono); color: var(--grey); transform: translateX(-50%); }
+
+/* ===========================================
+   DECK CHROME (outside the stage): progress + counter
+   =========================================== */
+.progress { position: fixed; left: 0; top: 0; height: 4px; background: var(--red); z-index: 1000; transition: width .4s var(--ease); }
+.counter { position: fixed; right: 18px; bottom: 14px; z-index: 1000; font: 600 13px var(--font-mono); color: #777; }
+
+/* ===========================================
+   LANGUAGE TOGGLE (EN / 한국어)
+   =========================================== */
+.lang-toggle { position: fixed; z-index: 10002; top: calc(12px + env(safe-area-inset-top, 0px)); right: calc(14px + env(safe-area-inset-right, 0px));
+  display: flex; border: 2px solid var(--ink); background: var(--slide-bg); }
+.lang-toggle button { border: 0; background: transparent; color: var(--ink); font: 800 14px var(--font-display); letter-spacing: .08em;
+  padding: 8px 12px; cursor: pointer; min-width: 44px; min-height: 36px; }
+.lang-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--slide-bg); }
+.lang-toggle button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+/* Korean typesetting: keep words whole, relax tight display tracking */
+html[lang="ko"] .slide { word-break: keep-all; }
+html[lang="ko"] .title, html[lang="ko"] .statement, html[lang="ko"] .verb { letter-spacing: -.02em; line-height: 1.12; }
+html[lang="ko"] .kicker { letter-spacing: .12em; }
+
+/* ===========================================
+   INLINE EDITING (hover top-left or press E)
+   =========================================== */
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 10000; cursor: pointer; }
+.edit-toggle { position: fixed; top: 16px; left: 16px; z-index: 10001; border: 0; background: var(--ink); color: #fff; font: 700 14px var(--font-display);
+  padding: 10px 14px; letter-spacing: .1em; opacity: 0; pointer-events: none; transition: opacity .3s; cursor: pointer; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
+.edit-toggle.active { background: var(--red); }
+body.editing [contenteditable="true"] { outline: 2px dashed rgba(255,51,0,.5); outline-offset: 4px; }
+</style>
+<div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button></div>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">EDIT</button>
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter"></div>
+
+<div class="deck-viewport"><main class="deck-stage" id="deckStage">
+
+<!-- ========== 1. TITLE ========== -->
+<section class="slide s-title">
+  <div class="kicker reveal">From LLMs to System One</div>
+  <h1 class="reveal d1">Decisions<br>API<span>.</span></h1>
+  <div class="aka reveal d2">a.k.a. SystemOne API</div>
+  <p class="sub reveal d3">One forward pass. A probability over the answers you listed. No text generated.</p>
+  <div class="vbars"><div class="win growy" style="height:96%"></div><div class="growy" style="height:6%"></div><div class="growy" style="height:3%"></div></div>
+  <div class="vlabels"><div>billing</div><div>tech</div><div>other</div></div>
+  <div class="foot"><span>/v1/decisions · /v1/systemone</span><span>01</span></div>
+</section>
+
+<!-- ========== 2. WHAT AN LLM DOES ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Start here · the language model</div>
+    <h2 class="title reveal d1">An LLM does one thing:<br><span class="r">score every possible next token.</span></h2>
+    <div class="split" style="grid-template-columns: 1.25fr .75fr; margin-top: 64px;">
+      <div class="hbars reveal d2">
+        <div class="mono" style="font-size:30px;color:var(--grey);margin-bottom:6px">"The customer is asking for a ▮"</div>
+        <div class="hbar win"><span>refund</span><div class="track"><div class="fill grow" style="width:62%"></div></div><span class="val">0.41</span></div>
+        <div class="hbar"><span>new</span><div class="track"><div class="fill grow" style="width:18%"></div></div><span class="val">0.12</span></div>
+        <div class="hbar"><span>replacement</span><div class="track"><div class="fill grow" style="width:13%"></div></div><span class="val">0.09</span></div>
+        <div class="hbar dim"><span>…150k more</span><div class="track"><div class="fill grow" style="width:56%"></div></div><span class="val">0.38</span></div>
+      </div>
+      <div class="note reveal d3" style="align-self:center">
+        One forward pass gives a probability for <b>every token in the vocabulary</b>.<br><br>
+        Everything else (chat, completions, decisions) is a choice about <b>what to do with that distribution</b>.
+      </div>
+    </div>
+    <div class="mono reveal d4" style="margin-top:auto;font-size:20px;color:var(--grey)">illustrative numbers</div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>02</span></div>
+</section>
+
+<!-- ========== 3. COMPLETIONS API ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Path 1 · Completions / Chat API</div>
+    <h2 class="title reveal d1">Sample a token. Append it.<br><span class="r">Repeat N times.</span></h2>
+    <div class="pipe reveal d2">
+      <div class="box">Prompt<small>messages in</small></div><div class="arrow">→</div>
+      <div class="box">Prefill<small>one pass over the prompt</small></div><div class="arrow">→</div>
+      <div class="box ink">Decode × N<small>sample, append, run again</small></div><div class="arrow">→</div>
+      <div class="box">Text<small>anything at all</small></div>
+    </div>
+    <div class="tokens">
+      <span style="transition-delay:.6s">This</span><span style="transition-delay:.75s">·ticket</span><span style="transition-delay:.9s">·should</span><span style="transition-delay:1.05s">·probably</span><span style="transition-delay:1.2s">·go</span><span style="transition-delay:1.35s">·to</span><span style="transition-delay:1.5s">·billing</span><span style="transition-delay:1.65s">·because</span><span class="n" style="transition-delay:1.8s">… N steps</span>
+    </div>
+    <p class="lead reveal d4">You pay <b>per output token</b>, latency grows <b>with answer length</b>, and the answer still has to be <b>parsed</b>.</p>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>03</span></div>
+</section>
+
+<!-- ========== 4. DECISIONS API ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Path 2 · Decisions API / SystemOne API</div>
+    <h2 class="title reveal d1">List the answers first.<br><span class="r">Read the distribution once.</span></h2>
+    <div class="pipe reveal d2">
+      <div class="box">State + questions<small>answers declared up front</small></div><div class="arrow">→</div>
+      <div class="box">Prefill<small>same forward pass</small></div><div class="arrow">→</div>
+      <div class="box hot">Read once<small>zero decode steps</small></div><div class="arrow">→</div>
+      <div class="box">{ billing: 0.985 }<small>typed value + probabilities</small></div>
+    </div>
+    <div class="cols3" style="margin-top:64px">
+      <div class="col reveal d3"><h3>TypeSafe <span class="mono" style="font-size:26px">/v1/systemone</span></h3><p>Jev model · 70–500 ms per call</p></div>
+      <div class="col reveal d4"><h3>OpenAI <span class="mono" style="font-size:26px">/v1/decisions</span></h3><p>"~10× faster than Responses" · input tokens only</p></div>
+      <div class="col reveal d5"><h3>Self-hosted</h3><p>SGLang, vLLM, Ollama ship <code>/v1/systemone</code></p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>04</span></div>
+</section>
+
+<!-- ========== 5. SIDE BY SIDE ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Principles · side by side</div>
+    <h2 class="title reveal d1">Same model. <span class="r">Different contract.</span></h2>
+    <table class="sw reveal d2">
+      <tr><th></th><th>Completions API</th><th class="r">Decisions / SystemOne API</th></tr>
+      <tr><td>Output</td><td>Free text, token by token</td><td class="hl">One label from your list + probabilities</td></tr>
+      <tr><td>Compute</td><td>Prefill + N decode steps</td><td class="hl">Prefill + one read</td></tr>
+      <tr><td>Price</td><td>Per output token</td><td class="hl">Input tokens only (OpenAI: $0.10 / 1M)</td></tr>
+      <tr><td>Failure</td><td>Wrong format, off-list answers</td><td class="hl">Off-list answer is impossible</td></tr>
+      <tr><td>Can't do</td><td>—</td><td class="hl">Rationales, free text, unlisted answers</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>05</span></div>
+</section>
+
+<!-- ========== 7. ALGORITHM ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">The algorithm · every engine</div>
+    <h2 class="title reveal d1">Five steps, <span class="r">one pass per question.</span></h2>
+    <div class="steps">
+      <div class="step reveal d2"><div class="n">1</div><h3>Render</h3><p>One prompt per question: state + question + lettered options.</p></div>
+      <div class="step reveal d3"><div class="n">2</div><h3>Check labels</h3><p>Each label (<span class="mono">A</span>, <span class="mono">B</span>, <span class="mono">C</span>) must be exactly one token, or the model is refused.</p></div>
+      <div class="step reveal d4"><div class="n">3</div><h3>Forward pass</h3><p>Prefill. The shared state prefix is cached across questions.</p></div>
+      <div class="step reveal d5"><div class="n">4</div><h3>Keep labels</h3><p>Take the logits at the answer position; drop all other tokens.</p></div>
+      <div class="step reveal d6"><div class="n">5</div><h3>Softmax</h3><p>Normalise over the labels only → probabilities → typed answer.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>06</span></div>
+</section>
+
+<!-- ========== 8. THREE QUESTION TYPES ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">From probabilities to typed answers</div>
+    <h2 class="title reveal d1" style="font-size:76px">p = softmax( logit(A), logit(B), logit(C) )</h2>
+    <div class="cols3">
+      <div class="col hot reveal d2"><div class="big r mono" style="font-size:64px">argmax</div><h3>choice</h3><p>Pick one listed option.<br><code>team → "billing"</code></p></div>
+      <div class="col reveal d3"><div class="big mono" style="font-size:64px">Σ i·pᵢ</div><h3>score</h3><p>Expected level on an ordered scale.<br><code>urgency → 0.815</code></p></div>
+      <div class="col reveal d4"><div class="big mono" style="font-size:64px">p(yes)</div><h3>noul (predicate)</h3><p>Probability a statement is true.<br><code>refund → 0.997</code></p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>07</span></div>
+</section>
+
+<!-- ========== 9. PROMPT RENDERING ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Step 1, concretely · SGLang's rendered prompt</div>
+    <h2 class="title reveal d1">The question becomes <span class="r">a multiple-choice prompt.</span></h2>
+    <pre class="code reveal d2" style="margin-top:50px"><span class="g">{"ticket":"I was charged twice. Please refund the extra payment."}</span>
+
+<span class="b">Question:</span> Which team should handle this ticket?
+<span class="r">A</span>: billing - Payments and refunds
+<span class="r">B</span>: technical - Bugs and integrations
+<span class="r">C</span>: other - None of the above
+Answer with the letter of one option only.
+<span class="g">&lt;&#8204;|im_start|&#8204;&gt;assistant  &lt;think&gt;&lt;/think&gt;</span>  <span class="r">▮ ← read the next-token distribution here</span></pre>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>08</span></div>
+</section>
+
+<!-- ========== TRAINING: OPEN RECIPES ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Training · open recipes</div>
+    <h2 class="title reveal d1">Jev's training is secret.<br><span class="r">Three open recipes aren't.</span></h2>
+    <div class="cols3" style="margin-top:60px">
+      <div class="col reveal d2"><h3>Nimble</h3><div class="mono" style="font-size:22px;color:var(--grey);margin-top:8px">Bespoke Labs · Qwen3.5-9B LoRA</div><div class="method">Contrastive pairs</div><p>Near-identical examples where one fact flips the answer. Cross-entropy over the label logits; 2,676 examples.</p></div>
+      <div class="col reveal d3"><h3>Kev</h3><div class="mono" style="font-size:22px;color:var(--grey);margin-top:8px">Jared Palmer · Qwen3.5 0.5B–27B</div><div class="method">Fitted temperature</div><p>A temperature fitted on held-out data ships with every checkpoint, so probabilities come calibrated by default.</p></div>
+      <div class="col hot reveal d4"><h3>s1</h3><div class="mono" style="font-size:22px;color:var(--grey);margin-top:8px">j-raghavan · Gemma 4 26B-A4B</div><div class="method">Proper-scoring loss</div><p>Base model as teacher, blended with gold labels. ECE 0.083 on JevBench, against Jev's 0.081.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>09</span></div>
+</section>
+
+<!-- ========== 10. ENGINE: SGLANG ========== -->
+<section class="slide">
+  <div class="engine">
+    <div>
+      <div class="kicker reveal">Inference engine 1/3</div>
+      <div class="name reveal d1">SGLang</div>
+      <div class="ver reveal d2">v0.5.21 · /v1/systemone since 2026-09-25</div>
+      <div class="verb reveal d3">Prefill only.<br>Zero new tokens.</div>
+      <div class="verb-sub reveal d4">Reuses the <code class="mono" style="font-size:26px">/v1/score</code> machinery: label logprobs over the full vocabulary.</div>
+    </div>
+    <div class="facts">
+      <div class="fact reveal d2"><div class="k">Serves</div><div class="v"><b>Any chat model</b> that passes the template and one-token-label checks</div></div>
+      <div class="fact reveal d3"><div class="k">Prompt</div><div class="v">Its own generic wording; <code>A:</code>…<code>Z:</code>, then two-letter labels up to 255 options</div></div>
+      <div class="fact reveal d4"><div class="k">Thinking</div><div class="v">Forced off; always-reasoning templates are refused</div></div>
+      <div class="fact reveal d5"><div class="k">Confidence</div><div class="v"><code>(n·max(q) − 1) / (n − 1)</code>, <code>label_mass</code></div></div>
+      <div class="fact reveal d6"><div class="k">Also</div><div class="v"><code>/v1/decisions</code> in its own format (not OpenAI-compatible)</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>10</span></div>
+</section>
+
+<!-- ========== 11. ENGINE: VLLM ========== -->
+<section class="slide">
+  <div class="engine">
+    <div>
+      <div class="kicker reveal">Inference engine 2/3</div>
+      <div class="name reveal d1">vLLM</div>
+      <div class="ver reveal d2">v0.32.0 · /v1/systemone since 2026-10-18</div>
+      <div class="verb reveal d3">One greedy decode step.<br>Token discarded.</div>
+      <div class="verb-sub reveal d4">Raw logprobs taken before temperature, label IDs picked out with <code class="mono" style="font-size:26px">logprob_token_ids</code>.</div>
+    </div>
+    <div class="facts">
+      <div class="fact reveal d2"><div class="k">Serves</div><div class="v">An allowlist: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b></div></div>
+      <div class="fact reveal d3"><div class="k">Prompt</div><div class="v">Generic wording like SGLang; at most 26 options</div></div>
+      <div class="fact reveal d4"><div class="k">Thinking</div><div class="v"><code>enable_thinking: false</code> required</div></div>
+      <div class="fact reveal d5"><div class="k">Confidence</div><div class="v"><code>p_top × label_mass</code>, <code>argmax_is_label</code></div></div>
+      <div class="fact reveal d6"><div class="k">Status</div><div class="v"><code>/v1/systemone</code> in v0.32.0; OpenAI-compatible <code>/v1/decisions</code> in v0.33.0rc3</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>11</span></div>
+</section>
+
+<!-- ========== 12. ENGINE: OLLAMA ========== -->
+<section class="slide">
+  <div class="engine">
+    <div>
+      <div class="kicker reveal">Inference engine 3/3</div>
+      <div class="name reveal d1">Ollama</div>
+      <div class="ver reveal d2">v0.40.15 · /v1/systemone only</div>
+      <div class="verb reveal d3">Replays each model's<br>training prompt.</div>
+      <div class="verb-sub reveal d4">State + all questions as one JSON object, then <code class="mono" style="font-size:26px">Requested field: "team"</code>.</div>
+    </div>
+    <div class="facts">
+      <div class="fact reveal d2"><div class="k">Serves</div><div class="v">Only tagged decision models: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b></div></div>
+      <div class="fact reveal d3"><div class="k">llama.cpp</div><div class="v">Since v0.40.4, llama.cpp's own <code>/v1/systemone</code>; prompt and temperature stored in the model file</div></div>
+      <div class="fact reveal d4"><div class="k">MLX</div><div class="v">Prefill, then unembed <b>only the candidate rows</b></div></div>
+      <div class="fact reveal d5"><div class="k">Confidence</div><div class="v">Per model: mostly <code>(n·max − 1)/(n − 1)</code>, entropy for some</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>12</span></div>
+</section>
+
+<!-- ========== 14. REAL REQUEST ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Real example · Ollama + Nimble · the request</div>
+    <h2 class="title reveal d1">One ticket, <span class="r">three typed questions.</span></h2>
+    <pre class="code reveal d2" style="margin-top:44px;font-size:25px">POST /v1/systemone
+{ "model": "nimble",
+  "state": { "ticket": "I was charged twice. Please refund the extra payment." },
+  "questions": {
+    "team":    { "type": <span class="r">"choice"</span>, "instructions": "Which team should handle this ticket?",
+                 "criteria": { "billing": "…", "technical": "…", "other": "…" } },
+    "refund":  { "type": <span class="r">"noul"</span>,   "instructions": "Does the customer explicitly ask for a refund?" },
+    "urgency": { "type": <span class="r">"score"</span>,  "instructions": "How urgent is this ticket?",
+                 "criteria": ["Routine", "Soon", "Urgent"] } } }</pre>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>13</span></div>
+</section>
+
+<!-- ========== 15. REAL RESPONSE ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Real example · the response</div>
+    <h2 class="title reveal d1">841 tokens in. <span class="r">4 tokens out.</span></h2>
+    <div class="split" style="grid-template-columns: 1.1fr .9fr; gap: 90px; margin-top: 60px;">
+      <div class="hbars reveal d2">
+        <div class="kicker" style="margin:0;color:var(--grey)">team · choice</div>
+        <div class="hbar win"><span>billing</span><div class="track"><div class="fill grow" style="width:98.5%"></div></div><span class="val">0.985</span></div>
+        <div class="hbar"><span>technical</span><div class="track"><div class="fill grow" style="width:1.2%"></div></div><span class="val">0.012</span></div>
+        <div class="hbar"><span>other</span><div class="track"><div class="fill grow" style="width:.3%"></div></div><span class="val">0.003</span></div>
+        <div class="kicker" style="margin:26px 0 0;color:var(--grey)">urgency · score</div>
+        <div class="hbar"><span>Routine</span><div class="track"><div class="fill grow" style="width:37.8%"></div></div><span class="val">0.378</span></div>
+        <div class="hbar win"><span>Soon</span><div class="track"><div class="fill grow" style="width:42.9%"></div></div><span class="val">0.429</span></div>
+        <div class="hbar"><span>Urgent</span><div class="track"><div class="fill grow" style="width:19.3%"></div></div><span class="val">0.193</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:34px;justify-content:center">
+        <div class="note reveal d2"><b>team (choice) = 'billing'</b><br>The option with the highest probability, 0.985.</div>
+        <div class="note reveal d3"><b>refund (noul) = 0.997</b><br>p(true) for "asks for a refund".</div>
+        <div class="note reveal d4"><b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193. An expected level, not a label.</div>
+        <div class="note reveal d5"><b>urgency confidence = 0.046</b><br>The distribution is nearly flat, so the precise-looking score is a guess.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>14</span></div>
+</section>
+
+<!-- ========== 17. TAKEAWAYS ========== -->
+<section class="slide">
+  <div class="frame">
+    <div class="kicker reveal">Takeaways</div>
+    <h2 class="statement reveal d1" style="font-size:100px">Don't generate.<br><span class="r">Read.</span></h2>
+    <div class="list-big">
+      <div class="reveal d2"><span>01</span><div>Same LLM, one forward pass<em>Reads next-token probabilities instead of generating text: no output-token cost, fast.</em></div></div>
+      <div class="reveal d3"><span>02</span><div>Use the LLM as is, or train it further<em>As is: general chat models on SGLang and vLLM / Trained: Nimble, Kev, s1, which also learn how sure to be.</em></div></div>
+      <div class="reveal d4"><span>03</span><div>Probabilities over the options you give<em>A probability does not guarantee a right answer.</em></div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Decisions API · SystemOne API</span><span>15</span></div>
+</section>
+
+</main></div>
+
+<script>
+/* ===========================================
+   SLIDE PRESENTATION CONTROLLER
+   Keyboard (arrows, space, PgUp/PgDn, Home/End), touch swipe, wheel, #n deep links
+   =========================================== */
+class SlidePresentation {
+  constructor() {
+    this.slides = [...document.querySelectorAll('.slide')];
+    this.stage = document.getElementById('deckStage');
+    this.progress = document.getElementById('progress');
+    this.counter = document.getElementById('counter');
+    this.wheelLock = false;
+    this.scale(); addEventListener('resize', () => this.scale());
+    this.keys(); this.touch(); this.wheel();
+    const start = parseInt(location.hash.slice(1), 10);
+    this.show(Number.isFinite(start) ? start - 1 : 0);
+  }
+  /* Scale the fixed 1920×1080 stage to fit, letterboxing as needed */
+  scale() {
+    const vp = this.stage.parentElement, w = vp.clientWidth, h = vp.clientHeight;
+    const k = Math.min(w / 1920, h / 1080);
+    this.stage.style.transform = `translate(${(w - 1920 * k) / 2}px, ${(h - 1080 * k) / 2}px) scale(${k})`;
+  }
+  keys() {
+    document.addEventListener('keydown', e => {
+      if (document.body.classList.contains('editing')) return;
+      if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); this.show(this.i + 1); }
+      if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); this.show(this.i - 1); }
+      if (e.key === 'Home') this.show(0);
+      if (e.key === 'End') this.show(this.slides.length - 1);
+    });
+  }
+  touch() {
+    let x0 = null;
+    addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    addEventListener('touchend', e => {
+      if (x0 === null || document.body.classList.contains('editing') || e.target.closest('.lang-toggle, .edit-toggle, .edit-hotzone')) { x0 = null; return; }
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) this.show(this.i + (dx < 0 ? 1 : -1));
+      else if (e.changedTouches[0].clientX > innerWidth / 2) this.show(this.i + 1); /* tap right half = next */
+      else this.show(this.i - 1);
+      x0 = null;
+    });
+  }
+  wheel() {
+    addEventListener('wheel', e => {
+      if (this.wheelLock || Math.abs(e.deltaY) < 20) return;
+      this.wheelLock = true; setTimeout(() => this.wheelLock = false, 700);
+      this.show(this.i + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: true });
+  }
+  show(n) {
+    this.i = Math.max(0, Math.min(n, this.slides.length - 1));
+    this.slides.forEach((s, j) => { s.classList.toggle('active', j === this.i); s.classList.toggle('visible', j === this.i); });
+    this.progress.style.width = ((this.i + 1) / this.slides.length * 100) + '%';
+    this.counter.textContent = `${this.i + 1} / ${this.slides.length}`;
+    try { history.replaceState(null, '', '#' + (this.i + 1)); } catch (e) {}
+  }
+}
+const deck = new SlidePresentation();
+
+/* ===========================================
+   INLINE EDITOR
+   E or top-left hover toggles edit mode; edits autosave to localStorage;
+   (Saving to a file is unavailable inside an artifact.)
+   =========================================== */
+const editor = {
+  isActive: false,
+  get key() { return 'decisions-api-deck-edits-' + (document.documentElement.lang || 'en'); },
+  targets() { return document.querySelectorAll('.slide h1, .slide h2, .slide h3, .slide p, .kicker, .note, .aka, .verb, .verb-sub, .fact .v, td, th, .list-big div > div'); },
+  toggleEditMode() {
+    this.isActive = !this.isActive;
+    document.body.classList.toggle('editing', this.isActive);
+    document.getElementById('editToggle').classList.toggle('active', this.isActive);
+    this.targets().forEach(el => el.setAttribute('contenteditable', this.isActive ? 'true' : 'false'));
+    if (!this.isActive) this.save();
+  },
+  save() {
+    try { localStorage.setItem(this.key, JSON.stringify([...this.targets()].map(el => el.innerHTML))); } catch (e) {}
+  },
+  load() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(this.key) || 'null');
+      if (saved) this.targets().forEach((el, i) => { if (saved[i] !== undefined) el.innerHTML = saved[i]; });
+    } catch (e) {}
+  },
+  download() {
+    if (this.isActive) this.toggleEditMode();
+    const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([html], { type: 'text/html' })), download: 'decisions-api.html' });
+    a.click(); URL.revokeObjectURL(a.href);
+  }
+};
+document.addEventListener('input', () => editor.save());
+const editToggle = document.getElementById('editToggle');
+const hotzone = document.querySelector('.edit-hotzone');
+let hideTimeout = null;
+editToggle.addEventListener('click', () => editor.toggleEditMode());
+hotzone.addEventListener('click', () => editor.toggleEditMode());
+hotzone.addEventListener('mouseenter', () => { clearTimeout(hideTimeout); editToggle.classList.add('show'); });
+hotzone.addEventListener('mouseleave', () => { hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove('show'); }, 400); });
+editToggle.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+editToggle.addEventListener('mouseleave', () => { hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove('show'); }, 400); });
+document.addEventListener('keydown', e => {
+  if ((e.key === 'e' || e.key === 'E') && e.target.getAttribute('contenteditable') !== 'true') editor.toggleEditMode();
+});
+
+/* ===========================================
+   LANGUAGE SWITCH (EN / KO)
+   Each text element remembers its English HTML; KO maps that text to Korean.
+   Elements without a Korean entry (code, API names, numbers) stay in English.
+   =========================================== */
+const KO = {"One forward pass. A probability over the answers you listed. No text generated.": "텍스트를 생성하는 대신에 주어진 선택지에서 하나의 결정을 내립니다. 각 결정에는 confidence score가 제공됩니다.", "An LLM does one thing:<br><span class=\"r\">score every possible next token.</span>": "LLM의 동작 방식:<br><span class=\"r\">다음에 올 토큰의 가능성을 예측</span>", "\"The customer is asking for a ▮\"": "\"사용자가 요청하는 것은 ▮\"", "refund": "환불", "new": "새", "replacement": "교환", "…150k more": "…", "One forward pass gives a probability for <b>every token in the vocabulary</b>.<br><br> Everything else (chat, completions, decisions) is a choice about <b>what to do with that distribution</b>.": "매 forward pass마다 <b>vocabulary의 모든 토큰</b>의 확률을 계산합니다.<br><br>LLM의 동작은 <b>이 확률의 분포</b>에서 시작합니다.", "Sample a token. Append it.<br><span class=\"r\">Repeat N times.</span>": "토큰 샘플링.<br><span class=\"r\">N회 반복.</span>", "You pay <b>per output token</b>, latency grows <b>with answer length</b>, and the answer still has to be <b>parsed</b>.": "<b>토큰 출력 당 비용</b> 발생, <b>생성 시간</b> 증가, <b>parsing</b> 필요", "List the answers first.<br><span class=\"r\">Read the distribution once.</span>": "선택지를 제공하고,<br><span class=\"r\">분포를 단 한 번만 계산.</span>", "Same model. <span class=\"r\">Different contract.</span>": "같은 모델, <span class=\"r\">다른 활용.</span>", "Free text, token by token": "제한 없는 텍스트를 토큰 하나씩 생성", "One label from your list + probabilities": "제공된 목록에서 하나의 label과 그 확률을 제공", "Per output token": "input 및 output 토큰 당 비용", "Input tokens only (OpenAI: $0.10 / 1M)": "input 토큰만", "Wrong format, off-list answers": "양식 불일치, 선택지에 없는 항목 답변", "Off-list answer is impossible": "선택지 안에 있는 것만 답변", "Rationales, free text, unlisted answers": "추론, 긴 텍스트 답변, 선택지 이외의 답변", "Five steps, <span class=\"r\">one pass per question.</span>": "결정을 내리는<br><span class=\"r\">다섯 단계</span>", "One prompt per question: state + question + lettered options.": "질문 하나 당 프롬프트 하나를 구성: 상태 + 질의 + 라벨이 달린 선택지", "Each label (<span class=\"mono\">A</span>, <span class=\"mono\">B</span>, <span class=\"mono\">C</span>) must be exactly one token, or the model is refused.": "토큰 하나짜리 라벨인지 검증. 토큰 하나를 넘으면 거절", "Prefill. The shared state prefix is cached across questions.": "prefill. 공유되는 상태 접두사는 cached됨", "Take the logits at the answer position; drop all other tokens.": "선택지에 포함되어있는 모델 출력 수치 (logits)만 추려냄", "Normalise over the labels only → probabilities → typed answer.": "선택지들만 가지고 정규화 → 확률 계산 → 답변 선택", "Pick one listed option.<br><code>team → \"billing\"</code>": "하나의 선택지를 고름<br><code>team → \"billing\"</code>", "Expected level on an ordered scale.<br><code>urgency → 0.815</code>": "정해진 단계에 대한 기댓값<br><code>urgency → 0.815</code>", "Probability a statement is true.<br><code>refund → 0.997</code>": "주어진 항목이 참일 가능성<br><code>refund → 0.997</code>", "The question becomes <span class=\"r\">a multiple-choice prompt.</span>": "질문을 <span class=\"r\">객관식 프롬프트로</span> 변환", "▮ ← read the next-token distribution here": "▮ ← 이 위치에 올 다음 토큰의 분포를 얻는다.", "Jev's training is secret.<br><span class=\"r\">Three open recipes aren't.</span>": "기존 모델에서<br><span class=\"r\">추가 학습</span>", "Near-identical examples where one fact flips the answer. Cross-entropy over the label logits; 2,676 examples.": "Near-identical examples: 작은 차이로 답변이 뒤바뀔 수 있는 문제들로 훈련", "A temperature fitted on held-out data ships with every checkpoint, so probabilities come calibrated by default.": "모델이 본 적 없는 데이터로 확률을 보정해서 제공", "Base model as teacher, blended with gold labels. ECE 0.083 on JevBench, against Jev's 0.081.": "정답뿐 아니라 '얼마나 확신해야 하는지'까지 학습", "<b>Any chat model</b> that passes the template and one-token-label checks": "Chat template이 포함된 <b>모든 모델</b>에서 사용 가능. one-token-label 체크 진행", "Its own generic wording; <code>A:</code>…<code>Z:</code>, then two-letter labels up to 255 options": "<code>A:</code> … <code>Z:</code> 형태로 라벨링하여 최대 255개의 선택지 제공", "Forced off; always-reasoning templates are refused": "강제 비활성화", "<code>/v1/decisions</code> in its own format (not OpenAI-compatible)": "<code>/v1/systemone</code>과 더불어 독자 규격의 <code>/v1/decisions</code> 제공", "Reuses the <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> machinery: label logprobs over the full vocabulary.": "label의 logprob을 제공하던 기존 <code class=\"mono\" style=\"font-size:26px\">/v1/score</code> 기능을 재사용", "Raw logprobs taken before temperature, label IDs picked out with <code class=\"mono\" style=\"font-size:26px\">logprob_token_ids</code>.": "decode 한 번으로 temperature 적용 전의 logprob을 얻고, label 토큰만 골라냄", "An allowlist: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>": "특정 모델들: <b>Qwen3, Qwen3.5, DiffusionGemma, Clef Omni, LiquidAI d1-3B</b>", "Generic wording like SGLang; at most 26 options": "SGLang처럼 일반적인 label 사용, 최대 26개", "<code>enable_thinking: false</code> required": "<code>enable_thinking: false</code> 설정 필요", "<code>/v1/systemone</code> in v0.32.0; OpenAI-compatible <code>/v1/decisions</code> in v0.33.0rc3": "v0.32.0에서 <code>/v1/systemone</code> 정식 제공, v0.33.0rc3에서 OpenAI 호환 <code>/v1/decisions</code> 추가", "State + all questions as one JSON object, then <code class=\"mono\" style=\"font-size:26px\">Requested field: \"team\"</code>.": "상태와 질문을 하나의 JSON 객체로 제공", "Only tagged decision models: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>": "decision model로 명시된 모델만 가능: <b>Nimble, Tev1, Clef, Kev, pplx-decider, d1, d3, AutoTrust</b>", "Since v0.40.4, llama.cpp's own <code>/v1/systemone</code>; prompt and temperature stored in the model file": "llama.cpp 자체 <code>/v1/systemone</code> 사용. 프롬프트 형식과 temperature는 모델 파일에 저장", "Prefill, then unembed <b>only the candidate rows</b>": "prefill 후 <b>선택지 토큰의 logit만</b> 계산", "One ticket, <span class=\"r\">three typed questions.</span>": "실전 <span class=\"r\">예시</span>", "841 tokens in. <span class=\"r\">4 tokens out.</span>": "입력 841 토큰, <span class=\"r\">출력 4 토큰</span>", "<b>team (choice) = 'billing'</b><br>The option with the highest probability, 0.985.": "<b>team (choice) = 'billing'</b><br>가장 높은 확률을 가진 선택지", "<b>refund (noul) = 0.997</b><br>p(true) for \"asks for a refund\".": "<b>refund (noul) = 0.997</b><br>사용자가 환불을 요청했을 확률", "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193. An expected level, not a label.": "<b>urgency score = 0.815</b><br>0·0.378 + 1·0.429 + 2·0.193, 긴급도의 기댓값", "<b>urgency confidence = 0.046</b><br>The distribution is nearly flat, so the precise-looking score is a guess.": "<b>urgency confidence = 0.046</b><br>분포가 대체로 균등하여 낮은 confidence", "Don't generate.<br><span class=\"r\">Read.</span>": "Completion이 아닌 <span class=\"r\">Decision</span>", "Same LLM, one forward pass<em>Reads next-token probabilities instead of generating text: no output-token cost, fast.</em>": "같은 LLM으로, 단 한 번의 forward pass<em>텍스트를 생성하지 않고 다음 토큰 확률만 읽음. 출력 토큰 비용 없이 빠르게.</em>", "Use the LLM as is, or train it further<em>As is: general chat models on SGLang and vLLM / Trained: Nimble, Kev, s1, which also learn how sure to be.</em>": "기존 LLM을 그대로 쓰거나, 추가 학습을 하거나<em>그대로: SGLang·vLLM의 일반 chat model / 추가 학습: Nimble·Kev·s1, 확신의 정도까지 학습</em>", "Probabilities over the options you give<em>A probability does not guarantee a right answer.</em>": "주어진 선택지에서 구하는 확률<em>확률이 정답을 보장하지는 않음.</em>"};
+const I18N_SEL = 'h2, pre.code > .r, .sub, .lead, .note, .box, .col h3, .col p, .step h3, .step p, .verb, .verb-sub, .fact .k, .fact .v, th, td, .list-big > div > div, .foot > span:first-child, .tokens span, .thr .line span, .thr small, .frame > .mono, .hbars > .mono, .hbars > .kicker, .hbar > span:first-child';
+const norm = s => s.replace(/\s+/g, ' ').trim();
+const i18nEls = [...document.querySelectorAll(I18N_SEL)].map(el => ({ el, en: el.innerHTML }));
+function setLang(lang) {
+  if (editor.isActive) editor.toggleEditMode();
+  document.documentElement.lang = lang;
+  i18nEls.forEach(({ el, en }) => { el.innerHTML = (lang === 'ko' && KO[norm(en)]) || en; });
+  document.querySelectorAll('.lang-toggle button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  document.title = lang === 'ko' ? 'Decisions API 덱' : 'Decisions API Deck';
+  try { localStorage.setItem('decisions-api-deck-lang', lang); } catch (e) {}
+  editor.load();
+}
+document.querySelectorAll('.lang-toggle button').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); setLang(b.dataset.lang); }));
+document.addEventListener('keydown', e => {
+  if ((e.key === 'l' || e.key === 'L') && e.target.getAttribute('contenteditable') !== 'true') setLang(document.documentElement.lang === 'ko' ? 'en' : 'ko');
+});
+let startLang = 'en';
+try { startLang = localStorage.getItem('decisions-api-deck-lang') || 'en'; } catch (e) {}
+setLang(startLang === 'ko' ? 'ko' : 'en');
+</script>
+</body>
+</html>
