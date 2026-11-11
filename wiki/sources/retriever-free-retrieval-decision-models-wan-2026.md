@@ -51,7 +51,7 @@ The paper names a **capability asymmetry** in [[retrieval-augmented-generation|R
   - **Passages:** shown with their page and heading path.
   - **Pages:** shown by title and section headings.
   - **NQ clusters:** one ≤30-word sentence written by Qwen3-8B from up to 300 page titles.
-  - **Structure:** taken from corpus metadata or HTML headings, or built by recursive k-means when absent. The tree need not be uniform: MTRAG adds a heading level only under pages with more than 60 passages.
+  - **Structure:** taken from corpus metadata or HTML headings, or built by recursive [[k-means]] when absent. The tree need not be uniform: MTRAG adds a heading level only under pages with more than 60 passages.
 - **Per-benchmark budgets.**
   - **ConditionalQA:** keep 3 of 652 guides.
   - **MTRAG:** 8,578 page titles → top 50 by pooled score → rescored together → 10.

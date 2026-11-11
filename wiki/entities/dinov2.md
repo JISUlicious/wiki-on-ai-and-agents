@@ -2,9 +2,10 @@
 title: DINOv2
 type: entity
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-11
 sources:
   - platonic-representation-hypothesis-jepas-balestriero-2026.md
+  - e-means-outperforming-k-means-bessa-2026.md
 family: dino
 builds-on:
   - [[vit]]
@@ -37,3 +38,7 @@ The model details on this page come from the DINOv2 paper, which has no source p
 
 - [[platonic-representation-hypothesis-jepas-balestriero-2026]]
 - [DINOv2, arXiv:2304.07193](https://arxiv.org/abs/2304.07193)
+
+## Newer evidence (2026-11-11)
+
+- DINO10B, a 10-billion-vector dataset of DINO features (1024 dimensions), was released with e-means as a benchmark for clustering and nearest-neighbour search at scale. ([[e-means-outperforming-k-means-bessa-2026]])

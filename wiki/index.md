@@ -7,7 +7,7 @@ updated: 2026-11-11
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 792 sources, 254 entities, 388 concepts, 9 comparisons, 28 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 793 sources, 254 entities, 389 concepts, 9 comparisons, 28 queries.
 
 ## Entities
 
@@ -539,6 +539,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[turing-completeness]] — Expressivity claim for UT and looped transformers; depends on precision and unbounded steps
 
 ### Retrieval
+- [[k-means]] — Clustering behind IVF indexes, quantization codebooks and corpus trees; solvers from Lloyd to e-means (2026)
 - [[retrieval-augmented-generation]] — RAG paradigm: condition generation on retrieved text
 - [[dense-retrieval]] — Learned vector retrieval
 - [[dual-encoder]] — Two-tower architecture enabling efficient retrieval
@@ -950,6 +951,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[autogpt-readme-2026]] — AutoGPT README
 
 ### Ad-hoc ingests 2026-11-11
+- [[e-means-outperforming-k-means-bessa-2026]] — e-means (FAIR): EMA mini-batch k-means with scaling-law hyperparameters; beats Lloyd's 25-epoch loss in 1.4–2.6 epochs, 10–45× GPU speedup; DINO10B dataset
 - [[the-surprising-effectiveness-of-deleting-weights-lu-2026]] — Deletion Tuning: zeroing <0.05% of weights matches full fine-tuning under GRPO, SFT and self-distillation; 8.4 MB adapter at 8B; forgets less (NeurIPS 2026)
 
 ### Newsletter sweep 2026-11-10

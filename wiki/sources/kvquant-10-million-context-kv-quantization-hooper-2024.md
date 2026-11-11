@@ -44,7 +44,7 @@ KVQuant combines five techniques for [[kv-cache-quantization]] below 4 bits. At 
 
 1. **Per-channel keys** (values stay per-token): **−3.82 PPL** on Wikitext-2 for 3-bit LLaMA-7B. Scales are calibrated **offline**, so there is no grouping and no fp16 residual window, unlike [[kivi-2bit-kv-cache-quantization-liu-2024|KIVI]].
 2. **Pre-RoPE key quantization:** RoPE rotates channel pairs and blurs the outlier channels, so keys are quantized *before* RoPE, which is applied on the fly after dequantization (**−0.82 PPL**).
-3. **nuqX:** a per-layer, non-uniform datatype found offline by k-means weighted by Fisher information (**−0.29 PPL** against 3-bit uniform). Dequantization cost is hidden because KV loading is bandwidth-bound.
+3. **nuqX:** a per-layer, non-uniform datatype found offline by [[k-means]] weighted by Fisher information (**−0.29 PPL** against 3-bit uniform). Dequantization cost is hidden because KV loading is bandwidth-bound.
 4. **Per-vector dense-and-sparse:** the top **1%** of outliers are stored in fp16 in sparse format, a further −0.19 PPL, ending "within 0.07 perplexity of the fp16 baseline".
 5. **Sink-aware:** the first token is kept in fp16 ([[attention-sink]]); this matters most at 2 bits.
 

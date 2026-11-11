@@ -7,6 +7,10 @@ updated: 2026-11-11
 
 # Activity Log
 
+## [2026-11-11] ingest | e-means: outperforming k-means (in one-tenth the epochs) (arXiv:2611.09501)
+
+FAIR at Meta (Bessa, Mazaré, Szilvasy, Touvron, Picard, Douze, Jégou). e-means is mini-batch k-means with EMA centroids, a cosine-annealed step, dead-cluster revival and last-epoch-mean finalization. Batch size and step come from scaling laws fitted on DEEP that transfer to other datasets. It beats Lloyd's 25-epoch loss in 1.4–2.6 epochs (10–45× GPU speedup over Flash-KMeans) and clusters DINO10B (10B vectors) into 16.7M clusters with IVF assignment in 22.8 GPU-hours. Pages created: [[e-means-outperforming-k-means-bessa-2026]], [[k-means]] (draft; k-means was mentioned unlinked on several pages). Pages updated: [[faiss]], [[vector-database]], [[quantization]], [[dinov2]]. [[k-means]] links added on [[retriever-free-retrieval-decision-models-wan-2026]], [[how-decisionrag-navigates-a-corpus-hierarchy]] and [[kvquant-10-million-context-kv-quantization-hooper-2024]].
+
 ## [2026-11-11] ingest | The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv:2611.10866)
 
 User asked to ingest arXiv:2611.10866 (Lu, Yang et al., NYU and University of Calgary, NeurIPS 2026). It introduces Deletion Tuning: a learned binary mask over gate-projection weights, with no new values written. Under GRPO it matches full fine-tuning at Llama3-8B, Qwen2.5-7B/14B and Qwen3-30B-A3B. It also matches FFT under SFT (Llama3B) and self-distillation (Qwen7B). Adapters are 600–4,700× smaller than FFT. Prior-task accuracy stays within one point of base, against losses of up to 5.4 points for FFT, LoRA and random sparse updates. Pages created: [[the-surprising-effectiveness-of-deleting-weights-lu-2026]], [[deletion-tuning]] (draft). Pages updated with a "Newer evidence (2026-11-11)" note: [[lora]], [[fine-tuning]], [[supervised-fine-tuning]], [[on-policy-distillation]], [[grpo]], [[continual-learning]].

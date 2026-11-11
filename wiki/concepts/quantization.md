@@ -2,7 +2,7 @@
 title: Quantization
 type: concept
 created: 2026-07-07
-updated: 2026-09-30
+updated: 2026-11-11
 sources:
   - gptq-frantar-2022.md
   - awq-lin-2023.md
@@ -11,6 +11,7 @@ sources:
   - qlora-dettmers-2023.md
   - quarot-ashkboos-2024.md
   - bitnet-b158-ma-2024.md
+  - e-means-outperforming-k-means-bessa-2026.md
 status: complete
 importance: high
 ---
@@ -130,3 +131,7 @@ Dettmers & Zettlemoyer's **k-bit inference [[scaling-laws|scaling laws]]** ([arX
 
 - [[score-centering-stabilizes-off-policy-rl-marek-2026]] — Sampler–trainer mismatch compounds into drift; subtracting the expected score cancels it where truncated IS fails
 - [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
+
+## Newer evidence (2026-11-11)
+
+- Codebook-style quantizers depend on [[k-means]]. e-means is a faster, tuning-free solver (a lower loss than Lloyd in a tenth of the epochs). ([[e-means-outperforming-k-means-bessa-2026]])

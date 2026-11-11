@@ -64,7 +64,7 @@ optionally: ChoiceJudge(q, R[1:m])   # reorder the top m (m = 20; 5 on NQ)
 | MTRAG | 8,578 page titles → (headings) → passages | Pooled first pass keeps 50 pages; rescored together with product names and headings, keep 10. Pages with more than 60 passages get a heading stage that keeps 8 headings |
 | Natural Questions | 1,000 k-means clusters → 108,626 pages → 2.68M paragraphs | Keep 150 clusters (about 17,500 titles, scored in parallel ≤20k-token requests) → ~230 paragraphs from the top 30 pages. Paragraph score × page score |
 
-On NQ the clusters were built offline with recursive k-means. Each cluster gets a one-sentence description (≤30 words) written by Qwen3-8B from its page titles.
+On NQ the clusters were built offline with recursive [[k-means]]. Each cluster gets a one-sentence description (≤30 words) written by Qwen3-8B from its page titles.
 
 ## 3. Why a tree, not a graph
 
