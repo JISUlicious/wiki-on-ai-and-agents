@@ -2,10 +2,11 @@
 title: Outcome-Based Reward
 type: concept
 created: 2026-07-28
-updated: 2026-10-06
+updated: 2026-11-10
 sources:
   - swe-gym-pan-2024.md
   - memory-r1-yan-2025.md
+  - why-is-ai-generated-language-so-hard-to-understand-clark-2026.md
 status: draft
 importance: medium
 ---
@@ -54,3 +55,7 @@ The general caution in [[verifier]] applies with force here: prefer outcome rewa
 
 - [[process-reward-model]] — the step-level counterpart
 - [[lets-verify-step-by-step-lightman-2023]] — the ORM-vs-PRM comparison (May 2023)
+
+## Newer evidence (2026-11-10 sweep)
+
+- Argues rewards for correct, short answers push model prose toward hard-to-read constructions; a GRPO length penalty alone reproduces the shift on a small model. ([[why-is-ai-generated-language-so-hard-to-understand-clark-2026]])

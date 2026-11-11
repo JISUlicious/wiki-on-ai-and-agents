@@ -2,11 +2,13 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-11-02
+updated: 2026-11-10
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
   - probe-process-benchmark-hallucination-detection-2026.md
+  - rethinking-verification-in-agent-harnesses-zhang-2026.md
+  - think-before-you-act-decision-gate-llm-agents-shoham-2026.md
 status: draft
 importance: high
 ---
@@ -102,3 +104,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[gepa-agrawal-2025]] — rich evaluator feedback text (μ_f) is GEPA's key ingredient
 - [[system-one-models-and-dual-process-thinking]] — the harness as the System 2 monitor for fast decision models
 - [[veriharness-scaling-agentic-verification-zhang-2026]] — VeriHarness: same-model agentic verifier that checks rollout disagreements and challenges consensus against workspace evidence
+
+## Newer evidence (2026-11-10 sweep)
+
+- An independent critic in a fresh context with access to the live sandbox is the most cost-effective verification layer. ([[rethinking-verification-in-agent-harnesses-zhang-2026]])
+- JevAct: a cheap pre-execution verifier combining code checks with probability thresholds. ([[think-before-you-act-decision-gate-llm-agents-shoham-2026]])

@@ -2,7 +2,7 @@
 title: Gemma
 type: entity
 created: 2026-09-30
-updated: 2026-11-03
+updated: 2026-11-10
 sources:
   - how-transparent-is-diffusiongemma-engels-2026.md
   - uniprefill-block-wise-dynamic-sparsification-fan-2026.md
@@ -15,6 +15,7 @@ sources:
   - exploiting-llm-quantization-egashira-2024.md
   - q-resafe-chen-2025.md
   - weight-space-programming-takehi-2026.md
+  - embeddinggemma-2-vera-2026.md
 family: gemma
 parameters: 270M to 31B across generations
 release_date: 2024-02-21
@@ -69,3 +70,7 @@ tags:
 
 - [[s1-decision-model-raghavan-2026]] — s1: Gemma 4 26B-A4B decision fine-tune
 - [[unsloth-gemma-4-fine-tune-guide-2026]] — Gemma 4 fine-tuning VRAM: E2B 8–10 GB, E4B LoRA 17 GB, 31B QLoRA 22 GB, 26B-A4B LoRA > 40 GB
+
+## Newer evidence (2026-11-10 sweep)
+
+- EmbeddingGemma 2: an open 744M multimodal embedding model built on the Gemma 4 family and distilled from Gemini Embedding 2. ([[embeddinggemma-2-vera-2026]])

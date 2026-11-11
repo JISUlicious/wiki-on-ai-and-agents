@@ -2,9 +2,10 @@
 title: Chain-of-Thought
 type: concept
 created: 2026-05-21
-updated: 2026-11-02
+updated: 2026-11-10
 sources:
   - chain-of-thought-wei-2022.md
+  - a-heart-means-recursion-tartaglini-2026.md
 status: draft
 importance: medium
 ---
@@ -31,3 +32,7 @@ Chain-of-thought (CoT) is the technique of prompting an LLM to produce intermedi
 ## Related 2026 sources
 
 - [[illicit-distillation]] — reasoning traces are the target of capability theft, which is why Claude now summarizes its reasoning before responding and returns a *thinking signature* instead of the raw trace. Attackers defeated the signature by replaying it in a fresh session; Fable 5.1's preserved thinking closes that path
+
+## Newer evidence (2026-11-10 sweep)
+
+- Visual symbols steer coding strategy while thinking traces omit or misattribute the cause: more evidence that traces are not faithful. ([[a-heart-means-recursion-tartaglini-2026]])

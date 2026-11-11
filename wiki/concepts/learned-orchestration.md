@@ -2,10 +2,11 @@
 title: Learned Orchestration
 type: concept
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-11-10
 sources:
   - sakana-fugu-sakana-ai-2026.md
   - agent-as-a-router-zhou-2026.md
+  - agentbaton-efficient-model-collaboration-li-2026.md
 builds-on:
   - [[multi-agent]]
 status: complete
@@ -70,3 +71,7 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[when-is-routing-meaningful-huot-2026]] — routing is vacuous unless the model society is behaviourally differentiated *and* stable under paraphrase
 - [[cross-model-kv-cache-transfer]] — makes model-swap routing cheaper by removing the receiver's prefill cost
+
+## Newer evidence (2026-11-10 sweep)
+
+- AgentBaton learns when to hand off once from a capable to a cheaper model mid-task: −65.9% API cost on average across 11 pairs. ([[agentbaton-efficient-model-collaboration-li-2026]])

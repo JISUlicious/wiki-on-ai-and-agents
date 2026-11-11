@@ -2,13 +2,14 @@
 title: Logit Scoring
 type: concept
 created: 2026-09-21
-updated: 2026-10-12
+updated: 2026-11-10
 sources:
   - structured-generation-mode-for-diffusiongemma-mastracci-2026.md
   - bespoke-nimble-github-2026.md
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
   - system-one-ecosystem-sweep-2026-09-28.md
+  - towards-foundation-decision-models-drex-dhankhar-2026.md
 status: complete
 importance: high
 ---
@@ -99,3 +100,7 @@ Other constraints are structural: the answer space must be small enough to enume
 
 - [[s1-decision-model-raghavan-2026]] — open single-pass option-letter scoring at 26B
 - [[decision-api-server-implementations-2026]] — how SGLang, vLLM and Ollama implement single-token label reads in production servers
+
+## Newer evidence (2026-11-10 sweep)
+
+- Drex contrasts per-option scoring and constrained decoding with a native readout head over options, and separates pointer heads from readout heads. ([[towards-foundation-decision-models-drex-dhankhar-2026]])

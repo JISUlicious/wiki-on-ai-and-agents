@@ -2,9 +2,11 @@
 title: Retrieval-Augmented Generation (RAG)
 type: concept
 created: 2026-05-13
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - rag-lewis-2020.md
+  - retriever-free-retrieval-decision-models-wan-2026.md
+  - is-complex-agentic-memory-always-needed-naive-rag-bao-2026.md
 status: complete
 importance: high
 ---
@@ -78,3 +80,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 - [[realm-guu-2020]] — REALM (Feb 2020): retrieval learned during pre-training; precedes DPR and RAG
 - [[lost-in-the-middle-liu-2023]] — more retrieved documents help little once relevant ones land mid-context
+
+## Newer evidence (2026-11-10 sweep)
+
+- DecisionRAG: retrieval by navigating a hierarchy with a decision model, with no first-stage retriever. ([[retriever-free-retrieval-decision-models-wan-2026]])
+- RAW-RAG: dense retrieval plus a reranker over raw chat history ranks first in 6 of 7 settings against agentic memory systems. ([[is-complex-agentic-memory-always-needed-naive-rag-bao-2026]])

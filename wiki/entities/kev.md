@@ -2,10 +2,13 @@
 title: Kev
 type: entity
 created: 2026-09-28
-updated: 2026-10-13
+updated: 2026-11-10
 sources:
   - https://github.com/jaredpalmer/kev
   - system-one-ecosystem-sweep-2026-09-28.md
+  - think-before-you-act-decision-gate-llm-agents-shoham-2026.md
+  - system-one-models-are-not-better-rerankers-dinzinger-2026.md
+  - towards-foundation-decision-models-drex-dhankhar-2026.md
 builds-on:
   - [[qwen]]
   - [[logit-scoring]]
@@ -55,3 +58,9 @@ The README is candid that this is not a controlled comparison, since Jev's train
 ## Lineage sources
 
 - [[ollama-decision-models-2026]] — Hugging Face repos: seven Kev sizes (0.5B–27B)
+
+## Newer evidence (2026-11-10 sweep)
+
+- Kev-27B is the decision judge in JevAct (yes/no at P ≤ 0.05); Kev-9B agrees with it on 97% of hand-off decisions. ([[think-before-you-act-decision-gate-llm-agents-shoham-2026]])
+- Only Kev-27B beats its base model as a reranker. ([[system-one-models-are-not-better-rerankers-dinzinger-2026]])
+- Three [[drex|Drex]] pointer models are built on the Kev code base. ([[towards-foundation-decision-models-drex-dhankhar-2026]])

@@ -2,10 +2,32 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-09
+updated: 2026-11-11
 ---
 
 # Activity Log
+
+## [2026-11-11] ingest | The Surprising Effectiveness of Deleting Weights in LLM Post-Training (arXiv:2611.10866)
+
+User asked to ingest arXiv:2611.10866 (Lu, Yang et al., NYU and University of Calgary, NeurIPS 2026). It introduces Deletion Tuning: a learned binary mask over gate-projection weights, with no new values written. Under GRPO it matches full fine-tuning at Llama3-8B, Qwen2.5-7B/14B and Qwen3-30B-A3B. It also matches FFT under SFT (Llama3B) and self-distillation (Qwen7B). Adapters are 600–4,700× smaller than FFT. Prior-task accuracy stays within one point of base, against losses of up to 5.4 points for FFT, LoRA and random sparse updates. Pages created: [[the-surprising-effectiveness-of-deleting-weights-lu-2026]], [[deletion-tuning]] (draft). Pages updated with a "Newer evidence (2026-11-11)" note: [[lora]], [[fine-tuning]], [[supervised-fine-tuning]], [[on-policy-distillation]], [[grpo]], [[continual-learning]].
+
+## [2026-11-11] query | Filed: DecisionRAG tree walk, tree vs graph, generator input
+
+Questions: "Explain decisionRAG"; "Does it walk the tree by choosing which branch to descend as retrieval step?"; "Why is it a tree used not a graph?"; "Selection from all layers during the descend fed into model after the retrieval step?". Filed as [[how-decisionrag-navigates-a-corpus-hierarchy]]. Answers: it is a beam search with a top-k budget per level; the paper never discusses graphs, so the tree-vs-graph reasons are marked as inference; the generator sees only the top 5 passages. The missing method details were added to [[retriever-free-retrieval-decision-models-wan-2026]]: Algorithm 1, node representations, per-benchmark budgets, generator setup, and prior hierarchical-retrieval work.
+
+## [2026-11-11] query | Filed: prompts to avoid hard-to-read AI prose, and other languages
+
+Questions: "Does 2610.29162 provide any guides or example prompts to avoid AI style generated text?" and "Do those patterns also appear in Korean or other languages?". Filed as [[avoiding-hard-to-read-ai-prose-and-other-languages]]. The paper has no such prompts. A checklist prompt was derived from its measures. Korean (KatFishNet) and Chinese/French/German evidence was found by web search but not ingested. See-also line added to [[why-is-ai-generated-language-so-hard-to-understand-clark-2026]].
+
+## [2026-11-10] ingest | Newsletter sweep: 26 papers (NLP Top AI Papers Oct 26 – Nov 8; alphaXiv Nov 4) + "Why is AI-generated language so hard to understand?"
+
+User asked to ingest "why ai generated language so hard to read" and the newsletters. The readability paper was found by web search (arXiv:2610.29162) and ingested as [[why-is-ai-generated-language-so-hard-to-understand-clark-2026]]: nine frontier models overuse constructions the psycholinguistics literature links to processing difficulty, a GRPO length penalty reproduces the shift on a small model, and no human comprehension test was run.
+
+Newsletter runbook (9 days since the 2026-11-01 cursor): four new threads. Top AI Papers Oct 26 – Nov 1 and Nov 2–8 (20 papers, arXiv IDs resolved via Substack → dair.ai redirects and checked on arxiv.org/abs) and the alphaXiv digest of Nov 4 (6 papers; DecisionRAG overlapped). AI Agents Weekly of Nov 7 is a paywalled product-news preview; its one research item, Weight-Space Programming, was already ingested. No duplicates, no failures.
+
+Source pages: [[retriever-free-retrieval-decision-models-wan-2026]], [[think-before-you-act-decision-gate-llm-agents-shoham-2026]], [[towards-foundation-decision-models-drex-dhankhar-2026]], [[system-one-models-are-not-better-rerankers-dinzinger-2026]], [[harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026]], [[you-dont-need-long-context-belcak-2026]], [[skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026]], [[recursa-recursively-self-improving-foundation-model-systems-zhu-2026]], [[routed-continual-learning-philip-2026]], [[spar-experience-driven-strategy-evolution-b2b-sales-zhang-2026]], [[training-llm-agents-to-automate-post-training-rsi-dojo-gao-2026]], [[measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026]], [[lifeval-personalized-agentic-consumer-tasks-yang-2026]], [[training-foundation-models-with-a-single-algorithm-song-2026]], [[emma-structured-episodic-memory-multi-agent-workflow-niu-2026]], [[a-heart-means-recursion-tartaglini-2026]], [[rethinking-verification-in-agent-harnesses-zhang-2026]], [[embeddinggemma-2-vera-2026]], [[agentbaton-efficient-model-collaboration-li-2026]], [[agentic-backdoors-via-pretraining-poisoning-hu-2026]], [[is-complex-agentic-memory-always-needed-naive-rag-bao-2026]], [[advances-in-agentic-computer-graphics-liu-2026]], [[work-agents-systems-capabilities-and-optimization-xu-2026]], [[competing-learning-in-hybrid-architectures-shen-2026]], [[northcua-technical-report-zhang-2026]].
+
+New pages: [[drex]] (model entity), [[posttrainbench]] (concept, promoted at 3 citing sources). Updated with a "Newer evidence (2026-11-10 sweep)" section: [[system-one-model]], [[jev]], [[kev]], [[calibration]], [[logit-scoring]], [[retrieval-augmented-generation]], [[long-term-memory]], [[mem0]], [[context-compaction]], [[state-space-model]], [[continual-learning]], [[skill-routing]], [[recursive-self-improvement]], [[self-improving-agent]], [[agentic-harness-engineering]], [[verifier]], [[learned-orchestration]], [[agent-benchmark]], [[computer-use-agent]], [[osworld]], [[ai-safety]], [[chain-of-thought]], [[outcome-based-reward]], [[grpo]], [[claude-opus-5-5]], [[gemma]], [[index]]. Tension noted (not a contradiction): Dinzinger finds decision fine-tuning gives no reranking gain up to 9B, while DecisionRAG gets large retrieval gains from untrained Jev by navigation rather than reranking. Promotion candidates left open: Clef (3 pages), ReasoningBank (6+ pages), CL-Bench.
 
 ## [2026-11-09] query | Filed: decision APIs vs language models
 

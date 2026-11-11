@@ -2,7 +2,7 @@
 title: Context Compaction
 type: concept
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - context-language-models-shao-2026.md
   - autocompact-learning-when-to-compact-zhang-2026.md
@@ -12,6 +12,7 @@ sources:
   - acm-agentic-context-management-li-2026.md
   - learning-agent-compatible-context-management-yi-2026.md
   - arex-recursive-self-improving-research-baai-2026.md
+  - you-dont-need-long-context-belcak-2026.md
 status: draft
 importance: high
 tags:
@@ -53,3 +54,7 @@ Any edit to the prefix invalidates the [[kv-cache]] after it, so the surviving s
 ## Related
 
 - [[context-engineering]] · [[agentic-context-engineering]] · [[memory-management]] · [[context-rot]] · [[long-context-llm]] · [[kv-cache-eviction]] · [[subagents]]
+
+## Newer evidence (2026-11-10 sweep)
+
+- NVIDIA: compacting after every single action keeps Opus 4.5 at 70.2 on SWE-bench Verified (70.0 with full history) with a median peak context of about 8K tokens. ([[you-dont-need-long-context-belcak-2026]])

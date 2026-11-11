@@ -2,7 +2,7 @@
 title: State-Space Model (SSM)
 type: concept
 created: 2026-05-16
-updated: 2026-10-27
+updated: 2026-11-10
 sources:
   - titans-behrouz-2025.md
   - s4-structured-state-spaces-gu-2021.md
@@ -13,6 +13,8 @@ sources:
   - griffin-gated-linear-recurrences-de-2024.md
   - xlstm-extended-lstm-beck-2024.md
   - jamba-hybrid-transformer-mamba-lieber-2024.md
+  - you-dont-need-long-context-belcak-2026.md
+  - competing-learning-in-hybrid-architectures-shen-2026.md
 status: complete
 importance: high
 ---
@@ -93,3 +95,8 @@ Surfaced via newsletter ingests; see [[index]].
 ## Lineage sources
 
 - [[jamba-hybrid-transformer-mamba-lieber-2024]] — [[jamba]]: 1:7 attention:Mamba with MoE. 4 GB of KV at 256K against Mixtral's 32 GB. Pure Mamba fails at in-context format-following; the hybrid fixes it.
+
+## Newer evidence (2026-11-10 sweep)
+
+- Proposes "semantic state space models" that keep a readable text state between turns instead of a hidden state (not trained). ([[you-dont-need-long-context-belcak-2026]])
+- In linear-recurrence + attention hybrids, recurrent layers learn retrieval first and starve attention; freezing them early (BLD) fixes it (RULER 32.75 → 36.04 at 1B). ([[competing-learning-in-hybrid-architectures-shen-2026]])

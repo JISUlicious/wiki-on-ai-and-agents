@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -18,6 +18,9 @@ sources:
   - adapting-the-interface-not-the-model-xu-2026.md
   - retrospective-harness-optimization-pan-2026.md
   - evolving-excellence-automated-optimization-brookes-2025.md
+  - rethinking-verification-in-agent-harnesses-zhang-2026.md
+  - harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026.md
+  - work-agents-systems-capabilities-and-optimization-xu-2026.md
 builds-on:
   - [[code-as-harness]]
   - [[self-improving-agent]]
@@ -136,3 +139,9 @@ Surfaced via newsletter ingests; see [[index]].
 - [[gepa]] — prompt-level evolutionary search, later reused for harnesses
 - [[claude-code-mods-docs-2026]] — a product harness exposing its system prompt, compaction and per-request model and effort as hook points
 - [[harness2-recursive-agent-harnessing-xu-2026]] — Harness² (Google Research): online [[recursive-agent-harnessing]] with no ground truth. Propose–Probe–Compose edits eight file components, and a library of evidence-backed lessons guides later tasks. Up to +11.5 on WorkBuddy, +11.8 pts on LAB.
+
+## Newer evidence (2026-11-10 sweep)
+
+- A separate low-cost critic beats completion-time self-checking: +5.9 to +9.5 points on Terminal-Bench at 1.13–1.25× cost. ([[rethinking-verification-in-agent-harnesses-zhang-2026]])
+- Guarded decision reuse, and the "Substitution Paradox": a selector saves compute only if it removes more reasoning than it adds. ([[harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026]])
+- Survey framing of a work agent as model + harness + workspace + verified outcome; adds harness tax and agentic ROI. ([[work-agents-systems-capabilities-and-optimization-xu-2026]])

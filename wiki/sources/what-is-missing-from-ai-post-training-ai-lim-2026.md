@@ -129,3 +129,5 @@ Consistent with [[rethinking-evaluation-harness-evolution-wang-2026]], whose tra
 
 - [arXiv:2608.19072](https://arxiv.org/abs/2608.19072)
 - PostTrainBench: Rank, Bhatnagar, Prabhu, Eisenberg, Nguyen, Bethge, Andriushchenko (2026), arXiv:2603.08640 — the source of the 1,338 trajectories.
+
+See also: [[posttrainbench]] (concept page).

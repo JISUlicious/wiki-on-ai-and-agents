@@ -2,10 +2,12 @@
 title: GRPO (Group Relative Policy Optimization)
 type: concept
 created: 2026-05-16
-updated: 2026-11-02
+updated: 2026-11-11
 sources:
   - deepseekmath-shao-2024.pdf
   - memory-r1-yan-2025.md
+  - why-is-ai-generated-language-so-hard-to-understand-clark-2026.md
+  - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
 status: draft
 importance: medium
 ---
@@ -51,3 +53,11 @@ The original paper gives two reasons for dropping the critic. A value model is u
 ## Lineage sources
 
 - [[gepa-agrawal-2025]] — GEPA beats GRPO (24K rollouts) on 5 of 6 tasks with up to 35× fewer rollouts; GRPO wins AIME
+
+## Newer evidence (2026-11-10 sweep)
+
+- GRPO with a length penalty on Qwen2.5-1.5B makes the model pick the shorter, less human-like construction over 98% of the time (without KL). ([[why-is-ai-generated-language-so-hard-to-understand-clark-2026]])
+
+## Newer evidence (2026-11-11)
+
+- GRPO with only a learned binary mask over gate projections ([[deletion-tuning|Deletion Tuning]]) matches full-fine-tuning GRPO at Llama3-8B, Qwen2.5-7B/14B and Qwen3-30B-A3B, and raises pass@128 over the base model. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])

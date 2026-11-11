@@ -2,11 +2,13 @@
 title: Claude Opus 5.5
 type: entity
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-11-10
 sources:
   - getting-the-most-out-of-opus-5-5-osmani-2026.md
   - what-a-task-costs-on-opus-5-5-osmani-2026.md
   - building-with-claude-sonnet-5-5-osmani-2026.md
+  - why-is-ai-generated-language-so-hard-to-understand-clark-2026.md
+  - measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026.md
 family: claude
 predecessor: [[claude]]
 successors: []
@@ -59,3 +61,8 @@ Successor to Claude Opus 5 (no page yet), which every comparison in the posts us
 ## References
 
 - [[getting-the-most-out-of-opus-5-5-osmani-2026]] · [[what-a-task-costs-on-opus-5-5-osmani-2026]] · [[building-with-claude-sonnet-5-5-osmani-2026]]
+
+## Newer evidence (2026-11-10 sweep)
+
+- Scores lower (more readable) than Opus 5 on 19 of 21 hard-to-read feature comparisons. ([[why-is-ai-generated-language-so-hard-to-understand-clark-2026]])
+- Scores 71.0 on the Collaborative Intelligence Benchmark and gives in to a pushy teammate in 90% of conflict runs. ([[measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026]])

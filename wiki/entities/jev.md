@@ -2,12 +2,15 @@
 title: Jev
 type: entity
 created: 2026-09-21
-updated: 2026-10-12
+updated: 2026-11-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - independent-jev-calibration-audits-2026.md
   - system-one-ecosystem-sweep-2026-09-28.md
   - jev-research-papers-september-2026.md
+  - retriever-free-retrieval-decision-models-wan-2026.md
+  - towards-foundation-decision-models-drex-dhankhar-2026.md
+  - system-one-models-are-not-better-rerankers-dinzinger-2026.md
 status: complete
 importance: medium
 tags:
@@ -74,3 +77,9 @@ Where frontier scale does show up is **label-space capacity**: Jev handles 255 o
 - [[openai-decisions-api]] — OpenAI's competitor (Oct 2026)
 - [[system-one-models-vs-system-one-thinking]] — name origin (Jevons)
 - [[adk-system-one-integration-status-2026]] — Google ADK integration PR #7235 (open, unmerged)
+
+## Newer evidence (2026-11-10 sweep)
+
+- Used untrained (Jev 1.13) as the retriever in DecisionRAG, within its 255-option limit per question. ([[retriever-free-retrieval-decision-models-wan-2026]])
+- Drex Max beats Jev 1.14.0 on Decision Index 0.4.1 (67.52 vs 60.70). ([[towards-foundation-decision-models-drex-dhankhar-2026]])
+- Jev's reranking ECE moves from 0.075 to 0.224 when the question wording changes. ([[system-one-models-are-not-better-rerankers-dinzinger-2026]])

@@ -2,9 +2,10 @@
 title: OSWorld
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-11-10
 sources:
   - ui-tars-2-wang-2025.md
+  - northcua-technical-report-zhang-2026.md
 status: draft
 importance: medium
 tags: []
@@ -22,3 +23,7 @@ Related: [[computer-use-agent]], [[gui-agent]], [[ui-tars-2]], [[magma]]
 ## References
 - [[ui-tars-2-wang-2025]]
 - [[magma-yang-2025]]
+
+## Newer evidence (2026-11-10 sweep)
+
+- NorthCUA-Pro reports 88.6% on OSWorld-Verified. ([[northcua-technical-report-zhang-2026]])

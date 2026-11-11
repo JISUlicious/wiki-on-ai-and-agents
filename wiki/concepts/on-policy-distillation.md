@@ -2,11 +2,12 @@
 title: On-Policy Distillation
 type: concept
 created: 2026-08-17
-updated: 2026-09-30
+updated: 2026-11-11
 sources:
   - weak-to-strong-on-policy-distillation-yu-2026.md
   - on-policy-self-distillation-without-supervision-li-2026.md
   - agentopsd-recursive-self-distillation-agentic-rl-wang-2026.md
+  - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
 status: complete
 importance: high
 ---
@@ -51,3 +52,7 @@ All three get their gains from *where* the signal is measured rather than from a
 - [[co-evolving-harnesses-and-models-on-policy-correction-yu-2026]] — on-policy correction beats imitation: fine-tuning a weaker model on a stronger model's full trajectories *dropped* it on all seven tasks (−4 to −30 points) under the harness evolved for it; rewriting only the failing turn helps
 - [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
 - [[harness-zero-harness-distillation-agent-as-harness-ye-2026]] — Harness-Zero: distill an optimized harness into weights; a 9B model goes 23.3→44.3 without the harness
+
+## Newer evidence (2026-11-11)
+
+- Under SDFT (self-distillation with an EMA teacher), [[deletion-tuning|Deletion Tuning]] matches full fine-tuning on Qwen7B ToolAlpaca (69.07 vs 68.04) and Science (70.61 vs 71.20). The teacher's mask is an EMA of the student's logits. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])

@@ -2,10 +2,11 @@
 title: Fine-Tuning
 type: concept
 created: 2026-05-13
-updated: 2026-10-27
+updated: 2026-11-11
 sources:
   - bert-devlin-2018.md
   - transferable-features-deep-nets-yosinski-2014.md
+  - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
 status: complete
 importance: high
 ---
@@ -39,3 +40,7 @@ The general "fine-tuning" terminology has expanded considerably:
 
 - [[fine-tuning-hardware-requirements-local-llms]] — how much memory each fine-tuning method needs on 2026 local models, by hardware tier
 - [[transferable-features-deep-nets-yosinski-2014]] — the CNN-era origin: early layers transfer, late layers are task-specific; transfer-then-fine-tune beats training from scratch (+1.6–2.1%) ([[transfer-learning]])
+
+## Newer evidence (2026-11-11)
+
+- Zeroing fewer than 0.05% of gate-projection weights ([[deletion-tuning|Deletion Tuning]]) matches full fine-tuning at 7B–30B under GRPO, and at smaller scales under SFT and self-distillation, with adapters thousands of times smaller. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])

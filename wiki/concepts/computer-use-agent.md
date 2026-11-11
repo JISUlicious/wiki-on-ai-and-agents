@@ -2,13 +2,14 @@
 title: Computer-Use Agent
 type: concept
 created: 2026-05-17
-updated: 2026-11-04
+updated: 2026-11-10
 sources:
   - introducing-operator-openai-2025.md
   - computer-use-claude-3-5-anthropic-2024.md
   - ui-tars-2-wang-2025.md
   - magma-yang-2025.md
   - terminal-mac-govijr-github.md
+  - northcua-technical-report-zhang-2026.md
 status: complete
 importance: high
 tags:
@@ -53,3 +54,7 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[computer-use-claude-3-5-anthropic-2024|Claude computer use]]: public beta, 22 Oct 2024.
 - [[operator|Operator]]: research preview, 23 Jan 2025; its model later powered the Responses API computer-use tool.
+
+## Newer evidence (2026-11-10 sweep)
+
+- NorthCUA-Pro (open, 397B) reports 88.6% on OSWorld-Verified from verified experience collection plus desktop–web GRPO. ([[northcua-technical-report-zhang-2026]])

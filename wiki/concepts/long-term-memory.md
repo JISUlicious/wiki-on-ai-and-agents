@@ -2,9 +2,11 @@
 title: Long-Term Memory
 type: concept
 created: 2026-06-19
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - a-mem-xu-2025.md
+  - is-complex-agentic-memory-always-needed-naive-rag-bao-2026.md
+  - lifeval-personalized-agentic-consumer-tasks-yang-2026.md
 status: draft
 importance: high
 tags:
@@ -29,3 +31,8 @@ Long-term memory refers to information an agent persists across sessions, as opp
 ## Lineage sources
 
 - [[llm-powered-autonomous-agents-weng-2023]] — long-term memory as an external vector store (2023)
+
+## Newer evidence (2026-11-10 sweep)
+
+- Naive RAG over raw history beats agentic memory systems in 6 of 7 settings and ingests 5–30× faster. ([[is-complex-agentic-memory-always-needed-naive-rag-bao-2026]])
+- LifeVal: facts in past ChatGPT conversations are used far less than the same facts given as explicit context (33% vs 56% win rate). ([[lifeval-personalized-agentic-consumer-tasks-yang-2026]])

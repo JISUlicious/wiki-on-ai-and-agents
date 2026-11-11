@@ -2,7 +2,7 @@
 title: Skill Routing
 type: concept
 created: 2026-09-05
-updated: 2026-09-30
+updated: 2026-11-10
 sources:
   - what-keeps-agent-skills-from-being-reusable-zhang-2026.md
   - at-skills-attention-is-all-you-have-yin-2026.md
@@ -10,6 +10,7 @@ sources:
   - evaluating-skills-not-just-agents-kevin-2026.md
   - evomal-self-poisoning-self-evolving-coding-agents-wu-2026.md
   - recuris-experiential-working-memory-evolution-yu-2026.md
+  - skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026.md
 builds-on:
   - [[agent-skills]]
 status: complete
@@ -70,3 +71,7 @@ That generalizes a condition [[mind-viruses-papadopoulos-2026|Mind Viruses]] fou
 
 - [[building-an-ai-native-sdlc-plugin]] — the routing-scarcity argument applied: seven skills in the plugin, only two of them competing for selection
 - [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
+
+## Newer evidence (2026-11-10 sweep)
+
+- Routing interference: a similar new skill displaces an old one; rewriting only the new skill's metadata lifts full coverage from 36.4% to 76.3% at 731 skills. ([[skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026]])

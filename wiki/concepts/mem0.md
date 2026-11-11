@@ -2,9 +2,10 @@
 title: Mem0
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-11-10
 sources:
   - mem0-chhikara-2025.md
+  - is-complex-agentic-memory-always-needed-naive-rag-bao-2026.md
 status: complete
 importance: high
 tags:
@@ -39,3 +40,7 @@ Mem0 (Chhikara et al., 2025; ECAI 2025) is a production-deployment-focused [[lon
 ## References
 
 - Source: [[mem0-chhikara-2025]]
+
+## Newer evidence (2026-11-10 sweep)
+
+- Mem0's UPDATE/DELETE operations are 2–4% of writes, and disabling them raised accuracy. ([[is-complex-agentic-memory-always-needed-naive-rag-bao-2026]])

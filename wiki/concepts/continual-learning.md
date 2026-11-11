@@ -2,10 +2,14 @@
 title: Continual Learning
 type: concept
 created: 2026-08-17
-updated: 2026-10-29
+updated: 2026-11-11
 sources:
   - continualskillbench-guan-2026.md
   - why-does-claude-md-keep-growing-chakrabarti-2026.md
+  - routed-continual-learning-philip-2026.md
+  - skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026.md
+  - training-foundation-models-with-a-single-algorithm-song-2026.md
+  - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
 status: draft
 importance: medium
 ---
@@ -45,3 +49,13 @@ Neither the parametric nor the non-parametric route currently consolidates. Grad
 - [[continual-learning-mechanisms-compose-long-horizon-memorization-zhang-2026]] — mechanisms compose: 28× better retention over 100 sequential tasks, with replay and merged LoRA more than additive — at the cost of general capability
 - [[reharness-recurrent-harness-agentic-continual-learning-xiao-2026]] — ReHarness: backward revision of retrieved reflections in a strict online stream; beats raw-context and ACE/Mem0/GEPA baselines on CL-Bench, MemoryBench, MemoryArena
 - [[are-self-evolving-agents-continual-learners-chen-2026]] — GDM/Mila: ReasoningBank, GEPA, Meta-Harness on four drifting streams; plasticity vs stability r = −0.72 (n = 12); shared-prompt edits interfere and overwrite, similarity retrieval collides
+
+## Newer evidence (2026-11-10 sweep)
+
+- Routed CL: a router picks a memory system and a cluster per run; a single shared history barely beats no memory (+0.015), routing wins at 65–72% lower API cost. ([[routed-continual-learning-philip-2026]])
+- Skill++ frames a growing skill library as class-incremental learning. ([[skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026]])
+- Mixing midtraining data into RL keeps earlier capabilities and gives a better start for later RL. ([[training-foundation-models-with-a-single-algorithm-song-2026]])
+
+## Newer evidence (2026-11-11)
+
+- [[deletion-tuning|Deletion Tuning]] keeps prior-task accuracy within one point of base during GRPO, while FFT, LoRA and random sparse fine-tuning lose up to 5.4 points. Matching numbers of edited weights (MTH 99.95%) still forget, so deleting rather than editing seems to be what limits forgetting. Not yet tested over a sequence of tasks. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])

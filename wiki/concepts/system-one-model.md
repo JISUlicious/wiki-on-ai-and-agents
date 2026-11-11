@@ -2,7 +2,7 @@
 title: System One Model
 type: concept
 created: 2026-09-21
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - bespoke-nimble-github-2026.md
@@ -16,6 +16,11 @@ sources:
   - s1-decision-model-readme.md
   - systemonemodels-hub.md
   - dual-process-theory-wikipedia.md
+  - retriever-free-retrieval-decision-models-wan-2026.md
+  - think-before-you-act-decision-gate-llm-agents-shoham-2026.md
+  - system-one-models-are-not-better-rerankers-dinzinger-2026.md
+  - towards-foundation-decision-models-drex-dhankhar-2026.md
+  - northcua-technical-report-zhang-2026.md
 status: complete
 importance: high
 ---
@@ -127,3 +132,11 @@ The open field has consolidated on **Qwen3.5 + LoRA fine-tunes**, which hold the
 - [[adk-system-one-integration-status-2026]] — frameworks integrate decision models as tools and callbacks, not chat models: Google ADK PR #7235 (open); LiteLLM 1.105 decisions, systemone and guardrail hooks
 - [[decision-api-server-implementations]] — SGLang vs vLLM vs Ollama decision endpoints (code-verified); `confidence` differs by server
 - [[jevagentharness-decision-models-share-control-zhu-2026]] — JevAgentHarness: Jev / AgentDecision-4B take harness decisions behind per-decision fitted thresholds; isolated accuracy misranks decision models
+
+## Newer evidence (2026-11-10 sweep)
+
+- DecisionRAG replaces the first-stage retriever: Jev walks a corpus hierarchy and scores all candidates in one shared context, beating dense retrieval plus an 8B reranker by 13.8 R@1 (MultiDoc2Dial) and 17.4 Hit@1 (NQ). ([[retriever-free-retrieval-decision-models-wan-2026]])
+- JevAct gates write calls and hand-offs with compiled code checks plus Kev-27B answering yes/no questions by probability; most of the gain comes from the code checks. ([[think-before-you-act-decision-gate-llm-agents-shoham-2026]])
+- Counter-result: decision fine-tuning does not make better rerankers (−5 to −29 nDCG@10 up to 9B, tie at 27B), and the calibration advantage depends on how the question is worded. ([[system-one-models-are-not-better-rerankers-dinzinger-2026]])
+- [[drex|Drex]]: four open decision models from Nace.AI; Drex Max scores 67.52 vs Jev 1.14.0's 60.70 on Decision Index 0.4.1. ([[towards-foundation-decision-models-drex-dhankhar-2026]])
+- NorthCUA-Ultrafast puts a Jev-inspired choice head inside a computer-use agent, picking GUI actions in one pass (2.3× faster on WebArena-Verified). ([[northcua-technical-report-zhang-2026]])

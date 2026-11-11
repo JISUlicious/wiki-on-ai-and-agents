@@ -2,11 +2,13 @@
 title: AI Safety
 type: concept
 created: 2026-09-29
-updated: 2026-10-27
+updated: 2026-11-10
 sources:
   - darwin-godel-machine-zhang-2025.md
   - hyperagents-zhang-2026.md
   - neuron-explorer-reactions-2026-10.md
+  - agentic-backdoors-via-pretraining-poisoning-hu-2026.md
+  - a-heart-means-recursion-tartaglini-2026.md
 status: draft
 importance: medium
 ---
@@ -46,3 +48,8 @@ Both pages that link here are about [[self-improving-agent|self-improving agents
 
 - [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers
 - [[evil-qwen]] — two MLP neurons pushed at inference cut Qwen3.5-4B refusals from 90% to 8% (replication); no fine-tuning, survives 4-bit
+
+## Newer evidence (2026-11-10 sweep)
+
+- Poisoning 0.1% of pretraining data plants an agent backdoor that survives clean SFT, DPO and RL, and success grows with scale. ([[agentic-backdoors-via-pretraining-poisoning-hu-2026]])
+- An irrelevant symbol in an image can steer a VLM's behavior while its reasoning trace does not report it. ([[a-heart-means-recursion-tartaglini-2026]])

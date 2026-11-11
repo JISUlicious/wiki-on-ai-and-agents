@@ -2,11 +2,13 @@
 title: Calibration
 type: concept
 created: 2026-09-21
-updated: 2026-10-12
+updated: 2026-11-10
 sources:
   - introducing-system-one-models-and-jev-typesafe-2026.md
   - llm-as-a-verifier-kwok-2026.md
   - rehearse-confidence-cliff-autoresearch-ji-2026.md
+  - towards-foundation-decision-models-drex-dhankhar-2026.md
+  - system-one-models-are-not-better-rerankers-dinzinger-2026.md
 status: complete
 importance: high
 ---
@@ -59,3 +61,8 @@ Acting requires a loss function: choose the action minimizing expected loss unde
 - [[s1-decision-model-raghavan-2026]] — proper-scoring-rule fine-tune reaches Jev-level ECE
 - [[microsoft-decision-1-2026]] — a frontier decision model shipped without ECE or Brier
 - [[decision-api-server-implementations-2026]] — three servers compute "confidence" three ways; none is calibrated
+
+## Newer evidence (2026-11-10 sweep)
+
+- Drex reports ECE of 1.4–4.5% over about 230k decisions per model (0.8–1.4% after temperature tuning), worse per domain. ([[towards-foundation-decision-models-drex-dhankhar-2026]])
+- A relevance probability is only calibrated against the definition of relevance written into the question; one sentence of wording moves Jev's ECE from 0.075 to 0.224. ([[system-one-models-are-not-better-rerankers-dinzinger-2026]])

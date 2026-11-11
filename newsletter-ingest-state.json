@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-11-01",
+  "last_processed_date": "2026-11-10",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -104,7 +104,11 @@
     "1a11931554c5e164",
     "1a107918e34b29d0",
     "1a1023ee2c91b933",
-    "1a19266b0f0c0512"
+    "1a19266b0f0c0512",
+    "1a1bbf752283e16e",
+    "1a1b66dd82e04b22",
+    "1a1a4f496841bddd",
+    "1a1982e131c56030"
   ],
   "runs": [
     {
@@ -324,6 +328,22 @@
       ],
       "dups_skipped": [],
       "notes": "Paywalled preview, no arXiv IDs. Primary sources found for 4 TOC items. alphaXiv 10-28 (1a1803bc1a2806e9) already processed, all 6 papers on wiki."
+    },
+    {
+      "date": "2026-11-10",
+      "type": "newsletter sweep (manual, user-requested; 9 days since cursor)",
+      "threads_read": 4,
+      "candidate_ids_verified": 26,
+      "on_domain_ingested": 26,
+      "new_source_pages": 26,
+      "new_entity_pages": [
+        "drex"
+      ],
+      "new_concept_pages": [
+        "posttrainbench"
+      ],
+      "dups_skipped": [],
+      "notes": "Top AI Papers Oct 26-Nov 1 and Nov 2-8 (Substack redirects resolve to dair.ai pages carrying arXiv IDs; export API returned empty, verified on abs pages). alphaXiv Nov 4: 6 papers, DecisionRAG overlap. AI Agents Weekly Nov 7: paywalled product news; Weight-Space Programming already ingested. Also ingested user-requested arXiv:2610.29162 (found by web search, not from newsletters)."
     }
   ],
   "pending_threads": [

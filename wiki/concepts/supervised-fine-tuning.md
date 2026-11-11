@@ -2,12 +2,13 @@
 title: Supervised Fine-Tuning (SFT)
 type: concept
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-11-11
 sources:
   - embarrassingly-simple-self-distillation-zhang-2026.md
   - pivotrl-high-accuracy-agentic-post-training-yi-2026.md
   - instructgpt-ouyang-2022.md
   - deepseek-r1-2025.md
+  - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
 status: draft
 importance: medium
 ---
@@ -36,3 +37,7 @@ importance: medium
 ## Related 2026 sources
 
 - [[salesforce-koa-enterprise-agentic-tool-use-salesforce-2026]] — Salesforce Koa: GRPO on environments built from agent configs; small gains, and its SFT checkpoint beats the RL release on 2 of 3
+
+## Newer evidence (2026-11-11)
+
+- [[deletion-tuning|Deletion Tuning]] matches SFT full fine-tuning at Llama3B on MMLU-Pro (22.28 vs 21.19) and BBEH (11.39 vs 11.39), even though SFT updates are dense and harder for a delete-only adapter. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])

@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-11-09
+updated: 2026-11-11
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 765 sources, 253 entities, 386 concepts, 9 comparisons, 26 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 792 sources, 254 entities, 388 concepts, 9 comparisons, 28 queries.
 
 ## Entities
 
@@ -105,6 +105,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[sglang]] — Serving engine; first with a native Jev-compatible /v1/systemone route (2026-09-25)
 - [[microsoft-decision-1]] — Microsoft decision model, Qwen3.5-9B post-train on Foundry (2026-10-09, public preview)
 - [[openai-decisions-api]] — OpenAI typed-decision endpoint on gpt-6-luna; predicate / choice / score (public beta, Oct 2026)
+- [[drex]] — Nace.AI's open decision models (8B–35B-A3B, Max 27B); Max beats Jev on Decision Index (2026-11)
 
 ### Software, libraries, and hardware platforms
 - [[mlx]] — **entity (product)**: Apple's array framework; `load(lazy=True)` is the streaming hook; no upstream expert streaming; CUDA backend Linux-only
@@ -347,6 +348,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[dales-principle]] — Biological constraint: neurons are uniformly excitatory or inhibitory
 - [[verifier]] — Generator/verifier split; verification targets by reference type, mechanisms, and the proxy-intent ceiling
 - [[lora]] — Low-rank adaptation; parameter-efficient fine-tuning
+- [[deletion-tuning]] — Post-training by learning only which gate-projection weights to zero (<0.05%); matches FFT at 7B+, forgets less, bitmask adapter
 - [[fine-tuning]] — Task-specific adaptation
 - [[autoregressive-language-modeling]] — Next-token prediction
 - [[masked-language-modeling]] — BERT's bidirectional cloze objective
@@ -671,6 +673,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[webshop]] — Simulated e-commerce environment for language agents; its two headline metrics are often confused
 - [[mle-bench]] — Benchmark of real Kaggle competitions for machine-learning-engineering agents
 - [[benchmark]] — Hub: every benchmark page in the wiki, grouped, plus sources that introduce one (replaces the `benchmark` tag)
+- [[posttrainbench]] — Agents post-train a base model end to end in 10 GPU-hours; cited by RSI-Dojo and AI-post-training analyses
 - [[ruler]] — NVIDIA synthetic long-context suite extending NIAH; sparse-prefill papers show aggregation tasks collapsing
 - [[needle-in-a-haystack]] — Single-fact retrieval probe (and passkey); a sanity check for sparse attention, weak evidence alone
 - [[appworld]] — Multi-app interactive coding-agent benchmark (9 apps, 457 APIs, 750 tasks); used by SAGE and ACE
@@ -945,6 +948,37 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[context-engineering-lessons-manus-ji-2025]] — Lessons from building Manus (2025-07-18)
 - [[crewai-readme-2026]] — CrewAI README
 - [[autogpt-readme-2026]] — AutoGPT README
+
+### Ad-hoc ingests 2026-11-11
+- [[the-surprising-effectiveness-of-deleting-weights-lu-2026]] — Deletion Tuning: zeroing <0.05% of weights matches full fine-tuning under GRPO, SFT and self-distillation; 8.4 MB adapter at 8B; forgets less (NeurIPS 2026)
+
+### Newsletter sweep 2026-11-10
+- [[why-is-ai-generated-language-so-hard-to-understand-clark-2026]] — **Why AI prose is hard to read** (Clark, Martin, Mahowald): 9 frontier models overuse hard-to-process constructions; a GRPO length penalty reproduces it; no human reading test
+- [[retriever-free-retrieval-decision-models-wan-2026]] — DecisionRAG: a decision model navigates the corpus hierarchy instead of a retriever (+13.8 R@1, +17.4 Hit@1)
+- [[think-before-you-act-decision-gate-llm-agents-shoham-2026]] — JevAct (IBM): pre-execution gate of code checks + Kev-27B yes/no probabilities for tool-using agents
+- [[towards-foundation-decision-models-drex-dhankhar-2026]] — Drex (Nace.AI): four open decision models; Max 67.52 vs Jev 60.70 on Decision Index
+- [[system-one-models-are-not-better-rerankers-dinzinger-2026]] — Decision fine-tuning loses to reranker fine-tuning up to 9B, ties at 27B; calibration depends on question wording
+- [[harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026]] — HarnessMM: reuse settled decisions at tool boundaries; −29.5% to −87.9% tokens
+- [[you-dont-need-long-context-belcak-2026]] — NVIDIA: compact after every action; SWE-bench Verified unchanged at ~8K peak context
+- [[skill-plus-plus-lifelong-agents-routing-aware-skill-refinement-zhang-2026]] — Skill++: rewrite a new skill's metadata against its neighbours; coverage 36.4% → 76.3% at 731 skills
+- [[recursa-recursively-self-improving-foundation-model-systems-zhu-2026]] — Recursa (Alibaba): recursive child learners refine a skill repository with frozen weights
+- [[routed-continual-learning-philip-2026]] — Routed CL (FAIR): route each run to a memory system and cluster; 65–72% lower cost
+- [[spar-experience-driven-strategy-evolution-b2b-sales-zhang-2026]] — SPAR: sales strategies as hypotheses gated by causal attribution; +15.8% live conversion
+- [[training-llm-agents-to-automate-post-training-rsi-dojo-gao-2026]] — RSI-Dojo: 281 executable post-training environments; 35B-A3B reaches 29.95 on PostTrainBench
+- [[measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026]] — Collaborative Intelligence Benchmark: 240 teamwork tasks, 18 models, best 82.2
+- [[lifeval-personalized-agentic-consumer-tasks-yang-2026]] — LifeVal (OpenAI): 169 personalized consumer tasks; models under-use past conversations
+- [[training-foundation-models-with-a-single-algorithm-song-2026]] — Unified training: MaxRL turns all training stages into one weighted likelihood loss
+- [[emma-structured-episodic-memory-multi-agent-workflow-niu-2026]] — EMMA: multi-agent config as scoped episodic memory; best on KramaBench, AppWorld, BBEH
+- [[a-heart-means-recursion-tartaglini-2026]] — Visual symbols steer VLM behavior (0% → 100% recursion) without appearing in reasoning traces
+- [[rethinking-verification-in-agent-harnesses-zhang-2026]] — 17 verification designs: an independent critic is the best value; skip completion-time self-checks
+- [[embeddinggemma-2-vera-2026]] — EmbeddingGemma 2: open 744M multimodal embedding model on Gemma 4
+- [[agentbaton-efficient-model-collaboration-li-2026]] — AgentBaton: one learned handoff from capable to cheap model; −65.9% API cost
+- [[agentic-backdoors-via-pretraining-poisoning-hu-2026]] — Agentic backdoors: 0.1% pretraining poison survives clean post-training into a CLI agent
+- [[is-complex-agentic-memory-always-needed-naive-rag-bao-2026]] — RAW-RAG: naive RAG over raw history beats agentic memory in 6 of 7 settings
+- [[advances-in-agentic-computer-graphics-liu-2026]] — Survey of 300+ agentic graphics systems: specification, model, harness, tooling
+- [[work-agents-systems-capabilities-and-optimization-xu-2026]] — Survey: work agents as model + harness + workspace + verified outcome
+- [[competing-learning-in-hybrid-architectures-shen-2026]] — BLD: freeze recurrent layers early so attention learns retrieval in hybrids
+- [[northcua-technical-report-zhang-2026]] — NorthCUA: open computer-use agents (9B–397B); Pro 88.6% on OSWorld-Verified
 
 ### Newsletter sweep 2026-11-01
 
@@ -1786,6 +1820,8 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[decision-api-internals-prompt-output-confidence]] — Code-level deep dive: prompt construction, output-token control (prefill logprobs vs 1-token decode vs logit-bias) and where confidence is computed
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist
 - [[system-one-models-vs-system-one-thinking]] — Does "System One model" come from Kahneman's System 1? Yes (TypeSafe FAQ); where it fits and where it diverges
+- [[how-decisionrag-navigates-a-corpus-hierarchy]] — DecisionRAG's beam walk over a corpus tree (yes/no per level, one multiple-choice at the end), why a tree not a graph, and why only the top 5 passages reach the generator
+- [[avoiding-hard-to-read-ai-prose-and-other-languages]] — The Clark readability paper gives no prompts; a checklist prompt derived from its measures; Korean (KatFishNet) and other-language evidence
 
 - [[rationale-behind-diffusiongemma-as-jev]] — Why reading a diffusion canvas reproduces Jev, and why the route still lost
 - [[from-transformer-to-modern-agents]] — Nine evolutionary tracks from Transformer to 2026 agents

@@ -2,7 +2,7 @@
 title: Self-Improving Agent
 type: concept
 created: 2026-05-17
-updated: 2026-10-29
+updated: 2026-11-10
 sources:
   - darwin-godel-machine-zhang-2025.md
   - voyager-wang-2023.md
@@ -13,6 +13,8 @@ sources:
   - what-is-missing-from-ai-post-training-ai-lim-2026.md
   - rehearse-confidence-cliff-autoresearch-ji-2026.md
   - meta-n-recursive-self-improvement-emergent-depth-kim-2026.md
+  - spar-experience-driven-strategy-evolution-b2b-sales-zhang-2026.md
+  - emma-structured-episodic-memory-multi-agent-workflow-niu-2026.md
 status: complete
 importance: high
 tags:
@@ -109,3 +111,8 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[babyagi-variants-nakajima-2023]] — BabyFoxAGI's 2023 'FOXY' self-improving task planner, an informal precursor
 - [[gepa-agrawal-2025]] — learning in language from traces as an alternative to RL weight updates
 - [[harness2-recursive-agent-harnessing-xu-2026]] — recursive self-improvement on the *harness*, at two levels: the current task's harness and the improvement process itself. See [[recursive-agent-harnessing]] and [[harness2]].
+
+## Newer evidence (2026-11-10 sweep)
+
+- SPAR stores lessons as testable hypotheses gated by causal attribution; +15.8% conversion in a live A/B test vs Reflexion's +9.6%. ([[spar-experience-driven-strategy-evolution-b2b-sales-zhang-2026]])
+- EMMA keeps a multi-agent configuration as scoped episodic memory, one guarded edit per failure. ([[emma-structured-episodic-memory-multi-agent-workflow-niu-2026]])
