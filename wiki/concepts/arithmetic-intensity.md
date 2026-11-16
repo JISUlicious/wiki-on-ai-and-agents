@@ -59,6 +59,7 @@ Intensity is also the tool for auditing accelerator results. An FPGA or ASIC tha
 - [[flash-attention]] — raises intensity by keeping the N×N matrix out of HBM.
 - [[kv-cache]] · [[linear-attention]] · [[grouped-query-attention]] — what moves bytes at decode.
 - [[hardware-accelerator]] · [[methods-to-speed-up-prompt-processing]]
+- [[prefill-compute-bound-vs-decode-memory-bound]] — filed Q&A walking through the prefill/decode split end to end.
 
 ## References
 

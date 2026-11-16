@@ -2,10 +2,18 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-11
+updated: 2026-11-16
 ---
 
 # Activity Log
+
+## [2026-11-16] query | Why prefill is compute-bound and decode is memory-bandwidth-bound
+
+Question: "why prefill and token generation related with different aspect of processing, compute and memory bandwidth?". Filed as [[prefill-compute-bound-vs-decode-memory-bound]]. Key pages consulted: [[arithmetic-intensity]], [[llm-inference-roofline-yuan-2024]], [[quantization-performance]], [[distserve-zhong-2024]], [[groq]], [[methods-to-speed-up-prompt-processing]].
+
+## [2026-11-11] query | Filed: how e-means works
+
+Question: "Explain e-means". Filed as [[how-e-means-beats-lloyds-k-means]]: the k-means problem and Lloyd's cost, the EMA mini-batch update, the four fixes (cosine step, dead-cluster revival, exact-mean finalization, scaling-law hyperparameters), results and limits. The "why batches are enough" and retrieval-relevance sections are marked as inference. Source: [[e-means-outperforming-k-means-bessa-2026]].
 
 ## [2026-11-11] ingest | e-means: outperforming k-means (in one-tenth the epochs) (arXiv:2611.09501)
 

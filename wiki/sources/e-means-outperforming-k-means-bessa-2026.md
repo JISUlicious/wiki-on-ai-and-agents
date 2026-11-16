@@ -92,6 +92,8 @@ A 10× cheaper solver with no tuning makes reclustering large embedding stores r
 - [[faiss]] · [[fair]] · [[meta]] · [[dinov2]] (the DINO lineage behind DINO10B).
 - [[vector-database]] · [[quantization]] · [[kv-cache-quantization]] · [[scaling-laws]].
 
+See also: [[how-e-means-beats-lloyds-k-means]] (filed Q&A explaining the method).
+
 ## References
 
 - [arXiv:2611.09501](https://arxiv.org/abs/2611.09501)

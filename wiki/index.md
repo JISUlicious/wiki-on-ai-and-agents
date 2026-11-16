@@ -7,7 +7,7 @@ updated: 2026-11-11
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 793 sources, 254 entities, 389 concepts, 9 comparisons, 28 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 793 sources, 254 entities, 389 concepts, 9 comparisons, 30 queries.
 
 ## Entities
 
@@ -1823,6 +1823,8 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[building-system-one-models-air-gapped]] — Four routes to local, air-gapped decision models (stock engine + logits, open checkpoints, LoRA recipe, small encoder) plus an air-gap checklist
 - [[system-one-models-vs-system-one-thinking]] — Does "System One model" come from Kahneman's System 1? Yes (TypeSafe FAQ); where it fits and where it diverges
 - [[how-decisionrag-navigates-a-corpus-hierarchy]] — DecisionRAG's beam walk over a corpus tree (yes/no per level, one multiple-choice at the end), why a tree not a graph, and why only the top 5 passages reach the generator
+- [[how-e-means-beats-lloyds-k-means]] — e-means explained: EMA mini-batch centroids, shrinking step, dead-cluster revival, exact-mean finish, scaling-law hyperparameters; beats Lloyd in 1.4–2.6 epochs
+- [[prefill-compute-bound-vs-decode-memory-bound]] — Why prefill is compute-bound (I ≈ S) and decode bandwidth-bound (I ≈ 1); which optimizations help which phase; disaggregation and hardware splits
 - [[avoiding-hard-to-read-ai-prose-and-other-languages]] — The Clark readability paper gives no prompts; a checklist prompt derived from its measures; Korean (KatFishNet) and other-language evidence
 
 - [[rationale-behind-diffusiongemma-as-jev]] — Why reading a diffusion canvas reproduces Jev, and why the route still lost
