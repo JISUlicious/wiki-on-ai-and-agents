@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-11-10",
+  "last_processed_date": "2026-11-17",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -108,7 +108,11 @@
     "1a1bbf752283e16e",
     "1a1b66dd82e04b22",
     "1a1a4f496841bddd",
-    "1a1982e131c56030"
+    "1a1982e131c56030",
+    "1a1c8afbe1620d35",
+    "1a1e055fd0a2614b",
+    "1a1e5478e6af1fd4",
+    "1a1daff31fe898bb"
   ],
   "runs": [
     {
@@ -344,6 +348,29 @@
       ],
       "dups_skipped": [],
       "notes": "Top AI Papers Oct 26-Nov 1 and Nov 2-8 (Substack redirects resolve to dair.ai pages carrying arXiv IDs; export API returned empty, verified on abs pages). alphaXiv Nov 4: 6 papers, DecisionRAG overlap. AI Agents Weekly Nov 7: paywalled product news; Weight-Space Programming already ingested. Also ingested user-requested arXiv:2610.29162 (found by web search, not from newsletters)."
+    },
+    {
+      "date": "2026-11-17",
+      "type": "newsletter sweep (manual, user-requested; 7 days since cursor)",
+      "threads_read": 4,
+      "candidate_ids_verified": 26,
+      "on_domain_ingested": 16,
+      "new_source_pages": 16,
+      "new_entity_pages": [],
+      "new_concept_pages": [],
+      "dups_skipped": [
+        "2610.35868",
+        "2610.30755",
+        "2611.01860",
+        "2610.35845",
+        "2610.26830",
+        "2611.02102",
+        "2601.11868",
+        "2609.26550",
+        "2604.06240",
+        "2611.06687"
+      ],
+      "notes": "alphaXiv Nov 11: all 6 papers already ingested. Top AI Papers Nov 9-15: 10 papers via Substack redirects to dair.ai pages. Top 10 Eval Papers of 2026: 10 arXiv links, 4 already ingested; SkillsBench and PostTrainBench had been cited but lacked source pages. AI Agents Weekly Nov 14: paywalled product news (Claude Fable 5.2), no papers."
     }
   ],
   "pending_threads": [

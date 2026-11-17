@@ -2,7 +2,7 @@
 title: Agent Evaluation
 type: concept
 created: 2026-07-07
-updated: 2026-10-08
+updated: 2026-11-17
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - agent-evaluation-readiness-checklist-langchain-2026.md
@@ -13,6 +13,8 @@ sources:
   - nvidia-nemo-agentic-metrics.md
   - agentbench-liu-2023.md
   - agent-as-a-judge-zhuge-2024.md
+  - claw-eval-ye-2026.md
+  - reprobridge-wang-2026.md
 status: complete
 importance: high
 ---
@@ -176,6 +178,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[xyeval-agents-say-yes-to-bad-advice-wu-2026]] — DeepMind: a plausible wrong user hint cuts agent scores up to 46.7%; warning prompts only partly help
 - [[skill-based-agentic-evaluation-real-time-data-science-tamhane-2026]] — Adobe: reference answers as executable code plus factoid scoring for data-science agents
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[claw-eval-ye-2026]] — Claw-Eval: safety as a multiplicative gate plus Pass^3; error injection drops Pass^3 by up to 24 pp while Pass@3 stays flat
+- [[reprobridge-wang-2026]] — ReproBridge: on 1,029 verified ICML-2026 reproduction tasks, refined artifacts raise agent success 76.4% → 92.6%; an execution-integrity Auditor catches matching numbers that were never measured
 
 ## Lineage sources
 

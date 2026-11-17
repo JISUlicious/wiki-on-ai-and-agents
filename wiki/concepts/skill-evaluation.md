@@ -2,9 +2,10 @@
 title: Skill Evaluation
 type: concept
 created: 2026-06-02
-updated: 2026-09-30
+updated: 2026-11-17
 sources:
   - agentic-skills-in-the-wild-liu-2026.md
+  - skillsbench-li-2026.md
 status: draft
 importance: medium
 tags:
@@ -39,3 +40,4 @@ tags:
 - [[skill2env-capability-oriented-environment-synthesis-allspark-2026]] — Skill2Env: 3K public skills hardened into executable tasks; Terminal-Bench 2.1 44.9→58.4 (no distillation control)
 - [[lessons-from-building-claude-code-how-we-use-skills-shihipar-2026]] — Anthropic's internal skill practice: categories, gotchas sections, trigger-style descriptions, on-demand hooks
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[skillsbench-li-2026]] — paired with/without-Skills benchmark: curated Skills lift 18 agent stacks from 33.9% to 50.5% (+16.6 pp); self-generated Skills fall below baseline

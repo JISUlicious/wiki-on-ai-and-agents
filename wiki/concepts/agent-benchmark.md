@@ -2,7 +2,7 @@
 title: Agent Benchmark
 type: concept
 created: 2026-05-21
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
   - gaia-mialon-2023.md
   - swe-bench-jimenez-2023.md
@@ -11,6 +11,7 @@ sources:
   - stop-comparing-llm-agents-without-disclosing-the-harness-zhang-2026.md
   - measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026.md
   - lifeval-personalized-agentic-consumer-tasks-yang-2026.md
+  - claw-eval-ye-2026.md
 status: draft
 importance: medium
 ---
@@ -71,6 +72,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[reliability-without-validity-llm-as-a-judge-norman-2026]] — largest LLM-as-a-Judge audit; exact-match overstates quality
 - [[naturebench-coding-agents-nature-family-papers-wang-2026]] — NatureBench: Nature-family discovery tasks for coding agents
 - [[paper-assistant-tool-jayaram-2026]] — Google Paper Assistant Tool: agentic scientific review/verification at scale
+- [[claw-eval-ye-2026]] — Claw-Eval: 300 tasks, 2,159 rubric items, three evidence channels; output-only judging misses 44% of safety violations
 
 ## Newer evidence (2026-11-10 sweep)
 

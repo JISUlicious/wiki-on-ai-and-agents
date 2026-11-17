@@ -2,7 +2,7 @@
 title: Multi-Agent Systems (LLM)
 type: concept
 created: 2026-06-03
-updated: 2026-10-29
+updated: 2026-11-17
 sources:
   - reaching-agreement-among-reasoning-llm-agents-ruan-2025.md
   - single-agent-vs-multi-agent-tran-2026.md
@@ -11,6 +11,9 @@ sources:
   - reliability-limits-llm-multi-agent-planning-ao-2026.md
   - claude-code-dynamic-workflows-harness-2026.md
   - scaling-behavior-single-llm-multi-agent-systems-li-2026.md
+  - formally-verified-quantum-programs-ai-shirobokov-2026.md
+  - nine-judges-two-effective-votes-kohli-2026.md
+  - s3-simple-scaling-of-swarms-jha-2026.md
 status: draft
 importance: high
 tags:
@@ -85,6 +88,9 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[agensh-scaling-organizational-intelligence-1024-agents-zhan-2026]] — Agensh (Microsoft): orchestrator-free harness to 1,024 agents; ProgramBench-hard 19.3→28.8% (1→128), single runs, no cost accounting
 - [[gemini-4-argon-agents-beat-minecraft-faldor-2026]] — DeepMind: four Gemini 4 Argon coding agents beat Minecraft via Mineflayer in 27h14m; single run, Easy
 - [[scaling-discovery-requires-forgetting-tan-2026]] — counterpoint to Git-memory swarms: teams plateau as history accumulates; periodic reset to best candidate gives +10% over parallel agents
+- [[formally-verified-quantum-programs-ai-shirobokov-2026]] — DeepMind: heterogeneous agent teams share a wiki and hold 'conferences'; across three quantum-simulation problems 39% of the cost reduction came from cross-team ideas (15% wiki, 24% conferences)
+- [[nine-judges-two-effective-votes-kohli-2026]] — a 9-judge, 7-family LLM panel is worth only ~2.2 independent votes (n_eff); its errors are correlated, so the best single judge matches or beats it
+- [[s3-simple-scaling-of-swarms-jha-2026]] — s3 (UW/AI2): cooperative MARL with one shared team reward and async messaging, no roles; 93% vs 13% (individual reward) on information aggregation, holds to 12 agents
 
 ## Lineage sources
 

@@ -2,13 +2,14 @@
 title: Verifier
 type: concept
 created: 2026-07-07
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
   - swe-gym-pan-2024.md
   - verification-horizon-qwen-2026.md
   - probe-process-benchmark-hallucination-detection-2026.md
   - rethinking-verification-in-agent-harnesses-zhang-2026.md
   - think-before-you-act-decision-gate-llm-agents-shoham-2026.md
+  - formally-verified-quantum-programs-ai-shirobokov-2026.md
 status: draft
 importance: high
 ---
@@ -90,6 +91,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[arex-recursive-self-improving-research-baai-2026]] — verification gating the transition *between* research rounds (Accept/Refine/Restart), exploiting the discover-vs-verify asymmetry
 - [[gavel-graph-world-models-llm-task-planning-wang-2026]] — GAVEL: a hand-specified scene-graph world model verifies and repairs LLM plans; Qwen3-8B 41.2%→91.8% on BEHAVIOR-1K
 - [[stellar-colosseum-many-agent-harness-math-tcs-research-lin-2026]] — Stellar Colosseum (Google): staged falsify-and-merge proof harness; the 71.0% headline is a two-run ensemble
+- [[formally-verified-quantum-programs-ai-shirobokov-2026]] — Gemini 4 agent teams search quantum programs against a frozen Lean specification, checked by an external comparator, which blocks theorem-weakening exploits; 290× cheaper arcsin, 11.8× fusion simulation
 
 ## Completion checks
 

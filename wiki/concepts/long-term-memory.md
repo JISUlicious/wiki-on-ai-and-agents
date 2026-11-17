@@ -2,11 +2,12 @@
 title: Long-Term Memory
 type: concept
 created: 2026-06-19
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
   - a-mem-xu-2025.md
   - is-complex-agentic-memory-always-needed-naive-rag-bao-2026.md
   - lifeval-personalized-agentic-consumer-tasks-yang-2026.md
+  - llm-agents-organize-own-memory-fu-2026.md
 status: draft
 importance: high
 tags:
@@ -27,6 +28,7 @@ Long-term memory refers to information an agent persists across sessions, as opp
 - [[corpusmap-follow-the-entities-jeong-2026]] — entity pages linked to every source beat raw-corpus search and an LLM Wiki layer (which fell below raw search for 3 of 4 models)
 - [[jev-mem-system-one-agentic-memory-jiang-2026]] · [[memt-1-0-memory-native-evolution-li-2026]] · [[in-parameter-memory-survey-huang-2026]] — non-LLM memory control; native in-model memory (Metis successor); survey of parametric memory
 - [[wfm-wiki-foundation-model-agentic-reasoning-dong-2026]] — Tencent Youtu's graph retriever for LLM-wiki-style memory; not budget-matched, and some cells self-described as unmeasured
+- [[llm-agents-organize-own-memory-fu-2026]] — SoMem: agent-edited Topic documents linked to immutable Source records, runtime-derived Graph/Timeline/Recent views; LoCoMo 88.96 vs 86.30 best baseline, removing Source costs 8.6 points
 
 ## Lineage sources
 

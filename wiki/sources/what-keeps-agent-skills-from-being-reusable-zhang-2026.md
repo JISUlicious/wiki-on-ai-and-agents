@@ -2,7 +2,7 @@
 title: "What Keeps Agent Skills from Being Reusable? Evidence from 138K SKILL.md Files"
 type: source
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-11-17
 sources:
   - what-keeps-agent-skills-from-being-reusable-zhang-2026.md
 arxiv_id: "2608.08453"
@@ -92,6 +92,9 @@ A ~6 pp Hit@1 gap. The authors are careful: shipped harnesses use an LLM-as-sele
 
 > [!note] Read alongside the prevalence number
 > The paper's own summary of prior work is the sharpest framing of the stakes: SkillsBench found curated skills improve task completion by **16.2 percentage points while self-generated skills provide no measurable benefit**. This paper supplies a mechanism for the second half — most published skills are not written in a form that can be selected, loaded, or ported.
+
+> [!warning] Contradiction
+> This paper's summary of SkillsBench (+16.2 pp; self-generated skills give "no measurable benefit") differs from SkillsBench v4 ([[skillsbench-li-2026]]): curated Skills add **+16.6 pp** on 87 tasks, and self-generated Skills fall **below** the no-Skills baseline (−8.1 to −11.5 pp on three configurations). The gap is most likely version drift between SkillsBench releases.
 
 ## Concepts & entities
 

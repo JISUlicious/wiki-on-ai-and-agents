@@ -2,10 +2,14 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-16
+updated: 2026-11-17
 ---
 
 # Activity Log
+
+## [2026-11-17] ingest | Newsletter sweep 2026-11-17 (16 sources)
+
+Four threads read: alphaXiv weekly digest (Nov 11), NLP Newsletter Top AI Papers Nov 9–15, "My Top 10 Eval Papers of 2026" (Nov 16), and AI Agents Weekly (Nov 14; paywalled product news, no papers). 26 arXiv IDs found (Substack redirects resolved to dair.ai/arXiv pages); 10 already had source pages (all six alphaXiv papers, Terminal-Bench, JEV-as-a-Judge, CUA verifiers, LifeVal). 16 ingested: [[s3-simple-scaling-of-swarms-jha-2026]], [[llm-agents-organize-own-memory-fu-2026]], [[evidence-linked-memory-lee-2026]], [[cost-efficient-agent-harnesses-park-2026]], [[longcapharness-zhang-2026]], [[no-second-run-cai-2026]], [[reprobridge-wang-2026]], [[autorefine-shahidi-2026]], [[formally-verified-quantum-programs-ai-shirobokov-2026]], [[lingbot-touch-heterogeneous-tactile-representation-han-2026]], [[when-ai-benchmarks-plateau-akhtar-2026]], [[nine-judges-two-effective-votes-kohli-2026]], [[skillsbench-li-2026]], [[agent-as-a-judge-survey-you-2026]], [[claw-eval-ye-2026]], [[posttrainbench-rank-2026]]. SkillsBench and PostTrainBench were previously cited but had no source page; [[posttrainbench]] now links its source. Contradiction: [[what-keeps-agent-skills-from-being-reusable-zhang-2026]] cites SkillsBench as +16.2 pp with "no measurable benefit" from self-generated skills; v4 reports +16.6 pp and self-generated skills 8.1–11.5 pp below baseline (callout added; likely version drift). "Related 2026 sources" bullets added on ~25 concept pages (e.g. [[multi-agent]], [[llm-as-a-judge]], [[agentic-harness-engineering]], [[recursive-self-improvement]], [[agent-evaluation]], [[long-term-memory]], [[benchmark]]). No new concept/entity pages.
 
 ## [2026-11-16] query | Why prefill is compute-bound and decode is memory-bandwidth-bound
 

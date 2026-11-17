@@ -2,12 +2,15 @@
 title: LLM-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-10-08
+updated: 2026-11-17
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - langsmith-evaluation-docs.md
   - mlflow-genai-evaluation-docs.md
   - deepeval-agent-evaluation-docs.md
+  - nine-judges-two-effective-votes-kohli-2026.md
+  - agent-as-a-judge-survey-you-2026.md
+  - autorefine-shahidi-2026.md
 status: complete
 importance: high
 ---
@@ -94,6 +97,9 @@ Surfaced via newsletter ingests; see [[index]].
 - [[self-improvement-via-fast-tree-search-fu-2026]] — SIFT (MIT/Sakana): pairwise judge + Bradley–Terry tree search for DGM-style self-improvement at a tenth of the cost
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[nine-judges-two-effective-votes-kohli-2026]] — 9 judges, ~2 effective votes: errors correlate (φ̄ = 0.39), so the panel falls 8–22 pp short of independent voting, and Dawid–Skene/weighted voting close ≤11% of the gap
+- [[agent-as-a-judge-survey-you-2026]] — survey of the shift to agentic judges that plan, call tools and keep memory; names cost, latency, safety and privacy as open problems
+- [[autorefine-shahidi-2026]] — AutoRefine (Meta): calibrates a code-judge prompt from merge/abandon and test outcomes, with an abstaining teacher; Scott's π 0.36 → 0.60 on an execution oracle
 
 ## Lineage sources
 

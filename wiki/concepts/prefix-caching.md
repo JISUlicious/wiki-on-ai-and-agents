@@ -2,11 +2,12 @@
 title: Prefix Caching
 type: concept
 created: 2026-07-27
-updated: 2026-09-30
+updated: 2026-11-17
 sources:
   - sglang-radixattention-zheng-2023.md
   - prompt-cache-gim-2023.md
   - paged-attention-kwon-2023.md
+  - cost-efficient-agent-harnesses-park-2026.md
 status: complete
 importance: high
 ---
@@ -78,3 +79,4 @@ The mechanism descends from [[paged-attention|PagedAttention]]'s ref-counted, co
 - [[building-with-claude-sonnet-5-5-osmani-2026]] — Osmani's Sonnet 5.5 launch guide: spec sheet, pricing, six breaking migration changes from Sonnet 5
 - [[what-a-task-costs-on-opus-5-5-osmani-2026]] — Worked cost model for an agentic Claude Code task on Opus 5.5; what the "40% cheaper" claim actually means
 - [[lessons-from-building-claude-code-prompt-caching-is-everything-shihipar-2026]] — How Claude Code is built around prefix caching: static-first layout, no mid-session swaps, cache-safe compaction
+- [[cost-efficient-agent-harnesses-park-2026]] — even with caching, cache reads are 73% of agent call cost above 256K context; every extra tool call re-reads the whole prefix (1.6–26× cost at similar context size)

@@ -2,11 +2,12 @@
 title: Prompt Optimization (automatic)
 type: concept
 created: 2026-10-08
-updated: 2026-10-29
+updated: 2026-11-17
 sources:
   - gepa-agrawal-2025.md
   - pre-train-prompt-predict-liu-2021.md
   - adk-optimize-docs-2026.md
+  - autorefine-shahidi-2026.md
 status: draft
 importance: high
 ---
@@ -52,3 +53,7 @@ Using an algorithm, usually an LLM in a search loop, to **write and improve prom
 - [[pre-train-prompt-predict-liu-2021]]
 - [[prompt-engineering-weng-2023]]
 - [[adk-optimize-docs-2026]]
+
+## Related 2026 sources
+
+- [[autorefine-shahidi-2026]] — AutoRefine: prompt-as-parameters loop with balanced pass/fail edits and validation-split selection; recalibrated judge π 0.16 → 0.51 on held-out current diffs

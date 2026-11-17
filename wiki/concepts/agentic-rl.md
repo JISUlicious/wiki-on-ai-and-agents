@@ -2,10 +2,11 @@
 title: Agentic RL
 type: concept
 created: 2026-05-17
-updated: 2026-10-29
+updated: 2026-11-17
 sources:
   - deepseek-r1-2025.md
   - search-r1-jin-2025.md
+  - s3-simple-scaling-of-swarms-jha-2026.md
 status: complete
 importance: high
 tags:
@@ -57,3 +58,4 @@ Surfaced via newsletter ingests; see [[index]].
 - [[critical-state-rl-trainable-states-tool-use-chen-2026]] — nested sampling picks the one trainable call; +14.3 pp BFCL miss_func
 - [[sharpening-tax-in-post-training-oh-2026]] — base models out-cover post-trained ones at pass@128 on agentic benchmarks (36/42 cases)
 - [[logra-low-rank-gradient-sketches-rl-zhang-2026]] — full-weight RL with low-rank gradient sketches; −45.7% memory at 7B
+- [[s3-simple-scaling-of-swarms-jha-2026]] — team-level GRPO advantage (G = 8 team attempts per problem) trains task actions and messaging together; beats matched best-of-N, individual rewards create a public-goods dilemma

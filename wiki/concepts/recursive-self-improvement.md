@@ -2,7 +2,7 @@
 title: Recursive Self-Improvement
 type: concept
 created: 2026-10-29
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
   - last-ai-built-by-humans-recursive-self-improvement-duan-2026.md
   - harness-engineering-self-improvement-weng-2026.md
@@ -19,6 +19,8 @@ sources:
   - training-llm-agents-to-automate-post-training-rsi-dojo-gao-2026.md
   - recursa-recursively-self-improving-foundation-model-systems-zhu-2026.md
   - harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026.md
+  - posttrainbench-rank-2026.md
+  - no-second-run-cai-2026.md
 status: draft
 importance: high
 tags:
@@ -71,3 +73,8 @@ The survey calls effective L5 (better successors under matched budgets and indep
 - RSI-Dojo trains post-training ability into weights: Qwen3.6-35B-A3B goes from 13.08 to 29.95 on [[posttrainbench|PostTrainBench]]. ([[training-llm-agents-to-automate-post-training-rsi-dojo-gao-2026]])
 - Recursa improves a frozen-weight system's skill repository through parallel child learners with validated merges (Harvey LAB 30% → 55%). ([[recursa-recursively-self-improving-foundation-model-systems-zhu-2026]])
 - HarnessMM reuses already-settled decisions at tool boundaries, cutting tokens 29.5% (Codex) to 87.9% (DeepSeek Harness). ([[harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026]])
+
+## Related 2026 sources
+
+- [[posttrainbench-rank-2026]] — PostTrainBench: best agent post-trains base LLMs to 23.2% vs 51.1% for official instruct models in 10 H100-hours
+- [[no-second-run-cai-2026]] — No Second Run: RSI applied to a whole frontier pre-training run by splitting it into debugging, headroom and experience-to-metric loops; 22-benchmark mean at 1T tokens 47.78 → 56.83

@@ -2,7 +2,7 @@
 title: Agentic Harness Engineering
 type: concept
 created: 2026-06-09
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
   - agentic-harness-engineering-lin-2026.md
   - code-as-agent-harness-ning-2026.md
@@ -21,6 +21,8 @@ sources:
   - rethinking-verification-in-agent-harnesses-zhang-2026.md
   - harnessmm-recursive-self-improvement-harness-token-efficiency-jiang-2026.md
   - work-agents-systems-capabilities-and-optimization-xu-2026.md
+  - cost-efficient-agent-harnesses-park-2026.md
+  - longcapharness-zhang-2026.md
 builds-on:
   - [[code-as-harness]]
   - [[self-improving-agent]]
@@ -132,6 +134,8 @@ Surfaced via newsletter ingests; see [[index]].
 - [[longharness-stateful-evidence-management-huang-2026]] — LongHarness: evidence–conclusion coevolution over 100M-token corpora; +12.0 over Claude Code (V1), +18.9 over Codex (V2), single runs
 - [[veriharness-scaling-agentic-verification-zhang-2026]] — VeriHarness: same-model verifier harness (disagreement resolver + consensus challenger); +6.2/+6.4 over a single rollout from a 10-rollout pool
 - [[jevagentharness-decision-models-share-control-zhu-2026]] — JevAgentHarness: delegate multiple-choice harness decisions to a System One model behind fitted thresholds; −14.2% cost with no task lost
+- [[cost-efficient-agent-harnesses-park-2026]] — Agency (Berkeley): ptrace-based interposition under unmodified Claude Code/Codex; five cost techniques cut cost to 0.77× baseline at 0.97× accuracy
+- [[longcapharness-zhang-2026]] — LongCapHarness: a GPT-5.6-Sol harnessing agent builds reusable capability harnesses for small executors; ~$541 development vs. ~$3,696 to train NExtLong
 
 ## Lineage sources
 

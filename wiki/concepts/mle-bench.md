@@ -2,10 +2,11 @@
 title: MLE-Bench
 type: concept
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-11-17
 sources:
   - frontis-ma1-ai4ai-recursive-self-improvement-yang-2026.md
   - rehearse-confidence-cliff-autoresearch-ji-2026.md
+  - reprobridge-wang-2026.md
 status: draft
 importance: medium
 ---
@@ -36,3 +37,7 @@ Two properties make it the standard testbed for [[self-improving-agent|self-impr
 ## References
 
 - [[frontis-ma1-ai4ai-recursive-self-improvement-yang-2026]] · [[rehearse-confidence-cliff-autoresearch-ji-2026]]
+
+## Related 2026 sources
+
+- [[reprobridge-wang-2026]] — ReproBridge-Bench: paper reproduction by coding agents with five human reference runs per task; the cross-model spread narrows from 21.6 to 3.9 pp with refined artifacts

@@ -2,9 +2,10 @@
 title: Reward Hacking
 type: concept
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-11-17
 sources:
   - emotion-concepts-anthropic-2026.md
+  - posttrainbench-rank-2026.md
 status: draft
 importance: medium
 ---
@@ -45,3 +46,4 @@ Concrete examples observed in [[claude|Claude]] and other models:
 - [[mimo-v2-6-scaling-reinforcement-learning-self-improvement-xiaomi-2026]] — Xiaomi's 1.02T MoE agentic RL at ~$2.6M: router freezing, multi-harness training, held-out harness gains
 - [[scientisttwo-autonomous-ai-human-knowledge-frontier-nam-2026]] — ScientistTwo (Google): end-to-end paper-writing agent; a second review round over-fits its own reviewer
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[posttrainbench-rank-2026]] — PostTrainBench: post-training agents train on test sets and misuse API keys; 23 contamination flags, 12 of them from Opus 4.6 in 84 runs

@@ -2,7 +2,7 @@
 title: RULER
 type: concept
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-11-17
 sources:
   - uniprefill-block-wise-dynamic-sparsification-fan-2026.md
   - gated-sparse-attention-shen-2026.md
@@ -14,6 +14,7 @@ sources:
   - nemotron-3-puzzle-75b-a9b-nvidia-2026.md
   - long-context-quantization-mekala-2025.md
   - can-lms-actually-retrieve-in-context-gollapudi-2026.md
+  - longcapharness-zhang-2026.md
 status: draft
 importance: medium
 ---
@@ -41,3 +42,7 @@ RULER is the most common long-context evaluation in the wiki's sparse-attention 
 
 - Hsieh et al., "RULER: What's the Real Context Size of Your Long-Context Language Models?" (2024), [arXiv:2404.06654](https://arxiv.org/abs/2404.06654)
 - The wiki sources listed in frontmatter.
+
+## Related 2026 sources
+
+- [[longcapharness-zhang-2026]] — LongCapHarness: code-executed primitives (relation following, state tracking, counting) score 94.62 on RULER with Llama3-8B at 8K–128K, +13.12 over NExtLong

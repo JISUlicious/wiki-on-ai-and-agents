@@ -2,9 +2,10 @@
 title: Pre-training
 type: concept
 created: 2026-05-13
-updated: 2026-09-30
+updated: 2026-11-17
 sources:
   - bert-devlin-2018.md
+  - no-second-run-cai-2026.md
 status: complete
 importance: high
 ---
@@ -43,3 +44,4 @@ A large, diverse, unlabeled corpus offers far more supervisory signal than any a
 
 - [[self-play-pretraining-zero-data-cowsik-2026]] — Self-play pretraining: a generator writes programs, a byte learner predicts them; zero-shot power laws on natural data
 - [[ncp-archpreview-next-concept-prediction-shanghai-ai-lab-2026]] — NCP-ArchPreview: 8.9B LM adding next-concept prediction; the gain shrinks to +0.59 after mid-training
+- [[no-second-run-cai-2026]] — No Second Run (801-30B-A3B, 11.8T tokens): base scores plateau near 61 while post-SFT keeps rising 65.34 → 66.83; base vs. post-SFT checkpoint ranks correlate only 0.44–0.80

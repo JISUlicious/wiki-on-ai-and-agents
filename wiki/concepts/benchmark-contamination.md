@@ -2,12 +2,13 @@
 title: Benchmark Contamination
 type: concept
 created: 2026-09-29
-updated: 2026-09-30
+updated: 2026-11-17
 sources:
   - swe-bench-live-zhang-2025.md
   - swe-bench-jimenez-2023.md
   - retro-borgeaud-2021.md
   - swe-refactor-bench-hong-2026.md
+  - when-ai-benchmarks-plateau-akhtar-2026.md
 status: draft
 importance: medium
 ---
@@ -36,3 +37,4 @@ importance: medium
 ## Related 2026 sources
 
 - [[automating-eval-design-and-hillclimbing-martin-2026]] — Lance Martin on eval design and overfit-safe hill-climbing with the claude-api skill
+- [[when-ai-benchmarks-plateau-akhtar-2026]] — hiding the test set does not prevent saturation (public N=56 vs private N=4, no meaningful difference); age and expert curation matter more

@@ -2,10 +2,11 @@
 title: Long-Context LLM
 type: concept
 created: 2026-05-16
-updated: 2026-10-29
+updated: 2026-11-17
 sources:
   - em-llm-fountas-2024.md
   - titans-behrouz-2025.md
+  - longcapharness-zhang-2026.md
 status: draft
 importance: medium
 tags:
@@ -54,6 +55,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[parser-read-in-parallel-reason-in-depth-li-2026]] — read in parallel, reason in depth: 83–86% at every length up to 896K where 4B full-context reading falls to 31%
 - [[residual-vector-reconstruction-long-context-recall-ryu-2026]] — recall beyond the context window at near-constant memory: facts extracted up front are encoded as feed-forward residual vectors, then regenerated on demand. 50–80% single-fact accuracy at 2M tokens, but from 3–5 questions per model, and routing fails on paraphrased questions
 - [[hysparse2-hybrid-sparse-attention-two-level-kv-sharing-wei-2026]] — HySparse2 (Xiaomi): YOCO-style KV bridging plus token-level sparse KV reuse; prefill exits at half depth
+- [[longcapharness-zhang-2026]] — LongCapHarness: frozen capability harnesses let 8K-window Llama3-8B average 79.32 on HELMET + RULER vs. 70.15 for 128K-trained NExtLong, with no data synthesis or post-training
 
 ## Lineage sources
 

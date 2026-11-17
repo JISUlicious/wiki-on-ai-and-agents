@@ -7,7 +7,7 @@ updated: 2026-11-11
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 793 sources, 254 entities, 389 concepts, 9 comparisons, 30 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 809 sources, 254 entities, 389 concepts, 9 comparisons, 30 queries.
 
 ## Entities
 
@@ -949,6 +949,29 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[context-engineering-lessons-manus-ji-2025]] — Lessons from building Manus (2025-07-18)
 - [[crewai-readme-2026]] — CrewAI README
 - [[autogpt-readme-2026]] — AutoGPT README
+
+### Newsletter sweep 2026-11-17
+**Agents, memory and harnesses**
+- [[s3-simple-scaling-of-swarms-jha-2026]] — s3 (UW/AI2): role-free cooperative multi-agent RL with a shared team reward; 93% vs 13% (individual reward) on aggregation, >25× strongest baseline at 2× team size
+- [[llm-agents-organize-own-memory-fu-2026]] — SoMem: agent-edited linked Markdown topic pages over immutable source records; LoCoMo 88.96 vs 86.30, +3.10 BEAM-100K, +2.00 LongMemEval-S
+- [[evidence-linked-memory-lee-2026]] — WikiTrace (KAIST): each lesson links to its source run so the agent can check it; 90.2 vs 79.5 no-memory, regressions 6.5% → 4.5%
+- [[cost-efficient-agent-harnesses-park-2026]] — Agency (Berkeley/UIUC): ptrace layer under unmodified Claude Code/Codex; cost 0.77× at 0.97× accuracy; cache reads up to 73% of cost
+- [[longcapharness-zhang-2026]] — LongCapHarness (MSRA): frozen capability harnesses lift 8K Llama3-8B to 79.32 on HELMET+RULER vs 70.15 for 128K-trained NExtLong, no training
+- [[no-second-run-cai-2026]] — No Second Run (SII-GAIR): RSI loops applied to a frontier pre-training run; 801-30B-A3B (11.8T tokens), 58.43 avg on four agentic benchmarks after SFT only
+- [[reprobridge-wang-2026]] — ReproBridge (Waterloo/Google): agent-refined artifacts raise ML-paper reproduction 76.4% → 92.6% on 1,029 tasks, −19.7% API spend
+- [[formally-verified-quantum-programs-ai-shirobokov-2026]] — Google DeepMind/Quantum AI: Gemini 4 agent teams find quantum programs with Lean-checked correctness and cost; up to 290× cheaper arithmetic
+
+**Evaluation and judges**
+- [[skillsbench-li-2026]] — SkillsBench: paired with/without-Skills benchmark (87 tasks, 18 stacks); curated Skills 33.9% → 50.5%, self-generated Skills below baseline
+- [[claw-eval-ye-2026]] — Claw-Eval (PKU/HKU): 300 tasks, trace + audit log + snapshot; output-only judging misses 44% of safety violations
+- [[posttrainbench-rank-2026]] — PostTrainBench: agents post-train small LLMs on one H100 in 10 h; best 23.2% vs 51.1% for official instruct models; 23 contamination flags
+- [[agent-as-a-judge-survey-you-2026]] — Survey of agentic judges: procedural → reactive → self-evolving; five method groups, no new experiments
+- [[nine-judges-two-effective-votes-kohli-2026]] — Nine LLM judges from 7 families carry ~2.2 independent votes; the panel never beats its best single judge
+- [[autorefine-shahidi-2026]] — AutoRefine (Meta): code-judge prompts calibrated from merge/test outcomes; agreement 0.16 → 0.51 after recalibration
+- [[when-ai-benchmarks-plateau-akhtar-2026]] — Benchmark saturation across 60 LLM benchmarks (ICML 2026): 29 highly saturated; private test sets don't prevent it
+
+**Robotics**
+- [[lingbot-touch-heterogeneous-tactile-representation-han-2026]] — LingBot-Touch (Robbyant): sensor-agnostic tactile JEPA encoder from ~5K hours; +14–25 pp success for VLA and diffusion policies on 26 real tasks
 
 ### Ad-hoc ingests 2026-11-11
 - [[e-means-outperforming-k-means-bessa-2026]] — e-means (FAIR): EMA mini-batch k-means with scaling-law hyperparameters; beats Lloyd's 25-epoch loss in 1.4–2.6 epochs, 10–45× GPU speedup; DINO10B dataset

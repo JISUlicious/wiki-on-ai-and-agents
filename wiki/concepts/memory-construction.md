@@ -2,9 +2,10 @@
 title: Memory Construction
 type: concept
 created: 2026-05-16
-updated: 2026-10-05
+updated: 2026-11-17
 sources:
   - mem-alpha-wang-2025.md
+  - llm-agents-organize-own-memory-fu-2026.md
 status: draft
 importance: medium
 tags:
@@ -26,3 +27,4 @@ Memory construction is the problem of *building* a structured memory store from 
 ## Related 2026 sources
 
 - [[knowledge-graph-extraction]] — Knowledge graph extraction: trained, generative and closed-decision approaches, and what extraction loses
+- [[llm-agents-organize-own-memory-fu-2026]] — SoMem: LLM Writer proposes topic edits, runtime validates evidence links and rebuilds access views; memory built by one Writer serves other Readers at 92.3–93.3% on LoCoMo

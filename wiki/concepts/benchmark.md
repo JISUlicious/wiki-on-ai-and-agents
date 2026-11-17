@@ -2,8 +2,9 @@
 title: Benchmark
 type: concept
 created: 2026-09-29
-updated: 2026-10-06
-sources: []
+updated: 2026-11-17
+sources:
+  - when-ai-benchmarks-plateau-akhtar-2026.md
 status: draft
 importance: medium
 ---
@@ -75,3 +76,7 @@ See [[agent-benchmark]] for what distinguishes agent evaluation, and [[agent-eva
 - [[gsm8k]] — GSM8K
 - [[mt-bench]] — MT-Bench
 - [[chatbot-arena]] — Chatbot Arena
+
+## Related 2026 sources
+
+- [[when-ai-benchmarks-plateau-akhtar-2026]] — saturation index over 60 LLM benchmarks: 29 are highly saturated, the share rises with age (42.9% → 54.5%), and private test sets don't slow it

@@ -2,9 +2,10 @@
 title: Vision-Language-Action Model
 type: concept
 created: 2026-05-17
-updated: 2026-10-24
+updated: 2026-11-17
 sources:
   - magma-yang-2025.md
+  - lingbot-touch-heterogeneous-tactile-representation-han-2026.md
 status: complete
 importance: high
 tags:
@@ -42,6 +43,7 @@ VLAs collapse the perception → planning → control pipeline into a single lea
 ## Related 2026 sources
 
 - [[rl-for-real-time-vla-policies-dong-2026]] — Real-Time EXPO-FT: a fast RL edit policy corrects stale asynchronous VLA action chunks; 29/30 on real robots
+- [[lingbot-touch-heterogeneous-tactile-representation-han-2026]] — LingBot-Touch: a frozen 5.46M tactile encoder plugged into π0.5 / LingBot-VLA lifts real-robot success by 21.8 / 24.8 pp across 26 dual-arm tasks
 
 ## Lineage sources
 

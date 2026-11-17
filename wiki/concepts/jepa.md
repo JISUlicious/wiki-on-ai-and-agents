@@ -2,10 +2,11 @@
 title: JEPA (Joint-Embedding Predictive Architecture)
 type: concept
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-17
 sources:
   - platonic-representation-hypothesis-jepas-balestriero-2026.md
   - learn-from-your-own-latents-korchinski-2026.md
+  - lingbot-touch-heterogeneous-tactile-representation-han-2026.md
 status: draft
 importance: medium
 ---
@@ -43,3 +44,7 @@ Both results come from the JEPA side of a debate with next-token prediction, and
 
 - [[platonic-representation-hypothesis-jepas-balestriero-2026]]
 - [[learn-from-your-own-latents-korchinski-2026]]
+
+## Related 2026 sources
+
+- [[lingbot-touch-heterogeneous-tactile-representation-han-2026]] — Tactile-JEPA (Robbyant): latent masked prediction on 5K hours of touch beats VAE/MAE reconstruction (0.90 vs 3.03/3.07 mm contact error at 1K h), and the VAE gets worse with more data

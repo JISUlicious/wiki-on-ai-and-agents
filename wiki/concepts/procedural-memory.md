@@ -2,10 +2,11 @@
 title: Procedural Memory
 type: concept
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-11-17
 sources:
   - voyager-wang-2023.md
   - mirix-wang-2025.md
+  - evidence-linked-memory-lee-2026.md
 status: draft
 importance: medium
 tags:
@@ -28,3 +29,7 @@ The [[mirix]] paper ([[mirix-wang-2025|Wang et al. 2025]]) makes procedural memo
 
 - [[voyager-wang-2023]]
 - [[mirix-wang-2025]]
+
+## Related 2026 sources
+
+- [[evidence-linked-memory-lee-2026]] — WikiTrace (KAIST): insights linked to a compilation and raw trajectory; agent descends when in doubt, Regression 4.5% vs 6.5% for the same insights alone

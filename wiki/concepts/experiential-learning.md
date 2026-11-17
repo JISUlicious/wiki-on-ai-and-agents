@@ -2,9 +2,10 @@
 title: Experiential Learning
 type: concept
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-11-17
 sources:
   - expel-zhao-2023.md
+  - evidence-linked-memory-lee-2026.md
 status: draft
 importance: medium
 tags:
@@ -29,3 +30,7 @@ tags:
 ## References
 
 - [[expel-zhao-2023]]
+
+## Related 2026 sources
+
+- [[evidence-linked-memory-lee-2026]] — 52% of memory-induced failures trace to a followed lesson; linking each lesson to its source run lifts 8-suite average to 90.2 (79.5 without memory, 80.3 for ExpeL)

@@ -2,7 +2,7 @@
 title: Agent Skills (Anthropic)
 type: concept
 created: 2026-05-16
-updated: 2026-11-04
+updated: 2026-11-17
 sources:
   - anthropic-agent-skills-2025.md
   - anthropic-engineering-skills-2025.md
@@ -10,6 +10,7 @@ sources:
   - openai-codex-skills-2025.md
   - agent-skills-survey-xu-2026.md
   - terminal-mac-govijr-github.md
+  - skillsbench-li-2026.md
 status: complete
 importance: high
 tags:
@@ -190,6 +191,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 - [[seeing-like-an-agent-shihipar-2026]] — Claude Code tool-design lessons: structured tools where the harness parses output, grep over RAG, fewer tools
 - [[claude-code-mods]] — Claude Code mods: in-process, stateful hook modules shipped as plugins (Oct 2026)
 - [[terminal-mac-govijr-github]] — [[terminal-mac]] ships one SKILL.md three ways: bundled with its MCP server as a Claude Code plugin, installed by its own CLI into any skills folder, and via `npx skills add`
+- [[skillsbench-li-2026]] — SkillsBench v4: curated Skills +16.6 pp across 18 model–harness stacks; 2–3 focused Skills (+19.0 pp) beat 4+ (+10.1 pp)
 
 ## Lineage sources
 
