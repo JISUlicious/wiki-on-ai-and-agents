@@ -2,12 +2,12 @@
 title: Wiki Index
 type: index
 created: 2026-05-12
-updated: 2026-11-11
+updated: 2026-11-19
 ---
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 820 sources, 258 entities, 388 concepts, 10 comparisons, 31 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 826 sources, 258 entities, 388 concepts, 10 comparisons, 31 queries.
 
 ## Entities
 
@@ -953,6 +953,15 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[context-engineering-lessons-manus-ji-2025]] — Lessons from building Manus (2025-07-18)
 - [[crewai-readme-2026]] — CrewAI README
 - [[autogpt-readme-2026]] — AutoGPT README
+
+### Newsletter sweep 2026-11-19
+**alphaXiv weekly digest (Nov 18)**
+- [[understanding-ai-from-the-inside-mi-safety-barez-2026]] — 183-page survey of mechanistic interpretability for AI safety: five evaluation dimensions, six research orientations; MI as one layer of defence in depth (arXiv 2611.08438)
+- [[next-generation-llm-architectures-survey-teng-2026]] — survey of post-Transformer decoder design as relaxing four assumptions: processing, transformation, state, output commitment (alphaXiv only)
+- [[weight-space-programming-doesnt-need-transformers-ok-2026]] — given the choice, three frontier LLMs write sparse fact tables, not Transformers; ARC up to 54.4% without gradients; also writes SSM/RNN weights (alphaXiv only)
+- [[reasoning-generalization-survey-le-2026]] — survey of reasoning under explicit distribution shift across training, inference, architecture and analysis; no method generalizes consistently (alphaXiv only)
+- [[post-training-information-seeking-survey-huang-2026]] — survey sorting post-training for search agents into six decisions, from whether to retrieve to when to stop (arXiv 2611.14149)
+- [[pac-bayes-guarantees-llm-judges-lamb-2026]] — PAC-Bayes risk certificates for safety judges without held-out data; LoRA-GT tightest in all 40 cases, standard LoRA vacuous (arXiv 2611.20818, NeurIPS 2026)
 
 ### Newsletter sweep 2026-11-17
 **Agents, memory and harnesses**

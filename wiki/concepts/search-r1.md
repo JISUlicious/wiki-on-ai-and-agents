@@ -2,7 +2,7 @@
 title: Search-R1
 type: concept
 created: 2026-05-17
-updated: 2026-05-17
+updated: 2026-11-19
 sources:
   - search-r1-jin-2025.md
 status: complete
@@ -38,3 +38,7 @@ Search-R1 made [[agentic-rl]] practical by identifying the precise failure mode 
 ## References
 
 - [[search-r1-jin-2025]] — COLM 2025 paper; [arXiv:2503.09516](https://arxiv.org/abs/2503.09516)
+
+## Related 2026 sources
+
+- [[post-training-information-seeking-survey-huang-2026]] — the 2026 survey uses Search-R1 as its main end-to-end, outcome-rewarded search policy.

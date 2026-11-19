@@ -2,7 +2,7 @@
 title: Claude Opus 5.5
 type: entity
 created: 2026-10-02
-updated: 2026-11-10
+updated: 2026-11-19
 sources:
   - getting-the-most-out-of-opus-5-5-osmani-2026.md
   - what-a-task-costs-on-opus-5-5-osmani-2026.md
@@ -66,3 +66,7 @@ Successor to Claude Opus 5 (no page yet), which every comparison in the posts us
 
 - Scores lower (more readable) than Opus 5 on 19 of 21 hard-to-read feature comparisons. ([[why-is-ai-generated-language-so-hard-to-understand-clark-2026]])
 - Scores 71.0 on the Collaborative Intelligence Benchmark and gives in to a pushy teammate in 90% of conflict runs. ([[measuring-ai-agents-as-teammates-collaborative-intelligence-wu-2026]])
+
+## Related 2026 sources
+
+- Writer LLM in [[weight-space-programming-doesnt-need-transformers-ok-2026]]: hand-wrote sparse fact-table models without gradients.

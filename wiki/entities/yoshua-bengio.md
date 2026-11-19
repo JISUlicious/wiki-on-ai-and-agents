@@ -2,7 +2,7 @@
 title: Yoshua Bengio
 type: entity
 created: 2026-05-14
-updated: 2026-11-03
+updated: 2026-11-19
 sources:
   - bahdanau-attention-2014.md
   - transferable-features-deep-nets-yosinski-2014.md
@@ -20,3 +20,7 @@ Canadian computer scientist; 2018 Turing Award winner (shared with Geoffrey Hint
 
 - [[neural-machine-translation-bahdanau-2014]]
 - [[transferable-features-deep-nets-yosinski-2014]] — co-author: layer-by-layer transferability of CNN features (NIPS 2014)
+
+## Related 2026 sources
+
+- Co-author of [[understanding-ai-from-the-inside-mi-safety-barez-2026]], a 2026 survey of mechanistic interpretability for AI safety.

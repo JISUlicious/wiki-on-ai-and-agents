@@ -2,7 +2,7 @@
 title: Multi-Head Latent Attention
 type: concept
 created: 2026-09-29
-updated: 2026-10-23
+updated: 2026-11-19
 sources:
   - deepseek-v3.2-sparse-attention-deepseek-2025.md
   - native-sparse-attention-yuan-2025.md
@@ -44,6 +44,7 @@ importance: medium
 
 - [[deepseek-v4.1-flash-kv-cache-compression-deepseek-2026]] — DeepSeek-V4.1-Flash: encoder–decoder prefill split, cross-layer sparse KV reuse, FP4 KV; indexer cut to 32 heads, top-k 512
 - [[memory-attention-kang-2026]] — Memory Attention: values = keys + a per-layer token-ID embedding, no value projection; tables offloadable to CPU
+- [[next-generation-llm-architectures-survey-teng-2026]] — names MoE + MLA ("sparse capacity with compressed attention state") a recurring open-weight design pattern.
 
 ## Lineage sources
 

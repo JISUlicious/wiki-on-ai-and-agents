@@ -2,7 +2,7 @@
 title: "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights"
 type: source
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-19
 sources:
   - weight-space-programming-takehi-2026.md
 authors:
@@ -81,6 +81,7 @@ The evaluation sets were never shown to Astra. Sampling: temperature 0.6, top-p 
 - **[[qwen-scope]]** found repetition features in Qwen3 with sparse autoencoders and used them to generate repetition negatives for RL. Same failure mode, located as a direction, but fixed with training rather than a direct edit.
 - **[[mechanistic-interpretability]]**: Experiment 3 rediscovered the induction-head analysis of Elhage et al. unprompted; the post positions Weight-Space Programming as a new interpretability tool.
 - **Refusal-direction ablation** ("abliteration") is the closest prior technique: projecting a direction out of weight matrices. The post's comparison to "deleting a single direction" points at it.
+- **[[weight-space-programming-doesnt-need-transformers-ok-2026]]** (Ok and Lee, POSTECH) re-evaluates the released Qwen3.5-0.8B edit: within 0.5 points of the base on ARC, MMLU and MathBench, slightly lower on SQuAD. This blog's gains were on MATH-500 and GSM8K, so the two don't directly conflict.
 
 ## Concepts & entities
 

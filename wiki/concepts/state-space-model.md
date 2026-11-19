@@ -2,7 +2,7 @@
 title: State-Space Model (SSM)
 type: concept
 created: 2026-05-16
-updated: 2026-11-10
+updated: 2026-11-19
 sources:
   - titans-behrouz-2025.md
   - s4-structured-state-spaces-gu-2021.md
@@ -91,6 +91,7 @@ Surfaced via newsletter ingests; see [[index]].
 
 - [[a-hippocampus-for-linear-attention-cui-2026]] — pairs a fixed-size recurrent state with a bounded *exact* KV cache for what the state overwrites; −16.1% ppl
 - [[linear-attention]] — the adjacent family; KDA's gated delta rule is the recurrent-state design taken in an attention-shaped direction
+- [[next-generation-llm-architectures-survey-teng-2026]] — covers hybrid attention/SSM backbones (Griffin, Jamba, Hymba, Nemotron-H) as one way to relax the canonical decoder's state assumption.
 
 ## Lineage sources
 

@@ -2,7 +2,7 @@
 title: Reinforcement Learning
 type: concept
 created: 2026-05-21
-updated: 2026-11-02
+updated: 2026-11-19
 sources:
   - deepseek-r1-2025.md
   - rl-an-introduction-sutton-barto-2020.md
@@ -51,6 +51,7 @@ Surfaced via newsletter ingests; see [[index]] for full grouping.
 
 > [!note] Learning without backprop
 > RL policies can be trained with [[backprop-free-learning|backpropagation-free rules]]; see [[diffusing-blame-yamada-2026]] for ED-PPO vs BP-PPO vs DFA-PPO across Brax locomotion and Craftax.
+- [[reasoning-generalization-survey-le-2026]] — SFT tends to memorize surface correlations; RL transfers further, but only when the target aligns with pre-training.
 
 ## Lineage sources
 

@@ -2,7 +2,7 @@
 title: LLM-as-a-Judge
 type: concept
 created: 2026-07-07
-updated: 2026-11-17
+updated: 2026-11-19
 sources:
   - demystifying-evals-for-ai-agents-anthropic-2026.md
   - langsmith-evaluation-docs.md
@@ -100,6 +100,7 @@ Surfaced via newsletter ingests; see [[index]].
 - [[nine-judges-two-effective-votes-kohli-2026]] — 9 judges, ~2 effective votes: errors correlate (φ̄ = 0.39), so the panel falls 8–22 pp short of independent voting, and Dawid–Skene/weighted voting close ≤11% of the gap
 - [[agent-as-a-judge-survey-you-2026]] — survey of the shift to agentic judges that plan, call tools and keep memory; names cost, latency, safety and privacy as open problems
 - [[autorefine-shahidi-2026]] — AutoRefine (Meta): calibrates a code-judge prompt from merge/abandon and test outcomes, with an abstaining teacher; Scott's π 0.36 → 0.60 on an execution oracle
+- [[pac-bayes-guarantees-llm-judges-lamb-2026]] — PAC-Bayes risk certificates for safety judges with no held-out split; tight only for very compact adaptors (LoRA-GT).
 
 ## Lineage sources
 

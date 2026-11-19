@@ -2,7 +2,7 @@
 title: Outcome-Based Reward
 type: concept
 created: 2026-07-28
-updated: 2026-11-10
+updated: 2026-11-19
 sources:
   - swe-gym-pan-2024.md
   - memory-r1-yan-2025.md
@@ -59,3 +59,7 @@ The general caution in [[verifier]] applies with force here: prefer outcome rewa
 ## Newer evidence (2026-11-10 sweep)
 
 - Argues rewards for correct, short answers push model prose toward hard-to-read constructions; a GRPO length penalty alone reproduces the shift on a small model. ([[why-is-ai-generated-language-so-hard-to-understand-clark-2026]])
+
+## Related 2026 sources
+
+- [[post-training-information-seeking-survey-huang-2026]] — compares outcome rewards with intermediate credit assignment for multi-turn search.

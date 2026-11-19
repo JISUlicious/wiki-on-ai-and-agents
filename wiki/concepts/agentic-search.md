@@ -2,7 +2,7 @@
 title: Agentic Search
 type: concept
 created: 2026-05-17
-updated: 2026-11-01
+updated: 2026-11-19
 sources:
   - grep-all-you-need-sen-2026.md
 status: complete
@@ -55,3 +55,4 @@ The concept is named in [[grep-all-you-need-sen-2026]] (Sen et al., 2026) — th
 Historical evidence linking retrieval and tools is in [[context-and-tools-influence-evidence]].
 
 For code, [[claude-code]] and [[cursor]] give different evidence; see [[cherny-agentic-search-statements]] and [[cursor-docs-search-history]].
+- [[post-training-information-seeking-survey-huang-2026]] — sorts post-training for search agents into six decisions (whether to retrieve, query, explore, evaluate evidence, integrate, stop) and checks what the evidence for each shows.

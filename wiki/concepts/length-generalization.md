@@ -2,7 +2,7 @@
 title: Length Generalization
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-11-19
 sources:
   - looped-transformers-length-generalization-fan-2024.md
 status: draft
@@ -22,3 +22,7 @@ Related: [[looped-transformer]], [[recurrent-depth-transformer]], [[rasp-l]]
 
 ## References
 - [[looped-transformers-length-generalization-fan-2024]]
+
+## Related 2026 sources
+
+- [[reasoning-generalization-survey-le-2026]] — RL-trained accuracy collapses at a few times the training depth; recurrent state drift limits depth extrapolation.

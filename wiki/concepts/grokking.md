@@ -2,7 +2,7 @@
 title: Grokking
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-11-19
 sources:
   - loop-think-generalize-2026.md
 status: draft
@@ -22,3 +22,7 @@ Related: [[recurrent-depth-transformer]], [[latent-reasoning]], [[emergent-abili
 
 ## References
 - [[loop-think-generalize-2026]]
+
+## Related 2026 sources
+
+- [[reasoning-generalization-survey-le-2026]] — cites evidence that grokked transformers generalize out of distribution on comparison but not composition.

@@ -2,7 +2,7 @@
 title: AI Safety
 type: concept
 created: 2026-09-29
-updated: 2026-11-10
+updated: 2026-11-19
 sources:
   - darwin-godel-machine-zhang-2025.md
   - hyperagents-zhang-2026.md
@@ -48,6 +48,7 @@ Both pages that link here are about [[self-improving-agent|self-improving agents
 
 - [[divide-consult-conquer-capability-laundering-russinovich-2026]] — Microsoft: an unaligned orchestrator composes harmful capability from individually permitted frontier-model answers
 - [[evil-qwen]] — two MLP neurons pushed at inference cut Qwen3.5-4B refusals from 90% to 8% (replication); no fine-tuning, survives 4-bit
+- [[understanding-ai-from-the-inside-mi-safety-barez-2026]] argues mechanistic interpretability is one layer of defence in depth, not a standalone safety guarantee.
 
 ## Newer evidence (2026-11-10 sweep)
 

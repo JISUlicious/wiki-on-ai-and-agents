@@ -4,7 +4,7 @@
     "contact@alphaxiv.org",
     "nlpnews@substack.com"
   ],
-  "last_processed_date": "2026-11-17",
+  "last_processed_date": "2026-11-19",
   "backfill_window": "2026-03-03 to 2026-06-03",
   "notes": [
     "alphaXiv digests expose arXiv IDs directly (reliable).",
@@ -112,7 +112,8 @@
     "1a1c8afbe1620d35",
     "1a1e055fd0a2614b",
     "1a1e5478e6af1fd4",
-    "1a1daff31fe898bb"
+    "1a1daff31fe898bb",
+    "1a1ecd476da22bc8"
   ],
   "runs": [
     {
@@ -371,6 +372,18 @@
         "2611.06687"
       ],
       "notes": "alphaXiv Nov 11: all 6 papers already ingested. Top AI Papers Nov 9-15: 10 papers via Substack redirects to dair.ai pages. Top 10 Eval Papers of 2026: 10 arXiv links, 4 already ingested; SkillsBench and PostTrainBench had been cited but lacked source pages. AI Agents Weekly Nov 14: paywalled product news (Claude Fable 5.2), no papers."
+    },
+    {
+      "date": "2026-11-19",
+      "type": "newsletter sweep (manual, user-requested; 2 days since cursor)",
+      "threads_read": 1,
+      "candidate_ids_verified": 3,
+      "on_domain_ingested": 6,
+      "new_source_pages": 6,
+      "new_entity_pages": [],
+      "new_concept_pages": [],
+      "dups_skipped": [],
+      "notes": "alphaXiv Nov 18: 6 papers, 3 with arXiv IDs (verified) and 3 alphaXiv-only (arxivId null; ingested by slug from alphaXiv PDFs). No new nlpnews threads since Nov 16."
     }
   ],
   "pending_threads": [

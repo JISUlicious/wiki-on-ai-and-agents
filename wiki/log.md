@@ -2,10 +2,20 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 # Activity Log
+
+## [2026-11-19] ingest | Newsletter sweep 2026-11-19 (6 sources)
+
+User-requested sweep two days after the last one. One new thread: alphaXiv weekly digest (Nov 18). The NLP Newsletter issues of Nov 14–16 were already processed. Six papers, none previously ingested. Three have verified arXiv IDs (2611.08438, 2611.14149, 2611.20818); three are alphaXiv-only with `arxivId: null`, recorded by alphaXiv slug as in earlier alphaXiv-only pages. The Weight-Space Programming paper is a follow-up to the Takehi blog post, not the same work; arXiv 2611.10866 appears only in its alphaXiv sidebar, not in the paper.
+
+Pages created: [[understanding-ai-from-the-inside-mi-safety-barez-2026]], [[next-generation-llm-architectures-survey-teng-2026]], [[weight-space-programming-doesnt-need-transformers-ok-2026]], [[reasoning-generalization-survey-le-2026]], [[post-training-information-seeking-survey-huang-2026]], [[pac-bayes-guarantees-llm-judges-lamb-2026]].
+
+Pages updated with backlinks: [[agentic-search]], [[search-r1]], [[outcome-based-reward]], [[llm-as-a-judge]], [[guardrailing]], [[lora]], [[mixture-of-experts]], [[multi-head-latent-attention]], [[linear-attention]], [[state-space-model]], [[looped-transformer]], [[length-generalization]], [[grokking]], [[reinforcement-learning]], [[weight-space-programming]], [[weight-space-programming-takehi-2026]], [[claude-opus-5-5]], [[gpt-6-astra]], [[mechanistic-interpretability]], [[sparse-autoencoder]], [[ai-safety]], [[yoshua-bengio]].
+
+No contradictions. The Ok and Lee re-test of the released Qwen3.5-0.8B edit (within 0.5 points on ARC/MMLU/MathBench) does not conflict with the blog's MATH-500/GSM8K gains, which were on different tasks. Missing pages linked once each: [[pac-bayes]], [[multi-token-prediction]], [[compositional-generalization]].
 
 ## [2026-11-18] query | Main agent components of the top harnesses, from code
 

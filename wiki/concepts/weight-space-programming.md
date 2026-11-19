@@ -2,7 +2,7 @@
 title: Weight-Space Programming
 type: concept
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-19
 sources:
   - weight-space-programming-takehi-2026.md
   - gpt-6-astra-edits-qwen-weights-runtimewire-2026.md
@@ -60,3 +60,7 @@ The Qwen edit itself is close to directional ablation. What is new is who found 
 
 - [[weight-space-programming-takehi-2026]]
 - [[gpt-6-astra-edits-qwen-weights-runtimewire-2026]]
+
+## Related 2026 sources
+
+- **Follow-up (Nov 2026):** [[weight-space-programming-doesnt-need-transformers-ok-2026]] — given the choice, Claude Opus 5.5, GPT-6.1 Sol and GPT-6 Astra all write sparse fact tables rather than Transformers (ARC up to 54.4% from 10 labeled examples); it also writes weights into SSMs and RNNs.

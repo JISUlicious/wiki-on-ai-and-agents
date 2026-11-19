@@ -2,7 +2,7 @@
 title: GPT-6 Astra
 type: entity
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-19
 sources:
   - weight-space-programming-takehi-2026.md
   - priced-guidance-future-research-ideas-wen-2026.md
@@ -32,3 +32,7 @@ It belongs to the [[gpt-family|GPT family]] after the GPT-5.x models; the wiki's
 - [[weight-space-programming-takehi-2026]]
 - [[priced-guidance-future-research-ideas-wen-2026]]
 - [[harness-vs-model-attribution]]
+
+## Related 2026 sources
+
+- Writer LLM in [[weight-space-programming-doesnt-need-transformers-ok-2026]]: like the other writers, chose sparse fact tables over Transformers.

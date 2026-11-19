@@ -2,7 +2,7 @@
 title: LoRA (Low-Rank Adaptation)
 type: concept
 created: 2026-06-19
-updated: 2026-11-11
+updated: 2026-11-19
 sources:
   - understanding-lora-as-knowledge-memory-back-2026.md
   - the-surprising-effectiveness-of-deleting-weights-lu-2026.md
@@ -32,3 +32,7 @@ LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning method that free
 ## Newer evidence (2026-11-11)
 
 - [[deletion-tuning|Deletion Tuning]] beats LoRA r=1 on adapter size (8.4 MB vs 10.0 MB at Llama8B) and on forgetting. LoRA's forward KL reaches 0.4–1.3 under GRPO, against ≤0.05 for deletion. LoRA's update geometry (stable rank 1–2, spectrum drift up to 84× FFT) is far from full fine-tuning. ([[the-surprising-effectiveness-of-deleting-weights-lu-2026]])
+
+## Related 2026 sources
+
+- [[pac-bayes-guarantees-llm-judges-lamb-2026]] — standard LoRA adaptors give vacuous generalisation certificates; LoRA-GT, a TinyLoRA variant with one global quantisation scale, gives the tightest.
