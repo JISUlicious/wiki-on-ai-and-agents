@@ -2,8 +2,13 @@
 title: "Fundamental Components of an LLM Agent Harness"
 type: query
 created: 2026-05-27
-updated: 2026-11-02
+updated: 2026-11-18
 sources:
+  - opencode-codebase-study-2026-11-18.md
+  - claude-code-public-surface-study-2026-11-18.md
+  - pi-codebase-study-2026-11-18.md
+  - hermes-agent-codebase-study-2026-11-18.md
+  - openclaw-codebase-study-2026-11-18.md
   - code-as-agent-harness-ning-2026.md
   - agentic-harness-engineering-lin-2026.md
 status: complete
@@ -87,7 +92,7 @@ Synthesizing the three views, **eight components are universal across all the pr
 
 Two additional components are **near-universal**:
 
-9. **Sub-agent orchestration** — forking specialized agents from the main loop. Present in [[claude-code]], [[hermes-agent]]; refused in core by [[pi-mono]] (extension required).
+9. **Sub-agent orchestration** — forking specialized agents from the main loop. Present in [[claude-code]], [[hermes-agent]]; skipped in core by [[pi-mono]] (extension required).
 10. **Telemetry / observability** — structured traces, replay support, evaluation hooks. Becoming standard in 2026 ([[agentic-harness-engineering-lin-2026]] makes this the foundation of harness evolution).
 
 ## Cross-cutters — components that touch multiple categories
@@ -108,16 +113,19 @@ Convention from [[agent-three-layer-model]]: assign each cross-cutter to its **p
 
 Pi and Hermes hook counts were rechecked on 2026-11-02. Other cells are from the original 2026 sources and may be out of date.
 
+> [!warning] Contradiction (2026-11-18)
+> Cells marked ‡ were corrected by a code and docs restudy. Earlier values: opencode 18 hooks, "optional" sub-agents and template prompts; Claude Code 15+ tools and 21 hooks; Pi 7 tools, 40 extension events; Hermes ~12 tools, 7 sandboxes, 46 hooks and a "dynamic" system prompt; OpenClaw 24 hooks, "Docker tiers" and per-channel memory. Sources: [[claude-code-public-surface-study-2026]], [[pi-codebase-study-2026]], [[hermes-agent-codebase-study-2026]], [[openclaw-codebase-study-2026]], [[opencode-codebase-study-2026]]. Ten agents: [[agent-harness-code-study-2026-11]].
+
 | Component | claude-code | opencode | pi-mono | hermes-agent | openclaw |
 |---|---|---|---|---|---|
-| System prompt | embedded | template | embedded | dynamic | template |
-| Tool set | 15+ built-in | plugin-based | **7 only** | ~12 + sub-agents | extensible |
-| Sandbox | OS adapter | none in core | none | 7 backends | Docker tiers |
-| Memory | session + skills | event log | JSONL only | SQLite + curator | per-channel |
-| Hooks | 21 events | 18 events | **2 in agent core; 40 via extensions** | 46 plugin hooks | 24 events |
-| Sub-agents | first-class | optional | refused | orchestrator-style | optional |
+| System prompt | embedded | base prompt + per-model plugin overrides ‡ | embedded | built once, kept byte-identical ‡ | template |
+| Tool set | 45 documented ‡ | 13 direct + Code Mode catalog ‡ | **8 registered, 4 default** ‡ | 68 registered, 41 default ‡ | 68 core ids ‡ |
+| Sandbox | OS adapter, off by default ‡ | none in core | none | 6 backends ‡ | off by default; docker/podman/ssh + plugins ‡ |
+| Memory | CLAUDE.md hierarchy + auto memory ‡ | session log + compaction summaries; no long-term store ‡ | context files + JSONL + compaction summaries ‡ | SQLite + curator | Markdown + SQLite hybrid search ‡ |
+| Hooks | 33 events ‡ | 21 hooks (V2 names) ‡ | **2 tool hooks + loop callbacks in core; 41 via extensions** ‡ | 48 plugin hooks ‡ | 43 plugin hooks ‡ |
+| Sub-agents | first-class | core `subagent` tool, always background ‡ | skipped in core | orchestrator-style | swarm on by default ‡ |
 | Telemetry | structured logs | event log | minimal | curator-driven | per-channel |
-| Persistence | JSONL tree | SQLite | JSONL | SQLite | per-channel |
+| Persistence | JSONL tree | SQLite | JSONL | SQLite | per-agent SQLite ‡ |
 
 Page links: [[claude-code]], [[opencode]], [[pi-mono]], [[hermes-agent]], [[openclaw]].
 

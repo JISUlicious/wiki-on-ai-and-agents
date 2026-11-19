@@ -2,7 +2,7 @@
 title: Claude Code
 type: entity
 created: 2026-05-14
-updated: 2026-11-04
+updated: 2026-11-18
 sources:
   - claude-code.md
   - comparison.md
@@ -13,6 +13,7 @@ sources:
   - claude-code-changelog-2026-10-06.md
   - neuron-explorer-lyramakesmusic-2026.md
   - terminal-mac-govijr-github.md
+  - claude-code-public-surface-study-2026-11-18.md
 family: agent-product
 parameters: "n/a (powered by Claude)"
 release_date: 2025-02-24
@@ -24,7 +25,7 @@ tags:
 
 # Claude Code
 
-Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. Distributed as the `@anthropic-ai/claude-code` npm package. Powered by [[claude|Claude]] models (Opus / Sonnet / Haiku). The CLI maintaining this very wiki is Claude Code.
+Claude Code is [[anthropic|Anthropic]]'s official terminal-based coding agent. Originally distributed as the `@anthropic-ai/claude-code` npm package; as of 2026-11 the docs recommend a native, self-updating binary and the repo README marks npm installation as deprecated ([[claude-code-public-surface-study-2026]]). Powered by [[claude|Claude]] models (Opus / Sonnet / Haiku). The CLI maintaining this very wiki is Claude Code.
 
 ## Release and feature timeline
 
@@ -49,7 +50,7 @@ From the CHANGELOG plus npm publish dates; see [[claude-code-changelog-2026]].
 ## Architecture (per the 2026 sourcemap-snapshot writeup)
 
 - **TypeScript / React-Ink TUI**.
-- **~5,000-line REPL orchestrator** (`main.tsx`), **~1,700-line turn state machine** (`query.ts`).
+- **~5,000-line REPL orchestrator** (`REPL.tsx`, 5,005 lines; `main.tsx` is the 4,683-line entry), **~1,700-line turn state machine** (`query.ts`).
 - **~40 built-in tools** with a unified Zod-schema contract: Bash, Read, Edit, Write, Glob, Grep, Task (sub-agent dispatch), MCP, WebFetch, WebSearch, NotebookEdit, AskUserQuestion, ExitPlanMode, and more.
 - **Sub-agents are first-class** via the `Task` tool; built-in subagent types include Explore, Plan, code-reviewer, claude-code-guide, etc. Subagents can run in worktree-isolated or remote-isolated modes.
 - **Memory subsystem**: per-project file-based memory at `~/.claude/projects/{slug}/memory/`, with a background "auto-dream" consolidator that periodically distills memory into compact reusable forms.
@@ -58,6 +59,26 @@ From the CHANGELOG plus npm publish dates; see [[claude-code-changelog-2026]].
 - **MCP**: first-class. Tools can be deferred and loaded on demand via `ToolSearch`.
 - **Hooks**: pre-tool, post-tool, on-stop, on-error. Configurable in `settings.json`.
 - **CLAUDE.md**: nested in project tree, auto-loaded at startup, holds domain-specific schema (the wiki you are reading lives in such a CLAUDE.md ecosystem).
+
+> [!warning] Contradiction
+> The bullets above come from the source-map writeup of a March 2026 snapshot, ingested into this wiki in May 2026 ([[claude-code-agent-doc-2026]]). The official docs read on 2026-11-18 ([[claude-code-public-surface-study-2026]]) differ on several points:
+> - **Tools.** Above: "~40 built-in tools … Task (sub-agent dispatch) … Glob, Grep". Docs: `tools-reference` lists 45 current tools. `Task` was renamed `Agent` in v2.1.63, and Glob and Grep are absent by default on macOS, Linux and WSL, where search goes through Bash running embedded `bfs`/`ugrep`.
+> - **Memory.** Above: a background "auto-dream" consolidator. Docs: auto memory is a `MEMORY.md` index (first 200 lines or 25KB loaded) plus typed topic files (`user`, `feedback`, `project`, `reference`). No consolidator is documented.
+> - **Hooks.** Above: "pre-tool, post-tool, on-stop, on-error". Docs: 33 events and 5 handler types (`command`, `http`, `mcp_tool`, `prompt`, `agent`). The May source itself listed 27.
+> - **Sub-agents.** Docs: built-ins are Explore, Plan and general-purpose. Subagents can nest up to 3 layers by default, with up to 20 running at once, and forks inherit the full conversation.
+> - **Sandbox.** The `@anthropic-ai/sandbox-runtime` claim is confirmed by the docs. The sandbox is off by default, covers shell commands only, and uses Seatbelt (macOS) or bubblewrap + socat (Linux/WSL2). Native Windows runs unsandboxed.
+
+## Documented surface (2026-11-18)
+
+From the official docs and the public repo at `52dd3a1` (CHANGELOG 2.1.327). The implementation is closed, and nothing here was verified by running it. Details are in [[claude-code-public-surface-study-2026]].
+
+- **Surfaces**: CLI, Desktop, VS Code, JetBrains, Web (cloud VMs), Mobile, Slack and Claude Tag, GitHub Actions, GitLab CI. Execution is Local, Cloud or Remote Control. The Agent SDK (Python/TS) runs the same loop.
+- **Loop**: it ends on a response with no tool calls. Optional `maxTurns`/`maxBudgetUsd` caps. Read-only tools run concurrently; state-changing tools run sequentially.
+- **Permissions**: the modes are `default` ("Manual"), `acceptEdits`, `plan`, `auto`, `dontAsk` and `bypassPermissions`. **Auto is the built-in starting mode for interactive sessions from v2.1.283.** Its classifier defaults to Sonnet 5 and can run server-side. Rules are evaluated deny, then ask, then allow.
+- **Compaction**: triggers at the model's limit by default (about 967K tokens on native-1M models), adjustable with `/autocompact`. Afterwards it re-injects CLAUDE.md, auto memory, skill descriptions and the plan, and re-reads 5 recent files.
+- **`/goal`**: documented as a wrapper around a session-scoped prompt-based Stop hook. A small fast model judges the condition from the transcript after each turn.
+- **No ACP** in the docs index.
+- **Repo**: plugin sources moved to `anthropics/claude-plugins-official`. `mods/` publishes six built-in mods. `.devcontainer/init-firewall.sh` is a default-deny iptables/ipset egress allowlist.
 
 ## Dynamic workflows (2026)
 
@@ -80,6 +101,7 @@ Anthropic's September 2026 [[anthropic-threat-intelligence-report-september-2026
 
 ## References
 
+- [[claude-code-public-surface-study-2026]] — official docs and public repo as of 2026-11-18
 - [[claude-code-agent-doc-2026]]
 - [[cross-agent-comparison-doc-2026]]
 - [[claude-code-dynamic-workflows-2026]] — dynamic workflows announcement

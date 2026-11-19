@@ -2,10 +2,22 @@
 title: Activity Log
 type: log
 created: 2026-05-12
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 # Activity Log
+
+## [2026-11-18] query | Main agent components of the top harnesses, from code
+
+Question: "Among the most popular agent harnesses, investigate their main components from codebase", scoped by the user to the agent itself (no server or UI components). Harnesses ranked by GitHub stars: OpenClaw, Hermes, opencode, Claude Code, Codex, with Pi kept as the minimal baseline. Claude Code has no public source, so its column uses the existing writeup of the March 2026 leaked-sourcemap snapshot plus today's docs; the leaked code was not re-read. Filed as [[main-components-of-top-agent-harnesses]]: the shared loop and 12 components compared. Created [[opencode-codebase-study-2026]] (opencode V2 at `79bd2c6f11`). Raw component maps were written for OpenClaw, Hermes, Codex, Pi and Claude Code. Updated [[opencode]], [[claude-code]], [[cross-agent-comparison-2026]], [[hooks-in-modern-agents]], [[fundamental-components-of-harness]] and [[agent-harness-code-study-2026-11]].
+
+**Contradictions recorded:** opencode V2 replaced the Vercel AI SDK with its own AI layer, renamed its hooks (21; the V1 `chat.*` and `permission.ask` names are gone) and made sub-agents core. Claude Code's architecture snapshot dates from March 2026, not May (May was the ingest date), and the ~5,000-line REPL file is `REPL.tsx`, not `main.tsx`. Codex's "~2.4M lines" counted tests; non-test Rust is ~1.21M.
+
+## [2026-11-18] ingest | Agent software code study: ten coding agents
+
+User asked to ingest the latest agent software projects by inspecting their code: features, architecture, loop, hooks and guardrails. Scope was set by the user: Antigravity instead of Gemini CLI, plus Hermes, Pi, OpenClaw, Claude Code, Codex and Cursor. OpenHands, Goose and Cline were kept as the most-starred open repos not yet studied. Seven open repos were read at their latest commit (shallow clones, read only, nothing built or run); Claude Code, Antigravity and Cursor are closed and were studied from official docs and public repos only, with claims marked as documented. Created: [[agent-harness-code-study-2026-11]] (comparison), entities [[openhands]], [[goose]], [[cline]], [[google-antigravity]], and source pages [[codex-cli-codebase-study-2026]], [[openhands-codebase-study-2026]], [[goose-codebase-study-2026]], [[cline-codebase-study-2026]], [[hermes-agent-codebase-study-2026]], [[pi-codebase-study-2026]], [[openclaw-codebase-study-2026]], [[claude-code-public-surface-study-2026]], [[antigravity-public-surface-study-2026]], [[cursor-public-surface-study-2026]]. Updated: [[codex-cli]], [[claude-code]], [[cursor]], [[antigravity-cli]], [[hermes-agent]], [[pi-mono]], [[openclaw]], [[cross-agent-comparison-2026]], [[hooks-in-modern-agents]], [[fundamental-components-of-harness]]. The draft concept page `openhands` was merged into the new entity page to remove a duplicate slug.
+
+**Contradictions recorded:** hook counts were stale (Claude Code 21 → 33, OpenClaw 24 → 43, Hermes 46 → 48, Pi 40 → 41); tool counts (Pi 7 → 8, Hermes ~85 → 68); Claude Code's "auto-dream" consolidator is not documented; its third built-in sub-agent is general-purpose, not code-reviewer; Hermes's curator does not use `post_tool_call`; OpenClaw's plugin hooks can block and require approval rather than only observe; Antigravity sidecars are app-only. Cross-cutting findings: Claude Code's hook contract is copied by Codex, OpenHands, Hermes and Cursor; loops have moved behind engine protocols (Codex, Cline, OpenHands, Goose); an LLM reviewer sits in the approval path in eight of ten.
 
 ## [2026-11-17] ingest | Newsletter sweep 2026-11-17 (16 sources)
 

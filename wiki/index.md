@@ -7,7 +7,7 @@ updated: 2026-11-11
 
 # Wiki Index
 
-A catalog of all pages in this wiki, organized by category. The wiki currently covers 809 sources, 254 entities, 389 concepts, 9 comparisons, 30 queries.
+A catalog of all pages in this wiki, organized by category. The wiki currently covers 820 sources, 258 entities, 388 concepts, 10 comparisons, 31 queries.
 
 ## Entities
 
@@ -60,7 +60,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[realm]] — Retrieval-augmented pre-training with a learned retriever (Guu 2020); precedes DPR and RAG
 
 ### Agent products (2026 era)
-- [[cursor]] — AI code editor; search history documented
+- [[cursor]] — Anysphere's AI code editor plus CLI, cloud agents and SDKs; 21 hooks, auto-review classifier, Grok and Composer models (studied 2026-11-18)
 - [[llamaindex]] — LLM data framework
 - [[pinecone]] — Vector database
 - [[github-copilot]] — Codex-powered assistant (2021)
@@ -76,14 +76,18 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[devin]] — Cognition's software-engineering agent (Mar 2024)
 - [[operator]] — OpenAI's browser agent (Jan 2025)
 - [[terminal-mac]] — Open-source macOS VM for computer-use agents on Apple silicon, driven over MCP (Govijr, Nov 2026)
-- [[codex-cli]] — OpenAI's terminal coding agent (Apr 2025)
+- [[codex-cli]] — OpenAI's Rust coding agent (Apr 2025); app-server architecture, 14 Claude-compatible hooks, Guardian LLM approvals (code read 2026-11-18)
 - [[gemini-cli]] — Google's open-source terminal agent, now limited to enterprise Code Assist; consumer use moved to Antigravity CLI
-- [[antigravity-cli]] — Google's consumer terminal agent since 2026; documented self-reported `/goal`, no public source
+- [[antigravity-cli]] — Google's consumer terminal agent (`agy`) since 2026; self-reported `/goal`, 6 shell hooks, no public source
+- [[google-antigravity]] — Google's agent platform: app, IDE, extensions, CLI and SDK on one closed engine (docs study 2026-11-18)
+- [[openhands]] — Open-source (MIT) agent platform, formerly OpenDevin; UI and Python SDK split, risk label on every tool call, ACP host for other agents
+- [[goose]] — Block's open-source Rust agent, now under the Agentic AI Foundation; loop as ordered operations, ACP everywhere
+- [[cline]] — Open-source VS Code coding agent rebuilt on an SDK runtime; parallel native tool calls, checkpoints as git refs
 - [[manus]] — General-purpose agent from Butterfly Effect (Mar 2025)
 - [[langgraph]] — LangChain's state-graph agent library (Jan 2024)
 - [[claude-code]] — Anthropic's terminal coding agent
-- [[opencode]] — sst/opencode, server-architected open-source coding agent
-- [[pi-mono]] — badlogic's minimalist coding agent (7 tools)
+- [[opencode]] — anomalyco/opencode (was sst), server-hosted open-source coding agent; V2 has its own AI layer, Code Mode and a judge-based `/goal`
+- [[pi-mono]] — Mario Zechner's minimalist coding agent (8 tools, 4 default; codemode, 41 extension events)
 - [[hermes-agent]] — Nous Research's self-improving multi-surface agent
 - [[openclaw]] — Single-operator multi-channel personal AI assistant
 - [[oh-my-claude]] — Third-party Claude Code plugin (TechDufus); reference implementation of the ultrawork keyword
@@ -496,7 +500,7 @@ A catalog of all pages in this wiki, organized by category. The wiki currently c
 - [[code-as-policies]] — Code-for-acting in embodied settings (Liang 2022)
 - [[swe-agent]] — Agent-Computer Interface for SE (Yang 2024)
 - [[agent-computer-interface]] — ACI abstraction: purpose-built tool surface for LLM agents
-- [[openhands]] — Open-source generalist software-agent platform (formerly OpenDevin)
+- [[openhands]] — (entity) open-source generalist software-agent platform, formerly OpenDevin; a common reference harness
 - [[agentcoder]] — Programmer + Test-Designer + Test-Executor triad (Huang 2023)
 - [[chatdev]] — Waterfall-style multi-agent SE pipeline (Qian 2023)
 - [[agentic-harness-engineering]] — The harness as an object of optimization: telemetry-driven evolution, program search, self-synthesis, scaling laws (2026 concept; 8-source cluster)
@@ -1779,6 +1783,17 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 - [[goal-command-lineage-repos-2026]] — Ralph to native goal commands: Codex, OpenCode, pi-goal and Claude Code at pinned revisions (2026-11-02)
 - [[agent-capabilities-check-2026-11]] — MCP, sandbox, tools and sub-agents rechecked for five coding agents (2026-11-02)
 - [[antigravity-cli-docs-2026-11]] — Antigravity CLI transition, goal command, hooks and schedules from docs and changelog (2026-11-02)
+- [[codex-cli-codebase-study-2026]] — Codex CLI code study at `4389a526d5` (2026-11-18)
+- [[openhands-codebase-study-2026]] — OpenHands UI + software-agent-sdk code study (2026-11-18)
+- [[goose-codebase-study-2026]] — Goose code study at `927005e143` (2026-11-18)
+- [[cline-codebase-study-2026]] — Cline SDK-era code study at `eff43e19b2` (2026-11-18)
+- [[hermes-agent-codebase-study-2026]] — Hermes Agent code restudy at `0e8e421640` (2026-11-18)
+- [[pi-codebase-study-2026]] — Pi code restudy at `f6d0c2f9b6` (2026-11-18)
+- [[openclaw-codebase-study-2026]] — OpenClaw code restudy at `9d6f4a94ad` (2026-11-18)
+- [[claude-code-public-surface-study-2026]] — Claude Code from 35 doc pages and the public repo; closed source (2026-11-18)
+- [[antigravity-public-surface-study-2026]] — Antigravity from 54 doc pages and two public repos; closed source (2026-11-18)
+- [[cursor-public-surface-study-2026]] — Cursor from 54 doc pages, blog and changelogs; closed source (2026-11-18)
+- [[opencode-codebase-study-2026]] — opencode V2 (2.3.0) code study at `79bd2c6f11` (2026-11-18)
 - [[false-success-llm-agents-advani-2026]] — False success in 11,755 trajectories; LLM judges reach at most AUROC 0.65 (2026-06)
 - [[self-report-leakage-gui-agent-judging-zhu-2026]] — Withholding an agent's self-report raises misreport recall by 13–43 points (2026-10)
 - [[bounded-loops-agent-harnesses-bhardwaj-2026]] — Independent gates, vacuous and self-attested checks, proved loop guarantees (2026)
@@ -1831,11 +1846,13 @@ Surfaced from the alphaXiv weekly digest (ingested 2026-06-18).
 
 - [[constrained-canvas-vs-free-denoise]] — Two routes to typed decisions on DiffusionGemma, and why the labels mislead
 - [[cross-agent-comparison-2026]] — Claude Code / opencode / pi / Hermes / OpenClaw side-by-side
+- [[agent-harness-code-study-2026-11]] — Ten coding agents (Codex, OpenHands, Goose, Cline, Hermes, Pi, OpenClaw, Claude Code, Antigravity, Cursor) compared on loop, hooks and guardrails from code and docs (2026-11-18)
 - [[agent-skills-cross-vendor]] — Capability-packaging compared across Anthropic / OpenAI / Google / Microsoft / AWS (SKILL.md vs GPTs vs Gems vs Declarative Agents vs Action Groups)
 - [[harness-vs-model-attribution]] — Factorial (harness × model) studies: how much of an agent's score is the scaffold vs the model (Terminal-Bench/SWE-bench leaderboards + the "disclose the harness" thesis)
 - [[kaplan-vs-chinchilla-vs-skaling]] — **comparison**: the three scaling-law forms are one nested family; Skaling = Chinchilla's exponents + Kaplan's coupling, and Chinchilla is weakest exactly in the compute-optimal band
 
 ## Queries
+- [[main-components-of-top-agent-harnesses]] — Agent-core components of the most popular harnesses (OpenClaw, Hermes, opencode, Claude Code, Codex, Pi) read from code: loop, tools, context, compaction, memory, goals, sub-agents, skills, hooks, permissions, guards, verification (2026-11-18)
 
 - [[context-and-tools-influence-evidence]] — Evidence for RAG, tool use and context engineering, graded
 - [[ai-agent-influence-graph]] — Dated items and evidence-graded influence edges for AI agent history
